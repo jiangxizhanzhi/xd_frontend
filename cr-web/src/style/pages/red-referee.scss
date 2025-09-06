@@ -1,0 +1,174 @@
+.referee-home {
+  .user-name {
+    color: var(--neutral8);
+  }
+}
+
+// 裁定评判
+.red-expert-assess {
+  .com-icon-swapper {
+    background: var(--bg-color-3);
+  }
+}
+
+// 历史任务
+.history-task-page {
+  .task-search-comp {
+    .condition {
+      background: var(--bg-color-3);
+    }
+  }
+}
+
+.screen-monitoring,
+.combat-member {
+  background: var(--bg-color-2);
+
+  .screen_wrap {
+    background: var(--bg-color-3);
+
+    .title {
+      color: var(--primary-color);
+    }
+  }
+
+  .addMachine .el-dialog__body .item-hover {
+    border: 1px solid var(--primary-color) !important;
+  }
+
+  .addMachine .el-dialog__body .item-list {
+    background: var(--bg-color-3);
+  }
+}
+//主机信息
+.host-information {
+  background: var(--bg-color-2);
+
+  .data-empty {
+    color: var(--neutral8);
+  }
+
+  .portList-top {
+    .number {
+      color: var(--neutral8);
+    }
+  }
+
+  .equip-massage {
+    .info-icon-swapper {
+      background: var(--bg-color-3);
+      opacity: 0.4;
+    }
+    .label,
+    .color-gray {
+      color: var(--font-color-2);
+    }
+  }
+}
+
+.referee-dialogSee,
+.referee-dialogReject {
+  .el-dialog {
+    .el-form-item__label {
+      color: var(--neutral8);
+    }
+
+    .el-radio__inner {
+      border: 1px solid var(--neutral3) !important;
+    }
+
+    .el-radio__label {
+      color: var(--neutral8);
+    }
+  }
+}
+
+.referee-dialogReject {
+  .el-dialog .el-dialog__body {
+    padding: 0 40px !important;
+    height: calc(100% - 151px);
+  }
+}
+
+.lineShow {
+  .el-checkbox__input.is-disabled + span.el-checkbox__label {
+    color: var(--neutral8);
+  }
+}
+
+.check-task {
+  .content-style {
+    background: var(--cy16);
+    color: var(--neutral8);
+  }
+
+  .task-details-dialog {
+    .el-form-item__label {
+      color: var(--neutral8);
+    }
+  }
+
+  .task-input {
+    .el-input__inner {
+      background: var(--bg-color-2);
+      color: var(--neutral8);
+    }
+  }
+
+  .single-show {
+    background: var(--bg-color-2);
+    color: var(--neutral8);
+  }
+
+  .el-textarea__inner {
+    background: var(--bg-color-2);
+    color: var(--neutral8);
+  }
+}
+
+//红蓝学员
+.addHost {
+  .inLine {
+    .el-icon-close::before {
+      color: var(--primary-color) !important;
+    }
+  }
+}
+
+.tianwen {
+  p {
+    color: var(--neutral8);
+  }
+}
+
+.tainwen-box {
+  .tianwen-top {
+    color: var(--neutral8);
+  }
+}
+
+.tianwen-bottom {
+  color: var(--neutral8);
+}
+
+.director-home {
+  .time-r {
+    color: var(--primary-color);
+  }
+
+  .elc-btn-gradient-inner {
+    color: var(--primary-color);
+
+    .color-cy9 {
+      color: var(--warning-color);
+    }
+
+    .color-cy2 {
+      color: var(--neutral8);
+    }
+
+    .color-cy10 {
+      color: var(--red-color);
+    }
+  }
+}

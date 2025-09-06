@@ -1,0 +1,245 @@
+// 全局变量
+body {
+  font-family: 'Microsoft Yahei', 'Hiragino Sans GB', Helvetica,
+    'Helvetica Neue', '微软雅黑', Tahoma, Arial, sans-serif, 'FontAwesome' !important;
+  height: 100%;
+  min-width: 1200px;
+  background-color: var(--bg-color-1) !important;
+}
+
+a:focus {
+  outline: none;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.cursor {
+  cursor: pointer;
+}
+.cursor-not {
+  cursor: not-allowed;
+}
+
+p {
+  margin: 0 0 5px;
+}
+
+/* line 822, default.scss */
+
+a:hover {
+  text-decoration: none;
+}
+//tag标签样式
+.el-tag + .el-tag {
+  margin-right: 10px;
+}
+.el-tag:first-child {
+  margin-right: 10px;
+}
+
+//授权共享按钮
+.btn-private-all {
+  width: 120px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  height: 26px;
+  border-radius: 13px;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    background-color: rgb(42, 190, 141);
+  }
+  &.is-disabled,
+  &.is-disabled:hover {
+    background-color: rgba(47, 212, 158, 0.5);
+  }
+}
+.icon-size {
+  font-size: 14px !important;
+  display: inline-block;
+  margin-right: 3px;
+}
+button[class*=' el-icon-'],
+[class^='el-icon-'] {
+  height: 13px;
+  width: 13px;
+  display: inline-block;
+}
+
+// 表单布局
+.elc-form {
+  .el-form-item__content {
+    margin-right: 112px;
+  }
+}
+
+//隐藏图片大小
+.marleft5 {
+  margin-left: 5px;
+}
+.marright20 {
+  margin-right: 20px;
+}
+
+//列表高级，中级，低级字体颜色
+.high {
+  color: var(--red-color);
+}
+.middle {
+  color: var(--orange-color);
+}
+.lower {
+  color: var(--green-color);
+}
+//公开 隐藏字体颜色
+.public {
+  color: var(--green-color);
+}
+.hide {
+  color: var(--primary-color-4) !important;
+}
+
+.simple-data-list {
+  .paginator {
+    display: flex;
+    justify-content: flex-end;
+    .el-pagination {
+      display: inline-block;
+    }
+  }
+}
+//省略以点点
+.one-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.form-button-bar {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+// 二级背景和三级背景在浅色时会融合，给浅色的三级背景把阴影
+.boxShadow {
+  box-shadow: -1px -2px 4px 0px var(--box-shadow-color),
+    1px 2px 4px 0px var(--box-shadow-color);
+}
+
+.black-cut-line {
+  width: 106%;
+  height: 16px;
+  background: var(--bg-color-1);
+  margin: 0 0 20px 0;
+}
+.com-cut-title {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--neutral8);
+  margin-bottom: 20px;
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 8px;
+    vertical-align: middle;
+    background: var(--primary-color);
+    margin: -2px 8px 0 16px;
+  }
+}
+
+.lesson-link {
+  color: var(--primary-color) !important;
+  &:hover {
+    color: var(--primary-color-8) !important;
+    text-decoration: underline;
+  }
+}
+// 解决课程表hover后，再去课程管理markdown里hover 样式问题
+.tippy-box {
+  background-color: var(--bg-color-2) !important;
+  color: var(--neutral7) !important;
+}
+.tippy-content {
+  box-shadow: 0 2px 12px 0 var(--box-shadow-color) !important;
+}
+.tippy-arrow {
+  color: var(--bg-color-2) !important;
+}
+
+.search-model {
+  padding: 16px;
+  margin-bottom: 16px;
+  background: var(--bg-color-2);
+}
+
+.to-start {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.category-content-com {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--neutral8);
+  background: var(--neutral0);
+  border-radius: 2px;
+  padding: 2px 8px;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.multiple-choice-theory,
+.single-choice-theory,
+.practice-basic-title-topic {
+  .markdown-body p {
+    font-size: 16px;
+  }
+}
+.topic-content-com {
+  padding: 14px 16px;
+}
+
+.basic-question-theory,
+.volume-detail-wrapper,
+.volume-exam-wrapper {
+  .keyWords {
+    margin-top: 16px;
+    display: flex;
+    .title {
+      min-width: 50px;
+      line-height: 32px;
+      color: var(--neutral8);
+    }
+    .keyWordList {
+      .keyWord {
+        float: left;
+        margin-bottom: 10px;
+        min-width: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 0 8px;
+        line-height: 32px;
+        margin-left: 8px;
+        background: var(--neutral0);
+        border-radius: 2px;
+        span {
+          color: var(--neutral8);
+        }
+      }
+    }
+  }
+}

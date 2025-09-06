@@ -1,0 +1,149 @@
+<html>
+
+
+<style>
+	.book-set {
+		position: relative;
+		border: 1px solid #123456;
+		height: 1500px;
+		zoom: .5;
+	}
+	.book-set>.book {
+		cursor: pointer;
+		position: absolute;
+		height: 1500px;
+		width: 600px;
+		bottom: 0;
+		transition: all .3s;
+	}
+	.book-set>.book:hover {
+		
+		
+	}
+	.book-set>.book:hover>.book-inner {
+		bottom: 1320px;
+		transform: rotateZ(8deg) rotateY(50deg);
+		transform-style: preserve-3d;
+	}
+	.book-set>.book:hover>.book-inner>.book-top-edge {
+		display: none;
+	}
+	.book-set>.book>.book-inner {
+		position: absolute;
+		bottom: 800px;
+		transition: all .3s
+	}
+	.book-set>.book>.book-inner>.book-cover {
+		position: absolute;
+		left: 50px;
+		padding: 10px;
+		width: 600px;
+		height: 800px;
+		transform-style: preserve-3d;
+		background-color: #357;
+		transform: rotateX(10deg) rotateY(-50deg);
+		transform-origin: left;
+		box-sizing: border-box;
+	}
+	.book-set>.book>.book-inner>.book-edge {
+		position: absolute;
+		padding: 15px;
+		width: 50px;
+		height: 800px;
+		transform-style: preserve-3d;
+		background-color: #135;
+		transform: rotateX(10deg) rotateY(40deg);
+		transform-origin: right;
+		box-sizing: border-box;
+	}
+	.book-set>.book>.book-inner>.book-top-edge {
+		background-color: white;
+		border-top: 10px solid #135;
+		top: -15px;
+		left: 15px;
+		position: absolute;
+		width: 570px;
+		height: 40px;
+		transform: rotateX(-77deg) rotateZ(-43deg);
+		transform-origin: left;
+		box-sizing: border-box;
+		border-radius: 50px;
+	}
+
+	.linergradian {
+		background-image: linear-gradient(to right, red , yellow);
+		height: 100%;
+		width: 100%;
+		border: 3px solid green;
+	}
+</style>
+
+<body>
+	<div class='book-set'>
+		<div id='book-1' class='book'>
+			<div class='book-inner'>
+				<div class='book-edge'>作者 刘强东</div>
+				<div id='book-cover-1' class='book-cover'>
+					<h1>如何养猪</h1>
+				</div>
+				<div class='book-top-edge'></div>
+			</div>
+		</div>
+		<div id='book-2' class='book'>
+			<div class='book-inner'>
+				
+				<div class='book-edge'>冷面杀手</div>
+				<div id='book-cover-2' class='book-cover'>
+					<h1>小龙虾百吃</h1>
+				</div>
+				<div class='book-top-edge'>上上上上上上上上上上上上上上上上上上上上上上上上上上</div>
+			</div>
+		</div>
+		<div id='book-3' class='book'>
+			<div class='book-inner'>
+				
+				<div class='book-edge'>国内程序员</div>
+				<div id='book-cover-3' class='book-cover linergradian'>
+					<div class=''>
+						<h1>国内程序员生存现状</h1>
+					</div>
+				</div>
+				<div class='book-top-edge'>上上上上上上上上上上上上上上上上上上上上上上上上上上</div>
+			</div>
+		</div>
+		<div id='book-4' class='book'>
+			<div class='book-inner'>
+				
+				<div class='book-edge'>冷面杀手</div>
+				<div id='book-cover-2' class='book-cover'>
+					<h1>要想富，先修路</h1>
+				</div>
+				<div class='book-top-edge'>上上上上上上上上上上上上上上上上上上上上上上上上上上</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript">
+function dom(selector) {
+	return document.querySelector(selector)
+}
+function Bookset(arr) {
+	this.bookset = [];
+
+	var bookOffsetLeft = 40;
+	for (var idx=0; idx<arr.length; idx++) {
+		var selector = arr[idx];
+		if (selector) {
+			var book = dom(selector)
+			if (book) {
+				book.style.left = bookOffsetLeft;
+				bookOffsetLeft += 280
+			}
+		}
+		
+	}
+}
+var bs = new Bookset(['#book-1', '#book-2', '#book-3', '#book-4'])
+</script>
+</html>

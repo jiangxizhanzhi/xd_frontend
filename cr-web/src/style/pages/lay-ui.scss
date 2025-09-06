@@ -1,0 +1,158 @@
+.layui-layim,
+.layui-layim-chat {
+  background: var(--bg-color-2);
+  box-shadow: 8px 8px 30px 0px var(--mask-color);
+}
+
+.layui-layim-chat {
+  background: var(--bg-color-2);
+  color: var(--neutral8);
+}
+
+.layui-layim-chat .layui-layer-title {
+  border-bottom: 1px solid var(--neutral1);
+}
+
+.layui-layim-min {
+  background: var(--bg-color-2);
+}
+
+.layui-layim-close .layui-layer-content span {
+  color: var(--neutral8);
+}
+
+.layim-chat-list li i {
+  color: var(--neutral8);
+}
+.layim-chat-footer {
+  border-top: 1px solid var(--neutral1);
+}
+
+.layim-send-set,
+.layim-send-btn {
+  background: var(--primary-color);
+}
+
+.layui-layim-tab li {
+  color: var(--neutral8);
+}
+
+.layui-layim-tab li.layim-this:after {
+  background: var(--primary-color);
+}
+
+.layui-layim-tab,
+.layui-layim-face ul {
+  border-bottom: 1px solid var(--neutral1);
+}
+
+.layim-tab-content li h5 em,
+.layui-layim-list li p {
+  color: var(--neutral7);
+}
+
+.layui-layim-list li span {
+  color: var(--neutral8);
+}
+
+.layim-tab-content li h5 {
+  i,
+  span {
+    color: var(--neutral8);
+  }
+}
+
+.layim-chat-other span {
+  color: var(--neutral8);
+}
+
+.role-span {
+  color: var(--neutral7);
+}
+
+.layui-layim-min {
+  color: var(--neutral8);
+}
+
+.layim-chat-text {
+  background: var(--neutral0) !important;
+  color: var(--neutral8) !important;
+}
+
+.layim-chat-list {
+  background: var(--bg-color-2);
+  border-right: 1px solid var(--neutral1);
+}
+
+.layim-chat-list li.layim-this {
+  background: var(--neutral0);
+  color: var(--neutral8);
+}
+
+.layim-chat-textarea textarea {
+  color: var(--neutral8);
+}
+
+.layui-layim-search label {
+  color: var(--neutral7);
+}
+
+.layui-layim-members ul {
+  background: var(--bg-color-1);
+  color: var(--neutral8);
+}
+
+.layim-chat-group .layim-chat-other span em {
+  color: var(--neutral7);
+}
+
+.layim-chat-other span {
+  color: var(--neutral8);
+}
+
+.role-span {
+  color: var(--neutral7);
+}
+
+.layim-chat-mine .layim-chat-text {
+  background: var(--primary-color-2) !important;
+  color: var(--neutral8) !important;
+}
+
+.layim-chat-mine .layim-chat-text:after {
+  // border-top-color: var(--primary-color-2)!important;
+}
+
+.layui-layim-min {
+  color: var(--neutral8);
+}
+
+.layim-chat-list {
+  background-image: var(--bg-color-1);
+}
+
+.layim-chat-list li.layim-this {
+  background: var(--neutral0);
+  color: var(--neutral8);
+}
+
+.layim-chat-textarea textarea {
+  color: var(--neutral8);
+}
+
+.layui-layim-search label {
+  color: var(--neutral7);
+}
+
+.layui-layim-members ul {
+  background: var(--bg-color-1);
+  color: var(--neutral8);
+}
+
+.layim-chat-group .layim-chat-other span em {
+  color: var(--neutral7);
+}
+
+.layui-layer {
+  z-index: 1000 !important;
+}

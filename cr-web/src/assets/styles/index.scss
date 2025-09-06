@@ -1,0 +1,99 @@
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ' ';
+    clear: both;
+    height: 0;
+  }
+}
+
+// main-container global css
+.app-container:not(.cb-inner-page) {
+  padding: 20px;
+}
+
+.filter-container {
+  padding-bottom: 10px;
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+}
+
+.hr-line-dashed {
+  border-top: 1px dashed #e7eaec;
+  color: #fff;
+  background-color: #fff;
+  height: 1px;
+  margin: 20px 0;
+}
+
+.form-container {
+  margin-top: 20px;
+  margin-bottom: 15%;
+  .el-form-item {
+    margin: 0 6% 0 6%;
+    white-space: nowrap;
+    .el-input,
+    .el-textarea {
+      width: 95%;
+    }
+    .el-select {
+      width: 30%;
+    }
+  }
+}
+
+.selectBaseImageTooltip {
+  font-size: 14px;
+  max-width: 20%;
+}
+
+.mr5 {
+  margin-right: 5px;
+}
+.mb5 {
+  margin-bottom: 5px;
+}

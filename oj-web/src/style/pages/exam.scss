@@ -1,0 +1,289 @@
+.primary {
+  color: var(--primary-color);
+}
+.trains_item {
+  background: var(--bg-color-secondary);
+  &:hover {
+    background: var(--bg-color-third);
+  }
+}
+.train_status {
+  span {
+    color: var(--font-color-primary);
+  }
+}
+.exam-detail-tips,
+.container-left,
+.container-right {
+  //考试详情
+  background: var(--bg-color-secondary);
+}
+.running-time-box {
+  //考试列表进行中
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    background: var(--orange-color);
+    opacity: 0.1;
+    inset: 0;
+    border-radius: 50%;
+  }
+}
+.limit-time-box,
+.end-time-box {
+  background: rgba(132, 144, 159, 0.15);
+}
+.end-time-box {
+  //考试列表已结束
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    background: var(--border-color-regular);
+    opacity: 0.1;
+    inset: 0;
+    border-radius: 50%;
+  }
+  .cb-iconfont {
+    color: var(--invalid-color) !important;
+  }
+}
+.start-time-box {
+  //考试列表未开始
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    background: var(--green-color);
+    opacity: 0.1;
+    inset: 0;
+    border-radius: 50%;
+  }
+}
+.away-start {
+  color: var(--green-color) !important;
+  .cb-iconfont {
+    color: var(--green-color) !important;
+  }
+}
+
+.away-end {
+  //距离结束时间
+  color: var(--orange-color) !important;
+
+  .cb-iconfont {
+    color: var(--orange-color) !important;
+  }
+}
+.end-value {
+  color: var(--bg-color-third);
+}
+.exam-wrapper {
+  .bo-begin-filter {
+    background: var(--font-color-third);
+    opacity: 0.5;
+  }
+  .description {
+    .subline {
+      background: var(--border-color-regular);
+      // background-image: linear-gradient(
+      //   0deg,
+      //   rgba(46, 57, 81, 1) 0%,
+      //   rgba(31, 39, 54, 1) 100%
+      // );
+    }
+  }
+  .special-span,
+  .common-i,
+  .common-span,
+  .value,
+  .level {
+    color: var(--font-color-secondary);
+  }
+}
+// 考试详情
+.exam-detail-wrapper {
+  // .cur-progress {
+  //   .cb-progress-bar__outer {
+  //    // background-color: var(--bg-color-third);
+  //     background-color: var(bg-color-fifth) !important;
+
+  //  }
+  // }
+  .exam-detail-tips {
+    .title,
+    .value {
+      color: var(--font-color-regular);
+    }
+    .label {
+      color: var(--font-color-secondary);
+    }
+  }
+  .status {
+    height: 0px;
+    span:before {
+      width: 0px !important;
+      height: 0px !important;
+      margin-right: 0px !important;
+    }
+
+    i {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      vertical-align: text-bottom;
+      margin-right: 8px;
+      box-sizing: border-box;
+      border-radius: 50%;
+    }
+
+    .solved > i {
+      background-color: var(--green-color);
+      border: 1px solid var(--green-color);
+    }
+    .warring > i {
+      border: 1px solid var(--red-color);
+      &::before {
+        position: absolute;
+        inset: 0;
+        content: '';
+        background: var(--red-color);
+        opacity: 0.1;
+        border-radius: 50%;
+      }
+    }
+    .unsolved > i {
+      background-color: var(--bg-color-secondary);
+      border: 1px solid var(--font-color-secondary);
+    }
+    .current > i {
+      // background: url('@/assets/img/exam/icon_now.png') 0 0 no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  .number-list {
+    border-bottom: 1px dashed var(--border-color-secondary);
+    .answerd-item {
+      background-color: var(--green-color);
+    }
+    .warring-item {
+      border: 1px solid var(--red-color);
+    }
+  }
+  .exam-detail-container {
+    .container-left {
+      .status {
+        border-bottom: 1px solid var(--border-color-secondary);
+      }
+      .classfication {
+        // border-bottom: 1px dashed var(--border-color-secondary);
+      }
+      .unsolved:before,
+      .no-item {
+        background-color: var(--bg-color-secondary);
+        border: 1px solid var(--font-color-secondary);
+      }
+      .warring-item {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          background: var(--red-color);
+          opacity: 0.1;
+          inset: 0;
+          border-radius: 50%;
+        }
+        border: 1px solid var(--red-color);
+      }
+      .index-div {
+        color: var(--font-color-primary);
+      }
+    }
+    .container-right {
+      .inform {
+        border-bottom: 1px solid var(--border-color-secondary);
+      }
+      .is-flag {
+        color: var(--font-color-primary);
+      }
+      .line {
+        color: var(--bg-color-fifth);
+      }
+    }
+  }
+  .wait-evaluated {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      background: var(--orange-color);
+      opacity: 0.1;
+      inset: 0;
+    }
+    span {
+      color: var(--orange-color);
+    }
+  }
+  .score-evaluated {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      background: var(--red-color);
+      opacity: 0.1;
+      inset: 0;
+    }
+
+    span {
+      color: var(--red-color);
+    }
+  }
+}
+.score-box {
+  span {
+    color: var(--red-color);
+  }
+}
+.progress {
+  .cur-text {
+    color: var(--font-color-primary);
+  }
+}
+.btn-once {
+  .btn-second {
+    background: var(--bg-color-4);
+
+    span {
+      color: var(--orange-color);
+    }
+  }
+}
+
+// 题解
+.up-write {
+  background: var(--bg-color-third);
+
+  .header-title {
+    border-bottom: 1px solid var(--border-color-secondary);
+  }
+  .file-name {
+    color: var(--primary-color);
+  }
+  .down-file-name {
+    border-bottom: 1px solid var(--primary-color);
+    color: var(--primary-color);
+  }
+  .submit-box {
+    background: var(--primary-color);
+    color: var(--font-color-third);
+  }
+}
+.short-tips {
+  color: var(--border-color-regular);
+}
+// 交卷成功
+.success-info {
+  color: var(--green-color);
+}

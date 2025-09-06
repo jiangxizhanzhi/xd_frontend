@@ -1,0 +1,481 @@
+body {
+  .common-list-comp {
+    .train_name {
+      color: var(--neutral8);
+    }
+  }
+
+  #components-train-record {
+    .task-desc-title {
+      font-size: 14px;
+      color: var(--neutral8);
+
+      &::before {
+        content: '';
+        display: inline-block;
+        position: relative;
+        left: -20px;
+        width: 6px;
+        height: 8px;
+        background-color: var(--primary-color);
+      }
+    }
+
+    .task-desc {
+      color: var(--neutral8);
+      font-size: 12px;
+    }
+
+    .tasks-tree {
+      border-right: 1px solid var(--neutral3);
+      // opacity: 0.3;
+    }
+  }
+
+  // 单兵训练详情页右侧
+  #right-task,
+  .right-task,
+  .right-combat {
+    .task-content {
+      background: var(--bg-color-3);
+    }
+
+    .btn-left {
+      background: var(--bg-color-3);
+    }
+
+    .task-stage {
+      color: var(--neutral8);
+
+      .stage-name {
+        &::before {
+          background-color: var(--primary-color);
+        }
+      }
+    }
+
+    .task-set {
+      &:hover {
+        position: relative;
+        ::before {
+          z-index: -1;
+          position: absolute;
+          inset: 0;
+          content: '';
+          opacity: 0.3;
+          background-color: var(--neutral0);
+        }
+        span:first-child {
+          color: var(--primary-color);
+        }
+      }
+
+      span:first-child {
+        color: var(--neutral8);
+      }
+
+      span:nth-child(2) {
+        color: var(--neutral8);
+      }
+
+      .offanswered {
+        color: var(--neutral8);
+      }
+
+      .fail {
+        color: var(--red-color) !important;
+      }
+
+      .success {
+        color: var(--green-color) !important;
+      }
+
+      .toevaluate {
+        color: var(--orange-color) !important;
+      }
+    }
+
+    .onanswered {
+      color: var(--primary-color) !important;
+    }
+
+    .grid-content {
+      span {
+        color: var(--neutral8);
+      }
+    }
+
+    .train-info {
+      .skill-box {
+        color: var(--neutral8);
+      }
+
+      .bg-purple-light {
+        color: var(--neutral8);
+      }
+    }
+  }
+
+  .cy-color {
+    color: var(--primary-color);
+  }
+
+  .white-color {
+    color: var(--neutral8) !important;
+  }
+
+  .red-color {
+    color: var(--red-color) !important;
+  }
+  .blue-color {
+    color: var(--primary-color) !important;
+  }
+  .yellow-color {
+    color: var(--orange-color) !important;
+  }
+
+  .disable-btn-color {
+    color: var(--neutral3) !important;
+  }
+
+  .green-color {
+    color: var(--green-color) !important;
+  }
+
+  .sky-blue {
+    color: var(--primary-color) !important;
+  }
+
+  .task-train .content .train-record {
+    background-color: var(--bg-color-2);
+    color: var(--neutral8);
+  }
+
+  .task-train {
+    .record {
+      .fa-list::before,
+      .fa-print::before,
+      .fa-file-text-o::before {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  // 团队训练详情页右侧
+  .teacher-home {
+    .right-info {
+      .btn-left {
+        background: var(--bg-color-3);
+      }
+    }
+
+    .info-content {
+      background: var(--bg-color-3);
+      // margin-top: -1px;
+      // border-top: 1px solid var(--neutral0);
+    }
+  }
+
+  #taskAnswerDialog .answer-div .v-note-wrapper {
+    background: var(--bg-color-4) !important;
+  }
+
+  #scriptExecution {
+    .list-title {
+      .task-message {
+        .task-top {
+          background: var(--bg-color-4);
+        }
+
+        .task-content {
+          color: var(--neutral8);
+          border-bottom: 1px solid var(--neutral1);
+
+          .task-top-title {
+            color: var(--neutral8);
+          }
+
+          .task-top-complete {
+            .complete-span {
+              color: var(--neutral5);
+            }
+          }
+        }
+
+        .task-foot {
+          .foot-left {
+            color: var(--neutral8);
+          }
+
+          .foot-right-filter {
+            background: var(--neutral0);
+          }
+        }
+      }
+    }
+
+    .stage-name {
+      color: var(--neutral7);
+    }
+
+    .common-message {
+      background: var(--bg-color-4);
+
+      .common-top {
+        color: var(--neutral8);
+      }
+
+      .common-server {
+        color: var(--neutral5);
+      }
+    }
+  }
+
+  //团队训练--提交审核
+  #submitReview {
+    #title {
+      color: var(--neutral8);
+    }
+
+    .filter-group {
+      span {
+        color: var(--neutral8);
+      }
+    }
+
+    ::v-deep.data-support-filter {
+      ::v-deep.el-range-separator {
+        color: var(--neutral8);
+      }
+    }
+
+    .record-data {
+      .port-content {
+        .piece {
+          background: var(--bg-color-4);
+
+          .blur-box {
+            filter: blur(2px);
+          }
+
+          .people {
+            color: var(--neutral8);
+          }
+
+          .title {
+            color: var(--neutral7);
+          }
+
+          .p-botton {
+            color: var(--primary-color);
+            background: none;
+          }
+        }
+      }
+    }
+
+    .data-support {
+      .data-div {
+        border: 1px solid var(--neutral1);
+        .data-lists {
+          border-bottom: 1px solid var(--neutral1);
+        }
+        .data-lists:nth-child(even) {
+          background: transparent;
+        }
+        .data-lists:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    .elc-dialog-btn-cancel {
+      color: var(--primary-color);
+      background: transparent;
+      border: 1px solid var(--primary-color);
+    }
+  }
+
+  //团队训练--训练手册
+  .teacher-home {
+    .content {
+      .info-content {
+        ::v-deep.markdown-body {
+          h2 {
+            color: var(--neutral8);
+          }
+
+          h4 {
+            color: var(--neutral8);
+          }
+
+          hr {
+            border: 1px solid var(--neutral0);
+          }
+
+          p {
+            background: none;
+            color: var(--neutral8);
+          }
+        }
+      }
+    }
+  }
+
+  //团队训练--训练报告
+  #trainReportComponent {
+    .fontColor {
+      color: var(--neutral8);
+    }
+  }
+
+  // 团队训练--任务弹窗
+  #singleAnswerDialog,
+  #taskAnswerDialog {
+    .i-color {
+      color: var(--neutral7);
+    }
+  }
+
+  #taskAnswerDialog {
+    .task-desc,
+    .student-write {
+      border: 1px solid var(--neutral3);
+    }
+  }
+
+  // 团队训练--启动训练拖拽角色模块
+  .elc-user-drag-selector {
+    .roles-tips-span {
+      color: var(--orange-color);
+    }
+
+    .tips-square {
+      background: var(--orange-color);
+    }
+  }
+
+  // 团队训练---时间轴
+  .time-line-comp {
+    .current-radius-blue {
+      background: var(--primary-color) !important;
+    }
+
+    .radius-blue {
+      background: var(--primary-color);
+    }
+
+    .time-current {
+      background: var(--primary-color);
+    }
+
+    .line-through {
+      background: var(--neutral4);
+      opacity: 0.2;
+    }
+
+    .line {
+      background: var(--neutral4);
+    }
+
+    .time-hours {
+      .item {
+        color: var(--neutral7);
+      }
+    }
+  }
+
+  //团队训练--学员评分
+  #studentRatings {
+    .left-div {
+      .el-input__inner {
+        background-color: var(--bg-color-2) !important;
+        border-color: var(--neutral3) !important;
+        color: var(--neutral8) !important;
+      }
+    }
+
+    //中间分割线
+    .right-div {
+      border-left: 1px solid var(--neutral0);
+
+      .el-select .el-input .el-select__caret {
+        color: var(--neutral8);
+      }
+    }
+
+    .bg-purple-tow {
+      span:nth-child(1) {
+        color: var(--neutral8);
+      }
+
+      span.role,
+      span.desc {
+        color: var(--neutral7);
+      }
+    }
+
+    .competence {
+      .tt {
+        color: var(--neutral8);
+      }
+    }
+
+    .number {
+      span,
+      i {
+        color: var(--neutral8);
+      }
+    }
+
+    .competence {
+      .el-textarea__inner {
+        color: var(--neutral8);
+      }
+
+      ::v-deep .el-textarea__inner {
+        background-color: var(--bg-color-2) !important;
+        border: 1px solid var(--bg-color-2) !important;
+      }
+    }
+
+    ::v-deep .elc-btn-gradient {
+      .elc-btn-gradient-inner {
+        background: var(--primary-color);
+      }
+    }
+
+    .common-select {
+      ::v-deep .el-input__inner {
+        color: var(--neutral8) !important;
+      }
+
+      .el-input__inner {
+        background: var(--bg-color-2) !important;
+      }
+    }
+  }
+
+  //团队训练-右侧详情-小标题
+  .common-title {
+    .name-div {
+      color: var(--neutral8);
+    }
+  }
+
+  // 暂无数据
+  .empty_page {
+    .text-data {
+      color: var(--neutral8);
+    }
+  }
+
+  //团队训练-剧本执行-icon-color
+  .sky-bule-icon {
+    color: var(--primary-color);
+  }
+
+  .opacity-icon {
+    color: var(--neutral8);
+  }
+}

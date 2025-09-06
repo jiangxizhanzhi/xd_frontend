@@ -1,0 +1,237 @@
+.pad10 {
+  padding: 10px;
+}
+
+.pt10 {
+  padding-top: 10px;
+}
+
+.pb10 {
+  padding-bottom: 10px;
+}
+
+.pl10 {
+  padding-left: 10px;
+}
+
+.pr10 {
+  padding-right: 10px;
+}
+
+.pad20 {
+  padding: 20px;
+}
+
+.pt20 {
+  padding-top: 20px;
+}
+
+.pb20 {
+  padding-bottom: 20px;
+}
+
+.pl20 {
+  padding-left: 20px;
+}
+
+.pr20 {
+  padding-right: 20px;
+}
+
+.pad30 {
+  padding: 30px;
+}
+
+.pt30 {
+  padding-top: 30px;
+}
+
+.pb30 {
+  padding-bottom: 30px;
+}
+
+.pl30 {
+  padding-left: 30px;
+}
+
+.pr30 {
+  padding-right: 30px;
+}
+
+.pad40 {
+  padding: 40px;
+}
+
+.pt40 {
+  padding-top: 40px;
+}
+
+.pb40 {
+  padding-bottom: 40px;
+}
+
+.pl40 {
+  padding-left: 40px;
+}
+
+.pr40 {
+  padding-right: 40px;
+}
+
+.mar10 {
+  margin: 10px;
+}
+
+.mar20 {
+  margin: 20px;
+}
+
+.mar30 {
+  margin: 30px;
+}
+
+.mar40 {
+  margin: 40px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt30 {
+  margin-top: 30px;
+}
+
+.mt40 {
+  margin-top: 40px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+.mb15 {
+  margin-bottom: 15px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb30 {
+  margin-bottom: 30px;
+}
+
+.mb40 {
+  margin-bottom: 40px;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+.mr20 {
+  margin-right: 20px;
+}
+
+.mr30 {
+  margin-right: 30px;
+}
+
+.mr40 {
+  margin-right: 40px;
+}
+
+.ml5 {
+  margin-left: 5px;
+}
+
+.ml10 {
+  margin-left: 10px;
+}
+
+.ml20 {
+  margin-left: 20px;
+}
+.ml25 {
+  margin-left: 25px;
+}
+.ml30 {
+  margin-left: 30px;
+}
+
+.ml40 {
+  margin-left: 40px;
+}
+
+.el-button.cy-btn [class*='el-icon-'] + span {
+  margin-left: 10px !important;
+}
+
+.hr-dash-line {
+  border-bottom: 1px dashed var(--neutral1);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+.green-box,
+.blue-box,
+.orange-box,
+.gray-box {
+  display: inline-block;
+  padding: 1px 8px;
+  position: relative;
+  border-radius: 2px;
+}
+.green-box {
+  color: var(--green-color);
+  background-color: var(--green-color-2);
+}
+.blue-box {
+  color: var(--primary-color);
+  background-color: var(--primary-color-2);
+}
+.orange-box {
+  color: var(--orange-color);
+  background-color: var(--orange-color-2);
+}
+.gray-box {
+  color: var(--neutral8);
+  background-color: var(--neutral0);
+}
+
+.color-yellow {
+  color: var(--yellow-color);
+}
+.color-green {
+  color: var(--green-color);
+}
+.color-red {
+  color: var(--red-color);
+}
+.color-blue {
+  color: var(--primary-color);
+}
+.color-gray {
+  color: var(--neutral5);
+}

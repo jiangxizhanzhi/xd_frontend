@@ -1,0 +1,53 @@
+.form-button-bar {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.event-team-detail {
+  .el-tabs--border-card {
+    background: transparent !important;
+    box-shadow: none;
+    border: 1px solid transparent !important;
+  }
+  .el-tabs--border-card > .el-tabs__header {
+    border-bottom: 1px solid transparent !important;
+  }
+  .el-input-group__append,
+  .el-input-group__prepend {
+    border: 1px solid transparent !important;
+  }
+}
+
+.one-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cb-markdown {
+  .operate-btn {
+    .copy-btn {
+      display: none !important;
+    }
+  }
+}
+// 团队&红蓝 快速入门按钮
+.quick-start {
+  width: 60px;
+  height: 60px;
+  background: var(--bg-color-2);
+  box-shadow: 6px 6px 20px 0px var(--box-shadow-color);
+  border-radius: 50%;
+  text-align: center;
+  color: var(--primary-color);
+  position: fixed;
+  right: 73px;
+  bottom: 112px;
+  z-index: 100;
+  padding: 15px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

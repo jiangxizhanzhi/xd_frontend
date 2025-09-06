@@ -1,0 +1,259 @@
+// 收藏按钮
+.favorite-star {
+  i {
+    color: var(--orange-color);
+  }
+
+  span {
+    color: var(--neutral8);
+  }
+}
+
+.tag-common {
+  padding: 2px 8px;
+  text-align: center;
+  margin: 0 15px 0 0;
+  font-size: 14px;
+}
+
+.tag-compulsory {
+  background-color: rgba(53, 193, 238, 0.1);
+  color: var(--primary-color);
+}
+
+.tag-elective {
+  background-color: rgba(63, 213, 169, 0.1);
+  color: var(--green-color);
+}
+
+// 手风琴折叠面板
+.elc-collapse {
+  background: var(--bg-color-2);
+}
+
+.elc-collapse {
+  border: 0;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  position: relative;
+  .el-collapse-item__header {
+    height: 40px;
+    background: transparent;
+    border-bottom: 1px solid var(--neutral0);
+    color: var(--neutral8);
+
+    .cb-iconfont {
+      margin-left: 20px;
+      margin-right: 10px;
+    }
+
+    span {
+      font-size: 16px;
+    }
+  }
+
+  .el-collapse-item__wrap {
+    background: transparent;
+    border-bottom: 0;
+    padding: 20px 30px;
+  }
+
+  .el-icon-arrow-right {
+    display: none;
+  }
+
+  .el-collapse-item__content {
+    color: var(--neutral7);
+    min-height: 400px;
+  }
+}
+
+// 课程滚动box
+.tool-box-scroller {
+  background: var(--bg-color-3);
+}
+
+// 理论基础
+.practice-basic-title {
+  .title {
+    .catagory-name {
+      background: var(--green-color-2);
+      color: var(--green-color);
+    }
+
+    .difficutly-name {
+      background: var(--orange-color-2);
+      color: var(--orange-color);
+    }
+  }
+}
+// 实践操作
+.practice-operation-question-title {
+  .desc span {
+    color: var(--neutral7);
+  }
+
+  .title {
+    .catagory-name {
+      background: var(--green-color-2);
+      color: var(--green-color);
+    }
+    .difficutly-name {
+      background: var(--orange-color-2);
+      color: var(--orange-color);
+    }
+    .content {
+      span {
+        color: var(--neutral8);
+      }
+    }
+  }
+}
+
+// 实践操作习题详情
+.operation-question {
+  .content {
+    background: var(--bg-color-2);
+  }
+  .explain {
+    background: var(--bg-color-2);
+  }
+  .replay-span {
+    color: var(--neutral8);
+  }
+}
+
+.basic-questions {
+  min-height: 360px;
+}
+
+.practice-wrapper {
+  width: 100%;
+  min-height: calc(100% - 80px);
+  box-sizing: border-box;
+
+  .practice-header {
+    .el-tabs__nav {
+      width: 160px;
+      height: 32px;
+    }
+  }
+
+  .practice-content {
+    width: 100%;
+
+    .classify-list {
+      position: relative;
+    }
+
+    .practice-tabs {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .recommend-study {
+    width: 100%;
+    padding: 0 0 20px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: -20px;
+
+    .package-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: calc(20% - 12px);
+      margin-right: 15px;
+      margin-bottom: 15px;
+      background: var(--bg-color-2);
+      border-radius: 4px;
+    }
+
+    .package-card:nth-child(5n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.knowledgePoints {
+  width: 100%;
+  display: flex;
+  margin-bottom: 10px;
+
+  .title {
+    padding: 0 8px 0 20px;
+    position: relative;
+
+    span {
+      height: 24px;
+      line-height: 24px;
+    }
+
+    .point {
+      position: absolute;
+      width: 6px;
+      height: 8px;
+      left: 0px;
+      top: 8px;
+    }
+  }
+
+  .knowledgeColumns {
+    width: calc(100% - 100px);
+
+    .column {
+      background-color: var(--neutral0);
+      float: left;
+      margin-bottom: 10px;
+      border-radius: 2px;
+      min-width: 100px;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 0 20px;
+      height: 24px;
+      line-height: 24px;
+      margin-left: 20px;
+      font-family: Microsoft YaHei;
+      font-weight: 400;
+    }
+  }
+}
+.status-tip {
+  .success-status-tip {
+    i {
+      color: var(--green-color);
+      font-size: 24px;
+      padding-right: 10px;
+    }
+  }
+
+  .error-status-tip {
+    i {
+      color: var(--red-color);
+      font-size: 24px;
+      padding-right: 10px;
+    }
+  }
+}
+
+.color2 {
+  color: var(--neutral8);
+}
+
+.color5 {
+  color: var(--neutral7);
+}
+.bg1 {
+  background: var(--primary-color);
+}
+
+.clear::before,
+.clear::after {
+  content: '';
+  display: block;
+  clear: both;
+}

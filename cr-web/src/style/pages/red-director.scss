@@ -1,0 +1,43 @@
+#task-editor-new {
+  .rows,
+  .el-collapse-item__header {
+    border-bottom: 1px solid var(--neutral3);
+  }
+
+  .task-num,
+  .row-num,
+  .row-num,
+  .people-num {
+    color: var(--neutral8);
+  }
+
+  .task-top {
+    background: var(--bg-color-4);
+  }
+
+  .selected {
+    border: 1px solid var(--primary-color) !important;
+  }
+
+  .right {
+    background: var(--bg-color-4);
+
+    .el-form-item__label {
+      color: var(--neutral8);
+    }
+
+    .el-form-item__content {
+      color: var(--neutral8);
+    }
+  }
+
+  .task-content {
+    border-bottom: 1px solid var(--neutral1);
+  }
+
+  .task-top-complete {
+    .complete-span {
+      color: var(--neutral7);
+    }
+  }
+}

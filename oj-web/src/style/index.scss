@@ -1,0 +1,12 @@
+@import './pages/exam.scss';
+@import './main.scss';
+@import './pages/lay-ui.scss';
+@import './reset.css';
+@import './common.scss';
+@import './font.scss';
+body {
+  background: var(--bg-color-1) !important;
+}
+* {
+  font-family: Helvetica, 'PingFang SC', Arial, 'Microsoft Yahei', sans-serif !important;
+}

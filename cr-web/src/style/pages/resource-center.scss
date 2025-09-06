@@ -1,0 +1,66 @@
+.color-cy20 {
+  color: var(--cy20);
+}
+
+#toolHomeVue {
+  .toolList {
+    border: 1px solid var(--red-color);
+
+    ul li {
+      color: var(--red-color);
+    }
+  }
+
+  .normalBg {
+    .toolName {
+      color: var(--neutral8);
+    }
+  }
+
+  .hoverBg {
+    .toolName {
+      color: var(--neutral0);
+    }
+  }
+}
+
+#toolShellDetails {
+  .title-head {
+    color: var(--neutral8);
+  }
+}
+
+#GHDBLibraryDetail {
+  .title-head {
+    color: var(--neutral8);
+  }
+}
+
+.middle-line {
+  width: 100%;
+  border-bottom: 1px solid var(--neutral3);
+  opacity: 0.5;
+}
+
+#tool-shell {
+  .label {
+    color: var(--neutral8);
+  }
+}
+
+// exp详情
+#toolEXPDetails {
+  .title-head {
+    color: var(--neutral8);
+  }
+
+  .line-cent {
+    width: 100%;
+    border-bottom: 1px solid var(--neutral3);
+    opacity: 0.5;
+  }
+
+  .card-color-grey {
+    color: var(--neutral8);
+  }
+}

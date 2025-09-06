@@ -1,0 +1,8 @@
+// 搜索组件列表样式
+// input组件
+.resource-list {
+  $activeColor: var(--neutral8);
+  .header {
+    color: $activeColor;
+  }
+}

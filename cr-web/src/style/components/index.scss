@@ -1,0 +1,276 @@
+//
+// @import '@cyber/ui/lib/style/themify';
+
+// 组件样式表
+/* @import './button.scss'; */
+@import './search-input.scss';
+@import './color.scss';
+
+// 资源中心样式表
+@import '../pages/resource-center/index.scss';
+
+body {
+  background: var(--bg-color-1) !important;
+  color: var(--neutral8); // 设置theme的主题色颜色
+
+  // 二级背景色
+  .second-background {
+    background: var(--bg-color-2);
+  }
+
+  // 首页列表
+  //单兵训练、漏洞还原、团队训练、红蓝对抗列表页
+  .page {
+    .trains_item {
+      color: var(--neutral8);
+      border-bottom: 1px solid var(--neutral1);
+      background: var(--bg-color-2);
+
+      &:last-child {
+        border-bottom: 1px solid transparent;
+      }
+
+      .common-list-comp:hover {
+        background: var(--neutral0);
+      }
+
+      .train_status {
+        color: rgba(237, 242, 255, 1);
+      }
+    }
+  }
+
+  // 红蓝对抗导演角色任务编排
+  #trafficEventManagement,
+  #task-editor-new {
+    background: var(--bg-color-3);
+  }
+
+  //单兵训练记录 tree组件
+  .elc-tree {
+    .treeSpan {
+      color: var(--neutral8);
+    }
+
+    .el-tree {
+      background: transparent !important;
+    }
+
+    .expanded::before {
+      color: var(--primary-color);
+    }
+
+    .el-tree--highlight-current
+      .el-tree-node.is-current
+      > .el-tree-node__content {
+      background: transparent !important;
+    }
+
+    .is-current {
+      .treeSpanSecond {
+        color: var(--primary-color);
+      }
+    }
+
+    .el-tree-node__content:hover {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        // inset: 0;
+        background: var(--bg-color-3) !important;
+        opacity: 0.2;
+      }
+
+      .treeSpan {
+        color: var(--primary-color);
+      }
+    }
+
+    .el-tree-node:focus > .el-tree-node__content {
+      background-color: transparent !important;
+    }
+
+    .el-tree-node__label {
+      color: var(--neutral8);
+    }
+  }
+
+  // 探针 switch组件样式重置
+
+  .elc-normal-dialog {
+    .el-dialog {
+      background: var(--cy13);
+      // box-shadow: -4px 0 10px 0 var(--c51), -10px 0 26px 4px var(--c52);
+    }
+
+    .el-dialog__header {
+      border-bottom: 1px solid var(--neutral3);
+
+      span {
+        color: var(--neutral8);
+      }
+    }
+
+    .el-dialog__body {
+      border-bottom: 1px solid var(--neutral3);
+    }
+
+    .el-form-item__label {
+      color: var(--neutral8);
+    }
+  }
+
+  .submit_review {
+    .el-picker-panel__icon-btn {
+      color: var(--neutral8);
+    }
+  }
+
+  // 进度条样式重写
+  .elc-progress {
+    .el-progress-bar__outer {
+      background: var(--red-color-4);
+    }
+
+    .el-progress-bar__innerText {
+      display: none;
+    }
+
+    .el-progress-bar__inner {
+      background-color: var(--red-color);
+    }
+  }
+
+  // 星星评分
+  .elc-rate {
+    .el-icon-star-off {
+      color: var(--neutral3) !important;
+    }
+
+    .el-icon-star-on {
+      color: var(--primary-color) !important;
+    }
+  }
+
+  .tabsCommon {
+    .el-tabs__nav-scroll {
+      // background: var(--cy2-1) !important;
+    }
+
+    .el-tabs__item {
+      color: var(--neutral8);
+    }
+
+    .el-tabs__item.is-active {
+      background: var(--primary-color);
+    }
+  }
+
+  // 时间轴 tooltip样式修改
+  .time-line-tooltip {
+    .current-tips-red {
+      .tips-txt {
+        color: var(--neutral8);
+      }
+
+      .tips-time {
+        color: var(--neutral7);
+      }
+    }
+
+    .current-tips-blue {
+      .tips-txt {
+        color: var(--neutral8);
+      }
+
+      .tips-time {
+        color: var(--neutral7);
+      }
+    }
+
+    .current-radius-red {
+      background: var(--red-color) !important;
+    }
+
+    .radius-red {
+      background: var(--red-color);
+    }
+
+    .current-radius-blue {
+      background: var(--primary-color);
+    }
+
+    .radius-blue {
+      background: var(--primary-color);
+    }
+  }
+
+  // markdown样式
+  .markdownContent {
+    .v-note-wrapper {
+      .v-note-panel {
+        .v-note-show {
+          .v-show-content,
+          .v-show-content-html {
+            color: var(--neutral8);
+
+            h2 {
+              background: var(--bg-color-2);
+              color: var(--neutral8);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .markdown-body table {
+    th {
+      font-weight: 200;
+    }
+  }
+  // 单兵巡练时间轴
+  .time-line-comp {
+    .current-radius {
+      background: var(--primary-color) !important;
+    }
+
+    .current-radius-red {
+      background: var(--red-color) !important;
+    }
+
+    .radius {
+      background: var(--primary-color);
+    }
+
+    .radius-red {
+      background: var(--red-color);
+    }
+  }
+
+  // 评估状态
+  //成功
+  .success {
+    color: var(--green-color);
+  }
+
+  //失败
+  .fail {
+    color: var(--red-color);
+  }
+
+  //驳回
+  .reject {
+    color: var(--orange-color);
+  }
+
+  //待审核
+  .toevaluate {
+    color: var(--neutral7);
+  }
+
+  .to-score {
+    color: var(--primary-color);
+  }
+}

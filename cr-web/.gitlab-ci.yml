@@ -1,0 +1,51 @@
+stages:
+  - build
+  # - site
+  - '10.100.1.14'
+
+variables:
+  GIT_SSL_NO_VERIFY: '1'
+  PROJECT_NAME: 'cr-web'
+
+
+build:
+  stage: build
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+    - if: '$CI_PIPELINE_SOURCE == "trigger"'
+  script:
+    - yarn install
+    - yarn run build
+  artifacts:
+    paths:
+      - dist
+
+# site:
+#   stage: site
+#   rules:
+#     - if: '$CI_COMMIT_BRANCH == "develop"'
+#     - if: '$CI_PIPELINE_SOURCE == "schedule"'
+#     - if: '$CI_PIPELINE_SOURCE == "web"'
+#     - if: '$CI_PIPELINE_SOURCE == "trigger"'
+#   script:
+#     - rm -rf /usr/share/nginx/html/$PROJECT_NAME/
+#     - mkdir /usr/share/nginx/html/$PROJECT_NAME/
+#     - cp -r dist/* /usr/share/nginx/html/$PROJECT_NAME
+#     - cp -f nginx/*.conf /etc/nginx/default.d
+#   artifacts:
+#     paths:
+#       - dist
+
+'10.100.1.14':
+  stage: '10.100.1.14'
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+    - if: '$CI_PIPELINE_SOURCE == "trigger"'
+  script:
+    - mv dist $PROJECT_NAME
+    - ssh root@10.100.1.14 "rm -rf /home/apps/pages/$PROJECT_NAME/*"
+    - scp -r $PROJECT_NAME root@10.100.1.14:/home/apps/pages/

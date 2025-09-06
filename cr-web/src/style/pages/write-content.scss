@@ -1,0 +1,109 @@
+.tags_error {
+  color: var(--danger-color);
+}
+
+.line-to {
+  height: 36px;
+  line-height: 36px;
+  color: var(--neutral8);
+}
+
+// 新增团队，新增红蓝
+.write-content {
+  .tag-add-btn {
+    min-width: 68px;
+    vertical-align: middle;
+    display: inline-block;
+
+    img {
+      margin: 5px 6px 0 0;
+    }
+  }
+
+  .roles-group-comp {
+    background: var(--bg-color-3);
+  }
+
+  .roles-list {
+    background: var(--bg-color-4);
+  }
+}
+
+.role-delete {
+  background: var(--mask-color);
+}
+
+.external-div {
+  .common-div {
+    margin: 0 18px;
+    font-weight: 400;
+    .number {
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    span {
+      vertical-align: sub;
+    }
+  }
+
+  .current {
+    .number {
+      color: var(--neutral8);
+      background: var(--primary-color);
+    }
+
+    span {
+      color: var(--neutral8);
+    }
+  }
+
+  .normal {
+    .number {
+      color: var(--neutral7);
+      background: var(--bg-color-2);
+      border: 1px solid var(--neutral3);
+    }
+
+    span {
+      color: var(--neutral5);
+    }
+  }
+}
+
+.template-list {
+  .template_item {
+    border-bottom: 1px solid var(--neutral3);
+    background: var(--bg-color-3);
+
+    &:last-child {
+      border-bottom: 1px solid transparent;
+      margin-bottom: 20px;
+      border-radius: 0 0 2px 2px;
+    }
+
+    &:hover {
+      background: var(--neutral0);
+    }
+  }
+
+  .template_item_current {
+    background: var(--neutral0);
+  }
+
+  .normal {
+    .number {
+      color: var(--neutral7);
+      background: var(--bg-color-2);
+      border: 1px solid var(--neutral3);
+    }
+
+    span {
+      color: var(--neutral5);
+    }
+  }
+}

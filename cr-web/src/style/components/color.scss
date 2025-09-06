@@ -1,0 +1,56 @@
+// 颜色选择样式表
+.color-blue {
+  color: var(--blue-color);
+}
+
+.color-gray {
+  color: var(--neutral8);
+}
+
+.color-sky-blue {
+  color: var(--primary-color);
+}
+
+.color-green {
+  color: var(--green-color) !important;
+}
+
+.color-yellow {
+  color: var(--orange-color);
+}
+
+.color-red {
+  color: var(--red-color);
+}
+
+.color-white {
+  color: var(--neutral8);
+}
+
+.color-11 {
+  color: var(--neutral8) !important;
+}
+
+.bg-color-blue {
+  background-color: var(--blue-color);
+}
+
+.bg-color-gray {
+  background-color: var(--neutral8);
+}
+
+.bg-color-sky-blue {
+  background-color: var(--primary-color);
+}
+
+.bg-color-green {
+  background-color: var(--green-color);
+}
+
+.bg-color-yellow {
+  background-color: var(--yellow-color);
+}
+
+.bg-color-red {
+  background-color: var(--red-color);
+}

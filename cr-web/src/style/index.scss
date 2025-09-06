@@ -1,0 +1,25 @@
+@import 'components';
+@import 'pages/train.scss';
+@import 'pages/write-content.scss';
+@import 'pages/red-referee.scss';
+@import 'common/index';
+@import 'override';
+@import 'pages/resource-center.scss';
+@import 'pages/lay-ui.scss';
+@import 'pages/red-director.scss';
+@import './pages/image-select.scss';
+@import './common.scss';
+
+* {
+  box-sizing: border-box;
+  font-family: Helvetica, 'PingFang SC', Arial, 'Microsoft Yahei', sans-serif !important;
+}
+
+body {
+  background: var(--bg-color-1) !important;
+}
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
