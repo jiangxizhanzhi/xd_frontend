@@ -1,0 +1,26 @@
+export default {
+  lists: 'Message List',
+  systemNotification: 'System Announcement',
+  other: 'Other',
+  selectAll: 'Select All',
+  registerSuc: 'Registered Successfully',
+  registerErr: 'Registration Failed',
+  changePassSuc: 'Password Changed Successfully',
+  changePassErr: 'Password Changed Failed',
+  warning: 'Prompt',
+  changePassSucRelogin: 'Changed  successful. Please log in again',
+  confirm: 'Confirm',
+  cancel: 'Cancel',
+  warningMsg:
+    'Your login password is the default password, please change the password.',
+  noticeType: {
+    system: 'System',
+    course: 'Course',
+    practice: 'Exercise',
+    exam: 'Exam',
+  },
+  extensionReminder: 'Reminder for seven days postponement',
+  noMoreReminder: 'No more reminder',
+  setRemindAgainSuccess: 'Set a seven-day postponement reminder successfully',
+  setNoMoreSuccess: 'Set no more reminders successfully',
+};

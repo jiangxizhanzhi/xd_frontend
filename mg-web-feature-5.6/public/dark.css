@@ -1,0 +1,130 @@
+body.theme-dark {
+  /* 1、-----主题色 start----- */
+    /* 常规 提示 可视化颜色 */
+    --primary-color: #0acff2;
+    /* 点击hover 可视化颜色2 */
+    --primary-color-8: #0fafcf;
+    /* 禁用 */
+    --primary-color-4: #196e89;
+    /* 特殊场景 */
+    --primary-color-2: #2d4e6a;
+  /* -----主题色 end----- */
+  /* 2、-----辅助色 start----- */
+    /* 常规 报错 */
+    --red-color: #ff6652;
+    /* 点击hover 可视化颜色2 */
+    --red-color-8: #d15849;
+    /* 禁用 */
+    --red-color-4: #763c37;
+    /* 特殊场景 */
+    --red-color-2: #492d2e;
+    /* 常规 警示 可视化颜色 */
+    --orange-color: #ff7d2c;
+    /* 点击hover 可视化颜色2 */
+    --orange-color-8: #d16a2a;
+    /* 禁用 */
+    --orange-color-4: #764528;
+    /* 特殊场景 */
+    --orange-color-2: #493227;
+    /* 常规 可视化颜色 */
+    --yellow-color: #f2a92a;
+    /* 点击hover 可视化颜色2 */
+    --yellow-color-8: #c78d29;
+    /* 禁用 */
+    --yellow-color-4: #715727;
+    /* 特殊场景 */
+    --yellow-color-2: #463b26;
+    /* 常规 成功 可视化颜色 */
+    --green-color: #36d94c;
+    /* 点击hover 可视化颜色2 */
+    --green-color-8: #30b444;
+    /* 禁用 */
+    --green-color-4: #266a34;
+    /* 特殊场景 */
+    --green-color-2: #21442d;
+    /* 常规 可视化颜色 */
+    --cyan-color: #25c1d9;
+    /* 点击hover 可视化颜色2 */
+    --cyan-color-8: #23a0b5;
+    /* 禁用 */
+    --cyan-color-4: #1f606d;
+    /* 特殊场景 */
+    --cyan-color-2: #1d4049;
+    /* 常规 提示 可视化颜色 */
+    --blue-color: #448aff;
+    /* 点击hover 可视化颜色2 */
+    --blue-color-8: #3b74d3;
+    /* 禁用 */
+    --blue-color-4: #2b4a7c;
+    /* 特殊场景 */
+    --blue-color-2: #243551;
+  /* -----辅助色 end----- */
+  /* 3、-----中性色 start----- */
+    --neutral9: rgba(255, 255, 255, 1);
+    /* 标题/正文 */
+    --neutral8: rgba(255, 255, 255, 0.9);
+    /* 二级信息 */
+    --neutral7: rgba(255, 255, 255, 0.7);
+    --neutral6: rgba(255, 255, 255, 0.55);
+    /* 三级信息 */
+    --neutral5: rgba(255, 255, 255, 0.4);
+    /* 禁用文字 */
+    --neutral4: rgba(255, 255, 255, 0.3);
+    /* 输入框描边 */
+    --neutral3: rgba(255, 255, 255, 0.2);
+    --neutral2: rgba(255, 255, 255, 0.15);
+    /* 二级分割线  半透明背景1 例：表格标题栏 */
+    --neutral1: rgba(255, 255, 255, 0.1);
+    /* 基本分割线  半透明背景2 例：表格行hover */
+    --neutral0: rgba(255, 255, 255, 0.05);
+  /* -----中性色 end----- */
+  /* 4、-----背景颜色 start----- */
+    /* 页面背景1 */
+    --bg-color-1: #131926;
+    /* 背景2（常规布局&弹窗或下拉框） */
+    --bg-color-2: #20293a;
+    /* 背景3（二级背景） */
+    --bg-color-3: #192133;
+    /* 背景4（背景3之上的动态背景） */
+    --bg-color-4: #20293a;
+  /* -----背景颜色 end----- */
+  /* 5、-----遮罩 start----- */
+    --mask-color: rgba(0, 0, 0, 0.45);
+  /* 6、-----遮罩 end----- */
+    --white-color: rgb(255, 255, 255, 0.9);
+  /* 7、-----导航 start----- */
+    --nav-color: #20293a;
+    --nav-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1);
+    --nav-text: rgba(255, 255, 255, 0.9);
+  /* -----导航 end----- */
+  /* 8、-----按钮 start----- */
+    --button-text: rgba(255, 255, 255, 0.9);
+  /* -----按钮 end----- */
+  /* 9、-----滚动条 start----- */
+    --scrollbar-color: var(--neutral3);
+  /* -----滚动条 end----- */
+  /* 10、-----shadow start----- */
+    --box-shadow-color: rgba(0, 0, 0, 0.35);
+  /* -----shadow end----- */
+  /* 11、登录页面登录框背景色 */
+    --login-bg-color: rgba(68, 138, 255, 0.15);
+  /* 12、echart-radar 活动区域背景色 */
+    --echart-active-bg-color: rgba(68, 138, 255, 0.1);
+  /* table 背景色 */
+    --table-bg-color: #20293a;
+    /* logo 文本颜色*/
+    --logo-color: #66dbff
+}
+
+body.theme-dark .root-container {
+  /* background-image: url('/page/mg/public/body-dark.jpg'); */
+  background-image: url('');
+}
+body.theme-dark .root-container .cb-navi .navi-footer {
+  width: 343px;
+  /* background-image: url('/page/mg/public/header-dark.png'); */
+  background-image: url('');
+}
+body.theme-dark .cb-layout .layout-container {
+  /* background: transparent !important; */
+}

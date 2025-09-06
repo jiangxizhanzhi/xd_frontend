@@ -1,0 +1,190 @@
+.visual-screen {
+  --triangle-color: #85b1dd;
+  --sc-left-bg: linear-gradient(
+    90deg,
+    rgb(13, 20, 27, 0.4),
+    rgba(3, 4, 10, 0.15)
+  );
+  --white-color: #fff;
+  --number2-color: #c7dedf;
+  --scores2-color: #c6dfe0;
+  --scores-color: #e3c385;
+  --numbers-color: #cd8d54;
+  --people-color: #85e3a5;
+  --people-bg: #1383e7;
+  --comma1-color: linear-gradient(
+    90deg,
+    #e3c385 0%,
+    rgba(227, 195, 133, 0) 100%
+  );
+  --comma2-color: linear-gradient(
+    90deg,
+    #c7dedf 0%,
+    rgba(199, 222, 223, 0) 100%
+  );
+  --comma3-color: linear-gradient(
+    90deg,
+    #cd8d54 0%,
+    rgba(205, 141, 84, 0) 100%
+  );
+  --li-line-height: 30px;
+  --li-text-shadow: 0px 0px 9px #516c87;
+  --role_name-mg: 0 19px;
+  --role_name-width: 65px;
+  --role_name-top: 10px;
+  --finished-mg-lf: 6px;
+  --numbers-mg-rg: 25px;
+  --numbers-mg-lf: 26px;
+  --comma-width: 12px;
+  --comma-height: 4px;
+  --comma-mg-rg: 6px;
+  --score-mg-lf: 22px;
+  --score-mg-rg: 5px;
+  --scores-mg-lf: 28px;
+  --scores-mg-rg: 11px;
+  --people-mg-bm: 16px;
+  --type-height: 30px;
+  --type-line-height: 27px;
+  --name-mg-lf: 9px;
+  --number-mg-rg: 10px;
+  --number-line-height: 31px;
+
+  &-center-group {
+    display: flex;
+    height: 100%;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      inset: 0;
+      background: linear-gradient(90deg, #697da0, transparent, #697da0);
+      z-index: 1;
+      // pointer-events: none;
+    }
+
+    .ueframe {
+      position: absolute;
+      inset: 5px;
+      z-index: 0;
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
+    }
+
+    .sc-left {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 10;
+    }
+
+    .sc-center {
+      flex: 3;
+      height: 100%;
+    }
+
+    .sc-right {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 10;
+
+      .scense-contain,
+      .personnel_div,
+      .skill_div,
+      .dynamic_div {
+        margin-top: 8px;
+
+        & > div:nth-child(2) {
+          position: relative;
+
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(-90deg, #182033, rgba(47, 62, 101, 0));
+            opacity: 0.4;
+            z-index: 2;
+          }
+
+          & > div {
+            position: relative;
+            z-index: 5;
+          }
+        }
+      }
+    }
+
+    .sc-left {
+      // 训练人数
+      .training-people {
+        flex: 1;
+        position: relative;
+
+        .triangle {
+          width: 16px;
+          height: 14px;
+          border: 8px solid transparent;
+          border-top-color: var(--triangle-color);
+          border-left-color: var(--triangle-color);
+          position: absolute;
+          left: 0;
+        }
+      }
+
+      .task-status,
+      .skill-type,
+      .battle-traffic,
+      .rank {
+        margin-top: 8px;
+
+        & > div:nth-child(2) {
+          position: relative;
+
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, #182033, rgba(47, 62, 101, 0));
+            opacity: 0.4;
+            z-index: 2;
+          }
+
+          & > div {
+            position: relative;
+            z-index: 5;
+          }
+        }
+      }
+
+      // 任务状态
+      .task-status {
+        margin-top: 27px !important;
+        flex: 2;
+      }
+
+      // 技能类别
+      .skill-type {
+        flex: 4;
+      }
+
+      // 战场流量
+      .battle-traffic {
+        flex: 2;
+      }
+
+      // 排行榜
+      .rank {
+        overflow: hidden;
+        flex: 3;
+      }
+    }
+  }
+}

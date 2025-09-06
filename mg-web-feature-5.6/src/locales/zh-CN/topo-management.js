@@ -1,0 +1,20 @@
+export default {
+  topo: {
+    name: '名称',
+    desc: '描述',
+    nodeSize: '节点规模',
+    creator: '创建者',
+    updateTime: '更新时间',
+    authOperation: '授权操作',
+    operation: '操作',
+    plzEnterName: '请输入拓扑名称',
+    basicInformation: '基础信息',
+    topologyConfig: '拓扑编排',
+    topologyName: '拓扑名称',
+    plzEnterDesc: '请输入拓扑描述',
+    topology: '拓扑',
+    confirmCancel: '确定取消吗？',
+    info: '提示',
+    isRecoverTopoScene: '存在未保存的拓扑或场景，是否恢复？',
+  },
+};

@@ -1,0 +1,36 @@
+export default {
+  notice: 'Announcement',
+  addNotice: 'New Announcement',
+  editNotice: 'Edit Announcement',
+  title: 'Title',
+  content: 'Content',
+  created: 'Release Time',
+  creator: 'Publisher',
+  group: 'Target',
+  organization: 'Org',
+  addSuccess: 'Announcement Added Successfully',
+  operate: 'Operation',
+  type: 'Type',
+  passwdWarn:
+    'Your login password is the default password, please change the password.',
+  groupEnum: {
+    all: 'All',
+    teacher: 'Trainee',
+    student: 'Trainer',
+    custom: 'Custom Organization',
+  },
+  noticeType: {
+    system: 'System',
+    course: 'Course',
+    practice: 'Exercise',
+    exam: 'Exam',
+  },
+  validator: {
+    inputTitle: 'Please enter announcement title',
+    titleLength: 'Length of announcement title between 4-40',
+    inputContent: 'Please enter announcement content',
+    selectOrganization: 'Select Organization',
+    pleaseUploadPictures: 'Select Picture',
+  },
+  editSuccess: 'Announcement Edit Successful',
+};

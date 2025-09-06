@@ -1,0 +1,12 @@
+.timecolor {
+  color: var(--neutral7);
+}
+.dynamic {
+  ul {
+    li {
+      position: relative;
+      color: var(--neutral8);
+      border-bottom: 1px solid var(--neutral1);
+    }
+  }
+}

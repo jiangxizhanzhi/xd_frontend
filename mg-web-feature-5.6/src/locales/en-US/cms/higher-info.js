@@ -1,0 +1,23 @@
+export default {
+  mgr: '\u0020Management',
+  add: 'Add',
+  enterName: 'Please enter a name',
+  file: 'File',
+  uploadInfo: 'Click or drag the file to upload',
+  uploadTip:
+    'Please upload the {type} file with a size of less than {fileSize}',
+  uploadTime: 'Upload Time',
+  author: 'Author',
+  enterAuthor: 'Please enter the author',
+  isVerify: 'Verification',
+  environmentType: 'Environment Type',
+  selectEnvironmentType: 'Select an environment type',
+  topology: 'Topology',
+  sceneName: ' Scene Name',
+  loophole: 'Vulnerability Analysis',
+  pleaseUploadFile: 'Please upload the file',
+  download: 'Download',
+  verify: 'Not Verified',
+  verified: 'Verified',
+  sceneSuccess: 'Save Success',
+};

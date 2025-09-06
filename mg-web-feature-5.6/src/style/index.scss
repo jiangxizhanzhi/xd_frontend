@@ -1,0 +1,53 @@
+@import './common.scss';
+@import './pages/message.scss';
+@import './pages/visual-screen/index.scss';
+@import './pages/markdown.scss';
+@import './pages/vuln.scss';
+@import './font.scss';
+@import './visual-screen/screen-1/index.scss';
+@import './visual-screen/screen-2/index.scss';
+@import './visual-screen/screen-3/index.scss';
+@import './main.scss';
+
+body {
+  background: var(--bg-color-1) !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Helvetica, 'PingFang SC', Arial, 'Microsoft Yahei', sans-serif !important;
+}
+.el-notification.right {
+  right: 24px !important;
+}
+.scene-countdown-tip {
+  background-color: var(--bg-color-2) !important;
+  box-shadow: 4px 4px 10px 0px var(--box-shadow-color) !important;
+  border-color: var(--bg-color-2) !important;
+  border-radius: 0 !important;
+  padding: 16px 26px 16px 16px !important;
+  .wrap-span {
+    color: var(--primary-color);
+    margin-right: 5px;
+  }
+  .a-link {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  .el-notification__title {
+    font-size: 16px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: var(--neutral8);
+  }
+  .el-notification__content {
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: var(--neutral8);
+  }
+  .el-icon-warning {
+    color: var(--orange-color) !important;
+  }
+}

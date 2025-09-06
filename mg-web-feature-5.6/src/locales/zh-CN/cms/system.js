@@ -1,0 +1,40 @@
+export default {
+  organization: {
+    deleteSuccess: '删除成功',
+  },
+
+  settings: {
+    inputNameLength: '名称长度在4-40字符之间',
+    inputNameLength255: '名称长度在1-255字符之间',
+    inputNameLength219: '名称长度在1-219字符之间',
+    inputStageNameLength: '阶段名称长度在4-255字符之间',
+    inputDescLength: '描述长度在4-280字符之间',
+    inputScenseDescLength: '描述长度在1-2048字符之间',
+    inputProbeDescLength: '描述长度在1-500字符之间',
+    inputCategoryLength: '长度在4-20字符之间',
+    descLengthInput2048: '描述长度在1-2048字符之间',
+    inputTaskNameLength: '任务名称长度在1-255字符之间',
+    inputTrainNameLength: '场景名称长度在1-255字符之间',
+    inputProbeName: '探针名称长度在1~40字符之间',
+    inputTemplateName: '模板名称长度在1~40字符之间',
+    probeParamDescLengthError: '参数描述长度在1-500个字符',
+    inputAssessNameLength: '名称长度在1-255字符之间',
+    descLengthInput255: '描述长度在1-255字符之间',
+  },
+
+  event_list: {
+    wait: '等待中',
+    initiate: '初始化',
+    create: '已创建',
+    start: '已启动',
+    stop: '已关闭',
+    restart: '已重启',
+    pause: '已暂停',
+    unpause: '暂停恢复',
+    snapshot: '快照中',
+    delete: '已删除',
+    modify: '已修改',
+    running: '运行中',
+    notStart: '未开始',
+  },
+};

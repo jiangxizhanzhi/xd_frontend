@@ -1,0 +1,32 @@
+.cb-markdown {
+  .markdown-body {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 30px;
+
+      li {
+        list-style-type: disc;
+        margin: 10px 0;
+
+        p {
+          margin: 10px 0;
+        }
+      }
+    }
+
+    p {
+      margin: 10px 0;
+    }
+  }
+  img,
+  pre {
+    margin: 20px 0;
+  }
+}

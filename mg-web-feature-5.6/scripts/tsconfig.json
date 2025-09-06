@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "lib": ["es6"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2017",
+    "esModuleInterop": true
+  },
+  "exclude": ["dist", "node_modules", "test", "**/*.tpl", "**/template/**/*"]
+}

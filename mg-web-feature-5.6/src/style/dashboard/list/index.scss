@@ -1,0 +1,57 @@
+.dashboard-wrapper {
+  .wrapper {
+    .resources-wrapper,
+    .daily-user,
+    .div-margin-left {
+      background: var(--bg-color-2);
+    }
+
+    .middle-wrapper {
+      background: var(--bg-color-2);
+    }
+
+    .wrapper-bottom {
+      background: var(--bg-color-2);
+    }
+
+    .content-tab {
+      background: var(--bg-color-2);
+    }
+  }
+
+  .left-bottom-wrapper {
+    .recent-news {
+      background: var(--bg-color-2);
+    }
+  }
+
+  .middle-bottom-wrapper {
+    .recent-news {
+      background: var(--bg-color-2);
+    }
+
+    .recent-news-bottom {
+      background: var(--bg-color-2);
+    }
+
+    .content-tab {
+      background: var(--bg-color-2);
+    }
+  }
+
+  .left-wrapper {
+    .left-top-wrapper {
+      background: var(--bg-color-2);
+    }
+
+    .left-bottom-wrapper {
+      .recent-news {
+        background: var(--bg-color-2);
+      }
+
+      .content-tab {
+        background: var(--bg-color-2);
+      }
+    }
+  }
+}

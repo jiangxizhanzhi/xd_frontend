@@ -1,0 +1,132 @@
+.vuln-web {
+  .cb-markdown {
+    word-break: initial;
+    &.viewer.g-md-viewer-bg {
+      overflow: auto;
+      scrollbar-width: thin;
+      background-color: var(--bg-color-3);
+      min-height: 50px;
+      &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        background-color: var(--bg-color-2);
+      }
+
+      &::-webkit-scrollbar-corner {
+        background-color: var(--bg-color-2);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-color);
+      }
+      .markdown-body {
+        height: auto;
+        padding: 8px 16px;
+      }
+    }
+  }
+
+  .cb-dialog {
+    .cb-dialog-body {
+      .el-form {
+        padding: 0px 5% 0px 0px;
+      }
+    }
+  }
+}
+
+.vuln-second-background {
+  background: var(--bg-color-2);
+}
+
+.ct-g-title-box {
+  display: flex;
+  align-items: center;
+  &::before {
+    content: '';
+    margin-right: 8px;
+    width: 6px;
+    height: 8px;
+    background: var(--primary-color);
+  }
+  .ct-g-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--neutral8);
+  }
+}
+
+.color-cy20 {
+  color: var(--cy20);
+}
+
+.vuln-color-white {
+  color: var(--neutral8);
+}
+
+// 工具相关样式
+#toolHomeVue {
+  .toolList {
+    border: 1px solid var(--red-color);
+
+    ul li {
+      color: var(--red-color);
+    }
+  }
+
+  .normalBg {
+    .toolName {
+      color: var(--neutral8);
+    }
+  }
+
+  .hoverBg {
+    .toolName {
+      color: var(--neutral0);
+    }
+  }
+}
+
+#toolShellDetails {
+  .title-head,
+  .card-top {
+    color: var(--neutral8);
+  }
+}
+
+#GHDBLibraryDetail {
+  .title-head,
+  .card-top {
+    color: var(--neutral8);
+  }
+}
+
+.middle-line {
+  width: 100%;
+  border-bottom: 1px solid var(--neutral3);
+  opacity: 0.5;
+}
+
+#tool-shell {
+  .label {
+    color: var(--neutral8);
+  }
+}
+
+// exp详情
+#toolEXPDetails {
+  .title-head,
+  .card-top {
+    color: var(--neutral8);
+  }
+
+  .line-cent {
+    width: 100%;
+    border-bottom: 1px solid var(--neutral3);
+    opacity: 0.5;
+  }
+
+  .card-color-grey {
+    color: var(--neutral8);
+  }
+}

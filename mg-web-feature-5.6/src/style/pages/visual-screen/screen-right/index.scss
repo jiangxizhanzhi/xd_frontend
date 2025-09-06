@@ -1,0 +1,137 @@
+.visual-screen {
+  //right 变量定义
+  --right-item-height: 300px;
+  --right-item-title-height: 40px;
+  --table-header-height: 100px;
+  // 资产统计组件上部div的高度
+  --asset-count-height: 90px;
+  // div 四个角
+  --asset-sharp-height: 6px;
+  --asset-sharp-width: 6px;
+  --asset-sharp-border-width: 1px;
+  // 该值设置的是尖角和div距离的2倍
+  --asset-sharp-distance: 10px;
+  // 资产统计组件下部div的高度
+  --asset-info-height: 90px;
+  --margin-size: 10px;
+  //警告日志表格高度定义
+  --log-table-height: 180px;
+  --log-table-header: 30px;
+  --log-table-tr: 45px;
+  // 威胁发现div高度
+  --threat-div-height: 150px;
+  --threat-info-table-height: 150px;
+  // 威胁分类进度条底层div的高度
+  --threat-class-process-under-div-height: 12px;
+  --threat-class-process-red-line-height: 4px;
+  // 威胁分类进度条红色块的宽度
+  --threat-class-process-red-line-width: 14px;
+  // 威胁信息表格高度
+
+  // 主机统计
+  // 主机状态
+  // --host-state-height             : 110px;
+  // 主机状态油箱的高宽
+  --host-state-type-height: 30px;
+  --host-state-type-width: 20px;
+  --host-state-type-border-outline: 1px;
+  --host-state-type-border-inline: 3px;
+  // 受攻击主机TOP5
+  --host-attack-height: 35px;
+  --host-attack-width: 30px;
+  --host-attack-in-div-height: 9px;
+
+  // 失陷主机列表高度
+  --host-lost-table-height: 220px;
+
+  // 颜色变量
+  // 特征变量
+  --high-level-color: rgba(253, 58, 44, 1);
+  --middle-level-color: rgba(253, 118, 44, 1);
+  --low-level-color: rgba(57, 255, 178, 1);
+  // 字体颜色
+  --font-gree-color: #8cf29e;
+  --font-blue-color: #5cb4f7;
+  --font-yellow-color: #f5a45b;
+  // 背景颜色
+  // 资产统计两个框的背景颜色
+  --asset-up-bg-color: #1b2d53;
+  --asset-up-2-bg-color: linear-gradient(
+    90deg,
+    rgba(146, 252, 164, 0),
+    rgba(92, 180, 247, 0.99),
+    rgba(92, 180, 247, 0.99),
+    rgba(146, 252, 164, 0)
+  );
+  --asset-down-bg-color: rgba(94, 160, 241, 0.1);
+  // 资产统计上面框四个尖角的颜色
+  --asset-sharp-color: #5ea0f1;
+
+  // 威胁发现-威胁类型 条状背景
+  --threat-line-under-bg: #1b2d53;
+  --threat-line-red-bg: linear-gradient(
+    90deg,
+    rgba(241, 94, 95, 0.2) 0%,
+    #f15e5f 100%
+  );
+  --threat-square-red-bg: #f15e5f;
+  // 主机状态
+  --host-normal-color: #2769c9;
+  --host-normal-opacity-color: rgba(39, 105, 201, 0.5);
+  --host-middle-color: #f5a45b;
+  --host-middle-opacity-color: rgba(245, 164, 91, 0.5);
+  --host-high-color: #f15e5f;
+  --host-high-opacity-color: rgba(241, 94, 95, 0.5);
+  // 受攻击主机TOP5
+  --host-top5-little-square-bg: #17233c;
+
+  .mr-bottom {
+    margin-bottom: var(--margin-size);
+  }
+
+  // 滚动表格颜色设置
+  --scroll-table-color: #fff;
+  --scroll-table-header-bg: rgba(84, 136, 214, 0.3);
+  --scroll-table-tr-bg: rgba(129, 133, 149, 0.1);
+
+  &-right {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to left, #032344, #697da0);
+
+    // 右边垂直方向3个大div，相同属性布局
+    &-item {
+      // height: var(--right-item-height);
+      width: 100%;
+
+      // 标题统一样式
+      .title {
+        height: var(--right-item-title-height);
+      }
+
+      .content {
+        overflow: hidden;
+        width: 100%;
+        margin-top: var(--header-1-content-space);
+
+        .colDiv {
+          margin: 0 var(--margin-size);
+        }
+      }
+    }
+  }
+
+  .warning-log {
+    flex: 1;
+    height: 0;
+    display: flex;
+    flex-direction: column;
+
+    .log-table {
+      margin-top: var(--header-3-content-space);
+      flex: 1;
+      height: 0;
+    }
+  }
+}

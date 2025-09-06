@@ -1,0 +1,87 @@
+.visual-screen {
+  --blue-font-color: #609bf3;
+  --red-font-color: #f15e5f;
+  --green-font-color: #92fca4;
+  --scroll-table-font-header-color: #fff;
+  --scroll-table-header-bg: rgba(84, 136, 214, 0.3);
+  --scroll-table-tr-2n-bg: rgba(129, 133, 149, 0.1);
+
+  --title-pd-right: 24px;
+  --title-mg-bottom: 20px;
+  --scroll-table-theader-height: 30px;
+  --scroll-table-tr-height: 44px;
+  --scroll-table-tr-pd-top: 5px;
+  --attack-box-height: 314px;
+  --attack-defending-box-height: 300px;
+  --row-pd-left-right: 10px;
+
+  &-left {
+    display: flex;
+    flex-direction: column;
+    // padding: 0 10px;
+    background: linear-gradient(to right, #032344, #697da0);
+
+    .title {
+      margin-bottom: var(--title-mg-bottom);
+    }
+
+    .grid-content {
+      height: 100%;
+      flex: 1;
+      width: 0;
+      display: flex;
+      flex-direction: column;
+      margin: 0 var(--margin-left-12);
+    }
+
+    .attack-statistics {
+      flex: 2;
+      height: 0;
+      display: flex;
+      flex-direction: column;
+
+      .attack-statistics-top,
+      .attack-statistics-bottom {
+        display: flex;
+        padding: var(--header-1-content-space) 10px var(--header-margin-top-45);
+      }
+
+      .attack-statistics-bottom {
+        padding-top: 0;
+      }
+    }
+
+    .attack-defending-log {
+      display: flex;
+      padding: var(--header-1-content-space) 10px 10px;
+
+      .date-time {
+        height: var(--scroll-table-tr-height);
+        padding: var(--scroll-table-tr-pd-top) 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .date,
+        .time {
+          height: 50%;
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .stage {
+        width: 100%;
+        height: var(--header-3-height);
+        font-size: var(--font-size-12);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .stage-item {
+          color: var(--blue-font-color);
+        }
+      }
+    }
+  }
+}

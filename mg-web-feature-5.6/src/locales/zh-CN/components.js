@@ -1,0 +1,63 @@
+export default {
+  empty: {
+    noData: '暂无数据',
+  },
+  sceneLoader: {
+    event: {
+      default: '默认',
+      init: '初始化',
+      create: '创建',
+      start: '启动',
+      stop: '停止',
+      reboot: '重启',
+      pause: '暂停',
+      recover: '恢复',
+      snapshot: '快照',
+      close: '关闭',
+      modify: '修改',
+      recreate: '重建',
+      suspend: '挂起',
+      resume: '从挂起恢复',
+    },
+    status: {
+      init: '初始化',
+      start: '开始',
+      ongoing: '进行中',
+      paused: '暂停',
+      complete: '完成',
+      failed: '失败',
+    },
+    notStart: '场景暂未启动',
+    closeSceneConfirm: '确认关闭场景吗？',
+  },
+  searchInputBar: {
+    default: '默认',
+    productBusinessName: '产品名称/厂商名称',
+    placeHolder: '请输入漏洞名称、编号、产品名称、厂商名称等',
+
+    search: '搜索',
+    advancedSearch: '高级搜索',
+
+    useType: '利用类型',
+    isRepair: '修复状态',
+    allRepairStatus: '全部修复状态',
+    severityLevel: '严重等级',
+    infoAttribute: '信息属性',
+    vulnSoftwareAccessory: '漏洞软件附件',
+    repaired: '已修复 ',
+    unRepaired: '未修复',
+    pleaseEnter: '请输入',
+    pleaseEnterRangeNum: '请输入0～10之间的数字',
+    pleaseEnterAllNum: '请依次输入完整的、正确的CVSS3分值范围',
+    vulnAnalysis: '漏洞分析',
+    pleaseEnterVulnDescKeywords: '请输入漏洞描述关键字',
+    all: '全部',
+    have: '有',
+    none: '无',
+  },
+  // 导入button
+  fileLoad: {
+    typeError: '上传文件类型错误,请重新上传',
+    sizeError: '上传文件大小不能超过',
+  },
+};

@@ -1,0 +1,23 @@
+export default {
+  sceneType: {
+    CLASS: '课程表',
+    ADCOMM: 'AD通用',
+    OPSRACE: '运维赛',
+    AD: '攻防赛',
+    PRACTICE: '练习',
+    LESSON: '课程',
+    EXAM: '考试',
+    LESSON_PRACTICE: '课后练习',
+    INDIVIDUAL_TRAINING: '单兵训练',
+    TEAM_TRAINING: '团队训练',
+    READ_VS_BLUE: '红蓝对抗',
+    SOFT_TEST: '靶场测评',
+    OPERATIONS: '运维赛',
+    SCHEDULE: '课程表',
+    ATTACK_DEFENSE: '攻防赛',
+    AD_COMMON: 'AD通用',
+    JEOPARDY: '解题赛',
+    CFS: '渗透赛',
+    LIVE_VULNERABILITY: '漏洞库',
+  },
+};

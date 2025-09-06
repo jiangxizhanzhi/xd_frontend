@@ -1,0 +1,50 @@
+export default {
+  configuration: {
+    configurationIp: '配置IP',
+    beforeClearResource: '在修改IP前要清空已启动的资源：',
+    clearStartedResource: '清除启动资源',
+    clearTip:
+      '提示：慎重操作，此操作会将所有已启动的场景及场景数据和已启动的镜像全部删除！清除需要大约5-10分钟，请耐心等待。',
+    webIpAddress: 'Web口IP地址：',
+    currentWebIpAddress: '当前Web口IP地址：',
+    currentWebIpAddressPlz: '请输入新的Web口IP地址，不输入内容默认不修改',
+    webIpAddressTip: '提示：通过Web访问平台的地址',
+    maskCode: '掩码：',
+    currentMaskCode: '当前掩码：',
+    currentMaskCodePlz: '请输入新的掩码，不输入内容默认不修改',
+    gateway: '网关：',
+    currentGateway: '当前网关：',
+    currentGatewayPlz: '请输入新的网关，不输入内容默认不修改',
+    networkRange: '网络段地址池范围：',
+    currentNetworkRange: '当前网络地址池范围：',
+    currentNetworkRangePlz: '请输入新的网络段地址池，不输入内容默认不修改',
+    networkRangeTip:
+      '提示：地址池为启动虚拟机的时候使用IP的范围，输入样式如：10.4.1.100-10.4.1.200请不要包含服务器的IP',
+    nodeWebIp: '计算节点Web口IP地址：',
+    currentNodeWebIp: '当前计算节点Web口IP：',
+    currentNodeWebIpPlz: '请输入新的计算节点Web口IP，不输入内容默认不修改',
+    nodeWebIpTip:
+      '提示：系统将自动获取当前所有的计算节点IP，请确认计算节点与Web口IP的通信正常',
+
+    modelIp: '组件IP：',
+    currentModelIp: '当前组件IP：',
+    currentModelIpPlz: '请输入新的组件IP，不输入内容默认不修改：',
+    modelIpTip: '提示：设置为Web口IP同网段 地址',
+    webPortIpError: 'Web口IP地址输入有误',
+    maskError: '掩码输入有误',
+    gatewayError: '网关输入有误',
+    nodeWebIpError: '计算节点Web口IP地址输入有误',
+    modelIpError: '组件IP输入有误',
+    rangeAddressError: '网络段地址池输入有误',
+    noGetMaskError: '未获取到掩码',
+    noSameNetwork: '不在同一个网段',
+    clearConfirm:
+      '系统将清除已启动的场景实例、场景数据以及所有已启动的镜像，是否确认操作？',
+    nodeErrorConfirm:
+      '当前计算节点服务异常，建议自行恢复计算节点的运行状态后重试，或者联系运维工程师进行恢复。如仍然继续修改系统配置，可能会导致服务状态异常的计算节点无法修改IP。',
+    stillContinue: '仍然继续',
+    saveConfirm: '系统将对配置的IP进行保存，是否确认？',
+    deployAwait: '系统正在配置中，等待配置完成，重启完成后访问如下地址进行登录',
+    noChange: '未作修改，请进行修改后进行保存',
+  },
+};

@@ -1,0 +1,131 @@
+<template>
+  <div class="vuln-scroll-tool">
+    <div class="anchor-temp">
+      <div class="line" ref="line"></div>
+      <ul class="anchor-list" style="padding-left: 0">
+        <li
+          v-for="(item, index) in anchorList"
+          :key="item.value"
+          :title="item.name"
+          :class="{ 'active-li': currentIndex === index }"
+          @click="anchorLineClick(item, index)"
+        >
+          <div class="vuln-test">
+            {{ item.name }}
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'AnalysisScrollTool',
+  props: {
+    anchorGroup: {
+      type: Array,
+      default: function () {
+        return [];
+      },
+    },
+    currentIndex: {
+      type: Number,
+      default: 0,
+    },
+  },
+  watch: {
+    anchorGroup: {
+      handler(val, oldVal) {
+        this.$nextTick(() => {
+          if (val.length) {
+            this.$refs.line.style.height = (val.length - 1) * 68 + 'px';
+          } else {
+            this.$refs.line.style.height = '0px';
+          }
+        });
+      },
+      immediate: true,
+      deep: true,
+    },
+  },
+  data() {
+    return {
+      anchorList: this.anchorGroup,
+    };
+  },
+  methods: {
+    anchorLineClick(v, index) {
+      this.$emit('scrollToAnchor', v.value, index);
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.vuln-scroll-tool {
+  position: absolute;
+  width: 292px;
+  //height: calc(100% - 30px);
+  //background: var(--neutral0);
+}
+.anchor-temp {
+  display: flex;
+  flex-direction: row;
+  .line {
+    position: relative;
+    margin: 30px 17px 0 20px;
+    padding-top: 6px;
+    width: 1px;
+    background: var(--neutral4);
+    border-left: 1px dashed var(--neutral4);
+    span {
+      position: absolute;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      background: var(--primary-color);
+      border-radius: 5px;
+    }
+  }
+  .anchor-list {
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    li {
+      height: 68px;
+      cursor: pointer;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: -23px;
+        width: 11px;
+        height: 11px;
+        background: var(--neutral9);
+        border-radius: 5px;
+      }
+      .vuln-test {
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: var(--neutral8);
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    .active-li {
+      &::after {
+        content: '';
+        background: var(--primary-color);
+      }
+      .vuln-test {
+        color: var(--primary-color);
+      }
+    }
+  }
+}
+</style>

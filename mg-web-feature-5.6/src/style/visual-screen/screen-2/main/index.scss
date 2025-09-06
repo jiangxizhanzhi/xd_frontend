@@ -1,0 +1,81 @@
+.visual-screen2 {
+  .main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-size: calc(100vw / 120);
+
+    .u3d {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &-content {
+      flex: 1;
+      height: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 0 1em 1em;
+
+      &-top {
+        flex: 2.5;
+        height: 0;
+        margin-bottom: 1em;
+        display: flex;
+
+        .statistics {
+          flex: 1;
+        }
+
+        .top-center {
+          flex: 2.6;
+          margin: 0 1em;
+        }
+
+        .top-right {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+
+          .attack-type {
+            flex: 1.6;
+            margin-bottom: 1em;
+          }
+          .attack-count {
+            flex: 1;
+          }
+        }
+      }
+
+      &-bottom {
+        flex: 1;
+        height: 0;
+        display: flex;
+
+        .attack-flow {
+          flex: 1;
+        }
+
+        .attack-log {
+          flex: 2.6;
+          margin: 0 1em;
+        }
+
+        .attack-device {
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  .hidden {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}

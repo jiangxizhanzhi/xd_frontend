@@ -1,0 +1,16 @@
+export default {
+  'vuln-higher-info': 'Advanced Information',
+  'vuln-paper-mgr': 'Paper Management',
+  add: 'Add',
+  edit: 'Edit',
+  'vuln-list': 'List',
+  'vuln-detail': 'Detail',
+  toolEXP: 'EXP Library',
+  verification: 'Validation',
+  toolEXPDetails: 'EXP Detail',
+  resType: 'Type',
+  toolShell: 'ShellCode Library',
+  toolShellDetails: 'ShellCode Detail',
+  ghdbLibrary: 'GHDB Library',
+  ghdbLibraryDetails: 'GHDB Library Detail',
+};
