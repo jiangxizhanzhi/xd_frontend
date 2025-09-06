@@ -1,0 +1,224 @@
+/*
+ * Visual Studio 2015 dark style
+ * Author: Nicolas LLOBERA <nllobera@gmail.com>
+ */
+
+.hljs {
+  background: var(--neutral0);
+  color: var(--neutral8);
+  display: block;
+  padding: 0.5em;
+  overflow-x: auto;
+}
+
+.hljs-keyword,
+.hljs-literal,
+.hljs-symbol,
+.hljs-name {
+  color: var(--primary-color);
+}
+
+.hljs-link {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.hljs-built_in,
+.hljs-type {
+  color: var(--green-color);
+}
+
+.hljs-number,
+.hljs-class {
+  color: var(--green-color);
+}
+
+.hljs-string,
+.hljs-meta .hljs-string {
+  color: var(--orange-color);
+}
+
+.hljs-regexp,
+.hljs-template-tag {
+  color: var(--red-color-8);
+}
+
+.hljs-subst,
+.hljs-function,
+.hljs-title,
+.hljs-params,
+.hljs-formula {
+  color: var(--neutral8);
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: var(--green-color-8);
+  font-style: italic;
+}
+
+.hljs-doctag {
+  color: var(--green-color);
+}
+
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-tag {
+  color: var(--neutral7);
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  color: var(--orange-color);
+}
+
+.hljs-attr,
+.hljs-attribute {
+  color: var(--cyan-color);
+}
+
+.hljs-section {
+  color: var(--yellow-color);
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+/*.hljs-code {
+    font-family:'Monospace';
+  }*/
+
+.hljs-bullet,
+.hljs-selector-tag,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: var(--yellow-color);
+}
+
+.hljs-addition {
+  background-color: var(--green-color-2);
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: var(--red-color-4);
+  display: inline-block;
+  width: 100%;
+}
+
+// vs2015主题
+/*
+ * Visual Studio 2015 dark style
+ * Author: Nicolas LLOBERA <nllobera@gmail.com>
+ */
+
+.hljs-keyword,
+.hljs-literal,
+.hljs-symbol,
+.hljs-name {
+  color: var(--primary-color);
+}
+
+.hljs-link {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.hljs-built_in,
+.hljs-type {
+  color: var(--green-color);
+}
+
+.hljs-number,
+.hljs-class {
+  color: var(--green-color);
+}
+
+.hljs-string,
+.hljs-meta .hljs-string {
+  color: var(--orange-color);
+}
+
+.hljs-regexp,
+.hljs-template-tag {
+  color: var(--red-color-8);
+}
+
+.hljs-subst,
+.hljs-function,
+.hljs-title,
+.hljs-params,
+.hljs-formula {
+  color: var(--neutral8);
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: var(--green-color-8);
+  font-style: italic;
+}
+
+.hljs-doctag {
+  color: var(--green-color-4);
+}
+
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-tag {
+  color: var(--neutral8);
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  color: var(--orange-color);
+}
+
+.hljs-attr,
+.hljs-attribute {
+  color: var(--primary-color);
+}
+
+.hljs-section {
+  color: var(--yellow-color-8);
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+/*.hljs-code {
+    font-family:'Monospace';
+  }*/
+
+.hljs-bullet,
+.hljs-selector-tag,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: var(--yellow-color);
+}
+
+.hljs-addition {
+  background-color: var(--green-color-2);
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: var(--red-color-2);
+  display: inline-block;
+  width: 100%;
+}

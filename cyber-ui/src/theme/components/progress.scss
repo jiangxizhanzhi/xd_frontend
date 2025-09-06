@@ -1,0 +1,144 @@
+.cb-progress {
+  &-text-inside {
+    .cb-progress-bar__outer {
+      min-height: 16px;
+    }
+
+    .cb-progress-bar__innerText {
+      margin-left: auto;
+      margin-right: 10px;
+      font-size: 12px;
+    }
+  }
+
+  &-active {
+    .cb-progress-bar__inner {
+      position: relative;
+      z-index: 1;
+
+      &:before {
+        content: '';
+        z-index: 2;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--neutral8);
+        animation: cb-progress-active 2s ease-in-out infinite;
+      }
+    }
+  }
+
+  &-line {
+    display: flex;
+    align-items: center;
+    color: var(--neutral8);
+
+    &-slot {
+      &-left {
+        margin-right: 10px;
+        color: var(--neutral8);
+      }
+
+      &-right {
+        margin-left: 10px;
+        color: var(--neutral8);
+
+        .cb-progress__text {
+          color: var(--neutral5);
+        }
+      }
+    }
+  }
+
+  &-bar {
+    flex: 1;
+    display: inline-block;
+    padding-right: 50px;
+    width: 100%;
+    margin-right: -55px;
+    box-sizing: border-box;
+
+    &__innerText {
+      color: var(--white-color);
+    }
+
+    &__outer {
+      background-color: var(--neutral0);
+    }
+  }
+
+  &-bar__inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    background-color: var(--primary-color);
+  }
+
+  &-circle {
+    position: relative;
+
+    &__title {
+      color: var(--neutral8);
+      text-align: center;
+      position: relative;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__text {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      transform: translateY(-50%);
+      color: var(--neutral5);
+    }
+  }
+}
+
+.cb-progress.is-success .cb-progress-bar__inner {
+  background-color: var(--green-color);
+}
+
+.cb-progress.is-warning .cb-progress-bar__inner {
+  background-color: var(--orange-color);
+}
+
+.cb-progress.is-exception .cb-progress-bar__inner {
+  background-color: var(--red-color);
+}
+
+.cb-progress.is-success .cb-progress__text,
+.cb-progress.is-success .cb-progress-circle__text {
+  color: var(--green-color);
+}
+
+.cb-progress.is-warning .cb-progress__text,
+.cb-progress.is-warning .cb-progress-circle__text {
+  color: var(--orange-color);
+}
+
+.cb-progress.is-exception .cb-progress__text,
+.cb-progress.is-exception .cb-progress-circle__text {
+  color: var(--red-color);
+}
+
+@keyframes cb-progress-active {
+  0% {
+    opacity: 0.3;
+    width: 0;
+  }
+
+  100% {
+    opacity: 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,56 @@
+.el-switch__core {
+  width: 32px !important;
+  height: 18px;
+
+  &:after {
+    top: 1px !important;
+    width: 14px;
+    height: 14px;
+  }
+}
+.el-switch.is-checked .el-switch__core {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.el-switch.is-checked .el-switch__core::after {
+  margin-left: -16px;
+}
+.el-switch .el-switch__core::after {
+  top: 2px !important;
+  margin-left: 2px;
+}
+.el-switch__core {
+  border: none;
+}
+.el-switch .el-switch__core {
+  background-color: var(--neutral3);
+  border-color: var(--neutral3);
+}
+.el-switch__label.is-checked {
+  color: var(--primary-color);
+}
+
+.el-switch__label {
+  color: var(--neutral7);
+}
+
+.el-switch.is-checked .el-switch__core {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.el-switch.is-disabled.is-checked .el-switch__core {
+  background-color: var(--primary-color-4);
+  &::after {
+    background-color: var(--neutral3);
+  }
+}
+.el-switch.is-disabled .el-switch__core {
+  background-color: var(--neutral1);
+  &::after {
+    background-color: var(--neutral3);
+  }
+}
+.el-switch__label.is-active {
+  color: var(--primary-color);
+}

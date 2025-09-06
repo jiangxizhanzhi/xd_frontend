@@ -1,0 +1,10 @@
+.el-carousel__button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--neutral2);
+}
+
+.is-active .el-carousel__button {
+  background-color: var(--primary-color);
+}
