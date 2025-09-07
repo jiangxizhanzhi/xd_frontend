@@ -46,6 +46,7 @@ export default {
   'topology-management-folder': 'Topology',
   'topology-management': 'Topology',
 
+  'scene-manage-folder': '场景管理',
   'cloud-computing-resource-scene': '云计算资源场景',
   'cloud-network-resource-scene': '云网络资源场景',
   'scan-detect-attack-scene': '扫描探测攻击场景',

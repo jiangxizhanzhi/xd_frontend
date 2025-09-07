@@ -15,6 +15,8 @@ import { redVsBlueRouter } from './cms/red-vs-blue';
 import { assessmentSystem } from './cms/assessment-system';
 import { trainingRouter } from './cms/training';
 import { resourceRouter } from './cms/resource';
+// 场景管理
+import { sceneManageRouter } from './cms/scene-management/index';
 // 红蓝对抗全屏页面
 import redBlueFull from './web/red-blue-full';
 // 团队训练我的训练详情全屏页面
@@ -162,6 +164,8 @@ export default [
       probeRouter,
 
       resourceRouter,
+      // 场景管理
+      sceneManageRouter,
     ],
   },
 ] as IRoute[];

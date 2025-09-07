@@ -1,33 +1,27 @@
 export default [
   {
     name: 'cloud-network-resource-scene',
-    path: '/admin/cloud-network-resource-scene',
+    path: '/admin/cr/admin/cloud-network-resource-scene',
     title: 'routes.cloud-network-resource-scene',
-    component: './pages/cms/scene-management/index.vue',
-    meta: {
-      iconfont: 'icon-tuopu',
-      auth: false,
-    },
+    component: './frame',
   },
   {
     name: 'cloud-network-resource-scene-add',
-    path: '/admin/cloud-network-resource-scene/add',
+    path: '/admin/cr/admin/cloud-network-resource-scene/add',
     title: 'mgRoutes.add',
-    component: './pages/cms/scene-management/add.vue',
+    component: './frame',
     meta: {
-      auth: false,
       breadcrumb: {
-        parentName: 'topology-management',
+        parentName: 'cloud-network-resource-scene',
       },
     },
   },
   {
     name: 'cloud-network-resource-scene-edit',
-    path: '/admin/cloud-network-resource-scene/edit/:id',
+    path: '/admin/cr/admin/cloud-network-resource-scene/edit/:id',
     title: 'mgRoutes.edit',
-    component: './pages/cms/scene-management/edit.vue',
+    component: './frame',
     meta: {
-      auth: false,
       breadcrumb: {
         parentName: 'cloud-network-resource-scene',
       },

@@ -1,33 +1,27 @@
 export default [
   {
     name: 'new-network-attack-defense-scene',
-    path: '/admin/new-network-attack-defense-scene',
+    path: '/admin/cr/admin/new-network-attack-defense-scene',
     title: 'routes.new-network-attack-defense-scene',
-    component: './pages/cms/scene-management/index.vue',
-    meta: {
-      iconfont: 'icon-tuopu',
-      auth: false,
-    },
+    component: './frame',
   },
   {
     name: 'new-network-attack-defense-scene-add',
-    path: '/admin/new-network-attack-defense-scene/add',
+    path: '/admin/cr/admin/new-network-attack-defense-scene/add',
     title: 'mgRoutes.add',
-    component: './pages/cms/scene-management/add.vue',
+    component: './frame',
     meta: {
-      auth: false,
       breadcrumb: {
-        parentName: 'topology-management',
+        parentName: 'new-network-attack-defense-scene',
       },
     },
   },
   {
     name: 'new-network-attack-defense-scene-edit',
-    path: '/admin/new-network-attack-defense-scene/edit/:id',
+    path: '/admin/cr/admin/new-network-attack-defense-scene/edit/:id',
     title: 'mgRoutes.edit',
-    component: './pages/cms/scene-management/edit.vue',
+    component: './frame',
     meta: {
-      auth: false,
       breadcrumb: {
         parentName: 'new-network-attack-defense-scene',
       },

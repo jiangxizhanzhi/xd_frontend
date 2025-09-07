@@ -1,15 +1,15 @@
 import { IProxy } from '@cyber/cli';
 
-const serverIp = '10.2.99.10';
-const serverPort = 80; // server port
+const serverIp = '8.159.138.178';
+const serverPort = 81; // server port
 const serverPortCloud = 11111; // 云平台端口
 
 const server = `http://${serverIp}:${serverPort}`;
 const serverCloud = `http://${serverIp}:${serverPortCloud}`;
 const wsServer = `ws://${serverIp}:${serverPort}`;
 
-const serverIpJava = '10.2.99.10';
-const serverPortJava = 80;
+const serverIpJava = '8.159.138.178';
+const serverPortJava = 81;
 const serverJava = `http://${serverIpJava}:${serverPortJava}`;
 const wsServerJava = `ws://${serverIpJava}:${serverPortJava}`;
 

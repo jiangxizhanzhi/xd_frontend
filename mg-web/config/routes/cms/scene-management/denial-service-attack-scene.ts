@@ -1,33 +1,27 @@
 export default [
   {
     name: 'denial-service-attack-scene',
-    path: '/admin/denial-service-attack-scene',
+    path: '/admin/cr/admin/denial-service-attack-scene',
     title: 'routes.denial-service-attack-scene',
-    component: './pages/cms/scene-management/index.vue',
-    meta: {
-      iconfont: 'icon-tuopu',
-      auth: false,
-    },
+    component: './frame',
   },
   {
     name: 'denial-service-attack-scene-add',
-    path: '/admin/denial-service-attack-scene/add',
+    path: '/admin/cr/admin/denial-service-attack-scene/add',
     title: 'mgRoutes.add',
-    component: './pages/cms/scene-management/add.vue',
+    component: './frame',
     meta: {
-      auth: false,
       breadcrumb: {
-        parentName: 'topology-management',
+        parentName: 'denial-service-attack-scene',
       },
     },
   },
   {
     name: 'denial-service-attack-scene-edit',
-    path: '/admin/denial-service-attack-scene/edit/:id',
+    path: '/admin/cr/admin/denial-service-attack-scene/edit/:id',
     title: 'mgRoutes.edit',
-    component: './pages/cms/scene-management/edit.vue',
+    component: './frame',
     meta: {
-      auth: false,
       breadcrumb: {
         parentName: 'denial-service-attack-scene',
       },

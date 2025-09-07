@@ -13,14 +13,24 @@ import newNetworkBasicScene from './new-network-basic-scene';
 // 新型网络攻防场景
 import newNetworkAttackDefenseScene from './new-network-attack-defense-scene';
 // 综合演训场景
-import comprehensiveTrainingScene from './comprehensive-training-scene';
-export default [
-  ...cloudComputingResourceScene,
-  ...cloudNetworkResourceScene,
-  ...scanDetectAttackScene,
-  ...vulnerabilityMiningExploitationScene,
-  ...denialServiceAttackScene,
-  ...newNetworkBasicScene,
-  ...newNetworkAttackDefenseScene,
-  ...comprehensiveTrainingScene,
-];
+import comprehensiveTrainingScene from './comprehensive-training-scene'
+
+// 场景管理
+export const sceneManageRouter = {
+  path: '',
+  title: 'routes.scene-manage-folder',
+  name: 'scene-manage-folder',
+  meta: {
+    iconfont: 'icon-tuopu',
+  },
+  children: [
+    ...cloudComputingResourceScene,
+    ...cloudNetworkResourceScene,
+    ...scanDetectAttackScene,
+    ...vulnerabilityMiningExploitationScene,
+    ...denialServiceAttackScene,
+    ...newNetworkBasicScene,
+    ...newNetworkAttackDefenseScene,
+    ...comprehensiveTrainingScene,
+  ],
+};

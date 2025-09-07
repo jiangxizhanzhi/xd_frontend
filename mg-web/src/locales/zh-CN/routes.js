@@ -40,7 +40,8 @@ export default {
   // 拓扑模板
   'topology-management-folder': '拓扑模板',
   'topology-management': '拓扑模板',
-
+  
+  'scene-manage-folder': '场景管理',
   'cloud-computing-resource-scene': '云计算资源场景',
   'cloud-network-resource-scene': '云网络资源场景',
   'scan-detect-attack-scene': '扫描探测攻击场景',
