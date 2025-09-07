@@ -36,8 +36,14 @@
     <div class="card-bottom">
       <cb-button type="text">发布</cb-button>
       <cb-button type="text">复制</cb-button>
-      <cb-button type="text">编辑</cb-button>
-      <cb-button type="text">删除</cb-button>
+      <cb-button
+        type="text"
+        @click="handlerEdit(cardData)"
+      >编辑</cb-button>
+      <cb-button
+        type="text"
+        @click="handlerDelete(cardData)"
+      >删除</cb-button>
     </div>
   </div>
 </template>
@@ -53,6 +59,14 @@ export default {
     return {
     };
   },
+  methods: {
+    handlerEdit(data) {
+      this.$emit('edit', data)
+    },
+    handlerDelete(data) {
+      this.$emit('delete', data)
+    },
+  }
 };
 </script>
 <style lang="scss" scoped>

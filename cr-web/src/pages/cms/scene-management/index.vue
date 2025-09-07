@@ -1,32 +1,41 @@
 <template>
   <div class="main-wrap">
     <!-- 左上角标题 -->
-    <header-decorate :title="'云计算资源场景'"></header-decorate>
+    <header-decorate :title="header_title"></header-decorate>
     <!-- 搜索区域 -->
     <div class="search-wrap">
       <span class="label">搜索</span>
-      <cb-search-input></cb-search-input>
-      <cb-button class="search">搜索</cb-button>
+      <cb-search-input
+        v-model="search"
+        :trigger="'input'"
+      ></cb-search-input>
+      <cb-button
+        class="search"
+        @click="handlerSearch"
+      >搜索</cb-button>
       <cb-button
         hollow
         class="reset"
+        @click="handlerReset"
       >重置</cb-button>
       <div class="right-button">
-        <cb-button>新增</cb-button>
+        <cb-button @click="createSceneTemplate">新增</cb-button>
         <cb-button hollow>删除</cb-button>
       </div>
     </div>
     <!-- 列表展示 -->
     <div class="card-list">
       <card-item
-        v-for="(item, index) in testLists"
+        v-for="(item, index) in cardList"
         :key="index"
         :card-data="item"
+        @edit="handlerEdit($event)"
+        @delete="handlerDelete($event)"
       ></card-item>
     </div>
     <!-- 暂无数据 -->
     <div
-      v-if="!testLists.length"
+      v-if="!cardList.length"
       class="empty-comp"
       style="
           width: 100%;
@@ -40,7 +49,7 @@
     </div>
     <!-- 分页 -->
     <cb-pagination
-      v-if="testLists.length > 0"
+      v-if="cardList.length > 0"
       :current-page="pagination.currentPage"
       :total="pagination.total"
       :page-size.sync="pagination.per_page"
@@ -57,56 +66,21 @@
 <script>
 import HeaderDecorate from '@/components/header-decorate/index.vue';
 import CardItem from '@/components/card-item/index.vue';
+import EmptyPage from '@/pages/web/Empty';
+import { getSceneTemplateListApi } from '@/api/scene-management/index'
+import { SCENE_MANAGEMENT_NAME } from './constants'
 export default {
   components: {
     HeaderDecorate,
-    CardItem
+    CardItem,
+    EmptyPage,
   },
   data() {
     return {
-      testLists: [
-        {
-          name: '云计算资源使用与管理训练实验场景',
-          desc: '场景描述：XXXXXXXXXXXXXX',
-          distribute: true,
-        },
-        {
-          name: '云计算资源使用与管理训练实验场景',
-          desc: '场景描述：XXXXXXXXXXXXXX',
-          distribute: true,
-        },
-        {
-          name: '云计算资源使用与管理训练实验场景',
-          desc: '场景描述：XXXXXXXXXXXXXX',
-          distribute: true,
-        },
-        {
-          name: '云计算资源使用与管理训练实验场景',
-          desc: '场景描述：XXXXXXXXXXXXXX',
-          distribute: true,
-        },
-        {
-          name: '云计算资源使用与管理训练实验场景',
-          desc: '场景描述：XXXXXXXXXXXXXX',
-          distribute: false,
-        },
-        {
-          name: '云计算资源使用与管理训练实验场景',
-          desc: '场景描述：XXXXXXXXXXXXXX',
-          distribute: false,
-        },
-        {
-          name: '云计算资源使用与管理训练实验场景',
-          desc: '场景描述：XXXXXXXXXXXXXX',
-          distribute: false,
-        },
-        {
-          name: '云计算资源使用与管理训练实验场景',
-          desc: '场景描述：XXXXXXXXXXXXXX',
-          distribute: false,
-        },
-      ],
-      pattern: '',
+      SCENE_MANAGEMENT_NAME,
+      header_title: "",
+      cardList: [],
+      search: '',
       pagination: {
         currentPage: 1,
         per_page: 8,
@@ -119,7 +93,8 @@ export default {
 
   },
   mounted() {
-
+    this.header_title = SCENE_MANAGEMENT_NAME[this.$route.name] || '';
+    this.getCardList();
   },
   methods: {
     // 获取卡片列表
@@ -127,12 +102,14 @@ export default {
       const data = {
         per_page: this.pagination.per_page,
         page: this.pagination.currentPage,
-        pattern: this.pattern,
+        search: this.search,
+        type: 3, //团队训练type是3，后面根据不同菜单修改
       };
-      // getAllTest(data).then((res) => {
-      //   this.testLists = res.data.data.list;
-      //   this.pagination.total = res.data.data.total;
-      // });
+      getSceneTemplateListApi(data).then((res) => {
+        const data = _.get(res, 'data.data.list', [])
+        this.cardList = data
+        this.pagination.total = res.data.data.total;
+      });
     },
     handleCurrentChange(val) {
       this.pagination.currentPage = val;
@@ -142,6 +119,46 @@ export default {
       this.pagination.currentPage = 1;
       this.pagination.per_page = val;
       this.getCardList();
+    },
+    // 搜索
+    handlerSearch() {
+      this.getCardList();
+    },
+    // 重置
+    handlerReset() {
+      this.pagination.per_page = 8;
+      this.pagination.currentPage = 1;
+      this.search = '';
+      this.getCardList();
+    },
+    // 编辑
+    handlerEdit(data) {
+      this.$router.push({
+        name: this.$route.name + '-edit',
+        params: { id: data.id },
+      });
+    },
+    // 删除
+    handlerDelete(data) {
+      this.$confirm(this.$t('确定删除') + '?').then(() => {
+        const ids = [data.resource_id];
+        this.$request
+          .delete(
+            '/cr/team_train/template',
+            {
+              ids: ids,
+            },
+            { baseURL: '/api/ojj' },
+          )
+          .then(() => {
+            this.getCardList();
+          })
+      });
+    },
+    createSceneTemplate() {
+      this.$router.push({
+        name: this.$route.name + '-add',
+      });
     },
   },
 };

@@ -11,19 +11,19 @@ export default [
   {
     name: 'new-network-attack-defense-scene-add',
     path: '/admin/new-network-attack-defense-scene/add',
-    title: 'mgRoutes.add',
+    title: '新增',
     component: './pages/cms/scene-management/add.vue',
     meta: {
       auth: false,
       breadcrumb: {
-        parentName: 'topology-management',
+        parentName: 'new-network-attack-defense-scene',
       },
     },
   },
   {
     name: 'new-network-attack-defense-scene-edit',
     path: '/admin/new-network-attack-defense-scene/edit/:id',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     component: './pages/cms/scene-management/edit.vue',
     meta: {
       auth: false,

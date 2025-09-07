@@ -11,19 +11,19 @@ export default [
   {
     name: 'comprehensive-training-scene-add',
     path: '/admin/comprehensive-training-scene/add',
-    title: 'mgRoutes.add',
+    title: '新增',
     component: './pages/cms/scene-management/add.vue',
     meta: {
       auth: false,
       breadcrumb: {
-        parentName: 'topology-management',
+        parentName: 'comprehensive-training-scene',
       },
     },
   },
   {
     name: 'comprehensive-training-scene-edit',
     path: '/admin/comprehensive-training-scene/edit/:id',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     component: './pages/cms/scene-management/edit.vue',
     meta: {
       auth: false,

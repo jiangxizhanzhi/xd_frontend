@@ -11,19 +11,19 @@ export default [
   {
     name: 'new-network-basic-scene-add',
     path: '/admin/new-network-basic-scene/add',
-    title: 'mgRoutes.add',
+    title: '新增',
     component: './pages/cms/scene-management/add.vue',
     meta: {
       auth: false,
       breadcrumb: {
-        parentName: 'topology-management',
+        parentName: 'new-network-basic-scene',
       },
     },
   },
   {
     name: 'new-network-basic-scene-edit',
     path: '/admin/new-network-basic-scene/edit/:id',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     component: './pages/cms/scene-management/edit.vue',
     meta: {
       auth: false,

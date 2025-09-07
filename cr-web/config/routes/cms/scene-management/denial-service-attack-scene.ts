@@ -11,19 +11,19 @@ export default [
   {
     name: 'denial-service-attack-scene-add',
     path: '/admin/denial-service-attack-scene/add',
-    title: 'mgRoutes.add',
+    title: '新增',
     component: './pages/cms/scene-management/add.vue',
     meta: {
       auth: false,
       breadcrumb: {
-        parentName: 'topology-management',
+        parentName: 'denial-service-attack-scene',
       },
     },
   },
   {
     name: 'denial-service-attack-scene-edit',
     path: '/admin/denial-service-attack-scene/edit/:id',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     component: './pages/cms/scene-management/edit.vue',
     meta: {
       auth: false,

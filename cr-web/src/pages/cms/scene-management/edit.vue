@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Detail from './components/detail.vue';
+import Detail from './detail.vue';
 export default {
   components: {
     Detail,
