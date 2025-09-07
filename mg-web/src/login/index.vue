@@ -20,35 +20,34 @@
       :isNeedVerificationCode="true"
       baseVerificationCodeUrl="/api/mp"
       verificationCodeUrl="/unauth/kaptcha"
-      :system-name="system_name"
     >
-      <template v-slot:browser>
-        {{ $t('login.browserBefore') }}
-        <a class="browser-a" href="/cpms/explorer/chrome_installer_100.exe">
-          {{ $t('login.browser100') }}
-        </a>
-        {{ $t('login.browserAfter') }}
-      </template>
+<!--      <template v-slot:browser>-->
+<!--        {{ $t('login.browserBefore') }}-->
+<!--        <a class="browser-a" href="/cpms/explorer/chrome_installer_100.exe">-->
+<!--          {{ $t('login.browser100') }}-->
+<!--        </a>-->
+<!--        {{ $t('login.browserAfter') }}-->
+<!--      </template>-->
       <template v-slot:copyright>{{ copyright }}</template>
     </cb-login>
-    <template v-if="loginPageBackgroundDisplayType === 'video'">
-      <!--      <div-->
-      <!--        class="bg-static-box"-->
-      <!--        :style="{ backgroundImage: 'url(' + bgStatic + ')' }"-->
-      <!--      ></div>-->
-      <video
-        src="/page/mg/public/bg.mp4"
-        :class="{ 'blur-effect': loading || !isActived }"
-        autoplay="autoplay"
-        muted
-        loop
-        preload="auto"
-        @loadedmetadata="videoLoaded"
-      ></video>
-    </template>
+<!--    <template v-if="loginPageBackgroundDisplayType === 'video'">-->
+<!--      &lt;!&ndash;      <div&ndash;&gt;-->
+<!--      &lt;!&ndash;        class="bg-static-box"&ndash;&gt;-->
+<!--      &lt;!&ndash;        :style="{ backgroundImage: 'url(' + bgStatic + ')' }"&ndash;&gt;-->
+<!--      &lt;!&ndash;      ></div>&ndash;&gt;-->
+<!--      <video-->
+<!--        src="/page/mg/public/bg.mp4"-->
+<!--        :class="{ 'blur-effect': loading || !isActived }"-->
+<!--        autoplay="autoplay"-->
+<!--        muted-->
+<!--        loop-->
+<!--        preload="auto"-->
+<!--        @loadedmetadata="videoLoaded"-->
+<!--      ></video>-->
+<!--    </template>-->
     <img
-      v-if="loginPageBackgroundDisplayType === 'image'"
-      src="/page/mg/public/bg.png"
+
+      src="/dev/mg/public/bg.png"
       alt=""
       class="login-background"
     />
@@ -133,7 +132,7 @@ export default {
   },
   mounted() {
     // 加载配置化主题样式文件
-    utils.loadCss('dark');
+    // utils.loadCss('dark');
     utils.loadCss('light');
     // 移除修改密码弹窗状态
     sessionStorage.removeItem('show_change_pwd_default');
@@ -272,6 +271,7 @@ export default {
     max-width: 110%;
     min-width: 1280px;
     min-height: 720px;
+    width: 100%;
   }
 }
 </style>

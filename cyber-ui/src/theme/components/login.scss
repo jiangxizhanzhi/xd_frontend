@@ -87,11 +87,12 @@
     width: 26%;
     min-width: 400px;
     min-height: 400px;
-    margin-right: 12%;
-    padding-top: 5vh;
+    margin-right: 50%;
+    //padding-top: 5vh;
     display: flex;
     align-items: center;
     flex-direction: column;
+    transform: translateX(50%);
 
     // 覆盖主题padding
     .el-form {

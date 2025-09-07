@@ -106,7 +106,7 @@ body.theme-light {
     --box-shadow-color: rgba(0, 0, 0, 0.35);
   /* -----shadow end----- */
   /* 登录页面登录框背景色 */
-    --login-bg-color: rgba(68, 138, 255, 0.15);
+    --login-bg-color: transparent;
   /* echart-radar 活动区域背景色 */
     --echart-active-bg-color: rgba(68, 138, 255, 0.1);
   /* table 背景色 */

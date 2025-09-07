@@ -82,11 +82,11 @@
         </div>
       </cb-form>
     </div>
-    <div class="login-bottom">
-      <div class="warningInfo">
-        <slot name="browser"></slot>
-      </div>
-    </div>
+<!--    <div class="login-bottom">-->
+<!--      <div class="warningInfo">-->
+<!--        <slot name="browser"></slot>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 
