@@ -27,27 +27,27 @@
         </div>
       </div>
     </div>
-    <collapse-transition v-if="hasValidChildren">
-      <div
-        v-show="isExpand || level > 0"
-        :class="[level > 0 ? 'list-items' : 'sub-items', fixedLength]"
-      >
-        <div v-if="level > 0" class="list-items-border"></div>
-        <navi-item
-          :class="isExpand || level > 0 ? '' : 'navi-sub-collapse'"
-          v-for="(sub, index) of item.children"
-          :key="`navi-${level}-item-${index}`"
-          :active="active"
-          :item="sub"
-          :all-routes="allRoutes"
-          :max-length-title="calcMaxLenTitle(item)"
-          :level="level + 1"
-          :is-expand="sub[nameField] === curExpand"
-          @setSelect="setSelect"
-          @setExpand="setExpand"
-        />
-      </div>
-    </collapse-transition>
+<!--    <collapse-transition v-if="hasValidChildren">-->
+<!--      <div-->
+<!--        v-show="isExpand || level > 0"-->
+<!--        :class="[level > 0 ? 'list-items' : 'sub-items', fixedLength]"-->
+<!--      >-->
+<!--        <div v-if="level > 0" class="list-items-border"></div>-->
+<!--        <navi-item-->
+<!--          :class="isExpand || level > 0 ? '' : 'navi-sub-collapse'"-->
+<!--          v-for="(sub, index) of item.children"-->
+<!--          :key="`navi-${level}-item-${index}`"-->
+<!--          :active="active"-->
+<!--          :item="sub"-->
+<!--          :all-routes="allRoutes"-->
+<!--          :max-length-title="calcMaxLenTitle(item)"-->
+<!--          :level="level + 1"-->
+<!--          :is-expand="sub[nameField] === curExpand"-->
+<!--          @setSelect="setSelect"-->
+<!--          @setExpand="setExpand"-->
+<!--        />-->
+<!--      </div>-->
+<!--    </collapse-transition>-->
   </div>
 </template>
 
@@ -161,11 +161,11 @@ export default {
       this.$emit('hideSubMenu');
     },
     itemClick() {
-      if (this.hasValidChildren || this.item.disable) {
-        return;
-      }
+      // if (this.hasValidChildren || this.item.disable) {
+      //   return;
+      // }
       const name = _.get(this.computedItem, this.nameField);
-      this.$emit('setSelect', name, this.computedItem);
+      this.$emit('setSelect', name, this.computedItem, this.item.children);
     },
     setExpand(val) {
       this.curExpand = val;

@@ -273,7 +273,7 @@ export default {
     setExpand(val) {
       this.curExpand = val;
     },
-    setSelect(name, item) {
+    setSelect(name, item, children) {
       if (item.path !== this.active.path || item.name !== this.active.name) {
         /**
          * 菜单激活回调
@@ -281,7 +281,7 @@ export default {
          * @property {String} name 对应的name
          * @property {Object} item 当前的菜单项
          */
-        this.$emit('select', name, item);
+        this.$emit('select', name, item, children);
       }
 
       this.hideSubMenu();

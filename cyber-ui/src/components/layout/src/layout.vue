@@ -3,13 +3,12 @@
     <div class="layout-container" :style="{ background: backgroundColor }">
       <!-- iframe对话框的遮罩 -->
       <div class="cb-layout-full-screen-mask"></div>
-      <div v-if="!noNavi" v-show="!fullscreen" class="navi-header">
+      <div v-show="!fullscreen" class="navi-header">
         <div v-if="$slots.header">
           <slot name="header"></slot>
         </div>
         <!-- 前台菜单-->
         <cb-navi
-          v-else
           v-bind="$attrs"
           v-on="$listeners"
           :data="naviHeaderData"
@@ -31,7 +30,6 @@
       <div
         class="left-accordion"
         v-show="!fullscreen"
-        v-if="accordion && !noNavi"
         :class="{ 'left-accordion-collapse': collapse }"
       >
         <div v-if="$slots.accordion">
@@ -40,15 +38,15 @@
         <!-- 手风琴后台菜单-->
         <cb-accordion
           ref="cbAccordionRef"
-          v-else
+          v-if="!$slots.accordion && currentLeftMenu"
           v-bind="$attrs"
           v-on="$listeners"
-          :data="naviData"
+          :data="currentLeftMenu"
           :active="active"
           :show-flag="showFlag"
           :user-info="userInfo"
           @setCollapse="setCollapse"
-          @select="menuSelect"
+          @select="menuSelectAccordion"
         >
           <template v-slot:logo>
             <slot name="logo"></slot>
@@ -224,6 +222,7 @@ export default {
       breadcrumbPreItems: [],
       backgroundColor: '',
       fullscreen: false,
+      currentLeftMenu: [],
     };
   },
   computed: {
@@ -273,7 +272,7 @@ export default {
         //不显示菜单
         accWidth = '0';
         naviHeight = '0';
-      } else if (!accordion) {
+      } else if (!accordion || !this.currentLeftMenu) {
         //顶部导航
         accWidth = '0';
         naviHeight = '60';
@@ -291,6 +290,7 @@ export default {
         padding: computedPadding,
         width: `calc(100% - ${accWidth}px - ${paddingLeft} - ${paddingRight})`,
         height: `calc(100% - ${naviHeight}px - ${paddingBottom} - ${paddingTop})`,
+        marginLeft: this.currentLeftMenu? '200px' : '0'
       };
     },
     computedLineStyle() {
@@ -462,13 +462,13 @@ export default {
       if (this.currentMenu && this.routeData.length) {
         const cloneData = _.cloneDeep(this.currentMenu);
         const data = compareArrays(cloneData.children, ids);
-        if (this.accordion && !this.noNavi) {
-          this.naviHeaderData = [];
-          this.naviData = data;
-        } else {
+        // if (this.accordion && !this.noNavi) {
+        //   this.naviHeaderData = [];
+        //   this.naviData = data;
+        // } else {
           this.naviHeaderData = data;
           this.naviData = data;
-        }
+        // }
       }
     },
     isLayout(item) {
@@ -542,6 +542,13 @@ export default {
     },
 
     menuSelect(name, item, params) {
+      this.currentLeftMenu = params;
+      if (this.active !== name) {
+        clearMemory();
+        this.select(name, item, params);
+      }
+    },
+    menuSelectAccordion(name, item, params) {
       if (this.active !== name) {
         clearMemory();
         this.select(name, item, params);
