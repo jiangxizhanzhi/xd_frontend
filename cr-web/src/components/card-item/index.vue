@@ -22,7 +22,7 @@
             }"
           ></span>
         </span>
-        <span class="text">已发布</span>
+        <span class="text">{{ cardData.distribute ? '已发布' : '未发布' }}</span>
       </div>
     </div>
     <div class="img-wrap">
