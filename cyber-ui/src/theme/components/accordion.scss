@@ -1,10 +1,10 @@
 .cb-accordion {
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: var(--bg-color-2);
+  background-color: var(--left-nav-color);
 
   .el-menu {
-    background-color: var(--bg-color-2);
+    background-color: var(--left-nav-color);
 
     &::-webkit-scrollbar {
       background: rgba(0, 0, 0, 0);
@@ -33,17 +33,17 @@
       }
     }
     .el-submenu__title {
-      color: var(--neutral8);
+      color: var(--white-color);
     }
     .el-menu-item {
-      color: var(--neutral7);
+      color: var(--white-color);
     }
     & > div > li.el-menu-item {
-      color: var(--neutral8);
+      color: var(--white-color);
     }
 
     .cb-accordion__icon {
-      color: var(--neutral8);
+      color: var(--white-color);
     }
   }
   .is-active {
