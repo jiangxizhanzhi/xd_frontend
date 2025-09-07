@@ -1,10 +1,10 @@
 <template>
   <div class="root-container">
     <!-- :logoName="logoName" -->
+    <!-- :current-menu="currentMenu" -->
     <cb-layout
       ref="cbLayoutRef"
       show-flag
-      :current-menu="currentMenu"
       :show-bell="false"
       :logo="logo"
       :name-logo="nameLogo"
@@ -26,8 +26,14 @@
       :showQuickEntry="true"
       @quick-entry="goQuickEntry"
     >
-      <transition name="fade-transform" mode="out-in">
-        <router-view v-if="userInfoReady" :key="routeKey" />
+      <transition
+        name="fade-transform"
+        mode="out-in"
+      >
+        <router-view
+          v-if="userInfoReady"
+          :key="routeKey"
+        />
       </transition>
     </cb-layout>
     <about ref="aboutRef" />
