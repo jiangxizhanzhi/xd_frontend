@@ -42,7 +42,7 @@ export default {
   },
   mounted() {
     // 加载配置化主题样式文件
-    utils.loadCss('dark');
+    // utils.loadCss('dark');
     utils.loadCss('light');
   },
   methods: {},

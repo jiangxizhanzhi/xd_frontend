@@ -1,0 +1,15 @@
+.cb-form-tags {
+  min-height: var(--form-item-height);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .cb-tag {
+    // margin: 3px 10px 3px 0;
+    margin-right: 10px;
+  }
+
+  &__input-new {
+    width: 90px;
+  }
+}

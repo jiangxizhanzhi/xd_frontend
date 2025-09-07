@@ -1,0 +1,30 @@
+.cb-label {
+  &__label {
+    color: var(--neutral8);
+  }
+
+  & > input {
+    color: var(--neutral8);
+
+    // &:focus {
+    //   outline: 1px solid themed(cy23);
+    // }
+  }
+}
+
+.cb-label {
+  &__label {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  & > input {
+    text-overflow: ellipsis;
+    background-color: transparent;
+    border: 0;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}

@@ -220,7 +220,7 @@ export default {
     this.getCurrentMenu();
   },
   mounted() {
-    utils.loadCss('dark');
+    // utils.loadCss('dark');
     utils.loadCss('light');
     if (window.innerWidth < 1580) {
       this.$refs.cbLayoutRef.setAccCollapse(true);

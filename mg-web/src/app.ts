@@ -78,7 +78,7 @@ let runtime: IRuntime = function (Vue): IRuntimeResult {
   Vue.prototype.$CONSTANT = Constant;
   Vue.prototype.$ListenDomChange = ListenDomChange;
   initFrame();
-  setTheme();
+  setTheme('theme-light');
   Vue.use(VueChatScroll);
 
   function getRoles() {

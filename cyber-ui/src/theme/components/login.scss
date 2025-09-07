@@ -1,0 +1,253 @@
+.cb-login {
+  .lang-switch {
+    color: var(--primary-color);
+  }
+  .login-main {
+    background: var(--login-bg-color);
+    .login-title {
+      color: var(--primary-color);
+    }
+
+    .login_info {
+      // 验证码
+      .code-box {
+        .el-input__inner {
+          padding-left: 16px !important;
+        }
+      }
+      .img-box {
+        width: 40%;
+        margin-top: 2px;
+        height: 4vh;
+        min-height: 30px;
+        margin-left: 8px;
+        .img-style {
+          width: 100%;
+          height: 4vh;
+          min-height: 30px;
+        }
+      }
+      .prefix-icon {
+        color: var(--primary-color);
+      }
+
+      .login-input-box {
+        input {
+          background: var(--primary-color-4);
+
+          &::-webkit-input-placeholder {
+            color: var(--neutral4);
+          }
+        }
+
+        .el-input__inner {
+          border-color: var(--primary-color);
+        }
+
+        .el-input__inner:focus {
+          border-color: var(--primary-color);
+        }
+      }
+    }
+
+    .login-bottom {
+      .warningInfo {
+        color: var(--white-color);
+
+        a {
+          color: var(--white-color);
+        }
+      }
+    }
+  }
+}
+
+.cb-login {
+  min-width: 1280px;
+  min-height: 720px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-size: cover;
+  .lang-switch {
+    position: absolute;
+    top: 2vw;
+    right: 4vw;
+    font-size: 0.85vw;
+    .lang-switch__text {
+      cursor: pointer;
+    }
+    .lang-switch__line {
+      margin: 0 0.4vw;
+    }
+  }
+  .login-main {
+    width: 26%;
+    min-width: 400px;
+    min-height: 400px;
+    margin-right: 50%;
+    //padding-top: 5vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(50%);
+
+    // 覆盖主题padding
+    .el-form {
+      padding-right: unset;
+    }
+
+    .login-title {
+      font-size: 3.1vh;
+      font-weight: 600;
+      margin-bottom: 3vh;
+      letter-spacing: 0.5vh;
+      width: 81%;
+      text-align: center;
+    }
+
+    .login_info {
+      width: 81%;
+
+      .label {
+        font-size: 1.4vh;
+        line-height: 26px;
+      }
+
+      .rem-password-checkbox {
+        width: fit-content;
+        height: 2.4vh;
+      }
+
+      .login-btn {
+        margin-top: 5.8vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .cb-button {
+          width: 100%;
+          height: 4vh;
+          min-height: 30px;
+
+          .el-button {
+            width: 100%;
+            height: 4vh;
+            min-height: 30px;
+
+            span {
+              font-size: 2vh;
+              font-family: var(--font-family);
+              font-weight: 400;
+              line-height: 20px;
+              display: unset;
+            }
+          }
+        }
+      }
+
+      .login-reback {
+        margin-top: 2.4vh;
+      }
+
+      .register-btn {
+        margin-top: 2.4vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .cb-button {
+          width: 100%;
+          height: 4vh;
+          min-height: 30px;
+
+          .el-button {
+            height: 4vh;
+            min-height: 30px;
+            width: 100%;
+            // background: unset;
+
+            span {
+              font-size: 2vh;
+              font-family: var(--font-family);
+              font-weight: 400;
+              line-height: 20px;
+              display: unset;
+            }
+          }
+        }
+      }
+
+      // 表单内部输入框样式
+      .cb-form {
+        .el-form-item {
+          margin-bottom: 3.8vh;
+        }
+
+        .el-form-item__content {
+          line-height: 4.5vh;
+          height: 4.5vh;
+          min-height: 30px;
+
+          .login-input-box {
+            height: 4.5vh;
+            min-height: 30px;
+            font-size: 1.5vh;
+
+            // 输入框
+            .el-input__inner {
+              height: 4.5vh !important;
+              min-height: 30px;
+              padding-left: 5vh;
+            }
+
+            // 图标
+            .el-input__prefix {
+              left: 2.2vh;
+              display: flex;
+              align-items: center;
+
+              .cb-iconfont {
+                font-size: 1.8vh !important;
+              }
+            }
+            .el-input__suffix {
+              color: var(--primary-color);
+              &-inner {
+                i {
+                  color: var(--primary-color);
+                }
+              }
+            }
+          }
+
+          .el-form-item__error {
+            font-size: 1vh;
+          }
+        }
+      }
+    }
+
+    .login-bottom {
+      width: 80%;
+      margin: auto 0 10% 0;
+      padding-top: 12%;
+
+      .warningInfo {
+        font-size: 1.4vh;
+        font-family: var(--font-family);
+        font-weight: 400;
+      }
+    }
+  }
+  .copyright {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: var(--neutral5);
+  }
+}

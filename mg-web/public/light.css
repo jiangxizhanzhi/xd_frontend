@@ -91,7 +91,8 @@ body.theme-light {
   /* -----遮罩 end----- */
     --white-color: rgba(255, 255, 255, 0.9);
   /* -----导航 start----- */
-    --nav-color: linear-gradient(90deg, #0994EB 0%, #007AC6 100%);
+    --nav-color: #223A7D;
+    --left-nav-color: #15385B;
     --nav-shadow: 0px 3px 6px 0px rgba(23, 180, 255, 0.2);
     --nav-text: rgba(255, 255, 255, 0.9);
   /* -----导航 end----- */
@@ -105,7 +106,7 @@ body.theme-light {
     --box-shadow-color: rgba(0, 0, 0, 0.35);
   /* -----shadow end----- */
   /* 登录页面登录框背景色 */
-    --login-bg-color: rgba(68, 138, 255, 0.15);
+    --login-bg-color: transparent;
   /* echart-radar 活动区域背景色 */
     --echart-active-bg-color: rgba(68, 138, 255, 0.1);
   /* table 背景色 */
