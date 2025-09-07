@@ -1,10 +1,10 @@
 <template>
   <div class="root-container">
     <!-- :logoName="logoName" -->
-    <!-- :current-menu="currentMenu" -->
     <cb-layout
       ref="cbLayoutRef"
       show-flag
+      :current-menu="currentMenu"
       :show-bell="false"
       :logo="logo"
       :name-logo="nameLogo"
@@ -25,7 +25,7 @@
       @onLangSwitch="onLangSwitch"
       :showQuickEntry="true"
       @quick-entry="goQuickEntry"
-    >
+      >
       <transition
         name="fade-transform"
         mode="out-in"
