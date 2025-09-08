@@ -20,6 +20,7 @@
       :isNeedVerificationCode="true"
       baseVerificationCodeUrl="/api/mp"
       verificationCodeUrl="/unauth/kaptcha"
+      :system-name="system_name"
     >
 <!--      <template v-slot:browser>-->
 <!--        {{ $t('login.browserBefore') }}-->
@@ -46,8 +47,7 @@
 <!--      ></video>-->
 <!--    </template>-->
     <img
-
-      src="/dev/mg/public/bg.png"
+      src="/page/mg/public/bg.png"
       alt=""
       class="login-background"
     />
@@ -222,6 +222,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+::v-deep .cb-login {
+  flex-direction: initial !important;
+  .login-main {
+    min-height: initial !important;
+  }
+  .login-title {
+    position: absolute;
+    top: -60%;
+    color: var(--white-color);
+    font-size: 40px;
+    width: 100%;
+  }
+  .el-form {
+    padding: 0 !important;
+  }
+}
 .mg-web-login {
   min-width: 1283px;
   min-height: 720px;
