@@ -126,7 +126,7 @@ import _ from 'lodash';
 import { SceneEditor } from '@cyber/scene';
 import { v4 as uuidv4 } from 'uuid';
 import IndexDB from '@/utils/indexDB.js';
-
+import { SCENE_MANAGEMENT_NAME, SCENE_MANAGEMENT_TYPE } from './constants';
 export default {
   name: 'Edit',
   components: {
@@ -163,6 +163,7 @@ export default {
       model: {
         base_info: {
           type: '3',
+          xd_template_type: SCENE_MANAGEMENT_TYPE[this.$route.meta?.breadcrumb?.parentName],
           name: '',
           description: '',
           logo: '',
@@ -803,6 +804,7 @@ export default {
         _.cloneDeep(data.base_info.scene_config_data),
       );
       this.model = Object.assign({}, data);
+      this.model.base_info.xd_template_type = SCENE_MANAGEMENT_TYPE[this.$route.meta?.breadcrumb?.parentName];
       this.sceneConfigId = data.base_info.scene_config_data.id;
     },
 
@@ -852,6 +854,10 @@ export default {
         ...this.generateSubmitData(data),
         resource_id: this.id,
       };
+      // 未上传logo, 使用scene_config_data.logo
+      if (!submitData.base_info.logo) {
+        submitData.base_info.logo = submitData.base_info.scene_config_data.logo;
+      }
       this.submitted = true;
       this.$refs.techfromRef
         .submit(submitData, {

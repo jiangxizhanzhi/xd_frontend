@@ -11,18 +11,18 @@
       <div
         class="tag-wrap"
         :style="{
-          background: cardData.distribute ? $themed('primary-color') : '#a6b0c4'
+          background: cardData.published_flag ? $themed('primary-color') : '#a6b0c4'
         }"
       >
         <span class="outer-round">
           <span
             class="inner-round"
             :style="{
-              background: cardData.distribute ? $themed('primary-color') : '#a6b0c4'
+              background: cardData.published_flag ? $themed('primary-color') : '#a6b0c4'
             }"
           ></span>
         </span>
-        <span class="text">{{ cardData.distribute ? '已发布' : '未发布' }}</span>
+        <span class="text">{{ cardData.published_flag ? '已发布' : '未发布' }}</span>
       </div>
     </div>
     <div class="img-wrap">
@@ -34,8 +34,14 @@
       </div>
     </div>
     <div class="card-bottom">
-      <cb-button type="text">发布</cb-button>
-      <cb-button type="text">复制</cb-button>
+      <cb-button
+        type="text"
+        @click="handlerDistribute(cardData)"
+      >发布</cb-button>
+      <cb-button
+        type="text"
+        @click="handlerCopy(cardData)"
+      >复制</cb-button>
       <cb-button
         type="text"
         @click="handlerEdit(cardData)"
@@ -65,6 +71,12 @@ export default {
     },
     handlerDelete(data) {
       this.$emit('delete', data)
+    },
+    handlerCopy(data) {
+      this.$emit('copy', data)
+    },
+    handlerDistribute(data) {
+      this.$emit('distribute', data)
     },
   }
 };

@@ -1,65 +1,74 @@
 <template>
   <div class="main-wrap">
-    <!-- 左上角标题 -->
-    <header-decorate :title="header_title"></header-decorate>
-    <!-- 搜索区域 -->
-    <div class="search-wrap">
-      <span class="label">搜索</span>
-      <cb-search-input
-        v-model="search"
-        :trigger="'input'"
-      ></cb-search-input>
-      <cb-button
-        class="search"
-        @click="handlerSearch"
-      >搜索</cb-button>
-      <cb-button
-        hollow
-        class="reset"
-        @click="handlerReset"
-      >重置</cb-button>
-      <div class="right-button">
-        <cb-button @click="createSceneTemplate">新增</cb-button>
-        <cb-button hollow>删除</cb-button>
+    <template v-if="isAuthActive">
+      <!-- 左上角标题 -->
+      <header-decorate :title="header_title"></header-decorate>
+      <!-- 搜索区域 -->
+      <div class="search-wrap">
+        <span class="label">搜索</span>
+        <cb-search-input
+          v-model="search"
+          :trigger="'input'"
+        ></cb-search-input>
+        <cb-button
+          class="search"
+          @click="handlerSearch"
+        >搜索</cb-button>
+        <cb-button
+          hollow
+          class="reset"
+          @click="handlerReset"
+        >重置</cb-button>
+        <div class="right-button">
+          <cb-button @click="createSceneTemplate">新增</cb-button>
+          <cb-button hollow>删除</cb-button>
+        </div>
       </div>
-    </div>
-    <!-- 列表展示 -->
-    <div class="card-list">
-      <card-item
-        v-for="(item, index) in cardList"
-        :key="index"
-        :card-data="item"
-        @edit="handlerEdit($event)"
-        @delete="handlerDelete($event)"
-      ></card-item>
-    </div>
-    <!-- 暂无数据 -->
-    <div
-      v-if="!cardList.length"
-      class="empty-comp"
-      style="
+      <!-- 列表展示 -->
+      <div class="card-list">
+        <card-item
+          v-for="(item, index) in cardList"
+          :key="index"
+          :card-data="item"
+          @edit="handlerEdit($event)"
+          @delete="handlerDelete($event)"
+          @copy="copySceneTemplate($event)"
+          @distribute="distributeSeneTemplate($event)"
+        ></card-item>
+      </div>
+      <!-- 暂无数据 -->
+      <div
+        v-if="!cardList.length"
+        class="empty-comp"
+        style="
           width: 100%;
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
         "
-    >
-      <empty-page ref="emptyComp" />
-    </div>
-    <!-- 分页 -->
-    <cb-pagination
-      v-if="cardList.length > 0"
-      :current-page="pagination.currentPage"
-      :total="pagination.total"
-      :page-size.sync="pagination.per_page"
-      :page-sizes="['8', '16', '32', '64']"
-      @current-change="handleCurrentChange"
-      @size-change="handleSizeChange"
-      :current="pagination.current_page"
-      style="text-align: right"
-    >
-    </cb-pagination>
+      >
+        <empty-page ref="emptyComp" />
+      </div>
+      <!-- 分页 -->
+      <cb-pagination
+        v-if="cardList.length > 0"
+        :current-page="pagination.currentPage"
+        :total="pagination.total"
+        :page-size.sync="pagination.per_page"
+        :page-sizes="['8', '16', '32', '64']"
+        @current-change="handleCurrentChange"
+        @size-change="handleSizeChange"
+        :current="pagination.current_page"
+        style="text-align: right"
+      >
+      </cb-pagination>
+    </template>
+    <private-exercises-auth
+      v-if="!isAuthActive"
+      :authIds="authIds"
+      @close="getAuthActive"
+    ></private-exercises-auth>
   </div>
 </template>
 
@@ -67,17 +76,20 @@
 import HeaderDecorate from '@/components/header-decorate/index.vue';
 import CardItem from '@/components/card-item/index.vue';
 import EmptyPage from '@/pages/web/Empty';
-import { getSceneTemplateListApi } from '@/api/scene-management/index'
-import { SCENE_MANAGEMENT_NAME } from './constants'
+import PrivateExercisesAuth from './private-exercises-batch.vue';
+import { getSceneTemplateListApi, copySceneTemplateApi } from '@/api/scene-management/index'
+import { SCENE_MANAGEMENT_NAME, SCENE_MANAGEMENT_TYPE } from './constants'
 export default {
   components: {
     HeaderDecorate,
     CardItem,
     EmptyPage,
+    PrivateExercisesAuth,
   },
   data() {
     return {
       SCENE_MANAGEMENT_NAME,
+      SCENE_MANAGEMENT_TYPE,
       header_title: "",
       cardList: [],
       search: '',
@@ -86,6 +98,8 @@ export default {
         per_page: 8,
         total: 0,
       },
+      isAuthActive: true,
+      authIds: [],
     };
   },
   computed: {},
@@ -103,7 +117,7 @@ export default {
         per_page: this.pagination.per_page,
         page: this.pagination.currentPage,
         search: this.search,
-        type: 3, //团队训练type是3，后面根据不同菜单修改
+        xd_template_type: SCENE_MANAGEMENT_TYPE[this.$route.name], //不同菜单对应不同参数
       };
       getSceneTemplateListApi(data).then((res) => {
         const data = _.get(res, 'data.data.list', [])
@@ -152,8 +166,26 @@ export default {
           )
           .then(() => {
             this.getCardList();
+            this.$message.success('操作成功');
           })
       });
+    },
+    // 复制
+    copySceneTemplate(data) {
+      copySceneTemplateApi({
+        resource_id: data.resource_id
+      }).then(res => {
+        this.getCardList();
+        this.$message.success('操作成功');
+      })
+    },
+    // 授权操作(发布)
+    distributeSeneTemplate(data) {
+      this.authIds = [data.resource_id];
+      this.isAuthActive = false;
+    },
+    getAuthActive(value) {
+      this.isAuthActive = value;
     },
     createSceneTemplate() {
       this.$router.push({
