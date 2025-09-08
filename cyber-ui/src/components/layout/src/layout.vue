@@ -545,7 +545,7 @@ export default {
       this.currentLeftMenu = params;
       if (this.active !== name) {
         clearMemory();
-        this.select(name, item, params);
+        this.select(params[0].name, params[0], params);
       }
     },
     menuSelectAccordion(name, item, params) {

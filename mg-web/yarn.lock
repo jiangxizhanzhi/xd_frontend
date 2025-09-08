@@ -2292,9 +2292,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cyber/ui@npm:5.6.0-xd.0":
-  version: 5.6.0-xd.0
-  resolution: "@cyber/ui@npm:5.6.0-xd.0"
+"@cyber/ui@npm:5.6.0-xd.1":
+  version: 5.6.0-xd.1
+  resolution: "@cyber/ui@npm:5.6.0-xd.1"
   dependencies:
     "@bytemd/plugin-breaks": ^1.21.0
     "@bytemd/plugin-gfm": ^1.21.0
@@ -2327,7 +2327,7 @@ __metadata:
     vue: ^2.6.14
     vue-i18n: ^8.27.2
     vue-router: ^3.5.4
-  checksum: 9fdd821fc668ad4c0b9d5e9bfc0b16fa8004ee828a7c7173e689155638c84f9f99a0ae5f496e7a7b4953c86853db3df323b42bebc791ca5820692d153314b403
+  checksum: f01a8c8598eb33725ef3b890100996138429c075edbe9f4b1cfdb30de7523634b66414a2a2299db117db74c2b1aa78e03b0cce8ad3a78ba0b2787e119e83dd20
   languageName: node
   linkType: hard
 
@@ -9733,7 +9733,7 @@ __metadata:
     "@cyber/helper": 5.4.1-alpha.1
     "@cyber/painter": 1.0.7-alpha.31
     "@cyber/scene": 5.6.0-alpha.7
-    "@cyber/ui": 5.6.0-xd.0
+    "@cyber/ui": 5.6.0-xd.1
     "@micro-zoe/micro-app": ^0.8.5
     "@microsoft/fetch-event-source": ^2.0.1
     "@types/js-cookie": ^2.2.6

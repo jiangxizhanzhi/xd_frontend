@@ -41,7 +41,7 @@ import contestMgr from './cms/ct-cms/contest-mgr';
 import screen from './cms/screen';
 import personTrainingScreen from './cms/person-training-screen';
 // 场景管理
-import sceneManagement from './cms/scene-management/index';
+import {sceneManageRouter} from './cms/scene-management/index';
 import topologyManagement from './cms/topology-management';
 import situation3DManage from './cms/situation-3D-manage';
 import intelligenceCenter from './web/intelligence-center';
@@ -394,7 +394,7 @@ export default [
       // 靶标管理
       ...device,
       // 场景管理
-      ...sceneManagement,
+      sceneManageRouter,
       // 拓扑模板
       ...topologyManagement,
       // 流量管理
