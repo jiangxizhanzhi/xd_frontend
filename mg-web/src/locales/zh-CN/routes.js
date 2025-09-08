@@ -38,8 +38,8 @@ export default {
   'service-manage': '服务管理',
 
   // 拓扑模板
-  'topology-management-folder': '拓扑模板',
-  'topology-management': '拓扑模板',
+  'topology-management-folder': '场景编排',
+  'topology-management': '场景编排',
   
   'scene-manage-folder': '场景管理',
   'cloud-computing-resource-scene': '云计算资源场景',

@@ -10,7 +10,7 @@ export default [
   {
     name: 'topology-management',
     path: '/admin/topology-management',
-    title: 'routes.topology-management-folder',
+    title: 'routes.topology-management',
     component: './pages/cms/topology-management/index.vue',
     meta: {
       // hideInMenu: true,

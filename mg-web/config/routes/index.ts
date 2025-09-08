@@ -42,7 +42,6 @@ import screen from './cms/screen';
 import personTrainingScreen from './cms/person-training-screen';
 // 场景管理
 import {sceneManageRouter} from './cms/scene-management/index';
-import topologyManagement from './cms/topology-management';
 import situation3DManage from './cms/situation-3D-manage';
 import intelligenceCenter from './web/intelligence-center';
 export default [
@@ -395,8 +394,6 @@ export default [
       ...device,
       // 场景管理
       sceneManageRouter,
-      // 拓扑模板
-      ...topologyManagement,
       // 流量管理
       ...trfficManage,
       // 探针管理
