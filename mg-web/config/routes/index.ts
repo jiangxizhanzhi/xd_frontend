@@ -240,7 +240,7 @@ export default [
         path: '',
         name: 'web-default',
         redirect: {
-          name: 'personal-folder',
+          name: 'single-list',
         },
       },
       ...ojCourse,
