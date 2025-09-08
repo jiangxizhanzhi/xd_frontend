@@ -11,6 +11,7 @@
       :notice-count="notificationCount"
       padding="0px 3% 20px 3%"
       bg-color="none"
+      accordion
       :theme-switch="themeSwitch"
       :lang-switch="langSwitch"
       @command="handleCommand"

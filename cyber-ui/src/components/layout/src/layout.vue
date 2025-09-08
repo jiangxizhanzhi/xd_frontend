@@ -3,7 +3,7 @@
     <div class="layout-container" :style="{ background: backgroundColor }">
       <!-- iframe对话框的遮罩 -->
       <div class="cb-layout-full-screen-mask"></div>
-      <div v-show="!fullscreen" class="navi-header">
+      <div v-if="!noNavi" v-show="!fullscreen" class="navi-header">
         <div v-if="$slots.header">
           <slot name="header"></slot>
         </div>
@@ -28,6 +28,7 @@
         </cb-navi>
       </div>
       <div
+        v-if="accordion && !noNavi"
         class="left-accordion"
         v-show="!fullscreen"
         :class="{ 'left-accordion-collapse': collapse }"
@@ -37,6 +38,7 @@
         </div>
         <!-- 手风琴后台菜单-->
         <cb-accordion
+          v-else
           ref="cbAccordionRef"
           v-if="!$slots.accordion && currentLeftMenu"
           v-bind="$attrs"
@@ -290,7 +292,7 @@ export default {
         padding: computedPadding,
         width: `calc(100% - ${accWidth}px - ${paddingLeft} - ${paddingRight})`,
         height: `calc(100% - ${naviHeight}px - ${paddingBottom} - ${paddingTop})`,
-        marginLeft: this.currentLeftMenu? '200px' : '0'
+        marginLeft: accordion ? this.currentLeftMenu? '200px' : '0' : '0'
       };
     },
     computedLineStyle() {
@@ -466,9 +468,9 @@ export default {
         //   this.naviHeaderData = [];
         //   this.naviData = data;
         // } else {
-          this.naviHeaderData = data;
-          this.naviData = data;
-        // }
+        this.naviHeaderData = data;
+        this.naviData = data;
+        this.currentLeftMenu = data.find(item => item.name===this.active.meta._folderName[0]).children;
       }
     },
     isLayout(item) {
@@ -482,6 +484,7 @@ export default {
         return this.isLayout(item);
       });
       let routes = isDynamic ? this.$router.options.routes : getDynamicRouter();
+      // console.log('routes',routes);
       if (!routes) {
         return;
       }
@@ -543,10 +546,12 @@ export default {
 
     menuSelect(name, item, params) {
       this.currentLeftMenu = params;
-      if (this.active !== name) {
-        clearMemory();
-        this.select(params[0].name, params[0], params);
-      }
+      this.$nextTick(() => {
+        if (this.active !== params[0].name) {
+          clearMemory();
+          this.select(params[0].name, params[0], params);
+        }
+      })
     },
     menuSelectAccordion(name, item, params) {
       if (this.active !== name) {
