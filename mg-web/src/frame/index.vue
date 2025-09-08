@@ -4,24 +4,24 @@
     v-loading="loading"
     element-loading-background="rgba(0, 0, 0, 0)"
   >
-    <micro-app
-    :name="appName"
-    :url="`//localhost:8001/page${baseRoute}`"
-    :baseroute="
-        pathIncludesAdmin
-          ? `/dev/mg/admin${baseRoute}`
-          : `/dev/mg${baseRoute}`
-      "
-  ></micro-app>
 <!--    <micro-app-->
-<!--      :name="appName"-->
-<!--      :url="`//${host}/page${baseRoute}`"-->
-<!--      :baseroute="-->
+<!--    :name="appName"-->
+<!--    :url="`//localhost:8001/page${baseRoute}`"-->
+<!--    :baseroute="-->
 <!--        pathIncludesAdmin-->
-<!--          ? `/page/mg/admin${baseRoute}`-->
-<!--          : `/page/mg${baseRoute}`-->
+<!--          ? `/dev/mg/admin${baseRoute}`-->
+<!--          : `/dev/mg${baseRoute}`-->
 <!--      "-->
-<!--    ></micro-app>-->
+<!--  ></micro-app>-->
+    <micro-app
+      :name="appName"
+      :url="`//${host}/page${baseRoute}`"
+      :baseroute="
+        pathIncludesAdmin
+          ? `/page/mg/admin${baseRoute}`
+          : `/page/mg${baseRoute}`
+      "
+    ></micro-app>
   </div>
 </template>
 
