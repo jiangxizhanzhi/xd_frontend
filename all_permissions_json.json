@@ -1,0 +1,2320 @@
+[
+  {
+    "name": "前台",
+    "value": "front_all",
+    "en_name": "Web",
+    "authority": "front_all",
+    "path_name": "front_all/*",
+    "status": 1,
+    "active": [
+      "no_auth"
+    ],
+    "edition": [
+      0,
+      1
+    ],
+    "read_status": 1,
+    "write_status": 1,
+    "execute_status": 1,
+    "per_status": "R/W/X",
+    "children": [
+      {
+        "name": "课程训练",
+        "value": "oj-all-course",
+        "en_name": "Course",
+        "authority": "oj-all-course",
+        "active": [
+          "LCS-FUNC-CR-SHIXUN"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "children": [],
+        "path_name": "front_all/oj-all-course",
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X"
+      },
+      {
+        "name": "攻防实训",
+        "value": "practice-folder",
+        "en_name": "Practice",
+        "authority": "practice-folder",
+        "active": [
+          "LCS-FUNC-CR-SHIXUN"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "children": [
+          {
+            "name": "理论题",
+            "value": "oj-practice",
+            "en_name": "Theory",
+            "authority": "oj-practice",
+            "children": [],
+            "path_name": "front_all/practice-folder/oj-practice",
+            "active": [
+              "LCS-FUNC-CR-SHIXUN"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "实操题",
+            "value": "oj-practice-capture-flag",
+            "en_name": "Practice",
+            "authority": "oj-practice-capture-flag",
+            "children": [],
+            "path_name": "front_all/practice-folder/oj-practice-capture-flag",
+            "active": [
+              "LCS-FUNC-CR-SHIXUN"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          }
+        ],
+        "path_name": "front_all/practice-folder",
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X"
+      },
+      {
+        "name": "比武竞赛",
+        "value": "ct-contest-folder",
+        "en_name": "Contest",
+        "authority": "ct-contest-folder",
+        "path_name": "front_all/ct-contest-folder",
+        "status": 1,
+        "active": [
+          "LCS-FUNC-CR-SHIXUN",
+          "LCS-FUNC-CR-JINGSAI",
+          "LCS-FUNC-CR-SHENTOUSAI",
+          "LCS-FUNC-CR-YUNWEISAI"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "children": [
+          {
+            "name": "赛场",
+            "value": "ct-contest-arena-list",
+            "en_name": "Arena",
+            "authority": "ct-contest-arena-list",
+            "children": [],
+            "path_name": "front_all/ct-contest-folder/ct-contest-arena-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-JINGSAI",
+              "LCS-FUNC-CR-SHENTOUSAI",
+              "LCS-FUNC-CR-YUNWEISAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "理论赛",
+            "value": "ct-contest-exam-list",
+            "en_name": "Theory Contest",
+            "authority": "ct-contest-exam-list",
+            "children": [],
+            "path_name": "front_all/ct-contest-folder/ct-contest-exam-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-SHIXUN",
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "运维赛",
+            "value": "ct-contest-operation-list",
+            "en_name": "O&M Contest",
+            "authority": "ct-contest-operation-list",
+            "children": [],
+            "path_name": "front_all/ct-contest-folder/ct-contest-operation-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-YUNWEISAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "夺旗赛",
+            "value": "ct-flag-contest-list",
+            "en_name": "CTF Contest",
+            "authority": "ct-flag-contest-list",
+            "children": [],
+            "path_name": "front_all/ct-contest-folder/ct-flag-contest-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "攻防赛",
+            "value": "ct-attack-defense-list",
+            "en_name": "A&D Contest",
+            "authority": "ct-attack-defense-list",
+            "children": [],
+            "path_name": "front_all/ct-contest-folder/ct-attack-defense-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "渗透赛",
+            "value": "ct-contest-cfs-list",
+            "en_name": "CFS Contest",
+            "authority": "ct-contest-cfs-list",
+            "children": [],
+            "path_name": "front_all/ct-contest-folder/ct-contest-cfs-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-SHENTOUSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "沙盒攻防赛",
+            "value": "ct-awdp-contest-list",
+            "en_name": "AWDP Contest",
+            "authority": "ct-awdp-contest-list",
+            "children": [],
+            "path_name": "front_all/ct-contest-folder/ct-awdp-contest-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "人工智能分析赛",
+            "value": "ct-ai-contest-list",
+            "en_name": "AI Contest",
+            "authority": "ct-ai-contest-list",
+            "children": [],
+            "path_name": "front_all/ct-contest-folder/ct-ai-contest-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          }
+        ],
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X"
+      },
+      {
+        "name": "综合训练",
+        "value": "comprehensive-training-folder",
+        "en_name": "Training",
+        "authority": "comprehensive-training-folder",
+        "active": [
+          "LCS-FUNC-CR-ZONGHEXUNLIAN"
+        ],
+        "edition": [
+          1
+        ],
+        "children": [
+          {
+            "name": "单兵训练",
+            "value": "single-list",
+            "en_name": "Individual",
+            "authority": "single-list",
+            "children": [],
+            "path_name": "front_all/comprehensive-training-folder/single-list",
+            "active": [
+              "LCS-FUNC-CR-ZONGHEXUNLIAN"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "团队训练",
+            "value": "group-training",
+            "en_name": "Team",
+            "authority": "group-training",
+            "children": [],
+            "path_name": "front_all/comprehensive-training-folder/group-training",
+            "active": [
+              "LCS-FUNC-CR-ZONGHEXUNLIAN"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          }
+        ],
+        "path_name": "front_all/comprehensive-training-folder",
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X"
+      },
+      {
+        "name": "红蓝对抗",
+        "value": "red-vs-blue",
+        "en_name": "Cyber Wargame",
+        "authority": "red-vs-blue",
+        "path_name": "front_all/red-vs-blue",
+        "active": [
+          "LCS-FUNC-CR-HONGLANDUIKANG"
+        ],
+        "edition": [
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X"
+      },
+      {
+        "name": "靶场测评",
+        "value": "range-test-self",
+        "en_name": "Range Test",
+        "authority": "range-test-self",
+        "path_name": "front_all/range-test-self",
+        "active": [
+          "LCS-FUNC-CR-CEPING"
+        ],
+        "edition": [
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X"
+      },
+      {
+        "name": "活体漏洞",
+        "value": "living-vulnerability",
+        "en_name": "Living Vulnerability",
+        "authority": "living-vulnerability",
+        "path_name": "front_all/living-vulnerability",
+        "active": [
+          "LCS-FUNC-CR-HUOTILOUDONG"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X",
+        "children": [
+          {
+            "name": "漏洞概览",
+            "value": "living-vulnerability-overview",
+            "en_name": "Vulnerability Overview",
+            "authority": "living-vulnerability-overview",
+            "path_name": "front_all/living-vulnerability/living-vulnerability-overview",
+            "active": [
+              "LCS-FUNC-CR-HUOTILOUDONG"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "漏洞情报",
+            "value": "living-vulnerability-intelligence",
+            "en_name": "Vulnerability Intelligence",
+            "authority": "living-vulnerability-intelligence",
+            "path_name": "front_all/living-vulnerability/living-vulnerability-intelligence",
+            "active": [
+              "LCS-FUNC-CR-HUOTILOUDONG"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "漏洞环境",
+            "value": "living-vulnerability-env",
+            "en_name": "Vulnerability Environment",
+            "authority": "living-vulnerability-env",
+            "path_name": "front_all/living-vulnerability/living-vulnerability-env",
+            "active": [
+              "LCS-FUNC-CR-HUOTILOUDONG"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "漏洞利用",
+            "value": "living-vulnerability-exploitation",
+            "en_name": "Vulnerability Exploitation",
+            "authority": "living-vulnerability-exploitation",
+            "path_name": "front_all/living-vulnerability/living-vulnerability-exploitation",
+            "active": [
+              "LCS-FUNC-CR-HUOTILOUDONG"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "漏洞分析",
+            "value": "living-vulnerability-analysis",
+            "en_name": "Vulnerability Analysis",
+            "authority": "living-vulnerability-analysis",
+            "path_name": "front_all/living-vulnerability/living-vulnerability-analysis",
+            "active": [
+              "LCS-FUNC-CR-HUOTILOUDONG"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          }
+        ]
+      },
+      {
+        "name": "资源中心",
+        "value": "recourse-center-folder",
+        "en_name": "Resource Center",
+        "authority": "recourse-center-folder",
+        "active": [
+          "LCS-FUNC-CR-ZHISHIKU"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "children": [
+          {
+            "name": "工具库",
+            "value": "tool-magazine",
+            "en_name": "Tool Library",
+            "authority": "tool-magazine",
+            "children": [],
+            "path_name": "front_all/recourse-center-folder/tool-magazine",
+            "active": [
+              "LCS-FUNC-CR-ZHISHIKU"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "漏洞情报库",
+            "value": "vulnerability-library",
+            "en_name": "Vulnerability Intelligence Library",
+            "authority": "vulnerability-library",
+            "children": [],
+            "path_name": "front_all/recourse-center-folder/vulnerability-library",
+            "active": [
+              "LCS-FUNC-CR-ZHISHIKU"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "EXP库",
+            "value": "tool-exp",
+            "en_name": "EXP Library",
+            "authority": "tool-exp",
+            "children": [],
+            "path_name": "front_all/recourse-center-folder/tool-exp",
+            "active": [
+              "LCS-FUNC-CR-ZHISHIKU"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "ShellCode库",
+            "value": "tool-shell",
+            "en_name": "ShellCode Library",
+            "authority": "tool-shell",
+            "children": [],
+            "path_name": "front_all/recourse-center-folder/tool-shell",
+            "active": [
+              "LCS-FUNC-CR-ZHISHIKU"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "GHDB库",
+            "value": "ghdb-library",
+            "en_name": "GHDB Library",
+            "authority": "ghdb-library",
+            "children": [],
+            "path_name": "front_all/recourse-center-folder/ghdb-library",
+            "active": [
+              "LCS-FUNC-CR-ZHISHIKU"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          }
+        ],
+        "path_name": "front_all/recourse-center-folder",
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X"
+      },
+      {
+        "name": "智能体中心",
+        "value": "intelligence-center",
+        "en_name": "Intelligent Assistant",
+        "authority": "intelligence-center",
+        "path_name": "front_all/intelligence-center",
+        "active": [
+          "no_auth"
+        ],
+        "edition": [
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X"
+      },
+      {
+        "name": "个人中心",
+        "value": "personal-center",
+        "en_name": "Personal Center",
+        "authority": "personal-center",
+        "path_name": "front_all/personal-center",
+        "active": [
+          "no_auth"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "children": [
+          {
+            "name": "我的主页",
+            "value": "personal-folder",
+            "en_name": "My Homepage",
+            "authority": "personal-folder",
+            "children": [],
+            "path_name": "front_all/personal-center/personal-folder",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "我的职业",
+            "value": "oj-course",
+            "en_name": "My Career",
+            "authority": "oj-course",
+            "children": [],
+            "path_name": "front_all/personal-center/oj-course",
+            "active": [
+              "LCS-FUNC-CR-SHIXUN"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          }
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X"
+      },
+    ]
+  },
+  {
+    "name": "后台",
+    "value": "back_all",
+    "en_name": "CMS",
+    "authority": "back_all",
+    "path_name": "back_all/*",
+    "status": 1,
+    "active": [
+      "no_auth"
+    ],
+    "edition": [
+      0,
+      1
+    ],
+    "read_status": 1,
+    "write_status": 1,
+    "execute_status": 1,
+    "per_status": "R/W/X",
+    "children": [
+      {
+        "name": "仪表盘",
+        "value": "dashboard",
+        "en_name": "Dashboard",
+        "authority": "dashboard",
+        "path_name": "back_all/dashboard",
+        "active": [
+          "no_auth"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X"
+      },
+      {
+        "name": "统计分析",
+        "value": "statistical-analysis-folder",
+        "en_name": "Statistical Analysis",
+        "authority": "statistical-analysis-folder",
+        "path_name": "back_all/statistical-analysis-folder",
+        "active": [
+          "LCS-FUNC-CR-SHIXUN",
+          "LCS-FUNC-CR-JINGSAI",
+          "LCS-FUNC-CR-YUNWEISAI",
+          "LCS-FUNC-CR-SHENTOUSAI",
+          "LCS-FUNC-CR-ZONGHEXUNLIAN",
+          "LCS-FUNC-CR-HONGLANDUIKANG"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X",
+        "children": [
+          {
+            "name": "学习统计",
+            "value": "learn-statistics",
+            "en_name": "Study Statistics",
+            "authority": "learn-statistics",
+            "path_name": "back_all/statistical-analysis-folder/learn-statistics",
+            "active": [
+              "LCS-FUNC-CR-SHIXUN"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "竞赛统计",
+            "value": "ct-contest-statistic",
+            "en_name": "Contest Statistic",
+            "authority": "ct-contest-statistic",
+            "path_name": "back_all/statistical-analysis-folder/ct-contest-statistic",
+            "active": [
+              "LCS-FUNC-CR-JINGSAI",
+              "LCS-FUNC-CR-YUNWEISAI",
+              "LCS-FUNC-CR-SHENTOUSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "单兵训练统计",
+            "value": "individual-training-statistics",
+            "en_name": "Individual Data",
+            "authority": "individual-training-statistics",
+            "path_name": "back_all/statistical-analysis-folder/individual-training-statistics",
+            "active": [
+              "LCS-FUNC-CR-ZONGHEXUNLIAN"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "团队训练统计",
+            "value": "team-training-statistics",
+            "en_name": "Team Data",
+            "authority": "team-training-statistics",
+            "path_name": "back_all/statistical-analysis-folder/team-training-statistics",
+            "active": [
+              "LCS-FUNC-CR-ZONGHEXUNLIAN"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "红蓝训练统计",
+            "value": "red-vs-blue-statistics",
+            "en_name": "Cyber Wargame Data",
+            "authority": "red-vs-blue-statistics",
+            "path_name": "back_all/statistical-analysis-folder/red-vs-blue-statistics",
+            "active": [
+              "LCS-FUNC-CR-HONGLANDUIKANG"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "课程管理",
+        "value": "courses-manage-folder",
+        "en_name": "Course",
+        "authority": "courses-manage-folder",
+        "path_name": "back_all/courses-manage-folder",
+        "active": [
+          "LCS-FUNC-CR-SHIXUN"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X",
+        "children": [
+          {
+            "name": "课程",
+            "value": "courses",
+            "en_name": "Course",
+            "authority": "courses",
+            "path_name": "back_all/courses-manage-folder/courses",
+            "active": [
+              "LCS-FUNC-CR-SHIXUN"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "课程表",
+            "value": "class-card",
+            "en_name": "Class Schedule",
+            "authority": "class-card",
+            "path_name": "back_all/courses-manage-folder/class-card",
+            "active": [
+              "LCS-FUNC-CR-SHIXUN"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "题库管理",
+        "value": "practices-folder",
+        "en_name": "Practice",
+        "authority": "practices-folder",
+        "path_name": "back_all/practices-folder",
+        "active": [
+          "LCS-FUNC-CR-SHIXUN",
+          "LCS-FUNC-CR-JINGSAI",
+          "LCS-FUNC-CR-SHENTOUSAI",
+          "LCS-FUNC-CR-YUNWEISAI"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X",
+        "children": [
+          {
+            "name": "习题集",
+            "value": "exercises",
+            "en_name": "Category",
+            "authority": "exercises",
+            "path_name": "back_all/practices-folder/exercises",
+            "active": [
+              "LCS-FUNC-CR-SHIXUN",
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "试卷库",
+            "value": "ct-test-paper-bank-list",
+            "en_name": "Test Paper",
+            "authority": "ct-test-paper-bank-list",
+            "path_name": "back_all/practices-folder/ct-test-paper-bank-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-SHIXUN",
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "理论题",
+            "value": "theory-base",
+            "en_name": "Theory",
+            "authority": "theory-base",
+            "path_name": "back_all/practices-folder/theory-base",
+            "active": [
+              "LCS-FUNC-CR-SHIXUN",
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "实操题",
+            "value": "flags-solve",
+            "en_name": "Practice",
+            "authority": "flags-solve",
+            "path_name": "back_all/practices-folder/flags-solve",
+            "active": [
+              "LCS-FUNC-CR-SHIXUN",
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "攻防题",
+            "value": "ct-ad-question-list",
+            "en_name": "A&D Topic",
+            "authority": "ct-ad-question-list",
+            "path_name": "back_all/practices-folder/ct-ad-question-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "运维题",
+            "value": "ct-operation-question-list",
+            "en_name": "O&M Topic",
+            "authority": "ct-operation-question-list",
+            "path_name": "back_all/practices-folder/ct-operation-question-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-YUNWEISAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "渗透题",
+            "value": "ct-cfs-question-list",
+            "en_name": "CFS Topic",
+            "authority": "ct-cfs-question-list",
+            "path_name": "back_all/practices-folder/ct-cfs-question-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-SHENTOUSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "沙盒攻防题",
+            "value": "ct-awdp-question-list",
+            "en_name": "AWDP Topic",
+            "authority": "ct-awdp-question-list",
+            "path_name": "back_all/practices-folder/ct-awdp-question-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "人工智能赛题",
+            "value": "ct-ai-question-list",
+            "en_name": "AI Topic",
+            "authority": "ct-ai-question-list",
+            "path_name": "back_all/practices-folder/ct-ai-question-list",
+            "active": [
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "竞赛管理",
+        "value": "contest-mgr-folder",
+        "en_name": "Contest",
+        "authority": "contest-mgr-folder",
+        "path_name": "back_all/contest-mgr-folder",
+        "status": 1,
+        "active": [
+          "LCS-FUNC-CR-SHIXUN",
+          "LCS-FUNC-CR-JINGSAI",
+          "LCS-FUNC-CR-SHENTOUSAI",
+          "LCS-FUNC-CR-YUNWEISAI"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X",
+        "children": [
+          {
+            "name": "赛场",
+            "value": "ct-arena-list",
+            "en_name": "Arena",
+            "authority": "ct-arena-list",
+            "path_name": "back_all/contest-mgr-folder/ct-arena-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-JINGSAI",
+              "LCS-FUNC-CR-SHENTOUSAI",
+              "LCS-FUNC-CR-YUNWEISAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "理论赛",
+            "value": "ct-exams-list",
+            "en_name": "Theory",
+            "authority": "ct-exams-list",
+            "path_name": "back_all/contest-mgr-folder/ct-exams-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-SHIXUN",
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "夺旗赛",
+            "value": "ct-flag-list",
+            "en_name": "CTF",
+            "authority": "ct-flag-list",
+            "path_name": "back_all/contest-mgr-folder/ct-flag-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "攻防赛",
+            "value": "ct-ad-list",
+            "en_name": "A&D",
+            "authority": "ct-ad-list",
+            "path_name": "back_all/contest-mgr-folder/ct-ad-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "运维赛",
+            "value": "ct-operation-list",
+            "en_name": "O&M",
+            "authority": "ct-operation-list",
+            "path_name": "back_all/contest-mgr-folder/ct-operation-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-YUNWEISAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "渗透赛",
+            "value": "ct-cfs-list",
+            "en_name": "CFS",
+            "authority": "ct-cfs-list",
+            "path_name": "back_all/contest-mgr-folder/ct-cfs-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-SHENTOUSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "沙盒攻防赛",
+            "value": "ct-awdp-list",
+            "en_name": "AWDP",
+            "authority": "ct-awdp-list",
+            "path_name": "back_all/contest-mgr-folder/ct-awdp-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "人工智能分析赛",
+            "value": "ct-ai-list",
+            "en_name": "AI",
+            "authority": "ct-ai-list",
+            "path_name": "back_all/contest-mgr-folder/ct-ai-list",
+            "status": 1,
+            "active": [
+              "LCS-FUNC-CR-JINGSAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "战队",
+            "value": "ct-team-list",
+            "en_name": "Team MGT",
+            "authority": "ct-team-list",
+            "path_name": "back_all/contest-mgr-folder/ct-team-list",
+            "active": [
+              "LCS-FUNC-CR-JINGSAI",
+              "LCS-FUNC-CR-SHENTOUSAI",
+              "LCS-FUNC-CR-YUNWEISAI"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "综合训练",
+        "value": "cr-training-list-folder",
+        "en_name": "Training",
+        "authority": "cr-training-list-folder",
+        "path_name": "back_all/cr-training-list-folder",
+        "active": [
+          "LCS-FUNC-CR-ZONGHEXUNLIAN"
+        ],
+        "edition": [
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X",
+        "children": [
+          {
+            "name": "单兵训练",
+            "value": "cr-individual-training",
+            "en_name": "Individual",
+            "authority": "cr-individual-training",
+            "path_name": "back_all/cr-training-list-folder/cr-individual-training",
+            "active": [
+              "LCS-FUNC-CR-ZONGHEXUNLIAN"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "团队训练",
+            "value": "cr-team-training",
+            "en_name": "Team",
+            "authority": "cr-team-training",
+            "path_name": "back_all/cr-training-list-folder/cr-team-training",
+            "active": [
+              "LCS-FUNC-CR-ZONGHEXUNLIAN"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "红蓝对抗",
+        "value": "red-blue",
+        "en_name": "Cyber Wargame",
+        "authority": "red-blue",
+        "path_name": "back_all/red-blue",
+        "active": [
+          "LCS-FUNC-CR-HONGLANDUIKANG"
+        ],
+        "edition": [
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X"
+      },
+      {
+        "name": "测评管理",
+        "value": "assessment-system",
+        "en_name": "Assessment",
+        "authority": "assessment-system",
+        "path_name": "back_all/assessment-system",
+        "active": [
+          "LCS-FUNC-CR-CEPING"
+        ],
+        "edition": [
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X",
+        "children": [
+          {
+            "name": "评估算法",
+            "value": "assessment-algorithm",
+            "en_name": "Assess Algorithm",
+            "authority": "assessment-algorithm",
+            "path_name": "back_all/assessment-system/assessment-algorithm",
+            "active": [
+              "LCS-FUNC-CR-CEPING"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "指标项管理",
+            "value": "assessment-model",
+            "en_name": "Assess Model",
+            "authority": "assessment-model",
+            "path_name": "back_all/assessment-system/assessment-model",
+            "active": [
+              "LCS-FUNC-CR-CEPING"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          },
+          {
+            "name": "指标体系",
+            "value": "assessment-indicators",
+            "en_name": "Assess Indicators",
+            "authority": "assessment-indicators",
+            "path_name": "back_all/assessment-system/assessment-indicators",
+            "active": [
+              "LCS-FUNC-CR-CEPING"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          }
+        ]
+      },
+      {
+        "name": "资源管理",
+        "value": "resource-manage-folder",
+        "en_name": "Resource",
+        "authority": "resource-manage-folder",
+        "path_name": "back_all/resource-manage-folder",
+        "active": [
+          "LCS-FUNC-CR-ZHISHIKU"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X",
+        "children": [
+          {
+            "name": "工具库",
+            "value": "tool",
+            "en_name": "Tool Library",
+            "authority": "tool",
+            "path_name": "back_all/resource-manage-folder/tool",
+            "active": [
+              "LCS-FUNC-CR-ZHISHIKU"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "漏洞库",
+            "value": "vulnerability",
+            "en_name": "Vulnerability Intelligence Library",
+            "authority": "vulnerability",
+            "path_name": "back_all/resource-manage-folder/vulnerability",
+            "active": [
+              "LCS-FUNC-CR-ZHISHIKU"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "靶标管理",
+        "value": "cr-standard-device-folder",
+        "en_name": "Target",
+        "authority": "cr-standard-device-folder",
+        "path_name": "back_all/cr-standard-device-folder",
+        "active": [
+          "no_auth"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X",
+        "children": [
+          {
+            "name": "镜像管理",
+            "value": "image-manage",
+            "en_name": "Images",
+            "authority": "image-manage",
+            "path_name": "back_all/cr-standard-device-folder/image-manage",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "USB仿真",
+            "value": "usb-emulation",
+            "en_name": "USB Emulation",
+            "authority": "usb-emulation",
+            "path_name": "back_all/cr-standard-device-folder/usb-emulation",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "实装管理",
+            "value": "real-manage",
+            "en_name": "Physical Device",
+            "authority": "real-manage",
+            "path_name": "back_all/cr-standard-device-folder/real-manage",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "服务管理",
+            "value": "service-manage",
+            "en_name": "Service",
+            "authority": "service-manage",
+            "path_name": "back_all/cr-standard-device-folder/service-manage",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "拓扑管理",
+        "value": "topology-management",
+        "en_name": "Topology",
+        "authority": "topology-management",
+        "path_name": "back_all/topology-management",
+        "active": [
+          "no_auth"
+        ],
+        "edition": [
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X"
+      },
+      {
+        "name": "流量管理",
+        "value": "traffic-manage-folder",
+        "en_name": "Flow",
+        "authority": "traffic-manage-folder",
+        "path_name": "back_all/traffic-manage-folder",
+        "active": [
+          "no_auth"
+        ],
+        "edition": [
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X",
+        "children": [
+          {
+            "name": "背景流量",
+            "value": "static-traffic-list",
+            "en_name": "Background Flow",
+            "authority": "static-traffic-list",
+            "path_name": "back_all/traffic-manage-folder/static-traffic-list",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "攻击流量",
+            "value": "dynamic-traffic-list",
+            "en_name": "Attack Flow",
+            "authority": "dynamic-traffic-list",
+            "path_name": "back_all/traffic-manage-folder/dynamic-traffic-list",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "流量集合",
+            "value": "traffic-scheme-list",
+            "en_name": "Flow Set",
+            "authority": "traffic-scheme-list",
+            "path_name": "back_all/traffic-manage-folder/traffic-scheme-list",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "流量分析",
+            "value": "traffic-analyse-list",
+            "en_name": "Flow Analyse",
+            "authority": "traffic-analyse-list",
+            "path_name": "back_all/traffic-manage-folder/traffic-analyse-list",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "探针管理",
+        "value": "cr-collection-system-folder",
+        "en_name": "Probes",
+        "authority": "cr-collection-system-folder",
+        "path_name": "back_all/cr-collection-system-folder",
+        "active": [
+          "no_auth"
+        ],
+        "edition": [
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X",
+        "children": [
+          {
+            "name": "通用探针",
+            "value": "universal-probe",
+            "en_name": "Universal Probe",
+            "authority": "universal-probe",
+            "path_name": "back_all/cr-collection-system-folder/universal-probe",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "自定义探针",
+            "value": "custom-probe",
+            "en_name": "Custom Probe",
+            "authority": "custom-probe",
+            "path_name": "back_all/cr-collection-system-folder/custom-probe",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "采集模板",
+            "value": "collection-template",
+            "en_name": "Collection Template",
+            "authority": "collection-template",
+            "path_name": "back_all/cr-collection-system-folder/collection-template",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "采集分析",
+            "value": "collection-analyse",
+            "en_name": "Collection Analyse",
+            "authority": "collection-analyse",
+            "path_name": "back_all/cr-collection-system-folder/collection-analyse",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "任务方案",
+        "value": "mission-arrange-management",
+        "en_name": "Mission",
+        "authority": "mission-arrange-management",
+        "path_name": "back_all/mission-arrange-management",
+        "active": [
+          "LCS-FUNC-CR-SHIXUN",
+          "LCS-FUNC-CR-ZONGHEXUNLIAN",
+          "LCS-FUNC-CR-HONGLANDUIKANG",
+          "LCS-FUNC-CR-JINGSAI",
+          "LCS-FUNC-CR-HUOTILOUDONG",
+          "LCS-FUNC-CR-ZHISHIKU",
+          "LCS-FUNC-CR-SHENTOUSAI",
+          "LCS-FUNC-CR-YUNWEISAI"
+        ],
+        "edition": [
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X"
+      },
+      {
+        "name": "职业框架",
+        "value": "career-system-folder",
+        "en_name": "Career",
+        "authority": "career-system-folder",
+        "path_name": "back_all/career-system-folder",
+        "active": [
+          "LCS-FUNC-CR-SHIXUN",
+          "LCS-FUNC-CR-ZONGHEXUNLIAN",
+          "LCS-FUNC-CR-HONGLANDUIKANG"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "children": [
+          {
+            "name": "NCWF框架",
+            "value": "career-system",
+            "en_name": "NCWF",
+            "authority": "career-system",
+            "path_name": "back_all/career-system-folder/career-system",
+            "active": [
+              "LCS-FUNC-CR-SHIXUN",
+              "LCS-FUNC-CR-ZONGHEXUNLIAN",
+              "LCS-FUNC-CR-HONGLANDUIKANG"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "ATT&CK框架",
+            "value": "att-ck-frame",
+            "en_name": "ATT&CK",
+            "authority": "att-ck-frame",
+            "path_name": "back_all/career-system-folder/att-ck-frame",
+            "active": [
+              "LCS-FUNC-CR-ZONGHEXUNLIAN",
+              "LCS-FUNC-CR-HONGLANDUIKANG"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "Engage框架",
+            "value": "engage-frame",
+            "en_name": "Engage",
+            "authority": "engage-frame",
+            "path_name": "back_all/career-system-folder/engage-frame",
+            "active": [
+              "LCS-FUNC-CR-ZONGHEXUNLIAN",
+              "LCS-FUNC-CR-HONGLANDUIKANG"
+            ],
+            "edition": [
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          }
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X"
+      },
+      {
+        "name": "系统管理",
+        "value": "system-management-folder",
+        "en_name": "System MGT",
+        "authority": "system-management-folder",
+        "path_name": "back_all/system-management-folder",
+        "active": [
+          "no_auth"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X",
+        "children": [
+          {
+            "name": "系统配置",
+            "value": "system-config",
+            "en_name": "System Config",
+            "authority": "system-config",
+            "path_name": "back_all/system-management-folder/system-config",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "审计日志",
+            "value": "audit-log",
+            "en_name": "Audit Log",
+            "authority": "audit-log",
+            "path_name": "back_all/system-management-folder/audit-log",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "运行日志",
+            "value": "system-log",
+            "en_name": "Running Log",
+            "authority": "system-log",
+            "path_name": "back_all/system-management-folder/system-log",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "用户管理",
+            "value": "user-manage",
+            "en_name": "User MGT",
+            "authority": "user-manage",
+            "path_name": "back_all/system-management-folder/user-manage",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "角色管理",
+            "value": "role-management",
+            "en_name": "Role MGT",
+            "authority": "role-management",
+            "path_name": "back_all/system-management-folder/role-management",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "留言管理",
+            "value": "message-management",
+            "en_name": "Message MGT",
+            "authority": "message-management",
+            "path_name": "back_all/system-management-folder/message-management",
+            "active": [
+              "LCS-FUNC-CR-SHIXUN"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "系统公告",
+            "value": "system-notice-folder",
+            "en_name": "Announcement",
+            "authority": "system-notice-folder",
+            "path_name": "back_all/system-management-folder/system-notice-folder",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X"
+          }
+        ]
+      },
+      {
+        "name": "系统运维",
+        "value": "system-operation-folder",
+        "en_name": "System O&M",
+        "authority": "system-operation-folder",
+        "path_name": "back_all/system-operation-folder",
+        "active": [
+          "no_auth"
+        ],
+        "edition": [
+          0,
+          1
+        ],
+        "status": 1,
+        "read_status": 1,
+        "write_status": 1,
+        "execute_status": 1,
+        "per_status": "R/W/X",
+        "children": [
+          {
+            "name": "系统告警",
+            "value": "system-alarm",
+            "en_name": "System Alarm",
+            "authority": "system-alarm",
+            "path_name": "back_all/system-operation-folder/system-alarm",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "云平台监控",
+            "value": "cloud-platform-monitoring",
+            "en_name": "Cloud Monitor",
+            "authority": "cloud-platform-monitoring",
+            "path_name": "back_all/system-operation-folder/cloud-platform-monitoring",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "业务服务监控",
+            "value": "business-service-monitoring",
+            "en_name": "Business Monitor",
+            "authority": "business-service-monitoring",
+            "path_name": "back_all/system-operation-folder/business-service-monitoring",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "靶场实例监控",
+            "value": "instance-monitoring",
+            "en_name": "Scene Instance",
+            "authority": "instance-monitoring",
+            "path_name": "back_all/system-operation-folder/instance-monitoring",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "计算实例管理",
+            "value": "cluster-management",
+            "en_name": "Compute Instance",
+            "authority": "cluster-management",
+            "path_name": "back_all/system-operation-folder/cluster-management",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "网络实例管理",
+            "value": "network-management",
+            "en_name": "Network Instance",
+            "authority": "network-management",
+            "path_name": "back_all/system-operation-folder/network-management",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "实装设备管理",
+            "value": "real-equipment-management",
+            "en_name": "Physical Device",
+            "authority": "real-equipment-management",
+            "path_name": "back_all/system-operation-folder/real-equipment-management",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          },
+          {
+            "name": "资源用量管理",
+            "value": "resource-usage-management",
+            "en_name": "Resource Usage",
+            "authority": "resource-usage-management",
+            "path_name": "back_all/system-operation-folder/resource-usage-management",
+            "active": [
+              "no_auth"
+            ],
+            "edition": [
+              0,
+              1
+            ],
+            "status": 1,
+            "read_status": 1,
+            "write_status": 1,
+            "execute_status": 1,
+            "per_status": "R/W/X",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]
