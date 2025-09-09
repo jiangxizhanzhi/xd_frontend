@@ -143,7 +143,7 @@ export default [
       {
         path: '/',
         name: 'cms-default',
-        redirect: { name: 'cr-individual-training' },
+        redirect: { name: 'group_training' },
       },
 
       // 新版场景编排
