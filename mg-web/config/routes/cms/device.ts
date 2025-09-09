@@ -67,39 +67,39 @@ export default [
         },
       },
       // USB仿真
-      {
-        name: 'usb-emulation',
-        path: '/admin/std/usb-emulation',
-        title: 'routes.usb-emulation',
-        component: './pages/cms/device/usb-emulation/list',
-        meta: {
-          module: 'usb-emulation',
-        },
-      },
-      {
-        path: '/admin/std/usb-emulation/create',
-        component: './pages/cms/device/usb-emulation/create',
-        name: 'usb-emulation-create',
-        title: 'mgRoutes.add',
-        meta: {
-          breadcrumb: {
-            parentName: 'usb-emulation',
-          },
-          module: 'usb-emulation',
-        },
-      },
-      {
-        path: '/admin/usb-emulation/edit/:id',
-        component: './pages/cms/device/usb-emulation/edit',
-        name: 'usb-emulation-edit',
-        title: 'mgRoutes.edit',
-        meta: {
-          breadcrumb: {
-            parentName: 'usb-emulation',
-          },
-          module: 'usb-emulation',
-        },
-      },
+      // {
+      //   name: 'usb-emulation',
+      //   path: '/admin/std/usb-emulation',
+      //   title: 'routes.usb-emulation',
+      //   component: './pages/cms/device/usb-emulation/list',
+      //   meta: {
+      //     module: 'usb-emulation',
+      //   },
+      // },
+      // {
+      //   path: '/admin/std/usb-emulation/create',
+      //   component: './pages/cms/device/usb-emulation/create',
+      //   name: 'usb-emulation-create',
+      //   title: 'mgRoutes.add',
+      //   meta: {
+      //     breadcrumb: {
+      //       parentName: 'usb-emulation',
+      //     },
+      //     module: 'usb-emulation',
+      //   },
+      // },
+      // {
+      //   path: '/admin/usb-emulation/edit/:id',
+      //   component: './pages/cms/device/usb-emulation/edit',
+      //   name: 'usb-emulation-edit',
+      //   title: 'mgRoutes.edit',
+      //   meta: {
+      //     breadcrumb: {
+      //       parentName: 'usb-emulation',
+      //     },
+      //     module: 'usb-emulation',
+      //   },
+      // },
       {
         name: 'real-manage',
         path: '/admin/std/instance-manage',
@@ -134,40 +134,108 @@ export default [
           module: 'real-manage',
         },
       },
+      // {
+      //   path: '/admin/std/service-manage',
+      //   // 服务管理
+      //   title: 'routes.service-manage',
+      //   component: './pages/cms/device/service/list',
+      //   name: 'service-manage',
+      //   meta: {
+      //     module: 'service-manage',
+      //   },
+      // },
+      // {
+      //   path: '/admin/std/service-manage/create',
+      //   component: './pages/cms/device/service/create',
+      //   name: 'service-manage-create',
+      //   title: 'mgRoutes.add',
+      //   meta: {
+      //     breadcrumb: {
+      //       parentName: 'service-manage',
+      //     },
+      //     module: 'service-manage',
+      //   },
+      // },
+      // {
+      //   path: '/admin/service-manage/edit/:id',
+      //   component: './pages/cms/device/service/edit',
+      //   name: 'service-manage-edit',
+      //   title: 'mgRoutes.edit',
+      //   meta: {
+      //     breadcrumb: {
+      //       parentName: 'service-manage',
+      //     },
+      //     module: 'service-manage',
+      //   },
+      // },
       {
-        path: '/admin/std/service-manage',
-        // 服务管理
-        title: 'routes.service-manage',
-        component: './pages/cms/device/service/list',
-        name: 'service-manage',
-        meta: {
-          module: 'service-manage',
-        },
+        path: '/admin/cr/admin/probe/universal-probe',
+        title: 'routes.universal-probe',
+        name: 'universal-probe',
+        component: './frame',
       },
       {
-        path: '/admin/std/service-manage/create',
-        component: './pages/cms/device/service/create',
-        name: 'service-manage-create',
+        path: '/admin/cr/admin/probe/custom-probe',
+        title: 'routes.custom-probe',
+        name: 'custom-probe',
+        component: './frame',
+      },
+      {
+        path: '/admin/cr/admin/probe/custom-probe/create',
+        component: './frame',
         title: 'mgRoutes.add',
+        name: 'custom-probe-create',
         meta: {
           breadcrumb: {
-            parentName: 'service-manage',
+            parentName: 'custom-probe',
           },
-          module: 'service-manage',
         },
       },
       {
-        path: '/admin/service-manage/edit/:id',
-        component: './pages/cms/device/service/edit',
-        name: 'service-manage-edit',
+        path: '/admin/cr/admin/probe/custom-probe/edit/:id',
+        component: './frame',
         title: 'mgRoutes.edit',
+        name: 'custom-probe-edit',
         meta: {
           breadcrumb: {
-            parentName: 'service-manage',
+            parentName: 'custom-probe',
           },
-          module: 'service-manage',
         },
       },
+      {
+        path: '/admin/cr/admin/probe/collection-template',
+        title: 'routes.collection-template',
+        name: 'collection-template',
+        component: './frame',
+      },
+      {
+        path: '/admin/cr/admin/probe/collection-template/create',
+        component: './frame',
+        title: 'mgRoutes.add',
+        name: 'collection-template-create',
+        meta: {
+          breadcrumb: {
+            parentName: 'collection-template',
+          },
+        },
+      },
+      {
+        path: '/admin/cr/admin/probe/collection-template/edit/:id',
+        component: './frame',
+        title: 'mgRoutes.edit',
+        name: 'collection-template-edit',
+        meta: {
+          breadcrumb: {
+            parentName: 'collection-template',
+          },
+        },
+      },
+      // {
+      //   path: '/admin/cr/admin/probe/collection-analyse',
+      //   name: 'collection-analyse',
+      //   title: 'routes.collection-analyse',
+      //   component: './frame',
+      // },
     ],
   },
 ];
