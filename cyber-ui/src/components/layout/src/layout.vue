@@ -292,7 +292,7 @@ export default {
         padding: computedPadding,
         width: `calc(100% - ${accWidth}px - ${paddingLeft} - ${paddingRight})`,
         height: `calc(100% - ${naviHeight}px - ${paddingBottom} - ${paddingTop})`,
-        marginLeft: accordion ? this.currentLeftMenu? '200px' : '0' : '0'
+        marginLeft: accordion ? this.currentLeftMenu && !noNavi ? '200px' : '0' : '0'
       };
     },
     computedLineStyle() {

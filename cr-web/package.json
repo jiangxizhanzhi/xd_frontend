@@ -21,7 +21,7 @@
     "@cyber/helper": "5.4.1-alpha.1",
     "@cyber/scene": "5.6.0-alpha.7",
     "@cyber/scene-icons": "^1.0.0-alpha.10",
-    "@cyber/ui": "5.6.0-xd.3",
+    "@cyber/ui": "5.6.0-xd.4",
     "@vue/composition-api": "^1.7.0",
     "axios": "0.26.1",
     "codemirror": "^5.41.0",
