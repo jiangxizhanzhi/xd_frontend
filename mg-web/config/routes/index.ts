@@ -20,6 +20,10 @@ import redBlueFull from './web/cr-web/red-blue/red-blue-full';
 import groupTraingFull from './web/cr-web/comprehensive-training/group-traing-full';
 //团队训练学员训练详情全屏页面
 import groupTraingStudentFull from './web/cr-web/comprehensive-training/group-traing-student-full';
+// 实验管理全屏页面
+import experimentalManagementFull from './web/cr-web/experimental-management-full/index';
+// 科目管理全屏页面
+import subjectManagementFull from './web/cr-web/subject-management-full/index';
 import liveVuln from './web/live-vuln';
 
 import system from './cms/system';
@@ -150,6 +154,8 @@ export default [
   ...redBlueFull,
   ...groupTraingFull,
   ...groupTraingStudentFull,
+  ...experimentalManagementFull,
+  ...subjectManagementFull,
   // 航油态势大屏
   {
     path: '/screen_business/:id',

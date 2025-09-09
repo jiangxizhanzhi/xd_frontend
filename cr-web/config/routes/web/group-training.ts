@@ -13,7 +13,7 @@ export default [
           breadcrumb: true,
           module: 'group-training',
         },
-        component: './pages/web/team-train/list.vue',
+        component: './pages/web/experimental-management/list.vue',
       },
       // 我的训练详情页
       {
@@ -26,7 +26,8 @@ export default [
           },
           module: 'group-training',
         },
-        component: './pages/web/team-train/teachers/teacher_home.vue',
+        component:
+          './pages/web/experimental-management/teachers/teacher_home.vue',
       },
       // 团队训练训练模板详情页
       {
@@ -39,7 +40,8 @@ export default [
           },
           module: 'group-training',
         },
-        component: './pages/web/team-train/components/templates-detail.vue',
+        component:
+          './pages/web/experimental-management/components/templates-detail.vue',
       },
       // 训练训练列表点击创建训练
       {
@@ -52,7 +54,8 @@ export default [
           },
           module: 'group-training',
         },
-        component: './pages/web/team-train/components/train-create.vue',
+        component:
+          './pages/web/experimental-management/components/train-create.vue',
       },
       // 训练模板详情点击创建训练
       {
@@ -65,7 +68,8 @@ export default [
           },
           module: 'group-training',
         },
-        component: './pages/web/team-train/components/train-create.vue',
+        component:
+          './pages/web/experimental-management/components/train-create.vue',
       },
     ],
   },

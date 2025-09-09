@@ -5,6 +5,8 @@ import Group from './web/group-training';
 // 增加靶场测评
 import RangeTest from './web/range-test';
 import redVsBlue from './web/red-vs-blue';
+import { experimentalManageRouter } from './web/experimental-management/index';
+import { subjectManageRouter } from './web/subject-management/index';
 import { resourceCenterRouter } from './web/resourceCenter';
 // cms
 import { probeRouter } from './cms/probe';
@@ -23,6 +25,11 @@ import redBlueFull from './web/red-blue-full';
 import teamTrainFull from './web/group-traing-full';
 // 团队训练学员进入详情全屏页面
 import teamTrainStudentFull from './web/group-traing-student-full';
+// 实验管理全屏路由
+import experimentalManagementFull from './web/experimental-management-full/index'
+// 科目管理全屏路由
+import subjectManagementFull from './web/subject-management-full/index';
+
 const titleName = '';
 export default [
   {
@@ -53,6 +60,8 @@ export default [
   ...redBlueFull,
   ...teamTrainFull,
   ...teamTrainStudentFull,
+  ...experimentalManagementFull,
+  ...subjectManagementFull,
   {
     path: '/',
     component: './layouts/web-layout.vue',
@@ -74,6 +83,10 @@ export default [
       },
       ...Single,
       ...Group,
+      // 实验管理
+      experimentalManageRouter,
+      // 科目管理
+      subjectManageRouter,
 
       // 红蓝对抗
       ...redVsBlue,
