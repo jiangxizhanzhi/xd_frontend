@@ -239,21 +239,33 @@ export default [
         path: '',
         name: 'web-default',
         redirect: {
-          name: 'single-list',
+          name: 'courses',
         },
       },
-      ...ojCourse,
-      ...ojPractice,
-      ...contest,
+      // 课程管理
+      ...coursesManage,
+      // 综合训练
+      // ...training,
+      // ...ojCourse,
+      // ...ojPractice,
+      // ...contest,
       ...comprehensiveTraining,
-      ...RedVsBlue,
-      ...RangeTest,
-      ...SoftwareTest,
-      ...liveVuln,
-      ...RecourseCenter,
+      // 场景管理
+      sceneManageRouter,
+      // 靶标管理
+      ...device,
+      // 系统运维
+      ...systemOperstion,
+      // 系统管理
+      ...system,
+      // ...RedVsBlue,
+      // ...RangeTest,
+      // ...SoftwareTest,
+      // ...liveVuln,
+      // ...RecourseCenter,
       // 智能体中心
-      ...intelligenceCenter,
-      ...personal,
+      // ...intelligenceCenter,
+      // ...personal,
     ],
   },
   //后台单独页面
@@ -364,52 +376,52 @@ export default [
     meta: {
       layout: true,
     },
-    children: [
-      {
-        path: '',
-        name: 'cms-default',
-        redirect: {
-          name: 'dashboard',
-        },
-      },
-      // 仪表盘
-      ...dashboard,
-      // 统计分析
-      ...statisticalAnalysis,
-      // 课程管理
-      ...coursesManage,
-      // 题库管理
-      ...practice,
-      // 竞赛管理
-      ...contestMgr,
-      // 综合训练
-      ...training,
-      // 红蓝对抗
-      ...redVsBlue,
-      // 测评管理
-      ...assessmentManagement,
-      // 资源管理
-      ...resourceManage,
-      // 靶标管理
-      ...device,
-      // 场景管理
-      sceneManageRouter,
-      // 流量管理
-      ...trfficManage,
-      // 探针管理
-      ...probe,
-      // 态势管理
-      // ...situation3DManage,
-      // 任务方案
-      ...taskPlan,
-      // 职业框架
-      ...careerSystem,
-      // 系统管理
-      ...system,
-      // 系统运维
-      ...systemOperstion,
-      // 资源导入
-      // ...resource,
-    ],
+    // children: [
+    //   {
+    //     path: '',
+    //     name: 'cms-default',
+    //     redirect: {
+    //       name: 'dashboard',
+    //     },
+    //   },
+    //   // 仪表盘
+    //   ...dashboard,
+    //   // 统计分析
+    //   ...statisticalAnalysis,
+    //   // 课程管理
+    //   ...coursesManage,
+    //   // 题库管理
+    //   ...practice,
+    //   // 竞赛管理
+    //   ...contestMgr,
+    //   // 综合训练
+    //   ...training,
+    //   // 红蓝对抗
+    //   ...redVsBlue,
+    //   // 测评管理
+    //   ...assessmentManagement,
+    //   // 资源管理
+    //   ...resourceManage,
+    //   // 靶标管理
+    //   ...device,
+    //   // 场景管理
+    //   sceneManageRouter,
+    //   // 流量管理
+    //   ...trfficManage,
+    //   // 探针管理
+    //   ...probe,
+    //   // 态势管理
+    //   // ...situation3DManage,
+    //   // 任务方案
+    //   ...taskPlan,
+    //   // 职业框架
+    //   ...careerSystem,
+    //   // 系统管理
+    //   ...system,
+    //   // 系统运维
+    //   ...systemOperstion,
+    //   // 资源导入
+    //   // ...resource,
+    // ],
   },
 ] as IRoute[];

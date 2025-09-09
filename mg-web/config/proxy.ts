@@ -1,9 +1,9 @@
 import { IProxy } from '@cyber/cli';
-const serverIp = '8.159.138.178';
-const serverPort = 81;
+const serverIp = '10.2.35.10';
+const serverPort = 80;
 
-const mpServerIp = '8.159.138.178';
-const mpServerPort = 81;
+const mpServerIp = '10.2.35.10';
+const mpServerPort = 80;
 
 const server = `http://${serverIp}:${serverPort}`;
 const mpServer = `http://${mpServerIp}:${mpServerPort}`;

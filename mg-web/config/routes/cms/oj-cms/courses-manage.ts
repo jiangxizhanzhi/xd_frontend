@@ -1,5 +1,6 @@
 import courses from './courses';
 import coursesCard from './courses-card';
+import learnStatistics from "./learn-statistics";
 // 课程管理
 export default [
   {
@@ -9,6 +10,6 @@ export default [
     meta: {
       iconfont: 'icon-kechengguanli',
     },
-    children: [...courses, ...coursesCard],
+    children: [...learnStatistics, ...courses, ...coursesCard],
   },
 ];
