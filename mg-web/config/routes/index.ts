@@ -239,7 +239,7 @@ export default [
         path: '',
         name: 'web-default',
         redirect: {
-          name: 'courses',
+          name: 'learn-statistics',
         },
       },
       // 课程管理

@@ -17,24 +17,24 @@ export default [
           module: 'system-config',
         },
       },
-      {
-        name: 'audit-log',
-        path: '/admin/system-management/audit-log',
-        title: 'routes.audit-log',
-        component: './pages/cms/system-management/audit-log.vue',
-        meta: {
-          module: 'audit-log',
-        },
-      },
-      {
-        name: 'system-log',
-        path: '/admin/system-management/system-log',
-        title: 'routes.system-log',
-        component: './pages/cms/system-management/run-log.vue',
-        meta: {
-          module: 'system-log',
-        },
-      },
+      // {
+      //   name: 'audit-log',
+      //   path: '/admin/system-management/audit-log',
+      //   title: 'routes.audit-log',
+      //   component: './pages/cms/system-management/audit-log.vue',
+      //   meta: {
+      //     module: 'audit-log',
+      //   },
+      // },
+      // {
+      //   name: 'system-log',
+      //   path: '/admin/system-management/system-log',
+      //   title: 'routes.system-log',
+      //   component: './pages/cms/system-management/run-log.vue',
+      //   meta: {
+      //     module: 'system-log',
+      //   },
+      // },
       {
         name: 'user-manage',
         path: '/admin/system-management/user-management',
@@ -139,16 +139,16 @@ export default [
           module: 'role-management',
         },
       },
-      {
-        name: 'message-management',
-        path: '/admin/message-management/',
-        title: 'routes.message-management',
-        component: './pages/cms/system-management/message-management/index.vue',
-        meta: {
-          module: 'message-management',
-        },
-      },
-      ...notice,
+      // {
+      //   name: 'message-management',
+      //   path: '/admin/message-management/',
+      //   title: 'routes.message-management',
+      //   component: './pages/cms/system-management/message-management/index.vue',
+      //   meta: {
+      //     module: 'message-management',
+      //   },
+      // },
+      // ...notice,
     ],
   },
 ];
