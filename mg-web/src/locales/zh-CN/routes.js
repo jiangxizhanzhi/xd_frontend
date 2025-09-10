@@ -141,6 +141,25 @@ export default {
   'comprehensive-training-folder': '综合训练',
   'single-list': '单兵训练',
   'group-training': '团队训练',
+
+  'experimental-management': '实验管理',
+  'cloud-computing-resource-experimental': '云计算资源实验',
+  'cloud-network-resource-experimental': '云网络资源实验',
+  'scan-detect-attack-experimental': '扫描探测攻击实验',
+  'vulnerability-mining-exploitation-experimental': '漏洞挖掘与利用实验',
+  'denial-service-attack-experimental': '拒绝服务攻击实验',
+  'new-network-basic-experimental': '新型网络基础实验',
+  'new-network-attack-defense-experimental': '新型网络攻防实验',
+
+  'subject-management': '科目管理',
+  'cloud-computing-resource-subject': '云计算资源科目',
+  'cloud-network-resource-subject': '云网络资源科目',
+  'scan-detect-attack-subject': '扫描探测攻击科目',
+  'vulnerability-mining-exploitation-subject': '漏洞挖掘与利用科目',
+  'denial-service-attack-subject': '拒绝服务攻击科目',
+  'new-network-basic-subject': '新型网络基础科目',
+  'new-network-attack-defense-subject': '新型网络攻防科目',
+  
   // 红蓝对抗
   'red-vs-blue-web-folder': '红蓝对抗',
   'red-vs-blue': '红蓝对抗',
