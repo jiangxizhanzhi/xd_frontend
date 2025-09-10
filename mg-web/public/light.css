@@ -93,8 +93,12 @@ body.theme-light {
   /* -----导航 start----- */
     --nav-color: #223A7D;
     --left-nav-color: #15385B;
-    --nav-shadow: 0px 3px 6px 0px rgba(23, 180, 255, 0.2);
-    --nav-text: rgba(255, 255, 255, 0.9);
+    --nav-shadow: none;
+    --nav-text: rgba(255, 255, 255, 1);
+    --nav-top-active-text: #B1D8FF;
+    --nav-left-active-bg: #116DC6;
+    --nav-left-text: #97A3B7;
+    --nav-collapse-bg: #12273C;
   /* -----导航 end----- */
   /* -----按钮 start----- */
     --button-text: rgba(255, 255, 255, 0.9);

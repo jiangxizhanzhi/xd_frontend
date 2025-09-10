@@ -1,7 +1,5 @@
 :root {
-  --font-family: PingFangSC-Regular, sans-serif, 'Microsoft Yahei', '微软雅黑',
-    'Hiragino Sans GB', Helvetica, 'Helvetica Neue', Tahoma, Arial,
-    'FontAwesome';
+  --font-family: 'Microsoft Yahei', '微软雅黑', MicrosoftYaHei, MicrosoftYaHei, PingFangSC-Regular, 'PingFang SC', sans-serif;
   //-----按钮 start-----
   --button-radius: 2px;
   --checkbox-radius: 2px;
@@ -14,8 +12,8 @@
   --form-item-margin-bottom: 20px;
   //-----表单项 end-----
   //------ 后台左侧菜单 start-----
-  --left-menu-icon-font-size: 18px;
-  --left-menu-item-font-size: 14px;
+  --left-menu-icon-font-size: 0;
+  --left-menu-item-font-size: 16px;
   --left-menu-item-height: 48px;
   //------ 后台左侧菜单 end-----
   --form-item-height: 32px;

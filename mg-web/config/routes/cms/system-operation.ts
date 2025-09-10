@@ -14,6 +14,8 @@ export default [
         component: './pages/cms/system-operation/system-alarm/index.vue',
         meta: {
           module: 'system-alarm',
+          iconfont: 'icon-xitongyunwei',
+          isThird: true,
         },
       },
       {
@@ -43,6 +45,7 @@ export default [
         component: './pages/cms/system-operation/instance-monitoring/list.vue',
         meta: {
           module: 'instance-monitoring',
+          isThird: true,
         },
       },
       {

@@ -1,6 +1,7 @@
 <template>
   <div class="root-container">
     <cb-layout
+      ref="layoutRef"
       :current-menu="currentMenu"
       :logo="logo"
       :name-logo="nameLogo"
@@ -14,6 +15,7 @@
       accordion
       :theme-switch="themeSwitch"
       :lang-switch="langSwitch"
+      :showToggle="false"
       @command="handleCommand"
       @routeChange="routeChange"
       @bellMessage="showMessage"
@@ -382,6 +384,16 @@ export default {
       } else {
         emitCurrentApp('pushRoute', { name, params });
       }
+      if (!item.meta.isThird) {
+        let timer = setTimeout(() => {
+          this.$refs.layoutRef?.setAccCollapse(true);
+          this.$nextTick(() => {
+            this.$refs.layoutRef?.setAccCollapse(false);
+            clearTimeout(timer);
+            timer = null;
+          })
+        }, 100)
+      }
     },
     handleCommand(command) {
       if (command === 'logout') {
@@ -511,7 +523,7 @@ export default {
   }
 }
 .navi-logo {
-  width: 170px;
+  width: 300px;
   .name-logo {
     text-align: center;
     overflow: hidden;
