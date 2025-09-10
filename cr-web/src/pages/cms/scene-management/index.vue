@@ -186,6 +186,8 @@ export default {
     },
     getAuthActive(value) {
       this.isAuthActive = value;
+      this.getCardList();
+      this.$message.success('操作成功');
     },
     createSceneTemplate() {
       this.$router.push({

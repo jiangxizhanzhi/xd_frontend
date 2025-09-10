@@ -87,7 +87,8 @@ export default [
       experimentalManageRouter,
       // 科目管理
       subjectManageRouter,
-
+      // 场景管理
+      sceneManageRouter,
       // 红蓝对抗
       ...redVsBlue,
       ...RangeTest,
@@ -177,8 +178,6 @@ export default [
       probeRouter,
 
       resourceRouter,
-      // 场景管理
-      sceneManageRouter,
     ],
   },
 ] as IRoute[];

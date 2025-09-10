@@ -28,7 +28,7 @@
     <div class="img-wrap">
       <div class="img-box">
         <img
-          :src="cardData.logo_path"
+          :src="cardData.logo"
           alt=""
         />
       </div>
@@ -187,6 +187,7 @@ export default {
         left: 0;
         border-radius: 4px 4px 0 0;
         transition: all 0.5s ease;
+        object-fit: contain;
       }
     }
   }
