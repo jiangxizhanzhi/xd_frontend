@@ -6,6 +6,7 @@
     >
       <!-- 筛选区域 -->
       <div class="condition-wrap">
+        <header-decorate :title="EXPERIMENTAL_SUBJECT_MANAGEMENT_NAME[$route.name]"></header-decorate>
         <div
           class="search-wrap"
           v-if="activeName === 'myTrain'"
@@ -25,8 +26,18 @@
             class="search-item"
             v-model="searchCondition.search"
             :placeholder="$t('list.enterTrainName')"
+            :trigger="'input'"
             @change="getSearchName"
           />
+          <cb-button
+            class="search"
+            @click="handlerSearch"
+          >搜索</cb-button>
+          <cb-button
+            hollow
+            class="reset"
+            @click="handlerReset"
+          >重置</cb-button>
         </div>
         <div
           class="search-wrap"
@@ -47,8 +58,18 @@
             class="search-item"
             v-model="templateSearchCondition.search"
             :placeholder="$t('list.enterTemplateName')"
+            :trigger="'input'"
             @change="getTemplateSearchName"
           />
+          <cb-button
+            class="search"
+            @click="handlerTemplateSearch"
+          >搜索</cb-button>
+          <cb-button
+            hollow
+            class="reset"
+            @click="handlerTemplateReset"
+          >重置</cb-button>
         </div>
         <cb-tabs v-model="activeName">
           <cb-tab-pane
@@ -244,7 +265,8 @@ import AttCkDialog from '@/components/att-engage/att-ck-dialog.vue';
 import EngageDialog from '@/components/att-engage/engage-dialog.vue';
 import myTrain from './components/my-train.vue';
 import trainTemplate from './components/train-templates.vue';
-import { EXPERIMENTAL_SUBJECT_MANAGEMENT_TYPE, EXPERIMENTAL_SUBJECT_TEMPLATE_TYPE } from './constants'
+import headerDecorate from '@/components/header-decorate/index.vue'
+import { EXPERIMENTAL_SUBJECT_MANAGEMENT_NAME, EXPERIMENTAL_SUBJECT_MANAGEMENT_TYPE, EXPERIMENTAL_SUBJECT_TEMPLATE_TYPE } from './constants'
 
 export default {
   name: 'redBlueList',
@@ -252,6 +274,7 @@ export default {
     collapseTransition,
     myTrain,
     trainTemplate,
+    headerDecorate,
     emptyPage,
     SearchInput,
     AttCkDialog,
@@ -259,6 +282,7 @@ export default {
   },
   data() {
     return {
+      EXPERIMENTAL_SUBJECT_MANAGEMENT_NAME,
       roleType: 2, // 1: 教员 2:学员
       defaultLogo,
       categoryList: [],
@@ -440,18 +464,28 @@ export default {
     categoryChange(val) {
       this.searchCondition.category = val;
       this.pagination.current_page = 1;
-      this.getTrainList();
     },
     // 我的训练难度筛选
     difficultChange(val) {
       this.searchCondition.difficult = val;
       this.pagination.current_page = 1;
-      this.getTrainList();
     },
     // 我的训练名称搜索
     getSearchName(val) {
       this.searchCondition.search = val;
       this.pagination.current_page = 1;
+    },
+    // 我的训练搜索
+    handlerSearch() {
+      this.getTrainList();
+    },
+    // 我的训练重置
+    handlerReset() {
+      this.searchCondition.search = '';
+      this.searchCondition.difficult = '';
+      this.searchCondition.category = '';
+      this.pagination.current_page = 1;
+      this.pagination.per_page = 10;
       this.getTrainList();
     },
     // 我的训练当前页
@@ -469,18 +503,28 @@ export default {
     templateCategoryChange(val) {
       this.templateSearchCondition.category = val;
       this.templatePagination.current_page = 1;
-      this.getTemplateList();
     },
     // 训练模板难度筛选
     templateDifficultChange(val) {
       this.templateSearchCondition.difficult = val;
       this.templatePagination.current_page = 1;
-      this.getTemplateList();
     },
     // 训练模板名称搜索
     getTemplateSearchName(val) {
       this.templateSearchCondition.search = val;
       this.templatePagination.current_page = 1;
+    },
+    // 训练模板搜索
+    handlerTemplateSearch() {
+      this.getTemplateList();
+    },
+    // 训练模板重置
+    handlerTemplateReset() {
+      this.templateSearchCondition.search = '';
+      this.templateSearchCondition.difficult = '';
+      this.templateSearchCondition.category = '';
+      this.templatePagination.current_page = 1;
+      this.templatePagination.per_page = 10;
       this.getTemplateList();
     },
     // 训练模板当前页
@@ -578,7 +622,7 @@ export default {
 
 .red-blue-page {
   .condition-wrap {
-    margin-bottom: 16px;
+    // margin-bottom: 16px;
     background-color: var(--bg-color-2);
     padding: 16px 16px 0 16px;
     border-radius: 4px;
@@ -588,6 +632,11 @@ export default {
 
       .search-item {
         margin-left: 10px;
+      }
+
+      .search,
+      .reset {
+        margin: 0 8px;
       }
     }
 
