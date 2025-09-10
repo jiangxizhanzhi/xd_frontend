@@ -10,7 +10,7 @@ export default [
     component: './frame',
   },
   {
-    name: 'team_train',
+    name: 'group-training-train',
     path: '/cr/team_train/:resource_id',
     title: 'route.details',
     meta: {
@@ -33,7 +33,7 @@ export default [
   // },
   // 团队训练训练模板详情页
   {
-    name: 'team-train-template-detail',
+    name: 'group-training-template-detail',
     path: '/cr/team-train/template-detail/:resource_id/:template_id',
     title: 'route.trainingTemplateDetail',
     meta: {
@@ -46,7 +46,7 @@ export default [
   // 训练训练列表点击创建训练
   {
     path: '/cr/team-train/create/:templateId/:business_template_id',
-    name: 'team-train-create',
+    name: 'group-training-create',
     title: 'route.createTraining',
     meta: {
       breadcrumb: {
@@ -58,21 +58,22 @@ export default [
   // 训练模板详情点击创建训练
   {
     path: '/cr/team-train/add/:resource_id/:template_id/:templateId/:business_template_id',
-    name: 'team-train-add',
+    name: 'group-training-add',
     title: 'route.createTraining',
     meta: {
       breadcrumb: {
-        parentName: 'team-train-template-detail',
+        parentName: 'group-training-template-detail',
       },
     },
     component: './frame',
   },
   // 团队训练编辑训练
   {
-    name: 'team-train-edit',
-    path: '/team-train/edit/:id',
+    name: 'group-training-home-edit',
+    path: '/cr/group-training-home-edit/edit/:id',
     title: 'route.editTraining',
     meta: {
+      auth: false,
       breadcrumb: {
         parentName: 'group-training',
       },

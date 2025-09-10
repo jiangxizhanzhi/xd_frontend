@@ -17,7 +17,7 @@ export default [
       },
       // 我的训练详情页
       {
-        name: 'team_train',
+        name: 'group-training-train',
         path: '/team_train/:resource_id',
         title: 'm.details',
         meta: {
@@ -31,7 +31,7 @@ export default [
       },
       // 团队训练训练模板详情页
       {
-        name: 'team-train-template-detail',
+        name: 'group-training-template-detail',
         path: '/team-train/template-detail/:resource_id/:template_id',
         title: '训练模板详情',
         meta: {
@@ -45,7 +45,7 @@ export default [
       },
       // 训练训练列表点击创建训练
       {
-        name: 'team-train-create',
+        name: 'group-training-create',
         path: '/team-train/create/:templateId/:business_template_id',
         title: '创建训练',
         meta: {
@@ -59,12 +59,12 @@ export default [
       },
       // 训练模板详情点击创建训练
       {
-        name: 'team-train-add',
+        name: 'group-training-add',
         path: '/team-train/add/:resource_id/:template_id/:templateId/:business_template_id',
         title: '创建训练',
         meta: {
           breadcrumb: {
-            parentName: 'team-train-template-detail',
+            parentName: 'group-training-template-detail',
           },
           module: 'group-training',
         },
