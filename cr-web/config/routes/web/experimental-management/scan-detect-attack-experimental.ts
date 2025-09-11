@@ -6,6 +6,7 @@ export default [
     meta: {
       auth: false,
       breadcrumb: true,
+      isThird: true,
     },
     component: './pages/web/experimental-management/list.vue',
   },
