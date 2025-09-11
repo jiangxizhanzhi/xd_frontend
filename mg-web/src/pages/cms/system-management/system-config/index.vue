@@ -1,30 +1,31 @@
 <template>
-  <cb-inner-page :background="false">
-    <cb-tabs type="border-card" v-model="activeName" @tab-click="handleClick">
-      <cb-tab-pane
-        :label="$t('systemManagement.system.baseConfig')"
-        name="baseConfig"
-        ><base-config
-      /></cb-tab-pane>
-      <cb-tab-pane
-        :label="$t('systemManagement.system.advanceConfig')"
-        name="advanceConfig"
-        ><advance-config
-      /></cb-tab-pane>
-      <cb-tab-pane
-        :label="$t('systemManagement.system.authInfo')"
-        name="authInfo"
-        class="auth-info"
-        ><auth-info
-      /></cb-tab-pane>
-      <cb-tab-pane
-        :label="$t('configuration.configurationIp')"
-        name="configurationIp"
-        v-if="getSingleIpTh && isSuperUser && !showConfigurationIp"
-      >
-        <configuration-ip />
-      </cb-tab-pane>
-    </cb-tabs>
+  <cb-inner-page :background="true" title="系统配置">
+    <base-config />
+<!--    <cb-tabs type="border-card" v-model="activeName" @tab-click="handleClick">-->
+<!--      <cb-tab-pane-->
+<!--        :label="$t('systemManagement.system.baseConfig')"-->
+<!--        name="baseConfig"-->
+<!--        ></cb-tab-pane>-->
+
+<!--      <cb-tab-pane-->
+<!--        :label="$t('systemManagement.system.advanceConfig')"-->
+<!--        name="advanceConfig"-->
+<!--        ><advance-config-->
+<!--      /></cb-tab-pane>-->
+<!--      <cb-tab-pane-->
+<!--        :label="$t('systemManagement.system.authInfo')"-->
+<!--        name="authInfo"-->
+<!--        class="auth-info"-->
+<!--        ><auth-info-->
+<!--      /></cb-tab-pane>-->
+<!--      <cb-tab-pane-->
+<!--        :label="$t('configuration.configurationIp')"-->
+<!--        name="configurationIp"-->
+<!--        v-if="getSingleIpTh && isSuperUser && !showConfigurationIp"-->
+<!--      >-->
+<!--        <configuration-ip />-->
+<!--      </cb-tab-pane>-->
+<!--    </cb-tabs>-->
   </cb-inner-page>
 </template>
 

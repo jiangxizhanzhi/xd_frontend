@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="false">
+  <cb-inner-page :background="true" title="用户管理">
     <cb-form
       ref="elFormRef"
       label-position="right"

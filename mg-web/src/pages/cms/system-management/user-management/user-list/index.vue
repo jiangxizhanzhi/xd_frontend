@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="false" v-loading="loading">
+  <cb-inner-page :background="true" title="用户管理" v-loading="loading">
     <div style="display: flex; height: 100%">
       <left-tree
         :url="treeUrl"

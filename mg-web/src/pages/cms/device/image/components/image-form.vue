@@ -1,13 +1,14 @@
 <template>
   <cb-inner-page
-    :background="false"
+    :background="true"
+    title="镜像管理"
     v-loading="loading"
     element-loading-custom-class="custom-loading"
   >
     <cb-form
       ref="formRef"
       label-position="right"
-      label-width="120px"
+      label-width="100px"
       :model.sync="model"
       :rules="rules"
       :fetchPromise="fetchForm"

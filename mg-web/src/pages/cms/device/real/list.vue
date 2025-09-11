@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="false">
+  <cb-inner-page :background="true" title="虚实结合管理">
     <cb-search-table
       :cols.sync="cols"
       :selector="selector"

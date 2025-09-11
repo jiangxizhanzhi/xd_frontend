@@ -1,6 +1,6 @@
 <template>
-  <cb-inner-page :background="false">
-    <cb-tabs type="border-card" v-model="activeName">
+  <cb-inner-page :background="true" title="设备状态监控">
+    <cb-tabs type="border-card" v-model="activeName" style="margin-top: 16px">
       <cb-tab-pane
         :label="$t('systemOperation.views.clusterManagement.vm.VM')"
         :name="tabNames.vm"

@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page class="app-container" :background="false">
+  <cb-inner-page class="app-container" :background="true" title="镜像管理">
     <cb-search-table
       v-if="!isShowAuthor"
       :url="url"

@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="false">
+  <cb-inner-page :background="true" title="权限管理">
     <tab-index></tab-index>
   </cb-inner-page>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="false">
+  <cb-inner-page :background="true" title="超融合平台管理">
     <cb-search-table
       rowKey="resource_id"
       :cols="cols"

@@ -3,7 +3,7 @@
     <cb-form
       ref="elFormRef"
       label-position="right"
-      label-width="160px"
+      label-width="120px"
       :model.sync="model"
       :rules="rules"
       :url="url"

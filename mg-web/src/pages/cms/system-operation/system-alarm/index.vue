@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="false">
+  <cb-inner-page :background="true" title="告警监控">
     <div class="system-alarm">
       <div class="alarm-info">
         <alarm-info

@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="false">
+  <cb-inner-page :background="true" title="资源编排">
     <!-- 资源统计 -->
     <div class="wrapper">
       <Block :title="$t('systemOperation.cloudPlatform.resourceStatistics')">

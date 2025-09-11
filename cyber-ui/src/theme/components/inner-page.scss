@@ -34,7 +34,9 @@
   padding-top: 16px;
 
   &.bg-color {
+    padding-left: 24px;
     padding-bottom: 20px;
+    background-color: var(--white-color);
   }
 
   &.no-bg-color {

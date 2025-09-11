@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="false">
+  <cb-inner-page :background="true" title="虚实结合管理">
     <div class="steps">
       <cb-steps :active="active" :data="data"> </cb-steps>
     </div>
