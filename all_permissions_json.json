@@ -528,7 +528,7 @@
 						"children": []
 					},
 					{
-						"name": "通用探针",
+						"name": "通用采集管理",
 						"value": "universal-probe",
 						"en_name": "Universal Probe",
 						"authority": "universal-probe",
@@ -545,7 +545,7 @@
 						"children": []
 					},
 					{
-						"name": "自定义探针",
+						"name": "自定义探针管理",
 						"value": "custom-probe",
 						"en_name": "Custom Probe",
 						"authority": "custom-probe",
@@ -562,7 +562,7 @@
 						"children": []
 					},
 					{
-						"name": "采集模板",
+						"name": "采集模板管理",
 						"value": "collection-template",
 						"en_name": "Collection Template",
 						"authority": "collection-template",
