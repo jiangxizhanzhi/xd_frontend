@@ -5,6 +5,7 @@ export default [
     title: 'routes.comprehensive-training-experimental',
     meta: {
       breadcrumb: true,
+      isThird: true,
     },
     component: './frame',
   },

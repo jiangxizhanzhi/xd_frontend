@@ -5,6 +5,7 @@ export default [
     title: 'routes.new-network-basic-experimental',
     meta: {
       breadcrumb: true,
+      isThird: true,
     },
     component: './frame',
   },

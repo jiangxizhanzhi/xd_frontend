@@ -5,6 +5,7 @@ export default [
     title: 'routes.cloud-network-resource-experimental',
     meta: {
       breadcrumb: true,
+      isThird: true,
     },
     component: './frame',
   },

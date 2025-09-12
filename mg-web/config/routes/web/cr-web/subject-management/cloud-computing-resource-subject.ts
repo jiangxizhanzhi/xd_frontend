@@ -5,6 +5,7 @@ export default [
     title: 'routes.cloud-computing-resource-subject',
     meta: {
       breadcrumb: true,
+      isThird: true,
     },
     component: './frame',
   },

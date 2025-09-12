@@ -1,10 +1,10 @@
 <template>
-  <cb-inner-page :background="false">
+  <cb-inner-page :background="true" title="课程规划">
     <div class="box-card add-content">
       <cb-form
         :ref="formRef"
         :model.sync="model"
-        :label-width="labelWidthForm"
+        label-width="100px"
         :rules="rules"
         :url="url"
         baseURL="/api/ojj"

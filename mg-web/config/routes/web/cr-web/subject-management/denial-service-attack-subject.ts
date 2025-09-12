@@ -5,6 +5,7 @@ export default [
     title: 'routes.denial-service-attack-subject',
     meta: {
       breadcrumb: true,
+      isThird: true,
     },
     component: './frame',
   },

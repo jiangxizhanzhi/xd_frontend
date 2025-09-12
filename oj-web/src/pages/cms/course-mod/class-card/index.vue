@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="false">
+  <cb-inner-page :background="true" title="课程表">
     <div class="calendar-content">
       <div class="select-div">
         <div>

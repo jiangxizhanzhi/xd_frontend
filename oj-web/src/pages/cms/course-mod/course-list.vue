@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="false">
+  <cb-inner-page :background="true" title="课程规划">
     <!-- 授权访问 -->
     <div v-if="AuthAccess == 'access'">
       <auth-access

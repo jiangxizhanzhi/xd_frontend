@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="false">
+  <cb-inner-page :background="true" title="统计分析">
     <cb-radio-group v-model="activeName" class="radio-btn">
       <cb-radio-button :label="$t('m.personalStatistics')"></cb-radio-button>
       <cb-radio-button :label="$t('m.courseStatistics')"></cb-radio-button>

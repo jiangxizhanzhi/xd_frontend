@@ -5,6 +5,7 @@ export default [
     title: 'routes.new-network-attack-defense-experimental',
     meta: {
       breadcrumb: true,
+      isThird: true,
     },
     component: './frame',
   },
