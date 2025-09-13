@@ -6,6 +6,15 @@ export default [
     title: '课程管理',
     children: [
       {
+        name: 'learn-statistics',
+        path: '/admin/course/learn-statistics/list',
+        title: 'routes.learn-statistics',
+        component: './pages/cms/course-mod/learn-statistics/index.vue',
+        meta: {
+          module: 'learn-statistics',
+        },
+      },
+      {
         name: 'courses',
         path: '/admin/courses/list',
         title: 'routes.courses',

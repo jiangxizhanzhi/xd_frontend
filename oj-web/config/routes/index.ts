@@ -43,23 +43,23 @@ export default [
       module: 'class-card',
     },
   },
-  {
-    path: '/',
-    name: 'web-layout',
-    meta: {
-      layout: true,
-    },
-    component: './layouts/web-layout',
-    children: [
-      {
-        path: '',
-        name: 'web-default',
-        redirect: { name: 'oj-all-course' },
-      },
-      ...Course,
-      Practice,
-    ],
-  },
+  // {
+  //   path: '/',
+  //   name: 'web-layout',
+  //   meta: {
+  //     layout: true,
+  //   },
+  //   component: './layouts/web-layout',
+  //   children: [
+  //     // {
+  //     //   path: '',
+  //     //   name: 'web-default',
+  //     //   redirect: { name: 'oj-all-course' },
+  //     // },
+  //     // ...Course,
+  //     // Practice,
+  //   ],
+  // },
   {
     path: '/admin',
     name: 'cms-layout',
@@ -71,9 +71,9 @@ export default [
       {
         path: '',
         name: 'cms-default',
-        redirect: { name: 'courses' },
+        redirect: { name: 'learn-statistics' },
       },
-      ...statisticalAnalysis,
+      // ...statisticalAnalysis,
       ...courseCms,
       ...practiceCms,
       ...career,

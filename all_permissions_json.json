@@ -32,7 +32,7 @@
 						"value": "learn-statistics",
 						"en_name": "Study Statistics",
 						"authority": "learn-statistics",
-						"path_name": "back_all/statistical-analysis-folder/learn-statistics",
+						"path_name": "back_all/courses-manage-folder/learn-statistics",
 						"active": ["LCS-FUNC-CR-SHIXUN"],
 						"edition": [0, 1],
 						"status": 1,
