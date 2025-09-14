@@ -26,10 +26,10 @@
         <router-view :key="routeKey" v-if="userInfoReady" />
       </transition>
     </cb-layout>
-    <message ref="noticeMessageRef" />
+<!--    <message ref="noticeMessageRef" />-->
     <!-- <running-scene ref="sceneRef" />
     <AI-chat :userInfo="userInfo" ref="AIRef" /> -->
-    <convenient-operation :showAI="supportAI"></convenient-operation>
+<!--    <convenient-operation :showAI="supportAI"></convenient-operation>-->
     <cb-dialog
       v-if="showChangePwd"
       :title="$t('changePwd.changePassword')"
@@ -384,16 +384,7 @@ export default {
       } else {
         emitCurrentApp('pushRoute', { name, params });
       }
-      if (!item.meta.isThird) {
-        let timer = setTimeout(() => {
-          this.$refs.layoutRef?.setAccCollapse(true);
-          this.$nextTick(() => {
-            this.$refs.layoutRef?.setAccCollapse(false);
-            clearTimeout(timer);
-            timer = null;
-          })
-        }, 100)
-      }
+
     },
     handleCommand(command) {
       if (command === 'logout') {

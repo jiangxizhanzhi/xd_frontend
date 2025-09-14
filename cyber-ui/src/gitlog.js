@@ -1,5 +1,19 @@
 window.__cyber_ui_log__ = [
   {
+    hash: 'bf6f24c36bfe7a415960c55aafa739ca5f2ce2b3',
+    abbrevHash: 'bf6f24c',
+    subject: 'feat: cr-web update ui',
+    authorName: 'fengxuyan',
+    authorDate: '2025-09-14 09:30:30 +0800',
+  },
+  {
+    hash: '34b7521d7c53922cd706afe0513116624562e46e',
+    abbrevHash: '34b7521',
+    subject: 'feat: 标签页路由功能',
+    authorName: 'fengxuyan',
+    authorDate: '2025-09-14 09:09:45 +0800',
+  },
+  {
     hash: 'c621887f5dcabce4f21eaed481270a9f4f3d929a',
     abbrevHash: 'c621887',
     subject: 'fix: oj路由修改',
@@ -19,19 +33,5 @@ window.__cyber_ui_log__ = [
     subject: 'feat：页面风格修改；@cyber/ui@5.6.0-xd.7',
     authorName: 'fengxuyan',
     authorDate: '2025-09-11 23:04:26 +0800',
-  },
-  {
-    hash: '518e4880217833d800d74c90c97cf06030541bf0',
-    abbrevHash: '518e488',
-    subject: 'feat：菜单名称修改',
-    authorName: 'fengxuyan',
-    authorDate: '2025-09-11 22:15:46 +0800',
-  },
-  {
-    hash: '18797370072d7a46f910df62005386cba645e307',
-    abbrevHash: '1879737',
-    subject: 'feat：实验管理、科目管理三级菜单路由属性添加',
-    authorName: 'fengxuyan',
-    authorDate: '2025-09-11 22:09:33 +0800',
   },
 ];

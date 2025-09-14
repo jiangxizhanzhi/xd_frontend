@@ -361,6 +361,7 @@ export default {
   watch: {
     '$route.path': {
       handler() {
+        console.log('naniMMMMM');
         let nameArray = this.routeData.map((item) => {
           return item.name;
         });
@@ -623,7 +624,7 @@ export default {
       })
     },
     menuSelectAccordion(name, item, params) {
-      if (this.active !== name) {
+      if (this.active !== name || this.active.name !== name) {
         clearMemory();
         this.select(name, item, params);
       }
@@ -635,7 +636,12 @@ export default {
       } else {
         this.$router.push({ name, params });
       }
-      this.activeTab = name;
+      if (typeof item === 'object') {
+        this.addTab(this.active);
+        this.activeTab = this.active.name;
+      } else {
+        this.activeTab = name;
+      }
     },
 
     setContentSize() {
@@ -743,6 +749,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .tabs-container {
+  ::v-deep .cb-tabs .el-tabs--card .el-tabs__nav {
+    border: 0 !important;
+  }
   ::v-deep .el-tabs__item {
     background: var(--white-color) !important;
   }
