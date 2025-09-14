@@ -170,6 +170,12 @@ export default {
         }
 
         this.topActive = item.name;
+        this.$nextTick(() => {
+          // 找到 NavMenu 实例
+          const menu = this.$refs.menu;
+          // 把高亮指到新的 index
+          menu.activeIndex = this.topActive;
+        });
       },
       immediate: true,
     },

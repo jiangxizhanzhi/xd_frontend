@@ -65,17 +65,44 @@
       >
         <!--没有面包屑彻底删除占位-->
         <div class="cb-layout-header" v-if="showBreadcrumb">
-          <div class="cb-layout-breadcrumbs" :style="breadcrumbStyle">
-            <cb-breadcrumb
-              :pre-items="breadcrumbPreItems"
-              :data="naviData"
-              :active="active"
-              @select="select"
-            ></cb-breadcrumb>
-            <div class="cb-layout-breadcrumbs-right">
-              <slot name="breadcrumbsRightArea"></slot>
-            </div>
+          <div class="tabs-container">
+            <cb-tabs
+              v-model="activeTab"
+              type="card"
+              closable
+              @tab-remove="removeTab"
+              @tab-click="clickTab"
+            >
+              <cb-tab-pane
+                v-for="tab in tabs"
+                :key="tab.name"
+                :label="tab.meta.title"
+                :name="tab.name"
+              >
+              </cb-tab-pane>
+              <!--              <div-->
+              <!--                v-for="tab in tabs"-->
+              <!--                :key="tab.name"-->
+              <!--                :label="tab.meta.title"-->
+              <!--                :name="tab.name"-->
+              <!--                class="custom-tab-box"-->
+              <!--              >-->
+              <!--                <span class="txt">{{tab.meta.title}}</span>-->
+              <!--                <cb-iconfont type="icon-guanbi" color="#606266"></cb-iconfont>-->
+              <!--              </div>-->
+            </cb-tabs>
           </div>
+          <!--          <div class="cb-layout-breadcrumbs" :style="breadcrumbStyle">-->
+          <!--            <cb-breadcrumb-->
+          <!--              :pre-items="breadcrumbPreItems"-->
+          <!--              :data="naviData"-->
+          <!--              :active="active"-->
+          <!--              @select="select"-->
+          <!--            ></cb-breadcrumb>-->
+          <!--            <div class="cb-layout-breadcrumbs-right">-->
+          <!--              <slot name="breadcrumbsRightArea"></slot>-->
+          <!--            </div>-->
+          <!--          </div>-->
         </div>
         <slot></slot>
       </div>
@@ -90,17 +117,12 @@ import CbBreadcrumb from '../../breadcrumb';
 import UserDropdown from './components/user-dropdown.vue';
 import _ from 'lodash';
 import { bus } from '../../../utils/bus';
-import {
-  getDynamicRouter,
-  isSubFrame,
-  getMainWin,
-  setLanguage,
-  getLanguage,
-} from '@cyber/helper';
+import { getDynamicRouter, getLanguage, getMainWin, isSubFrame, setLanguage } from '@cyber/helper';
 
 import { getAllPath, getTopMenu } from '../../../utils/navi';
-import { setTheme, getCurrentTheme } from '../../../utils/themes';
+import { getCurrentTheme, setTheme } from '../../../utils/themes';
 import { clearMemory } from '../../../utils/memory';
+
 /**
  * @displayName cb-layout
  * @classify Layout/布局
@@ -211,6 +233,8 @@ export default {
   },
   data() {
     return {
+      tabs: [], // 标签页数组
+      activeTab: '', // 当前激活的标签
       lang: getLanguage() || 'zh-CN',
       theme: getCurrentTheme() || 'theme-dark',
       naviHeaderData: [],
@@ -348,6 +372,10 @@ export default {
         }
         const topMenu = getTopMenu(this.active, this.routeData);
         this.$emit('active', this.active, topMenu);
+        this.$nextTick(() => {
+          this.addTab(this.active);
+          this.activeTab = this.active.name;
+        })
       },
       immediate: true,
     },
@@ -414,6 +442,51 @@ export default {
     bus.$off('full_screen');
   },
   methods: {
+    addTab(route) {
+      if (!route.name || !route.path) return;
+      const exists = this.tabs.some(tab => tab.name === route.name);
+      if (!exists) {
+        this.tabs.push(route);
+      }
+    },
+    // 移除标签页
+    removeTab(targetName) {
+      if (this.tabs.length <= 1) {
+        this.$message.warning('至少保留一个标签页');
+        return;
+      }
+
+      const tabs = this.tabs;
+      let activeTab = this.activeTab;
+      let currentTab = {}
+
+      if (activeTab === targetName) {
+        tabs.forEach((tab, index) => {
+          if (tab.name === targetName) {
+            const nextTab = tabs[index + 1] || tabs[index - 1];
+            if (nextTab) {
+              activeTab = nextTab;
+              currentTab = nextTab;
+            }
+          }
+        });
+        this.activeTab = activeTab.name;
+        this.active = currentTab;
+        this.handleMenuData();
+        this.navigateTo(currentTab)
+      }
+      this.tabs = tabs.filter(tab => tab.name !== targetName);
+    },
+    // 点击标签页
+    clickTab(tab) {
+      this.active = this.tabs[tab.index];
+      this.handleMenuData();
+      this.navigateTo(this.active);
+    },
+    // 导航到指定路由
+    navigateTo(item) {
+      this.$router.push(item.path);
+    },
     // 处理菜单数据
     handleMenuData() {
       var ids = this.routeData.map((item) => {
@@ -554,7 +627,7 @@ export default {
       })
     },
     menuSelectAccordion(name, item, params) {
-      if (this.active !== name) {
+      if (this.active !== name || this.active.name !== name) {
         clearMemory();
         this.select(name, item, params);
       }
@@ -565,6 +638,12 @@ export default {
         this.$emit('route-change', name, item, params); //兼容
       } else {
         this.$router.push({ name, params });
+      }
+      if (typeof item === 'object') {
+        this.addTab(this.active);
+        this.activeTab = this.active.name;
+      } else {
+        this.activeTab = name;
       }
     },
 
@@ -581,8 +660,8 @@ export default {
       //前后台面包屑高度调整
       let headerHeight;
       if (this.showBreadcrumb) {
-        headerHeight = '48px';
-        document.body.style.setProperty('--breadcrumb-height', '48px');
+        headerHeight = '72px';
+        document.body.style.setProperty('--breadcrumb-height', '72px');
       } else {
         headerHeight = '0px';
       }
@@ -671,3 +750,8 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.tabs-container {
+  width: 100%;
+}
+</style>

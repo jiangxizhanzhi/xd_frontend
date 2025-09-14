@@ -50,7 +50,8 @@
 
   .el-tabs--card {
     .el-tabs__nav {
-      border: 1px solid var(--neutral3);
+      //border: 1px solid var(--neutral3);
+      border: 0;
       border-bottom: none;
     }
 
@@ -61,12 +62,15 @@
 
     .el-tabs__header {
       margin: 0;
-      border-bottom: 1px solid var(--neutral3);
+      //border-bottom: 1px solid var(--neutral3);
+      border-bottom: 0;
     }
 
     .el-tabs__item {
-      background: transparent;
+      //background: transparent;
       color: var(--neutral8);
+      background: var(--white-color);
+      font-size: 12px;
     }
 
     .el-tabs__content {
