@@ -34,12 +34,13 @@
       </template>
 
       <template v-slot:params="scope">
-
         <div>{{
           `CPU:${JSON.parse(scope.data.params).cpu}G;磁盘:${JSON.parse(scope.data.params).disk}G;内存:${JSON.parse(scope.data.params).memory}G`
         }}</div>
       </template>
-
+      <template v-slot:in_position="scope">
+        <span :class="['circle', { active: scope.data.in_position === 1 }]"></span>
+      </template>
       <template v-slot:operate="scope">
         <cb-button
           type="text"
@@ -129,8 +130,14 @@ export default {
           prop: 'create_user',
         },
         {
+          label: this.$t('在位状态'),
+          slot: 'in_position',
+        },
+        
+        {
           label: this.$t('systemOperation.monitorBusiness.operate'),
           slot: 'operate',
+          width: 220,
         },
       ],
       loginUrlShow: false,
@@ -203,5 +210,18 @@ export default {
 
 .icon-abnormal {
   background: var(--red-color);
+}
+
+.circle {
+  background: var(--neutral1);
+  font-size: 14px;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.circle.active {
+  background: var(--green-color);
 }
 </style>
