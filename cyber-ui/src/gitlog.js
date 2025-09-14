@@ -1,5 +1,12 @@
 window.__cyber_ui_log__ = [
   {
+    hash: '4ce50ff16c1167b8a313af203317a683954fefdd',
+    abbrevHash: '4ce50ff',
+    subject: 'fix: 路由标签页问题修复',
+    authorName: 'fengxuyan',
+    authorDate: '2025-09-14 11:19:18 +0800',
+  },
+  {
     hash: 'bf6f24c36bfe7a415960c55aafa739ca5f2ce2b3',
     abbrevHash: 'bf6f24c',
     subject: 'feat: cr-web update ui',
@@ -26,12 +33,5 @@ window.__cyber_ui_log__ = [
     subject: 'feat: 页面优化',
     authorName: 'fengxuyan',
     authorDate: '2025-09-12 13:33:42 +0800',
-  },
-  {
-    hash: '284816dedefefd357fccba32d5c15a28e629b256',
-    abbrevHash: '284816d',
-    subject: 'feat：页面风格修改；@cyber/ui@5.6.0-xd.7',
-    authorName: 'fengxuyan',
-    authorDate: '2025-09-11 23:04:26 +0800',
   },
 ];

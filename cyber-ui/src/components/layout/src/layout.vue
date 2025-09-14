@@ -749,6 +749,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .tabs-container {
+  width: 100%;
   ::v-deep .cb-tabs .el-tabs--card .el-tabs__nav {
     border: 0 !important;
   }
