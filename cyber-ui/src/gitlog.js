@@ -1,5 +1,12 @@
 window.__cyber_ui_log__ = [
   {
+    hash: '7bb28b642ce07d7a14475980b2df86ea7d88cd5b',
+    abbrevHash: '7bb28b6',
+    subject: 'fix: 标签移除问题修复',
+    authorName: 'fengxuyan',
+    authorDate: '2025-09-14 11:51:18 +0800',
+  },
+  {
     hash: '67aeb8d1c589a57501bcc02b3fc0865f5444669c',
     abbrevHash: '67aeb8d',
     subject: 'style: 样式',
@@ -26,12 +33,5 @@ window.__cyber_ui_log__ = [
     subject: 'feat: 标签页路由功能',
     authorName: 'fengxuyan',
     authorDate: '2025-09-14 09:09:45 +0800',
-  },
-  {
-    hash: 'c621887f5dcabce4f21eaed481270a9f4f3d929a',
-    abbrevHash: 'c621887',
-    subject: 'fix: oj路由修改',
-    authorName: 'fengxuyan',
-    authorDate: '2025-09-13 18:43:38 +0800',
   },
 ];

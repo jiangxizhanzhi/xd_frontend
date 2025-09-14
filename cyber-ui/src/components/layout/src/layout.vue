@@ -470,10 +470,12 @@ export default {
             }
           }
         });
+        this.activeTab = activeTab.name;
+        this.active = currentTab;
+        this.handleMenuData();
+        this.navigateTo(currentTab)
       }
-      this.activeTab = activeTab.name;
       this.tabs = tabs.filter(tab => tab.name !== targetName);
-      this.navigateTo(currentTab)
     },
     // 点击标签页
     clickTab(tab) {
