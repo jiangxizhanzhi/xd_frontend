@@ -1,7 +1,10 @@
 <template>
-  <cb-inner-page :background="true" title="超融合平台管理">
+  <cb-inner-page
+    :background="true"
+    title="超融合平台管理"
+  >
     <cb-search-table
-      rowKey="resource_id"
+      rowKey="id"
       :cols="cols"
       :url="url"
       :baseURL="baseURL"
@@ -9,153 +12,176 @@
       ref="tableRef"
       :searchBarBg="true"
     >
+      <!-- :selector="selector"
+      :selection.sync="selection" -->
       <template v-slot:search>
-        <cb-select
-          v-model="query.hostName"
-          :first="{
-            label: $t('systemOperation.monitorBusiness.allNodes'),
-            value: '',
-          }"
-          :options="nodeList"
-          clearable
+        <cb-search-input
+          v-model="query.name"
+          :placeholder="$t('请输入平台名称')"
         />
       </template>
-      <template v-slot:state="scope">
-        <span v-if="scope.data.state == 'RUNNING'">
-          <span class="icon icon-normal"></span>
-          <span>{{ $t('systemOperation.monitorBusiness.running') }}</span>
-        </span>
-        <span v-else-if="scope.data.state == 'RESTARTING'">
-          <span>{{ $t('systemOperation.monitorBusiness.restarting') }}</span>
-        </span>
-        <span v-else>
-          <span class="icon icon-abnormal"></span>
-          <span>{{ $t('systemOperation.monitorBusiness.abnormal') }}</span>
-        </span>
+      <template v-slot:filter>
+        <cb-button
+          button-type="add"
+          link-name="business-service-monitoring-add"
+        ></cb-button>
+        <!-- <cb-button
+          hollow
+          button-type="delete"
+          :disabled="selection.length === 0"
+          @click="deleteRow(selection, $event)"
+        ></cb-button> -->
       </template>
+
+      <template v-slot:params="scope">
+
+        <div>{{
+          `CPU:${JSON.parse(scope.data.params).cpu}G;磁盘:${JSON.parse(scope.data.params).disk}G;内存:${JSON.parse(scope.data.params).memory}G`
+        }}</div>
+      </template>
+
       <template v-slot:operate="scope">
         <cb-button
-          :disabled="scope.data.disable_restart"
-          :warnMsg="warnMessage"
-          :completeMsg="completeMessage"
           type="text"
-          @click="restart(scope.data, $event)"
+          @click="edit(scope.data)"
+          mr
+        >{{ $t('编辑') }}</cb-button>
+        <cb-button
+          type="text"
+          @click="deleteRow(scope.data, $event)"
+          mr
+        >{{ $t('删除') }}</cb-button>
+        <cb-popover
+          placement="left"
+          width="280"
+          trigger="click"
         >
-          {{ $t('systemOperation.monitorBusiness.restart') }}
-        </cb-button>
+          <template>
+            <div
+              style="margin-bottom: 5px"
+              v-for="(item, index) in loginUrlData"
+              :key="index"
+            >
+              <div>
+                <span>{{ $t('device.acceEnv') }}：</span>
+                <span>{{ item.protocol }} </span><span>{{ item.hostname }} </span><span>{{ item.port }} </span>
+              </div>
+              <div style="white-space: nowrap;">
+                <span>{{ $t('device.username') }}：</span>
+                <span>{{ item.username }}</span>
+                <span>{{ $t('device.password') }}：</span>
+                <span>{{ item.password }}</span>
+              </div>
+              <!-- <div
+                v-if="item.protocol === 'console'"
+                style="margin-top: 5px"
+              >
+                <cb-button @click="openNewWindow(item.url)">{{ item.protocol }}{{ $t('device.login') }}</cb-button>
+              </div> -->
+            </div>
+          </template>
+          <cb-button
+            :disabled="!(scope.data.access_protocol_list && scope.data.access_protocol_list.length)"
+            slot="reference"
+            type="text"
+            @click="login(scope.data)"
+          >{{
+            $t('远程连接') }}</cb-button>
+        </cb-popover>
       </template>
     </cb-search-table>
   </cb-inner-page>
 </template>
 
 <script>
-import dayjs from 'dayjs';
-var duration = require('dayjs/plugin/duration');
-dayjs.extend(duration);
-import { getNodeList, restart } from '@/api/system-op';
+import { deletePlatform } from '@/api/business-service-monitoring.js'
 export default {
   data() {
     return {
-      url: '/devops/cluster/biz_monitor/page',
+      url: '/devops/cluster/platform/page',
       baseURL: '/api/mp',
       query: {
-        hostName: '',
+        name: '',
       },
-      timer: null,
-      nodeList: [],
+      selector: {
+        maxSelect: 0,
+      },
+      selection: [],
       cols: [
         {
-          label: this.$t('systemOperation.monitorBusiness.serviceName'),
+          label: this.$t('平台名称'),
           prop: 'name',
         },
         {
-          label: this.$t('systemOperation.systemAlarm.nodeName'),
-          prop: 'hostname',
+          label: this.$t('所属厂商'),
+          prop: 'company',
         },
         {
-          label: this.$t('systemOperation.monitorBusiness.ip'),
-          prop: 'ip',
+          label: this.$t('参数'),
+          slot: 'params',
         },
         {
-          label: this.$t('systemOperation.monitorBusiness.runTime'),
-          getData: (row) => {
-            return this.getFormateTime(row.uptime);
-          },
+          label: this.$t('架构类型'),
+          prop: 'system_type',
         },
         {
-          label: this.$t('systemOperation.monitorBusiness.serviceStatus'),
-          slot: 'state',
+          label: this.$t('创建者'),
+          prop: 'create_user',
         },
         {
           label: this.$t('systemOperation.monitorBusiness.operate'),
           slot: 'operate',
         },
       ],
+      loginUrlShow: false,
+      loginUrlData: [],
     };
   },
   computed: {
-    warnMessage() {
-      return this.$t('systemOperation.cloudPlatform.confirmReStart');
-    },
-    completeMessage() {
-      return this.$t('systemOperation.cloudPlatform.successRestart');
-    },
   },
-  created() {},
+  created() { },
   mounted() {
-    this.getAllNode();
-    this.timer = setInterval(() => {
-      this.$refs.tableRef.reload();
-    }, 180000);
   },
   beforeDestroy() {
-    clearInterval(this.timer);
+
   },
   methods: {
-    getFormateTime(val) {
-      const formateTime = dayjs.duration(val, 's');
-      const asDays = parseInt(dayjs.duration(val, 's').asDays());
-      const days = asDays;
-      const hours = formateTime.$d.hours;
-      const minutes = formateTime.$d.minutes;
-      const seconds = formateTime.$d.seconds;
-      const getDay =
-        days > 0 ? `${days}${this.$t('systemOperation.scene.day')}` : '';
-      const getHour =
-        hours > 0 ? `${hours}${this.$t('systemOperation.scene.hour')}` : '';
-      const getMin =
-        minutes > 0 ? `${minutes}${this.$t('systemOperation.scene.min')}` : '';
-      const getSec =
-        seconds > 0
-          ? `${seconds}${this.$t('systemOperation.scene.second')}`
-          : '';
-      const timeFormat = `${getDay}${getHour}${getMin}${getSec}`;
-      return timeFormat;
+    edit(data) {
+      this.$router.push({
+        name: 'business-service-monitoring-edit',
+        params: {
+          id: data.id
+        }
+      })
     },
-    getAllNode() {
-      getNodeList().then((res) => {
-        const data = _.get(res, 'data.data.list', []);
-        data.forEach((item) => {
-          this.nodeList.push({
-            label: item.name,
-            value: item.name,
+    // 登录
+    login(data) {
+      this.loginUrlData = data?.access_protocol_list || []
+      this.loginUrlShow = true;
+    },
+    openNewWindow(url) {
+      window.open(url, '_blank');
+    },
+    // 删除
+    deleteRow(data, done) {
+      // const ids = [];
+      // if (data?.length) {
+      //   data.forEach((item) => {
+      //     ids.push(item.id);
+      //   });
+      // }
+      this.$confirm(this.$t('确定删除') + '？').then(() => {
+        deletePlatform(data.id)
+          .then(() => {
+            done();
+            // this.selection = [];
+            this.$refs.tableRef.reload();
+          })
+          .catch(() => {
+            done(false);
           });
-        });
       });
-    },
-    restart(data, done) {
-      const params = {
-        hostname: data.hostname,
-        service_list: [data.service_name],
-      };
-      restart(params)
-        .then((res) => {
-          this.$refs.tableRef.reload();
-          done();
-        })
-        .catch((err) => {
-          done(false);
-        });
+
     },
   },
 };
@@ -170,9 +196,11 @@ export default {
   top: -1px;
   right: 3px;
 }
+
 .icon-normal {
   background: var(--green-color);
 }
+
 .icon-abnormal {
   background: var(--red-color);
 }

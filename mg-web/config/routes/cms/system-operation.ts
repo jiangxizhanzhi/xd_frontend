@@ -1,3 +1,4 @@
+import businessServiceMonitoring from './business-service-monitoring';
 export default [
   {
     name: 'system-operation-folder',
@@ -28,16 +29,7 @@ export default [
           module: 'cloud-platform-monitoring',
         },
       },
-      {
-        name: 'business-service-monitoring',
-        path: '/admin/system-operation/business-service-monitoring',
-        title: 'routes.business-service-monitoring',
-        component:
-          './pages/cms/system-operation/business-service-monitoring/index.vue',
-        meta: {
-          module: 'business-service-monitoring',
-        },
-      },
+      ...businessServiceMonitoring,
       {
         name: 'instance-monitoring',
         path: '/admin/system-operation/instance-monitoring',
