@@ -36,10 +36,12 @@
       <template v-slot:params="scope">
         <div>{{
           `CPU:${JSON.parse(scope.data.params).cpu}G;磁盘:${JSON.parse(scope.data.params).disk}G;内存:${JSON.parse(scope.data.params).memory}G`
-        }}</div>
+          }}</div>
       </template>
       <template v-slot:in_position="scope">
-        <span :class="['circle', { active: scope.data.in_position === 1 }]"></span>
+        <span :class="['circle', { active: scope.data.in_position === 1 }]">
+          {{ scope.data.in_position === 1 ? '正常' : '异常' }}
+        </span>
       </template>
       <template v-slot:operate="scope">
         <cb-button
@@ -130,7 +132,7 @@ export default {
           prop: 'create_user',
         },
         {
-          label: this.$t('在位状态'),
+          label: this.$t('设备状态'),
           slot: 'in_position',
         },
         
@@ -213,15 +215,17 @@ export default {
 }
 
 .circle {
-  background: var(--neutral1);
+  // background: var(--neutral1);
   font-size: 14px;
   height: 16px;
   width: 16px;
   display: inline-block;
   border-radius: 8px;
+  color: var(--red-color);
 }
 
 .circle.active {
-  background: var(--green-color);
+  // background: var(--green-color);
+  color: var(--green-color);
 }
 </style>

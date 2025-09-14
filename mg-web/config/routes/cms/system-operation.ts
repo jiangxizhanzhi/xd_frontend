@@ -1,4 +1,5 @@
 import businessServiceMonitoring from './business-service-monitoring';
+import equipmentStatusMonitoring from './equipment-status-monitoring';
 export default [
   {
     name: 'system-operation-folder',
@@ -40,16 +41,18 @@ export default [
           isThird: true,
         },
       },
-      {
-        name: 'cluster-management',
-        path: '/admin/system-operation/cluster-management',
-        title: 'routes.cluster-management',
-        component:
-          './pages/cms/system-operation/cluster-management/cluster-tabs.vue',
-        meta: {
-          module: 'cluster-management',
-        },
-      },
+      // 设备状态监控
+      ...equipmentStatusMonitoring,
+      // {
+      //   name: 'cluster-management',
+      //   path: '/admin/system-operation/cluster-management',
+      //   title: 'routes.cluster-management',
+      //   component:
+      //     './pages/cms/system-operation/cluster-management/cluster-tabs.vue',
+      //   meta: {
+      //     module: 'cluster-management',
+      //   },
+      // },
       {
         name: 'network-management',
         path: '/admin/system-operation/network-management',
