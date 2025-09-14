@@ -1,5 +1,12 @@
 window.__cyber_ui_log__ = [
   {
+    hash: '67aeb8d1c589a57501bcc02b3fc0865f5444669c',
+    abbrevHash: '67aeb8d',
+    subject: 'style: 样式',
+    authorName: 'fengxuyan',
+    authorDate: '2025-09-14 11:26:56 +0800',
+  },
+  {
     hash: '4ce50ff16c1167b8a313af203317a683954fefdd',
     abbrevHash: '4ce50ff',
     subject: 'fix: 路由标签页问题修复',
@@ -26,12 +33,5 @@ window.__cyber_ui_log__ = [
     subject: 'fix: oj路由修改',
     authorName: 'fengxuyan',
     authorDate: '2025-09-13 18:43:38 +0800',
-  },
-  {
-    hash: '949c2d74ca6567e45cd95b3136a142180079a292',
-    abbrevHash: '949c2d7',
-    subject: 'feat: 页面优化',
-    authorName: 'fengxuyan',
-    authorDate: '2025-09-12 13:33:42 +0800',
   },
 ];

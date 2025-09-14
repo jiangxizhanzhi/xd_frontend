@@ -361,7 +361,6 @@ export default {
   watch: {
     '$route.path': {
       handler() {
-        console.log('naniMMMMM');
         let nameArray = this.routeData.map((item) => {
           return item.name;
         });
@@ -459,6 +458,7 @@ export default {
 
       const tabs = this.tabs;
       let activeTab = this.activeTab;
+      let currentTab = {}
 
       if (activeTab === targetName) {
         tabs.forEach((tab, index) => {
@@ -466,13 +466,14 @@ export default {
             const nextTab = tabs[index + 1] || tabs[index - 1];
             if (nextTab) {
               activeTab = nextTab;
+              currentTab = nextTab;
             }
           }
         });
       }
       this.activeTab = activeTab.name;
       this.tabs = tabs.filter(tab => tab.name !== targetName);
-      this.navigateTo(activeTab)
+      this.navigateTo(currentTab)
     },
     // 点击标签页
     clickTab(tab) {
@@ -750,11 +751,5 @@ export default {
 <style lang="scss" scoped>
 .tabs-container {
   width: 100%;
-  ::v-deep .cb-tabs .el-tabs--card .el-tabs__nav {
-    border: 0 !important;
-  }
-  ::v-deep .el-tabs__item {
-    background: var(--white-color) !important;
-  }
 }
 </style>
