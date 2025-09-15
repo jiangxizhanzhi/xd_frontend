@@ -97,8 +97,14 @@ const getCourseList = (data) => {
   });
 };
 
-
+// 训练难度
+const getConstantsConfig = (data) => {
+  return request.get(`/cr/common/constants_config`, data, {
+    baseURL: '/api/ojj',
+  });
+};
 export {
+  getConstantsConfig,
   getCourseList,
   videoCheckpointReport,
   postPublishUrl,

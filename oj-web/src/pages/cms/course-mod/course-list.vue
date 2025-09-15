@@ -40,7 +40,7 @@
         </cb-button-group>
       </cb-search-bar>
 
-      <cb-tabs v-model="activeTabName" @tab-click="getCourseListData" v-loading="loading" class="tabs-container">
+      <cb-tabs v-model="activeTabName" @tab-click="getCourseListData" v-loading="loading" class="publish-tabs-container">
         <cb-tab-pane label="已发布" name="1">
           <!-- 列表转卡片形式 -->
           <course-card
@@ -48,6 +48,8 @@
             :courseListData="courseListData"
             :loading="loading"
             @detail="gotoDetail"
+            @edit="edit"
+            @delete="deleteCourse"
           ></course-card>
           <empty v-else class="empty-box">暂无数据</empty>
         </cb-tab-pane>
@@ -58,6 +60,8 @@
             :courseListData="courseListData"
             :loading="loading"
             @detail="gotoDetail"
+            @edit="edit"
+            @delete="deleteCourse"
           ></course-card>
           <empty v-else class="empty-box">暂无数据</empty>
         </cb-tab-pane>
@@ -316,32 +320,32 @@ export default {
       });
     },
     // 删除
-    deleteCourse(data, done) {
-      const that = this;
-      const ids = [];
-      if (data && data.length) {
-        data.map((item) => ids.push(item.resource_id));
-      } else {
-        ids.push(data.resource_id);
-      }
-      that.$request
-        .delete(
-          '/oj/admin/course/batch',
-          {
-            resource_ids: ids,
-          },
-          {
-            baseURL: '/api/ojj',
-          },
-        )
-        .then(() => {
-          done();
-          that.selection = [];
-          that.$refs.sdlRef.reload();
+    deleteCourse(data) {
+      this.$confirm('确认删除？')
+        .then((_) => {
+          const that = this;
+          const ids = [];
+          if (data && data.length) {
+            data.map((item) => ids.push(item.resource_id));
+          } else {
+            ids.push(data.resource_id);
+          }
+          that.$request
+            .delete(
+              '/oj/admin/course/batch',
+              {
+                resource_ids: ids,
+              },
+              {
+                baseURL: '/api/ojj',
+              },
+            )
+            .then(() => {
+              that.getCourseListData();
+            })
+            .catch(() => {
+            });
         })
-        .catch(() => {
-          done(false);
-        });
     },
     toPublic(data, done) {
       // this.$refs.sdlRef.batchOvert();
@@ -468,7 +472,12 @@ export default {
 .custom-search-bar {
   padding: 8px 16px 0 0;
 }
-.tabs-container {
+.publish-tabs-container {
+  ::v-deep {
+    .el-tabs__header {
+      margin-bottom: 0;
+    }
+  }
   padding: 0 16px 0 0;
 }
 .empty-box {
