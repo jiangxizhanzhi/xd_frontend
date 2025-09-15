@@ -1,222 +1,74 @@
 <template>
   <cb-inner-page :background="true" title="课程规划">
-    <!-- 授权访问 -->
-    <div v-if="AuthAccess == 'access'">
-      <auth-access
-        :AuthAccessIds="AuthAccessIds"
-        @closeAuthBatch="closeAuthBatch"
-      ></auth-access>
-    </div>
-    <!-- 授权操作 -->
-    <div v-else-if="AuthAccess == 'opreate'">
-      <auth-operate
-        :AuthOperateIds="AuthOperateIds"
-        @closeAuthBatch="closeAuthBatch"
-      ></auth-operate>
-    </div>
-    <div v-else>
-      <cb-search-table
-        ref="sdlRef"
-        :selector="selector"
-        :selection.sync="selection"
-        :url="url"
-        :data.sync="query"
-        :cols.sync="columns"
-        row-key="resource_id"
-        baseURL="/api/ojj"
+<!--    &lt;!&ndash; 授权访问 &ndash;&gt;-->
+<!--    <div v-if="AuthAccess == 'access'">-->
+<!--      <auth-access-->
+<!--        :AuthAccessIds="AuthAccessIds"-->
+<!--        @closeAuthBatch="closeAuthBatch"-->
+<!--      ></auth-access>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; 授权操作 &ndash;&gt;-->
+<!--    <div v-else-if="AuthAccess == 'opreate'">-->
+<!--      <auth-operate-->
+<!--        :AuthOperateIds="AuthOperateIds"-->
+<!--        @closeAuthBatch="closeAuthBatch"-->
+<!--      ></auth-operate>-->
+<!--    </div>-->
+    <div>
+      <cb-search-bar class="custom-search-bar">
+        <cb-search-input
+          slot="filter"
+          class="search-container"
+          v-model="query.pattern"
+          placeholder="请输入你需要搜索的内容"
+          @change="getCourseListData"
+        ></cb-search-input>
+        <cb-button-group slot="searchRightArea">
+          <cb-button button-type="add" @click="addCourse"></cb-button>
+          <cb-button
+            buttonType="delete"
+            hollow
+            :disabled="selection.length === 0"
+            @click="deleteCourse(selection, $event)"
+          >{{ $t('m.delete') }}</cb-button>
+          <cb-button
+            button-type="export"
+            hollow
+            :disabled="selection.length === 0"
+            @click="exportCourse(selection, $event)"
+          ></cb-button>
+        </cb-button-group>
+      </cb-search-bar>
+
+      <cb-tabs v-model="activeTabName" @tab-click="getCourseListData" v-loading="loading" class="tabs-container">
+        <cb-tab-pane label="已发布" name="1">
+          <!-- 列表转卡片形式 -->
+          <course-card
+            v-if="!loading && courseListData.length"
+            :courseListData="courseListData"
+            :loading="loading"
+            @detail="gotoDetail"
+          ></course-card>
+          <empty v-else class="empty-box">暂无数据</empty>
+        </cb-tab-pane>
+        <cb-tab-pane label="未发布" name="0">
+          <!-- 列表转卡片形式 -->
+          <course-card
+            v-if="!loading && courseListData.length"
+            :courseListData="courseListData"
+            :loading="loading"
+            @detail="gotoDetail"
+          ></course-card>
+          <empty v-else class="empty-box">暂无数据</empty>
+        </cb-tab-pane>
+      </cb-tabs>
+      <cb-pagination
+        :current.sync="pagination.current_page"
+        :total="pagination.total"
+        :page-size.sync="pagination.per_page"
+        @current-change="currentPageChange"
       >
-        <template slot="filter">
-          <cb-select
-            v-model="query.direction"
-            :first="{
-              value: null,
-              label: $t('m.allDirection'),
-            }"
-            :options="directionOptions"
-            :placeholder="$t('m.allDirection')"
-          >
-          </cb-select>
-          <cb-select
-            v-model="query.difficulty"
-            :first="{
-              value: null,
-              label: $t('m.allDifficulty'),
-            }"
-            :options="difficultyOptions"
-            :placeholder="$t('m.allDifficulty')"
-          >
-          </cb-select>
-          <cb-checkbox v-model="query.myCourse">{{
-            $t('m.myCourse')
-          }}</cb-checkbox>
-          <cb-checkbox v-model="query.systemCourse">{{
-            $t('m.systemCourses')
-          }}</cb-checkbox>
-          <cb-checkbox v-model="query.shareCourse">{{
-            $t('m.sharedCourses')
-          }}</cb-checkbox>
-          <cb-search-input
-            v-model="query.pattern"
-            :placeholder="$t('m.namePh')"
-          ></cb-search-input>
-        </template>
-        <template v-slot:search>
-          <cb-button-group>
-            <cb-button button-type="add" @click="addCourse"></cb-button>
-            <cb-button
-              buttonType="delete"
-              hollow
-              :disabled="selection.length === 0"
-              @click="deleteCourse(selection, $event)"
-              >{{ $t('m.delete') }}</cb-button
-            >
-            <cb-button
-              icon="icon-yulan"
-              hollow
-              :warnMsg="publicMsg"
-              :completeMsg="publicSuccessMsg"
-              :disabled="selection.length === 0"
-              @click="toPublic(selection, $event)"
-              >{{ $t('m.public') }}</cb-button
-            >
-            <cb-button
-              icon="icon-yincang1"
-              hollow
-              :warnMsg="hideMsg"
-              :completeMsg="hideSuccessMsg"
-              :disabled="selection.length === 0"
-              @click="toHide(selection, $event)"
-              >{{ $t('m.hide') }}</cb-button
-            >
-            <cb-button
-              button-type="import"
-              hollow
-              @click="importDialog = true"
-            ></cb-button>
-            <cb-button
-              button-type="export"
-              hollow
-              :disabled="selection.length === 0"
-              @click="exportCourse(selection, $event)"
-            ></cb-button>
-            <cb-button
-              hollow
-              icon="icon-shouquancaozuo"
-              :disabled="selection.length === 0"
-              @click="batchAuth(selection, $event)"
-              >{{ $t('button.authSet') }}</cb-button
-            >
-            <cb-button
-              hollow
-              icon="icon-shouquanfangwen"
-              :disabled="selection.length === 0"
-              @click="batchVisi(selection, $event)"
-              >{{ $t('button.visiSet') }}</cb-button
-            >
-          </cb-button-group>
-        </template>
-        <template slot="searchRightArea">
-          <cb-button icon="icon-fangxiangguanli" @click="toType" hollow>{{
-            $t('m.typeManage')
-          }}</cb-button>
-        </template>
-        <template v-slot:difficulty="scope">
-          <div>
-            <span v-if="scope.data.difficulty % 3 === 0">{{
-              computedDiffculty(scope.data.difficulty)
-            }}</span>
-            <span v-if="scope.data.difficulty % 3 === 1">{{
-              computedDiffculty(scope.data.difficulty)
-            }}</span>
-            <span v-if="scope.data.difficulty % 3 === 2">{{
-              computedDiffculty(scope.data.difficulty)
-            }}</span>
-          </div>
-        </template>
-        <template v-slot:public="scope">
-          <div />
-          <span v-if="scope.data.is_public">{{ $t('m.public') }}</span>
-          <span v-if="!scope.data.is_public">{{ $t('m.hide') }}</span>
-        </template>
-        <template v-slot:create_user_name="scope">
-          <div />
-          <span v-if="scope.data.create_user_name == 'admin'">{{
-            $t('common.trainadmin')
-          }}</span>
-          <span v-else>{{ scope.data.create_user_name }}</span>
-        </template>
-        <template v-slot:share="scope">
-          <div />
-          <cb-button
-            type="text"
-            v-show="
-              scope.data.share === $CONSTANT.COURSES.SHARE.PART &&
-              !scope.data.share_count
-            "
-            color-type="yellow"
-            @click="privateAuth(scope.data)"
-            >{{ $t('m.private') }}</cb-button
-          >
-          <cb-button
-            type="text"
-            v-show="
-              scope.data.share === $CONSTANT.COURSES.SHARE.PART &&
-              scope.data.share_count
-            "
-            @click="privateAuth(scope.data)"
-            >{{ $t('m.shared') }}({{ scope.data.share_count }})</cb-button
-          >
-
-          <cb-button
-            type="text"
-            v-show="scope.data.share === $CONSTANT.COURSES.SHARE.ALL"
-            @click="privateAuth(scope.data)"
-            >{{ $t('m.authorizeAll') }}</cb-button
-          >
-        </template>
-        <template v-slot:auth="scope">
-          <div />
-          <cb-button
-            type="text"
-            v-show="
-              scope.data.auth === $CONSTANT.COURSES.AUTH.PART &&
-              !scope.data.auth_count
-            "
-            color-type="yellow"
-            @click="authorize(scope.data)"
-            >{{ $t('m.unauthorized') }}</cb-button
-          >
-          <cb-button
-            type="text"
-            v-show="
-              scope.data.auth === $CONSTANT.COURSES.AUTH.PART &&
-              scope.data.auth_count
-            "
-            @click="authorize(scope.data)"
-            >{{ $t('m.authorized') }}({{ scope.data.auth_count }})</cb-button
-          >
-
-          <cb-button
-            type="text"
-            v-show="scope.data.auth === $CONSTANT.COURSES.AUTH.ALL"
-            @click="authorize(scope.data)"
-            >{{ $t('m.authorizeAll') }}</cb-button
-          >
-        </template>
-        <template v-slot:opeator="scope">
-          <div />
-          <cb-button-group>
-            <cb-button
-              type="text"
-              @click="edit(scope.data)"
-              button-type="edit"
-            ></cb-button>
-            <cb-button type="text" @click="management(scope.data)">{{
-              $t('m.classManage')
-            }}</cb-button>
-          </cb-button-group>
-        </template>
-      </cb-search-table>
+      </cb-pagination>
       <cb-dialog
         :title="$t('m.dialogTitle')"
         width="600px"
@@ -239,154 +91,66 @@ import SearchInput from '@/components/search-condition/search-input.vue';
 import CommonUtils from '@/utils/utils.js';
 import AuthAccess from './manage-auth-batch.vue';
 import AuthOperate from './private-course-batch.vue';
+import {getCourseList} from "../../../api/course";
+import Empty from "../../../components/empty";
+import courseCard from "./course-card";
 
 export default {
   components: {
     CourseImportPanel,
     SearchInput, // 查询 input 公用组件
-    AuthAccess,
-    AuthOperate,
+    // AuthAccess,
+    // AuthOperate,
+    Empty,
+    courseCard,
   },
   data() {
     return {
-      AuthAccessIds: [],
-      AuthOperateIds: [],
-      AuthAccess: 'course', //course是课程列表，opreate 授权操作，access 访问
+      courseListData: [], // 课程列表数据
       url: '/oj/admin/course/list',
+      activeTabName: '1',
+      loading: false,
       query: {
         pattern: '',
-        direction: null,
-        difficulty: null,
-        systemCourse: true,
-        myCourse: true,
-        shareCourse: true,
-      },
-      selector: {
-        maxSelect: 0,
+        publish: 1,
       },
       selection: [],
-      directionOptions: [],
-      // 难度分类数据
-      difficultyOptions: [],
-      multipleSelection: [],
-      difficultyValue: '',
-      tableData: [],
       pagination: {
         current_page: 1,
         total: 0,
-        per_page: 10,
+        per_page: 5,
       },
       importDialog: false,
       columns: [],
     };
   },
-  computed: {
-    hideMsg() {
-      const that = this;
-      const recordCtg = that.$t('coursesBreadcrumbs.course');
-      return CommonUtils.formatString(
-        that.$t('common.confirmConcealMsg'),
-        recordCtg,
-      );
-    },
-    hideSuccessMsg() {
-      const that = this;
-      const recordCtg = that.$t('coursesBreadcrumbs.course');
-      return CommonUtils.formatString(
-        that.$t('common.concealSuccess'),
-        recordCtg,
-      );
-    },
-    publicMsg() {
-      const that = this;
-      const recordCtg = that.$t('coursesBreadcrumbs.course');
-      return CommonUtils.formatString(
-        that.$t('common.confirmOvertMsg'),
-        recordCtg,
-      );
-    },
-    publicSuccessMsg() {
-      const that = this;
-      const recordCtg = that.$t('coursesBreadcrumbs.course');
-      return CommonUtils.formatString(
-        that.$t('common.overtSuccess'),
-        recordCtg,
-      );
-    },
-
-    $CONSTANT() {
-      return Constant;
-    },
-  },
   created() {
-    this.tableSelector = {
-      maxSelect: 0,
-    };
-    this.columns = [
-      {
-        label: this.$t('m.courseName'),
-        prop: 'name',
-        sorter: 'name',
-        width: 330,
-        resizable: true,
-      },
-      {
-        label: this.$t('m.direction'),
-        prop: 'direction_name',
-        sorter: 'category_id',
-        width: 194,
-        resizable: true,
-      },
-      {
-        label: this.$t('m.difficulty'),
-        prop: 'difficulty',
-        slot: 'difficulty',
-        sorter: 'difficulty',
-        width: 100,
-      },
-      {
-        label: this.$t('m.classHours'),
-        prop: 'lesson_count',
-        sorter: 'lesson_count',
-        width: 90,
-      },
-      {
-        label: this.$t('m.studentScore'),
-        prop: 'score',
-        width: 70,
-      },
-      {
-        label: this.$t('m.status'),
-        slot: 'public',
-        width: 70,
-      },
-      {
-        label: this.$t('m.creator'),
-        slot: 'create_user_name',
-        width: '100px',
-      },
-      {
-        label: this.$t('m.authorizedOperation'),
-        slot: 'share',
-        width: '100px',
-      },
-      {
-        label: this.$t('m.authorizedAccess'),
-        slot: 'auth',
-        width: 100,
-      },
-      {
-        label: this.$t('m.operation'),
-        slot: 'opeator',
-        width: '132px',
-      },
-    ];
+    this.getCourseListData();
   },
   mounted() {
-    this.getDirectionOptions();
-    this.getDifficultyOptions();
+    // this.getDirectionOptions();
+    // this.getDifficultyOptions();
   },
   methods: {
+    getCourseListData() {
+      this.loading = true;
+      let params = {
+        pattern: this.query.pattern,
+        page: this.pagination.current_page,
+        per_page: this.pagination.per_page,
+        publish: this.activeTabName,
+      }
+      getCourseList(params).then(res => {
+        this.courseListData = res.data.data.list || [];
+        this.pagination.total = res.data.data.total;
+      }).finally(() => {
+        this.loading = false;
+      })
+    },
+    currentPageChange(current) {
+      this.pagination.current_page = current;
+      this.getCourseListData();
+    },
     computedDiffculty(difficulty) {
       const data = this.difficultyOptions.filter(
         (item) => item.value === difficulty,
@@ -532,6 +296,14 @@ export default {
     edit(row) {
       this.$router.push({
         name: 'courses-edit',
+        params: {
+          courseId: row.resource_id,
+        },
+      });
+    },
+    gotoDetail(row) {
+      this.$router.push({
+        name: 'courses-detail',
         params: {
           courseId: row.resource_id,
         },
@@ -692,4 +464,14 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.custom-search-bar {
+  padding: 8px 16px 0 0;
+}
+.tabs-container {
+  padding: 0 16px 0 0;
+}
+.empty-box {
+  min-height: 300px;
+}
+</style>

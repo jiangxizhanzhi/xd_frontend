@@ -69,6 +69,18 @@ export default [
         },
       },
       {
+        name: 'courses-detail',
+        path: '/admin/courses/:courseId/detail',
+        title: '课程详情',
+        component: './pages/cms/course-mod/course-detail.vue',
+        meta: {
+          breadcrumb: {
+            parentName: 'courses',
+          },
+          module: 'courses',
+        },
+      },
+      {
         name: 'courses-auth',
         path: '/admin/courses/:courseId/auth',
         title: 'm.authorizedOperation',

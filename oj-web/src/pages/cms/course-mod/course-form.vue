@@ -12,23 +12,23 @@
         json
         :isBgColor="true"
       >
-        <cb-form-item :label="$t('m.courseName')" prop="name">
+        <cb-form-item label="标题" prop="name">
           <cb-input v-model="model.name"></cb-input>
         </cb-form-item>
-        <cb-form-item :label="$t('m.direction')" prop="category_id">
-          <cb-select
-            v-model="model.category_id"
-            :options="directionOptions"
-            title-field="name"
-            value-field="resource_id"
-          ></cb-select>
-        </cb-form-item>
-        <cb-form-item :label="$t('m.difficulty')" prop="difficulty">
-          <cb-select
-            v-model="model.difficulty"
-            :options="difficultyOptions"
-          ></cb-select>
-        </cb-form-item>
+<!--        <cb-form-item :label="$t('m.direction')" prop="category_id">-->
+<!--          <cb-select-->
+<!--            v-model="model.category_id"-->
+<!--            :options="directionOptions"-->
+<!--            title-field="name"-->
+<!--            value-field="resource_id"-->
+<!--          ></cb-select>-->
+<!--        </cb-form-item>-->
+<!--        <cb-form-item :label="$t('m.difficulty')" prop="difficulty">-->
+<!--          <cb-select-->
+<!--            v-model="model.difficulty"-->
+<!--            :options="difficultyOptions"-->
+<!--          ></cb-select>-->
+<!--        </cb-form-item>-->
         <cb-form-item :label="$t('course.cover')" prop="Logo">
           <cb-button
             color-type="hollow"
@@ -40,43 +40,43 @@
         <cb-form-item v-if="model.logo !== ''">
           <img class="showImg" v-if="model.logo !== ''" :src="model.logo" />
         </cb-form-item>
-        <cb-form-item :label="$t('m.lecturer')" prop="lecturer">
-          <cb-input v-model="model.lecturer"></cb-input>
-        </cb-form-item>
-        <cb-form-item :label="$t('m.studentScore')" prop="score">
-          <cb-input-number
-            class="number-text"
-            v-model="model.score"
-            :controls="false"
-            :min="0"
-          ></cb-input-number>
-        </cb-form-item>
+<!--        <cb-form-item :label="$t('m.lecturer')" prop="lecturer">-->
+<!--          <cb-input v-model="model.lecturer"></cb-input>-->
+<!--        </cb-form-item>-->
+<!--        <cb-form-item :label="$t('m.studentScore')" prop="score">-->
+<!--          <cb-input-number-->
+<!--            class="number-text"-->
+<!--            v-model="model.score"-->
+<!--            :controls="false"-->
+<!--            :min="0"-->
+<!--          ></cb-input-number>-->
+<!--        </cb-form-item>-->
         <cb-form-item v-if="id" :label="$t('m.courseNumber')" prop="course_num">
           <cb-input
             v-model="model.course_num"
             :disabled="id ? true : false"
           ></cb-input>
         </cb-form-item>
-        <cb-form-item :label="$t('m.description')" prop="description">
+        <cb-form-item label="课程介绍" prop="description">
           <cb-input
             v-model="model.description"
             type="textarea"
             :rows="5"
           ></cb-input>
         </cb-form-item>
-        <cb-form-item
-          :label="$t('m.syllabus')"
-          prop="outline"
-          style="width: 100%"
-        >
-          <mavon-editor
-            :mavon-data.sync="model.outline"
-            :businessType="BUSINESS_TYPE.OJ_CMS_COURSE"
-            :attachmentType="ATTACHMENT_TYPE.OJ_ADMIN_COURSE"
-            :fileSize="1024 * 1024 * 1024"
-          ></mavon-editor>
-        </cb-form-item>
-        <cb-form-item :label="$t('m.isPublic')" prop="is_public">
+<!--        <cb-form-item-->
+<!--          :label="$t('m.syllabus')"-->
+<!--          prop="outline"-->
+<!--          style="width: 100%"-->
+<!--        >-->
+<!--          <mavon-editor-->
+<!--            :mavon-data.sync="model.outline"-->
+<!--            :businessType="BUSINESS_TYPE.OJ_CMS_COURSE"-->
+<!--            :attachmentType="ATTACHMENT_TYPE.OJ_ADMIN_COURSE"-->
+<!--            :fileSize="1024 * 1024 * 1024"-->
+<!--          ></mavon-editor>-->
+<!--        </cb-form-item>-->
+        <cb-form-item label="是否发布" prop="is_public">
           <cb-switch
             :active-color="$themed('--green-color')"
             v-model="model.is_public"
@@ -170,7 +170,7 @@ export default {
         course_type: 0,
         course_num: '',
       },
-      url: '/oj/admin/course',
+      url: '/oj/course',
       rules: {
         name: [
           {

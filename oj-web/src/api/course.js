@@ -91,8 +91,15 @@ const monthDateMark = (data) => {
     baseURL: '/api/ojj',
   });
 };
+const getCourseList = (data) => {
+  return request.get(`/oj/course/list`, data, {
+    baseURL: '/api/ojj',
+  });
+};
+
 
 export {
+  getCourseList,
   videoCheckpointReport,
   postPublishUrl,
   getPublishUrl,

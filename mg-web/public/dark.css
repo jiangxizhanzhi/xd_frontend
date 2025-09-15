@@ -91,7 +91,7 @@ body.theme-dark {
   /* 5、-----遮罩 start----- */
     --mask-color: rgba(0, 0, 0, 0.45);
   /* 6、-----遮罩 end----- */
-    --white-color: rgb(255, 255, 255, 0.9);
+    --white-color: rgb(255, 255, 255, 1);
   /* 7、-----导航 start----- */
     --nav-color: #20293a;
     --nav-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1);

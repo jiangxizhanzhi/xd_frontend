@@ -84,12 +84,12 @@ body.theme-light {
     /* 背景3（二级背景） */
     --bg-color-3: #F5F5F5;
     /* 背景4（背景3之上的动态背景） */
-    --bg-color-4: #ffffff;
+    --bg-color-4: rgba(255, 255, 255, 0.01);
   /* -----背景颜色 end----- */
   /* -----遮罩 start----- */
     --mask-color: rgba(0, 0, 0, 0.45);
   /* -----遮罩 end----- */
-    --white-color: rgba(255, 255, 255, 0.9);
+    --white-color: rgba(255, 255, 255, 1);
   /* -----导航 start----- */
     --nav-color: #223A7D;
     --left-nav-color: #15385B;
@@ -99,6 +99,7 @@ body.theme-light {
     --nav-left-active-bg: #116DC6;
     --nav-left-text: #97A3B7;
     --nav-collapse-bg: #12273C;
+    --info-text: #8890A1;
   /* -----导航 end----- */
   /* -----按钮 start----- */
     --button-text: rgba(255, 255, 255, 0.9);
