@@ -1,12 +1,12 @@
 import { IProxy } from '@cyber/cli';
 
-const serverIp = '10.2.35.10';
-const serverPort = 80; // server port
+const serverIp = '8.159.138.178';
+const serverPort = 81;
 
 const server = `http://${serverIp}:${serverPort}`;
 const wsServer = `ws://${serverIp}:${serverPort}`;
-const serverIpJava = '10.2.35.10';
-const serverPortJava = 80;
+const serverIpJava = '8.159.138.178';
+const serverPortJava = 81;
 const serverJava = `http://${serverIpJava}:${serverPortJava}`;
 const wsServerJava = `ws://${serverIpJava}:${serverPortJava}`;
 export default {

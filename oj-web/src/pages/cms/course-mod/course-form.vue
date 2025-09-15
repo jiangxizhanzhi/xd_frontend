@@ -15,6 +15,22 @@
         <cb-form-item label="标题" prop="name">
           <cb-input v-model="model.name"></cb-input>
         </cb-form-item>
+        <cb-form-item :label="$t('m.enclosure')" prop="attachment">
+          <cb-upload-file
+            ref="upload2"
+            type="file"
+            v-model="attachmentList"
+            :fetch-promise="uploadAttachment"
+            :limit="1"
+            :multiple="false"
+            tipText="支持.zip和.rar格式文件，大小不超过100M"
+            accept=".zip,.rar"
+            :fileSize="1024 * 1024 * 100"
+            @download="downloadAttachment"
+            @delete="handleDeleteFile"
+            isDownload
+          ></cb-upload-file>
+        </cb-form-item>
 <!--        <cb-form-item :label="$t('m.direction')" prop="category_id">-->
 <!--          <cb-select-->
 <!--            v-model="model.category_id"-->
@@ -51,12 +67,12 @@
 <!--            :min="0"-->
 <!--          ></cb-input-number>-->
 <!--        </cb-form-item>-->
-        <cb-form-item v-if="id" :label="$t('m.courseNumber')" prop="course_num">
-          <cb-input
-            v-model="model.course_num"
-            :disabled="id ? true : false"
-          ></cb-input>
-        </cb-form-item>
+<!--        <cb-form-item v-if="id" :label="$t('m.courseNumber')" prop="course_num">-->
+<!--          <cb-input-->
+<!--            v-model="model.course_num"-->
+<!--            :disabled="id ? true : false"-->
+<!--          ></cb-input>-->
+<!--        </cb-form-item>-->
         <cb-form-item label="课程介绍" prop="description">
           <cb-input
             v-model="model.description"
@@ -81,6 +97,44 @@
             :active-color="$themed('--green-color')"
             v-model="model.is_public"
           ></cb-switch>
+        </cb-form-item>
+        <cb-form-item label="课时编排" prop="lessons">
+          <cb-search-table
+            :scroll="{ y: 240 }"
+            :background="true"
+            :cols="lessonCols"
+            url="/cr/team_train/room/list"
+            baseURL="/api/ojj"
+            ref="table"
+            :data="queryTrain"
+            show-index
+            :selection.sync="selection"
+          >
+            <template v-slot:search>
+            </template>
+            <template v-slot:filter>
+              <cb-search-input v-model="queryTrain.search" placeholder="请输入训练名称"></cb-search-input>
+<!--              <cb-button button-type="add" @click="addCourse"></cb-button>-->
+<!--              <cb-button-->
+<!--                buttonType="delete"-->
+<!--                hollow-->
+<!--                :disabled="selection.length === 0"-->
+<!--              >{{ $t('m.delete') }}</cb-button>-->
+<!--              <cb-button-->
+<!--                button-type="export"-->
+<!--                hollow-->
+<!--                :disabled="selection.length === 0"-->
+<!--              ></cb-button>-->
+<!--              <cb-search-input v-model="queryTrain.search" placeholder="请输入训练名称"></cb-search-input>-->
+            </template>
+            <template v-slot:difficult="scope">
+              {{difficultOptions[scope.data.difficult]}}
+            </template>
+            <template v-slot:operation="scope">
+              <cb-button type="text" mr>编辑</cb-button>
+              <cb-button type="text">删除</cb-button>
+            </template>
+          </cb-search-table>
         </cb-form-item>
         <template slot="fixedBottom">
           <cb-button-group space="middle">
@@ -111,6 +165,8 @@ import Validate from '@/utils/validate.js';
 import Utils from '@/utils/util';
 import { BUSINESS_TYPE } from '@/pages/cms/course-mod/course-constant.js';
 import { ATTACHMENT_TYPE } from '@/constants/attachment.js';
+import { getConstantsConfig } from '@/api/course';
+import _ from 'lodash';
 
 export default {
   components: {
@@ -152,10 +208,13 @@ export default {
     };
     return {
       // 难度分类
+      attachmentList: [], //附件文件列表
       difficultyOptions: [],
       BUSINESS_TYPE,
       ATTACHMENT_TYPE,
       formRef: 'formRef',
+      queryTrain: {search: ''},
+      selection: [],
       model: {
         name: '',
         category_id: '',
@@ -169,8 +228,9 @@ export default {
         // 配合java 新接口，先设置0，基础课程
         course_type: 0,
         course_num: '',
+        lessons: [],
       },
-      url: '/oj/course',
+      url: '/oj/admin/course',
       rules: {
         name: [
           {
@@ -200,6 +260,15 @@ export default {
       },
       directionOptions: [],
       dialogVisible: false,
+      difficultOptions: {},
+      lessonCols: [
+        { label: '训练名称', prop: 'name', },
+        { label: '训练类别', prop: 'train_xd_type', },
+        { label: '训练类型', prop: 'train_xd_sub_type', },
+        { label: '时长', prop: 'duration_time', },
+        { label: '难度', slot: 'difficult',},
+        { label: '操作', slot: 'operation', },
+      ]
     };
   },
   computed: {
@@ -214,7 +283,6 @@ export default {
     },
   },
   created() {
-    this.getDirectionOptions();
     this.getDifficultyOptions();
   },
   mounted() {
@@ -224,48 +292,47 @@ export default {
   },
   methods: {
     getDifficultyOptions() {
-      this.$request
-        .get(
-          '/cr/common/constants_config',
-          {
-            type: 9,
-          },
-          {
-            baseURL: '/api/ojj',
-          },
-        )
-        .then((res) => {
-          let arr = res.data.data;
-          arr = arr.map((item) => {
-            return {
-              value: item.code,
-              label: item.name,
-            };
-          });
-          this.difficultyOptions = arr;
-        });
+      getConstantsConfig({ type: 24 }).then((res) => {
+        const data = _.get(res, 'data.data', []);
+        data.forEach((item) => {
+          this.difficultOptions[item.code] = item.name;
+        })
+      });
     },
-    getDirectionOptions() {
+    uploadAttachment(file) {
+      const uploadData = new FormData();
+      uploadData.append('file', file);
+      uploadData.append('type', 2);
       this.$request
-        .get(
-          '/oj/admin/course/direction/list',
-          {
-            children: false,
-            page: 1,
-            per_page: 9999,
-          },
-          {
-            baseURL: '/api/ojj',
-          },
-        )
+        .post('/common/admin/attachment_upload', uploadData, {
+          baseURL: '/api/ojj',
+        })
         .then((res) => {
-          this.directionOptions = _.get(res, 'data.data.list', []);
-          this.model.category_id = _.get(
-            res,
-            'data.data.list',
-            [],
-          )[0].resource_id;
+          this.attachmentList = [
+            {url: res.data.data.file_path, name: res.data.data.file_name},
+          ];
+          this.model.attachment = res.data.data.file_path;
+        })
+        .catch((error) => {
+          this.attachmentList.pop();
+        })
+        .finally(() => {
         });
+
+      return false;
+    },
+    // 下载附件
+    downloadAttachment(file) {
+      this.$request.binaryDownload(
+        'get',
+        file.file_path,
+        {},
+        { filename: file.name, baseURL: '' },
+      );
+    },
+    handleDeleteFile() {
+      this.model.attachment = '';
+      this.attachmentList = [];
     },
     openUploadImg() {
       this.dialogVisible = true;
@@ -281,6 +348,7 @@ export default {
     },
     // 表单提交
     submit() {
+      this.model.lessons = this.selection?.map(item => item.resource_id);
       this.$refs.formRef.submit().then((res) => {
         this.cancel();
       });
