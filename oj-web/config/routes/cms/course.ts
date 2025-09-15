@@ -9,7 +9,7 @@ export default [
         name: 'learn-statistics',
         path: '/admin/course/learn-statistics/list',
         title: 'routes.learn-statistics',
-        component: './pages/cms/course-mod/learn-statistics/index.vue',
+        component: './pages/cms/statistical-analysis/index.vue',
         meta: {
           module: 'learn-statistics',
         },
