@@ -302,7 +302,7 @@ export default {
     uploadAttachment(file) {
       const uploadData = new FormData();
       uploadData.append('file', file);
-      uploadData.append('type', 2);
+      uploadData.append('type', 13);
       this.$request
         .post('/common/admin/attachment_upload', uploadData, {
           baseURL: '/api/ojj',

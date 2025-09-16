@@ -17,11 +17,11 @@
       </div>
       <div class="detail-bottom-info">
         <span class="lesson-count">
-          <cb-iconfont type="icon-liebiao" size="20" themed-color="var(--neutral6)" />
+          <cb-iconfont type="icon-liebiao" size="18" themed-color="var(--neutral4)" />
           共计{{item.lesson_count}}节
         </span>
         <span class="course-duration">
-          <cb-iconfont type="icon-xuexitongji" size="20" themed-color="var(--neutral6)" />
+          <cb-iconfont type="icon-xuexitongji" size="18" themed-color="var(--neutral4)" />
           {{item.course_duration}}小时
         </span>
       </div>
@@ -88,13 +88,14 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  background-color: var(--bg-color-1);
+  //background-color: var(--bg-color-1);
   padding-top: 8px;
+  padding-bottom: 8px;
   .card {
     position: relative;
     flex: 0 0 calc(25% - 12px);
     height: 290px;
-    background: var(--white-color);
+    background: var(--bg-color-1);
     cursor: pointer;
     overflow: hidden;
     .img-box {
@@ -131,7 +132,6 @@ export default {
         transform: scale(1.1);
         transition: all 0.5s ease;
       }
-      background: var(--bg-color-3);
       .name {
         color: var(--primary-color);
       }

@@ -97,13 +97,20 @@ const getCourseList = (data) => {
   });
 };
 
-// 训练难度
+// 通用常量
 const getConstantsConfig = (data) => {
   return request.get(`/cr/common/constants_config`, data, {
     baseURL: '/api/ojj',
   });
 };
+// 课程详情 （对应课程详情页面的左半部分）
+const getCourseDetailData = (data) => {
+  return request.get(`/oj/course`, data, {
+    baseURL: '/api/ojj',
+  });
+};
 export {
+  getCourseDetailData,
   getConstantsConfig,
   getCourseList,
   videoCheckpointReport,
