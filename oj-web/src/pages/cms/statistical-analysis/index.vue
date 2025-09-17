@@ -11,8 +11,8 @@
           </div>
           <div class="th-echarts">
             <bar-chart
-              v-if="true"
-              :dataList="courseLearnRank"
+              v-if="team_times_data.xData.length"
+              :team_times_data="team_times_data"
             ></bar-chart>
             <no-data v-else></no-data>
           </div>
@@ -28,7 +28,10 @@
               "></top-title>
           </div>
           <div class="th-echarts">
-            <line-chart v-if="true"></line-chart>
+            <line-chart
+              v-if="team_person_num_data.xData.length"
+              :team_person_num_data="team_person_num_data"
+            ></line-chart>
             <no-data v-else></no-data>
           </div>
         </div>
@@ -41,7 +44,8 @@
           </div>
           <div class="th-echarts">
             <score-bar-chart
-              v-if="true"
+              v-if="score_all.xData.lenghth"
+              :score_data="score_all"
               :colorList="['#f59a23']"
             ></score-bar-chart>
             <no-data v-else></no-data>
@@ -53,7 +57,8 @@
           </div>
           <div class="th-echarts">
             <score-bar-chart
-              v-if="true"
+              v-if="score_sy.xData.lenghth"
+              :score_data="score_sy"
               :colorList="['#19ab76']"
             ></score-bar-chart>
             <no-data v-else></no-data>
@@ -65,7 +70,8 @@
           </div>
           <div class="th-echarts">
             <score-bar-chart
-              v-if="true"
+              v-if="score_km.xData.lenghth"
+              :score_data="score_km"
               :colorList="['#19bad1']"
             ></score-bar-chart>
             <no-data v-else></no-data>
@@ -77,7 +83,8 @@
           </div>
           <div class="th-echarts">
             <score-bar-chart
-              v-if="true"
+              v-if="score_zhyx.xData.lenghth"
+              :score_data="score_zhyx"
               :colorList="['#0d63c4']"
             ></score-bar-chart>
             <no-data v-else></no-data>
@@ -90,62 +97,13 @@
         </div>
         <div class="th-echarts">
           <cb-search-table
-            ref="sdlRef"
-            url="/oj/admin/statistic/course_statistics_list"
+            ref="tableRef"
+            url="/cr/admin/xd_statistics/detail"
             baseURL="/api/ojj"
             :cols="columns"
-            :data="query"
-            row-key="resource_id"
+            row-key="user_id"
             :searchBarBg="false"
           >
-            <template v-slot:search>
-              <cb-select
-                v-model="query.direction"
-                clearable="clearable"
-                :first="{
-                  value: '',
-                  label: $t('m.allDirection'),
-                }"
-                :options="typesOptions"
-              ></cb-select>
-              <cb-select
-                v-model="query.difficulty"
-                clearable="clearable"
-                :first="{
-                  value: '',
-                  label: $t('m.allDifficulty'),
-                }"
-                :options="difficultyOptions"
-              ></cb-select>
-              <cb-search-input
-                v-model="query.pattern"
-                :placeholder="$t('m.pleaseEnterName')"
-              ></cb-search-input>
-            </template>
-            <template v-slot:lesson_count="scope">
-              <span>{{ scope.data.lesson_count }}</span>
-            </template>
-            <template v-slot:difficulty="scope">
-              <div>
-                <span v-if="scope.data.difficulty % 3 === 0">{{
-                  computedDifficulty(scope.data.difficulty)
-                }}</span>
-                <span v-if="scope.data.difficulty % 3 === 1">{{
-                  computedDifficulty(scope.data.difficulty)
-                }}</span>
-                <span v-if="scope.data.difficulty % 3 === 2">{{
-                  computedDifficulty(scope.data.difficulty)
-                }}</span>
-              </div>
-            </template>
-            <template v-slot:operation="scope">
-              <cb-button
-                type="text"
-                @click="goToLesson(scope.data)"
-              >{{
-                $t('courseStatistics.viewingClassHourStatistics')
-              }}</cb-button>
-            </template>
           </cb-search-table>
         </div>
       </div>
@@ -153,13 +111,19 @@
   </cb-inner-page>
 </template>
 <script>
+import {
+  getXdTeamTimesApi,
+  getXdTeamPersonNumApi,
+  getXdTeamScoreAllApi,
+  getXdTeamScoreSyApi,
+  getXdTeamScoreKmApi,
+  getXdTeamScoreZhyxApi
+} from '@/api/statistical-analysis.js'
 import topTitle from './components/top-title.vue';
 import BarChart from './components/bar-chart.vue';
 import ScoreBarChart from './components/score-bar-chart.vue';
 import LineChart from './components/line-chart.vue';
 import NoData from './components/no-data.vue';
-import ListenDomChange from '@cyber/ui/src/utils/listen-dom';
-import { DIFFICULTY, TYPE } from './contant.js';
 export default {
   components: {
     topTitle,
@@ -170,223 +134,234 @@ export default {
   },
   data() {
     return {
-      DIFFICULTY,
-      TYPE,
-      listen: new ListenDomChange({
-        dom: document.body,
-        callback: this.listenFunc,
-      }),
-      // 表示是否是浅色系
-      light: true,
-      expandArr: {},
-      tableData: [],
-      query: {
-        direction: '',
-        difficulty: '',
-        search_text: '',
+      columns: [
+        {
+          label: this.$t('用户名'),
+          prop: 'username',
+        },
+        {
+          label: this.$t('姓名'),
+          prop: 'name',
+        },
+        {
+          label: this.$t('组织'),
+          prop: 'organization_data',
+        },
+        {
+          label: this.$t('角色'),
+          prop: 'roles',
+        },
+        {
+          label: this.$t('完成训练'),
+          prop: 'train_times',
+        },
+        {
+          label: this.$t('完成实验'),
+          prop: 'sy_times',
+        },
+        {
+          label: this.$t('完成科目'),
+          prop: 'km_times',
+        },
+        {
+          label: this.$t('完成演训'),
+          prop: 'zhyx_times',
+        },
+        {
+          label: this.$t('完成任务'),
+          prop: 'task_num',
+        },
+        {
+          label: this.$t('任务正确率'),
+          prop: 'task_accuracy',
+        },
+        {
+          label: this.$t('累计得分'),
+          prop: 'total_score',
+        },
+        {
+          label: this.$t('综合排名'),
+          prop: 'overall_rank',
+        },
+      ],
+      team_times_data: {
+        xData: [],
+        seriesData: [],
       },
-      typesOptions: [],
-      multipleSelection: [],
-      courseLearnRank: [], // 课程学习人次排名
-      courseDirectionRank: [], // 课程方向学习人次排名
-      difficultyOptions: [],
+      team_person_num_data: {
+        xData: [],
+        seriesData: [],
+      },
+      score_all: {
+        xData: [],
+        seriesData: [],
+      },
+      score_sy: {
+        xData: [],
+        seriesData: [],
+      },
+      score_km: {
+        xData: [],
+        seriesData: [],
+      },
+      score_zhyx: {
+        xData: [],
+        seriesData: [],
+      },
     };
   },
-  created() {
-    const that = this;
-    this.columns = [
-      {
-        label: this.$t('m.courseName'),
-        prop: 'name',
-        sorter: 'name',
-        width: '300px',
-      },
-      {
-        label: this.$t('m.direction'),
-        getData(row) {
-          const { category_name = '', type = null } = row;
-          if (category_name) {
-            return category_name;
-          } else {
-            if (type === that.TYPE.THEORY) {
-              return that.$t('m.theory');
-            } else if (type === that.TYPE.LABSTYPE) {
-              return that.$t('m.LABS');
-            }
-          }
-        },
-      },
-      {
-        label: this.$t('m.difficulty'),
-        slot: 'difficulty',
-        sorter: 'difficulty',
-      },
-      {
-        label: this.$t('m.classHours'),
-        prop: 'lesson_count',
-        slot: 'lesson_count',
-      },
-      {
-        label: this.$t('m.numberOfLearners'),
-        prop: 'heat',
-        sorter: 'heat',
-      },
-      {
-        label: this.$t('m.numberOfReportsSubmitted'),
-        prop: 'finish_report_count',
-        sorter: 'finish_report_count',
-        minWidth: 125,
-      },
-      {
-        label: this.$t('m.creator'),
-        prop: 'create_user',
-      },
-      {
-        label: this.$t('m.operation'),
-        slot: 'operation',
-        width: '150px',
-      },
-    ];
-  },
   mounted() {
-    this.listenFunc();
-    this.listen.createListen();
-    this.getDirectionOptions();
-    this.getEchartsData();
-    this.getDifficultyOptions();
-  },
-  beforeDestroy() {
-    this.listen.destroyListen();
+    this.getData();
   },
   methods: {
-    // 课程学习人次排名 - 课程方向学习人次排名
-    getEchartsData() {
-      // 课程学习人次排名
-      this.$request
-        .get('/oj/admin/statistic/course_histogram', null, {
-          baseURL: '/api/ojj',
-        })
-        .then((res) => {
-          const tempdata = _.get(res, 'data.data', []);
-          for (let i = 0; i < tempdata.xnames.length; i++) {
-            const tempItem = {
-              name: tempdata.xnames[i],
-              value: tempdata.yvalues[i],
-            };
-            this.$set(this.courseLearnRank, i, tempItem);
-          }
-        })
-        .catch((err) => {
-          this.$serverError(err);
-        });
-      // 课程方向学习人次排名
-      this.$request
-        .get('/oj/admin/statistic/direction_histogram', null, {
-          baseURL: '/api/ojj',
-        })
-        .then((res) => {
-          const tempdata = _.get(res, 'data.data', []);
-          for (let i = 0; i < tempdata.xnames.length; i++) {
-            const tempItem = {
-              name: tempdata.xnames[i],
-              value: tempdata.yvalues[i],
-            };
-            this.$set(this.courseDirectionRank, i, tempItem);
-          }
-        })
-        .catch((err) => {
-          this.$serverError(err);
-        });
+    getData() {
+      // 训练场次统计
+      this.getXdTeamTimesData();
+      // 训练人数趋势
+      this.getXdTeamPersonNumData();
+      // 训练总分TOP5
+      this.getXdScoreAllTop5()
+      // 实验总分TOP5
+      this.getXdScoreSyTop5()
+      // 科目总分TOP5
+      this.getXdScoreKmTop5()
+      // 综合演训总分TOP5
+      this.getXdScoreZhyxTop5()
     },
-    listenFunc() {
-      const className = document.body.className.split(' ');
-      if (className.indexOf('theme-dark') != -1) {
-        this.light = false;
-      } else {
-        this.light = true;
-      }
-    },
-    // 查询出所有的课程方向
-    getDirectionOptions() {
-      this.$request
-        .get(
-          '/oj/admin/course/direction/list',
+    // 训练场次统计
+    getXdTeamTimesData() {
+      this.team_times_data.xData = [];
+      this.team_times_data.seriesData = [];
+      getXdTeamTimesApi().then(res => {
+        const data = _.get(res, 'data.data', [])
+        const sy_num_data = [];
+        const km_num_data = [];
+        const zhyx_num_data = [];
+        data.forEach(item => {
+          this.team_times_data.xData.push(item.month + '月')
+          sy_num_data.push(item.sy_num)
+          km_num_data.push(item.km_num)
+          zhyx_num_data.push(item.zhyx_num)
+        })
+        this.team_times_data.seriesData = [
           {
-            children: false,
-            page: 1,
-            per_page: 9999,
+            name: '单元实验',
+            type: 'bar',
+            stack: 'Ad',
+            emphasis: {
+              focus: 'series'
+            },
+            data: sy_num_data
           },
           {
-            baseURL: '/api/ojj',
+            name: '科目训练',
+            type: 'bar',
+            stack: 'Ad',
+            emphasis: {
+              focus: 'series'
+            },
+            data: km_num_data
           },
-        )
-        .then((res) => {
-          const typesOptions = this.typesOptions.concat(res.data.data.list);
-          for (let item of typesOptions) {
-            item.label = item.name;
-            item.value = item?.resource_id;
-          }
-          this.typesOptions = typesOptions;
+          {
+            name: '综合演训',
+            type: 'bar',
+            stack: 'Ad',
+            emphasis: {
+              focus: 'series'
+            },
+            data: zhyx_num_data
+          },
+        ]
+      })
+    },
+    // 训练人数趋势
+    getXdTeamPersonNumData() {
+      getXdTeamPersonNumApi().then(res => {
+        const data = _.get(res, 'data.data', [])
+        const sy_num_data = [];
+        const km_num_data = [];
+        const zhyx_num_data = [];
+        data.forEach(item => {
+          this.team_person_num_data.xData.push(item.month + '月')
+          sy_num_data.push(item.sy_num)
+          km_num_data.push(item.km_num)
+          zhyx_num_data.push(item.zhyx_num)
         })
-        .catch(() => { });
-    },
-    //获取难度列表数据
-    getDifficultyOptions() {
-      this.$request
-        .get(
-          '/cr/common/constants_config',
+        this.team_person_num_data.seriesData = [
           {
-            type: 37,
+            name: '单元实验',
+            type: 'line',
+            emphasis: {
+              focus: 'series'
+            },
+            data: sy_num_data
           },
           {
-            baseURL: '/api/ojj',
+            name: '科目训练',
+            type: 'line',
+            emphasis: {
+              focus: 'series'
+            },
+            data: km_num_data
           },
-        )
-        .then((res) => {
-          let arr = res.data.data;
-          arr = arr.map((item) => {
-            return {
-              value: item.code,
-              label: item.name,
-            };
-          });
-          this.difficultyOptions = arr;
-        });
-    },
-    //根据难度值获取难度标签
-    computedDifficulty(difficulty) {
-      const data = this.difficultyOptions.filter(
-        (item) => item.value === difficulty,
-      );
-      if (data.length) {
-        return data[0].label;
-      }
-    },
-    goToLesson(row) {
-      this.$router.push({
-        name: 'period-statistics',
-        params: {
-          courseId: row.resource_id,
-          courseName: row.name,
-        },
-      });
-    },
-    leranCount(row) {
-      if (row.type === this.TYPE.THEORY) {
-        this.$router.push({
-          name: 'theory-learn-count',
-          params: {
-            lessonId: row.resource_id,
+          {
+            name: '综合演训',
+            type: 'line',
+            emphasis: {
+              focus: 'series'
+            },
+            data: zhyx_num_data
           },
-        });
-      } else if (row.type === this.TYPE.LABSTYPE) {
-        this.$router.push({
-          name: 'learn-count',
-          params: {
-            lessonId: row.resource_id,
-          },
-        });
-      }
+        ]
+      })
+    },
+    // 训练总分TOP5
+    getXdScoreAllTop5() {
+      getXdTeamScoreAllApi().then(res => {
+        this.score_all.xData = [];
+        this.score_all.seriesData = [];
+        const data = _.get(res, 'data.data', [])
+        data.forEach(item => {
+          this.score_all.xData.push(item.username)
+          this.score_all.seriesData.push(item.total_score)
+        })
+      })
+    },
+    // 实验总分TOP5
+    getXdScoreSyTop5() {
+      getXdTeamScoreSyApi().then(res => {
+        this.score_sy.xData = [];
+        this.score_sy.seriesData = [];
+        const data = _.get(res, 'data.data', [])
+        data.forEach(item => {
+          this.score_sy.xData.push(item.username)
+          this.score_sy.seriesData.push(item.total_score)
+        })
+      })
+    },
+    // 科目总分TOP5
+    getXdScoreKmTop5() {
+      getXdTeamScoreKmApi().then(res => {
+        this.score_km.xData = [];
+        this.score_km.seriesData = [];
+        const data = _.get(res, 'data.data', [])
+        data.forEach(item => {
+          this.score_km.xData.push(item.username)
+          this.score_km.seriesData.push(item.total_score)
+        })
+      })
+    },
+    // 综合演训总分TOP5
+    getXdScoreZhyxTop5() {
+      getXdTeamScoreZhyxApi().then(res => {
+        this.score_zhyx.xData = [];
+        this.score_zhyx.seriesData = [];
+        const data = _.get(res, 'data.data', [])
+        data.forEach(item => {
+          this.score_zhyx.xData.push(item.username)
+          this.score_zhyx.seriesData.push(item.total_score)
+        })
+      })
     },
   },
 };

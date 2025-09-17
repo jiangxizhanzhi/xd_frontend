@@ -20,10 +20,13 @@ export default {
       type: String,
       default: '100%',
     },
-    dataList: {
-      type: Array,
+    score_data: {
+      type: Object,
       default() {
-        return [];
+        return {
+          xData: [],
+          seriesData: [],
+        };
       },
     },
     // 柱条颜色
@@ -61,7 +64,7 @@ export default {
         },
         yAxis: {
           type: 'category',
-          data: ['张三', '李四', '王五', '赵六', '钱七', '孙八'],
+          data: [],
           axisLabel: {
             color: '#6e7079'
           },
@@ -78,7 +81,7 @@ export default {
         series: [
           {
             type: 'bar',
-            data: [100, 50, 165, 70, 168, 30]
+            data: []
           }
         ]
       },
@@ -86,8 +89,10 @@ export default {
   },
   watch: {
     // 处理数据
-    dataList: {
-      handler: function () {
+    score_data: {
+      handler: function (nv, ov) {
+        this.option.yAxis.data = nv.xData;
+        this.option.series[0].data = nv.seriesData;
         this.handleFormatData();
       },
       immediate: true,

@@ -20,18 +20,17 @@ export default {
       type: String,
       default: '100%',
     },
-    dataList: {
-      type: Array,
+    team_person_num_data: {
+      type: Object,
       default() {
-        return [];
+        return {
+          xData: [],
+          seriesData: [],
+        }
       },
     },
     // 柱条颜色
     barColor: {
-      type: String,
-      default: '',
-    },
-    yName: {
       type: String,
       default: '',
     },
@@ -41,6 +40,7 @@ export default {
       chart: null,
       chartData: [],
       option: {
+        color: ['#19ab76', '#19bad1', '#0d63c4'],
         grid: {
           show: false,
           top: 40,
@@ -62,7 +62,7 @@ export default {
         xAxis: [
           {
             type: 'category',
-            data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+            data: []
           }
         ],
         yAxis: [
@@ -70,39 +70,16 @@ export default {
             type: 'value'
           }
         ],
-        series: [
-          {
-            name: '单元实验',
-            type: 'line',
-            emphasis: {
-              focus: 'series'
-            },
-            data: [120, 132, 101, 134, 90, 230, 210, 101, 134, 90, 230, 210]
-          },
-          {
-            name: '科目训练',
-            type: 'line',
-            emphasis: {
-              focus: 'series'
-            },
-            data: [220, 182, 191, 234, 290, 330, 310, 101, 134, 90, 230, 210]
-          },
-          {
-            name: '综合演训',
-            type: 'line',
-            emphasis: {
-              focus: 'series'
-            },
-            data: [150, 232, 201, 154, 190, 330, 410, 101, 134, 90, 230, 210]
-          },
-        ]
+        series: []
       },
     };
   },
   watch: {
     // 处理数据
-    dataList: {
-      handler: function () {
+    team_person_num_data: {
+      handler: function (nv, ov) {
+        this.option.xAxis[0].data = nv.xData;
+        this.option.series = nv.seriesData;
         this.handleFormatData();
       },
       immediate: true,

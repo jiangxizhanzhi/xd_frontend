@@ -6,7 +6,7 @@
         themedColor="font-color-primary"
         :size="80"
       ></cb-iconfont>
-      <div class="no-data-text">{{ $t('personStatistics.noRanking') }}</div>
+      <div class="no-data-text">{{ $t('暂无数据') }}</div>
     </div>
   </div>
 </template>
