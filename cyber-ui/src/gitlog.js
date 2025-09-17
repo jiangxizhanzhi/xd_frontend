@@ -1,5 +1,12 @@
 window.__cyber_ui_log__ = [
   {
+    hash: '6d31027c082a66a4050d5b6125f994e2dd36dd5f',
+    abbrevHash: '6d31027',
+    subject: 'feat: 课程规划列表和详情页面开发；页面样式',
+    authorName: 'fengxuyan',
+    authorDate: '2025-09-16 18:09:08 +0800',
+  },
+  {
     hash: 'd30db4e7bb96761f0211c21770489e8e25a127d3',
     abbrevHash: 'd30db4e',
     subject: 'feat: 解决冲突',
@@ -26,12 +33,5 @@ window.__cyber_ui_log__ = [
     subject: 'feat: 课程规划列表页改造',
     authorName: 'fengxuyan',
     authorDate: '2025-09-15 18:12:45 +0800',
-  },
-  {
-    hash: 'fbf5f18b6c629b26d0041bd255fd39a6edc8d592',
-    abbrevHash: 'fbf5f18',
-    subject: 'feat: 设备状态监控页面修改',
-    authorName: 'wangtx',
-    authorDate: '2025-09-14 21:29:07 +0800',
   },
 ];

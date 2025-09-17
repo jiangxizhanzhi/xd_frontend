@@ -420,6 +420,10 @@ export default {
     bus.$on('full_screen', (bool) => {
       this.fullscreen = bool;
     });
+    bus.$on('add_route_tab', (route) => {
+      this.addTab(route);
+      this.navigateTo(route);
+    });
   },
   mounted() {
     this.backgroundColor = this.bgColor;
@@ -440,6 +444,7 @@ export default {
     window.removeEventListener('resize', this.resizeHandler, true);
     bus.$off('navi_active_name');
     bus.$off('full_screen');
+    bus.$off('add_route_tab');
   },
   methods: {
     addTab(route) {

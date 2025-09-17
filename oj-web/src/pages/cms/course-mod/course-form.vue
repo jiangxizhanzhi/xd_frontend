@@ -11,6 +11,7 @@
         :id="id && { resource_id: id }"
         json
         :isBgColor="true"
+        @update:model="handleUpdateModel"
       >
         <cb-form-item label="标题" prop="name">
           <cb-input v-model="model.name"></cb-input>
@@ -108,6 +109,7 @@
             ref="table"
             :data="queryTrain"
             show-index
+            rowKey="resource_id"
             :selection.sync="selection"
           >
             <template v-slot:search>
@@ -207,6 +209,7 @@ export default {
       }
     };
     return {
+      courseId: '',
       // 难度分类
       attachmentList: [], //附件文件列表
       difficultyOptions: [],
@@ -261,6 +264,7 @@ export default {
       directionOptions: [],
       dialogVisible: false,
       difficultOptions: {},
+      courseDataLoaded: false,
       lessonCols: [
         { label: '训练名称', prop: 'name', },
         { label: '训练类别', prop: 'train_xd_type', },
@@ -283,14 +287,33 @@ export default {
     },
   },
   created() {
+    this.courseId = this.$route.params.courseId;
     this.getDifficultyOptions();
   },
   mounted() {
-    if (this.id) {
+    if (this.courseId) {
       this.$refs.formRef.getModelData();
     }
   },
   methods: {
+    handleUpdateModel() {
+      this.handleSelection();
+      this.attachmentList = [
+        {
+          url: this.model.attachment,
+          name: _.cloneDeep(this.model.attachment).split('/').pop(),
+        }
+      ]
+    },
+    handleSelection() {
+      this.$nextTick(() => {
+        this.selection = this.model.lessons?.map(item => {
+          return {
+            resource_id: item,
+          }
+        })
+      })
+    },
     getDifficultyOptions() {
       getConstantsConfig({ type: 24 }).then((res) => {
         const data = _.get(res, 'data.data', []);
@@ -323,12 +346,11 @@ export default {
     },
     // 下载附件
     downloadAttachment(file) {
-      this.$request.binaryDownload(
-        'get',
-        file.file_path,
-        {},
-        { filename: file.name, baseURL: '' },
-      );
+      let a = document.createElement('a');
+      a.href = location.origin + file.file_url;
+      a.download = file.file_name; //文件名
+      a.target = '_blank';
+      a.click();
     },
     handleDeleteFile() {
       this.model.attachment = '';

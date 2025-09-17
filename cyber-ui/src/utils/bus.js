@@ -21,6 +21,10 @@ function setFullscreen(bool) {
   setState('full_screen', bool);
 }
 
+function addRouteTab(data) {
+  setState('add_route_tab', data);
+}
+
 function getUiFrameStore() {
   return {
     actions: {
@@ -53,4 +57,5 @@ export {
   setFullscreen,
   setState,
   getUiFrameStore,
+  addRouteTab,
 };

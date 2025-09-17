@@ -11,6 +11,7 @@ import {
   setFullscreen,
   setState,
   getUiFrameStore,
+  addRouteTab,
 } from './utils/bus';
 import {
   themed,
@@ -204,6 +205,7 @@ const Cyber = {
   setState,
   getUiFrameStore,
   getCurrentTheme,
+  addRouteTab,
 };
 
 export default Cyber;

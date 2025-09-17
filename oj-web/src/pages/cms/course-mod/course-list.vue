@@ -25,12 +25,12 @@
         ></cb-search-input>
         <cb-button-group slot="searchRightArea">
           <cb-button button-type="add" @click="addCourse"></cb-button>
-          <cb-button
-            buttonType="delete"
-            hollow
-            :disabled="selection.length === 0"
-            @click="deleteCourse(selection, $event)"
-          >{{ $t('m.delete') }}</cb-button>
+<!--          <cb-button-->
+<!--            buttonType="delete"-->
+<!--            hollow-->
+<!--            :disabled="selection.length === 0"-->
+<!--            @click="deleteCourse(selection, $event)"-->
+<!--          >{{ $t('m.delete') }}</cb-button>-->
           <cb-button
             button-type="export"
             hollow
@@ -88,16 +88,17 @@
   </cb-inner-page>
 </template>
 <script>
-import Constant from './course-constant.js';
+// import Constant from './course-constant.js';
 import CourseImportPanel from './course-import-panpel';
 import msger from '@/utils/message.js';
 import SearchInput from '@/components/search-condition/search-input.vue';
 import CommonUtils from '@/utils/utils.js';
-import AuthAccess from './manage-auth-batch.vue';
-import AuthOperate from './private-course-batch.vue';
+// import AuthAccess from './manage-auth-batch.vue';
+// import AuthOperate from './private-course-batch.vue';
 import {getCourseList} from "../../../api/course";
 import Empty from "../../../components/empty";
 import courseCard from "./course-card";
+import {addRouteTab} from "@cyber/ui/src/utils";
 
 export default {
   components: {
@@ -306,12 +307,13 @@ export default {
       });
     },
     gotoDetail(row) {
-      this.$router.push({
-        name: 'courses-detail',
+      const url = this.$router.resolve({
+        path: `/admin/courses/${row.resource_id}/detail`,
         params: {
-          courseId: row.resource_id,
-        },
+          resource_id: row.resource_id,
+        }
       });
+      addRouteTab(url.route);
     },
     management(row) {
       this.$router.push({

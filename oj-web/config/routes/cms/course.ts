@@ -81,6 +81,18 @@ export default [
         },
       },
       {
+        name: 'courses-monitor',
+        path: '/admin/courses/:resource_id/monitor/',
+        title: '学员监控',
+        component: './pages/cms/course-mod/student-monitoring.vue',
+        meta: {
+          breadcrumb: {
+            parentName: 'courses',
+          },
+          module: 'courses',
+        },
+      },
+      {
         name: 'courses-auth',
         path: '/admin/courses/:courseId/auth',
         title: 'm.authorizedOperation',

@@ -6,7 +6,7 @@
       :key="index + item.resource_id"
       @mouseover="mouseover(item.resource_id)"
       @mouseleave="mouseleave"
-      @click="goToDetail(item)"
+      @click="goToStudentMonitor(item)"
     >
       <div class="top-info">
         <div class="img-box">
@@ -56,12 +56,15 @@
 </template>
 
 <script>
+import {addRouteTab} from "@cyber/ui/src/utils";
+
 export default {
   name: "real-time-monitoring",
   components: {},
   props: {
     personListData: {
       type: Array,
+      // TODO 测试数据
       default: [
         {name: '张三', time: 30,},
         {name: '老李'},
@@ -80,11 +83,18 @@ export default {
   data() {
     return {
       activeId: '',
+      resource_id: '111', // TODO
     }
   },
   methods: {
-    goToDetail(data) {
-      this.$emit('detail', data);
+    goToStudentMonitor(data) {
+      const url = this.$router.resolve({
+        path: `/admin/courses/${this.resource_id}/monitor`,
+        params: {
+          resource_id: this.resource_id
+        }
+      });
+      addRouteTab(url.route);
     },
     mouseover(id) {
       this.activeId = id;
