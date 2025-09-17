@@ -2,8 +2,8 @@
 <!--  <cb-inner-page :background="true" title="课程详情">-->
     <div class="course-detail-wrapper">
       <div class="left cyber-scroll-bar-small">
-        <div class="course-name" @click="handleChangeRightInfo('profile')">云数据中心课程1</div>
-        <div class="desc header">通过科目训练，学习云计算、云存储、云网络等资源使用与管理训练。</div>
+        <div class="course-name" @click="handleChangeRightInfo('profile')">{{detailData.name}}</div>
+        <div class="desc header">{{detailData.description}}</div>
         <cb-collapse v-model="activeNames">
           <cb-collapse-item name="1">
             <template slot="title">
@@ -81,7 +81,7 @@
       <div class="right cyber-scroll-bar-small">
         <template v-if="activeTab === 'profile'">
           <div class="header">学习概览</div>
-          <study-profile></study-profile>
+          <study-profile :course-id="courseId"></study-profile>
         </template>
         <template v-if="activeTab === 'monitor'">
           <div class="header monitor">
@@ -96,9 +96,10 @@
 </template>
 
 <script>
-import {getCourseDetailData} from "../../../api/course";
+import { getConstantsConfig, getCourseDetailData } from '../../../api/course';
 import StudyProfile from "./study-profile";
 import RealTimeMonitoring from "./real-time-monitoring";
+import _ from 'lodash';
 
 export default {
   name: "course-detail",
@@ -122,20 +123,32 @@ export default {
         team_room_rsps: [],
       },
       activeTab: 'profile', // profile monitor
+      difficultOptions: {},
+      courseId: '',
     }
   },
   created() {
+    this.courseId = this.$route.params.courseId;
     this.getCourseDetailDataFunc();
+    this.getDifficultyOptions();
   },
   methods: {
     getCourseDetailDataFunc() {
-      let params = {resource_id: 'ZXCG6EDK9H'}
+      let params = {resource_id: this.courseId};
       getCourseDetailData(params).then(res => {
         this.detailData = res.data.data;
       })
     },
     handleChangeRightInfo(data) {
       this.activeTab = data;
+    },
+    getDifficultyOptions() {
+      getConstantsConfig({ type: 24 }).then((res) => {
+        const data = _.get(res, 'data.data', []);
+        data.forEach((item) => {
+          this.difficultOptions[item.code] = item.name;
+        })
+      });
     },
   }
 }

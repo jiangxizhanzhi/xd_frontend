@@ -1,5 +1,7 @@
 <template>
-  <div class="student-monitor-wrapper"></div>
+  <div class="student-monitor-wrapper">
+    <div>学员监控</div>
+  </div>
 </template>
 
 <script>

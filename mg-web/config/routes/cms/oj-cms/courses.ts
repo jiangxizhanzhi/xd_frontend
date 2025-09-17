@@ -30,6 +30,30 @@ export default [
     },
   },
   {
+    name: 'courses-detail',
+    path: '/admin/oj/admin/courses/:courseId/detail',
+    title: '课程详情',
+    component: './frame',
+    meta: {
+      breadcrumb: {
+        parentName: 'courses',
+      },
+      module: 'courses',
+    },
+  },
+  {
+    name: 'courses-monitor',
+    path: '/admin/oj/admin/courses/:resource_id/monitor/',
+    title: '学员监控',
+    component: './frame',
+    meta: {
+      breadcrumb: {
+        parentName: 'courses',
+      },
+      module: 'courses',
+    },
+  },
+  {
     name: 'courses-visiblity',
     path: '/admin/oj/admin/courses/:courseId/visiblity',
     title: 'mgRoutes.authorizedVisit',

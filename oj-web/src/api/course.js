@@ -109,7 +109,15 @@ const getCourseDetailData = (data) => {
     baseURL: '/api/ojj',
   });
 };
+// 课程详情 （对应课程详情页面的左半部分）
+const getStudyProfileData = (data) => {
+  return request.get(`/oj/course/single/statistics`, data, {
+    baseURL: '/api/ojj',
+  });
+};
+
 export {
+  getStudyProfileData,
   getCourseDetailData,
   getConstantsConfig,
   getCourseList,

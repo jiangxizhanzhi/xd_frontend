@@ -90,15 +90,23 @@
 </template>
 
 <script>
+import { getStudyProfileData } from '@/api/course';
+
 export default {
   name: "study-profile",
   components: {},
-  props: {},
+  props: {
+    courseId: {
+      type: String,
+      default: ''
+    }
+  },
   setup(props, {emit}) {
     return {}
   },
   data() {
     return {
+      studyData: {},
       query: {
         pattern: ''
       },
@@ -119,6 +127,16 @@ export default {
       // color:['yellow'],
       pieData: [30, 30, 40, 40],
       pieName: ['运行中', '已停止', '未sdfqe上线', '待上线'],
+    }
+  },
+  created() {
+    this.getData();
+  },
+  methods: {
+    getData() {
+      getStudyProfileData({resource_id: this.courseId}).then(res=> {
+        this.studyData = res.data.data;
+      })
     }
   }
 }
