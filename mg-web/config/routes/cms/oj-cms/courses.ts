@@ -5,7 +5,9 @@ export default [
     path: '/admin/oj/admin/courses/list',
     title: 'routes.courses',
     component: './frame',
-    meta: {},
+    meta: {
+      iconfont: 'icon-rili',
+    },
   },
   {
     name: 'courses-add',

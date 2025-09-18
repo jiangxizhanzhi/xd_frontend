@@ -9,13 +9,22 @@
         <div v-else class="logo-icon">
           <img :src="logo" draggable="false" v-if="logo" />
         </div>
+        <div class="name-wrapper">
         <div
-          v-if="nameLogo"
+          v-if="system_name"
           class="name-logo"
-          :class="getTextLogoLength(nameLogo) <= 14 ? 'ft24' : 'ft18'"
+          :class="getTextLogoLength(system_name) <= 14 ? 'ft24' : 'ft18'"
         >
-          {{ nameLogo }}
+          {{ system_name }}
         </div>
+        <div
+          v-if="sub_system_name"
+          class="name-logo"
+          :class="getTextLogoLength(sub_system_name) <= 14 ? 'ft24' : 'ft18'"
+        >
+          {{ sub_system_name }}
+        </div>
+          </div>
       </div>
 
       <div class="nav-items">
@@ -121,6 +130,16 @@ export default {
       type: String,
       default: '',
     },
+    system_name: {
+      type: String,
+      default: '',
+    },
+    sub_system_name: {
+      type: String,
+      default: '',
+    },
+// :system_name="system_name"
+// :sub_system_name="sub_system_name"
     /**
      * 用户头像图
      *
@@ -325,3 +344,12 @@ export default {
   },
 };
 </script>
+<style scoped lang="scss">
+.name-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+</style>

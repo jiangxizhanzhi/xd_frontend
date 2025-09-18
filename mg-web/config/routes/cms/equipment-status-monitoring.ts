@@ -6,6 +6,7 @@ export default [
     component: './pages/cms/system-operation/equipment-status-monitoring/list',
     meta: {
       module: 'cluster-management',
+      iconfont: 'icon-yunhangtongji',
     },
   },
   {

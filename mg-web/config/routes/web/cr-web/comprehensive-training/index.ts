@@ -6,6 +6,9 @@ export default [
     name: 'comprehensive-training-folder',
     // title: 'route.comprehensiveTraining',
     title: 'routes.comprehensive-training-folder',
+    meta: {
+      iconfont: 'icon-changjingguanli',
+    },
     children: [...single, ...group],
   },
 ];

@@ -4,6 +4,9 @@ export default [
     path: '/admin/cr/admin/new-network-attack-defense-scene',
     title: 'routes.new-network-attack-defense-scene',
     component: './frame',
+    meta: {
+      iconfont: 'icon-wangluoyushezhi',
+    }
   },
   {
     name: 'new-network-attack-defense-scene-add',

@@ -5,7 +5,7 @@ export default [
     // title: 'mgRoutes.targetManagement',
     title: 'routes.cr-standard-device-folder',
     meta: {
-      iconfont: 'icon-babiaoguanli',
+      iconfont: 'icon-rongqi',
     },
     children: [
       {
@@ -16,6 +16,7 @@ export default [
         component: './pages/cms/device/image/list/index',
         meta: {
           module: 'image-manage',
+          iconfont: 'icon-babiaoguanli',
         },
       },
       {
@@ -108,6 +109,7 @@ export default [
         component: './pages/cms/device/real/list',
         meta: {
           module: 'real-manage',
+          iconfont: 'icon-shizhuangshebei',
         },
       },
       {
@@ -173,12 +175,18 @@ export default [
         title: 'routes.universal-probe',
         name: 'universal-probe',
         component: './frame',
+        meta: {
+          iconfont: 'icon-tanzhenguanli',
+        }
       },
       {
         path: '/admin/cr/admin/probe/custom-probe',
         title: 'routes.custom-probe',
         name: 'custom-probe',
         component: './frame',
+        meta: {
+          iconfont: 'icon-ceshi',
+        }
       },
       {
         path: '/admin/cr/admin/probe/custom-probe/create',
@@ -207,6 +215,9 @@ export default [
         title: 'routes.collection-template',
         name: 'collection-template',
         component: './frame',
+        meta: {
+          iconfont: 'icon-jianda',
+        }
       },
       {
         path: '/admin/cr/admin/probe/collection-template/create',

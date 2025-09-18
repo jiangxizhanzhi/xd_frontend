@@ -6,6 +6,7 @@ export default [
     title: 'routes.single-list',
     meta: {
       breadcrumb: true,
+      iconfont: 'icon-liuliangfasheng',
     },
     component: './frame',
   },

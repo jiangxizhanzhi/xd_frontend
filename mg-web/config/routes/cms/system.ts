@@ -15,6 +15,7 @@ export default [
         component: './pages/cms/system-management/system-config/index.vue',
         meta: {
           module: 'system-config',
+          iconfont: 'icon-daohanglan-xitong',
         },
       },
       // {
@@ -43,6 +44,7 @@ export default [
           './pages/cms/system-management/user-management/user-list/index.vue',
         meta: {
           module: 'user-manage',
+          iconfont: 'icon-yonghuguanli',
         },
       },
       {
@@ -95,6 +97,7 @@ export default [
           './pages/cms/system-management/role-management/role-list/index.vue',
         meta: {
           module: 'role-management',
+          iconfont: 'icon-jiaosezichan',
         },
       },
       {

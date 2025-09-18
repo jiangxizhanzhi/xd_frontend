@@ -7,6 +7,7 @@ export default [
       './pages/cms/system-operation/business-service-monitoring/index.vue',
     meta: {
       module: 'business-service-monitoring',
+      iconfont: 'icon-daohanglan-ziyuan',
     },
   },
   {

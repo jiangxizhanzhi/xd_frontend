@@ -23,7 +23,7 @@ export const sceneManageRouter = {
   title: 'routes.scene-manage-folder',
   name: 'scene-manage-folder',
   meta: {
-    iconfont: 'icon-tuopu',
+    iconfont: 'icon-changjingguanli',
   },
   children: [
     ...cloudComputingResourceScene,

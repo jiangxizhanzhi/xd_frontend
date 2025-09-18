@@ -20,6 +20,9 @@ export const subjectManageRouter = {
   path: '',
   title: 'routes.subject-management',
   name: 'subject-management',
+  meta: {
+    iconfont: 'icon-keshi',
+  },
   children: [
     ...cloudComputingResourceSubject,
     ...cloudNetworkResourceSubject,

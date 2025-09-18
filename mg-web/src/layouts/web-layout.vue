@@ -4,7 +4,8 @@
       ref="layoutRef"
       :current-menu="currentMenu"
       :logo="logo"
-      :name-logo="nameLogo"
+      :system_name="system_name"
+      :sub_system_name="sub_system_name"
       :avatar="avatar"
       :user-info="userInfo"
       :user-commands="userCommands"
@@ -137,14 +138,10 @@ export default {
       }
     },
     logo() {
-      return this.isAmend
-        ? _.get(this.$store.state.user, 'system_setting.logo')
-        : this.systemLogo;
+      return this.systemLogo;
     },
-    nameLogo() {
-      return this.logo
-        ? ''
-        : _.get(this.$store.state.user, 'system_setting.system_name');
+    sub_system_name() {
+      return _.get(this.$store.state.user, 'system_setting.sub_system_name');
     },
     system_name() {
       return _.get(this.$store.state.user, 'system_setting.system_name');

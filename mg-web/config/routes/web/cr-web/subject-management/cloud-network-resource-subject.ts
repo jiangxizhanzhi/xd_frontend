@@ -6,6 +6,7 @@ export default [
     meta: {
       breadcrumb: true,
       isThird: true,
+      iconfont: 'icon-rongqi',
     },
     component: './frame',
   },

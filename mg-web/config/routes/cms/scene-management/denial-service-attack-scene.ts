@@ -4,6 +4,9 @@ export default [
     path: '/admin/cr/admin/denial-service-attack-scene',
     title: 'routes.denial-service-attack-scene',
     component: './frame',
+    meta: {
+      iconfont: 'icon-zonghexunlian',
+    }
   },
   {
     name: 'denial-service-attack-scene-add',

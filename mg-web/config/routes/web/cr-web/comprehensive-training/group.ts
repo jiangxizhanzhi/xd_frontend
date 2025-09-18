@@ -6,6 +6,7 @@ export default [
     title: 'routes.group-training',
     meta: {
       breadcrumb: true,
+      iconfont: 'icon-shujucaiji',
     },
     component: './frame',
   },

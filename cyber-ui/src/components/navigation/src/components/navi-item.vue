@@ -19,6 +19,7 @@
           },
         ]"
       >
+        <cb-iconfont :type="item.meta.iconfont" :size="22" color="#fff"></cb-iconfont>
         <div class="navi-item__text">
           {{ $t(itemTitle) }}
         </div>

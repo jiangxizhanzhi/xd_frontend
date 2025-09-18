@@ -4,6 +4,9 @@ export default [
     path: '/admin/cr/admin/cloud-network-resource-scene',
     title: 'routes.cloud-network-resource-scene',
     component: './frame',
+    meta: {
+      iconfont: 'icon-tikuguanli',
+    }
   },
   {
     name: 'cloud-network-resource-scene-add',

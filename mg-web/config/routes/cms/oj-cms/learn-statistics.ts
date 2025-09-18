@@ -5,7 +5,9 @@ export default [
     path: '/admin/oj/admin/course/learn-statistics/list',
     title: 'routes.learn-statistics',
     component: './frame',
-    meta: {},
+    meta: {
+      iconfont: 'icon-yibiaopan',
+    },
   },
   {
     name: 'period-statistics',

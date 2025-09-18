@@ -4,6 +4,9 @@ export default [
     path: '/admin/cr/admin/scan-detect-attack-scene',
     title: 'routes.scan-detect-attack-scene',
     component: './frame',
+    meta: {
+      iconfont: 'icon-xinxitongji',
+    }
   },
   {
     name: 'scan-detect-attack-scene-add',

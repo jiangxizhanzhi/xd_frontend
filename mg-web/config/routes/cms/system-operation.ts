@@ -28,6 +28,7 @@ export default [
           './pages/cms/system-operation/cloud-platform-monitoring/index.vue',
         meta: {
           module: 'cloud-platform-monitoring',
+          iconfont: 'icon-ziyuanguanli',
         },
       },
       ...businessServiceMonitoring,
@@ -39,6 +40,7 @@ export default [
         meta: {
           module: 'instance-monitoring',
           isThird: true,
+          iconfont: 'icon-xinxitongji',
         },
       },
       // 设备状态监控

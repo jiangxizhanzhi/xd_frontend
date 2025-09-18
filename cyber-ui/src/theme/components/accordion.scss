@@ -44,7 +44,7 @@
     }
 
     .cb-accordion__icon {
-      color: var(--white-color);
+      color: var(--nav-left-text);
     }
   }
   .is-active {
@@ -54,6 +54,9 @@
     & > .el-tooltip > .cb-accordion__wrapper > .cb-accordion__icon,
     & > .cb-accordion__wrapper > .cb-accordion__title {
       color: var(--nav-text);
+      .cb-iconfont {
+        color: var(--nav-text) !important;
+      }
     }
   }
 
@@ -180,6 +183,7 @@
       margin: 0 12px 0 24px;
       display: inline-flex;
       align-items: center;
+      color: var(--nav-left-text);
       width: var(--left-menu-icon-font-size);
       height: var(--left-menu-icon-font-size);
       font-size: var(--left-menu-icon-font-size);

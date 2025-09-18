@@ -4,6 +4,9 @@ export default [
     path: '/admin/cr/admin/comprehensive-training-scene',
     title: 'routes.comprehensive-training-scene',
     component: './frame',
+    meta: {
+      iconfont: 'icon-liuliangguanli',
+    }
   },
   {
     name: 'comprehensive-training-scene-add',

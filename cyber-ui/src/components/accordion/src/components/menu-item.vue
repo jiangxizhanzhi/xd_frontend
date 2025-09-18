@@ -22,6 +22,7 @@
               <cb-iconfont
                 class="cb-accordion__icon"
                 :type="sub.meta.iconfont"
+                color="var(--nav-left-text)"
               ></cb-iconfont>
               <span class="cb-accordion__title" :title="$t(sub.meta.title)">{{
                 $t(sub.meta.title)

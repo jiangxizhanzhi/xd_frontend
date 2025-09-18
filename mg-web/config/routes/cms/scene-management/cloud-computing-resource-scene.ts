@@ -4,6 +4,9 @@ export default [
     path: '/admin/cr/admin/cloud-computing-resource-scene',
     title: 'routes.cloud-computing-resource-scene',
     component: './frame',
+    meta: {
+      iconfont: 'icon-daohanglan-yun',
+    }
   },
   {
     name: 'cloud-computing-resource-scene-add',

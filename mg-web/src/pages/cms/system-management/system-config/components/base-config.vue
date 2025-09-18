@@ -17,6 +17,12 @@
         <cb-input v-model="model.system_name" />
       </cb-form-item>
       <cb-form-item
+        label="副标题"
+        prop="sub_system_name"
+      >
+        <cb-input v-model="model.sub_system_name" />
+      </cb-form-item>
+      <cb-form-item
         :label="$t('systemManagement.system.versionData')"
         prop="copyright"
         class="cb-form-textarea"
@@ -163,6 +169,7 @@ export default {
       showScenePerson: false,
       model: {
         system_name: '',
+        sub_system_name: '',
         copyright: '',
         env_per_person: '',
         logo: '',
