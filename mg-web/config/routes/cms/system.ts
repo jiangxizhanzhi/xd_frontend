@@ -50,7 +50,7 @@ export default [
       {
         name: 'user-add',
         path: '/admin/user-management/add',
-        title: 'systemManagement.userManage.userAdd',
+        title: '新增用户',
         component:
           './pages/cms/system-management/user-management/user-add/index.vue',
         props: true,
@@ -64,7 +64,7 @@ export default [
       {
         name: 'user-edit',
         path: '/admin/user-management/edit',
-        title: 'systemManagement.userManage.userEdit',
+        title: '编辑用户',
         component:
           './pages/cms/system-management/user-management/user-edit/index.vue',
         props: true,
@@ -103,7 +103,7 @@ export default [
       {
         name: 'role-add',
         path: '/admin/role-management/role-add/',
-        title: 'systemManagement.roleManage.addRole',
+        title: '新增角色',
         component:
           './pages/cms/system-management/role-management/add-role/index.vue',
         props: true,
@@ -117,7 +117,7 @@ export default [
       {
         name: 'role-edit',
         path: '/admin/role-management/role-edit/',
-        title: 'systemManagement.roleManage.editRole',
+        title: '编辑角色',
         component:
           './pages/cms/system-management/role-management/edit-role/index.vue',
         props: true,
