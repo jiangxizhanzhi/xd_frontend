@@ -144,14 +144,14 @@
               scope.data.scene_status_desc !== $t('systemOperation.scene.error')
             "
           >
-            <cb-button mr type="text" @click="showMonitorDisplay(scope.data)">
+            <!-- <cb-button mr type="text" @click="showMonitorDisplay(scope.data)">
               {{ $t('systemOperation.scene.monitorDataDisplay') }}
-            </cb-button>
+            </cb-button> -->
           </template>
         </template>
       </template>
       <template v-slot:help>
-        <span>{{ $t('systemOperation.scene.cpuRamDisk') }}</span>
+        <span>{{ $t('资源占用') }}</span>
         <cb-tooltip
           class="item"
           effect="dark"
@@ -209,12 +209,12 @@ export default {
 
       const colArr = [
         {
-          label: that.$t('systemOperation.scene.name'),
+          label: that.$t('资源名称'),
           prop: 'name',
           width: '150px',
         },
         {
-          label: that.$t('systemOperation.scene.type'),
+          label: that.$t('资源类型'),
           getData(row) {
             if (that.sceneType[row.reference_type]) {
               return that.sceneType[row.reference_type];
@@ -222,34 +222,34 @@ export default {
             return that.$t('systemOperation.scene.other');
           },
         },
+        // {
+        //   label: that.$t('systemOperation.scene.nodeTotal'),
+        //   width: '240px',
+        //   getData(row) {
+        //     const container_count = row.container_count || 0,
+        //       entity_count = row.entity_count || 0,
+        //       vm_count = row.vm_count || 0,
+        //       dynamips_count = row.dynamips_count || 0;
+        //     return (
+        //       vm_count +
+        //       ' ' +
+        //       that.$t('systemOperation.scene.VM') +
+        //       '/' +
+        //       container_count +
+        //       ' ' +
+        //       that.$t('systemOperation.scene.CN') +
+        //       '/' +
+        //       entity_count +
+        //       ' ' +
+        //       that.$t('systemOperation.scene.PD') +
+        //       '/' +
+        //       dynamips_count +
+        //       ' Dynamips'
+        //     );
+        //   },
+        // },
         {
-          label: that.$t('systemOperation.scene.nodeTotal'),
-          width: '240px',
-          getData(row) {
-            const container_count = row.container_count || 0,
-              entity_count = row.entity_count || 0,
-              vm_count = row.vm_count || 0,
-              dynamips_count = row.dynamips_count || 0;
-            return (
-              vm_count +
-              ' ' +
-              that.$t('systemOperation.scene.VM') +
-              '/' +
-              container_count +
-              ' ' +
-              that.$t('systemOperation.scene.CN') +
-              '/' +
-              entity_count +
-              ' ' +
-              that.$t('systemOperation.scene.PD') +
-              '/' +
-              dynamips_count +
-              ' Dynamips'
-            );
-          },
-        },
-        {
-          label: that.$t('systemOperation.scene.cpuRamDisk'),
+          label: that.$t('资源占用'),
           width: '160px',
           getData(row) {
             const cpu = row.cpu || 0,
@@ -276,20 +276,20 @@ export default {
           prop: 'create_time',
           width: '150px',
         },
+        // {
+        //   label: that.$t('systemOperation.scene.sceneProps'),
+        //   getData(row) {
+        //     const filterData = _.filter(ScenePropsLists, (item) => {
+        //       return item.value === row.scene_attr;
+        //     });
+        //     if (filterData.length > 0) {
+        //       return filterData[0].label;
+        //     }
+        //     return row.scene_attr;
+        //   },
+        // },
         {
-          label: that.$t('systemOperation.scene.sceneProps'),
-          getData(row) {
-            const filterData = _.filter(ScenePropsLists, (item) => {
-              return item.value === row.scene_attr;
-            });
-            if (filterData.length > 0) {
-              return filterData[0].label;
-            }
-            return row.scene_attr;
-          },
-        },
-        {
-          label: that.$t('systemOperation.scene.status'),
+          label: that.$t('资源状态'),
           slot: 'status',
         },
 
@@ -303,7 +303,7 @@ export default {
         {
           label: that.$t('systemOperation.scene.operate'),
           slot: 'operation',
-          width: '250px',
+          width: '120px',
         },
       ];
       // 显示启动时长
