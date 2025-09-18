@@ -76,7 +76,9 @@
             :label="$t('list.myTrain')"
             name="myTrain"
           ></cb-tab-pane>
+          <!-- $store.state.user.teacher_flag 为1是教师，0是学生 -->
           <cb-tab-pane
+            v-if="$store.state.user.teacher_flag"
             :label="$t('list.trainTemplate')"
             name="trainTemplate"
           ></cb-tab-pane>
@@ -141,7 +143,7 @@
           style="text-align: right"
         >
           <span class="total_span">{{ $t('m.totalPage')
-          }}<span class="total-num">{{ pagination.total }}</span>
+            }}<span class="total-num">{{ pagination.total }}</span>
             <template v-if="pagination.total > 1">
               {{ $t('m.totalRecord') }}
             </template>
@@ -213,7 +215,7 @@
           style="text-align: right"
         >
           <span class="total_span">{{ $t('m.totalPage')
-          }}<span class="total-num">{{ templatePagination.total }}</span>
+            }}<span class="total-num">{{ templatePagination.total }}</span>
             <template v-if="templatePagination.total > 1">
               {{ $t('m.totalRecord') }}
             </template>
