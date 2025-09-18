@@ -104,6 +104,10 @@
             row-key="user_id"
             :searchBarBg="false"
           >
+
+            <template v-slot:roles="scoped">
+              {{ computedRoles(scoped.data.roles) }}
+            </template>
           </cb-search-table>
         </div>
       </div>
@@ -149,7 +153,7 @@ export default {
         },
         {
           label: this.$t('角色'),
-          prop: 'roles',
+          slot: 'roles',
         },
         {
           label: this.$t('完成训练'),
@@ -362,6 +366,18 @@ export default {
           this.score_zhyx.seriesData.push(item.total_score)
         })
       })
+    },
+    computedRoles(roles) {
+      const arr = [];
+      if (roles.length) {
+        roles.forEach(item => {
+          arr.push(item.name)
+        })
+        return arr.join(',')
+      } else {
+        return '-'
+      }
+
     },
   },
 };
