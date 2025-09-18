@@ -73,14 +73,14 @@
           ></cb-radio-button>
           <cb-radio-button :label="$t('rbt.probeCollection')"></cb-radio-button>
           <cb-radio-button :label="$t('rbt.flowAnalysis')"></cb-radio-button>
-          <cb-radio-button :label="$t('rbt.screenMonitoring')"></cb-radio-button>
+          <!-- <cb-radio-button :label="$t('rbt.screenMonitoring')"></cb-radio-button> -->
           <cb-radio-button :label="$t('rbt.studentRatings')"></cb-radio-button>
           <cb-radio-button :label="$t('rbt.trainReport')"></cb-radio-button>
-          <cb-radio-button :label="$t('rbt.trainManual')"></cb-radio-button>
-          <cb-radio-button :label="$t('rbt.monitorReplay')"></cb-radio-button>
+          <!-- <cb-radio-button :label="$t('rbt.trainManual')"></cb-radio-button>
+          <cb-radio-button :label="$t('rbt.monitorReplay')"></cb-radio-button> -->
         </cb-radio-group>
         <!-- 3D拓扑按钮 -->
-        <div class="btn-wrap">
+        <!-- <div class="btn-wrap">
           <cb-button
             type="text"
             icon="icon-tuopu"
@@ -103,7 +103,7 @@
             ></cb-iconfont>
             <div>{{ $t('m.dtopology') }}</div> -->
           <!-- </div> -->
-        </div>
+        </div> -->
       </div>
       <div class="train-wrap el-tabs__content">
         <!-- 导调控制 -->
