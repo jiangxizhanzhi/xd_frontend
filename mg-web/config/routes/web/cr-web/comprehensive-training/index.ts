@@ -7,7 +7,7 @@ export default [
     // title: 'route.comprehensiveTraining',
     title: 'routes.comprehensive-training-folder',
     meta: {
-      iconfont: 'icon-changjingguanli',
+      iconfont: 'icon-honglanduikang',
     },
     children: [...single, ...group],
   },

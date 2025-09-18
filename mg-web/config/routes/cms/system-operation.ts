@@ -16,7 +16,7 @@ export default [
         component: './pages/cms/system-operation/system-alarm/index.vue',
         meta: {
           module: 'system-alarm',
-          iconfont: 'icon-xitongyunwei',
+          // iconfont: 'icon-xitongyunwei',
           isThird: true,
         },
       },
@@ -40,7 +40,7 @@ export default [
         meta: {
           module: 'instance-monitoring',
           isThird: true,
-          iconfont: 'icon-xinxitongji',
+          // iconfont: 'icon-xinxitongji',
         },
       },
       // 设备状态监控
@@ -63,6 +63,7 @@ export default [
           './pages/cms/system-operation/network-management/cluster-tabs.vue',
         meta: {
           module: 'network-management',
+          iconfont: 'icon-xitongyunwei',
         },
       },
       {

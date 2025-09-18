@@ -150,7 +150,7 @@
       .cb-accordion__wrapper {
         position: absolute;
         inset: 0;
-        left: 18px;
+        left: 8px;
         &::before {
           content: '';
           display: inline-block;
@@ -180,7 +180,7 @@
     }
 
     .cb-accordion__icon {
-      margin: 0 12px 0 24px;
+      margin: 0 12px 0 12px;
       display: inline-flex;
       align-items: center;
       color: var(--nav-left-text);
