@@ -3,7 +3,7 @@
     <cb-layout
       ref="layoutRef"
       :current-menu="currentMenu"
-      :logo="logo"
+      :logo="CurrentSystemLogo"
       :system_name="system_name"
       :sub_system_name="sub_system_name"
       :avatar="avatar"
@@ -245,7 +245,7 @@ export default {
     utils.loadCss('light');
     this.sceneTipsConnection();
     this.getOriginSystemName();
-    this.getDefaultLogo();
+    // this.getDefaultLogo();
   },
   destroyed() {
     clearHeartbeat();
@@ -511,7 +511,7 @@ export default {
   }
 }
 .navi-logo {
-  width: 300px;
+  min-width: 300px;
   .name-logo {
     text-align: center;
     overflow: hidden;

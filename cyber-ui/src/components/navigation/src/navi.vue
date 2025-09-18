@@ -13,14 +13,14 @@
         <div
           v-if="system_name"
           class="name-logo"
-          :class="getTextLogoLength(system_name) <= 14 ? 'ft24' : 'ft18'"
+          style="font-size: 22px"
         >
           {{ system_name }}
         </div>
         <div
           v-if="sub_system_name"
           class="name-logo"
-          :class="getTextLogoLength(sub_system_name) <= 14 ? 'ft24' : 'ft18'"
+          style="font-size: 16px"
         >
           {{ sub_system_name }}
         </div>

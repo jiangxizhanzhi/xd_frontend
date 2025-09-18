@@ -2275,9 +2275,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cyber/ui@npm:5.6.0-xd.16":
-  version: 5.6.0-xd.16
-  resolution: "@cyber/ui@npm:5.6.0-xd.16"
+"@cyber/ui@npm:5.6.0-xd.18":
+  version: 5.6.0-xd.18
+  resolution: "@cyber/ui@npm:5.6.0-xd.18"
   dependencies:
     "@bytemd/plugin-breaks": ^1.21.0
     "@bytemd/plugin-gfm": ^1.21.0
@@ -2310,7 +2310,7 @@ __metadata:
     vue: ^2.6.14
     vue-i18n: ^8.27.2
     vue-router: ^3.5.4
-  checksum: 9d6186d9705024e6f4107d6fcf0861ec84bd22410c805c00ca77a96a68bf77e7c657c07e67c19d4e1d9a5852b2fc45ff286e7bd2be7dbd0ed730b46ada362775
+  checksum: 183a307f592ab99887733c151b6bf7d30360d7670f55ca09cd9363bdfe732ea17ec879ba87abcc93a5c4b1d8faa73d4a23e2ae32ec093ddd7115d7b8c038d49b
   languageName: node
   linkType: hard
 
@@ -5491,7 +5491,7 @@ __metadata:
     "@cyber/cli": 5.4.0-alpha.0
     "@cyber/helper": 5.4.1-alpha.1
     "@cyber/scene": 5.6.0-alpha.7
-    "@cyber/ui": 5.6.0-xd.16
+    "@cyber/ui": 5.6.0-xd.18
     "@fullcalendar/core": 5.11.0
     "@fullcalendar/daygrid": 5.11.0
     "@fullcalendar/interaction": 5.11.0

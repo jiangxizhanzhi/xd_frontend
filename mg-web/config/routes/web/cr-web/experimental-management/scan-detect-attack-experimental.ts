@@ -6,7 +6,7 @@ export default [
     meta: {
       breadcrumb: true,
       isThird: true,
-      iconfont: 'icon-ceshibaogao',
+      // iconfont: 'icon-ceshibaogao',
     },
     component: './frame',
   },
