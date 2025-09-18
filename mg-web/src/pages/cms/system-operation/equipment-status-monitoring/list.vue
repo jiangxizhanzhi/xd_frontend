@@ -1,19 +1,20 @@
 <template>
   <cb-inner-page
     :background="true"
-    title="虚实结合管理"
+    title="设备状态管理"
   >
+    <!-- :selector="selector"
+    :selection.sync="selection" -->
     <cb-search-table
       :cols.sync="cols"
-      :selector="selector"
-      :selection.sync="selection"
       :url="URL"
       :baseURL="baseURL"
       :data.sync="model"
       ref="tableRef"
       row-key="id"
+      showIndex
     >
-      <template v-slot:search>
+      <!-- <template v-slot:search>
         <cb-button
           button-type="add"
           link-name="cluster-management-add"
@@ -24,7 +25,7 @@
           @click="deleteSelected(selection, $event)"
           :disabled="selection.length === 0"
         ></cb-button>
-      </template>
+      </template> -->
       <template v-slot:filter>
         <cb-cascader
           v-model="categorySet"
