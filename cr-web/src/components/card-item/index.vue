@@ -36,6 +36,7 @@
     <div class="card-bottom">
       <cb-button
         type="text"
+        :disabled="cardData.published_flag"
         @click="handlerDistribute(cardData)"
       >发布</cb-button>
       <cb-button
