@@ -95,14 +95,6 @@
             icon="icon-changjingguanli"
             @click="gotoRealityScreen"
           >{{ $t('m.realTopology') }}</cb-button>
-          <!-- <div class="btn-item" @click="gotoDataScreen">
-            <cb-iconfont
-              :size="16"
-              type="icon-tuopu"
-              themedColor="primary-color"
-            ></cb-iconfont>
-            <div>{{ $t('m.dtopology') }}</div> -->
-          <!-- </div> -->
         </div> -->
       </div>
       <div class="train-wrap el-tabs__content">
