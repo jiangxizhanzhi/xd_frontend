@@ -143,7 +143,7 @@
           style="text-align: right"
         >
           <span class="total_span">{{ $t('m.totalPage')
-            }}<span class="total-num">{{ pagination.total }}</span>
+          }}<span class="total-num">{{ pagination.total }}</span>
             <template v-if="pagination.total > 1">
               {{ $t('m.totalRecord') }}
             </template>
@@ -215,7 +215,7 @@
           style="text-align: right"
         >
           <span class="total_span">{{ $t('m.totalPage')
-            }}<span class="total-num">{{ templatePagination.total }}</span>
+          }}<span class="total-num">{{ templatePagination.total }}</span>
             <template v-if="templatePagination.total > 1">
               {{ $t('m.totalRecord') }}
             </template>
@@ -268,7 +268,12 @@ import EngageDialog from '@/components/att-engage/engage-dialog.vue';
 import myTrain from './components/my-train.vue';
 import trainTemplate from './components/train-templates.vue';
 import headerDecorate from '@/components/header-decorate/index.vue'
-import { EXPERIMENTAL_SUBJECT_MANAGEMENT_NAME, EXPERIMENTAL_SUBJECT_MANAGEMENT_TYPE, EXPERIMENTAL_SUBJECT_TEMPLATE_TYPE } from './constants'
+import {
+  EXPERIMENTAL_SUBJECT_MANAGEMENT_NAME,
+  EXPERIMENTAL_SUBJECT_MANAGEMENT_TYPE,
+  EXPERIMENTAL_SUBJECT_TEMPLATE_TYPE,
+  EXPERIMENTAL_SUBJECT_TEMPLATE_CATEGORY_TYPE
+} from './constants'
 
 export default {
   name: 'redBlueList',
@@ -443,8 +448,12 @@ export default {
       const searchParams = this.templateSearchCondition;
       searchParams.page = this.templatePagination.current_page;
       searchParams.per_page = this.templatePagination.per_page;
-      searchParams.xd_template_type = EXPERIMENTAL_SUBJECT_TEMPLATE_TYPE[this.$route.name], //不同菜单对应不同参数
-        this.templateLoading = true;
+      searchParams.xd_template_type = EXPERIMENTAL_SUBJECT_TEMPLATE_TYPE[this.$route.name]; //不同菜单对应不同参数
+      if (this.$route.name !== 'group-training') {
+        // 非综合演训区分实验和科目模板
+        searchParams.xd_template_category = EXPERIMENTAL_SUBJECT_TEMPLATE_CATEGORY_TYPE[this.$route.name];
+      }
+      this.templateLoading = true;
       getTemplateListApi(searchParams).then((res) => {
         const data = _.get(res, 'data.data', []);
         data.records.forEach((item) => {

@@ -163,6 +163,7 @@ export default {
       model: {
         base_info: {
           type: '3',
+          xd_template_category: 1,
           xd_template_type: SCENE_MANAGEMENT_TYPE[this.$route.meta?.breadcrumb?.parentName],
           name: '',
           description: '',
@@ -857,6 +858,10 @@ export default {
       // 未上传logo, 使用scene_config_data.logo
       if (!submitData.base_info.logo) {
         submitData.base_info.logo = submitData.base_info.scene_config_data.logo;
+      }
+      // 综合演训分类不需要该参数
+      if (this.$route.name === 'comprehensive-training-scene-add' || this.$route.name === 'comprehensive-training-scene-edit') {
+        delete submitData.base_info.xd_template_category
       }
       this.submitted = true;
       this.$refs.techfromRef

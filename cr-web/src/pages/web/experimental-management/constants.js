@@ -80,3 +80,23 @@ export const EXPERIMENTAL_SUBJECT_TEMPLATE_TYPE = {
   'group-training': 8 //综合演训
 };
 
+
+// 模板类型
+export const EXPERIMENTAL_SUBJECT_TEMPLATE_CATEGORY_TYPE = {
+  'cloud-computing-resource-experimental': 1, //云计算资源实验
+  'cloud-network-resource-experimental': 1, //云网络资源实验
+  'scan-detect-attack-experimental': 1, //扫描探测攻击实验
+  'vulnerability-mining-exploitation-experimental': 1, //漏洞挖掘与利用实验
+  'denial-service-attack-experimental': 1, //拒绝服务攻击实验
+  'new-network-basic-experimental': 1, //新型网络基础实验
+  'new-network-attack-defense-experimental': 1, //新型网络攻防实验
+
+  'cloud-computing-resource-subject': 2, //云计算资源科目
+  'cloud-network-resource-subject': 2, //云网络资源科目
+  'scan-detect-attack-subject': 2, //扫描探测攻击科目
+  'vulnerability-mining-exploitation-subject': 2, //漏洞挖掘与利用科目
+  'denial-service-attack-subject': 2, //拒绝服务攻击科目
+  'new-network-basic-subject': 2, //新型网络基础科目
+  'new-network-attack-defense-subject': 2, //新型网络攻防科目
+};
+

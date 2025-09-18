@@ -6,19 +6,48 @@
       :rules="rules"
       :label-width="handlerWidth()"
     >
-      <cb-form-item :label="$t('crEvent.sceneName')" prop="name">
-        <cb-input v-model="model.name" @blur="removeBlank" />
+      <cb-form-item
+        :label="$t('分类')"
+        v-if="$route.name === 'comprehensive-training-scene-add' || $route.name === 'comprehensive-training-scene-edit'"
+      >
+        <cb-select
+          v-model="model.xd_template_category"
+          :options="templateCategoryOptions"
+        />
       </cb-form-item>
-      <cb-form-item :label="$t('crEvent.sceneDesc')" prop="description">
+      <cb-form-item
+        :label="$t('crEvent.sceneName')"
+        prop="name"
+      >
+        <cb-input
+          v-model="model.name"
+          @blur="removeBlank"
+        />
+      </cb-form-item>
+      <cb-form-item
+        :label="$t('crEvent.sceneDesc')"
+        prop="description"
+      >
         <cb-input
           v-model="model.description"
           type="textarea"
           @blur="removeBlank"
         />
       </cb-form-item>
-      <cb-form-item :label="$t('crEvent.cover')" prop="logo" class="padding">
-        <cb-input v-model="model.logo" style="display: none" />
-        <cb-button color-type="hollow" icon="icon-daoru" @click="openUploadImg">
+      <cb-form-item
+        :label="$t('crEvent.cover')"
+        prop="logo"
+        class="padding"
+      >
+        <cb-input
+          v-model="model.logo"
+          style="display: none"
+        />
+        <cb-button
+          color-type="hollow"
+          icon="icon-daoru"
+          @click="openUploadImg"
+        >
           {{ $t('common.import') }}
         </cb-button>
         <br />
@@ -41,41 +70,60 @@
                 :key="index"
                 v-model="model.difficult"
                 :label="diff.value"
-                >{{ diff.name }}
+              >{{ diff.name }}
               </cb-radio>
             </div>
           </cb-form-item>
         </div>
         <div class="team_category">
-          <cb-form-item :label="$t('crEvent.trainCategory')" prop="category">
-            <cb-select v-model="model.category" :options="categoryCom" />
+          <cb-form-item
+            :label="$t('crEvent.trainCategory')"
+            prop="category"
+          >
+            <cb-select
+              v-model="model.category"
+              :options="categoryCom"
+            />
           </cb-form-item>
         </div>
       </div>
       <div>
         <div class="team_time">
-          <cb-form-item :label="$t('crEvent.adviceTime')" prop="duration_time">
+          <cb-form-item
+            :label="$t('crEvent.adviceTime')"
+            prop="duration_time"
+          >
             <cb-input v-model="model.duration_time">
-              <template v-if="this.lang === 'en'" slot="append">Hours</template>
-              <template v-else slot="append">{{ $t('crEvent.hour') }}</template>
+              <template
+                v-if="this.lang === 'en'"
+                slot="append"
+              >Hours</template>
+              <template
+                v-else
+                slot="append"
+              >{{ $t('crEvent.hour') }}</template>
             </cb-input>
           </cb-form-item>
         </div>
-        <div
-          :class="{
-            traineesEn: this.lang === 'en',
-            trainees: this.lang === 'zh-CN',
-          }"
-        >
+        <div :class="{
+          traineesEn: this.lang === 'en',
+          trainees: this.lang === 'zh-CN',
+        }">
           <cb-form-item
             :label="$t('crEvent.numberOfTrainees')"
             prop="people_number"
           >
             <cb-input v-model="model.people_number">
-              <template v-if="this.lang === 'en'" slot="append">{{
+              <template
+                v-if="this.lang === 'en'"
+                slot="append"
+              >{{
                 $t('crEvent.people')
               }}</template>
-              <template v-else slot="append">{{
+              <template
+                v-else
+                slot="append"
+              >{{
                 $t('crEvent.people')
               }}</template>
             </cb-input>
@@ -117,7 +165,10 @@
         </div>
       </div>
     </cb-form>
-    <cb-dialog :visible.sync="dialogVisible" :title="$t('common.courseUpload')">
+    <cb-dialog
+      :visible.sync="dialogVisible"
+      :title="$t('common.courseUpload')"
+    >
       <span class="modal-style">
         <cutimg
           :businessType="BUSINESS_TYPE.CR_CMS_TEAM"
@@ -184,6 +235,16 @@ export default {
       isSkillFormat: true,
       url: '/admin/cr_scene/cr_scene_configs/',
       model: this.baseInfo,
+      templateCategoryOptions: [
+        {
+          label: '实验',
+          value: 1,
+        },
+        {
+          label: '科目',
+          value: 2,
+        },
+      ],
       rules: {
         name: [
           {
@@ -331,7 +392,7 @@ export default {
       },
     },
   },
-  mounted() {},
+  mounted() { },
   created() {
     // 综合演训类别请求
     this.$request
@@ -447,19 +508,24 @@ export default {
   ::v-deep.cb-tag {
     margin-bottom: 10px;
   }
+
   ::v-deep.cb-button {
     margin-bottom: 10px;
   }
+
   ::v-deep.cb-input {
     margin-bottom: 10px;
   }
 }
+
 .app-container {
   overflow: auto;
 }
+
 .app-container .scene-config-detail {
   padding: 0;
 }
+
 .scene-config-detail {
   position: relative;
 
@@ -495,12 +561,12 @@ export default {
   }
 
   .config-card {
-    & > .el-tabs__content {
+    &>.el-tabs__content {
       overflow: hidden;
     }
   }
 
-  .el-tag + .el-tag {
+  .el-tag+.el-tag {
     margin-left: 10px;
   }
 
@@ -626,9 +692,11 @@ export default {
     margin-left: 80px;
     float: left;
   }
+
   .role-text {
     margin-left: 60px;
   }
+
   .role {
     width: 20%;
     height: 16%;
@@ -655,6 +723,7 @@ export default {
     color: #f56c6c;
     display: inline-block;
   }
+
   .addRoleIconOneEn {
     position: absolute;
     left: 79px;
@@ -663,6 +732,7 @@ export default {
     color: #f56c6c;
     display: inline-block;
   }
+
   .addRoleIconOneDescEn {
     position: absolute;
     left: 58px;
@@ -671,6 +741,7 @@ export default {
     color: #f56c6c;
     display: inline-block;
   }
+
   .addRoleIconOneDescZh {
     position: absolute;
     left: 17px;
@@ -679,6 +750,7 @@ export default {
     color: #f56c6c;
     display: inline-block;
   }
+
   .addRoleIconTwo {
     position: absolute;
     left: 19px;
@@ -691,10 +763,12 @@ export default {
   .addLabel {
     display: inline-block;
     width: 100%;
+
     ::v-deep.el-form-item__error {
       top: 80%;
     }
   }
+
   .trainLabel {
     margin-top: -7px;
   }
