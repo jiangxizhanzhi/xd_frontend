@@ -333,7 +333,7 @@ export default {
   },
   mounted() {},
   created() {
-    // 团队训练类别请求
+    // 综合演训类别请求
     this.$request
       .get('/cr/common/constants_config', { type: 3 }, { baseURL: '/api/ojj' })
       .then((res) => {

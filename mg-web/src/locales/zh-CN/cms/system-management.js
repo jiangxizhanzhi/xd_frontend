@@ -130,7 +130,7 @@ export default {
     device: '靶标',
     redVsBlue: '红蓝对抗',
     individualTraining: '单兵训练',
-    teamTraining: '团队训练',
+    teamTraining: '综合演训',
     arena: '赛场',
     theoryContest: '理论赛',
     Q_MContest: '运维赛',
@@ -255,9 +255,9 @@ export default {
     otherAdmin: '不能操作角色是管理员的用户！',
     signatureLength: '长度不超过1000个字符',
   },
-  /* 角色管理 */
+  /* 权限管理 */
   roleManage: {
-    roleManagement: '角色管理',
+    roleManagement: '权限管理',
     addRole: '新增角色权限',
     editRole: '编辑角色权限',
     addRoleUser: '添加角色中用户',

@@ -61,7 +61,7 @@ export default {
     let url = ref('/red_vs_blue/s/asset_statistics/');
     let resourceId = '90d8f51db9b8563a435f18c5ccd0b6fe';
     if (window.location.href.indexOf('visual-screen2') != -1) {
-      // 团队训练
+      // 综合演训
       url = ref('/training_team/v/asset_statistics/');
       resourceId = 'b21a7d72756fa5b828edd4433194ff33';
     }

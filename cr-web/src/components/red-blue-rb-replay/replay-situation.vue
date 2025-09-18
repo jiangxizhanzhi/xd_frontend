@@ -440,7 +440,7 @@ import { getToken } from '@cyber/helper';
 export default {
   name: 'replay-situation',
   props: {
-    //区分团队训练与红蓝，默认是红蓝
+    //区分综合演训与红蓝，默认是红蓝
     isRedBlue: {
       type: Boolean,
       default: () => {
@@ -924,7 +924,7 @@ export default {
       return new Promise((resolve, reject) => {
         const params = {
           room_id: this.$route.params.resource_id,
-          // business_type: this.isRedBlue ? 4 : 3, //团队训练3,红蓝对抗4
+          // business_type: this.isRedBlue ? 4 : 3, //综合演训3,红蓝对抗4
         };
         let eventTime = [];
         playbackTimeLine(params)

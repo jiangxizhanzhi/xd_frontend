@@ -246,7 +246,7 @@ import {
 
 export default {
   props: {
-    //区分团队训练与红蓝，默认是红蓝
+    //区分综合演训与红蓝，默认是红蓝
     isRedBlue: {
       type: Boolean,
       default: () => {

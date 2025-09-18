@@ -290,7 +290,7 @@ export default {
     });
     this.getUserInfo();
     this.resource_id = this.$route.params && this.$route.params.resource_id;
-    //团队训练详情
+    //综合演训详情
     if (this.resource_id) {
       getEditBackApi({ resource_id: this.resource_id }).then(async (res) => {
         this.crEventData = res.data;
@@ -456,7 +456,7 @@ export default {
       });
       // this.dialogEditVisible = true;
     },
-    // 团队训练教员删除训练
+    // 综合演训教员删除训练
     deleteTeamTrain(done) {
       this.$confirm(this.$t('common.confirmDelete') + '?').then(() => {
         deleteTrainingApi({ room_id: this.resource_id })

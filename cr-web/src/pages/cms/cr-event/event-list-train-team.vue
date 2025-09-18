@@ -175,7 +175,7 @@ export default {
       authIds: [],
       importVisible: false,
       // url: '/admin/ce_base/cr_events/',
-      // 综合训练列表接口
+      // 对抗演练列表接口
       baseURL: '/api/ojj',
       url: '/admin/ceBase/crEvents/list',
       // 团队导入
@@ -276,7 +276,7 @@ export default {
       const ids = row.map((i) => {
         return i.resource_id;
       });
-      // 综合训练删除
+      // 对抗演练删除
       this.$request
         .delete(
           '/cr/team_train/template',

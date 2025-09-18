@@ -23,7 +23,7 @@ export default [
     },
     component: './pages/web/experimental-management/teachers/teacher_home.vue',
   },
-  // 团队训练训练模板详情页
+  // 综合演训训练模板详情页
   {
     name: 'cloud-computing-resource-subject-template-detail',
     path: '/cloud-computing-resource-subject/template-detail/:resource_id/:template_id',

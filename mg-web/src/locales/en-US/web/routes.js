@@ -20,7 +20,7 @@ export default {
   'oj-practice': 'Theory',
   'oj-practice-capture-flag': 'Practice',
 
-  // 综合训练
+  // 对抗演练
   'comprehensive-training-folder': 'Training',
   'single-list': 'Individual',
   'group-training': 'Team',

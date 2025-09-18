@@ -20,10 +20,10 @@ export default {
   'oj-practice-capture-flag': '实操题',
 
   // 竞赛
-  // 综合训练
-  'comprehensive-training-folder': '综合训练',
+  // 对抗演练
+  'comprehensive-training-folder': '对抗演练',
   'single-list': '单兵训练',
-  'group-training': '团队训练',
+  'group-training': '综合演训',
   // 红蓝对抗
   'red-vs-blue-web-folder': '红蓝对抗',
   'red-vs-blue': '红蓝对抗',

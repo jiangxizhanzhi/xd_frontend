@@ -38,7 +38,7 @@ export default {
       practicalCols: ['题目方向', '总题数', '解出数量'],
     },
     comprehensive: {
-      title: '综合训练分析',
+      title: '对抗演练分析',
       titleList: ['训练任务总体情况', '任务完成情况'],
       taskCols: ['训练名称', '任务类型', '总任务数', '完成数', '完成率'],
     },

@@ -9,7 +9,7 @@
       @click="goToDetail(item)"
     >
       <div class="img-box">
-      <img class="logo" :src="item.logo" alt="" />
+      <img class="logo" :src="item.logo || defaultPic" alt="" />
       </div>
       <div class="detail-top-info">
         <span class="name">{{item.name}}</span>
@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import defaultPic from '@/assets/img/course/default.png'
 export default {
   name: "course-card",
   components: {},
@@ -60,6 +61,7 @@ export default {
   data() {
     return {
       activeId: '',
+      defaultPic: defaultPic,
     }
   },
   methods: {

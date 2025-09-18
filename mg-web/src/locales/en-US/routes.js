@@ -35,7 +35,7 @@ export default {
   'ct-awdp-question-list': 'AWDP Topic',
   'ct-ai-question-list': 'AI Topic',
 
-  //靶标管理
+  //演训资源
   'cr-standard-device-folder': 'Target',
   'image-manage': 'Images',
   'usb-emulation': 'USB Emulation',
@@ -73,7 +73,7 @@ export default {
   'custom-probe': 'Custom Probe',
   'collection-template': 'Collection Template',
   'collection-analyse': 'Collection Analyse',
-  //综合训练
+  //对抗演练
   'cr-training-list-folder': 'Training',
   'cr-individual-training': 'Individual',
   'cr-team-training': 'Team',
@@ -145,7 +145,7 @@ export default {
   'oj-practice': 'Theory',
   'oj-practice-capture-flag': 'Practice',
 
-  // 综合训练
+  // 对抗演练
   'comprehensive-training-folder': 'Training',
   'single-list': 'Individual',
   'group-training': 'Team',

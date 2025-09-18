@@ -5,7 +5,7 @@ export default {
     PlzSelectType: '请选择场景类型',
     allScene: '全部场景',
     individualTraining: '单兵训练',
-    teamTraining: '团队训练',
+    teamTraining: '综合演训',
     red_blue: '红蓝对抗',
     rangeTest: '靶场测评',
     practice: '练习',

@@ -1,5 +1,5 @@
 <template>
-  <!--团队训练学员页面-->
+  <!--综合演训学员页面-->
   <div class="student-combat page">
     <!-- <div class="header">
       <breadcrumb

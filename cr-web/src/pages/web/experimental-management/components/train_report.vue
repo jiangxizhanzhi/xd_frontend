@@ -275,7 +275,7 @@ export default {
   },
   methods: {
     // 训练报告下载
-    //团队训练,训练报告导出
+    //综合演训,训练报告导出
     exportTemplate() {
       this.$request
         .binaryDownload(

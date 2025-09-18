@@ -67,13 +67,13 @@ export default {
           path: `/cr/software-test/detail/${val.resource_id}/`,
         });
       } else if (val.app_id === 213 && val.role_group === 1) {
-        // 3 团队训练 role:1教员
+        // 3 综合演训 role:1教员
         const url = this.$router.resolve({
           path: `/cr/train-detail-home/${val.resource_id}`,
         });
         window.open(url.href, '_self');
       } else if (val.app_id === 213 && val.role_group === 2) {
-        // 3 团队训练 role:2学生
+        // 3 综合演训 role:2学生
         const url = this.$router.resolve({
           path: `/cr/student_combat/${val.resource_id}`,
         });

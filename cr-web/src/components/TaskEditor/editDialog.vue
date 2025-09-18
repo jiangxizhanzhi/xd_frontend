@@ -1,5 +1,5 @@
 <template>
-  <!--团队训练老师修改任务弹窗内容-->
+  <!--综合演训老师修改任务弹窗内容-->
   <div class="dialog-form">
     <cb-form :label-width="language === 'en' ? '140px' : '110px'">
       <cb-row :gutter="20">

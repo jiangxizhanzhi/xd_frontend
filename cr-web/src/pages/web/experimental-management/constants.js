@@ -1,4 +1,4 @@
-// 团队训练枚举类型-前台展示
+// 综合演训枚举类型-前台展示
 export const EXPERIMENTAL_SUBJECT_MANAGEMENT_NAME = {
   'cloud-computing-resource-experimental': '云计算资源实验',
   'cloud-network-resource-experimental': '云网络资源实验',

@@ -16,9 +16,9 @@ import singleFull from './web/cr-web/comprehensive-training/single-full';
 
 // 红蓝对抗全屏页面
 import redBlueFull from './web/cr-web/red-blue/red-blue-full';
-//团队训练教员训练详情全屏页面
+//综合演训教员训练详情全屏页面
 import groupTraingFull from './web/cr-web/comprehensive-training/group-traing-full';
-//团队训练学员训练详情全屏页面
+//综合演训学员训练详情全屏页面
 import groupTraingStudentFull from './web/cr-web/comprehensive-training/group-traing-student-full';
 // 实验管理全屏页面
 import experimentalManagementFull from './web/cr-web/experimental-management-full/index';
@@ -250,7 +250,7 @@ export default [
       },
       // 课程管理
       ...coursesManage,
-      // 综合训练
+      // 对抗演练
       // ...training,
       // ...ojCourse,
       // ...ojPractice,
@@ -258,7 +258,7 @@ export default [
       ...comprehensiveTraining,
       // 场景管理
       sceneManageRouter,
-      // 靶标管理
+      // 演训资源
       ...device,
       // 系统运维
       ...systemOperstion,
@@ -400,7 +400,7 @@ export default [
     //   ...practice,
     //   // 竞赛管理
     //   ...contestMgr,
-    //   // 综合训练
+    //   // 对抗演练
     //   ...training,
     //   // 红蓝对抗
     //   ...redVsBlue,
@@ -408,7 +408,7 @@ export default [
     //   ...assessmentManagement,
     //   // 资源管理
     //   ...resourceManage,
-    //   // 靶标管理
+    //   // 演训资源
     //   ...device,
     //   // 场景管理
     //   sceneManageRouter,

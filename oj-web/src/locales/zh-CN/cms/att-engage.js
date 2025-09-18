@@ -12,7 +12,7 @@ export default {
   sceneName: '场景名称',
   sceneType: '场景类型',
   individual: '单兵训练',
-  team: '团队训练',
+  team: '综合演训',
   cyberWargame: '红蓝对抗',
   difficulty: '难度',
   enterprise: '企业',

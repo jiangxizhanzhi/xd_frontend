@@ -21,7 +21,7 @@ export default [
   },
   {
     name: 'scan-detect-attack-experimental-student-combat',
-    path: '/cr/scan-detect-attack-experimental/student_combat/:resource_id', // 学生点击进入团队训练
+    path: '/cr/scan-detect-attack-experimental/student_combat/:resource_id', // 学生点击进入综合演训
     title: 'm.details',
     component: './frame',
     meta: {

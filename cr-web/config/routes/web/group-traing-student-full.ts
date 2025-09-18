@@ -1,7 +1,7 @@
 export default [
   {
     name: 'group-training-student-combat',
-    path: '/group-training/student_combat/:resource_id', // 学生点击进入团队训练
+    path: '/group-training/student_combat/:resource_id', // 学生点击进入综合演训
     title: 'm.details',
     component: './pages/web/team-train/student/index.vue',
     meta: {

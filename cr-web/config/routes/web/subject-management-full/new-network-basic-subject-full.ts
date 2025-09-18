@@ -21,7 +21,7 @@ export default [
   },
   {
     name: 'new-network-basic-subject-student-combat',
-    path: '/new-network-basic-subject/student_combat/:resource_id', // 学生点击进入团队训练
+    path: '/new-network-basic-subject/student_combat/:resource_id', // 学生点击进入综合演训
     title: 'm.details',
     component: './pages/web/experimental-management/student/index.vue',
     meta: {

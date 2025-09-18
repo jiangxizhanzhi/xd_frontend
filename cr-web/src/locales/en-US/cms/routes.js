@@ -2,7 +2,7 @@ export default {
   back_all: 'CMS',
   // 仪表盘
   index: 'Dashboard',
-  //综合训练
+  //对抗演练
   'cr-training-list-folder': 'Training',
   'cr-individual-training': 'Individual',
   'cr-team-training': 'Team',
@@ -19,7 +19,7 @@ export default {
   'traffic-type-list': 'Type Manage',
   add: 'add',
   edit: 'edit',
-  //靶标管理
+  //演训资源
   'cr-standard-device-folder': 'Target',
   'image-manage': 'Images',
   'real-manage': 'Pysical Device',

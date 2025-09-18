@@ -103,7 +103,7 @@ export const ModuleType = {
   DEVICE: 15, // _('x_device'))  # 靶标
   RED_VS_BLUE: 16, // 红蓝对抗
   TRANING_SINGLE: 17, // 单兵训练
-  TRANING_TEAM: 18, // 团队训练
+  TRANING_TEAM: 18, // 综合演训
   ARENA: 19, //赛场
   THEORY_CONTEST: 20, //理论赛
   Q_M_CONTEST: 21, //运维赛

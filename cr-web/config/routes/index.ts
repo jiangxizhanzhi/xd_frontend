@@ -21,9 +21,9 @@ import { resourceRouter } from './cms/resource';
 import { sceneManageRouter } from './cms/scene-management/index';
 // 红蓝对抗全屏页面
 import redBlueFull from './web/red-blue-full';
-// 团队训练我的训练详情全屏页面
+// 综合演训我的训练详情全屏页面
 import teamTrainFull from './web/group-traing-full';
-// 团队训练学员进入详情全屏页面
+// 综合演训学员进入详情全屏页面
 import teamTrainStudentFull from './web/group-traing-student-full';
 // 实验管理全屏路由
 import experimentalManagementFull from './web/experimental-management-full/index'
@@ -162,7 +162,7 @@ export default [
 
       // 新版场景编排
       // crEventRouter,
-      // 综合训练
+      // 对抗演练
       trainingRouter,
       // 红蓝对抗
       ...redVsBlueRouter,

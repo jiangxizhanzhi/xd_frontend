@@ -145,7 +145,7 @@ export default {
       this.taskType = data.type;
     },
     SubmitAnswer() {
-      // 团队训练
+      // 综合演训
       let answer = '';
       if (this.$refs.AnswerDialog.taskInfos.type === 0) {
         answer = this.$refs.AnswerDialog.judgeAnswer;

@@ -10,7 +10,7 @@ export default [
       module: 'group-training',
     },
   },
-  // 团队训练教员训练详情页
+  // 综合演训教员训练详情页
   {
     name: 'group-training-home',
     path: '/cr/group-training-home/:resource_id',

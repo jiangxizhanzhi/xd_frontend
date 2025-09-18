@@ -58,21 +58,6 @@
 						"children": []
 					},
 					{
-						"name": "课程表",
-						"value": "class-card",
-						"en_name": "Class Schedule",
-						"authority": "class-card",
-						"path_name": "back_all/courses-manage-folder/class-card",
-						"active": ["LCS-FUNC-CR-SHIXUN"],
-						"edition": [0, 1],
-						"status": 1,
-						"read_status": 1,
-						"write_status": 1,
-						"execute_status": 1,
-						"per_status": "R/W/X",
-						"children": []
-					},
-					{
 						"name": "实验管理",
 						"value": "experimental-management",
 						"en_name": "experimental-management",
@@ -745,20 +730,6 @@
 						"execute_status": 1,
 						"per_status": "R/W/X",
 						"children": []
-					},
-					{
-						"name": "系统公告",
-						"value": "system-notice-folder",
-						"en_name": "Announcement",
-						"authority": "system-notice-folder",
-						"path_name": "back_all/system-management-folder/system-notice-folder",
-						"active": ["no_auth"],
-						"edition": [0, 1],
-						"status": 1,
-						"read_status": 1,
-						"write_status": 1,
-						"execute_status": 1,
-						"per_status": "R/W/X"
 					}
 				]
 			}

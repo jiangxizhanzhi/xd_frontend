@@ -21,7 +21,7 @@ export default [
     component: './frame',
   },
   // {
-  //   path: '/cr/student_combat/:resource_id', // 学生点击进入团队训练
+  //   path: '/cr/student_combat/:resource_id', // 学生点击进入综合演训
   //   name: 'student_combat',
   //   title: 'route.details',
   //   meta: {
@@ -31,7 +31,7 @@ export default [
   //   },
   //   component: './frame',
   // },
-  // 团队训练训练模板详情页
+  // 综合演训训练模板详情页
   {
     name: 'group-training-template-detail',
     path: '/cr/team-train/template-detail/:resource_id/:template_id',
@@ -67,7 +67,7 @@ export default [
     },
     component: './frame',
   },
-  // 团队训练编辑训练
+  // 综合演训编辑训练
   {
     name: 'group-training-home-edit',
     path: '/cr/group-training-home-edit/edit/:id',

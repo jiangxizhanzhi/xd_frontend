@@ -3,7 +3,7 @@ export default [
     path: '',
     name: 'comprehensive-training-folder',
     children: [
-      // 团队训练列表页
+      // 综合演训列表页
       {
         name: 'group-training',
         path: '/group_training',
@@ -29,7 +29,7 @@ export default [
         component:
           './pages/web/experimental-management/teachers/teacher_home.vue',
       },
-      // 团队训练训练模板详情页
+      // 综合演训训练模板详情页
       {
         name: 'group-training-template-detail',
         path: '/team-train/template-detail/:resource_id/:template_id',

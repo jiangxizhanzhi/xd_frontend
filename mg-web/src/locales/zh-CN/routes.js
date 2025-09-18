@@ -6,14 +6,14 @@ export default {
   dashboard: '仪表盘',
   'statistical-analysis-folder': '统计分析',
   'individual-training-statistics': '单兵训练统计',
-  'team-training-statistics': '团队训练统计',
+  'team-training-statistics': '综合演训统计',
   'red-vs-blue-statistics': '红蓝对抗统计',
   'ct-contest-statistic': '竞赛统计',
   //课程管理
-  'courses-manage-folder': '课程管理',
-  courses: '课程',
+  'courses-manage-folder': '实验教学',
+  courses: '课程规划',
   'class-card': '课程表',
-  'learn-statistics': '学习统计',
+  'learn-statistics': '统计分析',
   'career-system-folder': '职业框架',
   'career-system': 'NCWF框架',
   'att-ck-frame': 'ATT&CK框架',
@@ -30,17 +30,17 @@ export default {
   'ct-awdp-question-list': '沙盒攻防题',
   'ct-cfs-question-list': '渗透题',
   'ct-ai-question-list': '人工智能赛题',
-  //靶标管理
-  'cr-standard-device-folder': '靶标管理',
+  //演训资源
+  'cr-standard-device-folder': '演训资源',
   'image-manage': '镜像管理',
   'usb-emulation': 'USB仿真',
-  'real-manage': '实装管理',
+  'real-manage': '虚实结合管理',
   'service-manage': '服务管理',
 
   // 拓扑模板
   'topology-management-folder': '场景编排',
   'topology-management': '场景编排',
-  
+
   'scene-manage-folder': '场景管理',
   'cloud-computing-resource-scene': '云计算资源场景',
   'cloud-network-resource-scene': '云网络资源场景',
@@ -50,7 +50,7 @@ export default {
   'new-network-basic-scene': '新型网络基础场景',
   'new-network-attack-defense-scene': '新型网络攻防场景',
   'comprehensive-training-scene': '综合演训场景',
-  
+
   //任务方案
   'cr-mission-arrange-folder': '任务方案',
   'mission-arrange-management': '任务方案',
@@ -64,14 +64,14 @@ export default {
   'traffic-type-list': '类型管理',
   //探针管理
   'cr-collection-system-folder': '探针管理',
-  'universal-probe': '通用探针',
-  'custom-probe': '自定义探针',
-  'collection-template': '采集模板',
+  'universal-probe': '通用采集管理',
+  'custom-probe': '自定义探针管理',
+  'collection-template': '采集模板管理',
   'collection-analyse': '采集分析',
-  //综合训练
-  'cr-training-list-folder': '综合训练',
+  //对抗演练
+  'cr-training-list-folder': '对抗演练',
   'cr-individual-training': '单兵训练',
-  'cr-team-training': '团队训练',
+  'cr-team-training': '综合演训',
   // 红蓝对抗
   'red-vs-blue-folder': '红蓝对抗',
   'red-blue': '红蓝对抗',
@@ -96,20 +96,20 @@ export default {
   'audit-log': '审计日志',
   'system-log': '运行日志',
   'user-manage': '用户管理',
-  'role-management': '角色管理',
+  'role-management': '权限管理',
   'message-management': '留言管理',
   'resource-import': '资源导入',
   'ct-team-list': '战队',
 
   //系统运维
-  'system-alarm': '系统告警',
-  'business-service-monitoring': '业务服务监控',
+  'system-alarm': '告警监控',
+  'business-service-monitoring': '超融合平台管理',
   'system-operation-folder': '系统运维',
-  'cluster-management': '计算实例管理',
-  'network-management': '网络实例管理',
+  'cluster-management': '设备状态监控',
+  'network-management': '拟态多平台管理',
   'real-equipment-management': '实装设备管理',
-  'instance-monitoring': '靶场实例监控',
-  'cloud-platform-monitoring': '云平台监控',
+  'instance-monitoring': '生命周期管理',
+  'cloud-platform-monitoring': '资源编排',
   'resource-usage-management': '资源用量管理',
 
   //系统公告
@@ -137,10 +137,10 @@ export default {
   'oj-practice': '理论题',
   'oj-practice-capture-flag': '实操题',
 
-  // 综合训练
-  'comprehensive-training-folder': '综合训练',
+  // 对抗演练
+  'comprehensive-training-folder': '对抗演练',
   'single-list': '单兵训练',
-  'group-training': '团队训练',
+  'group-training': '综合演训',
 
   'experimental-management': '实验管理',
   'cloud-computing-resource-experimental': '云计算资源实验',
@@ -159,7 +159,7 @@ export default {
   'denial-service-attack-subject': '拒绝服务攻击科目',
   'new-network-basic-subject': '新型网络基础科目',
   'new-network-attack-defense-subject': '新型网络攻防科目',
-  
+
   // 红蓝对抗
   'red-vs-blue-web-folder': '红蓝对抗',
   'red-vs-blue': '红蓝对抗',

@@ -1,5 +1,5 @@
 <template>
-  <!-- 团队训练教员屏幕监控 -->
+  <!-- 综合演训教员屏幕监控 -->
   <div class="screen-monitor">
     <div class="screen-item" :key="index" v-for="(item, index) in screenList">
       <div

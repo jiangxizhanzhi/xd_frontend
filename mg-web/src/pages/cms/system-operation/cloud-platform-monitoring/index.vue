@@ -6,7 +6,7 @@
         <resource-statistics />
       </Block>
     </div>
-    <!-- 云平台监控 -->
+    <!-- 资源编排 -->
     <div class="wrapper">
       <Block :title="$t('systemOperation.systemAlarm.deviceMonitor')">
         <device-monitor />

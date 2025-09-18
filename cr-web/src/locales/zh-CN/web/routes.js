@@ -1,6 +1,6 @@
 export default {
   'single-list': '单兵训练',
-  'group-training': '团队训练',
+  'group-training': '综合演训',
   'red-vs-blue-web-folder': '红蓝对抗',
   'recourse-center-folder': '资源中心',
   'tool-magazine': '工具库',

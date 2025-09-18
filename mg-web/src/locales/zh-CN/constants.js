@@ -9,7 +9,7 @@ export default {
     EXAM: '考试',
     LESSON_PRACTICE: '课后练习',
     INDIVIDUAL_TRAINING: '单兵训练',
-    TEAM_TRAINING: '团队训练',
+    TEAM_TRAINING: '综合演训',
     READ_VS_BLUE: '红蓝对抗',
     SOFT_TEST: '靶场测评',
     OPERATIONS: '运维赛',

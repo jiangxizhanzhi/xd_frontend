@@ -280,7 +280,7 @@ export default {
     // team id
     let teamId = '90d8f51db9b8563a435f18c5ccd0b6fe';
     if (window.location.href.indexOf('visual-screen2') != -1) {
-      // 团队训练
+      // 综合演训
       senceId = '3dde20172064d97aafa0a02bd6080874';
       // team id
       teamId = '90d8f51db9b8563a435f18c5ccd0b6fe';

@@ -663,7 +663,7 @@ export default {
   },
   sceneType: {
     INDIVIDUAL_TRAINING: '单兵训练',
-    TEAM_TRAINING: '团队训练',
+    TEAM_TRAINING: '综合演训',
     READ_VS_BLUE: '红蓝对抗',
   },
 };

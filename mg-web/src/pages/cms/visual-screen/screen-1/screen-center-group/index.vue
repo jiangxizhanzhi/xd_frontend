@@ -93,7 +93,7 @@ export default {
     TrainingSkill,
   },
   created() {
-    //团队训练人数
+    //综合演训人数
     trainingTeamUser('71e31f363b51edd6cb464d26be0c6982').then((res) => {
       this.student_count = res.data.student_count;
     });
@@ -155,7 +155,7 @@ export default {
           this.grandListData = res.data;
         },
       );
-      //团队训练技能类别
+      //综合演训技能类别
       trainingTeamSkill('71e31f363b51edd6cb464d26be0c6982').then((res) => {
         this.skillTypeData = res.data.category;
       });
@@ -165,7 +165,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .visual-screen-center-group {
-  //团队训练中间页面css变量定义
+  //综合演训中间页面css变量定义
   //背景颜色
   --trainning-bg: linear-gradient(
     90deg,

@@ -80,6 +80,10 @@ export default {
           resizable: true,
         },
         {
+          label: '类型',
+          prop: 'biz_role',
+        },
+        {
           label: this.$t('systemManagement.roleManage.permissions'),
           getData: (row) => {
             // 权限国际化展示

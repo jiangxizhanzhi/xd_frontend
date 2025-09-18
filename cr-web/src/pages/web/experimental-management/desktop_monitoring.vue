@@ -79,7 +79,7 @@ export default {
     getUsersMonitor(val) {
       this.loading = true;
       const user_id = val;
-      //团队训练桌面监控
+      //综合演训桌面监控
       this.$request
         .get(
           '/cr/training_team/training_team_teacher/sessions',

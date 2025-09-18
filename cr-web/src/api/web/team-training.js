@@ -15,14 +15,14 @@ const getDifficultListsApi = (data) => {
   });
 };
 
-// 获取团队训练教员列表
+// 获取综合演训教员列表
 const getTrainListApi = (data) => {
   return request.get(`/cr/team_train/room/list`, data, {
     baseURL: '/api/ojj',
   });
 };
 
-// 获取团队训练模板列表
+// 获取综合演训模板列表
 const getTemplateListApi = (data) => {
   return request.get(`/cr/team_train/template/list`, data, {
     baseURL: '/api/ojj',
@@ -35,7 +35,7 @@ const uploadImageApi = (data) => {
   });
 };
 
-// 团队训练新增训练
+// 综合演训新增训练
 const createTrainingApi = (data) => {
   return request.post('/cr/team_train/room', data, {
     baseURL: '/api/ojj',
@@ -48,20 +48,20 @@ const editTrainingCreateApi = (data) => {
   });
 };
 
-//团队训练查询单个,训练详情
+//综合演训查询单个,训练详情
 const getEditBackApi = (data) => {
   return request.get('/cr/team_train/room', data, {
     baseURL: '/api/ojj',
   });
 };
 
-//团队训练编辑训练
+//综合演训编辑训练
 const editTrainingApi = (data) => {
   return request.put('/cr/team_train/room', data, {
     baseURL: '/api/ojj',
   });
 };
-// 团队训练教员删除训练
+// 综合演训教员删除训练
 const deleteTrainingApi = (data) => {
   return request.delete('/cr/team_train/room', data, {
     baseURL: '/api/ojj',

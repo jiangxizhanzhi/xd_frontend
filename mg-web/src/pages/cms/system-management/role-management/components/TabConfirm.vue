@@ -106,7 +106,7 @@ export default {
     confirm() {
       let {
         permissonList: permission_list,
-        firstStepFormValue: { name, description },
+        firstStepFormValue: { name, description, biz_role },
       } = this.$store.state.role;
       const list = permission_list.map((item) => item.id);
       let params = {},
@@ -115,6 +115,7 @@ export default {
         target_ids: list,
         name,
         description,
+        biz_role,
       };
       /* 编辑 */
       if (this.id) {

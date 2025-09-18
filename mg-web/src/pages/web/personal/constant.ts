@@ -55,7 +55,7 @@ export const CLOOECTION_TYPE = [
 // PERMEATE(5, "渗透赛"),
 // AWDP(6, "沙盒攻防赛"),
 // CLASS(8, "课程表"),
-// TEAM(9, "团队训练"),
+// TEAM(9, "综合演训"),
 // RB(10, "红蓝对抗");
 
 export const TASK_TYPE = {

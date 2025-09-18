@@ -7,7 +7,7 @@ export default {
   contestModule: '竞赛模块',
   livingVulnerableModule: '活体漏洞模块',
   knowledgeBase: '实战知识库',
-  integratedTraining: '综合训练模块',
+  integratedTraining: '对抗演练模块',
   redBlueCounterModule: '红蓝对抗模块',
   penetrationCompetitionModule: '渗透赛模块',
   operationVisaiModule: '运维赛模块',

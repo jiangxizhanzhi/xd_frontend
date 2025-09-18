@@ -497,7 +497,7 @@ export default {
       }
     },
 
-    // 团队训练报告导出
+    // 综合演训报告导出
     exportTemplate() {
       this.loading = true;
       this.$request

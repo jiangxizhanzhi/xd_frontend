@@ -21,7 +21,7 @@ export default [
     },
     component: './frame',
   },
-  // 团队训练训练模板详情页
+  // 综合演训训练模板详情页
   {
     name: 'comprehensive-training-subject-template-detail',
     path: '/cr/comprehensive-training-subject/template-detail/:resource_id/:template_id',

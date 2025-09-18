@@ -17,14 +17,14 @@ export function getSingleOrgTop5() {
   );
 }
 
-//团队训练统计 个人排名TOP5
+//综合演训统计 个人排名TOP5
 export function getTeamPersonTop5() {
   return request.get('cr/admin/team_train_statistics/personal_rank', null, {
     baseURL: '/api/ojj',
   });
 }
 
-//团队训练统计 组织排名TOP5
+//综合演训统计 组织排名TOP5
 export function getTeamOrgTop5() {
   return request.get('cr/admin/team_train_statistics/organization_rank', null, {
     baseURL: '/api/ojj',

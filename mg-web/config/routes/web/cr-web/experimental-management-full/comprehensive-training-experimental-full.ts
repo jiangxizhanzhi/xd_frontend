@@ -21,7 +21,7 @@ export default [
   },
   {
     name: 'comprehensive-training-experimental-student-combat',
-    path: '/cr/comprehensive-training-experimental/student_combat/:resource_id', // 学生点击进入团队训练
+    path: '/cr/comprehensive-training-experimental/student_combat/:resource_id', // 学生点击进入综合演训
     title: 'm.details',
     component: './frame',
     meta: {

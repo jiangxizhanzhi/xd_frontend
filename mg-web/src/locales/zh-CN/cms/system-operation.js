@@ -1,12 +1,12 @@
 /* 系统运维 */
 export default {
   systemAlarm: {
-    systemAlarm: '系统告警',
+    systemAlarm: '告警监控',
     monitorTotal: '监控服务总数',
     normal: '正常',
     abnormal: '异常',
     cloudMonitor: '云平台服务监控',
-    businessMonitor: '业务服务监控',
+    businessMonitor: '超融合平台管理',
     serverMonitor: '服务器监控',
     alarmDistribution: '近一周分布',
     pendAlarm: '待处理告警',
@@ -57,11 +57,11 @@ export default {
   },
   views: {
     systemOperation: '系统运维',
-    computingInstance: '计算实例管理',
-    networkInstance: '网络实例管理',
-    cloudPlatformMonitoring: '云平台监控',
+    computingInstance: '设备状态监控',
+    networkInstance: '拟态多平台管理',
+    cloudPlatformMonitoring: '资源编排',
     realEquipmentManagement: '实装设备管理',
-    rangeInstanceMonitoring: '靶场实例监控',
+    rangeInstanceMonitoring: '生命周期管理',
     resourceUsageManagement: '资源用量管理',
     clusterManagement: {
       vm: {
@@ -193,7 +193,7 @@ export default {
     upperStorageTimeLimit: '存储时间上限',
     month: '月',
   },
-  // 靶场实例监控
+  // 生命周期管理
   scene: {
     drill: '演练',
     day: '天',

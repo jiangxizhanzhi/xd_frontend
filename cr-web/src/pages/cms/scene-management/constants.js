@@ -1,4 +1,4 @@
-// 团队训练枚举类型-前台展示
+// 综合演训枚举类型-前台展示
 export const SCENE_MANAGEMENT_NAME = {
   'cloud-computing-resource-scene': '云计算资源场景',
   'cloud-network-resource-scene': '云网络资源场景',

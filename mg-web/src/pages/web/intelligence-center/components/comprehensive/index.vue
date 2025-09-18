@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!--综合训练-->
+    <!--对抗演练-->
     <div class="box comprehensive">
       <div class="title">
         {{ index }}. {{ $t('intelligence.report.comprehensive.title') }}

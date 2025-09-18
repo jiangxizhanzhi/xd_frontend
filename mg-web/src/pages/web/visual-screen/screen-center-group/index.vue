@@ -144,7 +144,7 @@ export default {
           grandListData.value = res.data;
         },
       );
-      //团队训练技能类别
+      //综合演训技能类别
       trainingTeamSkill('b21a7d72756fa5b828edd4433194ff33').then((res) => {
         skillTypeData.value = res.data.category;
       });
@@ -165,7 +165,7 @@ export default {
       });
     }
     onMounted(() => {
-      //团队训练人数
+      //综合演训人数
       trainingTeamUser('b21a7d72756fa5b828edd4433194ff33').then((res) => {
         student_count.value = res.data.student_count;
       });
@@ -200,7 +200,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .visual-screen-center-group {
-  //团队训练中间页面css变量定义
+  //综合演训中间页面css变量定义
   //背景颜色
   --trainning-bg: linear-gradient(
     90deg,

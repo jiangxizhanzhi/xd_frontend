@@ -265,7 +265,7 @@ export default {
           //   { key: 'LCS-FUNC-CR-ZHISHIKU', value: '0', type: 1 }, //知识库
           //   { key: 'LCS-FUNC-CR-SHENTOUSAI', value: '1', type: 1 }, //渗透赛
           //   { key: 'LCS-FUNC-CR-YUNWEISAI', value: '0', type: 1 }, //运维赛
-          //   { key: 'LCS-FUNC-CR-ZONGHEXUNLIAN', value: '0', type: 1 }, //综合训练
+          //   { key: 'LCS-FUNC-CR-ZONGHEXUNLIAN', value: '0', type: 1 }, //对抗演练
           //   { key: 'LCS-FUNC-CR-HONGLANDUIKANG', value: '1', type: 1 }, //红蓝对抗
           //   { key: 'LCS-FUNC-CR-CEPING', value: '0', type: 1 }, //测评
           //   { key: 'LCS-RES-CR-ACTIVENODES', value: '300', type: 2 }, //
@@ -292,7 +292,7 @@ export default {
             );
           });
           if (haveOJ > -1 || haveTrain > -1) {
-            // 授权激活了实训 训练 （包含漏洞、测评、综合训练、红蓝对抗、实战知识库）模块
+            // 授权激活了实训 训练 （包含漏洞、测评、对抗演练、红蓝对抗、实战知识库）模块
             this.showCourseTrain = true;
           }
           if (haveOJ > -1) {
@@ -300,7 +300,7 @@ export default {
             this.showCourse = true;
           }
           if (haveTrain > -1) {
-            // 授权活体漏洞、实战知识库、综合训练、红蓝对抗、测评模块 任意一个
+            // 授权活体漏洞、实战知识库、对抗演练、红蓝对抗、测评模块 任意一个
             this.showTrain = true;
           }
           if (haveCT > -1) {

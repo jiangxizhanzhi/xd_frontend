@@ -156,7 +156,7 @@ export default {
       // 团队questionType213
       questionType: 3,
       active: 1, // 步骤条
-      // 综合训练新增接口
+      // 对抗演练新增接口
       baseURL: '/api/ojj',
       url: '/cr/team_train/template',
       baseTime: '2014-04-16T00:00:00', // 设计剧本组件基础时间

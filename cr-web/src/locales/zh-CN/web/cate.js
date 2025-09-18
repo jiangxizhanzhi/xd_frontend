@@ -17,7 +17,7 @@ export default {
     highLevel: '高级',
     lowRisk: '低危',
     highRisk: '高危',
-    groupTraining: '团队训练',
+    groupTraining: '综合演训',
     equipmentEvaluation: '装备测试',
     systemEvaluation: '系统测评',
     redVsBlue: '红蓝对抗',

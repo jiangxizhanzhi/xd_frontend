@@ -284,7 +284,7 @@ export default {
       sceneName: '', // 场景标题
       resource_id: '',
       trainManual: '',
-      crEventData: null, // 团队训练教员详情数据
+      crEventData: null, // 综合演训教员详情数据
       tabActive: '拓扑监控',
       editDialog: false,
       createFormVal: {},
@@ -322,7 +322,7 @@ export default {
   },
   watch: {
     sceneData(nv) {},
-    //团队训练切换tab,(拓扑监控,桌面监控),请求赋值topologyData
+    //综合演训切换tab,(拓扑监控,桌面监控),请求赋值topologyData
     tabActive(nv) {
       if (nv) {
         this.handleGetSceneData();
@@ -530,7 +530,7 @@ export default {
       this.showInfo = !this.showInfo;
     },
 
-    // 教员-团队训练详情
+    // 教员-综合演训详情
     getTeacherDetail(id) {
       this.$request
         .get(
@@ -588,7 +588,7 @@ export default {
         .catch((_) => {});
     },
 
-    // 教员编辑团队训练
+    // 教员编辑综合演训
     editTeamTrain() {
       this.editDialog = true;
     },
@@ -689,7 +689,7 @@ export default {
         .catch((error) => {});
     },
 
-    // 教员删除该团队训练
+    // 教员删除该综合演训
     deleteTeamTrain() {
       this.$confirm(this.$t('common.confirmDelete') + '?')
         .then(() => {

@@ -72,7 +72,7 @@
     <cb-tabs type="card">
       <cb-tab-pane label="用户管理">用户管理</cb-tab-pane>
       <cb-tab-pane label="配置管理">配置管理</cb-tab-pane>
-      <cb-tab-pane label="角色管理">角色管理</cb-tab-pane>
+      <cb-tab-pane label="权限管理">权限管理</cb-tab-pane>
       <cb-tab-pane label="定时任务补偿">定时任务补偿</cb-tab-pane>
     </cb-tabs>
   </div>
@@ -86,7 +86,7 @@
     <cb-tabs>
       <cb-tab-pane label="用户管理">用户管理</cb-tab-pane>
       <cb-tab-pane label="配置管理">配置管理</cb-tab-pane>
-      <cb-tab-pane label="角色管理">角色管理</cb-tab-pane>
+      <cb-tab-pane label="权限管理">权限管理</cb-tab-pane>
       <cb-tab-pane label="定时任务补偿">定时任务补偿</cb-tab-pane>
     </cb-tabs>
   </div>

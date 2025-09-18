@@ -833,7 +833,7 @@ export default {
         // 单兵训练
         joinUrl = `${protocol}//${host}/page/mg/cr/single_train/${active.training_id}/`;
       } else if (active.training_type === TRAIN_TYPE.TEAM) {
-        // 团队训练
+        // 综合演训
         if (active.role_group === 2) {
           joinUrl = `${protocol}//${host}/page/mg/cr/student_combat/${active.training_id}`;
         } else {

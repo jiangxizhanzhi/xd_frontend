@@ -12,7 +12,7 @@ export default {
   courseTotal: '课程总数',
   classTotal: '课时总数',
   trainingCourse: '课程训练',
-  combinedTrain: '综合训练',
+  combinedTrain: '对抗演练',
   contest: '比武竞赛',
   statisticalLearning: '学习统计',
   learningView: '学习总览',

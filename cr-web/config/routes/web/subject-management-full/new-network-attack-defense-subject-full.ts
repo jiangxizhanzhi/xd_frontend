@@ -21,7 +21,7 @@ export default [
   },
   {
     name: 'new-network-attack-defense-subject-student-combat',
-    path: '/new-network-attack-defense-subject/student_combat/:resource_id', // 学生点击进入团队训练
+    path: '/new-network-attack-defense-subject/student_combat/:resource_id', // 学生点击进入综合演训
     title: 'm.details',
     component: './pages/web/experimental-management/student/index.vue',
     meta: {

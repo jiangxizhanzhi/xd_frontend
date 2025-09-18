@@ -118,7 +118,7 @@ export function getRecordScreenByDevice(data) {
   });
 }
 
-//团队训练设备复盘获取用户录屏
+//综合演训设备复盘获取用户录屏
 export function getTeamRecordScreenByDevice(data) {
   return request.get('/cr/team_train/room/task/replayUserTimeInfo', data, {
     baseURL: '/api/ojj',
@@ -136,7 +136,7 @@ export function getRedBlueTimeLineData(data) {
   );
 }
 
-//团队训练复盘时间轴数据
+//综合演训复盘时间轴数据
 export function getTeamTrainTimeLineData(data) {
   return request.get(
     '/cr/training_team/training_team_teacher/replay/timeline',

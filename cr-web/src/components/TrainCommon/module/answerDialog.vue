@@ -181,7 +181,7 @@ export default {
         if (val) {
           if (val !== oldval) {
             if (!this.showRecord) {
-              // 团队训练
+              // 综合演训
               this.initTeamTaskData(val);
             }
           }

@@ -1,7 +1,7 @@
 <template>
   <!-- 团队任务导调 -->
   <div class="task-direct el-tabs__content cyber-scroll-bar-small">
-    <!-- 团队训练任务进度 -->
+    <!-- 综合演训任务进度 -->
     <div class="task-progress">
       <block :title="$t('rbt.taskComplete')"></block>
       <!-- 任务进度分类5种 -->

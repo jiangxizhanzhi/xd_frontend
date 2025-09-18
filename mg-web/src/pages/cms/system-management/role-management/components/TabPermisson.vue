@@ -30,18 +30,18 @@
         @check="handleCheckChange"
       >
       </cb-tree>
-      <cb-tree
-        class="tree"
-        :data="backTreeData"
-        ref="backTree"
-        :props="defaultProps"
-        default-expand-all
-        show-checkbox
-        node-key="id"
-        highlight-current
-        @check="handleCheckChangeBack"
-      >
-      </cb-tree>
+<!--      <cb-tree-->
+<!--        class="tree"-->
+<!--        :data="backTreeData"-->
+<!--        ref="backTree"-->
+<!--        :props="defaultProps"-->
+<!--        default-expand-all-->
+<!--        show-checkbox-->
+<!--        node-key="id"-->
+<!--        highlight-current-->
+<!--        @check="handleCheckChangeBack"-->
+<!--      >-->
+<!--      </cb-tree>-->
     </div>
     <div class="btn-group mt20">
       <cb-button-group space="middle">
@@ -155,7 +155,7 @@ export default {
       });
     },
 
-    //角色管理添加权限国际化处理
+    //权限管理添加权限国际化处理
     getAllPermissions(res) {
       let data = _.get(res, 'data.data', []);
       this.frontTreeData = data[0]
@@ -317,7 +317,8 @@ export default {
   .tree {
     padding: 20px;
     height: 610px;
-    width: 400px;
+    //width: 400px;
+    flex: 1;
     overflow-y: auto;
     margin-right: 20px;
     ::v-deep .el-tree-node__content {

@@ -1,8 +1,8 @@
 export default {
   m: {
-    // 团队训练
+    // 综合演训
     skillScore: '技能评分',
-    teamTraining: '团队训练',
+    teamTraining: '综合演训',
     details: '详情',
     scriptExecution: '剧本执行',
     submitReview: '提交审核',
@@ -32,7 +32,7 @@ export default {
     minute: '分钟',
     second: '秒',
 
-    // 团队训练左侧成员信息
+    // 综合演训左侧成员信息
     teamName: '姓名',
     position: '职位',
     duties: '职责',

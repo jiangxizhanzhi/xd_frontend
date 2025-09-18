@@ -91,7 +91,7 @@ export default {
     trainingSkills: '训练技能',
     redBlueAgainst: '红蓝对抗',
     individualTraining: '单兵训练',
-    teamTraining: '团队训练',
+    teamTraining: '综合演训',
     nostart: '未开始',
     running: '进行中',
     hasEnded: '已结束',

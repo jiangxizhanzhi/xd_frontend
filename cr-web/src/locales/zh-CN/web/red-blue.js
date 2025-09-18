@@ -37,7 +37,7 @@ export default {
     taskPlan: '任务方案',
   },
   admin: {
-    team: '团队训练',
+    team: '综合演训',
     cyberWargame: '红蓝对抗',
     goBack: '返回',
     editTraining: '编辑训练',

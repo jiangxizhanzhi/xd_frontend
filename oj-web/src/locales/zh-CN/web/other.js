@@ -355,7 +355,7 @@ export default {
   },
   trainType: {
     single: '单兵训练',
-    team: '团队训练',
+    team: '综合演训',
     red: '红蓝对抗',
   },
 };

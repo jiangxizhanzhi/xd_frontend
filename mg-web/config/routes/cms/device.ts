@@ -103,7 +103,7 @@ export default [
       {
         name: 'real-manage',
         path: '/admin/std/instance-manage',
-        // 实装管理
+        // 虚实结合管理
         title: 'routes.real-manage',
         component: './pages/cms/device/real/list',
         meta: {

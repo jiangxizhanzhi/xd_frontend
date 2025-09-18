@@ -7,7 +7,7 @@ export default {
     confirmDeleteRole: '请确认是否要删除角色',
     cancel: '取消',
     confirm: '确认',
-    trainTeam: '团队训练',
+    trainTeam: '综合演训',
     redAndBlueConfrontation: '红蓝对抗',
     weaponResearch: '装备测试',
     systemEvaluation: '系统测试',

@@ -201,7 +201,7 @@ export default {
         // 单兵训练
         this.$router.push({ path: '/admin/event/list-train-single' });
       } else if (this.$route.name === 'event-auth-team') {
-        // 团队训练
+        // 综合演训
         this.$router.push({ path: '/admin/event/list-train-team' });
       } else {
         // 红蓝对抗

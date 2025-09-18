@@ -1,6 +1,6 @@
 import { request } from '@cyber/helper';
-//系统告警模块 --start
-//系统告警警告信息
+//告警监控模块 --start
+//告警监控警告信息
 export function getSystemAlarmInfo() {
   return request.get('/devops/cluster/system_alarm/statistics', null, {
     baseURL: '/api/mp',
@@ -18,9 +18,9 @@ export function getDeviceMonitorInfo(data) {
     baseURL: '/api/mp',
   });
 }
-//系统告警模块 --end
+//告警监控模块 --end
 
-//业务服务监控模块 --start
+//超融合平台管理模块 --start
 export function getNodeList() {
   return request.get(
     '/devops/cluster/monitor/hypervisor/page/?page=1&per_page=999',
@@ -40,9 +40,9 @@ export function getNewNodeList() {
     },
   );
 }
-//业务服务监控模块 --end
+//超融合平台管理模块 --end
 
-//云平台监控模块 --start
+//资源编排模块 --start
 // 资源统计
 export function getResource() {
   return request.get('/devops/cluster/monitor/resources/statistics/', null, {
@@ -74,7 +74,7 @@ export function restart(data) {
   });
 }
 
-//云平台监控模块 --end
+//资源编排模块 --end
 // 系统运维-串口服务器
 export function serIalPortList() {
   return request.get('/devops/cluster/types/serial-port-list/', null, {
@@ -127,7 +127,7 @@ export function getFloatIp(data) {
   });
 }
 
-// 靶场实例监控
+// 生命周期管理
 // 删除场景
 export function deleteSceneApi(data) {
   return request.delete('/cscene/cscene_instances', data, {

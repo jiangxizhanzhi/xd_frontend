@@ -2,10 +2,10 @@ export default {
   back_all: '后台',
   // 仪表盘
   index: '仪表盘',
-  //综合训练
-  'cr-training-list-folder': '综合训练',
+  //对抗演练
+  'cr-training-list-folder': '团队演练',
   'cr-individual-training': '单兵训练',
-  'cr-team-training': '团队训练',
+  'cr-team-training': '综合演训',
   // 红蓝对抗
   'red-vs-blue-folder': '红蓝对抗',
   //任务方案
@@ -21,10 +21,10 @@ export default {
   edit: '编辑',
   //探针管理
   'cr-collection-system-folder': '探针管理',
-  //靶标管理
-  'cr-standard-device-folder': '靶标管理',
+  //演训资源
+  'cr-standard-device-folder': '演训资源',
   'image-manage': '镜像管理',
-  'real-manage': '实装管理',
+  'real-manage': '虚实结合管理',
   'service-manage': '服务管理',
   // 资源管理
   'resource-manage-folder': '资源管理',

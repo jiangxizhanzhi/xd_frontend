@@ -243,7 +243,7 @@ export default {
           // 单兵训练
           joinUrl = `${protocol}//${host}/page/mg/cr/single_train/${this.cardData.training_id}/`;
         } else if (this.cardData.training_type === this.TRAIN_TYPE.TEAM) {
-          // 团队训练
+          // 综合演训
           if (this.cardData.role_group === 2) {
             joinUrl = `${protocol}//${host}/page/mg/cr/student_combat/${this.cardData.training_id}`;
           } else {

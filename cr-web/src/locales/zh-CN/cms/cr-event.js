@@ -71,7 +71,7 @@ export default {
     requiresAtLeastTwoRoles: '至少需要添加一个角色',
     skillTagCanNotBeEmpty: '标签不能为空',
     type: '类型',
-    trainTeam: '团队训练',
+    trainTeam: '综合演训',
     redAndBlueConfrontation: '红蓝对抗',
     myShootingRange: '我的靶场',
     weaponResearch: '装备测试',

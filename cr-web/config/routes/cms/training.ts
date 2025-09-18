@@ -1,7 +1,7 @@
 export const trainingRouter = {
   name: 'cr-training-list-folder',
   path: '',
-  // title: '综合训练',
+  // title: '对抗演练',
   title: 'routes.cr-training-list-folder',
   children: [
     {
@@ -65,7 +65,7 @@ export const trainingRouter = {
     {
       name: 'cr-team-training',
       path: '/admin/event/list-train-team',
-      // title: '团队训练',
+      // title: '综合演训',
       title: 'routes.cr-team-training',
       component: './pages/cms/cr-event/event-list-train-team',
       meta: {

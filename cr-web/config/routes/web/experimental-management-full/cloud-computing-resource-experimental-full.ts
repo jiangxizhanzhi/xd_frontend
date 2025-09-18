@@ -21,7 +21,7 @@ export default [
   },
   {
     name: 'cloud-computing-resource-experimental-student-combat',
-    path: '/cloud-computing-resource-experimental/student_combat/:resource_id', // 学生点击进入团队训练
+    path: '/cloud-computing-resource-experimental/student_combat/:resource_id', // 学生点击进入综合演训
     title: 'm.details',
     component: './pages/web/experimental-management/student/index.vue',
     meta: {

@@ -62,7 +62,7 @@ export default {
   onlineTime: '累计在线时间 (h)',
   monitor: '监控',
   courseScene: '课程训练',
-  comprehensiveTrainingScene: '综合训练',
+  comprehensiveTrainingScene: '对抗演练',
   competitiveDrillScene: '竞技演练',
   trainScene: '训练场景',
   vsScene: '对抗场景',

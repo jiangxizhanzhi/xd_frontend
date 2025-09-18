@@ -1,5 +1,5 @@
 <template>
-  <!-- 团队训练教员学员评分页面技能评分 -->
+  <!-- 综合演训教员学员评分页面技能评分 -->
   <div class="skill-rating">
     <block :title="$t('rbt.skillRate')"></block>
     <div class="chart-wrap">

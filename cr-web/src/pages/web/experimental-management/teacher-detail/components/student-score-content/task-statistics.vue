@@ -1,5 +1,5 @@
 <template>
-  <!-- 团队训练学员评分页面任务统计数据 -->
+  <!-- 综合演训学员评分页面任务统计数据 -->
   <div class="task-statistics">
     <block :title="$t('rbt.taskStatistics')"></block>
     <div class="chart-wrap">

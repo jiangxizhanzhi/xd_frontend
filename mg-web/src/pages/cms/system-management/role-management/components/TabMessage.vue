@@ -14,6 +14,12 @@
           :placeholder="$t('systemManagement.roleManage.enterRoleName')"
         ></cb-input>
       </cb-form-item>
+      <cb-form-item label="类型" prop="biz_role">
+        <cb-select
+          v-model="model.biz_role"
+          :options="bizOptions"
+        />
+      </cb-form-item>
       <cb-form-item
         :label="$t('systemManagement.roleManage.description')"
         prop="description"
@@ -52,7 +58,18 @@ export default {
       model: {
         name: '',
         description: '',
+        biz_role: 1,
       },
+      bizOptions: [
+        {
+          label: '教师',
+          value: '1',
+        },
+        {
+          label: '学生',
+          value: '0',
+        },
+      ],
       rules: {
         name: [
           {
@@ -73,6 +90,13 @@ export default {
             trigger: 'blur',
           },
         ],
+        biz_role: [
+          {
+            required: true,
+            message: '请选择角色类型',
+            trigger: 'blur',
+          },
+        ],
       },
     };
   },
@@ -88,6 +112,7 @@ export default {
       this.model = {
         name: '',
         description: '',
+        biz_role: '1',
       };
     }
   },
@@ -96,17 +121,19 @@ export default {
     getRoleMessage() {
       editBack(this.id).then((res) => {
         const data = _.get(res, 'data.data', {});
-        const { name, description } = data;
+        const { name, description, biz_role } = data;
         this.$store.commit({
           type: 'role/setfirstStepFormValue',
           firstStepFormValue: {
             name,
             description,
+            biz_role,
           },
         });
         this.model = {
           name,
           description,
+          biz_role,
         };
       });
     },

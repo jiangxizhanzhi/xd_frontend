@@ -21,7 +21,7 @@ export default [
   },
   {
     name: 'scan-detect-attack-subject-student-combat',
-    path: '/scan-detect-attack-subject/student_combat/:resource_id', // 学生点击进入团队训练
+    path: '/scan-detect-attack-subject/student_combat/:resource_id', // 学生点击进入综合演训
     title: 'm.details',
     component: './pages/web/experimental-management/student/index.vue',
     meta: {

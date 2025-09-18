@@ -562,7 +562,7 @@ export default {
         });
     },
 
-    // 团队训练启动流量
+    // 综合演训启动流量
     playFlow(traffic) {
       const params = {};
       params.node_id = traffic.node_id;

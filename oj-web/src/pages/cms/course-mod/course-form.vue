@@ -298,12 +298,14 @@ export default {
   methods: {
     handleUpdateModel() {
       this.handleSelection();
-      this.attachmentList = [
-        {
-          url: this.model.attachment,
-          name: _.cloneDeep(this.model.attachment).split('/').pop(),
-        }
-      ]
+      if (this.model.attachment) {
+        this.attachmentList = [
+          {
+            url: this.model.attachment,
+            name: _.cloneDeep(this.model.attachment).split('/').pop(),
+          }
+        ]
+      }
     },
     handleSelection() {
       this.$nextTick(() => {

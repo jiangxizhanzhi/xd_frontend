@@ -145,7 +145,7 @@
                       style="color: #fff"
                     ></cb-iconfont>
                   </div>
-                  <!-- 团队训练 -->
+                  <!-- 综合演训 -->
                   <div
                     v-if="item.type === 2 && item.reference_type === 213"
                     class="bg-bachang list-item-img"
@@ -667,7 +667,7 @@ export default {
         // 点击之后弹窗列表消失
         this.showDialog = false;
       } else if (data.reference_type === 213) {
-        // 团队训练
+        // 综合演训
         const url = this.$router.resolve({
           path: `/cr/train-detail-home/${rooData.business_id}`,
         });
@@ -770,7 +770,7 @@ export default {
         //     },
         //   };
         //   break;
-        // case 213: // 团队训练
+        // case 213: // 综合演训
         //   resolveData = {
         //     name: 'team_train',
         //     params: {
