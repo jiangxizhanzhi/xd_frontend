@@ -113,12 +113,20 @@
             class="chart-wrap"
             ref="chartref"
           >
-
           </div>
         </div>
       </div>
     </template>
-
+    <template v-if="activeName === 'study'">
+      <div class="table-box">
+        <cb-search-table
+          :cols="columns"
+          url="/oj/practice/theory/list"
+          baseURL="/api/ojj"
+        >
+        </cb-search-table>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -132,7 +140,18 @@ export default {
       default: false,
     },
   },
-  setup(props, { emit }) {
+  watch: {
+    activeName: {
+      handler(nv, ov) {
+        if (nv && nv === 'basic') {
+          this.$nextTick(() => {
+            this.initChart();
+          });
+        }
+      },
+    },
+  },
+  data() {
     return {
       activeName: 'basic',
       list: ['全部', '近1月', '近3月', '近12月'],
@@ -140,30 +159,31 @@ export default {
         date: [],
       },
       active: 0,
-    }
-  },
-  data() {
-    return {
       option: {
         title: {
           text: '训练次数',
           subtext: '23',
-          left: 'center',
-          top: 'center'
+          left: '39%',
+          top: 'center',
+          textAlign: 'center'
         },
         tooltip: {
           trigger: 'item'
         },
         legend: {
           orient: 'vertical',
-          right: 'right',
+          right: '5%',
           top: 'center',
         },
         series: [
           {
             name: '训练得分分析',
             type: 'pie',
-            radius: ['40%', '70%'],
+            radius: ['50%', '80%'],
+            center: ['40%', '50%'],
+            label: {
+              show: false
+            },
             data: [
               { value: 1048, name: '0~59' },
               { value: 735, name: '60~69' },
@@ -174,6 +194,27 @@ export default {
           }
         ]
       },
+      columns: [
+        {
+          label: this.$t('m.practiceTable.questionTitle'), // 题目名称
+          slot: 'content',
+        },
+        {
+          label: this.$t('m.category'), // 方向
+          width: '15%',
+          slot: 'category',
+        },
+        {
+          label: this.$t('m.practiceTable.practiceSet'), // 所属习题集
+          width: '15%',
+          prop: 'practice_set_name',
+        },
+        {
+          label: this.$t('m.difficulty'), // 难度
+          width: '8%',
+          slot: 'difficulty',
+        },
+      ],
     }
   },
   mounted() {
@@ -188,9 +229,7 @@ export default {
       this.active = index;
     },
     initChart() {
-      if (!this.chart) {
-        this.chart = echarts.init(this.$refs.chartref);
-      }
+      this.chart = echarts.init(this.$refs.chartref);
       this.chart.setOption(this.option);
     },
   }
@@ -378,5 +417,10 @@ export default {
       height: 234px;
     }
   }
+}
+
+.table-box {
+  padding: 0 16px;
+  background: var(--bg-color-2);
 }
 </style>
