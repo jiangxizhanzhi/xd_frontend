@@ -1,8 +1,11 @@
 <template>
-  <div class="monitor-card-wrapper" v-if="personListData.length">
+  <div
+    class="monitor-card-wrapper"
+    v-if="realTimeData.length"
+  >
     <div
       class="card"
-      v-for="(item, index) in personListData"
+      v-for="(item, index) in realTimeData"
       :key="index + item.resource_id"
       @mouseover="mouseover(item.resource_id)"
       @mouseleave="mouseleave"
@@ -10,22 +13,26 @@
     >
       <div class="top-info">
         <div class="img-box">
-          <img class="avatar" :src="item.avatar" alt="" />
+          <img
+            class="avatar"
+            :src="item.user_avatar"
+            alt=""
+          />
         </div>
         <div class="user-txt">
-          <span class="name">{{item.name}}</span>
-          <span class="time">学习时长：{{item.time}}分钟</span>
+          <span class="name">{{ item.name }}</span>
+          <span class="time">学习时长：{{ item.time_cost }}</span>
           <div
             class="tag-wrap"
-            :style="{ background: 'var(--primary-color)' }"
+            :style="{ background: item.online ? 'var(--primary-color)' : '#a6b0c4' }"
           >
-        <span class="outer-round">
-          <span
-            class="inner-round"
-            :style="{ background: 'var(--primary-color)' }"
-          ></span>
-        </span>
-            <span class="text">在线</span>
+            <span class="outer-round">
+              <span
+                class="inner-round"
+                :style="{ background: item.online ? 'var(--primary-color)' : '#a6b0c4' }"
+              ></span>
+            </span>
+            <span class="text">{{ item.online ? '在线' : '离线' }}</span>
           </div>
         </div>
       </div>
@@ -33,21 +40,21 @@
         <cb-progress
           class="custom-progress-circle"
           type="circle"
-          :percentage="25"
+          :percentage="item.score ? item.score : 0"
           :strokeWidth="10"
           strokeLinecap="round"
           titleTop="0"
-          width="90"
+          :width="90"
           circleTitle="综合评分"
         ></cb-progress>
         <cb-progress
           class="custom-progress-circle"
           type="circle"
-          :percentage="45"
+          :percentage="item.process_percentage ? item.process_percentage : 0"
           :strokeWidth="10"
           strokeLinecap="round"
           titleTop="0"
-          width="90"
+          :width="90"
           circleTitle="当前进度"
         ></cb-progress>
       </div>
@@ -56,28 +63,23 @@
 </template>
 
 <script>
-import {addRouteTab} from "@cyber/ui/src/utils";
+import { addRouteTab } from "@cyber/ui/src/utils";
 
 export default {
   name: "real-time-monitoring",
   components: {},
   props: {
-    personListData: {
+    realTimeData: {
       type: Array,
       // TODO 测试数据
-      default: [
-        {name: '张三', time: 30,},
-        {name: '老李'},
-        {name: '张三'},
-        {name: '老李'},
-      ],
+      default: [],
     },
     loading: {
       type: Boolean,
       default: false,
     },
   },
-  setup(props, {emit}) {
+  setup(props, { emit }) {
     return {}
   },
   data() {
@@ -119,16 +121,15 @@ export default {
   flex-wrap: wrap;
   gap: 16px;
   padding-bottom: 8px;
+
   .card {
     position: relative;
     flex: 0 0 calc(33% - 12px);
     height: 210px;
-    background: linear-gradient(
-        180deg,
+    background: linear-gradient(180deg,
         #E7F4FF 0%,
         #ffffff 30%,
-        #ffffff 100%
-    );
+        #ffffff 100%);
     cursor: pointer;
     overflow: hidden;
     display: flex;
@@ -141,16 +142,20 @@ export default {
       width: 60px;
       border-radius: 50%;
     }
+
     .top-info {
       display: flex;
+
       .user-txt {
         display: flex;
         flex-direction: column;
         margin-left: 16px;
         justify-content: space-evenly;
+
         .name {
           font-size: 14px;
         }
+
         .time {
           color: var(--info-text);
           font-size: 12px;
@@ -158,12 +163,14 @@ export default {
       }
 
     }
+
     .bottom-info {
       color: var(--info-text);
       display: flex;
       align-items: center;
       justify-content: space-around;
       padding-top: 8px;
+
       .custom-progress-circle {
         ::v-deep .cb-progress-circle__title {
           font-size: 14px;
@@ -172,6 +179,7 @@ export default {
       }
     }
   }
+
   .tag-wrap {
     width: 64px;
     height: 24px;
@@ -191,7 +199,7 @@ export default {
       align-items: center;
       border-radius: 50%;
       background: #ffffff;
-      margin-left: 5px;
+      margin-left: 2px;
 
       .inner-round {
         width: 12px;

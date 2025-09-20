@@ -45,7 +45,7 @@
               <div class="label">角色信息：</div>
               <div
                 class="role-list"
-                @click="handleChangeRightInfo('monitor')"
+                @click="handleChangeRightInfo('monitor', item)"
               >
                 <div
                   class="img-box"
@@ -101,7 +101,7 @@
               <div class="label">角色信息：</div>
               <div
                 class="role-list"
-                @click="handleChangeRightInfo('monitor')"
+                @click="handleChangeRightInfo('monitor', item)"
               >
                 <div
                   class="img-box"
@@ -157,7 +157,7 @@
               <div class="label">角色信息：</div>
               <div
                 class="role-list"
-                @click="handleChangeRightInfo('monitor')"
+                @click="handleChangeRightInfo('monitor', item)"
               >
                 <div
                   class="img-box"
@@ -194,7 +194,7 @@
           ></cb-iconfont>
           <div>实时监控</div>
         </div>
-        <real-time-monitoring></real-time-monitoring>
+        <real-time-monitoring :realTimeData="realTimeData"></real-time-monitoring>
       </template>
     </div>
   </div>
@@ -202,7 +202,7 @@
 </template>
 
 <script>
-import { getConstantsConfig, getCourseDetailData } from '../../../api/course';
+import { getConstantsConfig, getCourseDetailData, getRealTimeMonitoringDataApi } from '../../../api/course';
 import StudyProfile from "./study-profile";
 import RealTimeMonitoring from "./real-time-monitoring";
 import _ from 'lodash';
@@ -243,6 +243,7 @@ export default {
       activeTab: 'profile', // profile monitor
       difficultOptions: {},
       courseId: '',
+      realTimeData: [],
     }
   },
   created() {
@@ -269,8 +270,20 @@ export default {
         })
       })
     },
-    handleChangeRightInfo(data) {
-      this.activeTab = data;
+    handleChangeRightInfo(type, data) {
+      this.activeTab = type;
+      if (type === 'monitor') {
+        this.getRealTimeMonitoringData(data.resource_id)
+
+      }
+    },
+    getRealTimeMonitoringData(resource_id) {
+      getRealTimeMonitoringDataApi({
+        resource_id
+      }).then(res => {
+        const data = _.get(res, 'data.data', [])
+        this.realTimeData = data;
+      })
     },
     getDifficultyOptions() {
       getConstantsConfig({ type: 24 }).then((res) => {
@@ -334,7 +347,7 @@ export default {
     border-radius: 8px;
   }
 
-  .header-title{
+  .header-title {
     display: inline-block;
     width: 56px;
   }

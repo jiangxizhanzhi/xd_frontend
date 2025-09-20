@@ -116,6 +116,14 @@ const getStudyProfileData = (data) => {
   });
 };
 
+
+// 实时监控数据
+const getRealTimeMonitoringDataApi = (data) => {
+  return request.get(`/cr/training_team/training_team_teacher/score/list`, data, {
+    baseURL: '/api/ojj',
+  });
+};
+
 export {
   getStudyProfileData,
   getCourseDetailData,
@@ -134,4 +142,5 @@ export {
   mineStudyPlanList,
   mineStudySign,
   monthDateMark,
+  getRealTimeMonitoringDataApi,
 };
