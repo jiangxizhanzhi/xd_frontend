@@ -15,7 +15,7 @@
     </div>
     <template v-if="activeName === 'basic'">
       <div class="name-box">
-        <span class="name">张三</span>
+        <span class="name">{{ studyData.name }}</span>
         <div class="right-area">
           <div
             class="item"
@@ -51,28 +51,28 @@
             <div class="outer">
               <span class="label">
                 参与课程</span>
-              <span class="value">10</span>
+              <span class="value">{{ studyData.course_nums }}</span>
             </div>
           </div>
           <div class="course-item">
             <div class="outer">
               <span class="label">
                 完成课程</span>
-              <span class="value">10</span>
+              <span class="value">{{ studyData.finished_course_nums }}</span>
             </div>
           </div>
           <div class="course-item">
             <div class="outer">
               <span class="label">
                 参与课时</span>
-              <span class="value">10</span>
+              <span class="value">{{ studyData.lessonNums }}</span>
             </div>
           </div>
           <div class="course-item">
             <div class="outer">
               <span class="label">
                 完成课时</span>
-              <span class="value">10</span>
+              <span class="value">{{ studyData.finished_lesson_nums }}</span>
             </div>
           </div>
           <div class="course-item">
@@ -94,14 +94,14 @@
               <div class="outer">
                 <span class="label">
                   接收任务数量</span>
-                <span class="value">10</span>
+                <span class="value">{{ studyData.taskNums }}</span>
               </div>
             </div>
             <div class="task-item">
               <div class="outer">
                 <span class="label">
                   成功任务数量</span>
-                <span class="value">10</span>
+                <span class="value">{{ studyData.finished_task_nums }}</span>
               </div>
             </div>
           </div>
@@ -121,7 +121,7 @@
       <div class="table-box">
         <cb-search-table
           :cols="columns"
-          url="/oj/practice/theory/list"
+          :url="`/oj/course/user/course/progress?user_id=${user_id}`"
           baseURL="/api/ojj"
         >
         </cb-search-table>
@@ -131,6 +131,7 @@
 </template>
 
 <script>
+import { goToStudentStudyAnalysisApi } from '@/api/course.js'
 export default {
   name: "student-monitor",
   components: {},
@@ -203,35 +204,83 @@ export default {
       },
       columns: [
         {
-          label: this.$t('m.practiceTable.questionTitle'), // 题目名称
-          slot: 'content',
+          label: this.$t('课程名称'),
+          prop: 'course_name',
         },
         {
-          label: this.$t('m.category'), // 方向
-          width: '15%',
-          slot: 'category',
+          label: this.$t('参与时间'),
+          slot: 'start_time',
         },
         {
-          label: this.$t('m.practiceTable.practiceSet'), // 所属习题集
-          width: '15%',
-          prop: 'practice_set_name',
+          label: this.$t('进度'),
+          prop: 'progress',
         },
         {
-          label: this.$t('m.difficulty'), // 难度
-          width: '8%',
-          slot: 'difficulty',
+          label: this.$t('完成时间'),
+          prop: 'finished_time',
+        },
+        {
+          label: this.$t('学习课时'),
+          prop: 'learned_lessons',
+        },
+        {
+          label: this.$t('学习时长（h）'),
+          prop: 'learn_time',
         },
       ],
+      user_id: this.$route.params && this.$route.params.resource_id,
+      studyData: {
+        name: '', //"用户姓名",
+        user_name: '',//"登录用户名",
+        avatar_url: '', //"头像地址",
+        course_nums: '',//"参与课程",
+        finished_course_nums: 0,//"完成课程数量",
+        lessonNums: 0,//"参与课时数量",
+        finished_lesson_nums: 0, //"完成课时数量",
+        taskNums: 0,//"接受任务数量",
+        finished_task_nums: 0,//"完成任务数量",
+        score_statistics: {
+          zero_to_sixty_nums: 12,  //任务得分0-59 次数
+          sixty_to_seventy_nums: 5, //任务得分60-69 次数
+          seventy_to_eighty_nums: 10, //任务得分70-79 次数
+          eighty_to_ninety_nums: 1, //任务得分80-89次数
+          ninety_to_one_hundred_nums: 1 //任务得分90-100次数
+        }
+      }
     }
   },
   mounted() {
-    this.initChart();
+    this.user_id = this.$route.params && this.$route.params.resource_id;
+    this.getStudyAnalysisData();
     this.__resizeHandler = _.debounce(() => {
       this.chart.resize();
     }, 50);
     window.addEventListener('resize', this.__resizeHandler);
   },
   methods: {
+    getStudyAnalysisData() {
+      goToStudentStudyAnalysisApi({
+        user_id: this.user_id
+      }).then(res => {
+        const data = _.get(res, 'data.data', {});
+        this.studyData = data;
+
+        this.option.series[0].data = [
+          { value: this.studyData.score_statistics?.zero_to_sixty_nums, name: '0~59' },
+          { value: this.studyData.score_statistics?.sixty_to_seventy_nums, name: '60~69' },
+          { value: this.studyData.score_statistics?.seventy_to_eighty_nums, name: '70~79' },
+          { value: this.studyData.score_statistics?.eighty_to_ninety_nums, name: '80~89' },
+          { value: this.studyData.score_statistics?.ninety_to_one_hundred_nums, name: '90~100' }
+        ]
+
+        this.option.title.subtext = this.studyData.score_statistics?.zero_to_sixty_nums || 0 +
+          this.studyData.score_statistics?.sixty_to_seventy_nums || 0 +
+          this.studyData.score_statistics?.seventy_to_eighty_nums || 0 +
+          this.studyData.score_statistics?.eighty_to_ninety_nums || 0 +
+          this.studyData.score_statistics?.ninety_to_one_hundred_nums || 0;
+        this.initChart();
+      })
+    },
     handlerClick(index) {
       this.active = index;
     },

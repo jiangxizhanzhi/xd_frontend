@@ -124,6 +124,13 @@ const getRealTimeMonitoringDataApi = (data) => {
   });
 };
 
+// 人员学习分析详情
+const goToStudentStudyAnalysisApi = (data) => {
+  return request.get(`/oj/course/user/course/statistics`, data, {
+    baseURL: '/api/ojj',
+  });
+};
+
 export {
   getStudyProfileData,
   getCourseDetailData,
@@ -143,4 +150,5 @@ export {
   mineStudySign,
   monthDateMark,
   getRealTimeMonitoringDataApi,
+  goToStudentStudyAnalysisApi
 };

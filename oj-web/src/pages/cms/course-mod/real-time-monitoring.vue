@@ -6,10 +6,10 @@
     <div
       class="card"
       v-for="(item, index) in realTimeData"
-      :key="index + item.resource_id"
+      :key="index + item.user_id"
       @mouseover="mouseover(item.resource_id)"
       @mouseleave="mouseleave"
-      @click="goToStudentMonitor(item)"
+      @click="goToStudentStudyAnalysis(item)"
     >
       <div class="top-info">
         <div class="img-box">
@@ -85,16 +85,13 @@ export default {
   data() {
     return {
       activeId: '',
-      resource_id: '111', // TODO
+      resource_id: '',
     }
   },
   methods: {
-    goToStudentMonitor(data) {
+    goToStudentStudyAnalysis(data) {
       const url = this.$router.resolve({
-        path: `/admin/courses/${this.resource_id}/monitor`,
-        params: {
-          resource_id: this.resource_id
-        }
+        path: `/admin/courses/${data.user_id}/monitor`,
       });
       addRouteTab(url.route);
     },
