@@ -233,7 +233,7 @@ export default {
         name: '', //"用户姓名",
         user_name: '',//"登录用户名",
         avatar_url: '', //"头像地址",
-        course_nums: '',//"参与课程",
+        course_nums: 0,//"参与课程",
         finished_course_nums: 0,//"完成课程数量",
         lessonNums: 0,//"参与课时数量",
         finished_lesson_nums: 0, //"完成课时数量",
