@@ -4,8 +4,8 @@
     class="cb-navi-item"
     :class="{ expand: isExpand, disable: item.disable }"
     :style="naviItemStyle"
-    @mouseenter="showSubMenu"
-    @mouseleave="hideSubMenu"
+    @mouseenter="handleEnter"
+    @mouseleave="handleLeave"
   >
     <div
       :class="[subTitleType, 'navi-item__item', itemClass ? 'active-menu' : '']"
@@ -151,6 +151,12 @@ export default {
     },
   },
   methods: {
+    handleEnter() {
+      this.$emit('navi-menu-hover', this.item);
+    },
+    handleLeave() {
+      this.$emit('navi-menu-leave', this.item);
+    },
     showSubMenu() {
       if (this.hasValidChildren) {
         this.$emit('setExpand', this.item[this.nameField]);

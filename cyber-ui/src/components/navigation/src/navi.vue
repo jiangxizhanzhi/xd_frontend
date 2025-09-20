@@ -39,6 +39,8 @@
           @hideSubMenu="hideSubMenu"
           @setExpand="setExpand"
           @setSelect="setSelect"
+          @navi-menu-hover="handleNaviMenuHover"
+          @navi-menu-leave="handleNaviMenuLeave"
         />
       </div>
     </div>
@@ -340,6 +342,12 @@ export default {
        */
       this.$emit('onThemeSwitch', this.theme);
       this.$emit('on-theme-switch', this.theme);
+    },
+    handleNaviMenuHover(data) {
+      this.$emit('navi-menu-hover', data);
+    },
+    handleNaviMenuLeave(data) {
+      this.$emit('navi-menu-leave', data);
     },
   },
 };
