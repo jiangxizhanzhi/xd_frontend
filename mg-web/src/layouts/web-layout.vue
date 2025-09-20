@@ -22,6 +22,8 @@
       @bellMessage="showMessage"
       @onLangSwitch="onLangSwitch"
       @logoClick="logoClick"
+      @navi-menu-hover="handleNaviMenuHover"
+      @navi-menu-leave="handleNaviMenuLeave"
     >
       <transition name="fade-transform" mode="out-in">
         <router-view :key="routeKey" v-if="userInfoReady" />
@@ -44,6 +46,26 @@
         @cancel="cancelPwd"
       />
     </cb-dialog>
+
+    <div
+      class="dropdown-card-wrapper"
+      v-show="showDropdown"
+      :style="{backgroundImage: 'url('+MenuDropdownBg+')'}"
+      @mouseleave="showDropdown = false"
+    >
+      <div
+        class="item"
+        :style="{backgroundImage: 'url('+MenuDropdownItemBg+')'}"
+        v-for="(item, index) in dropdownMenu"
+        :key="index + item.id"
+        @click="goToPage(item)"
+        @mouseenter="handleEnter"
+        @mouseleave="handleLeave"
+      >
+        <span class="title">{{$t(item.name)}}</span>
+        <img class="arrow" :src="MenuDropdownPic" alt=""/>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -74,6 +96,10 @@ import utils from '@/utils/utils';
 import { getAppByPath, emitCurrentApp } from '@/frame/apps.js';
 import ChangePassword from '@/pages/change-password';
 import { currentMenu } from '@/api/role';
+import MenuDropdownBg from '@/assets/img/menu-dropdown-bg.png';
+import MenuDropdownItemBg from '@/assets/img/menu-dropdown-item-bg.svg';
+import MenuDropdownArrow from '@/assets/img/menu-dropdown-arrow.svg';
+import MenuDropdownArrowSelected from '@/assets/img/menu-dropdown-arrow-selected.svg';
 export default {
   inject: ['title'],
   components: {
@@ -100,6 +126,13 @@ export default {
       currentMenu: {},
       specialUserId: '3cf215471268482c88a9986283e38c27',
       supportAI: false, // 是否支持AI
+      dropdownMenu: [], // 悬浮展示的二级菜单数据
+      showDropdown: false,
+      MenuDropdownItemBg,
+      MenuDropdownBg,
+      MenuDropdownArrow,
+      MenuDropdownPic: MenuDropdownArrow,
+      MenuDropdownArrowSelected,
     };
   },
   computed: {
@@ -415,6 +448,28 @@ export default {
     cancelPwd() {
       this.showChangePwd = false;
     },
+    handleNaviMenuHover(data) {
+      if (data.name === 'courses-manage-folder') {
+        // 如果是实验教学，则需要展开实验管理的菜单
+        this.showDropdown = true;
+        this.dropdownMenu = data.children?.find(item => item.name === 'experimental-management')?.children || [];
+      } else {
+        this.showDropdown = false;
+      }
+    },
+    handleNaviMenuLeave(data) {
+    },
+    goToPage(data) {
+      this.$router.push({
+        path: data.path,
+      })
+    },
+    handleEnter() {
+      this.MenuDropdownPic = this.MenuDropdownArrowSelected;
+    },
+    handleLeave() {
+      this.MenuDropdownPic = this.MenuDropdownArrow;
+    }
   },
 };
 </script>
@@ -521,6 +576,47 @@ export default {
   .logo-icon {
     img {
       width: 100%;
+    }
+  }
+}
+.dropdown-card-wrapper {
+  width: 100%;
+  position: fixed;
+  top: 60px;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 24px 0 24px 24px;
+  .item {
+    flex: 0 0 calc(14.28% - 17px);
+    min-width: 238px;
+    height: 78px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    opacity: 0.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 16px;
+    .arrow {
+      width: 24px;
+      margin-top: 8px;
+    }
+    .title {
+      font-weight: bold;
+      font-size: 16px;
+      color: #333333;
+    }
+    &:hover {
+      opacity: 1;
+      box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
+      .title {
+        color: #116DC6;
+      }
     }
   }
 }
