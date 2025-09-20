@@ -13,7 +13,7 @@ export default [
   {
     name: 'business-service-monitoring-add',
     path: '/admin/system-operation/business-service-monitoring/add',
-    title: 'mgRoutes.add',
+    title: '新增超融合平台',
     component:
       './pages/cms/system-operation/business-service-monitoring/add.vue',
     meta: {
@@ -26,7 +26,7 @@ export default [
   {
     name: 'business-service-monitoring-edit',
     path: '/admin/system-operation/business-service-monitoring/edit/:id',
-    title: 'mgRoutes.edit',
+    title: '编辑超融合平台',
     component:
       './pages/cms/system-operation/business-service-monitoring/edit.vue',
     meta: {

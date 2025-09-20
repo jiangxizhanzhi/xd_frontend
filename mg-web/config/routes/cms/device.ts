@@ -12,7 +12,7 @@ export default [
         name: 'image-manage',
         path: '/admin/std/image-manage',
         // 镜像管理
-        title: 'routes.image-manage',
+        title: '镜像管理',
         component: './pages/cms/device/image/list/index',
         meta: {
           module: 'image-manage',
@@ -33,7 +33,7 @@ export default [
       },
       {
         path: '/admin/std/image-manage/create',
-        title: 'mgRoutes.add',
+        title: '新增镜像',
         component: './pages/cms/device/image/create/index',
         name: 'image-manage-create',
         meta: {
@@ -59,7 +59,7 @@ export default [
         path: '/admin/std/image-manage/edit/:id',
         component: './pages/cms/device/image/edit/index',
         name: 'image-manage-edit',
-        title: 'mgRoutes.edit',
+        title: '编辑镜像',
         meta: {
           breadcrumb: {
             parentName: 'image-manage',
@@ -105,7 +105,7 @@ export default [
         name: 'real-manage',
         path: '/admin/std/instance-manage',
         // 虚实结合管理
-        title: 'routes.real-manage',
+        title: '虚实结合管理',
         component: './pages/cms/device/real/list',
         meta: {
           module: 'real-manage',
@@ -116,7 +116,7 @@ export default [
         path: '/admin/std/instance-manage/create',
         component: './pages/cms/device/real/create',
         name: 'real-create',
-        title: 'mgRoutes.add',
+        title: '新增设备',
         meta: {
           breadcrumb: {
             parentName: 'real-manage',
@@ -128,7 +128,7 @@ export default [
         path: '/admin/std/instance-manage/edit/:id',
         component: './pages/cms/device/real/edit',
         name: 'real-edit',
-        title: 'mgRoutes.edit',
+        title: '编辑设备',
         meta: {
           breadcrumb: {
             parentName: 'real-manage',
