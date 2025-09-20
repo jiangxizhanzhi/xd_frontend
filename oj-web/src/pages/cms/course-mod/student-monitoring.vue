@@ -174,6 +174,13 @@ export default {
           orient: 'vertical',
           right: '5%',
           top: 'center',
+          formatter: (name) => {
+            const data = this.option.series[0].data;
+            const total = data.reduce((sum, item) => sum + item.value, 0);
+            const item = data.find(item => item.name === name);
+            const percent = (item.value / total * 100).toFixed(2);
+            return `${name}   ${percent}%   ${item.value}`;
+          }
         },
         series: [
           {

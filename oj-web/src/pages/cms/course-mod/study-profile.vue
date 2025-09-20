@@ -129,7 +129,7 @@ export default {
         title: {
           text: '训练次数',
           subtext: '',
-          left: '39%',
+          left: '30%',
           top: 'center',
           textAlign: 'center'
         },
@@ -140,13 +140,20 @@ export default {
           orient: 'vertical',
           right: '5%',
           top: 'center',
+          formatter: (name) => {
+            const data = this.option.series[0].data;
+            const total = data.reduce((sum, item) => sum + item.value, 0);
+            const item = data.find(item => item.name === name);
+            const percent = (item.value / total * 100).toFixed(2);
+            return `${name}   ${percent}%   ${item.value}`;
+          }
         },
         series: [
           {
             name: '训练得分分析',
             type: 'pie',
-            radius: ['50%', '80%'],
-            center: ['40%', '50%'],
+            radius: ['55%', '80%'],
+            center: ['30%', '50%'],
             label: {
               show: false
             },
@@ -169,20 +176,6 @@ export default {
     getData() {
       getStudyProfileData({ resource_id: this.courseId }).then(res => {
         this.studyData = res.data.data;
-        // this.pieData = [
-        //   this.studyData.score_statistics.zero_to_sixty_nums,
-        //   this.studyData.score_statistics.sixty_to_seventy_nums,
-        //   this.studyData.score_statistics.seventy_to_eighty_nums,
-        //   this.studyData.score_statistics.eighty_to_ninety_nums,
-        //   this.studyData.score_statistics.ninety_to_one_hundred_nums,
-        // ];
-        // this.pieName = [
-        //   '0~59',
-        //   '60~69',
-        //   '70~79',
-        //   '80~89',
-        //   '90~100',
-        // ]
         this.option.series[0].data = [
           { value: this.studyData.score_statistics.zero_to_sixty_nums, name: '0~59' },
           { value: this.studyData.score_statistics.sixty_to_seventy_nums, name: '60~69' },
