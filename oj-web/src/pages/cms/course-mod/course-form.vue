@@ -271,7 +271,7 @@ export default {
         { label: '训练类型', prop: 'train_xd_sub_type', },
         { label: '时长', prop: 'duration_time', },
         { label: '难度', slot: 'difficult',},
-        { label: '操作', slot: 'operation', },
+        // { label: '操作', slot: 'operation', },
       ]
     };
   },

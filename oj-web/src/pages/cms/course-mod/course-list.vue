@@ -1,19 +1,22 @@
 <template>
-  <cb-inner-page :background="true" title="课程规划">
-<!--    &lt;!&ndash; 授权访问 &ndash;&gt;-->
-<!--    <div v-if="AuthAccess == 'access'">-->
-<!--      <auth-access-->
-<!--        :AuthAccessIds="AuthAccessIds"-->
-<!--        @closeAuthBatch="closeAuthBatch"-->
-<!--      ></auth-access>-->
-<!--    </div>-->
-<!--    &lt;!&ndash; 授权操作 &ndash;&gt;-->
-<!--    <div v-else-if="AuthAccess == 'opreate'">-->
-<!--      <auth-operate-->
-<!--        :AuthOperateIds="AuthOperateIds"-->
-<!--        @closeAuthBatch="closeAuthBatch"-->
-<!--      ></auth-operate>-->
-<!--    </div>-->
+  <cb-inner-page
+    :background="true"
+    title="课程规划"
+  >
+    <!--    &lt;!&ndash; 授权访问 &ndash;&gt;-->
+    <!--    <div v-if="AuthAccess == 'access'">-->
+    <!--      <auth-access-->
+    <!--        :AuthAccessIds="AuthAccessIds"-->
+    <!--        @closeAuthBatch="closeAuthBatch"-->
+    <!--      ></auth-access>-->
+    <!--    </div>-->
+    <!--    &lt;!&ndash; 授权操作 &ndash;&gt;-->
+    <!--    <div v-else-if="AuthAccess == 'opreate'">-->
+    <!--      <auth-operate-->
+    <!--        :AuthOperateIds="AuthOperateIds"-->
+    <!--        @closeAuthBatch="closeAuthBatch"-->
+    <!--      ></auth-operate>-->
+    <!--    </div>-->
     <div>
       <cb-search-bar class="custom-search-bar">
         <cb-search-input
@@ -24,13 +27,16 @@
           @change="getCourseListData"
         ></cb-search-input>
         <cb-button-group slot="searchRightArea">
-          <cb-button button-type="add" @click="addCourse"></cb-button>
-<!--          <cb-button-->
-<!--            buttonType="delete"-->
-<!--            hollow-->
-<!--            :disabled="selection.length === 0"-->
-<!--            @click="deleteCourse(selection, $event)"-->
-<!--          >{{ $t('m.delete') }}</cb-button>-->
+          <cb-button
+            button-type="add"
+            @click="addCourse"
+          ></cb-button>
+          <!--          <cb-button-->
+          <!--            buttonType="delete"-->
+          <!--            hollow-->
+          <!--            :disabled="selection.length === 0"-->
+          <!--            @click="deleteCourse(selection, $event)"-->
+          <!--          >{{ $t('m.delete') }}</cb-button>-->
           <cb-button
             button-type="export"
             hollow
@@ -40,8 +46,16 @@
         </cb-button-group>
       </cb-search-bar>
 
-      <cb-tabs v-model="activeTabName" @tab-click="getCourseListData" v-loading="loading" class="publish-tabs-container">
-        <cb-tab-pane label="已发布" name="1">
+      <cb-tabs
+        v-model="activeTabName"
+        @tab-click="getCourseListData"
+        v-loading="loading"
+        class="publish-tabs-container"
+      >
+        <cb-tab-pane
+          label="已发布"
+          name="1"
+        >
           <!-- 列表转卡片形式 -->
           <course-card
             v-if="!loading && courseListData.length"
@@ -51,9 +65,15 @@
             @edit="edit"
             @delete="deleteCourse"
           ></course-card>
-          <empty v-else class="empty-box">暂无数据</empty>
+          <empty
+            v-else
+            class="empty-box"
+          >暂无数据</empty>
         </cb-tab-pane>
-        <cb-tab-pane label="未发布" name="0">
+        <cb-tab-pane
+          label="未发布"
+          name="0"
+        >
           <!-- 列表转卡片形式 -->
           <course-card
             v-if="!loading && courseListData.length"
@@ -63,7 +83,10 @@
             @edit="edit"
             @delete="deleteCourse"
           ></course-card>
-          <empty v-else class="empty-box">暂无数据</empty>
+          <empty
+            v-else
+            class="empty-box"
+          >暂无数据</empty>
         </cb-tab-pane>
       </cb-tabs>
       <cb-pagination
@@ -95,10 +118,10 @@ import SearchInput from '@/components/search-condition/search-input.vue';
 import CommonUtils from '@/utils/utils.js';
 // import AuthAccess from './manage-auth-batch.vue';
 // import AuthOperate from './private-course-batch.vue';
-import {getCourseList} from "../../../api/course";
+import { getCourseList } from "../../../api/course";
 import Empty from "../../../components/empty";
 import courseCard from "./course-card";
-import {addRouteTab} from "@cyber/ui/src/utils";
+import { addRouteTab } from "@cyber/ui/src/utils";
 
 export default {
   components: {
@@ -307,13 +330,17 @@ export default {
       });
     },
     gotoDetail(row) {
-      const url = this.$router.resolve({
-        path: `/admin/courses/${row.resource_id}/detail`,
-        params: {
-          resource_id: row.resource_id,
-        }
-      });
-      addRouteTab(url.route);
+      if (row.is_public) {
+        const url = this.$router.resolve({
+          path: `/admin/courses/${row.resource_id}/detail`,
+          params: {
+            resource_id: row.resource_id,
+          }
+        });
+        addRouteTab(url.route);
+      } else {
+        this.$message.warning('未发布的课程无法查看');
+      }
     },
     management(row) {
       this.$router.push({
@@ -474,14 +501,17 @@ export default {
 .custom-search-bar {
   padding: 8px 16px 0 0;
 }
+
 .publish-tabs-container {
   ::v-deep {
     .el-tabs__header {
       margin-bottom: 0;
     }
   }
+
   padding: 0 16px 0 0;
 }
+
 .empty-box {
   min-height: 300px;
 }
