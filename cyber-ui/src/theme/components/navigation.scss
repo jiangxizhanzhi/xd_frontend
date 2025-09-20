@@ -155,6 +155,7 @@
       margin: 0 8px 0 8px;
       cursor: pointer;
       min-width: 160px;
+      flex-shrink: 0;
 
       .logo-icon {
         height: 45px;

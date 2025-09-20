@@ -232,7 +232,7 @@ export default {
     top: -60%;
     color: var(--white-color);
     font-size: 40px;
-    width: 100%;
+    width: 100vw;
   }
   .el-form {
     padding: 0 !important;
