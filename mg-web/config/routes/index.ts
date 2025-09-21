@@ -248,6 +248,22 @@ export default [
           name: 'learn-statistics',
         },
       },
+      {
+        name: 'index',
+        path: '',
+        title: '首页',
+        meta: {
+          iconfont: 'icon-yanshi',
+        },
+      },
+      {
+        name: 'guide-control',
+        path: '',
+        title: '综合导控',
+        meta: {
+          iconfont: 'icon-changjing',
+        },
+      },
       // 课程管理
       ...coursesManage,
       // 对抗演练
