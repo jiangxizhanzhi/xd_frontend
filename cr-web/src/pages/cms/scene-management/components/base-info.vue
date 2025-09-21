@@ -8,7 +8,7 @@
     >
       <cb-form-item
         :label="$t('分类')"
-        v-if="$route.name === 'comprehensive-training-scene-add' || $route.name === 'comprehensive-training-scene-edit'"
+        v-if="$route.name !== 'comprehensive-training-scene-add' || $route.name !== 'comprehensive-training-scene-edit'"
       >
         <cb-select
           v-model="model.xd_template_category"
