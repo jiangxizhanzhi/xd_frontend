@@ -65,7 +65,7 @@
             <div class="outer">
               <span class="label">
                 参与课时</span>
-              <span class="value">{{ studyData.lessonNums }}</span>
+              <span class="value">{{ studyData.lesson_nums }}</span>
             </div>
           </div>
           <div class="course-item">
@@ -94,7 +94,7 @@
               <div class="outer">
                 <span class="label">
                   接收任务数量</span>
-                <span class="value">{{ studyData.taskNums }}</span>
+                <span class="value">{{ studyData.task_nums }}</span>
               </div>
             </div>
             <div class="task-item">
@@ -209,7 +209,7 @@ export default {
         },
         {
           label: this.$t('参与时间'),
-          slot: 'start_time',
+          prop: 'start_time',
         },
         {
           label: this.$t('进度'),
