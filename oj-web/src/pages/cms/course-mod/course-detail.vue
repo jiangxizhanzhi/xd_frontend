@@ -15,9 +15,10 @@
             <span class="header-info">共计{{ experimentData.value.length }}节</span>
           </template>
           <div
-            class="item"
+            :class="{'item': true, 'active': item.resource_id === activeLessonId}"
             :key="item.resource_id"
             v-for="item in experimentData.value"
+            @click="handleChangeRightInfo('monitor', item)"
           >
             <div class="name">
               {{ item.name }}
@@ -45,7 +46,6 @@
               <div class="label">角色信息：</div>
               <div
                 class="role-list"
-                @click="handleChangeRightInfo('monitor', item)"
               >
                 <div
                   class="img-box"
@@ -74,6 +74,7 @@
             class="item"
             :key="item.resource_id"
             v-for="item in subjectData.value"
+            @click="handleChangeRightInfo('monitor', item)"
           >
             <div class="name">
               {{ item.name }}
@@ -101,7 +102,6 @@
               <div class="label">角色信息：</div>
               <div
                 class="role-list"
-                @click="handleChangeRightInfo('monitor', item)"
               >
                 <div
                   class="img-box"
@@ -130,6 +130,7 @@
             class="item"
             :key="item.resource_id"
             v-for="item in comprehensiveTrainData.value"
+            @click="handleChangeRightInfo('monitor', item)"
           >
             <div class="name">
               {{ item.name }}
@@ -157,7 +158,6 @@
               <div class="label">角色信息：</div>
               <div
                 class="role-list"
-                @click="handleChangeRightInfo('monitor', item)"
               >
                 <div
                   class="img-box"
@@ -180,22 +180,14 @@
       <div class="list"></div>
     </div>
     <div class="right cyber-scroll-bar-small">
-      <template v-if="activeTab === 'profile'">
-        <div class="header">学习概览</div>
-        <study-profile :course-id="courseId"></study-profile>
-      </template>
-      <template v-if="activeTab === 'monitor'">
-        <div class="header monitor">
-          <cb-iconfont
-            class="back-btn"
-            type="icon-fanhui"
-            size="18"
-            @click="handleChangeRightInfo('profile')"
-          ></cb-iconfont>
-          <div>实时监控</div>
-        </div>
-        <real-time-monitoring :realTimeData="realTimeData"></real-time-monitoring>
-      </template>
+      <cb-tabs v-model="activeTab" @tab-click="handleTabClick">
+        <cb-tab-pane name="profile" label="学习概览">
+          <study-profile :course-id="courseId"></study-profile>
+        </cb-tab-pane>
+        <cb-tab-pane name="monitor" label="实时监控">
+          <real-time-monitoring :realTimeData="realTimeData"></real-time-monitoring>
+        </cb-tab-pane>
+      </cb-tabs>
     </div>
   </div>
   <!--  </cb-inner-page>-->
@@ -219,13 +211,13 @@ export default {
   },
   data() {
     return {
-      activeNames: ['1', '2'],
+      activeNames: ['1', '2', '3'],
       detailData: {
-        name: 'xxxx',
-        lesson_count: '1',
-        course_duration: '1',
-        logo: '1',
-        student_num: '1',
+        name: '',
+        lesson_count: '',
+        course_duration: '',
+        logo: '',
+        student_num: '',
         team_room_rsps: [],
       },
       experimentData: {
@@ -244,6 +236,7 @@ export default {
       difficultOptions: {},
       courseId: '',
       realTimeData: [],
+      activeLessonId: '', // 选中的课时ID，用于查看实时监控
     }
   },
   created() {
@@ -276,6 +269,7 @@ export default {
         this.getRealTimeMonitoringData(data.resource_id)
 
       }
+      this.activeLessonId = data.resource_id;
     },
     getRealTimeMonitoringData(resource_id) {
       getRealTimeMonitoringDataApi({
@@ -293,6 +287,17 @@ export default {
         })
       });
     },
+    handleTabClick() {
+      if (this.activeTab === 'monitor') {
+        this.activeLessonId =
+          this.experimentData.value[0]?.resource_id ||
+          this.subjectData.value[0]?.resource_id ||
+          this.comprehensiveTrainData.value[0]?.resource_id;
+        this.getRealTimeMonitoringData(this.activeLessonId);
+      } else {
+        this.activeLessonId = ''
+      }
+    }
   }
 }
 </script>
@@ -389,6 +394,10 @@ export default {
       background-color: var(--bg-color-1);
       margin: 10px 0;
       padding: 16px;
+      cursor: pointer;
+      &.active {
+        border: 2px solid var(--primary-color);
+      }
 
       .label {
         display: inline-block;
@@ -416,14 +425,6 @@ export default {
           flex-wrap: wrap;
           gap: 38px;
           padding: 16px;
-
-          &:hover {
-            cursor: pointer;
-            //color: var(--primary-color);
-            background-color: rgba(231, 240, 255, 0.2);
-            outline: 1px dashed var(--primary-color);
-            border-radius: 2px;
-          }
 
           .img-box {
             display: flex;
