@@ -17,7 +17,7 @@
       <div class="name-box">
         <span class="name">{{ studyData.name }}</span>
         <div class="right-area">
-          <div
+          <!-- <div
             class="item"
             :class="{
               'active': active === index
@@ -27,7 +27,7 @@
             @click="handlerClick(index)"
           >
             {{ item }}
-          </div>
+          </div> -->
           <cb-date-picker
             style="width: 100%"
             v-model="form.date"
@@ -35,9 +35,11 @@
             :range-separator="$t('至')"
             :start-placeholder="$t('开始日期')"
             :end-placeholder="$t('结束日期')"
-            value-format="yyyy-MM-dd HH:mm:ss"
+            value-format="yyyy-MM-dd"
             :clearable="false"
             popper-class="hide-clear-btn"
+            @change="dateChange($event)"
+            clearable
           >
           </cb-date-picker>
         </div>
@@ -254,9 +256,14 @@ export default {
   },
   methods: {
     getStudyAnalysisData() {
-      goToStudentStudyAnalysisApi({
-        user_id: this.user_id
-      }).then(res => {
+      const params = {
+        user_id: this.user_id,
+      };
+      if (this.form.date?.length) {
+        params.form = this.form.date[0]; //开始时间
+        params.start = this.form.date[1]; //结束时间
+      }
+      goToStudentStudyAnalysisApi(params).then(res => {
         const data = _.get(res, 'data.data', {});
         this.studyData = data;
 
@@ -283,6 +290,9 @@ export default {
       this.chart = echarts.init(this.$refs.chartref);
       this.chart.setOption(this.option);
     },
+    dateChange(value) {
+      this.getStudyAnalysisData();
+    }
   }
 }
 </script>
