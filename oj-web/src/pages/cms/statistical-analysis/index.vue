@@ -44,7 +44,7 @@
           </div>
           <div class="th-echarts">
             <score-bar-chart
-              v-if="score_all.xData.lenghth"
+              v-if="score_all.xData.length"
               :score_data="score_all"
               :colorList="['#f59a23']"
             ></score-bar-chart>
@@ -57,7 +57,7 @@
           </div>
           <div class="th-echarts">
             <score-bar-chart
-              v-if="score_sy.xData.lenghth"
+              v-if="score_sy.xData.length"
               :score_data="score_sy"
               :colorList="['#19ab76']"
             ></score-bar-chart>
@@ -70,7 +70,7 @@
           </div>
           <div class="th-echarts">
             <score-bar-chart
-              v-if="score_km.xData.lenghth"
+              v-if="score_km.xData.length"
               :score_data="score_km"
               :colorList="['#19bad1']"
             ></score-bar-chart>
@@ -83,7 +83,7 @@
           </div>
           <div class="th-echarts">
             <score-bar-chart
-              v-if="score_zhyx.xData.lenghth"
+              v-if="score_zhyx.xData.length"
               :score_data="score_zhyx"
               :colorList="['#0d63c4']"
             ></score-bar-chart>
@@ -325,6 +325,8 @@ export default {
         this.score_all.xData = [];
         this.score_all.seriesData = [];
         const data = _.get(res, 'data.data', [])
+        console.log(data);
+        
         data.forEach(item => {
           this.score_all.xData.push(item.username)
           this.score_all.seriesData.push(item.total_score)
