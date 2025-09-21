@@ -26,7 +26,6 @@
         show-checkbox
         node-key="id"
         highlight-current
-        :default-checked-keys="['personal-folder']"
         @check="handleCheckChange"
       >
       </cb-tree>
@@ -91,18 +90,18 @@ export default {
           path: 'front_all/*',
           per_status: 'R/W/X',
         },
-        {
-          name: this.$t('routes.personal-center'),
-          id: 'personal-center',
-          path: 'front_all/personal-center',
-          per_status: 'R/W/X',
-        },
-        {
-          name: this.$t('routes.personal-folder'),
-          id: 'personal-folder',
-          path: 'front_all/personal-center/personal-folder',
-          per_status: 'R/W/X',
-        },
+        // {
+        //   name: this.$t('routes.personal-center'),
+        //   id: 'personal-center',
+        //   path: 'front_all/personal-center',
+        //   per_status: 'R/W/X',
+        // },
+        // {
+        //   name: this.$t('routes.personal-folder'),
+        //   id: 'personal-folder',
+        //   path: 'front_all/personal-center/personal-folder',
+        //   per_status: 'R/W/X',
+        // },
       ],
     };
   },

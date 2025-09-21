@@ -79,10 +79,10 @@ export default {
           width: 240,
           resizable: true,
         },
-        {
-          label: '类型',
-          prop: 'biz_role',
-        },
+        // {
+        //   label: '类型',
+        //   prop: 'biz_role',
+        // },
         {
           label: this.$t('systemManagement.roleManage.permissions'),
           getData: (row) => {

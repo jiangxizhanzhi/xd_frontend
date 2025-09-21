@@ -2,7 +2,8 @@ export default {
   back_all: '后台',
   // 仪表盘
   'index-folder': '仪表盘',
-  index: '仪表盘',
+  index: '首页',
+  'guide-control': '综合导控',
   dashboard: '仪表盘',
   'statistical-analysis-folder': '统计分析',
   'individual-training-statistics': '单兵训练统计',

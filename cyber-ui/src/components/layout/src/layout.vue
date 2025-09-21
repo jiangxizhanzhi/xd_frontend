@@ -623,6 +623,11 @@ export default {
     },
 
     menuSelect(name, item, params) {
+      // 首页和综合导控菜单不做跳转
+      if (name === 'index' || name === 'guide-control') {
+        this.$message.info('暂未开放')
+        return;
+      }
       this.currentLeftMenu = params;
       this.$nextTick(() => {
         if (this.active !== params[0].name) {
@@ -758,5 +763,27 @@ export default {
 <style lang="scss" scoped>
 .tabs-container {
   width: 100%;
+  padding: 8px;
+  background: #fff;
+  ::v-deep {
+    .el-tabs__nav-next, .el-tabs__nav-prev {
+      line-height: 26px !important;
+    }
+  }
+  ::v-deep .el-tabs__item {
+    height: 26px;
+    line-height: 24px;
+    border-radius: 2px;
+    border: 1px solid #DCDFE6 !important;
+    margin-right: 8px;
+    padding-right: 8px !important;
+    &.is-closable:hover {
+      padding-left: 20px !important;
+      padding-right: 8px !important;
+    }
+  }
+  ::v-deep .el-tabs--card>.el-tabs__header .el-tabs__item .el-icon-close {
+    width: 14px !important;
+  }
 }
 </style>
