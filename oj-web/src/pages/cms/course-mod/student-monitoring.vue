@@ -161,6 +161,7 @@ export default {
       },
       active: 0,
       option: {
+        color: ['#f55353', '#2ec7c9', '#1c92ff', '#d87a80', '#ffb980'],
         title: {
           text: '训练次数',
           subtext: '23',
@@ -192,13 +193,7 @@ export default {
             label: {
               show: false
             },
-            data: [
-              { value: 1048, name: '0~59' },
-              { value: 735, name: '60~69' },
-              { value: 580, name: '70~79' },
-              { value: 484, name: '80~89' },
-              { value: 300, name: '90~100' }
-            ],
+            data: [],
           }
         ]
       },
