@@ -18,7 +18,7 @@
         :selection.sync="selection"
         :url="userUrl"
         :baseURL="baseURL"
-        :data="model"
+        :data.sync="model"
         ref="userListRef"
         :searchBarBg="true"
       >

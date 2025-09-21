@@ -4,15 +4,16 @@
       v-bind="$attrs"
       class="cb-search-input__input"
       v-model="inputValue"
-      @keyup.enter.native="doSearch"
+      @keyup.enter.native="handleEnter"
       :placeholder="placeholderComputed"
       @clear="clearFunc"
+      @blur="doSearch"
     >
-      <i
-        class="el-input__icon el-icon-search"
-        slot="prefix"
-        @click="doSearch"
-      ></i>
+      <!--      <i-->
+      <!--        class="el-input__icon el-icon-search"-->
+      <!--        slot="prefix"-->
+      <!--        @click="doSearch"-->
+      <!--      ></i>-->
     </cb-input>
   </div>
 </template>
@@ -103,6 +104,12 @@ export default {
        * @property {String} inputValue 输入值
        */
       this.$emit('change', this.inputValue);
+    },
+    handleEnter() {
+      this.$emit('input', this.inputValue);
+      this.$nextTick(() => {
+        this.$emit('enter', this.inputValue);
+      })
     },
   },
 };

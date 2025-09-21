@@ -10,6 +10,12 @@
       <cb-search-bar class="top-filter">
         <template v-slot:filter>
           <slot name="filter"></slot>
+          <template v-if="showSearchBtn">
+            <cb-button @click="handleSearch" style="margin-right: 16px">
+              搜索
+            </cb-button>
+            <cb-button @click="resetSearch" hollow>重置</cb-button>
+          </template>
         </template>
         <template v-slot:searchRightArea>
           <slot name="searchRightArea"></slot>
@@ -473,6 +479,15 @@ export default {
       type: Boolean,
       default: true,
     },
+    showSearchBtn: {
+      type: Boolean,
+      default: true,
+    },
+    // 固定的搜索入参
+    queryStrKeep: {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {
@@ -629,6 +644,15 @@ export default {
     userStore() {
       return _.get(getStore(), 'state.user', '');
     },
+    dataQuery: {
+      get() {
+        return this.data;
+      },
+      set(val) {
+        this.$emit('update:data', val);
+        return val;
+      },
+    },
   },
   watch: {
     expandRowKey(val) {
@@ -646,9 +670,10 @@ export default {
     },
     data: {
       handler(val) {
-        this.flag ? (this.flag = false) : (this.paginator.current = 1); // flag仅在查缓存的时候执行一次
-        this.setWinMemory();
-        this.handleTableChange(this.paginator);
+        this.dataQuery = val;
+        // this.flag ? (this.flag = false) : (this.paginator.current = 1); // flag仅在查缓存的时候执行一次
+        // this.setWinMemory();
+        // this.handleTableChange(this.paginator);
       },
       deep: true,
     },
@@ -677,6 +702,44 @@ export default {
     }
   },
   methods: {
+    handleSearch() {
+      // if (!this.dataSource) {
+      //   // 加上用户id => 用户隔离
+      //   this.fetchData(
+      //     _.get(getMemory(this.defaultMemoryKey), this.userStore.id, ''),
+      //   );
+      // }
+      this.flag ? (this.flag = false) : (this.paginator.current = 1); // flag仅在查缓存的时候执行一次
+      this.setWinMemory();
+      this.handleTableChange(this.paginator);
+    },
+    resetSearch() {
+      let {page, per_page, ...other} = this.dataQuery;
+      for (const otherKey in other) {
+        if (this.queryStrKeep.includes(otherKey)) {
+          if (typeof other[otherKey] === 'string') {
+            other[otherKey] = '';
+          }
+          if (typeof other[otherKey] === 'number') {
+            other[otherKey] = undefined;
+          }
+          if (typeof other[otherKey] === 'boolean') {
+            other[otherKey] = false;
+          }
+        }
+      }
+      if (this.queryStrKeep.length) {
+        this.dataQuery = {
+          ...other,
+        };
+      } else {
+        this.dataQuery = {}
+      }
+      this.$nextTick(() => {
+        this.handleSearch();
+      });
+      this.$emit('reset');
+    },
     setRowClassName(record, index) {
       const cls = index % 2 === 1 ? 'cb-table-zebra' : '';
       return (
@@ -688,7 +751,7 @@ export default {
       // data加sync才开启缓存
       if (_.get(this, '_events.update:data', '')) {
         setMemory(`${this.defaultMemoryKey}.${this.userStore.id}`, {
-          searchData: this.data,
+          searchData: this.dataQuery, // 不缓存data的数据，只缓存分页的
           paginator: this.paginator,
         });
         this.flag = false;
@@ -804,13 +867,14 @@ export default {
     },
     fetchData(memoryData, opt = { loading: true }) {
       const { sorter, baseURL } = this;
-      // 缓存内是否存在页码及搜索项数据
+      // // 缓存内是否存在页码及搜索项数据
       if (!_.isEmpty(memoryData)) {
         Object.assign(this.paginator, _.get(memoryData, 'paginator', {}));
         this.flag = true;
+        Object.assign(this.dataQuery, _.get(memoryData, 'searchData', {}));
         // 保证触发data 的watch
-        this.$emit('update:data', _.clone(_.get(memoryData, 'searchData')));
-        return;
+        // this.$emit('update:data', _.clone(_.get(memoryData, 'searchData')));
+        // return;
       }
       const { current, pageSize } = this.paginator;
       const _guid = guid();
@@ -818,7 +882,8 @@ export default {
       // 保存 guid 的值，防止 guid 被闭包保存
       this.guidSource = _guid;
       this.loading = opt.loading !== false;
-      const queryData = this.getQueryData(this.data, current, pageSize);
+      // console.log('----------this.dataQuery',this.dataQuery)
+      const queryData = this.getQueryData(this.dataQuery, current, pageSize);
       if (sorter && sorter.order) {
         queryData.sort = `${sorter.order === 'descend' ? '-' : ''}${sorter.column.sorter || ''
           }`;
@@ -849,7 +914,7 @@ export default {
           .catch(() => {
             this.loading = false;
           });
-      } else if (!this.url) {
+      } else {
         this.loading = false;
       }
     },

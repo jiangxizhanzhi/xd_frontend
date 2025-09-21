@@ -19,13 +19,19 @@
     <!--    </div>-->
     <div>
       <cb-search-bar class="custom-search-bar">
-        <cb-search-input
-          slot="filter"
-          class="search-container"
-          v-model="query.pattern"
-          placeholder="请输入你需要搜索的内容"
-          @change="getCourseListData"
-        ></cb-search-input>
+        <template slot="filter">
+          <cb-search-input
+            slot="filter"
+            class="search-container"
+            v-model="query.pattern"
+            placeholder="请输入你需要搜索的内容"
+            @change="getCourseListData"
+          ></cb-search-input>
+          <cb-button @click="handleSearch" style="margin-right: 16px">
+            搜索
+          </cb-button>
+          <cb-button @click="resetSearch" hollow>重置</cb-button>
+        </template>
         <cb-button-group slot="searchRightArea">
           <cb-button
             button-type="add"
@@ -160,6 +166,13 @@ export default {
     // this.getDifficultyOptions();
   },
   methods: {
+    handleSearch()  {
+      this.getCourseListData();
+    },
+    resetSearch() {
+      this.query.pattern = '';
+      this.handleSearch();
+    },
     getCourseListData() {
       this.loading = true;
       let params = {

@@ -14,13 +14,13 @@
     >
       <!-- :selector="selector"
       :selection.sync="selection" -->
-      <template v-slot:search>
+      <template v-slot:filter>
         <cb-search-input
           v-model="query.name"
           :placeholder="$t('请输入平台名称')"
         />
       </template>
-      <template v-slot:filter>
+      <template v-slot:search>
         <cb-button
           button-type="add"
           link-name="business-service-monitoring-add"
@@ -135,7 +135,7 @@ export default {
           label: this.$t('设备状态'),
           slot: 'in_position',
         },
-        
+
         {
           label: this.$t('systemOperation.monitorBusiness.operate'),
           slot: 'operate',

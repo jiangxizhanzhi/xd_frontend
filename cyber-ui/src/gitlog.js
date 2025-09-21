@@ -1,5 +1,12 @@
 window.__cyber_ui_log__ = [
   {
+    hash: '92f7e5c0ec900d2c170e66a1f159780084311c79',
+    abbrevHash: '92f7e5c',
+    subject: 'feat: 首页和综合导控菜单；路由标签样式',
+    authorName: 'fengxuyan',
+    authorDate: '2025-09-21 19:35:41 +0800',
+  },
+  {
     hash: 'd54643cc79ffd6a41063a937c58910948fce1bef',
     abbrevHash: 'd54643c',
     subject: 'feat: 权限管理默认菜单移除',
@@ -26,12 +33,5 @@ window.__cyber_ui_log__ = [
     subject: 'feat: 课程详情人员学习分析详情数据对接',
     authorName: 'wangtx',
     authorDate: '2025-09-21 16:38:50 +0800',
-  },
-  {
-    hash: 'd92800673cc7a97f0c1c5af5f206be35a1d4c0b6',
-    abbrevHash: 'd928006',
-    subject: 'feat: 课程详情页面实时监控显示交互修改',
-    authorName: 'fengxuyan',
-    authorDate: '2025-09-21 13:00:46 +0800',
   },
 ];

@@ -3,12 +3,13 @@
     <cb-search-table
       ref="monitorListRef"
       :cols="cols"
-      :data="query"
+      :data.sync="query"
       :selector="selector"
       :selection.sync="selection"
       url="/cscene/cscene_instances/list_stat"
       baseURL="/api/mp"
       :searchBarBg="true"
+      @reset="handleReset"
     >
       <template v-slot:search>
         <cb-button
@@ -330,6 +331,9 @@ export default {
     this.getSceneStatusList();
   },
   methods: {
+    handleReset() {
+      this.activity = ''
+    },
     getSceneInfo(row) {
       return _.get(row, 'scene.scene', {});
     },

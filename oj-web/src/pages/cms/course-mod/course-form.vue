@@ -107,7 +107,7 @@
             url="/cr/team_train/room/list"
             baseURL="/api/ojj"
             ref="table"
-            :data="queryTrain"
+            :data.sync="queryTrain"
             show-index
             rowKey="resource_id"
             :selection.sync="selection"

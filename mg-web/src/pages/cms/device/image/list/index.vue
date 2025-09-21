@@ -10,6 +10,8 @@
       :selection.sync="selection"
       ref="deviceTableRef"
       row-key="uuid"
+      @reset="handleReset"
+      :queryStrKeep="['vmStarted', 'image_type', 'role', 'name']"
     >
       <template v-slot:search>
         <template>
@@ -418,6 +420,10 @@ export default {
     this.bindImageWs();
   },
   methods: {
+    handleReset() {
+      this.categorySet = [];
+      this.roleSet = [];
+    },
     // 镜像管理ws
     bindImageWs() {
       wsutil.cbind('/mp/ws/devops/cluster/images-page', {

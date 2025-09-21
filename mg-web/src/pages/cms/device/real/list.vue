@@ -9,6 +9,7 @@
       :data.sync="model"
       ref="tableRef"
       row-key="id"
+      @reset="handleReset"
     >
       <template v-slot:search>
         <cb-button button-type="add" link-name="real-create"></cb-button>
@@ -217,6 +218,9 @@ export default {
     this.deviceCategory();
   },
   methods: {
+    handleReset() {
+      this.categorySet = [];
+    },
     // 分类
     categoryChange(value) {
       let nodeObj = this.$refs.categoryRef.getCheckedNodes();

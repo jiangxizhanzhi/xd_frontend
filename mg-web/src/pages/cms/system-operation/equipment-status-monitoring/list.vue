@@ -13,6 +13,7 @@
       ref="tableRef"
       row-key="id"
       showIndex
+      @reset="handleReset"
     >
       <!-- <template v-slot:search>
         <cb-button
@@ -234,6 +235,9 @@ export default {
     this.deviceCategory();
   },
   methods: {
+    handleReset() {
+      this.categorySet = []
+    },
     // 分类
     categoryChange(value) {
       let nodeObj = this.$refs.categoryRef.getCheckedNodes();
