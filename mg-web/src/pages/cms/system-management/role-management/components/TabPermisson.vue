@@ -81,7 +81,7 @@ export default {
       showTree: false,
       frontChosenNodeList: [],
       backChosenNodeList: [],
-      treeIdentify: ['frontTree', 'backTree'],
+      treeIdentify: ['frontTree'],
       // 默认的4个菜单
       defaultPersonalFolder: [
         {
@@ -193,8 +193,8 @@ export default {
     },
     handleCheckChangeBack() {
       this.backChosenNodeList = [];
-      const list = this.$refs.backTree.getCheckedNodes(false, true);
-      this.backChosenNodeList = this.nodeFilter(list);
+      // const list = this.$refs.backTree.getCheckedNodes(false, true);
+      // this.backChosenNodeList = this.nodeFilter(list);
     },
     nodeFilter(list) {
       const listTep = [];
@@ -222,7 +222,7 @@ export default {
         b = [];
       }
       this.$refs.frontTree.setCheckedNodes([...f]);
-      this.$refs.backTree.setCheckedNodes([...b]);
+      // this.$refs.backTree.setCheckedNodes([...b]);
 
       const frontTreeCheckedNodes = this.$refs.frontTree.getCheckedNodes();
       let tempList = [];
@@ -231,9 +231,9 @@ export default {
         tempList = [...this.defaultPersonalFolder, ...frontTreeCheckedNodes];
       }
       this.frontChosenNodeList = this.nodeFilter(tempList);
-      this.backChosenNodeList = this.nodeFilter(
-        this.$refs.backTree.getCheckedNodes(),
-      );
+      // this.backChosenNodeList = this.nodeFilter(
+      //   this.$refs.backTree.getCheckedNodes(),
+      // );
     },
     /* 全部展开、全部收缩 */
     treeExpanded(v) {
@@ -242,7 +242,7 @@ export default {
     },
     treeToggle(boolValue) {
       this.treeRecursion(this.frontTreeData, 'frontTree', boolValue);
-      this.treeRecursion(this.backTreeData, 'backTree', boolValue);
+      // this.treeRecursion(this.backTreeData, 'backTree', boolValue);
     },
     treeRecursion(data, name, bool) {
       data.forEach((item) => {

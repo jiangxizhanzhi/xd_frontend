@@ -63,11 +63,11 @@ export default {
       bizOptions: [
         {
           label: '教师',
-          value: '1',
+          value: 1,
         },
         {
           label: '学生',
-          value: '0',
+          value: 0,
         },
       ],
       rules: {
@@ -112,7 +112,7 @@ export default {
       this.model = {
         name: '',
         description: '',
-        biz_role: '1',
+        biz_role: 1,
       };
     }
   },
