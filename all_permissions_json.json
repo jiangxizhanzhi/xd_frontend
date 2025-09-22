@@ -493,6 +493,19 @@
 						"execute_status": 1,
 						"per_status": "R/W/X",
 						"children": []
+					},
+					{
+						"name": "拓扑管理",
+						"value": "topology-management",
+						"authority": "topology-management",
+						"path_name": "front_all/scene-manage-folder/topology-management",
+						"active": ["no_auth"],
+						"edition": [1],
+						"status": 1,
+						"read_status": 1,
+						"write_status": 1,
+						"execute_status": 1,
+						"per_status": "R/W/X"
 					}
 				]
 			},

@@ -103,6 +103,7 @@
             :cols="columns"
             row-key="user_id"
             :searchBarBg="false"
+            :show-search-btn="false"
           >
 
             <template v-slot:roles="scoped">
@@ -326,7 +327,7 @@ export default {
         this.score_all.seriesData = [];
         const data = _.get(res, 'data.data', [])
         console.log(data);
-        
+
         data.forEach(item => {
           this.score_all.xData.push(item.username)
           this.score_all.seriesData.push(item.total_score)

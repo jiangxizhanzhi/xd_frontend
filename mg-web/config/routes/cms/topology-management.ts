@@ -10,7 +10,7 @@ export default [
   {
     name: 'topology-management',
     path: '/admin/topology-management',
-    title: 'routes.topology-management',
+    title: '拓扑管理',
     component: './pages/cms/topology-management/index.vue',
     meta: {
       // hideInMenu: true,
@@ -22,7 +22,7 @@ export default [
   {
     name: 'topology-management-add',
     path: '/admin/topology-management/add',
-    title: 'mgRoutes.add',
+    title: '新增拓扑',
     component: './pages/cms/topology-management/topology-add.vue',
     meta: {
       breadcrumb: {
@@ -34,7 +34,7 @@ export default [
   {
     name: 'topology-management-edit',
     path: '/admin/topology-management/edit/:id',
-    title: 'mgRoutes.edit',
+    title: '编辑拓扑',
     component: './pages/cms/topology-management/topology-edit.vue',
     meta: {
       breadcrumb: {

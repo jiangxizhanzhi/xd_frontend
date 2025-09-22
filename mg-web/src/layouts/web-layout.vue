@@ -570,10 +570,12 @@ export default {
   .name-logo {
     text-align: center;
     overflow: hidden;
-    font-family: logoName !important;
+    //font-family: logoName !important;
     word-break: break-word;
   }
   .logo-icon {
+    width: 45px;
+    flex-shrink: 0;
     img {
       width: 100%;
     }
@@ -583,7 +585,7 @@ export default {
   width: 100%;
   position: fixed;
   top: 60px;
-  z-index: 100;
+  z-index: 999;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;

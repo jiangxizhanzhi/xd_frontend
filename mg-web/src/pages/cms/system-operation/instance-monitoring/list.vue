@@ -275,7 +275,7 @@ export default {
         {
           label: that.$t('systemOperation.scene.createTime'),
           prop: 'create_time',
-          width: '150px',
+          // width: '250px',
         },
         // {
         //   label: that.$t('systemOperation.scene.sceneProps'),

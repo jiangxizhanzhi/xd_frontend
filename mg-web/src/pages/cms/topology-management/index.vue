@@ -4,12 +4,14 @@
       :cols.sync="cols"
       :selector="selector"
       :selection.sync="selection"
-      :data="query"
+      :data.sync="query"
       url="/cscene/cscenes"
       baseURL="/api/mp"
       ref="topoListRef"
       row-key="id"
       :searchBarBg="true"
+      :query-str-keep="['type', 'search']"
+      @reset="handleReset"
     >
       <template slot="filter">
         <cb-search-input
@@ -130,6 +132,9 @@ export default {
     }
   },
   methods: {
+    handleReset() {
+      this.query.type = 1;
+    },
     // 编辑
     editRow(data) {
       if (this.myCacheList && this.myCacheList[0]) {
