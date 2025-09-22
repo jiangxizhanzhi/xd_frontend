@@ -86,6 +86,21 @@
 						"children": []
 					},
 					{
+						"name": "我的课程",
+						"value": "student-courses",
+						"en_name": "student-courses",
+						"authority": "student-courses",
+						"path_name": "front_all/courses-manage-folder/student-courses",
+						"active": ["LCS-FUNC-CR-SHIXUN"],
+						"edition": [0, 1],
+						"status": 1,
+						"read_status": 1,
+						"write_status": 1,
+						"execute_status": 1,
+						"per_status": "R/W/X",
+						"children": []
+					},
+					{
 						"name": "实验管理",
 						"value": "experimental-management",
 						"en_name": "experimental-management",

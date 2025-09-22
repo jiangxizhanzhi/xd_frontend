@@ -1,7 +1,7 @@
 <template>
   <cb-inner-page
     :background="true"
-    title="课程规划"
+    :title="userInfo.teacher_flag === 1 ? '课程规划': '我的课程'"
   >
     <!--    &lt;!&ndash; 授权访问 &ndash;&gt;-->
     <!--    <div v-if="AuthAccess == 'access'">-->
@@ -67,6 +67,7 @@
             v-if="!loading && courseListData.length"
             :courseListData="courseListData"
             :loading="loading"
+            :teacher_flag="userInfo.teacher_flag"
             @detail="gotoDetail"
             @edit="edit"
             @delete="deleteCourse"
@@ -85,6 +86,7 @@
             v-if="!loading && courseListData.length"
             :courseListData="courseListData"
             :loading="loading"
+            :teacher_flag="userInfo.teacher_flag"
             @detail="gotoDetail"
             @edit="edit"
             @delete="deleteCourse"
@@ -164,6 +166,11 @@ export default {
   mounted() {
     // this.getDirectionOptions();
     // this.getDifficultyOptions();
+  },
+  computed: {
+    userInfo() {
+      return this.$store.state.user;
+    },
   },
   methods: {
     handleSearch()  {
@@ -344,13 +351,28 @@ export default {
     },
     gotoDetail(row) {
       if (row.is_public) {
-        const url = this.$router.resolve({
-          path: `/admin/courses/${row.resource_id}/detail`,
-          params: {
-            resource_id: row.resource_id,
-          }
-        });
-        addRouteTab(url.route);
+        if (this.userInfo.teacher_flag === 1) {
+          this.$router.push({
+            path: `/admin/courses/${row.resource_id}/detail`,
+            params: {
+              resource_id: row.resource_id,
+            }
+          });
+        } else {
+          this.$router.push({
+            path: `/admin/student-courses/${row.resource_id}/detail`,
+            params: {
+              resource_id: row.resource_id,
+            }
+          });
+        }
+        // const url = this.$router.resolve({
+        //   path: `/admin/courses/${row.resource_id}/detail`,
+        //   params: {
+        //     resource_id: row.resource_id,
+        //   }
+        // });
+        // addRouteTab(url.route);
       } else {
         this.$message.warning('未发布的课程无法查看');
       }

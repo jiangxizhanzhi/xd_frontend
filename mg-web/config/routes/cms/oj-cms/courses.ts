@@ -187,4 +187,25 @@ export default [
       },
     },
   },
+  {
+    name: 'student-courses',
+    path: '/admin/oj/admin/student-courses/list',
+    title: '我的课程',
+    component: './frame',
+    meta: {
+      iconfont: 'icon-rili',
+    },
+  },
+  {
+    name: 'student-courses-detail',
+    path: '/admin/oj/admin/student-courses/:courseId/detail',
+    title: '课程详情',
+    component: './frame',
+    meta: {
+      breadcrumb: {
+        parentName: 'student-courses',
+      },
+      module: 'student-courses',
+    },
+  }
 ];
