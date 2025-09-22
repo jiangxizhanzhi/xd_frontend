@@ -13,7 +13,7 @@
         <div
           v-if="system_name"
           class="name-logo"
-          style="font-size: 22px"
+          style="font-size: 22px;font-weight: 700"
         >
           {{ system_name }}
         </div>
