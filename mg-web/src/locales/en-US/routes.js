@@ -187,4 +187,5 @@ export default {
 
   // 智能体中心
   'intelligence-center': 'Intelligence center',
+  'student-courses': 'Student Courses',
 };

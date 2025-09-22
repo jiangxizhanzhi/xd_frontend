@@ -200,4 +200,5 @@ export default {
 
   // 智能体中心
   'intelligence-center': '智能体中心',
+  'student-courses': '我的课程',
 };
