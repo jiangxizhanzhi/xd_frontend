@@ -5,9 +5,14 @@
         <cb-button
           @click="createTrain(resourceId, templateId)"
           hollow
+          mr
         >{{
           $t('list.addTraining')
         }}</cb-button>
+        <cb-button
+          hollow
+          @click="templateChange(templateId)"
+        >{{ $t('模板修改') }}</cb-button>
       </temp-detail>
     </div>
   </cb-inner-page>
@@ -16,7 +21,7 @@
 <script>
 import { getTemplatePermission } from '@/api/web/red-blue';
 import tempDetail from './temp-detail.vue';
-import { EXPERIMENTAL_SUBJECT_TEMPLATE_TYPE } from '../constants'
+import { EXPERIMENTAL_SUBJECT_TEMPLATE_EDTAIL_TO_TEMPLATE_EDIT } from '../constants'
 export default {
   components: {
     tempDetail,
@@ -51,6 +56,14 @@ export default {
           },
         });
       });
+    },
+    templateChange(business_template_id) {
+      this.$router.push({
+        name: EXPERIMENTAL_SUBJECT_TEMPLATE_EDTAIL_TO_TEMPLATE_EDIT[this.$route.name],
+        params: {
+          id: business_template_id
+        }
+      })
     },
   },
 };

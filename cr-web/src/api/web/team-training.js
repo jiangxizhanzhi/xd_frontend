@@ -797,6 +797,20 @@ const carryTaskApi = (data) => {
   });
 };
 
+// 场景排队接口
+const getSceneQueueApi = (data) => {
+  return request.get('/cr/team_train/room/start_queue/list', data, {
+    baseURL: '/api/ojj',
+  });
+};
+
+// 取消排队
+const cancelQueueApi = (data) => {
+  return request.post('/cr/team_train/room/start_queue/cancel', data, {
+    baseURL: '/api/ojj',
+  });
+};
+
 export {
   getTrainingCategoryApi,
   getDifficultListsApi,
@@ -904,4 +918,6 @@ export {
   testTaskApi,
   carryTaskApi,
   getSituationApi,
+  getSceneQueueApi,
+  cancelQueueApi,
 };

@@ -96,6 +96,13 @@
             @click="gotoRealityScreen"
           >{{ $t('m.realTopology') }}</cb-button>
         </div> -->
+        <div class="btn-wrap">
+          <cb-button
+            v-if="isShowSceneQueueBtn"
+            hollow
+            @click="sceneQueue"
+          >{{ $t('场景排队') }}</cb-button>
+        </div>
       </div>
       <div class="train-wrap el-tabs__content">
         <!-- 导调控制 -->
@@ -158,6 +165,12 @@
       :resourceId="resource_id"
       :role="roleGroup"
     />
+    <!-- 场景排队弹窗 -->
+    <scene-queue
+      v-if="sceneQueueDialogVisible"
+      :visible.sync="sceneQueueDialogVisible"
+      :resource_id="resource_id"
+    ></scene-queue>
   </div>
 </template>
 
@@ -189,6 +202,7 @@ import replay from '@/components/team-rb-replay/index.vue'; //新的复盘回放
 import TrainTopTitle from '@/components/student-common-detail/train-top-title/index.vue';
 import ChatToolTeam from '@/components/ChatTools/index-team.vue';
 import Notice from '@/pages/web/notice/index.vue';
+import SceneQueue from './components/scene-queue'
 import { getUserInfo, getSysSettings } from '@cyber/helper';
 import { getTeamReplayEnable } from '@/api/web/replay';
 import wsutil from '@/utils/websocket';
@@ -211,6 +225,7 @@ export default {
     // ChatTool,
     ChatToolTeam,
     Notice,
+    SceneQueue,
   },
   data() {
     return {
@@ -236,6 +251,7 @@ export default {
       topo_id: '',
       screenName: '',
       detailTitle: '',
+      sceneQueueDialogVisible: false,
     };
   },
   computed: {
@@ -249,7 +265,21 @@ export default {
     roleGroup() {
       return _.get(this.crEventData, 'data.training_role_data.role_group');
     },
+    isShowSceneQueueBtn() {
+      // 实验和综合演训展示场景排队
+      return [
+        'cloud-computing-resource-experimental-home',
+        'cloud-network-resource-experimental-home',
+        'scan-detect-attack-experimental-home',
+        'vulnerability-mining-exploitation-experimental-home',
+        'denial-service-attack-experimental-home',
+        'new-network-basic-experimental-home',
+        'new-network-attack-defense-experimental-home',
+        'train-detail-home', //综合演训
+      ].includes(this.$route.name)
+    },
   },
+
   watch: {
     tabActive: {
       handler: function (nv, ov) {
@@ -499,6 +529,10 @@ export default {
           '_blank',
         );
       }
+    },
+    // 场景排队
+    sceneQueue() {
+      this.sceneQueueDialogVisible = true;
     },
     getData(hasLayer) { },
   },
