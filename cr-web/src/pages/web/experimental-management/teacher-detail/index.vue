@@ -275,7 +275,7 @@ export default {
         'denial-service-attack-experimental-home',
         'new-network-basic-experimental-home',
         'new-network-attack-defense-experimental-home',
-        'train-detail-home', //综合演训
+        'group-training-home', //综合演训
       ].includes(this.$route.name)
     },
   },

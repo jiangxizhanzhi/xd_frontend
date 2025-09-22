@@ -36,7 +36,7 @@ export const DETAIL_TITLE_TEACHER_NAME = {
   'new-network-basic-subject-home': '新型网络基础科目',
   'new-network-attack-defense-subject-home': '新型网络攻防科目',
 
-  'train-detail-home': '综合演训'
+  'group-training-home': '综合演训'
 };
 
 // 训练类型
