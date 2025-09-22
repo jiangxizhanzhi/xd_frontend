@@ -174,7 +174,13 @@
             <div @click.stop="
               createTrain(item.resource_id, item.business_template_id)
               ">
-              <cb-button hollow>{{ $t('list.addTraining') }}</cb-button>
+              <cb-button
+                hollow
+                mr
+              >{{ $t('list.addTraining') }}</cb-button>
+            </div>
+            <div @click.stop="templateChange(item.business_template_id)">
+              <cb-button hollow>{{ $t('模板修改') }}</cb-button>
             </div>
           </train-template>
         </div>
@@ -272,7 +278,8 @@ import {
   EXPERIMENTAL_SUBJECT_MANAGEMENT_NAME,
   EXPERIMENTAL_SUBJECT_MANAGEMENT_TYPE,
   EXPERIMENTAL_SUBJECT_TEMPLATE_TYPE,
-  EXPERIMENTAL_SUBJECT_TEMPLATE_CATEGORY_TYPE
+  EXPERIMENTAL_SUBJECT_TEMPLATE_CATEGORY_TYPE,
+  EXPERIMENTAL_SUBJECT_TO_TEMPLATE_EDIT
 } from './constants'
 
 export default {
@@ -582,6 +589,14 @@ export default {
           });
         },
       );
+    },
+    templateChange(business_template_id) {
+      this.$router.push({
+        name: EXPERIMENTAL_SUBJECT_TO_TEMPLATE_EDIT[this.$route.name],
+        params: {
+          id: business_template_id
+        }
+      })
     },
     getRoleName(role) {
       let name = '';

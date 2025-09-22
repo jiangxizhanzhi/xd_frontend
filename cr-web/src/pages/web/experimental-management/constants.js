@@ -100,3 +100,43 @@ export const EXPERIMENTAL_SUBJECT_TEMPLATE_CATEGORY_TYPE = {
   'new-network-attack-defense-subject': 2, //新型网络攻防科目
 };
 
+
+export const EXPERIMENTAL_SUBJECT_TO_TEMPLATE_EDIT = {
+  'cloud-computing-resource-experimental': 'cloud-computing-resource-scene-edit', //云计算资源实验
+  'cloud-network-resource-experimental': 'loud-network-resource-scene-edit', //云网络资源实验
+  'scan-detect-attack-experimental': 'scan-detect-attack-scene-edit', //扫描探测攻击实验
+  'vulnerability-mining-exploitation-experimental': 'vulnerability-mining-exploitation-scene-edit', //漏洞挖掘与利用实验
+  'denial-service-attack-experimental': 'denial-service-attack-scene-edit', //拒绝服务攻击实验
+  'new-network-basic-experimental': 'new-network-basic-scene-edit', //新型网络基础实验
+  'new-network-attack-defense-experimental': 'new-network-attack-defense-scene-edit', //新型网络攻防实验
+
+  'cloud-computing-resource-subject': 'cloud-computing-resource-scene-edit', //云计算资源科目
+  'cloud-network-resource-subject': 'loud-network-resource-scene-edit', //云网络资源科目
+  'scan-detect-attack-subject': 'scan-detect-attack-scene-edit', //扫描探测攻击科目
+  'vulnerability-mining-exploitation-subject': 'vulnerability-mining-exploitation-scene-edit', //漏洞挖掘与利用科目
+  'denial-service-attack-subject': 'denial-service-attack-scene-edit', //拒绝服务攻击科目
+  'new-network-basic-subject': 'new-network-basic-scene-edit', //新型网络基础科目
+  'new-network-attack-defense-subject': 'new-network-attack-defense-scene-edit', //新型网络攻防科目
+
+  'group-training': 'comprehensive-training-scene-edit' //综合演训
+};
+
+export const EXPERIMENTAL_SUBJECT_TEMPLATE_EDTAIL_TO_TEMPLATE_EDIT = {
+  'cloud-computing-resource-experimental-template-detail': 'cloud-computing-resource-scene-edit', //云计算资源实验
+  'cloud-network-resource-experimental-template-detail': 'loud-network-resource-scene-edit', //云网络资源实验
+  'scan-detect-attack-experimental-template-detail': 'scan-detect-attack-scene-edit', //扫描探测攻击实验
+  'vulnerability-mining-exploitation-experimental-template-detail': 'vulnerability-mining-exploitation-scene-edit', //漏洞挖掘与利用实验
+  'denial-service-attack-experimental-template-detail': 'denial-service-attack-scene-edit', //拒绝服务攻击实验
+  'new-network-basic-experimental-template-detail': 'new-network-basic-scene-edit', //新型网络基础实验
+  'new-network-attack-defense-experimental-template-detail': 'new-network-attack-defense-scene-edit', //新型网络攻防实验
+
+  'cloud-computing-resource-subject-template-detail': 'cloud-computing-resource-scene-edit', //云计算资源科目
+  'cloud-network-resource-subject-template-detail': 'loud-network-resource-scene-edit', //云网络资源科目
+  'scan-detect-attack-subject-template-detail': 'scan-detect-attack-scene-edit', //扫描探测攻击科目
+  'vulnerability-mining-exploitation-subject-template-detail': 'vulnerability-mining-exploitation-scene-edit', //漏洞挖掘与利用科目
+  'denial-service-attack-subject-template-detail': 'denial-service-attack-scene-edit', //拒绝服务攻击科目
+  'new-network-basic-subject-template-detail': 'new-network-basic-scene-edit', //新型网络基础科目
+  'new-network-attack-defense-subject-template-detail': 'new-network-attack-defense-scene-edit', //新型网络攻防科目
+
+  'group-training-template-detail': 'comprehensive-training-scene-edit' //综合演训
+};
