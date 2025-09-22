@@ -351,13 +351,28 @@ export default {
     },
     gotoDetail(row) {
       if (row.is_public) {
-        const url = this.$router.resolve({
-          path: `/admin/courses/${row.resource_id}/detail`,
-          params: {
-            resource_id: row.resource_id,
-          }
-        });
-        addRouteTab(url.route);
+        if (this.userInfo.teacher_flag === 1) {
+          this.$router.push({
+            path: `/admin/courses/${row.resource_id}/detail`,
+            params: {
+              resource_id: row.resource_id,
+            }
+          });
+        } else {
+          this.$router.push({
+            path: `/admin/student-courses/${row.resource_id}/detail`,
+            params: {
+              resource_id: row.resource_id,
+            }
+          });
+        }
+        // const url = this.$router.resolve({
+        //   path: `/admin/courses/${row.resource_id}/detail`,
+        //   params: {
+        //     resource_id: row.resource_id,
+        //   }
+        // });
+        // addRouteTab(url.route);
       } else {
         this.$message.warning('未发布的课程无法查看');
       }
