@@ -26,7 +26,7 @@
         </span>
       </div>
       <!-- 编辑 删除图标 -->
-      <transition name="el-fade-in">
+      <transition name="el-fade-in" v-if="teacher_flag === 1">
         <div class="edit-delete-btn" v-show="item.resource_id === activeId">
           <div @click.stop="editItem(item)">
             <cb-iconfont type="icon-bianji" size="20" />
@@ -53,6 +53,10 @@ export default {
     loading: {
       type: Boolean,
       default: false,
+    },
+    teacher_flag: {
+      type: Number,
+      default: 1,
     },
   },
   setup(props, {emit}) {

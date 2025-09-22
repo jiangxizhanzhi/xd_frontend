@@ -262,6 +262,27 @@ export default [
           module: 'class-card',
         },
       },
+      {
+        name: 'student-courses',
+        path: '/admin/student-courses/list',
+        title: '我的课程',
+        component: './pages/cms/course-mod/course-list.vue',
+        meta: {
+          module: 'student-courses',
+        },
+      },
+      {
+        name: 'student-courses-detail',
+        path: '/admin/student-courses/:courseId/detail',
+        title: '课程详情',
+        component: './pages/cms/course-mod/student-course-detail.vue',
+        meta: {
+          breadcrumb: {
+            parentName: 'student-courses',
+          },
+          module: 'student-courses',
+        },
+      },
     ],
   },
 ];

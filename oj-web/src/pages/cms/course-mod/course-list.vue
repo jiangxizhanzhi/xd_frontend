@@ -1,7 +1,7 @@
 <template>
   <cb-inner-page
     :background="true"
-    title="课程规划"
+    :title="userInfo.teacher_flag === 1 ? '课程规划': '我的课程'"
   >
     <!--    &lt;!&ndash; 授权访问 &ndash;&gt;-->
     <!--    <div v-if="AuthAccess == 'access'">-->
@@ -67,6 +67,7 @@
             v-if="!loading && courseListData.length"
             :courseListData="courseListData"
             :loading="loading"
+            :teacher_flag="userInfo.teacher_flag"
             @detail="gotoDetail"
             @edit="edit"
             @delete="deleteCourse"
@@ -85,6 +86,7 @@
             v-if="!loading && courseListData.length"
             :courseListData="courseListData"
             :loading="loading"
+            :teacher_flag="userInfo.teacher_flag"
             @detail="gotoDetail"
             @edit="edit"
             @delete="deleteCourse"
@@ -164,6 +166,11 @@ export default {
   mounted() {
     // this.getDirectionOptions();
     // this.getDifficultyOptions();
+  },
+  computed: {
+    userInfo() {
+      return this.$store.state.user;
+    },
   },
   methods: {
     handleSearch()  {
