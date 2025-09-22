@@ -98,6 +98,7 @@
         </div> -->
         <div class="btn-wrap">
           <cb-button
+            v-if="isShowSceneQueueBtn"
             hollow
             @click="sceneQueue"
           >{{ $t('场景排队') }}</cb-button>
@@ -264,7 +265,21 @@ export default {
     roleGroup() {
       return _.get(this.crEventData, 'data.training_role_data.role_group');
     },
+    isShowSceneQueueBtn() {
+      // 实验和综合演训展示场景排队
+      return [
+        'cloud-computing-resource-experimental-home',
+        'cloud-network-resource-experimental-home',
+        'scan-detect-attack-experimental-home',
+        'vulnerability-mining-exploitation-experimental-home',
+        'denial-service-attack-experimental-home',
+        'new-network-basic-experimental-home',
+        'new-network-attack-defense-experimental-home',
+        'train-detail-home', //综合演训
+      ].includes(this.$route.name)
+    },
   },
+
   watch: {
     tabActive: {
       handler: function (nv, ov) {
