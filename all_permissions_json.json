@@ -145,7 +145,7 @@
 								"children": []
 							},
 							{
-								"name": "扫描探测攻击实验",
+								"name": "云环境扫描探测攻击实验",
 								"value": "scan-detect-attack-experimental",
 								"en_name": "scan-detect-attack-experimental",
 								"authority": "scan-detect-attack-experimental",
@@ -160,7 +160,7 @@
 								"children": []
 							},
 							{
-								"name": "漏洞挖掘与利用实验",
+								"name": "云计算漏洞挖掘与利用实验",
 								"value": "vulnerability-mining-exploitation-experimental",
 								"en_name": "vulnerability-mining-exploitation-experimental",
 								"authority": "vulnerability-mining-exploitation-experimental",
@@ -175,7 +175,7 @@
 								"children": []
 							},
 							{
-								"name": "拒绝服务攻击实验",
+								"name": "云网络拒绝服务攻击实验",
 								"value": "denial-service-attack-experimental",
 								"en_name": "denial-service-attack-experimental",
 								"authority": "denial-service-attack-experimental",
@@ -266,7 +266,7 @@
 								"children": []
 							},
 							{
-								"name": "扫描探测攻击科目",
+								"name": "云环境扫描探测攻击攻击科目",
 								"value": "scan-detect-attack-subject",
 								"en_name": "scan-detect-attack-subject",
 								"authority": "scan-detect-attack-subject",
@@ -281,7 +281,7 @@
 								"children": []
 							},
 							{
-								"name": "漏洞挖掘与利用科目",
+								"name": "云计算漏洞挖掘与利用科目",
 								"value": "vulnerability-mining-exploitation-subject",
 								"en_name": "vulnerability-mining-exploitation-subject",
 								"authority": "vulnerability-mining-exploitation-subject",
@@ -296,7 +296,7 @@
 								"children": []
 							},
 							{
-								"name": "拒绝服务攻击科目",
+								"name": "云网络拒绝服务攻击科目",
 								"value": "denial-service-attack-subject",
 								"en_name": "denial-service-attack-subject",
 								"authority": "denial-service-attack-subject",
@@ -420,7 +420,7 @@
 						"children": []
 					},
 					{
-						"name": "扫描探测攻击场景",
+						"name": "云环境扫描探测攻击场景",
 						"value": "scan-detect-attack-scene",
 						"en_name": "scan-detect-attack-scene",
 						"authority": "scan-detect-attack-scene",
@@ -435,7 +435,7 @@
 						"children": []
 					},
 					{
-						"name": "漏洞挖掘与利用场景",
+						"name": "云计算漏洞挖掘与利用场景",
 						"value": "vulnerability-mining-exploitation-scene",
 						"en_name": "vulnerability-mining-exploitation-scene",
 						"authority": "vulnerability-mining-exploitation-scene",
@@ -450,7 +450,7 @@
 						"children": []
 					},
 					{
-						"name": "拒绝服务攻击场景",
+						"name": "云网络拒绝服务攻击场景",
 						"value": "denial-service-attack-scene",
 						"en_name": "denial-service-attack-scene",
 						"authority": "denial-service-attack-scene",
