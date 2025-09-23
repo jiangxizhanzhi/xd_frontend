@@ -34,6 +34,7 @@
         </template>
         <cb-button-group slot="searchRightArea">
           <cb-button
+            v-if="userInfo.teacher_flag === 1"
             button-type="add"
             @click="addCourse"
           ></cb-button>
