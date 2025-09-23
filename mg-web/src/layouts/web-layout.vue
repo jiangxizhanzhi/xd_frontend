@@ -11,7 +11,7 @@
       :user-commands="userCommands"
       :show-bell="showBell"
       :notice-count="notificationCount"
-      padding="0px 3% 20px 3%"
+      padding="0px 16px 20px 24px"
       bg-color="none"
       accordion
       :theme-switch="themeSwitch"
@@ -591,6 +591,8 @@ export default {
   justify-content: flex-start;
   gap: 16px;
   padding: 24px 0 24px 24px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   .item {
     flex: 0 0 calc(14.28% - 17px);
     min-width: 238px;

@@ -107,7 +107,7 @@
 }
 
 .cb-accordion {
-  width: 200px;
+  width: 240px;
   box-sizing: border-box;
   $collapse-width: 64px;
   box-sizing: border-box;
@@ -188,6 +188,10 @@
       height: var(--left-menu-icon-font-size);
       font-size: var(--left-menu-icon-font-size);
       transition: color 0.3s;
+    }
+
+    .el-menu--inline .cb-accordion__icon {
+      margin: 0 12px 0 0;
     }
 
     .cb-accordion__title {

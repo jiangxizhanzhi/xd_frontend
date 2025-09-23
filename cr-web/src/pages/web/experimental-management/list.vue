@@ -647,6 +647,7 @@ export default {
 }
 
 .red-blue-page {
+  margin-top: -16px;
   .condition-wrap {
     // margin-bottom: 16px;
     background-color: var(--bg-color-2);

@@ -13,7 +13,7 @@
         <div
           v-if="system_name"
           class="name-logo"
-          style="font-size: 22px;font-weight: 700"
+          style="font-size: 22px;font-weight: 700;height: 30px;line-height: 30px;"
         >
           {{ system_name }}
         </div>
@@ -354,10 +354,16 @@ export default {
 </script>
 <style scoped lang="scss">
 .name-wrapper {
+  //display: flex;
+  //flex-direction: column;
+  //text-align: left;
+  //justify-content: flex-start;
+  //align-items: flex-start;
   display: flex;
   flex-direction: column;
   text-align: left;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
+  height: 85%;
 }
 </style>

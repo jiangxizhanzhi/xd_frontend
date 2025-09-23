@@ -10,8 +10,6 @@
     :padding="padding"
     :noticeCount="notificationCount"
     theme-switch
-    lang-switch
-    bg-color="var(--bg-color-1)"
     @command="handleCommand"
     @routeChange="routeChange"
   >
@@ -39,7 +37,7 @@ export default {
       defaultAvatar,
       noNavi: false,
       breadcrumb: true,
-      padding: undefined,
+      padding: '0 16px 24px 16px',
       defaultSidePadding: '5%',
       userCommands: [
         {

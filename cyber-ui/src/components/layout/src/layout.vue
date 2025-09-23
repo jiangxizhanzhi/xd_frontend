@@ -282,7 +282,7 @@ export default {
         paddingBottom = '0px',
         paddingLeft = '0px',
       ] = paddingArr;
-      let accWidth = '200';
+      let accWidth = '240';
       let naviHeight = '60';
 
       if (fullscreen) {
@@ -308,7 +308,7 @@ export default {
         naviHeight = '0';
       } else if (accordion && !collapse) {
         //展开手风琴
-        accWidth = '200';
+        accWidth = '240';
         naviHeight = '0';
       }
 
@@ -316,7 +316,7 @@ export default {
         padding: computedPadding,
         width: `calc(100% - ${accWidth}px - ${paddingLeft} - ${paddingRight})`,
         height: `calc(100% - ${naviHeight}px - ${paddingBottom} - ${paddingTop})`,
-        marginLeft: accordion ? this.currentLeftMenu && !noNavi ? '170px' : '0' : '0'
+        marginLeft: accordion ? this.currentLeftMenu && !noNavi ? '240px' : '0' : '0'
       };
     },
     computedLineStyle() {
