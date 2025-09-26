@@ -9,7 +9,7 @@
       ref="cbloginRef"
       url="/auth/login"
       register-url="/unauth/register"
-      :show-register="showRegister"
+      :show-register="false"
       :show-back-img="false"
       :encrypt-key="true"
       :langSwitch="langSwitch"
