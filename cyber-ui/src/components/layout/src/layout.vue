@@ -642,6 +642,10 @@ export default {
         this.select(name, item, params);
       }
     },
+    updateCurrentLeftMenu(data) {
+      let courseFolderData = this.naviHeaderData.find(item => item.name === 'courses-manage-folder')?.children || [];
+      this.currentLeftMenu = courseFolderData;
+    },
     select(name, item, params) {
       if (this.customSelect) {
         this.$emit('routeChange', name, item, params);

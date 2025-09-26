@@ -466,7 +466,7 @@ export default {
       this.$router.push({
         path: data.path,
       })
-      this.$refs.layoutRef.updateCurrentLeftMenu(this.dropdownMenu);
+      this.$refs.layoutRef?.updateCurrentLeftMenu();
     },
     handleEnter() {
       this.MenuDropdownPic = this.MenuDropdownArrowSelected;
