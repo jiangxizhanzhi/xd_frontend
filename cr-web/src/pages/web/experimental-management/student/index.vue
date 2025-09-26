@@ -200,6 +200,7 @@ import {
 import { getUserInfo, getSysSettings } from '@cyber/helper';
 import { getValueName } from '@/assets/js/tools.js';
 import { getCurrentModuleByRouterName } from '../../../../utils';
+import {EXPERIMENTAL_SUBJECT_MANAGEMENT_NAME} from "../constants";
 
 export default {
   mixins: [mixins],
@@ -218,6 +219,7 @@ export default {
   },
   data() {
     return {
+      EXPERIMENTAL_SUBJECT_MANAGEMENT_NAME,
       isEnd: false,
       refreshList: false,
       start: false,
@@ -514,7 +516,7 @@ export default {
         this.handleGetSceneData();
         this.bindSceneWs();
         this.detailTitle =
-          (await getCurrentModuleByRouterName('group-training')) +
+          EXPERIMENTAL_SUBJECT_MANAGEMENT_NAME[this.$route.name] +
           '-' +
           res.data.data.name;
       });

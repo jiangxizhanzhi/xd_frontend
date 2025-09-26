@@ -8,6 +8,14 @@ export const EXPERIMENTAL_SUBJECT_MANAGEMENT_NAME = {
   'new-network-basic-experimental': '新型网络基础实验',
   'new-network-attack-defense-experimental': '新型网络攻防实验',
 
+  'cloud-computing-resource-experimental-student-combat': '云计算资源实验',
+  'cloud-network-resource-experimental-student-combat': '云网络资源实验',
+  'scan-detect-attack-experimental-student-combat': '云环境扫描探测攻击实验',
+  'vulnerability-mining-exploitation-experimental-student-combat': '云计算漏洞挖掘与利用实验',
+  'denial-service-attack-experimental-student-combat': '云网络拒绝服务攻击实验',
+  'new-network-basic-experimental-student-combat': '新型网络基础实验',
+  'new-network-attack-defense-experimental-student-combat': '新型网络攻防实验',
+
   'cloud-computing-resource-subject': '云计算资源科目',
   'cloud-network-resource-subject': '云网络资源科目',
   'scan-detect-attack-subject': '云环境扫描探测攻击科目',
@@ -16,7 +24,16 @@ export const EXPERIMENTAL_SUBJECT_MANAGEMENT_NAME = {
   'new-network-basic-subject': '新型网络基础科目',
   'new-network-attack-defense-subject': '新型网络攻防科目',
 
-  'group-training': '综合演训'
+  'cloud-computing-resource-subject-student-combat': '云计算资源科目',
+  'cloud-network-resource-subject-student-combat': '云网络资源科目',
+  'scan-detect-attack-subject-student-combat': '云环境扫描探测攻击科目',
+  'vulnerability-mining-exploitation-subject-student-combat': '云计算漏洞挖掘与利用科目',
+  'denial-service-attack-subject-student-combat': '云网络拒绝服务攻击科目',
+  'new-network-basic-subject-student-combat': '新型网络基础科目',
+  'new-network-attack-defense-subject-student-combat': '新型网络攻防科目',
+
+  'group-training': '综合演训',
+  'group-training-student-combat': '综合演训'
 };
 
 export const DETAIL_TITLE_TEACHER_NAME = {
