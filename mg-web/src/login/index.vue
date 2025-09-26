@@ -229,7 +229,7 @@ export default {
   }
   .login-title {
     position: absolute;
-    top: -60%;
+    top: -90%;
     color: var(--white-color);
     font-size: 40px;
     width: 100vw;
