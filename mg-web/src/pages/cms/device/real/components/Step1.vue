@@ -159,6 +159,7 @@ export default {
       model: {
         name: '',
         description: '',
+        image_type: 'entity',
         logo: null,
         ext_entity: {
           style: null,

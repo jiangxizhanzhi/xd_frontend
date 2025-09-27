@@ -15,7 +15,7 @@
       showIndex
       @reset="handleReset"
     >
-      <!-- <template v-slot:search>
+      <template v-slot:search>
         <cb-button
           button-type="add"
           link-name="cluster-management-add"
@@ -26,7 +26,7 @@
           @click="deleteSelected(selection, $event)"
           :disabled="selection.length === 0"
         ></cb-button>
-      </template> -->
+      </template>
       <template v-slot:filter>
         <cb-cascader
           v-model="categorySet"
@@ -125,7 +125,7 @@ export default {
         maxSelect: 0,
       },
       selection: [],
-      URL: '/devops/cluster/real-equipment/page',
+      URL: '/devops/cluster/real-equipment/page?image_type=v2r',
       baseURL: '/api/mp',
       model: {
         category: '',

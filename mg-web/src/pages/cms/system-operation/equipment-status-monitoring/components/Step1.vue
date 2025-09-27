@@ -8,7 +8,11 @@
       :rules="rules"
       :isBgColor="true"
     >
-      <cb-form-item id="name" :label="$t('device.name')" prop="name">
+      <cb-form-item
+        id="name"
+        :label="$t('device.name')"
+        prop="name"
+      >
         <cb-input v-model="model.name" />
         <div class="hint">
           {{ $t('device.nameChangeHint') }}
@@ -16,12 +20,24 @@
         </div>
       </cb-form-item>
 
-      <cb-form-item :label="$t('device.description')" prop="description">
-        <cb-input v-model="model.description" type="textarea" />
+      <cb-form-item
+        :label="$t('device.description')"
+        prop="description"
+      >
+        <cb-input
+          v-model="model.description"
+          type="textarea"
+        />
       </cb-form-item>
 
-      <cb-form-item :label="$t('device.logo')" prop="logo">
-        <cb-input v-model="model.logo" style="display: none" />
+      <cb-form-item
+        :label="$t('device.logo')"
+        prop="logo"
+      >
+        <cb-input
+          v-model="model.logo"
+          style="display: none"
+        />
         <cb-upload-file
           v-model="logoList"
           :fetch-promise="uploadFunc"
@@ -52,15 +68,24 @@
         </div> -->
       </cb-form-item>
 
-      <cb-form-item :label="$t('device.model')" prop="style">
+      <cb-form-item
+        :label="$t('device.model')"
+        prop="style"
+      >
         <cb-input v-model="model.ext_entity.style" />
       </cb-form-item>
 
-      <cb-form-item :label="$t('device.parameter')" prop="params">
+      <cb-form-item
+        :label="$t('device.parameter')"
+        prop="params"
+      >
         <cb-input v-model="model.ext_entity.params" />
       </cb-form-item>
 
-      <cb-form-item :label="$t('device.role')" prop="role">
+      <cb-form-item
+        :label="$t('device.role')"
+        prop="role"
+      >
         <cb-col :span="7">
           <cb-cascader
             style="width: 100%"
@@ -71,7 +96,10 @@
         </cb-col>
       </cb-form-item>
 
-      <cb-form-item :label="$t('device.Category')" prop="category">
+      <cb-form-item
+        :label="$t('device.Category')"
+        prop="category"
+      >
         <cb-col :span="7">
           <cb-cascader
             ref="categoryRef"
@@ -94,7 +122,11 @@
             :placeholder="$t('device.plzSelectSystemInfo')"
           />
         </cb-col>
-        <cb-col v-show="showSystemConfig" :span="7" :offset="1">
+        <cb-col
+          v-show="showSystemConfig"
+          :span="7"
+          :offset="1"
+        >
           <cb-select
             style="width: 100%"
             v-model="model.system_info.system_architecture"
@@ -102,7 +134,11 @@
           >
           </cb-select>
         </cb-col>
-        <cb-col v-show="showSystemConfig" :span="8" :offset="1">
+        <cb-col
+          v-show="showSystemConfig"
+          :span="8"
+          :offset="1"
+        >
           <cb-select
             style="width: 100%"
             v-model="model.system_info.language"
@@ -114,10 +150,17 @@
 
       <div slot="fixedBottom">
         <cb-button-group space="middle">
-          <cb-button buttonType="confirm" @click="nextStep" mr>{{
+          <cb-button
+            buttonType="confirm"
+            @click="nextStep"
+            mr
+          >{{
             $t('device.next')
           }}</cb-button>
-          <cb-button buttonType="cancel" @click="goBack"></cb-button>
+          <cb-button
+            buttonType="cancel"
+            @click="goBack"
+          ></cb-button>
         </cb-button-group>
       </div>
     </cb-form>
@@ -146,11 +189,11 @@ export default {
     },
     formData: {
       type: Object,
-      default: () => {},
+      default: () => { },
     },
     categoryData: {
       type: Object,
-      default: () => {},
+      default: () => { },
     },
   },
   data() {
@@ -159,6 +202,7 @@ export default {
       model: {
         name: '',
         description: '',
+        image_type: 'v2r',
         logo: null,
         ext_entity: {
           style: null,
@@ -673,6 +717,7 @@ export default {
   color: var(--red-color);
   font-size: 14px;
 }
+
 .image-item {
   width: 60px;
   height: 60px;
@@ -682,11 +727,13 @@ export default {
 // 选择默认图标
 .select-default-panel {
   border: 1px solid var(--neutral3);
+
   .title {
     color: var(--neutral8);
     font-size: 14px;
   }
 }
+
 ::v-deep .cb-button-group-small .cb-button {
   margin: 0;
 }
