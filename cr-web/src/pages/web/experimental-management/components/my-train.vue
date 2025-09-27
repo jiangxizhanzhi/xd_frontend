@@ -1,16 +1,28 @@
 <template>
   <div class="train-item">
     <!-- 标题 -->
-    <div class="title-wrap" :title="itemData.name">
+    <div
+      class="title-wrap"
+      :title="itemData.name"
+    >
       <span class="title-name">{{ itemData.name }}</span>
       <!-- 0未开始,1进行中,2已结束 -->
-      <span class="status running" v-if="itemData.training_status === 1">{{
+      <span
+        class="status running"
+        v-if="itemData.training_status === 1"
+      >{{
         $t('list.ongoing')
-      }}</span>
-      <span class="status no-start" v-if="itemData.training_status === 0">{{
+        }}</span>
+      <span
+        class="status no-start"
+        v-if="itemData.training_status === 0"
+      >{{
         $t('list.nostart')
-      }}</span>
-      <span v-if="itemData.training_status === 2" class="status ended">
+        }}</span>
+      <span
+        v-if="itemData.training_status === 2"
+        class="status ended"
+      >
         {{ $t('m.hasEnded') }}
       </span>
     </div>
@@ -19,33 +31,55 @@
       <div class="basic-info">
         <!-- 时长 -->
         <div class="basic-item time">
-          <cb-iconfont :size="16" type="icon-lishizuijinshijian"></cb-iconfont>
+          <cb-iconfont
+            :size="16"
+            type="icon-lishizuijinshijian"
+          ></cb-iconfont>
           <span class="info-name">{{ $t('list.duration') }}：</span>
           <span class="info-value">{{
             itemData.duration_time ? itemData.duration_time + 'h' : '-'
-          }}</span>
+            }}</span>
         </div>
         <!-- 节点 -->
         <div class="basic-item node">
-          <cb-iconfont :size="16" type="icon-tuopu"></cb-iconfont>
+          <cb-iconfont
+            :size="16"
+            type="icon-tuopu"
+          ></cb-iconfont>
           <span class="info-name">{{ $t('list.node') }}：</span>
           <span class="info-value">{{ itemData.nodes_count }}</span>
         </div>
         <!-- 类别 -->
         <div class="basic-item type">
-          <cb-iconfont :size="16" type="icon-yingyongxitong"></cb-iconfont>
+          <cb-iconfont
+            :size="16"
+            type="icon-yingyongxitong"
+          ></cb-iconfont>
           <span class="info-name">{{ $t('list.category') }}：</span>
           <span class="info-value">{{
             computedCategory(itemData.category)
-          }}</span>
+            }}</span>
         </div>
         <!-- 难度 -->
         <div class="basic-item">
-          <cb-iconfont :size="16" type="icon-dengji"></cb-iconfont>
+          <cb-iconfont
+            :size="16"
+            type="icon-dengji"
+          ></cb-iconfont>
           <span class="info-name">{{ $t('list.difficulty') }}：</span>
           <span class="info-value">{{
             computedDiffculty(itemData.difficult)
-          }}</span>
+            }}</span>
+        </div>
+        <!-- 开始时间 -->
+        <div class="basic-item">
+          <span class="info-name">{{ $t('开始时间') }}：</span>
+          <span class="info-value">{{ itemData.start_time }}</span>
+        </div>
+        <!-- 训练时间 -->
+        <div class="basic-item">
+          <span class="info-name">{{ $t('训练时间') }}：</span>
+          <span class="info-value">{{ itemData.start_time }}~{{ itemData.end_time }}</span>
         </div>
         <!-- 分割线 -->
         <div
@@ -58,10 +92,15 @@
           v-show="itemData.is_attack_related"
           @click.stop="attClick(itemData)"
         >
-          <cb-iconfont size="16" type="icon-babiaoguanli"></cb-iconfont>
-          <cb-button class="att-engage-value" type="text" hollow
-            >ATT&CK</cb-button
-          >
+          <cb-iconfont
+            size="16"
+            type="icon-babiaoguanli"
+          ></cb-iconfont>
+          <cb-button
+            class="att-engage-value"
+            type="text"
+            hollow
+          >ATT&CK</cb-button>
           <div class="matrix-wrap">
             <div
               :key="index"
@@ -76,22 +115,23 @@
                   index < 3
                     ? 'primary'
                     : index < 6
-                    ? 'blue'
-                    : index < 9
-                    ? 'green'
-                    : 'orange',
+                      ? 'blue'
+                      : index < 9
+                        ? 'green'
+                        : 'orange',
                 ]"
                 :style="{
                   height: item.count + 1 + 'px',
                 }"
               >
                 <transition name="el-fade-in">
-                  <div class="tips" v-show="attckActive === index">
+                  <div
+                    class="tips"
+                    v-show="attckActive === index"
+                  >
                     <div class="tip-name">{{ item.name }}</div>
                     <div class="tip-num-wrap">
-                      <span class="tip-num-name"
-                        >{{ $t('list.trainingSkillCount') }}:</span
-                      >
+                      <span class="tip-num-name">{{ $t('list.trainingSkillCount') }}:</span>
                       <span class="tip-num">{{ item.count }}</span>
                     </div>
                   </div>
@@ -105,10 +145,15 @@
           v-show="itemData.is_engage_related"
           @click.stop="engageClick(itemData)"
         >
-          <cb-iconfont size="16" type="icon-anfangshebei"></cb-iconfont>
-          <cb-button class="att-engage-value" type="text" hollow
-            >Engage</cb-button
-          >
+          <cb-iconfont
+            size="16"
+            type="icon-anfangshebei"
+          ></cb-iconfont>
+          <cb-button
+            class="att-engage-value"
+            type="text"
+            hollow
+          >Engage</cb-button>
 
           <div class="matrix-wrap">
             <div
@@ -128,12 +173,13 @@
                 }"
               >
                 <transition name="el-fade-in">
-                  <div class="tips" v-show="engageActive === index">
+                  <div
+                    class="tips"
+                    v-show="engageActive === index"
+                  >
                     <div class="tip-name">{{ item.name }}</div>
                     <div class="tip-num-wrap">
-                      <span class="tip-num-name"
-                        >{{ $t('list.trainingSkillCount') }}:</span
-                      >
+                      <span class="tip-num-name">{{ $t('list.trainingSkillCount') }}:</span>
                       <span class="tip-num">{{ item.count }}</span>
                     </div>
                   </div>
@@ -153,16 +199,14 @@
               class="role-value"
               v-if="itemData.training_role_data.role_group === 1"
               :title="this.getRoleName(itemData.training_role_data.role_group)"
-              >{{
-                this.getRoleName(itemData.training_role_data.role_group)
-              }}</span
-            >
+            >{{
+              this.getRoleName(itemData.training_role_data.role_group)
+              }}</span>
             <span
               class="role-value"
               v-else
               :title="itemData.training_role_data.name"
-              >{{ itemData.training_role_data.name }}</span
-            >
+            >{{ itemData.training_role_data.name }}</span>
           </div>
         </div>
       </div>
@@ -176,10 +220,12 @@
           :key="index"
           v-for="(item, index) in itemData.train_skill"
           :title="item"
-          >{{ item }}</span
-        >
+        >{{ item }}</span>
       </div>
-      <div class="triangle-wrap" @click.stop="animationFold = !animationFold">
+      <div
+        class="triangle-wrap"
+        @click.stop="animationFold = !animationFold"
+      >
         <cb-iconfont
           ref="xialaRef"
           type="icon-xiala1"
@@ -202,7 +248,10 @@
     </div>
     <!-- 折叠区域 -->
     <collapse-transition>
-      <div class="collapase-wrap" v-show="animationFold">
+      <div
+        class="collapase-wrap"
+        v-show="animationFold"
+      >
         <!-- 前置技能 -->
         <div class="pre-skill">
           <div class="skill-name">{{ $t('list.preSkill') }}：</div>
@@ -221,9 +270,8 @@
         <div class="train-description">
           <div class="desc-name">{{ $t('list.trainingDesc') }}：</div>
           <div
-            :class="
-              this.language === 'en-US' ? 'desc-content-en' : 'desc-content'
-            "
+            :class="this.language === 'en-US' ? 'desc-content-en' : 'desc-content'
+              "
             :title="itemData.description"
           >
             {{ itemData.description }}
@@ -241,10 +289,16 @@
               <div class="role-logo">
                 <img :src="role.role_logo" />
               </div>
-              <div class="user-name" :title="role.role_user">
+              <div
+                class="user-name"
+                :title="role.role_user"
+              >
                 {{ role.role_user }}
               </div>
-              <div class="role-classify" :title="role.role_name">
+              <div
+                class="role-classify"
+                :title="role.role_name"
+              >
                 {{ role.role_name }}
               </div>
             </div>
@@ -272,19 +326,19 @@ export default {
   props: {
     itemData: {
       type: Object,
-      default: () => {},
+      default: () => { },
     },
     categoryList: {
       type: Array,
-      default: () => {},
+      default: () => { },
     },
     difficultList: {
       type: Array,
-      default: () => {},
+      default: () => { },
     },
     roles: {
       type: Object,
-      default: () => {},
+      default: () => { },
     },
   },
   data() {
@@ -378,8 +432,8 @@ export default {
   },
   watch: {},
   computed: {},
-  created() {},
-  mounted() {},
+  created() { },
+  mounted() { },
   methods: {
     getRoleName(role) {
       let name = '';
@@ -440,12 +494,14 @@ export default {
   transform-origin: center;
   transform: rotateZ(0deg);
 }
+
 // engage、attck弹窗样式
 .arrowTransformReturn {
   transition: 0.2s;
   transform-origin: center;
   transform: rotateZ(180deg);
 }
+
 .train-item:hover {
   background: var(--bg-color-3);
 }
@@ -458,6 +514,7 @@ export default {
   padding: 16px 48px;
   cursor: pointer;
   position: relative;
+
   .left-side {
     position: absolute;
     left: -5px;
@@ -465,6 +522,7 @@ export default {
     bottom: 0;
     height: 100%;
   }
+
   .right-side {
     position: absolute;
     right: -5px;
@@ -472,6 +530,7 @@ export default {
     bottom: 0;
     height: 100%;
   }
+
   .title-wrap {
     display: flex;
     align-items: center;
@@ -479,11 +538,13 @@ export default {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
     .title-name {
       font-size: 20px;
       color: var(--neutral8);
       margin-right: 8px;
     }
+
     .status {
       display: inline-block;
       min-width: 52px;
@@ -495,14 +556,17 @@ export default {
       text-align: center;
       white-space: nowrap;
     }
+
     .running {
       background: var(--primary-color-2);
       color: var(--primary-color);
     }
+
     .no-start {
       background: var(--green-color-2);
       color: var(--green-color);
     }
+
     .ended {
       background: var(--neutral0);
       color: var(--neutral8);
@@ -518,39 +582,48 @@ export default {
     height: 48px;
     line-height: 48px;
     border-bottom: 1px solid var(--neutral1);
+
     .basic-info {
       display: flex;
       align-items: center;
       position: relative;
+
       .basic-item {
         display: flex;
         align-items: center;
         margin-right: 26px;
+
         // min-width: 80px;
         .info-name {
           margin-left: 5px;
           font-size: 14px;
           color: var(--neutral5);
         }
+
         .info-value {
           font-size: 14px;
           color: var(--neutral8);
         }
       }
+
       .time {
         // min-width: 90px;
       }
+
       .node {
         // min-width: 90px;
       }
+
       .type {
         // min-width: 120px;
       }
+
       .cut-line {
         width: 1px;
         height: 20px;
         background: var(--neutral1);
       }
+
       .att-engage {
         display: flex;
         align-items: center;
@@ -558,23 +631,28 @@ export default {
         color: var(--primary-color);
         margin-left: 24px;
         cursor: pointer;
+
         .att-engage-value {
           margin-right: 4px;
           margin-left: 4px;
         }
+
         .matrix-wrap {
           margin-left: 5px;
           display: flex;
           align-items: flex-end;
           height: 24px;
           margin-bottom: 10px;
+
           .matrix-wrap-content {
             height: 24px;
             display: flex;
             align-items: flex-end;
           }
+
           .matrix {
             position: relative;
+
             .tips {
               background: var(--bg-color-3);
               position: absolute;
@@ -587,6 +665,7 @@ export default {
               flex-direction: column;
               justify-content: center;
               padding: 0 10px;
+
               .tip-name {
                 height: 30px;
                 line-height: 30px;
@@ -594,14 +673,17 @@ export default {
                 color: var(--neutral8);
                 white-space: nowrap;
               }
+
               .tip-num-wrap {
                 height: 30px;
                 line-height: 30px;
                 white-space: nowrap;
+
                 .tip-num-name {
                   font-size: 12px;
                   color: var(--neutral5);
                 }
+
                 .tip-num {
                   font-size: 16px;
                   color: var(--neutral8);
@@ -609,6 +691,7 @@ export default {
               }
             }
           }
+
           .primary,
           .blue,
           .green,
@@ -618,26 +701,32 @@ export default {
             height: 24px;
             margin-right: 5px;
           }
+
           .primary {
             background: var(--primary-color);
           }
+
           .blue {
             background: var(--blue-color);
           }
+
           .green {
             background: var(--green-color);
           }
+
           .orange {
             background: var(--orange-color);
           }
         }
       }
+
       .my-role {
         position: absolute;
         display: flex;
         align-items: center;
         right: 0;
         width: 210px;
+
         .img-wrap {
           width: 40px;
           height: 40px;
@@ -646,6 +735,7 @@ export default {
           border-radius: 50%;
           background: var(--bg-color-3);
           border: 1px solid var(--neutral1);
+
           img {
             width: 100%;
             height: 100%;
@@ -653,15 +743,18 @@ export default {
             border-radius: 50%;
           }
         }
+
         .role-info {
           width: 160px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+
           .role-name {
             font-size: 14px;
             color: var(--neutral5);
           }
+
           .role-value {
             font-size: 14px;
             color: var(--neutral8);
@@ -670,10 +763,12 @@ export default {
       }
     }
   }
+
   .train-skill {
     margin-top: 16px;
     display: flex;
     position: relative;
+
     .skill-name {
       padding-top: 2px;
       font-size: 14px;
@@ -681,8 +776,10 @@ export default {
       margin-bottom: 10px;
       min-width: 70px;
     }
+
     .tag-wrap {
       padding-right: 34px;
+
       .skill-tag {
         display: inline-block;
         height: 22px;
@@ -695,11 +792,13 @@ export default {
         color: var(--neutral8);
       }
     }
+
     .tag-wrap-fold {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       padding-right: 34px;
+
       .skill-tag {
         display: inline-block;
         height: 22px;
@@ -721,16 +820,19 @@ export default {
       position: absolute;
       right: 0;
       cursor: pointer;
+
       .triangle-color {
         color: var(--neutral3);
       }
     }
   }
+
   .collapase-wrap {
     .pre-skill {
       margin-top: 4px;
       display: flex;
       position: relative;
+
       .skill-name {
         padding-top: 2px;
         font-size: 14px;
@@ -738,9 +840,11 @@ export default {
         margin-bottom: 10px;
         min-width: 70px;
       }
+
       .tag-wrap {
         display: flex;
         flex-wrap: wrap;
+
         .skill-tag {
           height: 22px;
           line-height: 22px;
@@ -753,15 +857,18 @@ export default {
         }
       }
     }
+
     .train-description {
       margin-top: 4px;
       display: flex;
+
       .desc-name {
         padding-top: 2px;
         font-size: 14px;
         color: var(--neutral7);
         min-width: 70px;
       }
+
       .desc-content {
         font-size: 14px;
         line-height: 20px;
@@ -772,6 +879,7 @@ export default {
         -webkit-box-orient: vertical;
         word-break: break-all;
       }
+
       .desc-content-en {
         font-size: 14px;
         line-height: 20px;
@@ -784,36 +892,43 @@ export default {
         word-break: break-all;
       }
     }
+
     .role-wrap {
       margin-top: 12px;
       display: flex;
+
       .role-name {
         font-size: 14px;
         color: var(--neutral7);
         min-width: 72px;
       }
+
       .role-group {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+
         .role-detail {
           margin-right: 16px;
           display: flex;
           flex-direction: column;
           align-items: center;
           width: 60px;
+
           .role-logo {
             width: 40px;
             height: 40px;
             border-radius: 50%;
             background: var(--bg-color-3);
             border: 1px solid var(--neutral1);
+
             img {
               width: 100%;
               height: 100%;
               border-radius: 50%;
             }
           }
+
           .user-name {
             height: 22px;
             line-height: 22px;
@@ -826,6 +941,7 @@ export default {
             text-overflow: ellipsis;
             text-align: center;
           }
+
           .role-classify {
             height: 20px;
             line-height: 20px;
@@ -837,6 +953,7 @@ export default {
             text-overflow: ellipsis;
             text-align: center;
           }
+
           .role-type {
             width: 40px;
             height: 22px;
@@ -846,14 +963,17 @@ export default {
             margin-top: 4px;
             border-radius: 2px;
           }
+
           .green {
             background: var(--green-color-2);
             color: var(--green-color);
           }
+
           .red {
             background: var(--red-color-2);
             color: var(--red-color);
           }
+
           .blue {
             background: var(--primary-color-2);
             color: var(--primary-color);
