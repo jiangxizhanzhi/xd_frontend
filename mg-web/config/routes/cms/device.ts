@@ -23,7 +23,7 @@ export default [
         path: '/admin/std/image-manage/quick-create',
         component: './pages/cms/device/image/quick-create/index',
         name: 'image-manage-quick-create',
-        title: 'mgRoutes.quicklyBuild',
+        title: '快速构建',
         meta: {
           breadcrumb: {
             parentName: 'image-manage',
@@ -45,7 +45,7 @@ export default [
       },
       {
         path: '/admin/std/image-manage/author-operation',
-        title: 'mgRoutes.authorizedGrant',
+        title: '授权操作',
         component: './pages/cms/device/image/list/AuthorUser',
         name: 'cr-image-manage-auth-operation',
         meta: {
@@ -172,7 +172,7 @@ export default [
       // },
       {
         path: '/admin/cr/admin/probe/universal-probe',
-        title: 'routes.universal-probe',
+        title: '通用采集管理',
         name: 'universal-probe',
         component: './frame',
         meta: {
@@ -181,7 +181,7 @@ export default [
       },
       {
         path: '/admin/cr/admin/probe/custom-probe',
-        title: 'routes.custom-probe',
+        title: '自定义探针管理',
         name: 'custom-probe',
         component: './frame',
         meta: {
@@ -191,7 +191,7 @@ export default [
       {
         path: '/admin/cr/admin/probe/custom-probe/create',
         component: './frame',
-        title: 'mgRoutes.add',
+        title: '新增自定义探针',
         name: 'custom-probe-create',
         meta: {
           breadcrumb: {
@@ -202,7 +202,7 @@ export default [
       {
         path: '/admin/cr/admin/probe/custom-probe/edit/:id',
         component: './frame',
-        title: 'mgRoutes.edit',
+        title: '编辑自定义探针',
         name: 'custom-probe-edit',
         meta: {
           breadcrumb: {
@@ -212,7 +212,7 @@ export default [
       },
       {
         path: '/admin/cr/admin/probe/collection-template',
-        title: 'routes.collection-template',
+        title: '采集模板管理',
         name: 'collection-template',
         component: './frame',
         meta: {
@@ -222,7 +222,7 @@ export default [
       {
         path: '/admin/cr/admin/probe/collection-template/create',
         component: './frame',
-        title: 'mgRoutes.add',
+        title: '新增采集模板',
         name: 'collection-template-create',
         meta: {
           breadcrumb: {
@@ -233,7 +233,7 @@ export default [
       {
         path: '/admin/cr/admin/probe/collection-template/edit/:id',
         component: './frame',
-        title: 'mgRoutes.edit',
+        title: '编辑采集模板',
         name: 'collection-template-edit',
         meta: {
           breadcrumb: {

@@ -13,6 +13,7 @@
       ref="tableRef"
       row-key="id"
       showIndex
+      :show-search-btn="true"
       @reset="handleReset"
     >
       <template v-slot:search>

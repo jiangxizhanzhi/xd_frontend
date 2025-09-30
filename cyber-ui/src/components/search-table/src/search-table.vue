@@ -481,7 +481,7 @@ export default {
     },
     showSearchBtn: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     // 固定的搜索入参
     queryStrKeep: {

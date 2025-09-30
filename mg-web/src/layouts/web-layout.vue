@@ -396,9 +396,6 @@ export default {
       this.$router.push('/').catch((err) => {});
     },
     routeChange(name, item, params) {
-      console.log('name', name)
-      console.log('item', item)
-      console.log('params', params)
       const activeApp = getAppByPath(item.path).name;
       const oldApp = getAppByPath(this.$route.path).name;
       if (!item.path || !item.name) {

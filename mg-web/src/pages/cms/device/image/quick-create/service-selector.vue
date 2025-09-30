@@ -10,7 +10,7 @@
       class="cb-search-table-li"
       :searchBarBg="false"
     >
-      <template v-slot:search>
+      <template v-slot:filter>
         <cb-select
           v-model="query.categories"
           :placeholder="$t('common.pleaseChoose')"

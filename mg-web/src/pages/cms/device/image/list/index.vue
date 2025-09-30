@@ -12,6 +12,7 @@
       row-key="uuid"
       @reset="handleReset"
       :queryStrKeep="['vmStarted', 'image_type', 'role', 'name']"
+      :show-search-btn="true"
     >
       <template v-slot:search>
         <template>

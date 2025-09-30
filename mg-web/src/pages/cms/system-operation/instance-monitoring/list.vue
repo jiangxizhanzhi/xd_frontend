@@ -10,6 +10,7 @@
       baseURL="/api/mp"
       :searchBarBg="true"
       @reset="handleReset"
+      :show-search-btn="true"
     >
       <template v-slot:search>
         <cb-button

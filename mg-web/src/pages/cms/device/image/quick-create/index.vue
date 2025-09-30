@@ -22,7 +22,7 @@
         class="config"
         :model="model"
         :rules="rules"
-        label-width="50px"
+        label-width="100px"
         ref="formRef"
         :fetchPromise="fetchForm"
       >

@@ -12,6 +12,7 @@
       :searchBarBg="true"
       :query-str-keep="['type', 'search']"
       @reset="handleReset"
+      :show-search-btn="true"
     >
       <template slot="filter">
         <cb-search-input

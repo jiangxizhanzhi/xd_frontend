@@ -9,6 +9,7 @@
       :data.sync="query"
       ref="tableRef"
       :searchBarBg="true"
+      :show-search-btn="true"
     >
       <template v-slot:search>
         <cb-button

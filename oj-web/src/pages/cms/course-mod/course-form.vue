@@ -111,6 +111,7 @@
             show-index
             rowKey="resource_id"
             :selection.sync="selection"
+            :show-search-btn="true"
           >
             <template v-slot:search>
             </template>

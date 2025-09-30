@@ -11,6 +11,7 @@
       :data.sync="query"
       ref="tableRef"
       :searchBarBg="true"
+      :show-search-btn="true"
     >
       <!-- :selector="selector"
       :selection.sync="selection" -->

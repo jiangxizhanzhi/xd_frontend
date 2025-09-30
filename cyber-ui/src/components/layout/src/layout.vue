@@ -370,6 +370,9 @@ export default {
         } else {
           this.active = this.$route;
         }
+        if (this.active && this.active.path.indexOf(':')>=0) {
+          this.active = this.$route;
+        }
         const topMenu = getTopMenu(this.active, this.routeData);
         this.$emit('active', this.active, topMenu);
         this.$nextTick(() => {
@@ -490,7 +493,11 @@ export default {
     },
     // 导航到指定路由
     navigateTo(item) {
-      this.$router.push(item.path);
+      this.$router.push({
+        path: item.path,
+        params: item.params,
+        query: item.query,
+      });
     },
     // 处理菜单数据
     handleMenuData() {

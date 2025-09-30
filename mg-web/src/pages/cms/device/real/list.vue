@@ -10,6 +10,7 @@
       ref="tableRef"
       row-key="id"
       @reset="handleReset"
+      :show-search-btn="true"
     >
       <template v-slot:search>
         <cb-button button-type="add" link-name="real-create"></cb-button>
