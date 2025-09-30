@@ -60,7 +60,7 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   padding: 15px 20px;
-  margin: 0px 16px 16px 0px;
+  margin: 0px 16px 16px -8px;
   background: var(--bg-color-2);
 }
 </style>

@@ -656,6 +656,7 @@ export default {
 
     .search-wrap {
       display: flex;
+      margin-top: 8px;
 
       .search-item {
         margin-left: 10px;

@@ -1,5 +1,12 @@
 window.__cyber_ui_log__ = [
   {
+    hash: '1074bb5b97cafef9a410459ba87569f8fc496edf',
+    abbrevHash: '1074bb5',
+    subject: 'fix: 页面问题修复',
+    authorName: 'fengxuyan',
+    authorDate: '2025-09-30 15:38:27 +0800',
+  },
+  {
     hash: '63d816d969d629bd3b868d58d6eb59c7489b510e',
     abbrevHash: '63d816d',
     subject: 'feat: 虚实结合和设备状态监控参数区分',
@@ -26,12 +33,5 @@ window.__cyber_ui_log__ = [
     subject: 'fix: 实验教学左侧菜单数据问题',
     authorName: 'fengxuyan',
     authorDate: '2025-09-26 18:32:19 +0800',
-  },
-  {
-    hash: 'bd93eae618c66169a05bf248c89fcf96d28edf99',
-    abbrevHash: 'bd93eae',
-    subject: 'feat: 登录页去掉注册按钮；实验教学左侧菜单数据问题',
-    authorName: 'fengxuyan',
-    authorDate: '2025-09-26 18:14:08 +0800',
   },
 ];

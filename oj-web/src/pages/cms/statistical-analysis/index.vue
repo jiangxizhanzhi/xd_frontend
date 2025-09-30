@@ -394,7 +394,7 @@ export default {
 
   .echarts-grid {
     .study-td {
-      background: var(--bg-color-3);
+      background: var(--bg-color-1);
 
       .th-head {
         color: var(--font-color-primary);
@@ -402,7 +402,7 @@ export default {
     }
 
     .direction-td {
-      background: var(--bg-color-3);
+      background: var(--bg-color-1);
 
       .th-head {
         color: var(--font-color-primary);
@@ -482,7 +482,7 @@ export default {
       width: calc(25% - 12px);
       height: 100%;
       margin-right: 16px;
-      background: var(--bg-color-3);
+      background: var(--bg-color-1);
 
       .th-head {
         width: 100%;

@@ -169,7 +169,7 @@ export default {
           return;
         }
 
-        this.topActive = item.name;
+        this.topActive = val.meta.module || item.name;
         this.$nextTick(() => {
           // 找到 NavMenu 实例
           const menu = this.$refs.menu;
