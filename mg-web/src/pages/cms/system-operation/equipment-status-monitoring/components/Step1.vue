@@ -202,7 +202,7 @@ export default {
       model: {
         name: '',
         description: '',
-        image_type: 'v2r',
+        image_type: 'entity',
         logo: null,
         ext_entity: {
           style: null,

@@ -113,7 +113,7 @@ export default {
         maxSelect: 0,
       },
       selection: [],
-      URL: '/devops/cluster/real-equipment/page?image_type=entity',
+      URL: '/devops/cluster/real-equipment/page?image_type=v2r',
       baseURL: '/api/mp',
       model: {
         category: '',
