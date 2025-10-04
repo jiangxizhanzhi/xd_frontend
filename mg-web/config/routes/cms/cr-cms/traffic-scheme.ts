@@ -11,7 +11,7 @@ export default [
     path: '/admin/cr/admin/traffic/scheme/create',
     component: './frame',
     name: 'traffic-scheme-create',
-    title: 'mgRoutes.add',
+    title: '新增',
     meta: {
       breadcrumb: {
         parentName: 'traffic-scheme-list',
@@ -22,7 +22,7 @@ export default [
     path: '/admin/cr/admin/traffic/scheme/edit/:resource_id',
     component: './frame',
     name: 'traffic-scheme-edit',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     meta: {
       breadcrumb: {
         parentName: 'traffic-scheme-list',
@@ -59,7 +59,7 @@ export default [
     path: '/admin/cr/admin/traffic/scheme/type_list/add',
     component: './frame',
     name: 'scheme-traffic-type-add',
-    title: 'mgRoutes.add',
+    title: '新增',
     meta: {
       breadcrumb: {
         parentName: 'scheme-traffic-type-list',
@@ -71,7 +71,7 @@ export default [
     path: '/admin/cr/admin/traffic/scheme/type_list/edit',
     component: './frame',
     name: 'scheme-traffic-type-edit',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     meta: {
       breadcrumb: {
         parentName: 'scheme-traffic-type-list',

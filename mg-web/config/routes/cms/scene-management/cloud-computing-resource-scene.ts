@@ -11,9 +11,10 @@ export default [
   {
     name: 'cloud-computing-resource-scene-add',
     path: '/admin/cr/admin/cloud-computing-resource-scene/add',
-    title: 'mgRoutes.add',
+    title: '新增云计算资源场景',
     component: './frame',
     meta: {
+      module: 'cloud-computing-resource-scene',
       breadcrumb: {
         parentName: 'cloud-computing-resource-scene',
       },
@@ -22,9 +23,10 @@ export default [
   {
     name: 'cloud-computing-resource-scene-edit',
     path: '/admin/cr/admin/cloud-computing-resource-scene/edit/:id',
-    title: 'mgRoutes.edit',
+    title: '编辑云计算资源场景',
     component: './frame',
     meta: {
+      module: 'cloud-computing-resource-scene',
       breadcrumb: {
         parentName: 'cloud-computing-resource-scene',
       },

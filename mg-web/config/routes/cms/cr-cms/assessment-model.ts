@@ -11,7 +11,7 @@ export default [
     // 指标项新增
     name: 'assessment-model-create',
     path: '/admin/cr/admin/assessment-model/create',
-    title: 'mgRoutes.add',
+    title: '新增',
     component: './frame',
     meta: {
       breadcrumb: {
@@ -23,7 +23,7 @@ export default [
     // 指标项编辑
     name: 'assessment-model-edit',
     path: '/admin/cr/admin/assessment-model/edit/:resource_id',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     component: './frame',
     meta: {
       breadcrumb: {

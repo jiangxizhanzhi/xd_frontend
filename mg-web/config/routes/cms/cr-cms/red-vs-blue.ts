@@ -23,7 +23,7 @@ export default [
   {
     path: '/admin/cr/admin/event/red_vs_blue/create',
     component: './frame',
-    title: 'mgRoutes.add',
+    title: '新增',
     name: 'cr-event-red-vs-blue-create',
     meta: {
       breadcrumb: {
@@ -34,7 +34,7 @@ export default [
   {
     path: '/admin/cr/admin/event/red_vs_blue/:id',
     component: './frame',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     name: 'cr-event-red-vs-blue-edit',
     meta: {
       breadcrumb: {

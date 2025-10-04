@@ -12,7 +12,7 @@ export default [
     path: '/admin/cr/admin/traffic/intelligent/create',
     component: './frame',
     name: 'dynamic-traffic-create',
-    title: 'mgRoutes.add',
+    title: '新增',
     meta: {
       breadcrumb: {
         parentName: 'dynamic-traffic-list',
@@ -23,7 +23,7 @@ export default [
     path: '/admin/cr/admin/traffic/intelligent/edit/:resource_id',
     component: './frame',
     name: 'dynamic-traffic-update',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     meta: {
       breadcrumb: {
         parentName: 'dynamic-traffic-list',
@@ -47,7 +47,7 @@ export default [
     path: '/admin/cr/admin/traffic/intelligent/type_list/add',
     component: './frame',
     name: 'dynamic-traffic-type-add',
-    title: 'mgRoutes.add',
+    title: '新增',
     meta: {
       breadcrumb: {
         parentName: 'dynamic-traffic-type-list',
@@ -59,7 +59,7 @@ export default [
     path: '/admin/cr/admin/traffic/intelligent/type_list/edit',
     component: './frame',
     name: 'dynamic-traffic-type-edit',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     meta: {
       breadcrumb: {
         parentName: 'dynamic-traffic-type-list',

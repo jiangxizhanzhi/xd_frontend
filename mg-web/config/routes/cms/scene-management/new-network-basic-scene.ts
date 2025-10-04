@@ -11,9 +11,10 @@ export default [
   {
     name: 'new-network-basic-scene-add',
     path: '/admin/cr/admin/new-network-basic-scene/add',
-    title: 'mgRoutes.add',
+    title: '新增新型网络基础场景',
     component: './frame',
     meta: {
+      module: 'new-network-basic-scene',
       breadcrumb: {
         parentName: 'new-network-basic-scene',
       },
@@ -22,9 +23,10 @@ export default [
   {
     name: 'new-network-basic-scene-edit',
     path: '/admin/cr/admin/new-network-basic-scene/edit/:id',
-    title: 'mgRoutes.edit',
+    title: '编辑新型网络基础场景',
     component: './frame',
     meta: {
+      module: 'new-network-basic-scene',
       breadcrumb: {
         parentName: 'new-network-basic-scene',
       },

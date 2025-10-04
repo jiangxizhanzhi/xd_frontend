@@ -28,7 +28,7 @@ export default [
         path: '/admin/situation-3D-manage/dynamic-effects-resources/create',
         component:
           './pages/cms/situation-3D-manage/dynamic-effects-resources/create',
-        title: 'mgRoutes.add',
+        title: '新增',
         meta: {
           breadcrumb: {
             parentName: 'dynamic-effects-resources-list',
@@ -42,7 +42,7 @@ export default [
         component:
           './pages/cms/situation-3D-manage/dynamic-effects-resources/detail',
         name: 'dynamic-effects-resources-detail',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         meta: {
           breadcrumb: {
             parentName: 'dynamic-effects-resources-list',
@@ -67,7 +67,7 @@ export default [
       // 分组管理新增--动效资源页面
       {
         path: '/admin/situation-3D-manage/dynamic-effects-resources/group/create',
-        title: 'mgRoutes.add',
+        title: '新增',
         name: 'dynamic-effects-resources-group-create',
         component:
           './pages/cms/situation-3D-manage/dynamic-effects-resources/group-management/create.vue',
@@ -81,7 +81,7 @@ export default [
       // 分组管理编辑--动效资源页面
       {
         path: '/admin/situation-3D-manage/dynamic-effects-resources/group/edit/:id',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         name: 'dynamic-effects-resources-group-edit',
         component:
           './pages/cms/situation-3D-manage/dynamic-effects-resources/group-management/edit.vue',
@@ -109,7 +109,7 @@ export default [
         // 新增-动效关联
         name: 'dynamic-effects-relationships-create',
         path: '/admin/situation-3D-manage/dynamic-effects-relationships/create',
-        title: 'mgRoutes.add',
+        title: '新增',
         component:
           './pages/cms/situation-3D-manage/dynamic-effects-relationships/create.vue',
         meta: {
@@ -123,7 +123,7 @@ export default [
         // 编辑-动效关联
         name: 'dynamic-effects-relationships-edit',
         path: '/admin/situation-3D-manage/dynamic-effects-relationships/edit/:id',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         component:
           './pages/cms/situation-3D-manage/dynamic-effects-relationships/detail.vue',
         meta: {

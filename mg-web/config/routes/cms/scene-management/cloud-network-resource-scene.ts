@@ -11,9 +11,10 @@ export default [
   {
     name: 'cloud-network-resource-scene-add',
     path: '/admin/cr/admin/cloud-network-resource-scene/add',
-    title: 'mgRoutes.add',
+    title: '新增云网络资源场景',
     component: './frame',
     meta: {
+      module: 'cloud-network-resource-scene',
       breadcrumb: {
         parentName: 'cloud-network-resource-scene',
       },
@@ -22,9 +23,10 @@ export default [
   {
     name: 'cloud-network-resource-scene-edit',
     path: '/admin/cr/admin/cloud-network-resource-scene/edit/:id',
-    title: 'mgRoutes.edit',
+    title: '编辑云网络资源场景',
     component: './frame',
     meta: {
+      module: 'cloud-network-resource-scene',
       breadcrumb: {
         parentName: 'cloud-network-resource-scene',
       },

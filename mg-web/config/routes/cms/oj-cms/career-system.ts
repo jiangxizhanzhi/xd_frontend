@@ -18,7 +18,7 @@ export default [
       {
         name: 'career-add',
         path: '/admin/oj/admin/course-mod/career-system/career-add',
-        title: 'mgRoutes.add',
+        title: '新增',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -29,7 +29,7 @@ export default [
       {
         name: 'career-edit',
         path: '/admin/oj/admin/course-mod/career-system/career-edit',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -52,7 +52,7 @@ export default [
       {
         name: 'framework-management-add',
         path: '/admin/oj/admin/course-mod/career-system/framework-management-list/framework-management-add',
-        title: 'mgRoutes.add',
+        title: '新增',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -63,7 +63,7 @@ export default [
       {
         name: 'framework-management-edit',
         path: '/admin/oj/admin/course-mod/career-system/framework-management-list/framework-management-edit/:frameworkId',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -86,7 +86,7 @@ export default [
       {
         name: 'job-database-add',
         path: '/admin/oj/admin/course-mod/career-system/career-job-database/job-database-add',
-        title: 'mgRoutes.add',
+        title: '新增',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -97,7 +97,7 @@ export default [
       {
         name: 'job-database-edit',
         path: '/admin/oj/admin/course-mod/career-system/career-job-database/job-database-edit/:jobId',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -120,7 +120,7 @@ export default [
       {
         name: 'knowledge-database-add',
         path: '/admin/oj/admin/course-mod/career-system/career-knowledge-database/knowledge-database-add',
-        title: 'mgRoutes.add',
+        title: '新增',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -131,7 +131,7 @@ export default [
       {
         name: 'knowledge-database-edit',
         path: '/admin/oj/admin/course-mod/career-system/career-knowledge-database/knowledge-database-edit/:libraryId',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -154,7 +154,7 @@ export default [
       {
         name: 'knowledge-category-add',
         path: '/admin/oj/admin/course-mod/career-system/career-knowledge-database/knowledge-category/knowledge-category-add',
-        title: 'mgRoutes.add',
+        title: '新增',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -165,7 +165,7 @@ export default [
       {
         name: 'knowledge-category-edit',
         path: '/admin/oj/admin/course-mod/career-system/career-knowledge-database/knowledge-category/knowledge-category-edit/:id',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -188,7 +188,7 @@ export default [
       {
         name: 'skill-database-add',
         path: '/admin/oj/admin/course-mod/career-system/career-skill-database/skill-database-add',
-        title: 'mgRoutes.add',
+        title: '新增',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -199,7 +199,7 @@ export default [
       {
         name: 'skill-database-edit',
         path: '/admin/oj/admin/course-mod/career-system/career-skill-database/skill-database-edit/:skillId',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         component: './frame',
         meta: {
           breadcrumb: {

@@ -11,7 +11,7 @@ export default [
     // 评估算法新增
     name: 'assessment-algorithm-create',
     path: '/admin/cr/admin/assessment-algorithm/create',
-    title: 'mgRoutes.add',
+    title: '新增',
     component: './frame',
     meta: {
       breadcrumb: {
@@ -23,7 +23,7 @@ export default [
     // 评估算法编辑
     name: 'assessment-algorithm-edit',
     path: '/admin/cr/admin/assessment-algorithm/edit/:resource_id',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     component: './frame',
     meta: {
       breadcrumb: {

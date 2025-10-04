@@ -12,7 +12,7 @@ export default [
         // 工具库新增
         name: 'tool-create',
         path: '/admin/cr/admin/tool/create',
-        title: 'mgRoutes.add',
+        title: '新增',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -26,7 +26,7 @@ export default [
         path: '/admin/cr/admin/tool/edit/:id',
         component: './frame',
         name: 'tool-update',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         meta: {
           breadcrumb: {
             parentName: 'tool',
@@ -50,7 +50,7 @@ export default [
         path: '/admin/cr/admin/tool/category/create',
         component: './frame',
         name: 'tool-category-create',
-        title: 'mgRoutes.add',
+        title: '新增',
         meta: {
           breadcrumb: {
             parentName: 'tool-category-list',
@@ -62,7 +62,7 @@ export default [
         path: '/admin/cr/admin/tool/category/edit/:id',
         component: './frame',
         name: 'tool-category-update',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         meta: {
           // hideInMenu: true,
           // title: 'toolsManagement',

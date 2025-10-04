@@ -11,9 +11,10 @@ export default [
   {
     name: 'scan-detect-attack-scene-add',
     path: '/admin/cr/admin/scan-detect-attack-scene/add',
-    title: 'mgRoutes.add',
+    title: '新增云环境扫描探测攻击场景',
     component: './frame',
     meta: {
+      module: 'scan-detect-attack-scene',
       breadcrumb: {
         parentName: 'scan-detect-attack-scene',
       },
@@ -22,9 +23,10 @@ export default [
   {
     name: 'scan-detect-attack-scene-edit',
     path: '/admin/cr/admin/scan-detect-attack-scene/edit/:id',
-    title: 'mgRoutes.edit',
+    title: '编辑云环境扫描探测攻击场景',
     component: './frame',
     meta: {
+      module: 'scan-detect-attack-scene',
       breadcrumb: {
         parentName: 'scan-detect-attack-scene',
       },

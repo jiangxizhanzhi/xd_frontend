@@ -11,7 +11,7 @@ export default [
     // 指标体系新增
     name: 'assessment-indicators-create',
     path: '/admin/cr/admin/assessment-indicators/create',
-    title: 'mgRoutes.add',
+    title: '新增',
     component: './frame',
     meta: {
       breadcrumb: {
@@ -23,7 +23,7 @@ export default [
     // 指标体系编辑
     name: 'assessment-indicators-edit',
     path: '/admin/cr/admin/assessment-indicators/edit/:resource_id',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     component: './frame',
     meta: {
       breadcrumb: {

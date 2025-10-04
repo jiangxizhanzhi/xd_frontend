@@ -22,7 +22,7 @@ export default [
   },
   {
     path: '/admin/cr/admin/combat-techs/create',
-    title: 'mgRoutes.add',
+    title: '新增',
     component: './frame',
     name: 'combat-tech-create',
     meta: {
@@ -33,7 +33,7 @@ export default [
   },
   {
     path: '/admin/cr/admin/combat-tech-update/:resource_id',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     component: './frame',
     name: 'combat-tech-update',
     meta: {

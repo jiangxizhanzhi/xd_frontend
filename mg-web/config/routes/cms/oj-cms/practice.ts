@@ -24,7 +24,7 @@ export default [
       {
         name: 'add-exercises',
         path: '/admin/oj/admin/exercises/add-exercises',
-        title: 'mgRoutes.add',
+        title: '新增',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -34,7 +34,7 @@ export default [
       },
       {
         name: 'edit-exercises',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         path: '/admin/oj/admin/exercises/:exercisesId/edit-exercises',
         component: './frame',
         meta: {
@@ -77,7 +77,7 @@ export default [
       {
         name: 'add-theory',
         path: '/admin/oj/admin/exercises/theory-base/add-theory',
-        title: 'mgRoutes.add',
+        title: '新增',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -88,7 +88,7 @@ export default [
       {
         name: 'edit-theory',
         path: '/admin/oj/admin/exercises/theory-base/:theoryId/edit-theory',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -109,7 +109,7 @@ export default [
       },
       {
         name: 'theory-add-type',
-        title: 'mgRoutes.add',
+        title: '新增',
         path: '/admin/oj/admin/exercises/theory-base/to-type/add-type',
         component: './frame',
         meta: {
@@ -120,7 +120,7 @@ export default [
       },
       {
         name: 'theory-edit-type',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         path: '/admin/oj/admin/exercises/theory-base/to-type/:typeId/edit-type',
         component: './frame',
         meta: {
@@ -139,7 +139,7 @@ export default [
       {
         name: 'add-flags',
         path: '/admin/oj/admin/exercises/flags-solve/add-flags',
-        title: 'mgRoutes.add',
+        title: '新增',
         component: './frame',
         meta: {
           breadcrumb: {
@@ -149,7 +149,7 @@ export default [
       },
       {
         name: 'edit-flags',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         path: '/admin/oj/admin/exercises/flags-solve/:flagsId/edit-flags',
         component: './frame',
         meta: {
@@ -173,7 +173,7 @@ export default [
         name: 'flags-add-type',
         path: '/admin/oj/admin/exercises/flags-solve/add-type',
         component: './frame',
-        title: 'mgRoutes.add',
+        title: '新增',
         meta: {
           breadcrumb: {
             parentName: 'flags-to-type',
@@ -184,7 +184,7 @@ export default [
         name: 'flags-edit-type',
         path: '/admin/oj/admin/exercises/flags-solve/:typeId/edit-type',
         component: './frame',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         meta: {
           breadcrumb: {
             parentName: 'flags-to-type',

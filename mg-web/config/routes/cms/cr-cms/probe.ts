@@ -23,7 +23,7 @@ export default [
       {
         path: '/admin/cr/admin/probe/custom-probe/create',
         component: './frame',
-        title: 'mgRoutes.add',
+        title: '新增',
         name: 'custom-probe-create',
         meta: {
           breadcrumb: {
@@ -34,7 +34,7 @@ export default [
       {
         path: '/admin/cr/admin/probe/custom-probe/edit/:id',
         component: './frame',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         name: 'custom-probe-edit',
         meta: {
           breadcrumb: {
@@ -51,7 +51,7 @@ export default [
       {
         path: '/admin/cr/admin/probe/collection-template/create',
         component: './frame',
-        title: 'mgRoutes.add',
+        title: '新增',
         name: 'collection-template-create',
         meta: {
           breadcrumb: {
@@ -62,7 +62,7 @@ export default [
       {
         path: '/admin/cr/admin/probe/collection-template/edit/:id',
         component: './frame',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         name: 'collection-template-edit',
         meta: {
           breadcrumb: {
@@ -90,7 +90,7 @@ export default [
       // {
       //   path: 'cr/admin/probe/create',
       //   component: './frame',
-      //   title: 'mgRoutes.add',
+      //   title: '新增',
       //   meta: {
       //     breadcrumb: {
       //       parentName: 'collection-system',
@@ -101,7 +101,7 @@ export default [
       // {
       //   path: 'cr/admin/probe/:id',
       //   component: './frame',
-      //   title: 'mgRoutes.edit',
+      //   title: '编辑',
       //   meta: {
       //     breadcrumb: {
       //       parentName: 'collection-system',

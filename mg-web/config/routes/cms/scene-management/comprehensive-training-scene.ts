@@ -11,9 +11,10 @@ export default [
   {
     name: 'comprehensive-training-scene-add',
     path: '/admin/cr/admin/comprehensive-training-scene/add',
-    title: 'mgRoutes.add',
+    title: '新增综合演训场景',
     component: './frame',
     meta: {
+      module: 'comprehensive-training-scene',
       breadcrumb: {
         parentName: 'comprehensive-training-scene',
       },
@@ -22,9 +23,10 @@ export default [
   {
     name: 'comprehensive-training-scene-edit',
     path: '/admin/cr/admin/comprehensive-training-scene/edit/:id',
-    title: 'mgRoutes.edit',
+    title: '编辑综合演训场景',
     component: './frame',
     meta: {
+      module: 'comprehensive-training-scene',
       breadcrumb: {
         parentName: 'comprehensive-training-scene',
       },

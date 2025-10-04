@@ -17,7 +17,7 @@ export default [
       },
       {
         path: '/admin/cr/admin/event/single/create',
-        title: 'mgRoutes.add',
+        title: '新增',
         component: './frame',
         name: 'cr-event-train-single-create',
         meta: {
@@ -30,7 +30,7 @@ export default [
         path: '/admin/cr/admin/event/single/:id',
         component: './frame',
         name: 'cr-event-train-single-edit',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         meta: {
           breadcrumb: {
             parentName: 'cr-individual-training',
@@ -70,7 +70,7 @@ export default [
         path: '/admin/cr/admin/event/team/create',
         component: './frame',
         name: 'cr-event-train-team-create',
-        title: 'mgRoutes.add',
+        title: '新增',
         meta: {
           breadcrumb: {
             parentName: 'cr-team-training',
@@ -81,7 +81,7 @@ export default [
         path: '/admin/cr/admin/event/team/:id',
         component: './frame',
         name: 'cr-event-train-team-edit',
-        title: 'mgRoutes.edit',
+        title: '编辑',
         meta: {
           breadcrumb: {
             parentName: 'cr-team-training',

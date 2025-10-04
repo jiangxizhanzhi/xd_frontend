@@ -11,7 +11,7 @@ export default [
   {
     name: 'static-traffic-create',
     path: '/admin/cr/admin/traffic/background/create',
-    title: 'mgRoutes.add',
+    title: '新增',
     component: './frame',
     meta: {
       breadcrumb: {
@@ -22,7 +22,7 @@ export default [
   {
     name: 'static-traffic-update',
     path: '/admin/cr/admin/traffic/background/edit/:resource_id',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     component: './frame',
     meta: {
       breadcrumb: {
@@ -47,7 +47,7 @@ export default [
     path: '/admin/cr/admin/traffic/background/type_list/add',
     component: './frame',
     name: 'static-traffic-type-add',
-    title: 'mgRoutes.add',
+    title: '新增',
     meta: {
       breadcrumb: {
         parentName: 'static-traffic-type-list',
@@ -59,7 +59,7 @@ export default [
     path: '/admin/cr/admin/traffic/background/type_list/edit',
     component: './frame',
     name: 'static-traffic-type-edit',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     meta: {
       breadcrumb: {
         parentName: 'static-traffic-type-list',

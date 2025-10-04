@@ -81,7 +81,7 @@ export default [
       //   path: '/admin/std/usb-emulation/create',
       //   component: './pages/cms/device/usb-emulation/create',
       //   name: 'usb-emulation-create',
-      //   title: 'mgRoutes.add',
+      //   title: '新增',
       //   meta: {
       //     breadcrumb: {
       //       parentName: 'usb-emulation',
@@ -93,7 +93,7 @@ export default [
       //   path: '/admin/usb-emulation/edit/:id',
       //   component: './pages/cms/device/usb-emulation/edit',
       //   name: 'usb-emulation-edit',
-      //   title: 'mgRoutes.edit',
+      //   title: '编辑',
       //   meta: {
       //     breadcrumb: {
       //       parentName: 'usb-emulation',
@@ -150,7 +150,7 @@ export default [
       //   path: '/admin/std/service-manage/create',
       //   component: './pages/cms/device/service/create',
       //   name: 'service-manage-create',
-      //   title: 'mgRoutes.add',
+      //   title: '新增',
       //   meta: {
       //     breadcrumb: {
       //       parentName: 'service-manage',
@@ -162,7 +162,7 @@ export default [
       //   path: '/admin/service-manage/edit/:id',
       //   component: './pages/cms/device/service/edit',
       //   name: 'service-manage-edit',
-      //   title: 'mgRoutes.edit',
+      //   title: '编辑',
       //   meta: {
       //     breadcrumb: {
       //       parentName: 'service-manage',

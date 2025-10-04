@@ -12,7 +12,7 @@ export default [
   {
     name: 'courses-add',
     path: '/admin/oj/admin/courses/add',
-    title: 'mgRoutes.add',
+    title: '新增课程',
     component: './frame',
     meta: {
       breadcrumb: {
@@ -23,7 +23,7 @@ export default [
   {
     name: 'courses-edit',
     path: '/admin/oj/admin/courses/:courseId/edit/',
-    title: 'mgRoutes.edit',
+    title: '编辑课程',
     component: './frame',
     meta: {
       breadcrumb: {
@@ -91,7 +91,7 @@ export default [
   {
     name: 'courses-aspect-add',
     path: '/admin/oj/admin/courses/aspect/add',
-    title: 'mgRoutes.add',
+    title: '新增',
     component: './frame',
     meta: {
       breadcrumb: {
@@ -101,7 +101,7 @@ export default [
   },
   {
     name: 'courses-aspect-edit',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     path: '/admin/oj/admin/courses/aspect/:aspectId/edit',
     component: './frame',
     meta: {
@@ -146,7 +146,7 @@ export default [
   {
     name: 'lessons-add',
     path: '/admin/oj/admin/course/:courseId/lesson/add',
-    title: 'mgRoutes.add',
+    title: '新增',
     component: './frame',
     meta: {
       breadcrumb: {
@@ -156,7 +156,7 @@ export default [
   },
   {
     name: 'lessons-edit',
-    title: 'mgRoutes.edit',
+    title: '编辑',
     path: '/admin/oj/admin/course/:courseId/lesson/:lessonId/edit/:itemNum',
     component: './frame',
     meta: {
