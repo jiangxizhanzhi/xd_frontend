@@ -1,7 +1,7 @@
 export default [
   {
     name: 'cloud-computing-resource-scene',
-    path: '/admin/cr/admin/cloud-computing-resource-scene',
+    path: '/cr/cloud-computing-resource-scene',
     title: 'routes.cloud-computing-resource-scene',
     component: './frame',
     meta: {
@@ -10,7 +10,7 @@ export default [
   },
   {
     name: 'cloud-computing-resource-scene-add',
-    path: '/admin/cr/admin/cloud-computing-resource-scene/add',
+    path: '/cr/cloud-computing-resource-scene/add',
     title: '新增云计算资源场景',
     component: './frame',
     meta: {
@@ -22,7 +22,7 @@ export default [
   },
   {
     name: 'cloud-computing-resource-scene-edit',
-    path: '/admin/cr/admin/cloud-computing-resource-scene/edit/:id',
+    path: '/cr/cloud-computing-resource-scene/edit/:id',
     title: '编辑云计算资源场景',
     component: './frame',
     meta: {

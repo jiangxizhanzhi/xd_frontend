@@ -1,7 +1,7 @@
 export default [
   {
     name: 'denial-service-attack-scene',
-    path: '/admin/cr/admin/denial-service-attack-scene',
+    path: '/cr/denial-service-attack-scene',
     title: 'routes.denial-service-attack-scene',
     component: './frame',
     meta: {
@@ -10,7 +10,7 @@ export default [
   },
   {
     name: 'denial-service-attack-scene-add',
-    path: '/admin/cr/admin/denial-service-attack-scene/add',
+    path: '/cr/denial-service-attack-scene/add',
     title: '新增云网络拒绝服务攻击场景',
     component: './frame',
     meta: {
@@ -22,7 +22,7 @@ export default [
   },
   {
     name: 'denial-service-attack-scene-edit',
-    path: '/admin/cr/admin/denial-service-attack-scene/edit/:id',
+    path: '/cr/denial-service-attack-scene/edit/:id',
     title: '编辑云网络拒绝服务攻击场景',
     component: './frame',
     meta: {

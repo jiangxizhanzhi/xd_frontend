@@ -1,7 +1,7 @@
 export default [
   {
     name: 'cloud-network-resource-scene',
-    path: '/admin/cr/admin/cloud-network-resource-scene',
+    path: '/cr/cloud-network-resource-scene',
     title: 'routes.cloud-network-resource-scene',
     component: './frame',
     meta: {
@@ -10,7 +10,7 @@ export default [
   },
   {
     name: 'cloud-network-resource-scene-add',
-    path: '/admin/cr/admin/cloud-network-resource-scene/add',
+    path: '/cr/cloud-network-resource-scene/add',
     title: '新增云网络资源场景',
     component: './frame',
     meta: {
@@ -22,7 +22,7 @@ export default [
   },
   {
     name: 'cloud-network-resource-scene-edit',
-    path: '/admin/cr/admin/cloud-network-resource-scene/edit/:id',
+    path: '/cr/cloud-network-resource-scene/edit/:id',
     title: '编辑云网络资源场景',
     component: './frame',
     meta: {

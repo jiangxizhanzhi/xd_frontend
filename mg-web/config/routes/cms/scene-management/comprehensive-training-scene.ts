@@ -1,7 +1,7 @@
 export default [
   {
     name: 'comprehensive-training-scene',
-    path: '/admin/cr/admin/comprehensive-training-scene',
+    path: '/cr/comprehensive-training-scene',
     title: 'routes.comprehensive-training-scene',
     component: './frame',
     meta: {
@@ -10,7 +10,7 @@ export default [
   },
   {
     name: 'comprehensive-training-scene-add',
-    path: '/admin/cr/admin/comprehensive-training-scene/add',
+    path: '/cr/comprehensive-training-scene/add',
     title: '新增综合演训场景',
     component: './frame',
     meta: {
@@ -22,7 +22,7 @@ export default [
   },
   {
     name: 'comprehensive-training-scene-edit',
-    path: '/admin/cr/admin/comprehensive-training-scene/edit/:id',
+    path: '/cr/comprehensive-training-scene/edit/:id',
     title: '编辑综合演训场景',
     component: './frame',
     meta: {

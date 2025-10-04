@@ -1,7 +1,7 @@
 export default [
   {
     name: 'scan-detect-attack-scene',
-    path: '/admin/cr/admin/scan-detect-attack-scene',
+    path: '/cr/scan-detect-attack-scene',
     title: 'routes.scan-detect-attack-scene',
     component: './frame',
     meta: {
@@ -10,7 +10,7 @@ export default [
   },
   {
     name: 'scan-detect-attack-scene-add',
-    path: '/admin/cr/admin/scan-detect-attack-scene/add',
+    path: '/cr/scan-detect-attack-scene/add',
     title: '新增云环境扫描探测攻击场景',
     component: './frame',
     meta: {
@@ -22,7 +22,7 @@ export default [
   },
   {
     name: 'scan-detect-attack-scene-edit',
-    path: '/admin/cr/admin/scan-detect-attack-scene/edit/:id',
+    path: '/cr/scan-detect-attack-scene/edit/:id',
     title: '编辑云环境扫描探测攻击场景',
     component: './frame',
     meta: {

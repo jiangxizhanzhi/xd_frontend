@@ -1,7 +1,7 @@
 export default [
   {
     name: 'new-network-basic-scene',
-    path: '/admin/cr/admin/new-network-basic-scene',
+    path: '/cr/new-network-basic-scene',
     title: 'routes.new-network-basic-scene',
     component: './frame',
     meta: {
@@ -10,7 +10,7 @@ export default [
   },
   {
     name: 'new-network-basic-scene-add',
-    path: '/admin/cr/admin/new-network-basic-scene/add',
+    path: '/cr/new-network-basic-scene/add',
     title: '新增新型网络基础场景',
     component: './frame',
     meta: {
@@ -22,7 +22,7 @@ export default [
   },
   {
     name: 'new-network-basic-scene-edit',
-    path: '/admin/cr/admin/new-network-basic-scene/edit/:id',
+    path: '/cr/new-network-basic-scene/edit/:id',
     title: '编辑新型网络基础场景',
     component: './frame',
     meta: {
