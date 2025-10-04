@@ -161,20 +161,20 @@
 </template>
 
 <script>
-import FullCalendar from '@fullcalendar/vue';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlulgin from '@fullcalendar/timegrid';
-import '@fullcalendar/core/locales/zh-cn';
-import momentPlugin from '@fullcalendar/moment';
-import interactionPlugin from '@fullcalendar/interaction';
-import moment from 'moment';
+// import FullCalendar from '@fullcalendar/vue';
+// import dayGridPlugin from '@fullcalendar/daygrid';
+// import timeGridPlulgin from '@fullcalendar/timegrid';
+// import '@fullcalendar/core/locales/zh-cn';
+// import momentPlugin from '@fullcalendar/moment';
+// import interactionPlugin from '@fullcalendar/interaction';
+// import moment from 'moment';
 import _ from 'lodash';
 import { getOrgData } from '@/api/organization.js';
 import { request } from '@cyber/helper';
 
 export default {
   components: {
-    FullCalendar,
+    // FullCalendar,
   },
   data() {
     return {

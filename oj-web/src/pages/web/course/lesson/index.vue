@@ -173,188 +173,188 @@
           </div>
         </div>
         <div class="double-box" v-else>
-          <splitpanes
-            class="default-theme"
-            @resize="resizeSplitPane"
-            @resized="resizedSplitPane"
-            :push-other-panes="false"
-          >
-            <pane v-if="doubleGuide" min-size="25%">
-              <div
-                v-if="doubleGuide"
-                class="double-guide"
-                :class="
-                  doubleGuide && (doubleScene || doubleVideo)
-                    ? 'right-double-box'
-                    : 'all-double-box'
-                "
-              >
-                <template v-if="lessonInfo.handout_type == 1">
-                  <CbMarkdown
-                    v-model="lessonInfo.handout_url"
-                    type="viewer"
-                  ></CbMarkdown>
-                </template>
-                <template v-else>
-                  <div v-if="showFrameMask" class="frame-mask"></div>
-                  <guide
-                    v-if="doubleGuide"
-                    :is-single="isSingle"
-                    :frame-url="lessonInfo.handout_url"
-                  ></guide>
-                </template>
-              </div>
-            </pane>
-            <pane v-if="doubleVideo" min-size="25%">
-              <div
-                v-if="doubleVideo"
-                :class="
-                  doubleVideo && (doubleGuide || doubleScene)
-                    ? 'right-double-box'
-                    : 'all-double-box'
-                "
-              >
-                <video-view
-                  v-if="doubleVideo"
-                  :is-single="isSingle"
-                  :frame-url="lessonInfo.video_url"
-                  :check-points="videoCheckPoints"
-                  :business-id="lessonInfo.resource_id"
-                ></video-view>
-              </div>
-            </pane>
-            <pane v-if="doubleScene" min-size="25%">
-              <div
-                v-if="doubleScene"
-                :class="
-                  doubleScene && (doubleGuide || doubleVideo)
-                    ? 'right-double-box'
-                    : 'all-double-box'
-                "
-                class="scene-wrapper"
-              >
-                <div
-                  class="scene-btn-fake"
-                  :class="[
-                    editableTabsValue === 'scene'
-                      ? 'scene-btn-fake-current'
-                      : 'scene-btn-fake-other',
-                  ]"
-                  @click="currentScene"
-                >
-                  <cb-iconfont type="icon-tuopu" size="14" class="icon-tuopu" />
-                  <span v-if="editableTabsValue === 'scene'">
-                    {{ $t('course.topologyLesson') }}
-                  </span>
-                  <span v-else>{{ $t('course.backScene') }}</span>
-                </div>
+<!--          <splitpanes-->
+<!--            class="default-theme"-->
+<!--            @resize="resizeSplitPane"-->
+<!--            @resized="resizedSplitPane"-->
+<!--            :push-other-panes="false"-->
+<!--          >-->
+<!--            <pane v-if="doubleGuide" min-size="25%">-->
+<!--              <div-->
+<!--                v-if="doubleGuide"-->
+<!--                class="double-guide"-->
+<!--                :class="-->
+<!--                  doubleGuide && (doubleScene || doubleVideo)-->
+<!--                    ? 'right-double-box'-->
+<!--                    : 'all-double-box'-->
+<!--                "-->
+<!--              >-->
+<!--                <template v-if="lessonInfo.handout_type == 1">-->
+<!--                  <CbMarkdown-->
+<!--                    v-model="lessonInfo.handout_url"-->
+<!--                    type="viewer"-->
+<!--                  ></CbMarkdown>-->
+<!--                </template>-->
+<!--                <template v-else>-->
+<!--                  <div v-if="showFrameMask" class="frame-mask"></div>-->
+<!--                  <guide-->
+<!--                    v-if="doubleGuide"-->
+<!--                    :is-single="isSingle"-->
+<!--                    :frame-url="lessonInfo.handout_url"-->
+<!--                  ></guide>-->
+<!--                </template>-->
+<!--              </div>-->
+<!--            </pane>-->
+<!--            <pane v-if="doubleVideo" min-size="25%">-->
+<!--              <div-->
+<!--                v-if="doubleVideo"-->
+<!--                :class="-->
+<!--                  doubleVideo && (doubleGuide || doubleScene)-->
+<!--                    ? 'right-double-box'-->
+<!--                    : 'all-double-box'-->
+<!--                "-->
+<!--              >-->
+<!--                <video-view-->
+<!--                  v-if="doubleVideo"-->
+<!--                  :is-single="isSingle"-->
+<!--                  :frame-url="lessonInfo.video_url"-->
+<!--                  :check-points="videoCheckPoints"-->
+<!--                  :business-id="lessonInfo.resource_id"-->
+<!--                ></video-view>-->
+<!--              </div>-->
+<!--            </pane>-->
+<!--            <pane v-if="doubleScene" min-size="25%">-->
+<!--              <div-->
+<!--                v-if="doubleScene"-->
+<!--                :class="-->
+<!--                  doubleScene && (doubleGuide || doubleVideo)-->
+<!--                    ? 'right-double-box'-->
+<!--                    : 'all-double-box'-->
+<!--                "-->
+<!--                class="scene-wrapper"-->
+<!--              >-->
+<!--                <div-->
+<!--                  class="scene-btn-fake"-->
+<!--                  :class="[-->
+<!--                    editableTabsValue === 'scene'-->
+<!--                      ? 'scene-btn-fake-current'-->
+<!--                      : 'scene-btn-fake-other',-->
+<!--                  ]"-->
+<!--                  @click="currentScene"-->
+<!--                >-->
+<!--                  <cb-iconfont type="icon-tuopu" size="14" class="icon-tuopu" />-->
+<!--                  <span v-if="editableTabsValue === 'scene'">-->
+<!--                    {{ $t('course.topologyLesson') }}-->
+<!--                  </span>-->
+<!--                  <span v-else>{{ $t('course.backScene') }}</span>-->
+<!--                </div>-->
 
-                <cb-tabs
-                  v-if="editableTabs.length > 0"
-                  v-model="editableTabsValue"
-                  type="card"
-                  @tab-remove="removeTab"
-                  class="scene-tabs"
-                  :class="
-                    editableTabsValue === 'scene'
-                      ? 'current-scene'
-                      : 'current-no-scene'
-                  "
-                >
-                  <cb-tab-pane
-                    v-for="item in editableTabs"
-                    :key="item.name"
-                    :label="item.title"
-                    :name="item.name"
-                    :closable="item.closable"
-                    :title="item.title"
-                  >
-                    <div
-                      slot="label"
-                      :title="item.title"
-                      class="one-overflow"
-                      style="max-width: 358px"
-                    >
-                      {{ item.title }}
-                    </div>
-                    <div class="node-frame-wrapper-box">
-                      <div v-if="showFrameMask" class="frame-mask"></div>
-                      <NodeFrame
-                        :frameUrl="item.content"
-                        :scene-data="sceneData"
-                        :node-id="item.nodeId"
-                        :scene-id="sceneData && sceneData.id"
-                        :protocol="item.protocol"
-                        :image-type="item.imageType"
-                        :pos="pos"
-                        :text="text"
-                      />
-                    </div>
-                  </cb-tab-pane>
-                </cb-tabs>
-                <div
-                  class="scene-wrapper-box"
-                  v-if="editableTabsValue === 'scene'"
-                  :class="editableTabs.length === 0 ? 'no-tabs' : 'have-tabs'"
-                  :style="{
-                    top: editableTabs.length === 0 ? '0px' : '31px',
-                  }"
-                >
-                  <scene-editor
-                    v-if="refresh"
-                    ref="sceneEditor"
-                    :title="lessonName"
-                    :sceneConfig="sceneConfig"
-                    :topologyData="sceneData"
-                    :show-mask="showMask"
-                    :show-mask-btn="showMaskBtn"
-                    :show-progress="showProgress"
-                    :progress="progress"
-                    :progress-localize="progressLocalize"
-                    :stage-progress="stageProgress"
-                    :showTitle="false"
-                    :showLabel="false"
-                    :allow-dialog="false"
-                    :status="'display'"
-                    :show-btn="showBtn"
-                    :btn-config="btnGroupConfig"
-                    :showCurrentPageBtn="true"
-                    @onSceneStart="createScene"
-                    @onAccess="goIframe"
-                    @close="deleteScene"
-                    @recover="updateScene"
-                    @on-node-restart="restartDevice"
-                    @on-node-rebuild="recreateDevice"
-                    @on-node-shutdown="
-                      (data) => onNodeShutDown(data, sceneData.id)
-                    "
-                    @on-node-shutup="(data) => onNodeShutUp(data, sceneData.id)"
-                    :ws-data="wsData"
-                    :center-content="true"
-                  >
-                  </scene-editor>
-                  <ScenePattern
-                    v-if="sceneData && sceneData.scene_share_mode"
-                    :topologyData="sceneData"
-                  />
-                  <div class="scene-time">
-                    <cy-time-countdown
-                      v-if="sceneData && sceneData.remaining_time"
-                      :second="sceneData.remaining_time"
-                      :status="sceneData.status"
-                      @countdownOver="countdownOver"
-                    />
-                  </div>
-                  <div
-                    v-if="queryRoomId && !crEventData.scene_data"
-                    class="to-start"
-                  >
-                    <cb-button>{{ $t('scene.sceneToBeStarted') }}</cb-button>
-                  </div>
-                </div>
-              </div>
-            </pane>
-          </splitpanes>
+<!--                <cb-tabs-->
+<!--                  v-if="editableTabs.length > 0"-->
+<!--                  v-model="editableTabsValue"-->
+<!--                  type="card"-->
+<!--                  @tab-remove="removeTab"-->
+<!--                  class="scene-tabs"-->
+<!--                  :class="-->
+<!--                    editableTabsValue === 'scene'-->
+<!--                      ? 'current-scene'-->
+<!--                      : 'current-no-scene'-->
+<!--                  "-->
+<!--                >-->
+<!--                  <cb-tab-pane-->
+<!--                    v-for="item in editableTabs"-->
+<!--                    :key="item.name"-->
+<!--                    :label="item.title"-->
+<!--                    :name="item.name"-->
+<!--                    :closable="item.closable"-->
+<!--                    :title="item.title"-->
+<!--                  >-->
+<!--                    <div-->
+<!--                      slot="label"-->
+<!--                      :title="item.title"-->
+<!--                      class="one-overflow"-->
+<!--                      style="max-width: 358px"-->
+<!--                    >-->
+<!--                      {{ item.title }}-->
+<!--                    </div>-->
+<!--                    <div class="node-frame-wrapper-box">-->
+<!--                      <div v-if="showFrameMask" class="frame-mask"></div>-->
+<!--                      <NodeFrame-->
+<!--                        :frameUrl="item.content"-->
+<!--                        :scene-data="sceneData"-->
+<!--                        :node-id="item.nodeId"-->
+<!--                        :scene-id="sceneData && sceneData.id"-->
+<!--                        :protocol="item.protocol"-->
+<!--                        :image-type="item.imageType"-->
+<!--                        :pos="pos"-->
+<!--                        :text="text"-->
+<!--                      />-->
+<!--                    </div>-->
+<!--                  </cb-tab-pane>-->
+<!--                </cb-tabs>-->
+<!--                <div-->
+<!--                  class="scene-wrapper-box"-->
+<!--                  v-if="editableTabsValue === 'scene'"-->
+<!--                  :class="editableTabs.length === 0 ? 'no-tabs' : 'have-tabs'"-->
+<!--                  :style="{-->
+<!--                    top: editableTabs.length === 0 ? '0px' : '31px',-->
+<!--                  }"-->
+<!--                >-->
+<!--                  <scene-editor-->
+<!--                    v-if="refresh"-->
+<!--                    ref="sceneEditor"-->
+<!--                    :title="lessonName"-->
+<!--                    :sceneConfig="sceneConfig"-->
+<!--                    :topologyData="sceneData"-->
+<!--                    :show-mask="showMask"-->
+<!--                    :show-mask-btn="showMaskBtn"-->
+<!--                    :show-progress="showProgress"-->
+<!--                    :progress="progress"-->
+<!--                    :progress-localize="progressLocalize"-->
+<!--                    :stage-progress="stageProgress"-->
+<!--                    :showTitle="false"-->
+<!--                    :showLabel="false"-->
+<!--                    :allow-dialog="false"-->
+<!--                    :status="'display'"-->
+<!--                    :show-btn="showBtn"-->
+<!--                    :btn-config="btnGroupConfig"-->
+<!--                    :showCurrentPageBtn="true"-->
+<!--                    @onSceneStart="createScene"-->
+<!--                    @onAccess="goIframe"-->
+<!--                    @close="deleteScene"-->
+<!--                    @recover="updateScene"-->
+<!--                    @on-node-restart="restartDevice"-->
+<!--                    @on-node-rebuild="recreateDevice"-->
+<!--                    @on-node-shutdown="-->
+<!--                      (data) => onNodeShutDown(data, sceneData.id)-->
+<!--                    "-->
+<!--                    @on-node-shutup="(data) => onNodeShutUp(data, sceneData.id)"-->
+<!--                    :ws-data="wsData"-->
+<!--                    :center-content="true"-->
+<!--                  >-->
+<!--                  </scene-editor>-->
+<!--                  <ScenePattern-->
+<!--                    v-if="sceneData && sceneData.scene_share_mode"-->
+<!--                    :topologyData="sceneData"-->
+<!--                  />-->
+<!--                  <div class="scene-time">-->
+<!--                    <cy-time-countdown-->
+<!--                      v-if="sceneData && sceneData.remaining_time"-->
+<!--                      :second="sceneData.remaining_time"-->
+<!--                      :status="sceneData.status"-->
+<!--                      @countdownOver="countdownOver"-->
+<!--                    />-->
+<!--                  </div>-->
+<!--                  <div-->
+<!--                    v-if="queryRoomId && !crEventData.scene_data"-->
+<!--                    class="to-start"-->
+<!--                  >-->
+<!--                    <cb-button>{{ $t('scene.sceneToBeStarted') }}</cb-button>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </pane>-->
+<!--          </splitpanes>-->
         </div>
       </div>
     </div>
@@ -432,8 +432,8 @@ import { SceneEditor } from '@cyber/scene';
 import cyTimeCountdown from '@/components/scene-related/index';
 import ScenePattern from '@/components/scene-related/scene-pattern.vue';
 import { getSceneStatus, handleWsData } from '@/utils/scene-websocket';
-import { Splitpanes, Pane } from 'splitpanes';
-import 'splitpanes/dist/splitpanes.css';
+// import { Splitpanes, Pane } from 'splitpanes';
+// import 'splitpanes/dist/splitpanes.css';
 import NodeFrame from './components/node-frame.vue';
 import watchLive from './components/live';
 import { getPublishUrl } from '../../../../api/course';
@@ -453,8 +453,8 @@ export default {
     cyTimeCountdown,
     ScenePattern,
     // chatTool,
-    Splitpanes,
-    Pane,
+    // Splitpanes,
+    // Pane,
     NodeFrame,
     InstructionDialog,
     watchLive,

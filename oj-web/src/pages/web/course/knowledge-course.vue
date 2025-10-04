@@ -19,8 +19,8 @@
   </cb-inner-page>
 </template>
 <script>
-import jsMind from 'jsmind';
-import 'jsmind/style/jsmind.css';
+// import jsMind from 'jsmind';
+// import 'jsmind/style/jsmind.css';
 import _ from 'lodash';
 export default {
   components: {},
@@ -36,7 +36,7 @@ export default {
   },
   computed: {},
   mounted() {
-    this.initJsMind();
+    // this.initJsMind();
     this.getMindData();
   },
   methods: {
@@ -84,7 +84,7 @@ export default {
           hspace: 40,
         },
       };
-      this.jsmimd = new jsMind(options);
+      // this.jsmimd = new jsMind(options);
     },
     showMindData() {
       let mind = {

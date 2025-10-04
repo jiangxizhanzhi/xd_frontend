@@ -613,13 +613,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-string-parser@npm:^7.27.1":
-  version: 7.27.1
-  resolution: "@babel/helper-string-parser@npm:7.27.1"
-  checksum: 0a8464adc4b39b138aedcb443b09f4005d86207d7126e5e079177e05c3116107d856ec08282b365e9a79a9872f40f4092a6127f8d74c8a01c1ef789dacfc25d6
-  languageName: node
-  linkType: hard
-
 "@babel/helper-validator-identifier@npm:^7.15.7":
   version: 7.15.7
   resolution: "@babel/helper-validator-identifier@npm:7.15.7"
@@ -645,13 +638,6 @@ __metadata:
   version: 7.19.1
   resolution: "@babel/helper-validator-identifier@npm:7.19.1"
   checksum: 0eca5e86a729162af569b46c6c41a63e18b43dbe09fda1d2a3c8924f7d617116af39cac5e4cd5d431bb760b4dca3c0970e0c444789b1db42bcf1fa41fbad0a3a
-  languageName: node
-  linkType: hard
-
-"@babel/helper-validator-identifier@npm:^7.27.1":
-  version: 7.27.1
-  resolution: "@babel/helper-validator-identifier@npm:7.27.1"
-  checksum: 3c7e8391e59d6c85baeefe9afb86432f2ab821c6232b00ea9082a51d3e7e95a2f3fb083d74dc1f49ac82cf238e1d2295dafcb001f7b0fab479f3f56af5eaaa47
   languageName: node
   linkType: hard
 
@@ -731,17 +717,6 @@ __metadata:
   bin:
     parser: ./bin/babel-parser.js
   checksum: 25b5266e3bd4be837092685f6b7ef886f1308ff72659a24342eb646ae5014f61ed1771ce8fc20636c890fcae19304fc72c069564ca6075207b7fbf3f75367275
-  languageName: node
-  linkType: hard
-
-"@babel/parser@npm:^7.23.5":
-  version: 7.28.4
-  resolution: "@babel/parser@npm:7.28.4"
-  dependencies:
-    "@babel/types": ^7.28.4
-  bin:
-    parser: ./bin/babel-parser.js
-  checksum: d95e283fe1153039b396926ef567ca1ab114afb5c732a23bbcbbd0465ac59971aeb6a63f37593ce7671a52d34ec52b23008c999d68241b42d26928c540464063
   languageName: node
   linkType: hard
 
@@ -1713,13 +1688,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.5.5":
-  version: 7.28.4
-  resolution: "@babel/runtime@npm:7.28.4"
-  checksum: 934b0a0460f7d06637d93fcd1a44ac49adc33518d17253b5a0b55ff4cb90a45d8fe78bf034b448911dbec7aff2a90b918697559f78d21c99ff8dbadae9565b55
-  languageName: node
-  linkType: hard
-
 "@babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.8.4":
   version: 7.16.5
   resolution: "@babel/runtime@npm:7.16.5"
@@ -1865,16 +1833,6 @@ __metadata:
     "@babel/helper-validator-identifier": ^7.18.6
     to-fast-properties: ^2.0.0
   checksum: 9b346715a68aeede70ba9c685a144b0b26c53bcd595d448e24c8fa8df4d5956a5712e56ebadb7c85dcc32f218ee42788e37b93d50d3295c992072224cb3ef3fe
-  languageName: node
-  linkType: hard
-
-"@babel/types@npm:^7.28.4":
-  version: 7.28.4
-  resolution: "@babel/types@npm:7.28.4"
-  dependencies:
-    "@babel/helper-string-parser": ^7.27.1
-    "@babel/helper-validator-identifier": ^7.27.1
-  checksum: a369b4fb73415a2ed902a15576b49696ae9777ddee394a7a904c62e6fbb31f43906b0147ae0b8f03ac17f20c248eac093df349e33c65c94617b12e524b759694
   languageName: node
   linkType: hard
 
@@ -2338,102 +2296,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fullcalendar/common@npm:~5.11.0, @fullcalendar/common@npm:~5.11.5":
-  version: 5.11.5
-  resolution: "@fullcalendar/common@npm:5.11.5"
-  dependencies:
-    tslib: ^2.1.0
-  checksum: 18781fa511c2493a61e73c42039f62afbe5c0756f3ea25f95ce293d1d7cb6e63893b9d549491f6cdedacc4a0ea039cb3120d15cdb572ed1887a36eab774f338f
-  languageName: node
-  linkType: hard
-
-"@fullcalendar/core@npm:5.11.0":
-  version: 5.11.0
-  resolution: "@fullcalendar/core@npm:5.11.0"
-  dependencies:
-    "@fullcalendar/common": ~5.11.0
-    preact: ^10.0.5
-    tslib: ^2.1.0
-  checksum: 20e60c65af127b3bde8340c7269f31cd776c16b0431821e91b685d4b193c6902fba8cad768b0567770046fe607898b45e8a089d05c51ad1233167ccb64aece4e
-  languageName: node
-  linkType: hard
-
-"@fullcalendar/core@npm:~5.11.0":
-  version: 5.11.5
-  resolution: "@fullcalendar/core@npm:5.11.5"
-  dependencies:
-    "@fullcalendar/common": ~5.11.5
-    preact: ~10.12.1
-    tslib: ^2.1.0
-  checksum: 5b0d2fa2f0558b12ad99310ed56a51b40839a4e019fb7dd25d702b97bc9dc9e5c45c8b0fb52947e37d1c64c853526ff0ee6fb62b46193951a5efb9b46673068b
-  languageName: node
-  linkType: hard
-
-"@fullcalendar/daygrid@npm:5.11.0":
-  version: 5.11.0
-  resolution: "@fullcalendar/daygrid@npm:5.11.0"
-  dependencies:
-    "@fullcalendar/common": ~5.11.0
-    tslib: ^2.1.0
-  checksum: d30105222f76946a615a7560727c6fe3be7f51c37799f4f741e0ebccd9c4ee0256dbf9f2118e744df784be20cbff6629bb53b979b518f625f70bc234e32ab251
-  languageName: node
-  linkType: hard
-
-"@fullcalendar/daygrid@npm:~5.11.0":
-  version: 5.11.5
-  resolution: "@fullcalendar/daygrid@npm:5.11.5"
-  dependencies:
-    "@fullcalendar/common": ~5.11.5
-    tslib: ^2.1.0
-  checksum: 1410d58a283968b0629304bfed86e21d9fc322b32a7978316786f653f6f6b8b203127edc5f83fd0dcafd15dfc7774c04ac6ad104ffcb25e3e5bc7d7e64be912a
-  languageName: node
-  linkType: hard
-
-"@fullcalendar/interaction@npm:5.11.0":
-  version: 5.11.0
-  resolution: "@fullcalendar/interaction@npm:5.11.0"
-  dependencies:
-    "@fullcalendar/common": ~5.11.0
-    tslib: ^2.1.0
-  checksum: 625eb7ea331e56bb4539d4c2105c189342a9dca3d236f75a5a9ae2884595d480fb225444ff9feb1386cda07cbc92695c606921495922179b9f85b37877665db5
-  languageName: node
-  linkType: hard
-
-"@fullcalendar/moment@npm:5.11.0":
-  version: 5.11.0
-  resolution: "@fullcalendar/moment@npm:5.11.0"
-  dependencies:
-    "@fullcalendar/common": ~5.11.0
-    tslib: ^2.1.0
-  peerDependencies:
-    moment: ^2.29.1
-  checksum: 42ec3ac3349a9b5422f79d5aed01f117814cf7bf100aa94a26dbb4a4748ce813f39435f9290f5465785f60964d3004c2902c5bfd30113e33eeefeee859fceb7b
-  languageName: node
-  linkType: hard
-
-"@fullcalendar/timegrid@npm:5.11.0":
-  version: 5.11.0
-  resolution: "@fullcalendar/timegrid@npm:5.11.0"
-  dependencies:
-    "@fullcalendar/common": ~5.11.0
-    "@fullcalendar/daygrid": ~5.11.0
-    tslib: ^2.1.0
-  checksum: 4a7fb7fe3ece70ddd18bf684744ded9fd53d504880c576cf570cede79e1a58fe934258370be3ffb7b16d86a3802a4ad52b085d0c4a7394549b0ad07f9cb8ab0e
-  languageName: node
-  linkType: hard
-
-"@fullcalendar/vue@npm:5.11.0":
-  version: 5.11.0
-  resolution: "@fullcalendar/vue@npm:5.11.0"
-  dependencies:
-    "@fullcalendar/core": ~5.11.0
-    tslib: ^2.1.0
-  peerDependencies:
-    vue: ^2.6.12
-  checksum: 81010af22ebd6cf7cd971a5e0435794d35bc6a95f112e731571c04f27a6a4b07c86bbf07315c1233276743e3e99bf3835432cf192e15cfef4ee6d0cca633ac3b
-  languageName: node
-  linkType: hard
-
 "@gar/promisify@npm:^1.0.1":
   version: 1.1.2
   resolution: "@gar/promisify@npm:1.1.2"
@@ -2871,45 +2733,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@videojs/http-streaming@npm:^3.17.2":
-  version: 3.17.2
-  resolution: "@videojs/http-streaming@npm:3.17.2"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-    "@videojs/vhs-utils": ^4.1.1
-    aes-decrypter: ^4.0.2
-    global: ^4.4.0
-    m3u8-parser: ^7.2.0
-    mpd-parser: ^1.3.1
-    mux.js: 7.1.0
-    video.js: ^7 || ^8
-  peerDependencies:
-    video.js: ^8.19.0
-  checksum: 7dc702c3b58d8644e0f3886f2a7efebbcc11d88130282826878c929261858bbaf84f87aa7dde4f226a9f3006a27b8c04b2c008cbe06c60f9d6bb39c7d8af434c
-  languageName: node
-  linkType: hard
-
-"@videojs/vhs-utils@npm:^4.0.0, @videojs/vhs-utils@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "@videojs/vhs-utils@npm:4.1.1"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-    global: ^4.4.0
-  checksum: 772a5bb0aca571fe48f5190689139e983394e485a0e4ef58fa4a60bf13bd0bc24dfd51b9f7618286d875bd87ab680adfff801cfcffe01127be6d4ff6ad81e255
-  languageName: node
-  linkType: hard
-
-"@videojs/xhr@npm:2.7.0":
-  version: 2.7.0
-  resolution: "@videojs/xhr@npm:2.7.0"
-  dependencies:
-    "@babel/runtime": ^7.5.5
-    global: ~4.4.0
-    is-function: ^1.0.1
-  checksum: 4f40ec37072aa1c21945620d7fdb0723957faa17072857ad8d2a8d53fc19e5779d25079711d5fbe94f358bcfe84c0d458afeaba0e9cb095860126f629b9419dc
-  languageName: node
-  linkType: hard
-
 "@vue/babel-helper-vue-jsx-merge-props@npm:^1.4.0":
   version: 1.4.0
   resolution: "@vue/babel-helper-vue-jsx-merge-props@npm:1.4.0"
@@ -3047,21 +2870,6 @@ __metadata:
     "@vue/compiler-core": 3.2.26
     "@vue/shared": 3.2.26
   checksum: 46f49ab75c7d85ea81d7100baab4ea7cb8c71b3ff51deb90ba3334586831ecc626cf57e91e1b890b536153139aba3713bb9076919c0f711c2ed8578a67ddeae6
-  languageName: node
-  linkType: hard
-
-"@vue/compiler-sfc@npm:2.7.16":
-  version: 2.7.16
-  resolution: "@vue/compiler-sfc@npm:2.7.16"
-  dependencies:
-    "@babel/parser": ^7.23.5
-    postcss: ^8.4.14
-    prettier: ^1.18.2 || ^2.0.0
-    source-map: ^0.6.1
-  dependenciesMeta:
-    prettier:
-      optional: true
-  checksum: cf3e498ff01f0876769fa0ec2fc679f18238c42b96ee19744cca94b0b0d0c25c274e7fcad536dab3efb4aad48558219dba861c3937d06d9d91d55be368747097
   languageName: node
   linkType: hard
 
@@ -3323,13 +3131,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@xmldom/xmldom@npm:^0.8.3":
-  version: 0.8.11
-  resolution: "@xmldom/xmldom@npm:0.8.11"
-  checksum: 72020f3d5c74b54e25d19f2cd7b2d87484926cc7febdf02347dc3e06364186641d54e9e94baaaaba30e99528e6727adcd1baef6d0809e7460aee3a5be890b132
-  languageName: node
-  linkType: hard
-
 "@xtuc/ieee754@npm:^1.2.0":
   version: 1.2.0
   resolution: "@xtuc/ieee754@npm:1.2.0"
@@ -3437,18 +3238,6 @@ __metadata:
   dependencies:
     object-assign: 4.x
   checksum: 7685d32c4a9d78ad7a36641774168d80e195ef0710ae801e7211d849100c0e4499657cf3838bdae5ee9134b5aa9d7f50d68dec73b03e7d0082302804efff6ea6
-  languageName: node
-  linkType: hard
-
-"aes-decrypter@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "aes-decrypter@npm:4.0.2"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-    "@videojs/vhs-utils": ^4.1.1
-    global: ^4.4.0
-    pkcs7: ^1.0.4
-  checksum: ea6da616959de4d5a12efeabbf61d365003e7a0e330665dd0ad35bcb1a46bb2eada0c5720369055fa9848cc3f06a48d771167bff59c99e73a45068f5adb0fb9d
   languageName: node
   linkType: hard
 
@@ -5471,13 +5260,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"csstype@npm:^3.1.0":
-  version: 3.1.3
-  resolution: "csstype@npm:3.1.3"
-  checksum: 8db785cc92d259102725b3c694ec0c823f5619a84741b5c7991b8ad135dfaa66093038a1cc63e03361a6cd28d122be48f2106ae72334e067dd619a51f49eddf7
-  languageName: node
-  linkType: hard
-
 "custom-event@npm:^1.0.0":
   version: 1.0.1
   resolution: "custom-event@npm:1.0.1"
@@ -5493,12 +5275,6 @@ __metadata:
     "@cyber/helper": 5.4.1-alpha.1
     "@cyber/scene": 5.6.0-alpha.7
     "@cyber/ui": 5.6.0-xd.30
-    "@fullcalendar/core": 5.11.0
-    "@fullcalendar/daygrid": 5.11.0
-    "@fullcalendar/interaction": 5.11.0
-    "@fullcalendar/moment": 5.11.0
-    "@fullcalendar/timegrid": 5.11.0
-    "@fullcalendar/vue": 5.11.0
     "@vue/composition-api": ^1.7.0
     animate.css: ^4.1.0
     axios: 0.26.1
@@ -5509,7 +5285,6 @@ __metadata:
     ip: ^1.1.5
     jquery: ^3.6.0
     js-cookie: ^2.2.0
-    jsmind: ^0.4.6
     lint-staged: ^10.5.4
     lodash: ^4.17.21
     moment: ^2.24.0
@@ -5517,16 +5292,12 @@ __metadata:
     prettier: ^2.2.1
     properties-loader: 0.0.1
     reconnecting-websocket: ^4.4.0
-    splitpanes: legacy
     tippy.js: ^6.3.7
     typescript: ^4.1.3
-    video.js: ^8.12.0
-    videojs-markers: ^1.0.1
     vue: 2.6.14
     vue-bus: ^1.2.0
     vue-cropper: ^0.5.2
     vue-i18n: 8.27.2
-    vue-pdf-app: ^2.1.0
     vuedraggable: ^2.23.2
     xss: ^1.0.9
     xterm: ^4.3.0
@@ -5884,13 +5655,6 @@ __metadata:
     domhandler: ^4.2.0
     entities: ^2.0.0
   checksum: bff48714944d67b160db71ba244fb0f3fe72e77ef2ec8414e2eeb56f2d926e404a13456b8b83a5392e217ba47dec2ec0c368801b31481813e94d185276c3e964
-  languageName: node
-  linkType: hard
-
-"dom-walk@npm:^0.1.0":
-  version: 0.1.2
-  resolution: "dom-walk@npm:0.1.2"
-  checksum: 19eb0ce9c6de39d5e231530685248545d9cd2bd97b2cb3486e0bfc0f2a393a9addddfd5557463a932b52fdfcf68ad2a619020cd2c74a5fe46fbecaa8e80872f3
   languageName: node
   linkType: hard
 
@@ -7039,16 +6803,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"global@npm:4.4.0, global@npm:^4.3.1, global@npm:^4.4.0, global@npm:~4.4.0":
-  version: 4.4.0
-  resolution: "global@npm:4.4.0"
-  dependencies:
-    min-document: ^2.19.0
-    process: ^0.11.10
-  checksum: 9c057557c8f5a5bcfbeb9378ba4fe2255d04679452be504608dd5f13b54edf79f7be1db1031ea06a4ec6edd3b9f5f17d2d172fb47e6c69dae57fd84b7e72b77f
-  languageName: node
-  linkType: hard
-
 "globals@npm:^11.1.0":
   version: 11.12.0
   resolution: "globals@npm:11.12.0"
@@ -8125,13 +7879,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-function@npm:^1.0.1":
-  version: 1.0.2
-  resolution: "is-function@npm:1.0.2"
-  checksum: 7d564562e07b4b51359547d3ccc10fb93bb392fd1b8177ae2601ee4982a0ece86d952323fc172a9000743a3971f09689495ab78a1d49a9b14fc97a7e28521dc0
-  languageName: node
-  linkType: hard
-
 "is-glob@npm:^3.1.0":
   version: 3.1.0
   resolution: "is-glob@npm:3.1.0"
@@ -8507,13 +8254,6 @@ __metadata:
   bin:
     jsesc: bin/jsesc
   checksum: b8b44cbfc92f198ad972fba706ee6a1dfa7485321ee8c0b25f5cedd538dcb20cde3197de16a7265430fce8277a12db066219369e3d51055038946039f6e20e17
-  languageName: node
-  linkType: hard
-
-"jsmind@npm:^0.4.6":
-  version: 0.4.12
-  resolution: "jsmind@npm:0.4.12"
-  checksum: 5e49f5498e7307ca9d9fd576044716872b44b611ab11cccb042e39f145c8b0f7706a13ff9b46eafcad35eeee7fb888c841e1561ca0075ced6d35cfc85fd1ac6c
   languageName: node
   linkType: hard
 
@@ -8926,17 +8666,6 @@ __metadata:
   dependencies:
     yallist: ^4.0.0
   checksum: f97f499f898f23e4585742138a22f22526254fdba6d75d41a1c2526b3b6cc5747ef59c5612ba7375f42aca4f8461950e925ba08c991ead0651b4918b7c978297
-  languageName: node
-  linkType: hard
-
-"m3u8-parser@npm:^7.2.0":
-  version: 7.2.0
-  resolution: "m3u8-parser@npm:7.2.0"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-    "@videojs/vhs-utils": ^4.1.1
-    global: ^4.4.0
-  checksum: 9ede57df0f4c417a3cf2df0dffa5478528b1d553c192e45b1dd481fbab4f911f0ee546ab25e7ea38323d7d2deea52b77a44af5de378d77578aa2159fca811ca4
   languageName: node
   linkType: hard
 
@@ -9768,15 +9497,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"min-document@npm:^2.19.0":
-  version: 2.19.0
-  resolution: "min-document@npm:2.19.0"
-  dependencies:
-    dom-walk: ^0.1.0
-  checksum: da6437562ea2228041542a2384528e74e22d1daa1a4ec439c165abf0b9d8a63e17e3b8a6dc6e0c731845e85301198730426932a0e813d23f932ca668340c9623
-  languageName: node
-  linkType: hard
-
 "mini-css-extract-plugin@npm:^1.6.2":
   version: 1.6.2
   resolution: "mini-css-extract-plugin@npm:1.6.2"
@@ -10063,20 +9783,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mpd-parser@npm:^1.3.1":
-  version: 1.3.1
-  resolution: "mpd-parser@npm:1.3.1"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-    "@videojs/vhs-utils": ^4.0.0
-    "@xmldom/xmldom": ^0.8.3
-    global: ^4.4.0
-  bin:
-    mpd-to-m3u8-json: bin/parse.js
-  checksum: ee56a3c38b78c39d55043411aabda1de2a654ce1d7e9a4f9c121b0c2f7e81064d946fadc4a6ab4272b2efbb838c2bd17d55f0df1502606529bf7edf36bf53ac9
-  languageName: node
-  linkType: hard
-
 "mri@npm:^1.1.0":
   version: 1.2.0
   resolution: "mri@npm:1.2.0"
@@ -10119,18 +9825,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mux.js@npm:7.1.0, mux.js@npm:^7.0.1":
-  version: 7.1.0
-  resolution: "mux.js@npm:7.1.0"
-  dependencies:
-    "@babel/runtime": ^7.11.2
-    global: ^4.4.0
-  bin:
-    muxjs-transmux: bin/transmux.js
-  checksum: 3e8f209e1dd541eace84104d97f0d0cf08980ecd06c525711face02c94276485f50397c837666cdd2981d3f484c913737ed3fdbc6acbac99fd5f8c0f128a118d
-  languageName: node
-  linkType: hard
-
 "nan@npm:^2.12.1":
   version: 2.17.0
   resolution: "nan@npm:2.17.0"
@@ -10146,15 +9840,6 @@ __metadata:
   bin:
     nanoid: bin/nanoid.cjs
   checksum: 276d0d4b0c41c46aeefec5f09f093e4085a2352d06881c845db22b84f8ef72cc8defae6d76bfb1d8a2a128eb2dec42ab148d16582be4e7754c97905806ef57b6
-  languageName: node
-  linkType: hard
-
-"nanoid@npm:^3.3.11":
-  version: 3.3.11
-  resolution: "nanoid@npm:3.3.11"
-  bin:
-    nanoid: bin/nanoid.cjs
-  checksum: 3be20d8866a57a6b6d218e82549711c8352ed969f9ab3c45379da28f405363ad4c9aeb0b39e9abc101a529ca65a72ff9502b00bf74a912c4b64a9d62dfd26c29
   languageName: node
   linkType: hard
 
@@ -10855,13 +10540,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picocolors@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "picocolors@npm:1.1.1"
-  checksum: e1cf46bf84886c79055fdfa9dcb3e4711ad259949e3565154b004b260cd356c5d54b31a1437ce9782624bf766272fe6b0154f5f0c744fb7af5d454d2b60db045
-  languageName: node
-  linkType: hard
-
 "picomatch@npm:^2.0.4, picomatch@npm:^2.2.1, picomatch@npm:^2.2.3":
   version: 2.3.0
   resolution: "picomatch@npm:2.3.0"
@@ -10903,17 +10581,6 @@ __metadata:
   version: 4.0.5
   resolution: "pirates@npm:4.0.5"
   checksum: c9994e61b85260bec6c4fc0307016340d9b0c4f4b6550a957afaaff0c9b1ad58fbbea5cfcf083860a25cb27a375442e2b0edf52e2e1e40e69934e08dcc52d227
-  languageName: node
-  linkType: hard
-
-"pkcs7@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "pkcs7@npm:1.0.4"
-  dependencies:
-    "@babel/runtime": ^7.5.5
-  bin:
-    pkcs7: bin/cli.js
-  checksum: 926a713263c7656883d1fcc9fa709e08c26babc76d535dd76ccdf5ad1bc1c5931ecbbe2d7ae6075ad54897e1184be4ec304d295e28953c2ec0f1a04c27f4e838
   languageName: node
   linkType: hard
 
@@ -11430,31 +11097,6 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: e39ac60ccd1542d4f9d93d894048aac0d686b3bb38e927d8386005718e6793dbbb46930f0a523fe382f1bbd843c6d980aaea791252bf5e176180e5a4336d9679
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.4.14":
-  version: 8.5.6
-  resolution: "postcss@npm:8.5.6"
-  dependencies:
-    nanoid: ^3.3.11
-    picocolors: ^1.1.1
-    source-map-js: ^1.2.1
-  checksum: 20f3b5d673ffeec2b28d65436756d31ee33f65b0a8bedb3d32f556fbd5973be38c3a7fb5b959a5236c60a5db7b91b0a6b14ffaac0d717dce1b903b964ee1c1bb
-  languageName: node
-  linkType: hard
-
-"preact@npm:^10.0.5":
-  version: 10.27.2
-  resolution: "preact@npm:10.27.2"
-  checksum: 5020d280f81cd7e4430c67ff3ec0105ed5dee00f0831ef2f067b1131bbfe7699d41421e5193cc39d0e282cedd875f88b0250fc93c74e21765656230be2672d3d
-  languageName: node
-  linkType: hard
-
-"preact@npm:~10.12.1":
-  version: 10.12.1
-  resolution: "preact@npm:10.12.1"
-  checksum: 0de99f477563ab7f94a0f964952ad216375973c0dcd9eb49881f8eb5effc5ed6948da062548c87d5bb0d82f1a1e516b649020e760eab3a0503dfdd8e64d34a26
   languageName: node
   linkType: hard
 
@@ -13104,13 +12746,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map-js@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "source-map-js@npm:1.2.1"
-  checksum: 4eb0cd997cdf228bc253bcaff9340afeb706176e64868ecd20efbe6efea931465f43955612346d6b7318789e5265bdc419bc7669c1cebe3db0eb255f57efa76b
-  languageName: node
-  linkType: hard
-
 "source-map-resolve@npm:^0.5.0":
   version: 0.5.3
   resolution: "source-map-resolve@npm:0.5.3"
@@ -13182,13 +12817,6 @@ __metadata:
   dependencies:
     extend-shallow: ^3.0.0
   checksum: ae5af5c91bdc3633628821bde92fdf9492fa0e8a63cf6a0376ed6afde93c701422a1610916f59be61972717070119e848d10dfbbd5024b7729d6a71972d2a84c
-  languageName: node
-  linkType: hard
-
-"splitpanes@npm:legacy":
-  version: 2.4.1
-  resolution: "splitpanes@npm:2.4.1"
-  checksum: 03ea7306a77750e83d52b0b270af7c2903d70d4015378eb9eea2949d68af1b057459b205bab3a3a223ab5f43b745c9ac3286426ddce6b442341ff96a3e8e3e20
   languageName: node
   linkType: hard
 
@@ -13753,13 +13381,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.1.0":
-  version: 2.8.1
-  resolution: "tslib@npm:2.8.1"
-  checksum: e4aba30e632b8c8902b47587fd13345e2827fa639e7c3121074d5ee0880723282411a8838f830b55100cbe4517672f84a2472667d355b81e8af165a55dc6203a
-  languageName: node
-  linkType: hard
-
 "tslib@npm:~2.1.0":
   version: 2.1.0
   resolution: "tslib@npm:2.1.0"
@@ -14285,62 +13906,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"video.js@npm:^7 || ^8, video.js@npm:^8.12.0":
-  version: 8.23.4
-  resolution: "video.js@npm:8.23.4"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-    "@videojs/http-streaming": ^3.17.2
-    "@videojs/vhs-utils": ^4.1.1
-    "@videojs/xhr": 2.7.0
-    aes-decrypter: ^4.0.2
-    global: 4.4.0
-    m3u8-parser: ^7.2.0
-    mpd-parser: ^1.3.1
-    mux.js: ^7.0.1
-    videojs-contrib-quality-levels: 4.1.0
-    videojs-font: 4.2.0
-    videojs-vtt.js: 0.15.5
-  checksum: a97d2c6e0802166944e70ba608c69ce8e97d84671707d479fad2d6a9d939e28242c29a6e37374b776e2434635f8d5c110c2f1a0646c66df295d15b9f8000c67e
-  languageName: node
-  linkType: hard
-
-"videojs-contrib-quality-levels@npm:4.1.0":
-  version: 4.1.0
-  resolution: "videojs-contrib-quality-levels@npm:4.1.0"
-  dependencies:
-    global: ^4.4.0
-  peerDependencies:
-    video.js: ^8
-  checksum: 34ce40870df10a0b00ea7c4399e58aebe29a1538406016425848f52b05b5d20d6e9970ca06c6982a8ae4078c4cc4caf8057559bfadd025cbca0640204b50302c
-  languageName: node
-  linkType: hard
-
-"videojs-font@npm:4.2.0":
-  version: 4.2.0
-  resolution: "videojs-font@npm:4.2.0"
-  checksum: 09bd5c46f75d816e1d36c80ef3751d58f95ca949e4341400734c8084d5579913116861bcc8aa891e82cf464c44ec5fbe525d1450571576a90da7bf1c2cc55b58
-  languageName: node
-  linkType: hard
-
-"videojs-markers@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "videojs-markers@npm:1.0.1"
-  peerDependencies:
-    video.js: ">=4"
-  checksum: b2da4a5c75fad83b72e6aa1fd8a35d0f8f70ac1308545ac88df01931f5a49e1ad75f5fb89475f05e1421e8c159ee0cb0f376d4181d763af568f00a685d045721
-  languageName: node
-  linkType: hard
-
-"videojs-vtt.js@npm:0.15.5":
-  version: 0.15.5
-  resolution: "videojs-vtt.js@npm:0.15.5"
-  dependencies:
-    global: ^4.3.1
-  checksum: 2658de26830e412f7539f2674019348374d36f05fcdae548be001d596798f50c0d2e026163afdeff34286919de7aae08cb97af612925164167204b301d246241
-  languageName: node
-  linkType: hard
-
 "vm-browserify@npm:^1.0.1":
   version: 1.1.2
   resolution: "vm-browserify@npm:1.1.2"
@@ -14498,15 +14063,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-pdf-app@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "vue-pdf-app@npm:2.1.0"
-  dependencies:
-    vue: ^2.6.11
-  checksum: bcaadb553c9744d4925fd0fee68e026c9241b15ceeb06286c1d3d38770f215793a5c2c7747a315beb6945e5dc85210af49ce1d3bb51c740d45c16a9269f06604
-  languageName: node
-  linkType: hard
-
 "vue-ref@npm:^2.0.0":
   version: 2.0.0
   resolution: "vue-ref@npm:2.0.0"
@@ -14552,16 +14108,6 @@ __metadata:
   version: 2.6.14
   resolution: "vue@npm:2.6.14"
   checksum: 23524a1bdca094d62cb3491a46317eed75184b5d61d28fa846ea5d2b241c1cc7084fc67ee259d47a50a6d0bbc33ecaceb7bb52bff81312fe7da07263f3419942
-  languageName: node
-  linkType: hard
-
-"vue@npm:^2.6.11":
-  version: 2.7.16
-  resolution: "vue@npm:2.7.16"
-  dependencies:
-    "@vue/compiler-sfc": 2.7.16
-    csstype: ^3.1.0
-  checksum: 42eb129edbd2b647b7a5e0655d69fb2dfcba55009bd4cc6a80da5006ba19054bcbf56554599d9b4379f4aa3bfabc0b4e68c0d7fb47d92b5e41d56b38791553eb
   languageName: node
   linkType: hard
 

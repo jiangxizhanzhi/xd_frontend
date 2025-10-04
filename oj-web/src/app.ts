@@ -17,7 +17,7 @@ window.echarts = echarts;
 
 import '@/assets/css/index.scss';
 import '@/style/index.scss';
-import './assets/iconfont/iconfont.css';
+// import './assets/iconfont/iconfont.css';
 import '@cyber/ui/lib/css/index.css';
 
 import { getToken, getJWTToken } from '@/utils/auth';
@@ -30,11 +30,11 @@ import ReconnectingWebSocket from 'reconnecting-websocket';
 import EchartWrapper from './components/echart-wrapper/index.vue';
 import Textarea from './components/textarea/index.vue';
 import TextareaFlag from './components/textarea/index-flag.vue';
-import TimeCountdown from './components/scene-related/index';
+// import TimeCountdown from './components/scene-related/index';
 import FixedLengthLabel from './components/fixed-length-label/index.vue';
 import FormTags from './components/form-tag/form-tag.vue';
-import VueCropper from 'vue-cropper';
-import vuedraggable from 'vuedraggable';
+// import VueCropper from 'vue-cropper';
+// import vuedraggable from 'vuedraggable';
 
 import 'animate.css';
 
@@ -118,16 +118,16 @@ let runtime: IRuntime = function (Vue: Vue) {
   Vue.prototype.$ws = ReconnectingWebSocket;
   Vue.prototype.$ListenDomChange = ListenDomChange;
   Vue.use(CompositionAPI);
-  Vue.use(VueCropper);
+  // Vue.use(VueCropper);
   // Vue.use(VueCodemirror);
   Vue.use(VueBus);
 
   Vue.component('echart-wrapper', EchartWrapper);
   Vue.component('cy-textarea', Textarea);
   Vue.component('cy-textarea-flag', TextareaFlag);
-  Vue.component('cy-time-countdown', TimeCountdown);
+  // Vue.component('cy-time-countdown', TimeCountdown);
   Vue.component('fixed-length-label', FixedLengthLabel);
-  Vue.component('draggable', vuedraggable);
+  // Vue.component('draggable', vuedraggable);
   Vue.component('cy-tags', FormTags);
   initFrame();
 
