@@ -105,7 +105,7 @@ import trainingReport from './components/training-report/index.vue';
 import trainingManual from './components/training-manual/index.vue';
 // import replay from '@/components/replay/index.vue';5.4复盘回放
 import replay from '@/components/red-blue-rb-replay/index.vue'; //新的复盘回放
-import ChatTool from '@/components/ChatTools/index.vue';
+// import ChatTool from '@/components/ChatTools/index.vue';
 import Notice from '@/pages/web/notice/index.vue';
 import {
   getEditBack,
@@ -128,7 +128,7 @@ export default {
     trainingReport,
     trainingManual,
     replay,
-    ChatTool,
+    // ChatTool,
     Notice,
   },
   props: {},

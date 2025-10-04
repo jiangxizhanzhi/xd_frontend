@@ -27,7 +27,7 @@
 import ClassroomMonitoring from '@/pages/cms/course-mod/class-card/components/classroom-monitoring/index.vue';
 import Homework from '@/pages/cms/course-mod/class-card/components/homework/index.vue';
 import Live from '@/pages/cms/course-mod/class-card/components/live/index.vue';
-import chatTool from '@/components/cms-chat-tools/index.vue';
+// import chatTool from '@/components/cms-chat-tools/index.vue';
 
 const tabNameList = {
   classroomMonitoring: 'classroomMonitoring',
@@ -39,7 +39,7 @@ export default {
     ClassroomMonitoring,
     Homework,
     Live,
-    chatTool,
+    // chatTool,
   },
   data() {
     return {

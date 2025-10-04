@@ -279,7 +279,7 @@ import TrainTopTitle from '@/components/student-common-detail/train-top-title/in
 import TrainDetailBg from '@/components/student-common-detail/train-detail-bg/index.vue';
 import TrainDetailTitle from '@/components/student-common-detail/train-detail-title/index.vue';
 import TrainMiddleBg from '@/components/student-common-detail/train-middle-bg/index.vue';
-import ChatTool from '@/components/ChatTools/index.vue';
+// import ChatTool from '@/components/ChatTools/index.vue';
 import Notice from '@/pages/web/notice/index.vue';
 import emptyPage from '@/pages/web/Empty';
 import { getSceneStatus, handleWsData } from '@/utils/scene-websocket';
@@ -310,7 +310,7 @@ export default {
     TrainDetailBg,
     TrainDetailTitle,
     TrainMiddleBg,
-    ChatTool,
+    // ChatTool,
     Notice,
     taskStudent,
     emptyPage,

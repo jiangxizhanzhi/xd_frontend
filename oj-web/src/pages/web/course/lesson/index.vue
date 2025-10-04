@@ -399,9 +399,9 @@
       :rtcUrl="rtcUrl"
       @before-close="beforeClose"
     ></watch-live>
-    <div class="char-box" v-if="roomId">
-      <chat-tool ref="charTool" :roomId="roomId" />
-    </div>
+<!--    <div class="char-box" v-if="roomId">-->
+<!--      <chat-tool ref="charTool" :roomId="roomId" />-->
+<!--    </div>-->
   </cb-inner-page>
 </template>
 
@@ -416,7 +416,7 @@ import LeaveMessage from '@/components/leave-message/index';
 import Guide from './components/guide';
 import VideoView from './components/video';
 import AnnexDialog from './components/annex-dialog';
-import chatTool from '@/components/chat-tools/index.vue';
+// import chatTool from '@/components/chat-tools/index.vue';
 import InstructionDialog from './components/instruction-dialog';
 import { mixins } from '@/mixin';
 import {
@@ -452,7 +452,7 @@ export default {
     SceneEditor,
     cyTimeCountdown,
     ScenePattern,
-    chatTool,
+    // chatTool,
     Splitpanes,
     Pane,
     NodeFrame,

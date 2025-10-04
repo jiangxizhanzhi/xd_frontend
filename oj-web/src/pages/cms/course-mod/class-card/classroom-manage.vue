@@ -64,7 +64,7 @@ import EnvironmentalDistribution from '@/pages/cms/course-mod/class-card/compone
 import ExperimentReport from '@/pages/cms/course-mod/class-card/components/experiment-report.vue';
 import Homework from '@/pages/cms/course-mod/class-card/components/homework/index.vue';
 import LearningStatistics from '@/pages/cms/course-mod/class-card/components/learning-statistics.vue';
-import chatTool from '@/components/cms-chat-tools/index.vue';
+// import chatTool from '@/components/cms-chat-tools/index.vue';
 import Live from '@/pages/cms/course-mod/class-card/components/live/index.vue';
 
 const tabNameList = {
@@ -82,7 +82,7 @@ export default {
     ExperimentReport,
     Homework,
     LearningStatistics,
-    chatTool,
+    // chatTool,
     Live,
   },
   data() {

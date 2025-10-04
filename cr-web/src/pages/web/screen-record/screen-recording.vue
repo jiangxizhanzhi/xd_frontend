@@ -181,8 +181,8 @@ import {
   cancelRedBlueMatrixBadge,
 } from '@/api/web/red-blue';
 import Notice from '@/pages/web/notice/index.vue';
-import ChatTool from '@/components/ChatTools/index.vue';
-import ChatToolTeam from '@/components/ChatTools/index-team.vue';
+// import ChatTool from '@/components/ChatTools/index.vue';
+// import ChatToolTeam from '@/components/ChatTools/index-team.vue';
 import wsutil from '@/utils/websocket';
 import utils from '@/utils/utils';
 export default {
@@ -201,8 +201,8 @@ export default {
     teamAddTag,
     redBlueAddTag,
     Notice,
-    ChatTool,
-    ChatToolTeam,
+    // ChatTool,
+    // ChatToolTeam,
     TaskMatrixTeam,
   },
   data() {

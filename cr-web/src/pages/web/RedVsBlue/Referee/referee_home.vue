@@ -124,7 +124,7 @@ import ScreenMonitor from './screen_monitoring.vue';
 import HostInfo from '@/pages/web/RangeTest/test-detail/test/host-info.vue';
 import StaffScore from './staff-score.vue';
 import TrainReport from './train-report.vue';
-import charTool from '@/components/ChatTools/index.vue';
+// import charTool from '@/components/ChatTools/index.vue';
 import { setBreadcrumbTitle } from '@cyber/ui';
 import { getLanguage, routerResolve } from '@cyber/helper';
 export default {
@@ -138,7 +138,7 @@ export default {
     HostInfo,
     StaffScore,
     TrainReport,
-    charTool,
+    // charTool,
   },
   data() {
     return {
