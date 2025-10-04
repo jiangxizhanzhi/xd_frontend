@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="true" title="课程规划">
+  <cb-inner-page :background="true" title="课程编辑">
     <div class="box-card add-content">
       <cb-form
         :ref="formRef"

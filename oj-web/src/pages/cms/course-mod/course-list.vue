@@ -1,7 +1,7 @@
 <template>
   <cb-inner-page
     :background="true"
-    :title="userInfo.teacher_flag === 1 ? '课程规划': '我的课程'"
+    :title="$route.name === 'student-courses' ? '我的课程': '课程规划'"
   >
     <!--    &lt;!&ndash; 授权访问 &ndash;&gt;-->
     <!--    <div v-if="AuthAccess == 'access'">-->
