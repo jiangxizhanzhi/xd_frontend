@@ -56,6 +56,7 @@
                 :role-show-config="roleShowConfig"
                 :roles.sync="originRoles"
                 :sync-processing.sync="syncProcessing"
+                :scene-config="sceneConfig"
               >
               </scene-editor>
             </div>
@@ -235,6 +236,14 @@ export default {
       roleShowConfig: ['red'],
       intervalSetTopo: true, // 最后提交的时候，不再更新数据库缓存
       syncProcessing: false, // 是否监听编辑器内部的同步操作
+      sceneConfig: {
+        menubar: ['topology','probe','assets','war'],
+        showMenu: true,
+        toolbar: [],
+        showToolbar: true,
+        toolMenuBar: [],
+        targetMenubar: [],
+      },
     };
   },
   computed: {

@@ -100,14 +100,14 @@ export default {
           icon: 'icon-renwudaotiao',
           name: this.$t('rbt.taskModulation'),
         },
-        {
-          icon: 'icon-liuliang',
-          name: this.$t('rbt.behaviorModulation'),
-        },
-        {
-          icon: 'icon-taishidaotiao',
-          name: this.$t('rbt.situationModulation'),
-        },
+        // {
+        //   icon: 'icon-liuliang',
+        //   name: this.$t('rbt.behaviorModulation'),
+        // },
+        // {
+        //   icon: 'icon-taishidaotiao',
+        //   name: this.$t('rbt.situationModulation'),
+        // },
       ],
       scaleTimes: {
         data: [],
