@@ -3,10 +3,10 @@
     :background="true"
     title="设备状态管理"
   >
-    <!-- :selector="selector"
-    :selection.sync="selection" -->
     <cb-search-table
       :cols.sync="cols"
+      :selector="selector"
+      :selection.sync="selection"
       :url="URL"
       :baseURL="baseURL"
       :data.sync="model"
