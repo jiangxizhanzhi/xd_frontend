@@ -14,10 +14,13 @@
       <template v-slot:trainRecord="scope">
         <cb-button
           type="text"
-          icon="icon-chakan"
+          @click="download(scope.data)"
+          mr
+        >{{ $t('下载') }}</cb-button>
+        <cb-button
+          type="text"
           @click="viewRecord(scope.data)"
-          >{{ $t('m.check') }}</cb-button
-        >
+        >{{ $t('m.check') }}</cb-button>
       </template>
     </cb-search-table>
     <cb-dialog
@@ -27,7 +30,10 @@
       :append-to-body="true"
       center
     >
-      <div slot="title" class="header-title">
+      <div
+        slot="title"
+        class="header-title"
+      >
         <span class="title-name">{{ $t('m.trainRecord') }}</span>
       </div>
       <training-record
@@ -96,15 +102,37 @@ export default {
           label: this.$t('m.trainRecord'),
           prop: 'trainRecord',
           slot: 'trainRecord',
+          with: 200,
         },
       ],
     };
   },
   watch: {},
   computed: {},
-  created() {},
-  mounted() {},
+  created() { },
+  mounted() { },
   methods: {
+    download(row) {
+      this.$request
+        .get(
+          '/cr/training_team/training_team/download_train_record',
+          {
+            resource_id: this.$route.params.resource_id,
+            user_hash: row.user_id,
+          },
+          {
+            responseType: 'arraybuffer',
+            baseURL: '/api/ojj',
+          },
+        )
+        // 下载
+        .then((res) => {
+          let filename = '';
+          const res_data = _.get(res, 'headers.x-file-name');
+          filename = res_data ? res_data : '任务详情.pdf';
+          this.$request.download(res.data, filename);
+        });
+    },
     viewRecord(row) {
       this.showRecordDialog = true;
       // 查看训练记录

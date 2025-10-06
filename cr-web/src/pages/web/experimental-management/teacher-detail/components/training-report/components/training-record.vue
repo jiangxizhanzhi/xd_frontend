@@ -42,10 +42,29 @@
             type="viewer"
             class="taskRecordContent"
           />
-          <empty-page v-else ref="emptyComp" />
+          <empty-page
+            v-else
+            ref="emptyComp"
+          />
+        </div>
+        <block :title="$t('任务详情')"></block>
+        <div class="task-detail">
+          <CbMarkdown
+            v-if="trainRecordForm.remark"
+            v-model="trainRecordForm.remark"
+            type="viewer"
+            class="taskRecordContent"
+          />
+          <empty-page
+            v-else
+            ref="emptyComp"
+          />
         </div>
       </div>
-      <empty-page v-if="!taskLists.length" ref="emptyComp" />
+      <empty-page
+        v-if="!taskLists.length"
+        ref="emptyComp"
+      />
     </div>
   </div>
 </template>
@@ -72,6 +91,7 @@ export default {
       trainRecordForm: {
         desc: '',
         training_record: '',
+        remark: '',
       },
       thirdStatus: false,
       defaultKey: [],
@@ -105,12 +125,13 @@ export default {
       }
     },
   },
-  created() {},
+  created() { },
   methods: {
     handleNodeClick(data) {
       if (data.level === 2) {
         this.thirdStatus = true;
         this.trainRecordForm.desc = data.description;
+        this.trainRecordForm.remark = data?.remark || '';
         if (data.training_record && data.training_record.record) {
           this.trainRecordForm.training_record = data.training_record.record;
         } else {
@@ -128,6 +149,7 @@ export default {
 #components-train-record {
   width: 100%;
   height: 100%;
+
   .font10 {
     font-size: 10px;
   }
@@ -139,6 +161,7 @@ export default {
     overflow: auto;
     // padding-right: 1%;
   }
+
   /*右侧任务详情*/
   .task-detail {
     width: 67%;
@@ -146,44 +169,55 @@ export default {
     border-radius: 4px;
     margin-left: 2%;
     padding: 16px 0;
+
     .task-desc {
       min-height: 60px;
       padding-left: 16px;
       font-size: 14px;
     }
+
     .task-record {
       margin: 10px 0 0 7px;
+
       .empty_page {
         top: 100px;
         position: relative;
       }
+
       .taskRecordContent {
         box-shadow: rgba(0, 0, 0, 0) 0 0 0 0 !important;
+
         .v-note-panel {
           p {
             color: var(--neutral8);
           }
         }
       }
+
       .markdown-body {
         color: #fff;
         padding: 0;
         padding-left: 8px;
       }
+
       .v-note-wrapper {
         min-height: 100%;
         background: transparent !important;
       }
+
       .markdown-body table tr {
         background-color: transparent !important;
       }
+
       .markdown-body .highlight pre,
       .markdown-body pre {
         background-color: #0f4377 !important;
       }
+
       .markdown-body em {
         font-style: italic;
       }
+
       .markdown-body h1,
       h2,
       h3,
@@ -192,28 +226,27 @@ export default {
       h6 {
         border-bottom: 0 !important;
       }
+
       .op-icon.dropdown-wrapper.dropdown .popup-dropdown[data-v-548e2160] {
         background: #1c2238 !important;
         color: #ffffff;
       }
+
       .op-icon.dropdown-wrapper.dropdown .dropdown-item[data-v-548e2160]:hover {
         background: #35406b !important;
       }
+
       .v-note-wrapper .v-note-panel .v-note-show,
       .v-note-wrapper .v-note-panel .v-note-edit.divarea-wrapper {
         overflow-y: hidden !important;
       }
+
       .v-note-wrapper .v-note-panel .v-note-show .v-show-content,
-      #components-train-record
-        .task-detail
-        .task-record
-        .v-note-wrapper
-        .v-note-panel
-        .v-note-show
-        .v-show-content-html {
+      #components-train-record .task-detail .task-record .v-note-wrapper .v-note-panel .v-note-show .v-show-content-html {
         overflow-y: hidden !important;
         height: 100% !important;
       }
+
       .v-note-wrapper .v-note-panel .v-note-edit.divarea-wrapper,
       .auto-textarea-wrapper .auto-textarea-input.no-resize,
       .v-note-wrapper .v-note-panel .v-note-show .v-show-content,
@@ -222,6 +255,7 @@ export default {
         background: transparent !important;
         color: white;
       }
+
       .v-note-wrapper .v-note-panel .v-note-show .v-show-content,
       .v-note-wrapper .v-note-panel .v-note-show .v-show-content-html {
         width: 100%;
@@ -232,9 +266,11 @@ export default {
         overflow-x: hidden;
         background: #fbfbfb;
       }
+
       .v-note-wrapper .v-note-op.shadow {
         border-bottom: 1px dashed #3b4465;
       }
+
       .v-note-wrapper .v-note-op .v-left-item .op-icon:hover,
       .v-note-wrapper .v-note-op .v-right-item .op-icon.selected,
       .v-note-wrapper .v-note-op .v-right-item .op-icon:hover {
