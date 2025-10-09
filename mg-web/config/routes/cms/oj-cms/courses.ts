@@ -207,5 +207,17 @@ export default [
       },
       module: 'student-courses',
     },
-  }
+  },
+  {
+    name: 'student-courses-edit',
+    path: '/admin/oj/admin/student-courses/:courseId/edit/',
+    title: '课程编辑',
+    component: './frame',
+    meta: {
+      breadcrumb: {
+        parentName: 'student-courses',
+      },
+      module: 'student-courses',
+    },
+  },
 ];

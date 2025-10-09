@@ -34,7 +34,7 @@
         </template>
         <cb-button-group slot="searchRightArea">
           <cb-button
-            v-if="userInfo.teacher_flag === 1"
+            v-if="userInfo.teacher_flag === 1 && $route.name === 'courses'"
             button-type="add"
             @click="addCourse"
           ></cb-button>
@@ -44,12 +44,12 @@
           <!--            :disabled="selection.length === 0"-->
           <!--            @click="deleteCourse(selection, $event)"-->
           <!--          >{{ $t('m.delete') }}</cb-button>-->
-          <cb-button
-            button-type="export"
-            hollow
-            :disabled="selection.length === 0"
-            @click="exportCourse(selection, $event)"
-          ></cb-button>
+<!--          <cb-button-->
+<!--            button-type="export"-->
+<!--            hollow-->
+<!--            :disabled="selection.length === 0"-->
+<!--            @click="exportCourse(selection, $event)"-->
+<!--          ></cb-button>-->
         </cb-button-group>
       </cb-search-bar>
 
@@ -343,16 +343,25 @@ export default {
     },
     // 编辑
     edit(row) {
-      this.$router.push({
-        name: 'courses-edit',
-        params: {
-          courseId: row.resource_id,
-        },
-      });
+      if (this.userInfo.teacher_flag === 1 && this.$route.name === 'courses') {
+        this.$router.push({
+          name: 'courses-edit',
+          params: {
+            courseId: row.resource_id,
+          },
+        });
+      } else {
+        this.$router.push({
+          name: 'student-courses-edit',
+          params: {
+            courseId: row.resource_id,
+          },
+        });
+      }
     },
     gotoDetail(row) {
       if (row.is_public) {
-        if (this.userInfo.teacher_flag === 1) {
+        if (this.userInfo.teacher_flag === 1 && this.$route.name === 'courses') {
           this.$router.push({
             path: `/admin/courses/${row.resource_id}/detail`,
             params: {

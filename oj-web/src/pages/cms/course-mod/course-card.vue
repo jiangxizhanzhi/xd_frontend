@@ -134,8 +134,9 @@ export default {
       }
     }
     &:hover {
+      background: var(--bg-color-3);
       img {
-        transform: scale(1.1);
+        transform: scale(1.05);
         transition: all 0.5s ease;
       }
       .name {

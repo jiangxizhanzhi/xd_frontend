@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="true" title="课程编辑">
+  <cb-inner-page :background="true" :title="id ? '课程编辑' : '新增课程'">
     <div class="box-card add-content">
       <cb-form
         :ref="formRef"
@@ -367,9 +367,15 @@ export default {
       this.dialogVisible = false;
     },
     cancel() {
-      this.$router.push({
-        name: 'courses',
-      });
+      if (this.$route.name === 'courses-edit') {
+        this.$router.push({
+          name: 'courses',
+        });
+      } else {
+        this.$router.push({
+          name: 'student-courses',
+        });
+      }
     },
     // 表单提交
     submit() {

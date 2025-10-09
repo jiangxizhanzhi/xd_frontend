@@ -283,6 +283,18 @@ export default [
           module: 'student-courses',
         },
       },
+      {
+        name: 'student-courses-edit',
+        path: '/admin/student-courses/:courseId/edit/',
+        title: '课程编辑',
+        component: './pages/cms/course-mod/course-edit.vue',
+        meta: {
+          breadcrumb: {
+            parentName: 'student-courses',
+          },
+          module: 'student-courses',
+        },
+      },
     ],
   },
 ];
