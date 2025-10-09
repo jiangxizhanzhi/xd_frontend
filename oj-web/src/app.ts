@@ -36,7 +36,7 @@ import FormTags from './components/form-tag/form-tag.vue';
 // import VueCropper from 'vue-cropper';
 // import vuedraggable from 'vuedraggable';
 
-import 'animate.css';
+// import 'animate.css';
 
 import CompositionAPI from '@vue/composition-api';
 

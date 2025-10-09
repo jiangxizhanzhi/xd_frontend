@@ -3312,13 +3312,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"animate.css@npm:^4.1.0":
-  version: 4.1.1
-  resolution: "animate.css@npm:4.1.1"
-  checksum: c7eb91540423532c549725a6dedea993735a05eadaa49ed4d1965ce166a6db36459adcc9667c1dfe13657fab92a2875bbee34ad0d942444a731badab69f762c8
-  languageName: node
-  linkType: hard
-
 "ansi-colors@npm:^4.1.1":
   version: 4.1.1
   resolution: "ansi-colors@npm:4.1.1"
@@ -5276,7 +5269,6 @@ __metadata:
     "@cyber/scene": 5.6.0-alpha.7
     "@cyber/ui": 5.6.0-xd.30
     "@vue/composition-api": ^1.7.0
-    animate.css: ^4.1.0
     axios: 0.26.1
     cidr-js: ^2.3.1
     crypto-js: ^4.1.1
@@ -5300,7 +5292,6 @@ __metadata:
     vue-i18n: 8.27.2
     vuedraggable: ^2.23.2
     xss: ^1.0.9
-    xterm: ^4.3.0
     yorkie: ^2.0.0
   languageName: unknown
   linkType: soft
@@ -14483,13 +14474,6 @@ __metadata:
   version: 4.0.2
   resolution: "xtend@npm:4.0.2"
   checksum: ac5dfa738b21f6e7f0dd6e65e1b3155036d68104e67e5d5d1bde74892e327d7e5636a076f625599dc394330a731861e87343ff184b0047fef1360a7ec0a5a36a
-  languageName: node
-  linkType: hard
-
-"xterm@npm:^4.3.0":
-  version: 4.19.0
-  resolution: "xterm@npm:4.19.0"
-  checksum: 4385e08d6f1e26d0db295ba55f0ed9c304686a72c2cfdd32502cf59de23ae9c93434d469fc3735f44375602f209f767a1ba643a86be6f8e0f1cf7e5bfdccde87
   languageName: node
   linkType: hard
 

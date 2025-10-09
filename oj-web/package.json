@@ -22,7 +22,6 @@
     "@cyber/scene": "5.6.0-alpha.7",
     "@cyber/ui": "5.6.0-xd.30",
     "@vue/composition-api": "^1.7.0",
-    "animate.css": "^4.1.0",
     "axios": "0.26.1",
     "cidr-js": "^2.3.1",
     "crypto-js": "^4.1.1",
@@ -42,8 +41,7 @@
     "vue-cropper": "^0.5.2",
     "vue-i18n": "8.27.2",
     "vuedraggable": "^2.23.2",
-    "xss": "^1.0.9",
-    "xterm": "^4.3.0"
+    "xss": "^1.0.9"
   },
   "devDependencies": {
     "@cyber/cli": "5.4.0-alpha.0",
