@@ -16,6 +16,7 @@ export default [
     path: '/cr/comprehensive-training-subject-train/:resource_id',
     title: 'm.details',
     meta: {
+      module: 'comprehensive-training-subject',
       breadcrumb: {
         parentName: 'comprehensive-training-subject',
       },
@@ -28,6 +29,7 @@ export default [
     path: '/cr/comprehensive-training-subject/template-detail/:resource_id/:template_id',
     title: '训练模板详情',
     meta: {
+      module: 'comprehensive-training-subject',
       breadcrumb: {
         parentName: 'comprehensive-training-subject',
       },
@@ -40,6 +42,7 @@ export default [
     path: '/cr/comprehensive-training-subject/create/:templateId/:business_template_id',
     title: '创建训练',
     meta: {
+      module: 'comprehensive-training-subject',
       breadcrumb: {
         parentName: 'comprehensive-training-subject',
       },
@@ -52,6 +55,7 @@ export default [
     path: '/cr/comprehensive-training-subject/add/:resource_id/:template_id/:templateId/:business_template_id',
     title: '创建训练',
     meta: {
+      module: 'comprehensive-training-subject',
       breadcrumb: {
         parentName: 'comprehensive-training-subject',
       },

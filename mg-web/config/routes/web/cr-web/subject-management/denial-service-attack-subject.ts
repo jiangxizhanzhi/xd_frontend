@@ -16,6 +16,7 @@ export default [
     path: '/cr/denial-service-attack-subject-train/:resource_id',
     title: 'm.details',
     meta: {
+      module: 'denial-service-attack-subject',
       breadcrumb: {
         parentName: 'denial-service-attack-subject',
       },
@@ -28,6 +29,7 @@ export default [
     path: '/cr/denial-service-attack-subject/template-detail/:resource_id/:template_id',
     title: '训练模板详情',
     meta: {
+      module: 'denial-service-attack-subject',
       breadcrumb: {
         parentName: 'denial-service-attack-subject',
       },
@@ -40,6 +42,7 @@ export default [
     path: '/cr/denial-service-attack-subject/create/:templateId/:business_template_id',
     title: '创建训练',
     meta: {
+      module: 'denial-service-attack-subject',
       breadcrumb: {
         parentName: 'denial-service-attack-subject',
       },
@@ -52,6 +55,7 @@ export default [
     path: '/cr/denial-service-attack-subject/add/:resource_id/:template_id/:templateId/:business_template_id',
     title: '创建训练',
     meta: {
+      module: 'denial-service-attack-subject',
       breadcrumb: {
         parentName: 'denial-service-attack-subject',
       },

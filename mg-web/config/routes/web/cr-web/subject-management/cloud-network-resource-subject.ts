@@ -16,6 +16,7 @@ export default [
     path: '/cr/cloud-network-resource-subject-train/:resource_id',
     title: 'm.details',
     meta: {
+      module: 'cloud-network-resource-subject',
       breadcrumb: {
         parentName: 'cloud-network-resource-subject',
       },
@@ -28,6 +29,7 @@ export default [
     path: '/cr/cloud-network-resource-subject/template-detail/:resource_id/:template_id',
     title: '训练模板详情',
     meta: {
+      module: 'cloud-network-resource-subject',
       breadcrumb: {
         parentName: 'cloud-network-resource-subject',
       },
@@ -40,6 +42,7 @@ export default [
     path: '/cr/cloud-network-resource-subject/create/:templateId/:business_template_id',
     title: '创建训练',
     meta: {
+      module: 'cloud-network-resource-subject',
       breadcrumb: {
         parentName: 'cloud-network-resource-subject',
       },
@@ -52,6 +55,7 @@ export default [
     path: '/cr/cloud-network-resource-subject/add/:resource_id/:template_id/:templateId/:business_template_id',
     title: '创建训练',
     meta: {
+      module: 'cloud-network-resource-subject',
       breadcrumb: {
         parentName: 'cloud-network-resource-subject',
       },

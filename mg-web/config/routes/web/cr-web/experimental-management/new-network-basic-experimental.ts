@@ -16,6 +16,7 @@ export default [
     path: '/cr/new-network-basic-experimental-train/:resource_id',
     title: 'm.details',
     meta: {
+      module: 'new-network-basic-experimental',
       breadcrumb: {
         parentName: 'new-network-basic-experimental',
       },
@@ -28,6 +29,7 @@ export default [
     path: '/cr/new-network-basic-experimental/template-detail/:resource_id/:template_id',
     title: '训练模板详情',
     meta: {
+      module: 'new-network-basic-experimental',
       breadcrumb: {
         parentName: 'new-network-basic-experimental',
       },
@@ -40,6 +42,7 @@ export default [
     path: '/cr/new-network-basic-experimental/create/:templateId/:business_template_id',
     title: '创建训练',
     meta: {
+      module: 'new-network-basic-experimental',
       breadcrumb: {
         parentName: 'new-network-basic-experimental',
       },
@@ -52,6 +55,7 @@ export default [
     path: '/cr/new-network-basic-experimental/add/:resource_id/:template_id/:templateId/:business_template_id',
     title: '创建训练',
     meta: {
+      module: 'new-network-basic-experimental',
       breadcrumb: {
         parentName: 'new-network-basic-experimental',
       },
