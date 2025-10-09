@@ -100,6 +100,7 @@ export default {
       position: relative;
       color: var(--neutral7);
       border: solid 1px var(--neutral3);
+      font-weight: bold;
     }
     span:nth-child(3) {
       width: 300px;
@@ -107,12 +108,12 @@ export default {
       margin: 0 20px;
       border-top: 1px dashed var(--neutral1);
     }
-  }
-  & .active {
-    color: var(--neutral8);
-    span:first-child {
-      background: var(--primary-color);
-      border-color: var(--primary-color);
+    &.active {
+      span:first-child {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        color: var(--white-color);
+      }
     }
   }
 }

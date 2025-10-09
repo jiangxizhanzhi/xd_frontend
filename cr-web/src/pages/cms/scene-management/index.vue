@@ -21,7 +21,7 @@
         >重置</cb-button>
         <div class="right-button">
           <cb-button @click="createSceneTemplate">新增</cb-button>
-          <cb-button hollow>删除</cb-button>
+<!--          <cb-button hollow>删除</cb-button>-->
         </div>
       </div>
       <!-- 列表展示 -->
