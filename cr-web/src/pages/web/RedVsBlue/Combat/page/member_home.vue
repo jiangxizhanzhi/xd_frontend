@@ -32,14 +32,14 @@
 
 <script>
 import AccessCenterMember from '@/pages/web/RedVsBlue/Combat/page/access_center_member.vue';
-// import charTool from '@/components/ChatTools/index.vue';
+import charTool from '@/components/ChatTools/index.vue';
 import { setBreadcrumbTitle } from '@cyber/ui';
 import { routerResolve } from '@cyber/helper';
 export default {
   name: 'MemberHome',
   components: {
     AccessCenterMember,
-    // charTool,
+    charTool,
   },
   data() {
     return {

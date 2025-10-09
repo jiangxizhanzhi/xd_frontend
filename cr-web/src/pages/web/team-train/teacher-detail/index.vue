@@ -190,7 +190,7 @@ import { setBreadcrumbTitle } from '@cyber/ui';
 // import replay from '@/components/replay/index.vue'; //旧的复盘回放
 import replay from '@/components/team-rb-replay/index.vue'; //新的复盘回放
 import TrainTopTitle from '@/components/student-common-detail/train-top-title/index.vue';
-// import ChatToolTeam from '@/components/ChatTools/index-team.vue';
+import ChatToolTeam from '@/components/ChatTools/index-team.vue';
 import Notice from '@/pages/web/notice/index.vue';
 import { getUserInfo, getSysSettings } from '@cyber/helper';
 import { getTeamReplayEnable } from '@/api/web/replay';
@@ -212,7 +212,7 @@ export default {
     TaskJudge,
     StudentScore,
     // ChatTool,
-    // ChatToolTeam,
+    ChatToolTeam,
     Notice,
   },
   data() {

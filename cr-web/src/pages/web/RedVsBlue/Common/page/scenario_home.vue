@@ -70,13 +70,13 @@
 <script>
 import ScenarioContent from '@/pages/web/RedVsBlue/Common/page/scenario_content.vue';
 import EditContent from '@/pages/web/RedVsBlue/Common/activitylist/edit.vue';
-// import ChatTool from '@/components/ChatTools/index.vue';
+import ChatTool from '@/components/ChatTools/index.vue';
 import _ from 'lodash';
 import { setBreadcrumbTitle } from '@cyber/ui';
 
 export default {
   components: {
-    // ChatTool,
+    ChatTool,
     ScenarioContent,
     EditContent,
   },

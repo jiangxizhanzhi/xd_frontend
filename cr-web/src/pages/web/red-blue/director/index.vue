@@ -148,7 +148,7 @@
 
 <script>
 import TrainTopTitle from '@/components/student-common-detail/train-top-title/index.vue';
-// import ChatTool from '@/components/ChatTools/index.vue';
+import ChatTool from '@/components/ChatTools/index.vue';
 import directControl from './components/direct-control/index.vue';
 import probeCollection from './components/probe-collection/index.vue';
 import flowAnalysis from './components/flow-analysis/index.vue';
@@ -182,7 +182,7 @@ import { getCurrentModuleByRouterName } from '../../../../utils';
 export default {
   components: {
     TrainTopTitle,
-    // ChatTool,
+    ChatTool,
     directControl,
     probeCollection,
     flowAnalysis,

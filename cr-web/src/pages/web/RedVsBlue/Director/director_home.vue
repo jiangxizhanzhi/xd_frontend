@@ -299,7 +299,7 @@ import {
 } from '@/api/web/dispatching_guidance';
 import { timeLine } from '@/api/web/task_editor.js';
 import TimeLine from '@/components/TimeLine/DirectorTimeLine.vue';
-// import charTool from '@/components/ChatTools/index.vue';
+import charTool from '@/components/ChatTools/index.vue';
 import { setBreadcrumbTitle } from '@cyber/ui';
 export default {
   name: 'DirectorHome',
@@ -308,7 +308,7 @@ export default {
     TaskEdit,
     TrafficEdit,
     TimeLine,
-    // charTool,
+    charTool,
   },
   data() {
     return {

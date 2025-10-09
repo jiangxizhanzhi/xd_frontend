@@ -61,7 +61,7 @@ import { getEditBack, deleteTraining } from '@/api/web/red-blue';
 import topologyMonitor from '@/pages/web/red-blue/admin/components/topology-monitor.vue';
 import screenMonitor from '@/pages/web/red-blue/admin/components/screen-monitor.vue';
 import EditContent from '@/pages/web/RedVsBlue/Common/activitylist/edit.vue';
-// import ChatTool from '@/components/ChatTools/index.vue';
+import ChatTool from '@/components/ChatTools/index.vue';
 import Notice from '@/pages/web/notice/index.vue';
 import _ from 'lodash';
 import { setBreadcrumbTitle } from '@cyber/ui';
@@ -70,7 +70,7 @@ import { getCurrentModuleByRouterName } from '../../../../utils';
 
 export default {
   components: {
-    // ChatTool,
+    ChatTool,
     topologyMonitor,
     screenMonitor,
     EditContent,
