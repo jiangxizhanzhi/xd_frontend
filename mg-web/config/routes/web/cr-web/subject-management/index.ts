@@ -21,7 +21,7 @@ export const subjectManageRouter = {
   title: 'routes.subject-management',
   name: 'subject-management',
   meta: {
-    iconfont: 'icon-keshi',
+    iconfont: 'icon-xuanti',
   },
   children: [
     ...cloudComputingResourceSubject,

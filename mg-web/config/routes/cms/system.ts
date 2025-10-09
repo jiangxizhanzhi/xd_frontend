@@ -97,7 +97,7 @@ export default [
           './pages/cms/system-management/role-management/role-list/index.vue',
         meta: {
           module: 'role-management',
-          iconfont: 'icon-jiaosezichan',
+          iconfont: 'icon-shenhe',
         },
       },
       {

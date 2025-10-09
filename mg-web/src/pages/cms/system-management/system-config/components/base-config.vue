@@ -29,53 +29,53 @@
       >
         <cb-input v-model="model.copyright" type="textarea" />
       </cb-form-item>
-      <cb-form-item
-        v-if="showScenePerson"
-        :label="$t('systemManagement.system.scenesPerson')"
-        prop="env_per_person"
-      >
-        <cb-input-number
-          v-model="model.env_per_person"
-          controls-position="right"
-          :min="0"
-          :max="500"
-        />
-      </cb-form-item>
-      <cb-form-item
-        :label="$t('systemManagement.system.isRegistered')"
-        prop="public_register"
-      >
-        <cb-switch
-          v-model="model.public_register"
-          active-value="1"
-          inactive-value="0"
-        >
-        </cb-switch>
-      </cb-form-item>
-      <div class="row-form-item">
-        <cb-form-item
-          v-show="model.public_register === '1'"
-          :label="$t('systemManagement.system.registerUser')"
-          prop="user_audit"
-        >
-          <cb-switch
-            v-model="model.user_audit"
-            active-value="1"
-            inactive-value="0"
-          >
-          </cb-switch>
-        </cb-form-item>
-        <cb-form-item
-          v-if="model.public_register === '1' && model.user_audit === '0'"
-          prop="register_user_default_role"
-          :label="$t('systemManagement.system.registerDefaultUser')"
-        >
-          <cb-select
-            v-model="model.register_user_default_role"
-            :options="roleList"
-          />
-        </cb-form-item>
-      </div>
+<!--      <cb-form-item-->
+<!--        v-if="showScenePerson"-->
+<!--        :label="$t('systemManagement.system.scenesPerson')"-->
+<!--        prop="env_per_person"-->
+<!--      >-->
+<!--        <cb-input-number-->
+<!--          v-model="model.env_per_person"-->
+<!--          controls-position="right"-->
+<!--          :min="0"-->
+<!--          :max="500"-->
+<!--        />-->
+<!--      </cb-form-item>-->
+<!--      <cb-form-item-->
+<!--        :label="$t('systemManagement.system.isRegistered')"-->
+<!--        prop="public_register"-->
+<!--      >-->
+<!--        <cb-switch-->
+<!--          v-model="model.public_register"-->
+<!--          active-value="1"-->
+<!--          inactive-value="0"-->
+<!--        >-->
+<!--        </cb-switch>-->
+<!--      </cb-form-item>-->
+<!--      <div class="row-form-item">-->
+<!--        <cb-form-item-->
+<!--          v-show="model.public_register === '1'"-->
+<!--          :label="$t('systemManagement.system.registerUser')"-->
+<!--          prop="user_audit"-->
+<!--        >-->
+<!--          <cb-switch-->
+<!--            v-model="model.user_audit"-->
+<!--            active-value="1"-->
+<!--            inactive-value="0"-->
+<!--          >-->
+<!--          </cb-switch>-->
+<!--        </cb-form-item>-->
+<!--        <cb-form-item-->
+<!--          v-if="model.public_register === '1' && model.user_audit === '0'"-->
+<!--          prop="register_user_default_role"-->
+<!--          :label="$t('systemManagement.system.registerDefaultUser')"-->
+<!--        >-->
+<!--          <cb-select-->
+<!--            v-model="model.register_user_default_role"-->
+<!--            :options="roleList"-->
+<!--          />-->
+<!--        </cb-form-item>-->
+<!--      </div>-->
       <cb-form-item :label="$t('systemManagement.system.openRecordingScreen')">
         <cb-switch
           v-model="model.screen_recording"
@@ -95,17 +95,17 @@
         >
         </cb-switch>
       </cb-form-item>
-      <cb-form-item
-        v-if="langSwitch"
-        :label="$t('systemManagement.system.openLanguage')"
-      >
-        <cb-switch
-          v-model="model.system_lang"
-          active-value="1"
-          inactive-value="0"
-        >
-        </cb-switch>
-      </cb-form-item>
+<!--      <cb-form-item-->
+<!--        v-if="langSwitch"-->
+<!--        :label="$t('systemManagement.system.openLanguage')"-->
+<!--      >-->
+<!--        <cb-switch-->
+<!--          v-model="model.system_lang"-->
+<!--          active-value="1"-->
+<!--          inactive-value="0"-->
+<!--        >-->
+<!--        </cb-switch>-->
+<!--      </cb-form-item>-->
       <cb-form-item
         :label="$t('systemManagement.system.systemLogo')"
         prop="logo"

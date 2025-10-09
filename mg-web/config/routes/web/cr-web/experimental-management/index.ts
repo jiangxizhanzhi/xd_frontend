@@ -21,7 +21,7 @@ export const experimentalManageRouter = {
   title: 'routes.experimental-management',
   name: 'experimental-management',
   meta: {
-    iconfont: 'icon-keshi',
+    iconfont: 'icon-tikuguanli',
   },
   children: [
     ...cloudComputingResourceExperimental,

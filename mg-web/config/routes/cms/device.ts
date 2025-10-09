@@ -109,7 +109,7 @@ export default [
         component: './pages/cms/device/real/list',
         meta: {
           module: 'real-manage',
-          iconfont: 'icon-shizhuangshebei',
+          iconfont: 'icon-zhongduanshebei1',
         },
       },
       {
@@ -185,7 +185,7 @@ export default [
         name: 'custom-probe',
         component: './frame',
         meta: {
-          iconfont: 'icon-ceshi',
+          iconfont: 'icon-xuanzeceshiduixiang',
         }
       },
       {

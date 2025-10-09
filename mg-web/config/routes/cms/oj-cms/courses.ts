@@ -193,7 +193,7 @@ export default [
     title: '我的课程',
     component: './frame',
     meta: {
-      iconfont: 'icon-rili',
+      iconfont: 'icon-yonghuguanli',
     },
   },
   {
