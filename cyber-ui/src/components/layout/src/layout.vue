@@ -76,7 +76,7 @@
               <cb-tab-pane
                 v-for="tab in tabs"
                 :key="tab.name"
-                :label="tab.meta.title"
+                :label="$t(tab.meta.title)"
                 :name="tab.name"
               >
               </cb-tab-pane>

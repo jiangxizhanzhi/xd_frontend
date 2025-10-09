@@ -1,5 +1,12 @@
 window.__cyber_ui_log__ = [
   {
+    hash: 'be4ef811c754bd977c0047b20e9d3b0504177de7',
+    abbrevHash: 'be4ef81',
+    subject: 'feat: update ui',
+    authorName: 'fengxuyan',
+    authorDate: '2025-10-09 11:35:41 +0800',
+  },
+  {
     hash: '0b390e24f5b79de32c0cf497a0fd98b4aa42eaaf',
     abbrevHash: '0b390e2',
     subject: 'fix: 我的课程路由等处理',
@@ -26,12 +33,5 @@ window.__cyber_ui_log__ = [
     subject: 'feat: oj-web删无用依赖',
     authorName: 'fengxuyan',
     authorDate: '2025-10-09 09:24:29 +0800',
-  },
-  {
-    hash: 'fba22d022e09bfa5332238763cd8bd072f934ea0',
-    abbrevHash: 'fba22d0',
-    subject: 'feat: 训练报告添加下载按钮，添加任务详情展示',
-    authorName: 'wangtx',
-    authorDate: '2025-10-06 13:01:27 +0800',
   },
 ];
