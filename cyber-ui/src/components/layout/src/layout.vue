@@ -375,8 +375,8 @@ export default {
         }
         const topMenu = getTopMenu(this.active, this.routeData);
         this.$emit('active', this.active, topMenu);
+        this.addTab(this.active);
         this.$nextTick(() => {
-          this.addTab(this.active);
           this.activeTab = this.active.name;
         })
       },
