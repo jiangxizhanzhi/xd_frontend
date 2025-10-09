@@ -556,14 +556,14 @@ export default {
 .user-dropdown {
   .el-avatar,
   .el-avatar--circle {
-    width: 48px !important;
-    height: 48px !important;
-    line-height: 48px !important;
-    img {
-      width: 48px !important;
-      height: 48px !important;
-      object-fit: fill !important;
-    }
+    //width: 48px !important;
+    //height: 48px !important;
+    //line-height: 48px !important;
+    //img {
+    //  width: 48px !important;
+    //  height: 48px !important;
+    //  object-fit: fill !important;
+    //}
   }
 }
 .navi-logo {

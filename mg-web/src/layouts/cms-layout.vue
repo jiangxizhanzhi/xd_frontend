@@ -438,13 +438,13 @@ export default {
 .cb-layout-user {
   .el-avatar,
   .el-avatar--circle {
-    height: 48px !important;
-    width: 48px !important;
-    line-height: 48px !important;
-    img {
-      object-fit: fill !important;
-      width: 48px;
-    }
+    //height: 48px !important;
+    //width: 48px !important;
+    //line-height: 48px !important;
+    //img {
+    //  object-fit: fill !important;
+    //  width: 48px;
+    //}
   }
 }
 </style>
