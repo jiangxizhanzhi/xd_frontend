@@ -2292,9 +2292,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cyber/ui@npm:5.6.0-xd.32":
-  version: 5.6.0-xd.32
-  resolution: "@cyber/ui@npm:5.6.0-xd.32"
+"@cyber/ui@npm:5.6.0-xd.33":
+  version: 5.6.0-xd.33
+  resolution: "@cyber/ui@npm:5.6.0-xd.33"
   dependencies:
     "@bytemd/plugin-breaks": ^1.21.0
     "@bytemd/plugin-gfm": ^1.21.0
@@ -2327,7 +2327,7 @@ __metadata:
     vue: ^2.6.14
     vue-i18n: ^8.27.2
     vue-router: ^3.5.4
-  checksum: f576b4112e38f5e92666b45264c952a76eda8cda35c62944e0b9c964cbf6898c0bd0774a60b27c4c772a7df10225257d63237a7bd142dec3da158c02fdf5ad33
+  checksum: 31d855414549f1c26c75c1729c48a8cf1ecde3795bb17eaa15dcc7073369ec2ae2a1d9d349bc59f03679d7ca0ee74e54c30ab46a8fc3df2c7e83de99db7ffbf0
   languageName: node
   linkType: hard
 
@@ -2400,10 +2400,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@micro-zoe/micro-app@npm:^0.8.5":
-  version: 0.8.10
-  resolution: "@micro-zoe/micro-app@npm:0.8.10"
-  checksum: ea6f55b0d2878882869e289ee150047e93c21a32dd23f13a688abd8dbc5872cd9e18926b5bb5f3165033f6bccce4fd11f9545f50a95935b0b050ffc8b1fe3533
+"@micro-zoe/micro-app@npm:^0.8.10":
+  version: 0.8.11
+  resolution: "@micro-zoe/micro-app@npm:0.8.11"
+  checksum: dcdc732aa284154e04ffb750f3b1d66b51dd5696084fd1bb20f1f33e58608647d5e24631284a47d10a2eca6867ae00c0c1f7127107345f995aa796adf7c711e4
   languageName: node
   linkType: hard
 
@@ -9733,8 +9733,8 @@ __metadata:
     "@cyber/helper": 5.4.1-alpha.1
     "@cyber/painter": 1.0.7-alpha.31
     "@cyber/scene": 5.6.0-alpha.7
-    "@cyber/ui": 5.6.0-xd.32
-    "@micro-zoe/micro-app": ^0.8.5
+    "@cyber/ui": 5.6.0-xd.33
+    "@micro-zoe/micro-app": ^0.8.10
     "@microsoft/fetch-event-source": ^2.0.1
     "@types/js-cookie": ^2.2.6
     "@types/lodash": ^4.14.168

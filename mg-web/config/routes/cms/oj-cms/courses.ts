@@ -15,6 +15,7 @@ export default [
     title: '新增课程',
     component: './frame',
     meta: {
+      module: 'courses',
       breadcrumb: {
         parentName: 'courses',
       },
@@ -26,6 +27,7 @@ export default [
     title: '编辑课程',
     component: './frame',
     meta: {
+      module: 'courses',
       breadcrumb: {
         parentName: 'courses',
       },
@@ -61,6 +63,7 @@ export default [
     title: 'mgRoutes.authorizedVisit',
     component: './frame',
     meta: {
+      module: 'courses',
       breadcrumb: {
         parentName: 'courses',
       },
@@ -72,6 +75,7 @@ export default [
     title: 'mgRoutes.authorizedOperation',
     component: './frame',
     meta: {
+      module: 'courses',
       breadcrumb: {
         parentName: 'courses',
       },
@@ -83,6 +87,7 @@ export default [
     title: 'mgRoutes.directionManagement',
     component: './frame',
     meta: {
+      module: 'courses',
       breadcrumb: {
         parentName: 'courses',
       },
@@ -94,6 +99,7 @@ export default [
     title: '新增',
     component: './frame',
     meta: {
+      module: 'courses',
       breadcrumb: {
         parentName: 'courses-aspect',
       },
@@ -105,6 +111,7 @@ export default [
     path: '/admin/oj/admin/courses/aspect/:aspectId/edit',
     component: './frame',
     meta: {
+      module: 'courses',
       breadcrumb: {
         parentName: 'courses-aspect',
       },
@@ -116,6 +123,7 @@ export default [
     path: '/admin/oj/admin/courses/:courseId/lessons/list',
     component: './frame',
     meta: {
+      module: 'courses',
       breadcrumb: {
         parentName: 'courses',
       },
@@ -127,6 +135,7 @@ export default [
     title: 'mgRoutes.practice',
     component: './frame',
     meta: {
+      module: 'courses',
       breadcrumb: {
         parentName: 'lessons-manage',
       },
@@ -138,6 +147,7 @@ export default [
     title: 'mgRoutes.practice',
     component: './frame',
     meta: {
+      module: 'courses',
       breadcrumb: {
         parentName: 'lessons-manage',
       },
@@ -149,6 +159,7 @@ export default [
     title: '新增',
     component: './frame',
     meta: {
+      module: 'courses',
       breadcrumb: {
         parentName: 'lessons-manage',
       },
@@ -160,6 +171,7 @@ export default [
     path: '/admin/oj/admin/course/:courseId/lesson/:lessonId/edit/:itemNum',
     component: './frame',
     meta: {
+      module: 'courses',
       breadcrumb: {
         parentName: 'lessons-manage',
       },
@@ -171,6 +183,7 @@ export default [
     title: 'mgRoutes.labReport',
     component: './frame',
     meta: {
+      module: 'courses',
       breadcrumb: {
         parentName: 'lessons-manage',
       },
@@ -182,6 +195,7 @@ export default [
     title: 'mgRoutes.learnMonitor',
     component: './frame',
     meta: {
+      module: 'courses',
       breadcrumb: {
         parentName: 'lessons-manage',
       },
