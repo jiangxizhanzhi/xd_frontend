@@ -21,7 +21,6 @@
       @routeChange="routeChange"
       @bellMessage="showMessage"
       @onLangSwitch="onLangSwitch"
-      @logoClick="logoClick"
       @navi-menu-hover="handleNaviMenuHover"
       @navi-menu-leave="handleNaviMenuLeave"
     >

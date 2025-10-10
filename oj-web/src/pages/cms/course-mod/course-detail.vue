@@ -185,7 +185,8 @@
           <study-profile :course-id="courseId"></study-profile>
         </cb-tab-pane>
         <cb-tab-pane name="monitor" label="实时监控">
-          <real-time-monitoring :realTimeData="realTimeData"></real-time-monitoring>
+          <real-time-monitoring v-if="realTimeData.length" :realTimeData="realTimeData"></real-time-monitoring>
+          <empty v-else style="margin-top: 20%"></empty>
         </cb-tab-pane>
       </cb-tabs>
     </div>
@@ -198,12 +199,14 @@ import { getConstantsConfig, getCourseDetailData, getRealTimeMonitoringDataApi }
 import StudyProfile from "./study-profile";
 import RealTimeMonitoring from "./real-time-monitoring";
 import _ from 'lodash';
+import Empty from "../../../components/empty";
 
 export default {
   name: "course-detail",
   components: {
     StudyProfile,
     RealTimeMonitoring,
+    Empty,
   },
   props: {},
   setup(props, { emit }) {

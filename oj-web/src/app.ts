@@ -33,7 +33,7 @@ import TextareaFlag from './components/textarea/index-flag.vue';
 // import TimeCountdown from './components/scene-related/index';
 import FixedLengthLabel from './components/fixed-length-label/index.vue';
 import FormTags from './components/form-tag/form-tag.vue';
-// import VueCropper from 'vue-cropper';
+import VueCropper from 'vue-cropper';
 // import vuedraggable from 'vuedraggable';
 
 // import 'animate.css';
@@ -118,7 +118,7 @@ let runtime: IRuntime = function (Vue: Vue) {
   Vue.prototype.$ws = ReconnectingWebSocket;
   Vue.prototype.$ListenDomChange = ListenDomChange;
   Vue.use(CompositionAPI);
-  // Vue.use(VueCropper);
+  Vue.use(VueCropper);
   // Vue.use(VueCodemirror);
   Vue.use(VueBus);
 

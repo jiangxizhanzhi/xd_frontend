@@ -41,20 +41,31 @@
       </div>
     </div>
     <div class="table-wrapper">
-      <cb-search-bar class="custom-table-search-bar">
+      <cb-search-bar v-if="studyData.person_statistics.length" class="custom-table-search-bar">
         <cb-search-input
           slot="searchRightArea"
           class="search-container"
           v-model="query.pattern"
           placeholder="请输入账号名称"
         ></cb-search-input>
+        <cb-button
+          slot="searchRightArea"
+          class="search"
+          @click="handlerSearch"
+        >搜索</cb-button>
+        <cb-button
+          slot="searchRightArea"
+          hollow
+          class="reset"
+          @click="handlerReset"
+        >重置</cb-button>
       </cb-search-bar>
       <div
         class="table-card"
         :key="item.user_id"
         v-for="item in studyData.person_statistics"
       >
-        <div class="title">{{ item.name }}</div>
+        <div class="title">{{ item.name || '-' }}</div>
         <div class="item">
           <!-- <div class="box">
             <span class="label">完成课程</span>
@@ -62,25 +73,28 @@
           </div> -->
           <div class="box">
             <span class="label">完成课时</span>
-            <span class="count">{{ item.finished_lesson_nums }}</span>
+            <span class="count">{{ item.finished_lesson_nums || '-' }}</span>
           </div>
           <div class="box">
             <span class="label">完成任务</span>
-            <span class="count">{{ item.finished_task_nums }}</span>
+            <span class="count">{{ item.finished_task_nums || '-' }}</span>
           </div>
           <div class="box">
             <span class="label">总训练时长（h）</span>
-            <span class="count">{{ item.train_time_sum }}</span>
+            <span class="count">{{ item.train_time_sum || '-' }}</span>
           </div>
           <div class="box">
             <span class="label">训练平均得分</span>
-            <span class="count">{{ item.average_train_score }}</span>
+            <span class="count">{{ item.average_train_score || '-' }}</span>
           </div>
           <div class="box">
             <span class="label">综合排名</span>
-            <span class="count">{{ item.ranking }}</span>
+            <span class="count">{{ item.ranking || '-' }}</span>
           </div>
         </div>
+      </div>
+      <div class="empty" v-if="studyData.person_statistics.length === 0">
+        <empty />
       </div>
     </div>
   </div>
@@ -88,10 +102,12 @@
 
 <script>
 import { getStudyProfileData } from '@/api/course';
+import _ from "lodash";
+import Empty from "../../../components/empty";
 
 export default {
   name: "study-profile",
-  components: {},
+  components: {Empty},
   props: {
     courseId: {
       type: String,
@@ -119,6 +135,7 @@ export default {
           ninety_to_one_hundred_nums: 0 //任务得分90-100次数
         },
         person_statistics: [],
+        copy_person_statistics: [], // 用于搜索
       },
       query: {
         pattern: ''
@@ -126,46 +143,75 @@ export default {
       chart: null,
       option: {
         color: ['#f55353', '#2ec7c9', '#1c92ff', '#d87a80', '#ffb980'],
-        title: {
-          text: '训练次数',
-          subtext: '',
-          left: '30%',
-          top: 'center',
-          textAlign: 'center'
-        },
         tooltip: {
           trigger: 'item'
         },
         legend: {
           orient: 'vertical',
-          right: '5%',
+          right: '0',
           top: 'center',
           formatter: (name) => {
             const data = this.option.series[0].data;
             const total = data.reduce((sum, item) => sum + item.value, 0);
             const item = data.find(item => item.name === name);
-            const percent = (item.value / total * 100).toFixed(2);
+            const percent = total ? (Number(item.value / total) * 100).toFixed(2) : '0';
             return `${name}   ${percent}%   ${item.value}`;
           }
+        },
+        graphic: {
+          elements: [
+            // 主标题
+            {
+              type: 'text',
+              z: 10,
+              // 使用 'center' 和 'middle' 表示相对于绘图区域中心
+              left: 'center',   // 水平居中于绘图区
+              top: '42%',       // 微调垂直位置，避免与饼图重叠
+              // 使用 bounding 模式，让定位基于绘图区域（不包括图例）
+              bounding: 'raw',
+              style: {
+                text: '训练次数',
+                fontSize: 18,
+                fontWeight: 'bold',
+                fill: '#333',
+                textAlign: 'center'  // 文本自身居中
+              }
+            },
+            // 副标题
+            {
+              type: 'text',
+              z: 10,
+              left: 'center',
+              top: '60%',
+              bounding: 'raw',  // 关键：使用绘图区域为参考
+              style: {
+                text: '',
+                fontSize: 18,
+                fill: '#666',
+                textAlign: 'center',
+                fontWeight: 'bold',
+              }
+            }
+          ]
         },
         series: [
           {
             name: '训练得分分析',
             type: 'pie',
-            radius: ['55%', '80%'],
-            center: ['30%', '50%'],
+            radius: ['60%', '80%'],
+            center: ['50%', '50%'], // 饼图在绘图区水平50%，垂直50%
             label: {
               show: false
             },
             data: [
-              { value: 1048, name: '0~59' },
-              { value: 735, name: '60~69' },
-              { value: 580, name: '70~79' },
-              { value: 484, name: '80~89' },
-              { value: 300, name: '90~100' }
+              // { value: 1048, name: '0~59' },
+              // { value: 735, name: '60~69' },
+              // { value: 580, name: '70~79' },
+              // { value: 484, name: '80~89' },
+              // { value: 300, name: '90~100' }
             ],
           }
-        ]
+        ],
       },
     }
   },
@@ -173,6 +219,13 @@ export default {
     this.getData();
   },
   methods: {
+    handlerSearch() {
+      this.studyData.person_statistics = this.studyData.copy_person_statistics?.filter(item => item.name?.indexOf(this.query.pattern)>=0)
+    },
+    handlerReset() {
+      this.query.pattern = '';
+      this.studyData.person_statistics = _.cloneDeep(this.studyData.copy_person_statistics);
+    },
     getData() {
       getStudyProfileData({ resource_id: this.courseId }).then(res => {
         this.studyData = res.data.data;
@@ -184,12 +237,13 @@ export default {
           { value: this.studyData.score_statistics.ninety_to_one_hundred_nums, name: '90~100' }
         ]
 
-        this.option.title.subtext = this.studyData.score_statistics.zero_to_sixty_nums +
-          this.studyData.score_statistics.sixty_to_seventy_nums +
-          this.studyData.score_statistics.seventy_to_eighty_nums +
-          this.studyData.score_statistics.eighty_to_ninety_nums +
-          this.studyData.score_statistics.ninety_to_one_hundred_nums;
+        this.option.graphic.elements[1].style.text = this.studyData.score_statistics.zero_to_sixty_nums || 0 +
+          this.studyData.score_statistics.sixty_to_seventy_nums || 0 +
+          this.studyData.score_statistics.seventy_to_eighty_nums || 0 +
+          this.studyData.score_statistics.eighty_to_ninety_nums || 0 +
+          this.studyData.score_statistics.ninety_to_one_hundred_nums || 0 + '';
         this.initChart();
+        this.studyData.copy_person_statistics = _.cloneDeep(this.studyData.person_statistics);
       })
     },
     initChart() {
@@ -263,6 +317,7 @@ export default {
     .chart-box {
       height: 220px;
       width: 100%;
+      left: -100px;
     }
   }
 }

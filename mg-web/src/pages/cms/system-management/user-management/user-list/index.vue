@@ -21,6 +21,7 @@
         :data.sync="model"
         ref="userListRef"
         :searchBarBg="true"
+        :show-search-btn="true"
       >
         <!--  -->
         <template v-slot:search>

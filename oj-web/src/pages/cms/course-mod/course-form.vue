@@ -350,8 +350,8 @@ export default {
     // 下载附件
     downloadAttachment(file) {
       let a = document.createElement('a');
-      a.href = location.origin + file.file_url;
-      a.download = file.file_name; //文件名
+      a.href = location.origin + file.url || file.file_url;
+      a.download = file.name || file.file_name; //文件名
       a.target = '_blank';
       a.click();
     },

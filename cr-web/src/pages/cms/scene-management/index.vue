@@ -20,7 +20,7 @@
           @click="handlerReset"
         >重置</cb-button>
         <div class="right-button">
-          <cb-button @click="createSceneTemplate">新增</cb-button>
+          <cb-button button-type="add" @click="createSceneTemplate">新增</cb-button>
 <!--          <cb-button hollow>删除</cb-button>-->
         </div>
       </div>

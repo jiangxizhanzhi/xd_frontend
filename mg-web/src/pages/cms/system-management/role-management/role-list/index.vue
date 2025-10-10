@@ -9,6 +9,7 @@
       :data.sync="model"
       ref="roleListRef"
       :searchBarBg="true"
+      :show-search-btn="true"
     >
       <template v-slot:search>
         <cb-button

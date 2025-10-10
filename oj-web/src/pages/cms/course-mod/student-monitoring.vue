@@ -29,7 +29,7 @@
             {{ item }}
           </div> -->
           <cb-date-picker
-            style="width: 100%"
+            style="width: 400px"
             v-model="form.date"
             type="datetimerange"
             :range-separator="$t('至')"
@@ -37,11 +37,20 @@
             :end-placeholder="$t('结束日期')"
             value-format="yyyy-MM-dd"
             :clearable="false"
-            popper-class="hide-clear-btn"
+            popper-class="custom-range-picker"
             @change="dateChange($event)"
             clearable
           >
           </cb-date-picker>
+          <cb-button
+            class="search"
+            @click="handlerSearch"
+          >搜索</cb-button>
+          <cb-button
+            hollow
+            class="reset"
+            @click="handlerReset"
+          >重置</cb-button>
         </div>
       </div>
 
@@ -134,6 +143,7 @@
 
 <script>
 import { goToStudentStudyAnalysisApi } from '@/api/course.js'
+import _ from "lodash";
 export default {
   name: "student-monitor",
   components: {},
@@ -164,13 +174,6 @@ export default {
       active: 0,
       option: {
         color: ['#f55353', '#2ec7c9', '#1c92ff', '#d87a80', '#ffb980'],
-        title: {
-          text: '训练次数',
-          subtext: '23',
-          left: '39%',
-          top: 'center',
-          textAlign: 'center'
-        },
         tooltip: {
           trigger: 'item'
         },
@@ -182,16 +185,52 @@ export default {
             const data = this.option.series[0].data;
             const total = data.reduce((sum, item) => sum + item.value, 0);
             const item = data.find(item => item.name === name);
-            const percent = (item.value / total * 100).toFixed(2);
+            const percent = total ? (item.value / total * 100).toFixed(2) : '0';
             return `${name}   ${percent}%   ${item.value}`;
           }
+        },
+        graphic: {
+          elements: [
+            // 主标题
+            {
+              type: 'text',
+              z: 10,
+              // 使用 'center' 和 'middle' 表示相对于绘图区域中心
+              left: 'center',   // 水平居中于绘图区
+              top: '42%',       // 微调垂直位置，避免与饼图重叠
+              // 使用 bounding 模式，让定位基于绘图区域（不包括图例）
+              bounding: 'raw',
+              style: {
+                text: '训练次数',
+                fontSize: 18,
+                fontWeight: 'bold',
+                fill: '#333',
+                textAlign: 'center'  // 文本自身居中
+              }
+            },
+            // 副标题
+            {
+              type: 'text',
+              z: 10,
+              left: 'center',
+              top: '60%',
+              bounding: 'raw',  // 关键：使用绘图区域为参考
+              style: {
+                text: '',
+                fontSize: 18,
+                fill: '#666',
+                textAlign: 'center',
+                fontWeight: 'bold',
+              }
+            }
+          ]
         },
         series: [
           {
             name: '训练得分分析',
             type: 'pie',
-            radius: ['50%', '80%'],
-            center: ['40%', '50%'],
+            radius: ['60%', '80%'],
+            center: ['50%', '50%'],
             label: {
               show: false
             },
@@ -255,6 +294,13 @@ export default {
     window.addEventListener('resize', this.__resizeHandler);
   },
   methods: {
+    handlerSearch() {
+      this.getStudyAnalysisData();
+    },
+    handlerReset() {
+      this.form.date = [];
+      this.getStudyAnalysisData();
+    },
     getStudyAnalysisData() {
       const params = {
         user_id: this.user_id,
@@ -275,11 +321,11 @@ export default {
           { value: this.studyData.score_statistics?.ninety_to_one_hundred_nums, name: '90~100' }
         ]
 
-        this.option.title.subtext = this.studyData.score_statistics?.zero_to_sixty_nums || 0 +
+        this.option.graphic.elements[1].style.text = this.studyData.score_statistics?.zero_to_sixty_nums || 0 +
           this.studyData.score_statistics?.sixty_to_seventy_nums || 0 +
           this.studyData.score_statistics?.seventy_to_eighty_nums || 0 +
           this.studyData.score_statistics?.eighty_to_ninety_nums || 0 +
-          this.studyData.score_statistics?.ninety_to_one_hundred_nums || 0;
+          this.studyData.score_statistics?.ninety_to_one_hundred_nums || 0 + '';
         this.initChart();
       })
     },
@@ -296,7 +342,12 @@ export default {
   }
 }
 </script>
-
+<style lang="scss">
+.custom-range-picker {
+  left: auto !important;
+  right: 40px !important;
+}
+</style>
 <style scoped lang="scss">
 .header-wrap {
   height: 124px;
@@ -328,7 +379,7 @@ export default {
   .right-area {
     position: absolute;
     top: 6px;
-    right: 36px;
+    right: 16px;
     height: 48px;
     display: flex;
     align-items: center;
@@ -367,13 +418,13 @@ export default {
   .line {
     width: 100%;
     height: 2px;
-    background: #f2f2f2;
+    background: var(--bg-color-1);
     margin-bottom: 20px;
   }
 
   .course-wrap {
     height: 110px;
-    background: #f2f2f2;
+    background: var(--bg-color-1);
     display: flex;
 
     .course-item {
@@ -476,6 +527,7 @@ export default {
     .chart-wrap {
       width: 100%;
       height: 234px;
+      left: -100px;
     }
   }
 }
@@ -483,5 +535,8 @@ export default {
 .table-box {
   padding: 0 16px;
   background: var(--bg-color-2);
+}
+.search {
+  margin: 0 16px 0 10px;
 }
 </style>

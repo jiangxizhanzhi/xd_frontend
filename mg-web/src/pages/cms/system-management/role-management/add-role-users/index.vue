@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="false">
+  <cb-inner-page :background="true" title="添加用户">
     <div style="display: flex">
       <div class="left-content">
         <left-tree
@@ -15,16 +15,16 @@
         <cb-search-table
           :scroll="{ y: 500 }"
           class="content-bg"
-          style="width: 680px; flex-shrink: 0"
           :cols="userCols"
           :selector="selector"
           :selection.sync="selection"
           :url="userUrl"
           :baseURL="baseURL"
-          :data="model"
+          :data.sync="model"
           show-less-items
           ref="addRoleUsersListRef"
           :searchBarBg="false"
+          :show-search-btn="true"
         >
           <template v-slot:searchRightArea>
             <cb-button
@@ -71,7 +71,7 @@
       <cb-search-table
         :scroll="{ y: 500 }"
         class="content-bg"
-        style="width: 680px; flex-shrink: 0"
+        style="width: 40%; flex-shrink: 0"
         :cols="selectedUsersCols"
         :url="selectedUrl"
         :baseURL="baseURL"
@@ -289,10 +289,11 @@ export default {
   display: flex;
   flex-shrink: 0;
   position: relative;
+  width: calc(60% - 80px);
 }
 .content-bg {
   position: relative;
-  padding: 18px 20px 18px 20px;
+  padding: 18px;
 }
 
 .left-content,

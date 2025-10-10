@@ -2,6 +2,7 @@
   <cb-inner-page
     :background="true"
     title="统计分析"
+    class="learn-wrap"
   >
     <div class="all-course">
       <div class="echarts-grid">
@@ -412,10 +413,18 @@ export default {
 }
 </style>
 <style scoped lang="scss">
+.learn-wrap {
+  padding-left: 0;
+  ::v-deep .header-decorate {
+    padding-left: 24px;
+    border-bottom: 1px solid var(--bg-color-1);
+  }
+}
 .all-course {
   width: 100%;
-  padding-right: 16px;
+  //padding-right: 16px;
   box-sizing: border-box;
+  background-color: var(--bg-color-1);
 
   .echarts-grid {
     width: 100%;
@@ -429,6 +438,7 @@ export default {
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
+      background: var(--white-color);
 
       .th-head {
         width: 100%;
@@ -450,6 +460,7 @@ export default {
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
+      background: var(--white-color);
 
       .th-head {
         width: 100%;
@@ -482,7 +493,7 @@ export default {
       width: calc(25% - 12px);
       height: 100%;
       margin-right: 16px;
-      background: var(--bg-color-1);
+      background: var(--white-color);
 
       .th-head {
         width: 100%;
