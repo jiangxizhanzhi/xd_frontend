@@ -20,7 +20,7 @@
   "dependencies": {
     "@cyber/helper": "5.4.1-alpha.1",
     "@cyber/scene": "5.6.0-alpha.7",
-    "@cyber/ui": "5.6.0-xd.35",
+    "@cyber/ui": "5.6.0-xd.37",
     "@vue/composition-api": "^1.7.0",
     "axios": "0.26.1",
     "cidr-js": "^2.3.1",

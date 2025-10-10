@@ -1,5 +1,12 @@
 window.__cyber_ui_log__ = [
   {
+    hash: 'c9ced77484abb18cff175ae1745aceaa95d03d23',
+    abbrevHash: 'c9ced77',
+    subject: 'feat: update ui;登录页',
+    authorName: 'fengxuyan',
+    authorDate: '2025-10-10 17:01:52 +0800',
+  },
+  {
     hash: 'f7c423739eed15f95f5f4469ac4cb193610c83f7',
     abbrevHash: 'f7c4237',
     subject: 'fix: 子应用路由标签跳转问题',
@@ -26,12 +33,5 @@ window.__cyber_ui_log__ = [
     subject: 'style: 导航栏用户头像样式',
     authorName: 'fengxuyan',
     authorDate: '2025-10-09 14:21:22 +0800',
-  },
-  {
-    hash: 'd689256a6bd0b95e48ac346341e959c483715047',
-    abbrevHash: 'd689256',
-    subject: 'fix: 页面显示问题',
-    authorName: 'fengxuyan',
-    authorDate: '2025-10-09 14:10:57 +0800',
   },
 ];

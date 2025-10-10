@@ -489,9 +489,15 @@ export default {
     clickTab(tab) {
       this.active = this.tabs[tab.index];
       this.handleMenuData();
-      this.navigateTo(this.active);
-      if (tab.index == 0) {
+      if (this.customSelect) {
         this.$emit('routeChange', this.active.name, this.active, this.active);
+        this.$emit('route-change', this.active.name, this.active, this.active); //兼容
+      } else {
+        this.$router.push({
+          path: this.active.path,
+          params: this.active.params,
+          query: this.active.query,
+        });
       }
     },
     // 导航到指定路由

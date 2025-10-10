@@ -62,6 +62,9 @@
 
   .el-menu-item.is-active {
     background: var(--nav-left-active-bg);
+    .cb-accordion__wrapper::before {
+      background: var(--white-color) !important;
+    }
   }
   .cb-accordion__toggle {
     .cb-iconfont {
