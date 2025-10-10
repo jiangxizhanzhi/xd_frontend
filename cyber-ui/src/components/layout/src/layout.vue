@@ -490,7 +490,7 @@ export default {
       this.active = this.tabs[tab.index];
       this.handleMenuData();
       this.navigateTo(this.active);
-      if (tab.index === 0) {
+      if (tab.index == 0) {
         this.$emit('routeChange', this.active.name, this.active, this.active);
       }
     },

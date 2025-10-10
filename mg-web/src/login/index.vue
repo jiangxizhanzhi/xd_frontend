@@ -5,6 +5,10 @@
       v-show="!isActived"
       @activate="activeHandler"
     ></product-active>
+    <div class="logo-wrap">
+      <img :src="logo" alt=""/>
+      <span class="version-txt">v1.0.0</span>
+    </div>
     <cb-login
       ref="cbloginRef"
       url="/auth/login"
@@ -29,7 +33,7 @@
 <!--        </a>-->
 <!--        {{ $t('login.browserAfter') }}-->
 <!--      </template>-->
-      <template v-slot:copyright>{{ copyright }}</template>
+      <template v-slot:copyright><span class="custom-copyright">{{ copyright }}</span></template>
     </cb-login>
 <!--    <template v-if="loginPageBackgroundDisplayType === 'video'">-->
 <!--      &lt;!&ndash;      <div&ndash;&gt;-->
@@ -66,6 +70,7 @@ import {
   getResponse,
 } from '@cyber/helper';
 import utils from '@/utils/utils';
+import logo from './logo.png';
 export default {
   components: {
     ProductActive,
@@ -77,6 +82,7 @@ export default {
       settingObj: {},
       // bgStatic: bgStatic,
       isVideoLoaded: false,
+      logo: logo,
     };
   },
   computed: {
@@ -229,9 +235,9 @@ export default {
   }
   .login-title {
     position: absolute;
-    top: -90%;
+    top: -100%;
     color: var(--white-color);
-    font-size: 40px;
+    font-size: 50px;
     width: 100vw;
   }
   .el-form {
@@ -239,7 +245,7 @@ export default {
   }
 }
 .mg-web-login {
-  min-width: 1283px;
+  min-width: 1440px;
   min-height: 720px;
   width: 100%;
   height: 100%;
@@ -285,9 +291,28 @@ export default {
     height: 100%;
     top: 0px;
     max-width: 110%;
-    min-width: 1280px;
+    min-width: 1440px;
     min-height: 720px;
     width: 100%;
   }
+}
+.logo-wrap {
+  min-width: 1440px;
+  width: 100%;
+  position: fixed;
+  top: 30px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  .version-txt {
+    position: absolute;
+    right: 32px;
+    top: 24px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+.custom-copyright {
+  color: rgba(255, 255, 255, 0.5);
 }
 </style>

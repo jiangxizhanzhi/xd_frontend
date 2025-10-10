@@ -1,5 +1,12 @@
 window.__cyber_ui_log__ = [
   {
+    hash: 'f7c423739eed15f95f5f4469ac4cb193610c83f7',
+    abbrevHash: 'f7c4237',
+    subject: 'fix: 子应用路由标签跳转问题',
+    authorName: 'fengxuyan',
+    authorDate: '2025-10-10 15:58:15 +0800',
+  },
+  {
     hash: 'd12c1a14c1b3572ac5296798ae8f3c83fb4b2995',
     abbrevHash: 'd12c1a1',
     subject: 'feat: 页面问题修复优化',
@@ -26,12 +33,5 @@ window.__cyber_ui_log__ = [
     subject: 'fix: 页面显示问题',
     authorName: 'fengxuyan',
     authorDate: '2025-10-09 14:10:57 +0800',
-  },
-  {
-    hash: 'f2bbe276aca5be05a1216cb81dc7297661bde7f0',
-    abbrevHash: 'f2bbe27',
-    subject: 'feat: update ui',
-    authorName: 'fengxuyan',
-    authorDate: '2025-10-09 14:10:23 +0800',
   },
 ];
