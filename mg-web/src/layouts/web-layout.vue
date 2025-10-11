@@ -409,9 +409,9 @@ export default {
       2、!activeApp && !oldApp：基座的模块详情到基座的菜单(不属于3类子应用：实训、靶场、竞赛)，如:个人中心的详情到个人中心菜单
       3、相同子应用不同模块间切换  或者 子应用模块的详情到子应用的菜单，如：原实训的我的职业的详情到我的职业菜单 */
       if (activeApp !== oldApp || (!activeApp && !oldApp)) {
-        this.$router.push({ name, params });
+        this.$router.push({ name, params, query: item.query });
       } else {
-        emitCurrentApp('pushRoute', { name, params });
+        emitCurrentApp('pushRoute', { name, params, query: item.query });
       }
 
     },

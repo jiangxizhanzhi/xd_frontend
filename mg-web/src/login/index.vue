@@ -245,6 +245,7 @@ export default {
   }
 }
 .mg-web-login {
+  position: relative;
   min-width: 1440px;
   min-height: 720px;
   width: 100%;
@@ -299,7 +300,7 @@ export default {
 .logo-wrap {
   min-width: 1440px;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 30px;
   text-align: center;
   left: 0;

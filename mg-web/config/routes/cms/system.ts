@@ -69,6 +69,7 @@ export default [
           './pages/cms/system-management/user-management/user-edit/index.vue',
         props: true,
         meta: {
+          routeTabActive: true,
           breadcrumb: {
             parentName: 'user-manage',
           },
@@ -122,6 +123,7 @@ export default [
           './pages/cms/system-management/role-management/edit-role/index.vue',
         props: true,
         meta: {
+          routeTabActive: true,
           breadcrumb: {
             parentName: 'role-management',
           },
@@ -136,6 +138,7 @@ export default [
           './pages/cms/system-management/role-management/add-role-users/index.vue',
         props: true,
         meta: {
+          routeTabActive: true,
           breadcrumb: {
             parentName: 'role-management',
           },

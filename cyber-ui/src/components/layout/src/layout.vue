@@ -370,7 +370,7 @@ export default {
         } else {
           this.active = this.$route;
         }
-        if (this.active && this.active.path.indexOf(':')>=0) {
+        if (this.active && (this.active.path.indexOf(':')>=0 || this.active.meta.routeTabActive)) {
           this.active = this.$route;
         }
         const topMenu = getTopMenu(this.active, this.routeData);
@@ -490,8 +490,8 @@ export default {
       this.active = this.tabs[tab.index];
       this.handleMenuData();
       if (this.customSelect) {
-        this.$emit('routeChange', this.active.name, this.active, this.active);
-        this.$emit('route-change', this.active.name, this.active, this.active); //兼容
+        this.$emit('routeChange', this.active.name, this.active, this.active.params);
+        this.$emit('route-change', this.active.name, this.active, this.active.params); //兼容
       } else {
         this.$router.push({
           path: this.active.path,
@@ -648,7 +648,7 @@ export default {
       this.$nextTick(() => {
         if (this.active !== params[0].name) {
           clearMemory();
-          this.select(params[0].name, params[0], params);
+          this.select(params[0].name, params[0], params[0].params);
         }
       })
     },

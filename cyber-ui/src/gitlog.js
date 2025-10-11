@@ -1,5 +1,12 @@
 window.__cyber_ui_log__ = [
   {
+    hash: 'ba763951188d9acd57f3b6f343555fcd7efd405d',
+    abbrevHash: 'ba76395',
+    subject: 'feat: update ui',
+    authorName: 'fengxuyan',
+    authorDate: '2025-10-10 17:53:25 +0800',
+  },
+  {
     hash: 'c9ced77484abb18cff175ae1745aceaa95d03d23',
     abbrevHash: 'c9ced77',
     subject: 'feat: update ui;登录页',
@@ -26,12 +33,5 @@ window.__cyber_ui_log__ = [
     subject: 'feat: cr-web聊天恢复',
     authorName: 'fengxuyan',
     authorDate: '2025-10-09 17:37:35 +0800',
-  },
-  {
-    hash: '202683fb58c8239d42f5dd20a6f3f5f7d7674bc1',
-    abbrevHash: '202683f',
-    subject: 'style: 导航栏用户头像样式',
-    authorName: 'fengxuyan',
-    authorDate: '2025-10-09 14:21:22 +0800',
   },
 ];
