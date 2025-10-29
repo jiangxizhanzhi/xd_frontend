@@ -9,7 +9,7 @@
       :avatar="avatar"
       :user-info="userInfo"
       :user-commands="userCommands"
-      :show-bell="showBell"
+      :show-bell="false"
       :notice-count="notificationCount"
       padding="0px 16px 20px 24px"
       bg-color="none"

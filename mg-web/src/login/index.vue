@@ -7,7 +7,7 @@
     ></product-active>
     <div class="logo-wrap">
       <img :src="logo" alt=""/>
-      <span class="version-txt">v1.0.0</span>
+<!--      <span class="version-txt">v1.0.0</span>-->
     </div>
     <cb-login
       ref="cbloginRef"
@@ -33,7 +33,7 @@
 <!--        </a>-->
 <!--        {{ $t('login.browserAfter') }}-->
 <!--      </template>-->
-      <template v-slot:copyright><span class="custom-copyright">{{ copyright }}</span></template>
+<!--      <template v-slot:copyright><span class="custom-copyright">{{ copyright }}</span></template>-->
     </cb-login>
 <!--    <template v-if="loginPageBackgroundDisplayType === 'video'">-->
 <!--      &lt;!&ndash;      <div&ndash;&gt;-->

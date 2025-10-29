@@ -22,13 +22,13 @@
       >
         <cb-input v-model="model.sub_system_name" />
       </cb-form-item>
-      <cb-form-item
-        :label="$t('systemManagement.system.versionData')"
-        prop="copyright"
-        class="cb-form-textarea"
-      >
-        <cb-input v-model="model.copyright" type="textarea" />
-      </cb-form-item>
+<!--      <cb-form-item-->
+<!--        :label="$t('systemManagement.system.versionData')"-->
+<!--        prop="copyright"-->
+<!--        class="cb-form-textarea"-->
+<!--      >-->
+<!--        <cb-input v-model="model.copyright" type="textarea" />-->
+<!--      </cb-form-item>-->
 <!--      <cb-form-item-->
 <!--        v-if="showScenePerson"-->
 <!--        :label="$t('systemManagement.system.scenesPerson')"-->
@@ -87,14 +87,14 @@
           {{ $t('systemManagement.system.recordTip') }}
         </div>
       </cb-form-item>
-      <cb-form-item :label="$t('systemManagement.system.openTheme')">
-        <cb-switch
-          v-model="model.system_theme"
-          active-value="1"
-          inactive-value="0"
-        >
-        </cb-switch>
-      </cb-form-item>
+<!--      <cb-form-item :label="$t('systemManagement.system.openTheme')">-->
+<!--        <cb-switch-->
+<!--          v-model="model.system_theme"-->
+<!--          active-value="1"-->
+<!--          inactive-value="0"-->
+<!--        >-->
+<!--        </cb-switch>-->
+<!--      </cb-form-item>-->
 <!--      <cb-form-item-->
 <!--        v-if="langSwitch"-->
 <!--        :label="$t('systemManagement.system.openLanguage')"-->
