@@ -53,6 +53,9 @@
       .cb-button-group > div {
         flex-wrap: nowrap;
       }
+      .el-image__inner {
+        object-fit: contain !important;
+      }
 
       .img-hover {
         display: none;

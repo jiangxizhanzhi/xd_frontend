@@ -1,5 +1,12 @@
 window.__cyber_ui_log__ = [
   {
+    hash: '582d326823709e4b69cfbff85398b4847a20fd1d',
+    abbrevHash: '582d326',
+    subject: 'fix: 路由切换问题',
+    authorName: 'fengxuyan',
+    authorDate: '2025-10-11 11:58:40 +0800',
+  },
+  {
     hash: 'ba763951188d9acd57f3b6f343555fcd7efd405d',
     abbrevHash: 'ba76395',
     subject: 'feat: update ui',
@@ -26,12 +33,5 @@ window.__cyber_ui_log__ = [
     subject: 'feat: 页面问题修复优化',
     authorName: 'fengxuyan',
     authorDate: '2025-10-10 14:33:50 +0800',
-  },
-  {
-    hash: '01e78221a56be639e6d1907c0ff71bbc4db478d4',
-    abbrevHash: '01e7822',
-    subject: 'feat: cr-web聊天恢复',
-    authorName: 'fengxuyan',
-    authorDate: '2025-10-09 17:37:35 +0800',
   },
 ];
