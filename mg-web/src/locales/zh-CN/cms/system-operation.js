@@ -57,7 +57,7 @@ export default {
   },
   views: {
     systemOperation: '系统运维',
-    computingInstance: '设备状态监控',
+    computingInstance: '新型网络设备管理',
     networkInstance: '拟态多平台管理',
     cloudPlatformMonitoring: '资源编排',
     realEquipmentManagement: '实装设备管理',

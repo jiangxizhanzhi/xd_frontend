@@ -106,10 +106,12 @@ export default {
   'system-alarm': '告警监控',
   'business-service-monitoring': '超融合平台管理',
   'system-operation-folder': '系统运维',
-  'cluster-management': '设备状态监控',
+  'cluster-management': '新型网络设备管理',
   'network-management': '拟态多平台管理',
   'real-equipment-management': '实装设备管理',
   'instance-monitoring': '生命周期管理',
+  'tour-life-cycle': '演巡生命周期',
+  'basic-infrastructure-management': '基础设施管理',
   'cloud-platform-monitoring': '资源编排',
   'resource-usage-management': '资源用量管理',
 

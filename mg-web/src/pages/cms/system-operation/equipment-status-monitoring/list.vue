@@ -1,7 +1,7 @@
 <template>
   <cb-inner-page
     :background="true"
-    title="设备状态管理"
+    title="新型网络设备管理"
   >
     <cb-search-table
       :cols.sync="cols"

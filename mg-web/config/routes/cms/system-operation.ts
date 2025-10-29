@@ -1,5 +1,6 @@
 import businessServiceMonitoring from './business-service-monitoring';
 import equipmentStatusMonitoring from './equipment-status-monitoring';
+import basicInfrastructureManagement from "./basic-infrastructure-management";
 export default [
   {
     name: 'system-operation-folder',
@@ -32,6 +33,23 @@ export default [
         },
       },
       ...businessServiceMonitoring,
+      // 新生命周期管理
+      {
+        name: 'life-cycle',
+        path: '/admin/system-operation/life-cycle',
+        title: 'routes.instance-monitoring',
+        component: './pages/cms/system-operation/life-cycle/list.vue',
+        meta: {
+          module: 'life-cycle',
+          isThird: true,
+          // iconfont: 'icon-xinxitongji',
+        },
+      },
+      // 设备状态监控->新型网络设备管理
+      ...equipmentStatusMonitoring,
+      // 基础设施管理
+      ...basicInfrastructureManagement,
+      // 演巡生命周期（原来的生命周期管理）
       {
         name: 'instance-monitoring',
         path: '/admin/system-operation/instance-monitoring',
@@ -39,12 +57,9 @@ export default [
         component: './pages/cms/system-operation/instance-monitoring/list.vue',
         meta: {
           module: 'instance-monitoring',
-          isThird: true,
-          // iconfont: 'icon-xinxitongji',
+          iconfont: 'icon-lianjie',
         },
       },
-      // 设备状态监控
-      ...equipmentStatusMonitoring,
       // {
       //   name: 'cluster-management',
       //   path: '/admin/system-operation/cluster-management',
