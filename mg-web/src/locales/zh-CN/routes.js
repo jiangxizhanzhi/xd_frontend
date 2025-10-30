@@ -14,7 +14,7 @@ export default {
   'courses-manage-folder': '实验教学',
   courses: '课程规划',
   'class-card': '课程表',
-  'learn-statistics': '统计分析',
+  'learn-statistics': '首页',
   'career-system-folder': '职业框架',
   'career-system': 'NCWF框架',
   'att-ck-frame': 'ATT&CK框架',
@@ -35,12 +35,12 @@ export default {
   'cr-standard-device-folder': '演训资源',
   'image-manage': '镜像管理',
   'usb-emulation': 'USB仿真',
-  'real-manage': '虚实结合管理',
+  'real-manage': '基础设施管理',
   'service-manage': '服务管理',
 
   // 拓扑模板
-  'topology-management-folder': '场景编排',
-  'topology-management': '场景编排',
+  'topology-management-folder': '网络管理',
+  'topology-management': '网络管理',
 
   'scene-manage-folder': '场景管理',
   'cloud-computing-resource-scene': '云计算资源场景',
@@ -109,10 +109,10 @@ export default {
   'cluster-management': '新型网络设备管理',
   'network-management': '拟态多平台管理',
   'real-equipment-management': '实装设备管理',
-  'instance-monitoring': '生命周期管理',
-  'tour-life-cycle': '演巡生命周期',
+  'instance-monitoring': '演巡生命周期',
+  'life-cycle': '生命周期管理',
   'basic-infrastructure-management': '基础设施管理',
-  'cloud-platform-monitoring': '资源编排',
+  'cloud-platform-monitoring': '系统资源',
   'resource-usage-management': '资源用量管理',
 
   //系统公告

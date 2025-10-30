@@ -1,122 +1,124 @@
 <template>
-  <div class="universal-probe" v-loading="loading">
-    <div class="catalogue">
-      <div class="infoClass">
-        <p class="group">{{ $t('probes.infoClass') }}</p>
-        <div
-          v-for="(item, index) in infoList"
-          :class="{ info: true, active: item.name === currentName }"
-          :key="index"
-          @click="menuSelect(item.name)"
-        >
-          <span>{{ item.value }}</span>
-        </div>
-      </div>
-      <div class="eventClass">
-        <p class="group">{{ $t('probes.eventClass') }}</p>
-        <div
-          v-for="(item, index) in eventList"
-          :class="{ info: true, active: item.name === currentName }"
-          :key="index"
-          @click="menuSelect(item.name)"
-        >
-          <span>{{ item.value }}</span>
-        </div>
-      </div>
-      <div class="logClass">
-        <p class="group">{{ $t('probes.logClass') }}</p>
-        <div
-          v-for="(item, index) in logList"
-          :class="{ info: true, active: item.name === currentName }"
-          :key="index"
-          @click="menuSelect(item.name)"
-        >
-          <span>{{ item.value }}</span>
-        </div>
-        <!-- 日志文件 -->
-        <div
-          :class="{ info: true, active: 'logFile' === currentName }"
-          @click="menuSelect('logFile')"
-        >
-          <span>{{ $t('probes.logFile') }}</span>
-        </div>
-      </div>
-    </div>
-    <div class="content">
-      <div class="search-area">
-        <cb-search-input
-          v-model="search"
-          :placeholder="$t('probes.inputProbeName')"
-          @keyup.enter.native="getData(true)"
-        ></cb-search-input>
-      </div>
-      <div class="table-area cyber-scroll-bar-small" ref="tableArea">
-        <!-- 信息类,搜索时若无匹配数据则不展示 -->
-        <div
-          v-for="(item, index) in infoList"
-          :key="index"
-          class="table"
-          :id="item.name"
-          v-show="isSearch ? item.data.length !== 0 : true"
-        >
-          <title-left :title="item.value"></title-left>
-          <cb-search-table
-            :cols="cols"
-            :dataSource="item.data"
-            :hidePaginOnDemand="true"
-            :searchBarBg="false"
+  <cb-inner-page :background="true" title="通用采集管理">
+    <div class="universal-probe" v-loading="loading">
+      <div class="catalogue">
+        <div class="infoClass">
+          <p class="group">{{ $t('probes.infoClass') }}</p>
+          <div
+            v-for="(item, index) in infoList"
+            :class="{ info: true, active: item.name === currentName }"
+            :key="index"
+            @click="menuSelect(item.name)"
           >
-          </cb-search-table>
+            <span>{{ item.value }}</span>
+          </div>
         </div>
-        <!-- 事件类 -->
-        <div
-          v-for="item in eventList"
-          :key="item.name"
-          class="table"
-          :id="item.name"
-          v-show="isSearch ? item.data.length !== 0 : true"
-        >
-          <title-left :title="item.value"></title-left>
-          <cb-search-table
-            :cols="cols"
-            :dataSource="item.data"
-            :hidePaginOnDemand="true"
-            :searchBarBg="false"
+        <div class="eventClass">
+          <p class="group">{{ $t('probes.eventClass') }}</p>
+          <div
+            v-for="(item, index) in eventList"
+            :class="{ info: true, active: item.name === currentName }"
+            :key="index"
+            @click="menuSelect(item.name)"
           >
-          </cb-search-table>
+            <span>{{ item.value }}</span>
+          </div>
         </div>
-        <!-- 日志类 -->
-        <div
-          v-for="item in logList"
-          :key="item.value"
-          class="table"
-          :id="item.name"
-          v-show="isSearch ? item.data.length !== 0 : true"
-        >
-          <title-left :title="item.value"></title-left>
-          <cb-search-table
-            :cols="cols"
-            :dataSource="item.data"
-            :hidePaginOnDemand="true"
-            :searchBarBg="false"
+        <div class="logClass">
+          <p class="group">{{ $t('probes.logClass') }}</p>
+          <div
+            v-for="(item, index) in logList"
+            :class="{ info: true, active: item.name === currentName }"
+            :key="index"
+            @click="menuSelect(item.name)"
           >
-          </cb-search-table>
+            <span>{{ item.value }}</span>
+          </div>
+          <!-- 日志文件 -->
+          <div
+            :class="{ info: true, active: 'logFile' === currentName }"
+            @click="menuSelect('logFile')"
+          >
+            <span>{{ $t('probes.logFile') }}</span>
+          </div>
         </div>
-        <!-- 日志文件 -->
-        <div class="table" id="logFile" v-show="!isSearch">
-          <title-left :title="$t('probes.logFile')"></title-left>
-          <p>{{ $t('probes.customAdd') }}</p>
+      </div>
+      <div class="content">
+        <div class="search-area">
+          <cb-search-input
+            v-model="search"
+            :placeholder="$t('probes.inputProbeName')"
+            @keyup.enter.native="getData(true)"
+          ></cb-search-input>
         </div>
-        <!-- 无数据 -->
-        <div class="no-data" v-show="noData">
-          <div class="info">
-            <cb-iconfont type="icon-zanwuziyuan" size="56"></cb-iconfont>
-            <div>{{ $t('m.noData') }}</div>
+        <div class="table-area cyber-scroll-bar-small" ref="tableArea">
+          <!-- 信息类,搜索时若无匹配数据则不展示 -->
+          <div
+            v-for="(item, index) in infoList"
+            :key="index"
+            class="table"
+            :id="item.name"
+            v-show="isSearch ? item.data.length !== 0 : true"
+          >
+            <title-left :title="item.value"></title-left>
+            <cb-search-table
+              :cols="cols"
+              :dataSource="item.data"
+              :hidePaginOnDemand="true"
+              :searchBarBg="false"
+            >
+            </cb-search-table>
+          </div>
+          <!-- 事件类 -->
+          <div
+            v-for="item in eventList"
+            :key="item.name"
+            class="table"
+            :id="item.name"
+            v-show="isSearch ? item.data.length !== 0 : true"
+          >
+            <title-left :title="item.value"></title-left>
+            <cb-search-table
+              :cols="cols"
+              :dataSource="item.data"
+              :hidePaginOnDemand="true"
+              :searchBarBg="false"
+            >
+            </cb-search-table>
+          </div>
+          <!-- 日志类 -->
+          <div
+            v-for="item in logList"
+            :key="item.value"
+            class="table"
+            :id="item.name"
+            v-show="isSearch ? item.data.length !== 0 : true"
+          >
+            <title-left :title="item.value"></title-left>
+            <cb-search-table
+              :cols="cols"
+              :dataSource="item.data"
+              :hidePaginOnDemand="true"
+              :searchBarBg="false"
+            >
+            </cb-search-table>
+          </div>
+          <!-- 日志文件 -->
+          <div class="table" id="logFile" v-show="!isSearch">
+            <title-left :title="$t('probes.logFile')"></title-left>
+            <p>{{ $t('probes.customAdd') }}</p>
+          </div>
+          <!-- 无数据 -->
+          <div class="no-data" v-show="noData">
+            <div class="info">
+              <cb-iconfont type="icon-zanwuziyuan" size="56"></cb-iconfont>
+              <div>{{ $t('m.noData') }}</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </cb-inner-page>
 </template>
 
 <script>
@@ -373,6 +375,8 @@ export default {
   .content {
     width: 80%;
     height: 100%;
+    border-left: 4px solid var(--bg-color-1);
+    padding-left: 16px;
     .search-area {
       margin-top: 10px;
       margin-bottom: 15px;

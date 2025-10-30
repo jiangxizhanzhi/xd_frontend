@@ -24,7 +24,7 @@ export default {
   //演训资源
   'cr-standard-device-folder': '演训资源',
   'image-manage': '镜像管理',
-  'real-manage': '虚实结合管理',
+  'real-manage': '基础设施管理',
   'service-manage': '服务管理',
   // 资源管理
   'resource-manage-folder': '资源管理',

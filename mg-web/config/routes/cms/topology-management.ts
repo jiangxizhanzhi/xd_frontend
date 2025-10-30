@@ -10,7 +10,7 @@ export default [
   {
     name: 'topology-management',
     path: '/admin/topology-management',
-    title: '拓扑管理',
+    title: '网络管理',
     component: './pages/cms/topology-management/index.vue',
     meta: {
       // hideInMenu: true,

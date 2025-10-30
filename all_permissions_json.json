@@ -15,10 +15,10 @@
 		"children": [
 			{
 				"name": "首页",
-				"value": "index",
-				"en_name": "index",
-				"authority": "index",
-				"path_name": "front_all/index",
+				"value": "learn-statistics",
+				"en_name": "Study Statistics",
+				"authority": "learn-statistics",
+				"path_name": "front_all/learn-statistics",
 				"active": ["no_auth"],
 				"edition": [0, 1],
 				"status": 1,
@@ -55,21 +55,6 @@
 				"execute_status": 1,
 				"per_status": "R/W/X",
 				"children": [
-					{
-						"name": "统计分析",
-						"value": "learn-statistics",
-						"en_name": "Study Statistics",
-						"authority": "learn-statistics",
-						"path_name": "front_all/courses-manage-folder/learn-statistics",
-						"active": ["LCS-FUNC-CR-SHIXUN"],
-						"edition": [0, 1],
-						"status": 1,
-						"read_status": 1,
-						"write_status": 1,
-						"execute_status": 1,
-						"per_status": "R/W/X",
-						"children": []
-					},
 					{
 						"name": "课程规划",
 						"value": "courses",
@@ -510,7 +495,7 @@
 						"children": []
 					},
 					{
-						"name": "拓扑管理",
+						"name": "网络管理",
 						"value": "topology-management",
 						"authority": "topology-management",
 						"path_name": "front_all/scene-manage-folder/topology-management",
@@ -544,21 +529,6 @@
 						"en_name": "Images",
 						"authority": "image-manage",
 						"path_name": "front_all/cr-standard-device-folder/image-manage",
-						"active": ["no_auth"],
-						"edition": [0, 1],
-						"status": 1,
-						"read_status": 1,
-						"write_status": 1,
-						"execute_status": 1,
-						"per_status": "R/W/X",
-						"children": []
-					},
-					{
-						"name": "虚实结合管理",
-						"value": "real-manage",
-						"en_name": "Physical Device",
-						"authority": "real-manage",
-						"path_name": "front_all/cr-standard-device-folder/real-manage",
 						"active": ["no_auth"],
 						"edition": [0, 1],
 						"status": 1,
@@ -618,21 +588,6 @@
 				"execute_status": 1,
 				"per_status": "R/W/X",
 				"children": [
-					{
-						"name": "资源编排",
-						"value": "cloud-platform-monitoring",
-						"en_name": "Cloud Monitor",
-						"authority": "cloud-platform-monitoring",
-						"path_name": "front_all/system-operation-folder/cloud-platform-monitoring",
-						"active": ["no_auth"],
-						"edition": [0, 1],
-						"status": 1,
-						"read_status": 1,
-						"write_status": 1,
-						"execute_status": 1,
-						"per_status": "R/W/X",
-						"children": []
-					},
 					{
 						"name": "超融合平台管理",
 						"value": "business-service-monitoring",
@@ -711,10 +666,10 @@
 					},
 					{
 						"name": "基础设施管理",
-						"value": "basic-infrastructure-management",
-						"en_name": "Infrastructure Management",
-						"authority": "basic-infrastructure-management",
-						"path_name": "front_all/system-operation-folder/basic-infrastructure-management",
+						"value": "real-manage",
+						"en_name": "Physical Device",
+						"authority": "real-manage",
+						"path_name": "front_all/system-operation-folder/real-manage",
 						"active": ["no_auth"],
 						"edition": [0, 1],
 						"status": 1,
@@ -729,7 +684,7 @@
 						"value": "instance-monitoring",
 						"en_name": "Scene Instance",
 						"authority": "instance-monitoring",
-						"path_name": "front_all/system-operation-folder/network-management/instance-monitoring",
+						"path_name": "front_all/system-operation-folder/instance-monitoring",
 						"active": ["no_auth"],
 						"edition": [0, 1],
 						"status": 1,
@@ -755,6 +710,21 @@
 				"execute_status": 1,
 				"per_status": "R/W/X",
 				"children": [
+					{
+						"name": "系统资源",
+						"value": "cloud-platform-monitoring",
+						"en_name": "Cloud Monitor",
+						"authority": "cloud-platform-monitoring",
+						"path_name": "front_all/system-management-folder/cloud-platform-monitoring",
+						"active": ["no_auth"],
+						"edition": [0, 1],
+						"status": 1,
+						"read_status": 1,
+						"write_status": 1,
+						"execute_status": 1,
+						"per_status": "R/W/X",
+						"children": []
+					},
 					{
 						"name": "系统配置",
 						"value": "system-config",

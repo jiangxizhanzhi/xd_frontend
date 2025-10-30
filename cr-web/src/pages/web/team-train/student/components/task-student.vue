@@ -235,9 +235,9 @@ export default {
             this.$emit('timeLineFresh', true);
           }
           // 更新时间轴标记相关
-          console.log(data.code, '团队学员ws');
+          // console.log(data.code, '团队学员ws');
           if (data.code === 9) {
-            console.log(data.code, '团队学员成功');
+            // console.log(data.code, '团队学员成功');
             this.$emit('timeLineFresh', true);
           }
           // 更新倒计时

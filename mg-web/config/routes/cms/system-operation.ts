@@ -1,6 +1,5 @@
 import businessServiceMonitoring from './business-service-monitoring';
 import equipmentStatusMonitoring from './equipment-status-monitoring';
-import basicInfrastructureManagement from "./basic-infrastructure-management";
 export default [
   {
     name: 'system-operation-folder',
@@ -21,17 +20,6 @@ export default [
           isThird: true,
         },
       },
-      {
-        name: 'cloud-platform-monitoring',
-        path: '/admin/system-operation/cloud-platform-monitoring',
-        title: 'routes.cloud-platform-monitoring',
-        component:
-          './pages/cms/system-operation/cloud-platform-monitoring/index.vue',
-        meta: {
-          module: 'cloud-platform-monitoring',
-          iconfont: 'icon-ziyuanguanli',
-        },
-      },
       ...businessServiceMonitoring,
       // 新生命周期管理
       {
@@ -47,8 +35,42 @@ export default [
       },
       // 设备状态监控->新型网络设备管理
       ...equipmentStatusMonitoring,
-      // 基础设施管理
-      ...basicInfrastructureManagement,
+      // 基础设施管理（原来的基础设施管理）
+      {
+        name: 'real-manage',
+        path: '/admin/std/instance-manage',
+        // 基础设施管理
+        title: '基础设施管理',
+        component: './pages/cms/device/real/list',
+        meta: {
+          module: 'real-manage',
+          iconfont: 'icon-zhongduanshebei1',
+        },
+      },
+      {
+        path: '/admin/std/instance-manage/create',
+        component: './pages/cms/device/real/create',
+        name: 'real-create',
+        title: '新增基础设施',
+        meta: {
+          breadcrumb: {
+            parentName: 'real-manage',
+          },
+          module: 'real-manage',
+        },
+      },
+      {
+        path: '/admin/std/instance-manage/edit/:id',
+        component: './pages/cms/device/real/edit',
+        name: 'real-edit',
+        title: '编辑基础设施',
+        meta: {
+          breadcrumb: {
+            parentName: 'real-manage',
+          },
+          module: 'real-manage',
+        },
+      },
       // 演巡生命周期（原来的生命周期管理）
       {
         name: 'instance-monitoring',

@@ -231,7 +231,7 @@ export default {
       if (!_.isPlainObject(res)) {
         data = JSON.parse(res);
       }
-      console.log('ws', data);
+      // console.log('ws', data);
       const scene = data.data.scene || {};
 
       if (data.type === 'scene_element') {
@@ -247,8 +247,8 @@ export default {
         };
         const csceneId = _.get(data, 'data.cscene_id');
         const { event, event_status, progress_percentage } = scene;
-        console.log('ws event', eventConst[event], event);
-        console.log('ws event_status', statusConst[event_status], event_status);
+        // console.log('ws event', eventConst[event], event);
+        // console.log('ws event_status', statusConst[event_status], event_status);
         if (event !== eventConst.close) {
           //非关闭的推送消息才更新场景id
           csceneId && (this.sceneId = csceneId);

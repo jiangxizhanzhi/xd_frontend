@@ -406,10 +406,10 @@ export default {
       wsutil.bind(
         `/ojj/ws/cr/ce_base/mission?business_id=${this.resource_id}&token=${this.cookie}`,
         (data) => {
-          console.log(data.code, '红蓝导员ws');
+          // console.log(data.code, '红蓝导员ws');
           if (data.code === 1 || data.code === 9) {
             // 导演监听到学员任务状态变化（时间轴）
-            console.log(data.code, '红蓝导员成功');
+            // console.log(data.code, '红蓝导员成功');
             this.initTimeLineData();
           }
         },

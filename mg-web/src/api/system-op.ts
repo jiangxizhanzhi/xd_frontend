@@ -42,7 +42,7 @@ export function getNewNodeList() {
 }
 //超融合平台管理模块 --end
 
-//资源编排模块 --start
+//系统资源模块 --start
 // 资源统计
 export function getResource() {
   return request.get('/devops/cluster/monitor/resources/statistics/', null, {
@@ -74,7 +74,7 @@ export function restart(data) {
   });
 }
 
-//资源编排模块 --end
+//系统资源模块 --end
 // 系统运维-串口服务器
 export function serIalPortList() {
   return request.get('/devops/cluster/types/serial-port-list/', null, {

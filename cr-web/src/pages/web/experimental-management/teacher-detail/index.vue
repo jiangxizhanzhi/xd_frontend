@@ -353,10 +353,10 @@ export default {
             //更新时间轴;new Date().getTime()便于及时更新时间轴
             this.timeLineUpData = new Date().getTime();
           }
-          console.log(data.code, '团队教员ws');
+          // console.log(data.code, '团队教员ws');
           // 更新时间轴标记相关
           if (data.code === 9) {
-            console.log(data.code, '团队教员成功');
+            // console.log(data.code, '团队教员成功');
             this.timeLineUpData = new Date().getTime();
           }
         },

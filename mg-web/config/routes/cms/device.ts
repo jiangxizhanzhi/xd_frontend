@@ -101,41 +101,41 @@ export default [
       //     module: 'usb-emulation',
       //   },
       // },
-      {
-        name: 'real-manage',
-        path: '/admin/std/instance-manage',
-        // 虚实结合管理
-        title: '虚实结合管理',
-        component: './pages/cms/device/real/list',
-        meta: {
-          module: 'real-manage',
-          iconfont: 'icon-zhongduanshebei1',
-        },
-      },
-      {
-        path: '/admin/std/instance-manage/create',
-        component: './pages/cms/device/real/create',
-        name: 'real-create',
-        title: '新增设备',
-        meta: {
-          breadcrumb: {
-            parentName: 'real-manage',
-          },
-          module: 'real-manage',
-        },
-      },
-      {
-        path: '/admin/std/instance-manage/edit/:id',
-        component: './pages/cms/device/real/edit',
-        name: 'real-edit',
-        title: '编辑设备',
-        meta: {
-          breadcrumb: {
-            parentName: 'real-manage',
-          },
-          module: 'real-manage',
-        },
-      },
+      // {
+      //   name: 'real-manage',
+      //   path: '/admin/std/instance-manage',
+      //   // 基础设施管理
+      //   title: '基础设施管理',
+      //   component: './pages/cms/device/real/list',
+      //   meta: {
+      //     module: 'real-manage',
+      //     iconfont: 'icon-zhongduanshebei1',
+      //   },
+      // },
+      // {
+      //   path: '/admin/std/instance-manage/create',
+      //   component: './pages/cms/device/real/create',
+      //   name: 'real-create',
+      //   title: '新增设备',
+      //   meta: {
+      //     breadcrumb: {
+      //       parentName: 'real-manage',
+      //     },
+      //     module: 'real-manage',
+      //   },
+      // },
+      // {
+      //   path: '/admin/std/instance-manage/edit/:id',
+      //   component: './pages/cms/device/real/edit',
+      //   name: 'real-edit',
+      //   title: '编辑设备',
+      //   meta: {
+      //     breadcrumb: {
+      //       parentName: 'real-manage',
+      //     },
+      //     module: 'real-manage',
+      //   },
+      // },
       // {
       //   path: '/admin/std/service-manage',
       //   // 服务管理

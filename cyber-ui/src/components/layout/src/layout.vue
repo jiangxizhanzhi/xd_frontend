@@ -28,7 +28,7 @@
         </cb-navi>
       </div>
       <div
-        v-if="accordion && !noNavi"
+        v-if="accordion && !noNavi && currentLeftMenu && currentLeftMenu.length"
         class="left-accordion"
         v-show="!fullscreen"
         :class="{ 'left-accordion-collapse': collapse }"
@@ -40,7 +40,7 @@
         <cb-accordion
           v-else
           ref="cbAccordionRef"
-          v-if="!$slots.accordion && currentLeftMenu"
+          v-if="!$slots.accordion && currentLeftMenu && currentLeftMenu.length"
           v-bind="$attrs"
           v-on="$listeners"
           :data="currentLeftMenu"
@@ -298,7 +298,7 @@ export default {
         //不显示菜单
         accWidth = '0';
         naviHeight = '0';
-      } else if (!accordion || !this.currentLeftMenu) {
+      } else if (!accordion || !this.currentLeftMenu.length) {
         //顶部导航
         accWidth = '0';
         naviHeight = '60';
@@ -316,7 +316,7 @@ export default {
         padding: computedPadding,
         width: `calc(100% - ${accWidth}px - ${paddingLeft} - ${paddingRight})`,
         height: `calc(100% - ${naviHeight}px - ${paddingBottom} - ${paddingTop})`,
-        marginLeft: accordion ? this.currentLeftMenu && !noNavi ? '240px' : '0' : '0'
+        marginLeft: accordion ? this.currentLeftMenu.length && !noNavi ? '240px' : '0' : '0'
       };
     },
     computedLineStyle() {
@@ -379,6 +379,9 @@ export default {
         this.$nextTick(() => {
           this.activeTab = this.active.name;
         })
+        if (this.active.name === 'learn-statistics') {
+          this.currentLeftMenu = [];
+        }
       },
       immediate: true,
     },
@@ -564,7 +567,8 @@ export default {
         // } else {
         this.naviHeaderData = data;
         this.naviData = data;
-        this.currentLeftMenu = data.find(item => item.name===this.active.meta._folderName[0]).children;
+        let itemData = data.find(item => item.name===this.active.meta._folderName[0]);
+        this.currentLeftMenu = (itemData && itemData.hasOwnProperty('children')) ? itemData.children : [];
       }
     },
     isLayout(item) {
@@ -639,9 +643,15 @@ export default {
     },
 
     menuSelect(name, item, params) {
-      // 首页和综合导控菜单不做跳转
-      if (name === 'index' || name === 'guide-control') {
+      // 综合导控菜单不做跳转
+      if (name === 'guide-control') {
         this.$message.info('暂未开放')
+        return;
+      }
+      if (name === 'learn-statistics') {
+        clearMemory();
+        this.select(name, item, null);
+        this.currentLeftMenu = [];
         return;
       }
       this.currentLeftMenu = params;

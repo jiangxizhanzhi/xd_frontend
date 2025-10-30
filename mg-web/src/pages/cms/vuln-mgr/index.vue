@@ -414,7 +414,7 @@ export default {
       });
     },
     linkAdd() {
-      console.log('8888');
+      // console.log('8888');
 
       this.$router.push({
         name: 'vuln-mgr-add',

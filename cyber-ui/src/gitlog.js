@@ -1,5 +1,26 @@
 window.__cyber_ui_log__ = [
   {
+    hash: '82042674ff8fbaf68be9dadba1000f9091e43806',
+    abbrevHash: '8204267',
+    subject: 'feat: 隐藏无用信息',
+    authorName: 'fengxuyan',
+    authorDate: '2025-10-29 15:43:47 +0800',
+  },
+  {
+    hash: '9776cb0919413eafe5b7170a8fde944a8b28a102',
+    abbrevHash: '9776cb0',
+    subject: 'feat: 新增新型网络设备管理、基础设施管理、演巡生命周期菜单',
+    authorName: 'fengxuyan',
+    authorDate: '2025-10-29 15:23:32 +0800',
+  },
+  {
+    hash: '444de2ff7755d08889abd0732cc00eb3f3eb79b5',
+    abbrevHash: '444de2f',
+    subject: 'feat: update ui',
+    authorName: 'fengxuyan',
+    authorDate: '2025-10-29 11:43:04 +0800',
+  },
+  {
     hash: '582d326823709e4b69cfbff85398b4847a20fd1d',
     abbrevHash: '582d326',
     subject: 'fix: 路由切换问题',
@@ -12,26 +33,5 @@ window.__cyber_ui_log__ = [
     subject: 'feat: update ui',
     authorName: 'fengxuyan',
     authorDate: '2025-10-10 17:53:25 +0800',
-  },
-  {
-    hash: 'c9ced77484abb18cff175ae1745aceaa95d03d23',
-    abbrevHash: 'c9ced77',
-    subject: 'feat: update ui;登录页',
-    authorName: 'fengxuyan',
-    authorDate: '2025-10-10 17:01:52 +0800',
-  },
-  {
-    hash: 'f7c423739eed15f95f5f4469ac4cb193610c83f7',
-    abbrevHash: 'f7c4237',
-    subject: 'fix: 子应用路由标签跳转问题',
-    authorName: 'fengxuyan',
-    authorDate: '2025-10-10 15:58:15 +0800',
-  },
-  {
-    hash: 'd12c1a14c1b3572ac5296798ae8f3c83fb4b2995',
-    abbrevHash: 'd12c1a1',
-    subject: 'feat: 页面问题修复优化',
-    authorName: 'fengxuyan',
-    authorDate: '2025-10-10 14:33:50 +0800',
   },
 ];

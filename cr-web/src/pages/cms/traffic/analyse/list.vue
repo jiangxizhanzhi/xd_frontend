@@ -192,7 +192,7 @@ export default {
           }
         });
         this.options = arr;
-        console.log(this.options, ' this.options');
+        // console.log(this.options, ' this.options');
         // this.tagNames = this.getTagNames(this.options);
       });
     },

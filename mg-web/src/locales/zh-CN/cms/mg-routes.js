@@ -32,7 +32,7 @@ export default {
     imageManagement: '镜像管理',
     quicklyBuild: '快速构建',
     importingExistingImage: '导入已存在镜像',
-    liveFireManagement: '虚实结合管理',
+    liveFireManagement: '基础设施管理',
     serviceManagement: '服务管理',
     taskPlan: '任务方案',
     skillPoint: '任务技能点管理',

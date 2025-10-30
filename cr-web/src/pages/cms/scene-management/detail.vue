@@ -1,7 +1,8 @@
 <template>
   <cb-inner-page
     class="event-team-bg"
-    :background="false"
+    :background="true"
+    :title="header_title"
   >
     <div class="event-team-detail">
       <div class="body">
@@ -143,6 +144,7 @@ export default {
   },
   data() {
     return {
+      header_title: '',
       isCheck: false,
       noRepeat: false,
       isSkillFormat: false,
@@ -343,6 +345,9 @@ export default {
     },
   },
   created() {
+    // 将字符串中的-edit和-add替换成空
+    let replace_name = this.$route.name.replace(/-edit|-add/g, '');
+    this.header_title = SCENE_MANAGEMENT_NAME[replace_name] || '场景';
     IndexDB.dbInit('team');
     this.timerGetTopo = setInterval(() => {
       if (this.active === 2 && this.$refs.topologyEditor) {
@@ -386,7 +391,6 @@ export default {
     //   this.idInitData();
     // }
     this.idInitData();
-
   },
   beforeDestroy() {
     this.debounceCacheAdd = undefined;

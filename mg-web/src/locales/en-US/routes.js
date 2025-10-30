@@ -42,7 +42,7 @@ export default {
   'real-manage': 'Physical Device',
   'service-manage': 'Service',
 
-  // 拓扑管理
+  // 网络管理
   'topology-management-folder': 'Topology',
   'topology-management': 'Topology',
 

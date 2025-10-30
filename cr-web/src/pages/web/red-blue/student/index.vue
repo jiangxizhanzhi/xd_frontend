@@ -777,9 +777,9 @@ export default {
             this.$refs.taskRef.initData();
           }
           // 更新时间轴标记相关
-          console.log(data.code, '红蓝学员ws');
+          // console.log(data.code, '红蓝学员ws');
           if (data.code === 9) {
-            console.log(data.code, '红蓝学员成功');
+            // console.log(data.code, '红蓝学员成功');
             this.initTimeLineData();
           }
           if (data.runningStatus === 1) {

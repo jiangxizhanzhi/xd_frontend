@@ -112,7 +112,7 @@ export default {
   },
   watch: {
     suffix(newValue) {
-      console.log(newValue);
+      // console.log(newValue);
       this.selected = newValue;
       this.cmOptions.mode = newValue === 0 ? python_mode : shell_mode;
     },

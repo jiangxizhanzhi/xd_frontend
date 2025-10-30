@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="false">
+  <cb-inner-page :background="true" title="自定义探针管理">
     <cb-search-table
       rowKey="resource_id"
       :cols.sync="cols"

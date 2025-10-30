@@ -9,6 +9,17 @@ export default [
     },
     children: [
       {
+        name: 'cloud-platform-monitoring',
+        path: '/admin/system-operation/cloud-platform-monitoring',
+        title: 'routes.cloud-platform-monitoring',
+        component:
+          './pages/cms/system-operation/cloud-platform-monitoring/index.vue',
+        meta: {
+          module: 'cloud-platform-monitoring',
+          iconfont: 'icon-ziyuanguanli',
+        },
+      },
+      {
         name: 'system-config',
         path: '/admin/system-management/system-config',
         title: 'routes.system-config',

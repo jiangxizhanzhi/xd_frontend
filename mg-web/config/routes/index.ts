@@ -249,11 +249,12 @@ export default [
         },
       },
       {
-        name: 'index',
-        path: '',
+        name: 'learn-statistics',
+        path: '/admin/oj/admin/course/learn-statistics/list',
         title: '首页',
+        component: './frame',
         meta: {
-          iconfont: 'icon-yanshi',
+          iconfont: 'icon-shouye1',
         },
       },
       {

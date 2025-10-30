@@ -1,12 +1,12 @@
 <template>
-  <cb-inner-page :background="true" title="资源编排">
+  <cb-inner-page :background="true" title="系统资源">
     <!-- 资源统计 -->
     <div class="wrapper">
       <Block :title="$t('systemOperation.cloudPlatform.resourceStatistics')">
         <resource-statistics />
       </Block>
     </div>
-    <!-- 资源编排 -->
+    <!-- 系统资源 -->
     <div class="wrapper">
       <Block :title="$t('systemOperation.systemAlarm.deviceMonitor')">
         <device-monitor />

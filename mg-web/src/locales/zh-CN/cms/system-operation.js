@@ -59,7 +59,7 @@ export default {
     systemOperation: '系统运维',
     computingInstance: '新型网络设备管理',
     networkInstance: '拟态多平台管理',
-    cloudPlatformMonitoring: '资源编排',
+    cloudPlatformMonitoring: '系统资源',
     realEquipmentManagement: '实装设备管理',
     rangeInstanceMonitoring: '生命周期管理',
     resourceUsageManagement: '资源用量管理',

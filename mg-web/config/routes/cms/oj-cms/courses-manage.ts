@@ -15,7 +15,7 @@ export default [
       iconfont: 'icon-kechengguanli',
     },
     children: [
-      ...learnStatistics,
+      // ...learnStatistics,
       ...courses,
       ...coursesCard,
       experimentalManageRouter,

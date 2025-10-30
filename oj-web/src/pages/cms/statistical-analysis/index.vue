@@ -414,10 +414,14 @@ export default {
 </style>
 <style scoped lang="scss">
 .learn-wrap {
+  margin-top: 16px;
   padding-left: 0;
+  margin-bottom: 24px;
   ::v-deep .header-decorate {
-    padding-left: 24px;
+    padding-left: 16px;
+    margin-top: -12px;
     border-bottom: 1px solid var(--bg-color-1);
+    margin-bottom: 12px;
   }
 }
 .all-course {
