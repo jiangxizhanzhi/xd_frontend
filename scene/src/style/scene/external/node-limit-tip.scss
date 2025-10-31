@@ -1,0 +1,18 @@
+.scene-all {
+  .info-name {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    &::after {
+      border: 1px solid var(--primary-color);
+      border-top: 1px solid var(--primary-color);
+    }
+  }
+  .info-tag {
+    color: #fefefe;
+    background-color: #004966;
+    &-bottom {
+      color: var(--green-color);
+      background-color: transparent;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@import 'menus/index';
+@import 'external/node-limit-tip';
+@import 'drawer/index';
+.scene-all {
+  .title-box {
+    margin-bottom: 15px;
+    padding-left: 17px;
+  }
+  .title {
+    color: var(--primary-color);
+    &::before {
+      content: '';
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 1px;
+      width: 6px;
+      height: 8px;
+      background: var(--primary-color);
+    }
+  }
+  .cb-scene-empty {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .empty-icon {
+      width: 48px;
+      height: 41px;
+      margin-bottom: 15px;
+      .cb-iconfont {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .cb-scene-dialog-content {
+    .el-form {
+      padding: 0 !important;
+    }
+  }
+}
