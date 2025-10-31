@@ -147,6 +147,7 @@
     display: flex;
     height: 100%;
     width: calc(100% - #{$footer-w});
+    min-width: 1500px;
 
     .navi-logo {
       display: flex;

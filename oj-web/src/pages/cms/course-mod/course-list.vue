@@ -183,6 +183,7 @@ export default {
     },
     getCourseListData() {
       this.loading = true;
+      this.courseListData = [];
       let params = {
         pattern: this.query.pattern,
         page: this.pagination.current_page,
