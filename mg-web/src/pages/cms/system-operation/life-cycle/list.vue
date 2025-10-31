@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="true" title="生命周期管理">
+  <cb-inner-page :background="true" title="全生命周期管理">
     <cb-search-table
       ref="monitorListRef"
       :cols="cols"
