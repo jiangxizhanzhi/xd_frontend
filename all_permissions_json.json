@@ -618,7 +618,7 @@
 						"per_status": "R/W/X",
 						"children": [
 							{
-								"name": "生命周期管理",
+								"name": "全生命周期管理",
 								"value": "life-cycle",
 								"en_name": "Life cycle",
 								"authority": "life-cycle",
