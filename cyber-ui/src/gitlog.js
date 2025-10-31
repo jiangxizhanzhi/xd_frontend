@@ -1,5 +1,12 @@
 window.__cyber_ui_log__ = [
   {
+    hash: 'f88e9b77ade060018d2b5ba87c287cd89336db1b',
+    abbrevHash: 'f88e9b7',
+    subject: 'feat: 菜单等修改',
+    authorName: 'fengxuyan',
+    authorDate: '2025-10-30 14:19:10 +0800',
+  },
+  {
     hash: '82042674ff8fbaf68be9dadba1000f9091e43806',
     abbrevHash: '8204267',
     subject: 'feat: 隐藏无用信息',
@@ -26,12 +33,5 @@ window.__cyber_ui_log__ = [
     subject: 'fix: 路由切换问题',
     authorName: 'fengxuyan',
     authorDate: '2025-10-11 11:58:40 +0800',
-  },
-  {
-    hash: 'ba763951188d9acd57f3b6f343555fcd7efd405d',
-    abbrevHash: 'ba76395',
-    subject: 'feat: update ui',
-    authorName: 'fengxuyan',
-    authorDate: '2025-10-10 17:53:25 +0800',
   },
 ];

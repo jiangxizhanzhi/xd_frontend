@@ -1,6 +1,6 @@
 {
   "name": "@cyber/ui",
-  "version": "5.6.0-xd.46",
+  "version": "5.6.0-xd.47",
   "private": false,
   "main": "./dist/cyber-ui.js",
   "module": "./src/index.js",

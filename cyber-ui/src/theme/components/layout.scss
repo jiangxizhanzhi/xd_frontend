@@ -151,7 +151,7 @@
         &.bg-color {
           .cb-inner-page__fixed-height {
             // 减去inner-page  padding 上下 各20px
-            height: calc(var(--content-height) - 40px);
+            height: calc(var(--content-height) - 88px);
           }
         }
 

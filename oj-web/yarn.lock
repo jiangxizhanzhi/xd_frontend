@@ -2257,9 +2257,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cyber/ui@npm:5.6.0-xd.46":
-  version: 5.6.0-xd.46
-  resolution: "@cyber/ui@npm:5.6.0-xd.46"
+"@cyber/ui@npm:5.6.0-xd.47":
+  version: 5.6.0-xd.47
+  resolution: "@cyber/ui@npm:5.6.0-xd.47"
   dependencies:
     "@bytemd/plugin-breaks": ^1.21.0
     "@bytemd/plugin-gfm": ^1.21.0
@@ -2292,7 +2292,7 @@ __metadata:
     vue: ^2.6.14
     vue-i18n: ^8.27.2
     vue-router: ^3.5.4
-  checksum: e179d013a01fe8aeb0a9aee5464aa8ad5bb28beb86204a5ad1c32d105656fadfdcfb21443bda6a5c8a72ad0f3e33b8a2427eb09ae494f1ad7c6e21ad65bac714
+  checksum: 64b42d3a8b1073bf7de3fd00172b86df890975e603e3540cfe9a410787e725ef79ee8d602bac123e58cde837ab68da367bdc7ad277a79e23bc610199ed527417
   languageName: node
   linkType: hard
 
@@ -5267,7 +5267,7 @@ __metadata:
     "@cyber/cli": 5.4.0-alpha.0
     "@cyber/helper": 5.4.1-alpha.1
     "@cyber/scene": 5.6.0-alpha.7
-    "@cyber/ui": 5.6.0-xd.46
+    "@cyber/ui": 5.6.0-xd.47
     "@vue/composition-api": ^1.7.0
     axios: 0.26.1
     cidr-js: ^2.3.1
