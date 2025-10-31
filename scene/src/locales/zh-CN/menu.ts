@@ -52,7 +52,7 @@ export default {
     whiteTeam: '白队',
     whiteTeamIntro:
       '白方是网络靶场平台“管理”角色，靶场试验“剧务”，负责试验开始前的准备工作和试验进行时的“日常事务”处理。',
-    redTeam: '红队',
+    redTeam: '学员角色分组',
     blueTeam: '蓝队',
     arrangement: '编排',
     delete: '删除',
