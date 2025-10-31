@@ -262,7 +262,7 @@ export default [
         path: '',
         title: '综合导控',
         meta: {
-          iconfont: 'icon-changjing',
+          iconfont: 'icon-zonghexunlian',
         },
       },
       // 课程管理

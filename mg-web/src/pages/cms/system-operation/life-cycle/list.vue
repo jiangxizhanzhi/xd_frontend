@@ -12,32 +12,6 @@
       @reset="handleReset"
       :show-search-btn="true"
     >
-      <template v-slot:search>
-        <cb-button
-          hollow
-          icon="icon-shanchu"
-          colorType="red"
-          :warnMsg="$t('systemOperation.scene.confirmDeleteScene')"
-          :completeMsg="$t('systemOperation.scene.closeSuccess')"
-          @click="multipleDelete"
-          :disabled="selection.length === 0"
-          mr
-        >
-          {{ $t('systemOperation.scene.batchShutdownScene') }}
-        </cb-button>
-        <cb-button
-          hollow
-          icon="icon-shanchu"
-          colorType="red"
-          :warnMsg="$t('systemOperation.scene.confirmClearScene')"
-          :completeMsg="$t('systemOperation.scene.clearSuccess')"
-          @click="multipleClear"
-          :disabled="selection.length === 0"
-          mr
-        >
-          {{ $t('systemOperation.scene.deleteSceneDataInBatches') }}
-        </cb-button>
-      </template>
       <template v-slot:filter>
         <cb-select
           v-model="query.reference_types"
@@ -101,56 +75,13 @@
         </cb-tooltip>
       </template>
       <template v-slot:operation="scope">
-        <template
-          v-if="
-            scope.data.scene_status_desc ===
-            $t('systemOperation.scene.deleting')
-          "
-        >
-          <cb-button mr type="text" colorType="yellow">
-            {{ $t('systemOperation.scene.deleting') }}
-          </cb-button>
-        </template>
-        <template v-else>
-          <template
-            v-if="
-              scope.data.scene_status_desc !==
-              $t('systemOperation.scene.deleted')
-            "
-          >
-            <cb-button
-              mr
-              type="text"
-              colorType="red"
-              @click="deleteScene(scope.data)"
-              :class="language === 'en-US' ? 'enButton' : 'zhButton'"
-            >
-              {{ $t('systemOperation.scene.closeScene') }}
-            </cb-button>
-          </template>
-          <template v-else>
-            <cb-button
-              mr
-              type="text"
-              colorType="red"
-              @click="clearData(scope.data)"
-            >
-              {{ $t('systemOperation.scene.clearSceneData') }}
-            </cb-button>
-          </template>
-          <!-- 场景监控大屏 临时入口 巴基斯坦需求要求去掉-->
-          <template
-            v-if="
-              scope.data.scene_status_desc !==
-                $t('systemOperation.scene.creating') &&
-              scope.data.scene_status_desc !== $t('systemOperation.scene.error')
-            "
-          >
-            <!-- <cb-button mr type="text" @click="showMonitorDisplay(scope.data)">
-              {{ $t('systemOperation.scene.monitorDataDisplay') }}
-            </cb-button> -->
-          </template>
-        </template>
+        <cb-button
+          type="text"
+          :link-name="{
+            name: 'life-cycle-detail',
+            params: { id: scope.data.id },
+          }"
+        >查看</cb-button>
       </template>
       <template v-slot:help>
         <span>{{ $t('资源占用') }}</span>

@@ -25,12 +25,25 @@ export default [
       {
         name: 'life-cycle',
         path: '/admin/system-operation/life-cycle',
-        title: 'routes.instance-monitoring',
+        title: 'routes.life-cycle',
         component: './pages/cms/system-operation/life-cycle/list.vue',
         meta: {
           module: 'life-cycle',
           isThird: true,
           // iconfont: 'icon-xinxitongji',
+        },
+      },
+      {
+        name: 'life-cycle-detail',
+        path: '/admin/system-operation/life-cycle/detail/:id',
+        title: '查看全生命周期',
+        component: './pages/cms/system-operation/life-cycle/detail.vue',
+        meta: {
+          breadcrumb: {
+            parentName: 'life-cycle',
+          },
+          module: 'life-cycle',
+          isThird: true,
         },
       },
       // 设备状态监控->新型网络设备管理

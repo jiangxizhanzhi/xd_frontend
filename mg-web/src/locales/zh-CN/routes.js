@@ -110,7 +110,7 @@ export default {
   'network-management': '拟态多平台管理',
   'real-equipment-management': '实装设备管理',
   'instance-monitoring': '演巡生命周期',
-  'life-cycle': '生命周期管理',
+  'life-cycle': '全生命周期管理',
   'basic-infrastructure-management': '基础设施管理',
   'cloud-platform-monitoring': '系统资源',
   'resource-usage-management': '资源用量管理',
