@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="true" title="查看全生命周期">
+  <cb-inner-page :background="true" title="查看生命周期">
     <cb-tabs type="border-card" v-model="activeName" class="tab-wrap">
       <cb-tab-pane :label="$t('基本信息')" name="basic">
         <cb-form

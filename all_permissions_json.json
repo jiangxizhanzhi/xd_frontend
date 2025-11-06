@@ -618,7 +618,7 @@
 						"per_status": "R/W/X",
 						"children": [
 							{
-								"name": "全生命周期管理",
+								"name": "生命周期管理",
 								"value": "life-cycle",
 								"en_name": "Life cycle",
 								"authority": "life-cycle",
@@ -761,6 +761,21 @@
 						"en_name": "Role MGT",
 						"authority": "role-management",
 						"path_name": "front_all/system-management-folder/role-management",
+						"active": ["no_auth"],
+						"edition": [0, 1],
+						"status": 1,
+						"read_status": 1,
+						"write_status": 1,
+						"execute_status": 1,
+						"per_status": "R/W/X",
+						"children": []
+					},
+					{
+						"name": "接口管理",
+						"value": "interface-management",
+						"en_name": "Interface Management",
+						"authority": "interface-management",
+						"path_name": "front_all/system-management-folder/interface-management",
 						"active": ["no_auth"],
 						"edition": [0, 1],
 						"status": 1,

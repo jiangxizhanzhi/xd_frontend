@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="true" title="全生命周期管理">
+  <cb-inner-page :background="true" title="生命周期管理">
     <cb-search-table
       ref="monitorListRef"
       :cols="cols"
@@ -142,12 +142,12 @@ export default {
 
       const colArr = [
         {
-          label: that.$t('资源名称'),
+          label: that.$t('厂商'),
           prop: 'name',
           width: '150px',
         },
         {
-          label: that.$t('资源类型'),
+          label: that.$t('架构类型'),
           getData(row) {
             if (that.sceneType[row.reference_type]) {
               return that.sceneType[row.reference_type];
@@ -182,7 +182,7 @@ export default {
         //   },
         // },
         {
-          label: that.$t('资源占用'),
+          label: that.$t('物理参数'),
           width: '160px',
           getData(row) {
             const cpu = row.cpu || 0,
@@ -200,15 +200,15 @@ export default {
           },
           titleSlot: 'help', // 自定义表头
         },
-        {
-          label: that.$t('systemOperation.scene.creator'),
-          prop: 'create_name',
-        },
-        {
-          label: that.$t('systemOperation.scene.createTime'),
-          prop: 'create_time',
-          // width: '250px',
-        },
+        // {
+        //   label: that.$t('systemOperation.scene.creator'),
+        //   prop: 'create_name',
+        // },
+        // {
+        //   label: that.$t('systemOperation.scene.createTime'),
+        //   prop: 'create_time',
+        //   // width: '250px',
+        // },
         // {
         //   label: that.$t('systemOperation.scene.sceneProps'),
         //   getData(row) {
@@ -221,18 +221,18 @@ export default {
         //     return row.scene_attr;
         //   },
         // },
-        {
-          label: that.$t('资源状态'),
-          slot: 'status',
-        },
-
-        {
-          // 运行时长
-          label: that.$t('systemOperation.scene.runTime'),
-          getData(row) {
-            return that.getFormateTime(row.scene_run_time);
-          },
-        },
+        // {
+        //   label: that.$t('资源状态'),
+        //   slot: 'status',
+        // },
+        //
+        // {
+        //   // 运行时长
+        //   label: that.$t('systemOperation.scene.runTime'),
+        //   getData(row) {
+        //     return that.getFormateTime(row.scene_run_time);
+        //   },
+        // },
         {
           label: that.$t('systemOperation.scene.operate'),
           slot: 'operation',

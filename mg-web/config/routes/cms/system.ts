@@ -166,6 +166,46 @@ export default [
       //   },
       // },
       // ...notice,
+      {
+        name: 'interface-management',
+        path: '/admin/system-management/interface-management',
+        title: 'routes.interface-management',
+        component:
+          './pages/cms/system-management/interface-management/index.vue',
+        meta: {
+          module: 'interface-management',
+          iconfont: 'icon-xinxitongji',
+        },
+      },
+      {
+        name: 'interface-add',
+        path: '/admin/system-management/interface-add',
+        title: '新增接口',
+        component:
+          './pages/cms/system-management/interface-management/add.vue',
+        props: true,
+        meta: {
+          breadcrumb: {
+            parentName: 'interface-management',
+          },
+          module: 'interface-management',
+        },
+      },
+      {
+        name: 'interface-edit',
+        path: '/admin/system-management/interface-edit/:id',
+        title: '编辑接口',
+        component:
+          './pages/cms/system-management/interface-management/edit.vue',
+        props: true,
+        meta: {
+          routeTabActive: true,
+          breadcrumb: {
+            parentName: 'interface-management',
+          },
+          module: 'interface-management',
+        },
+      },
     ],
   },
 ];

@@ -36,7 +36,7 @@ export default [
       {
         name: 'life-cycle-detail',
         path: '/admin/system-operation/life-cycle/detail/:id',
-        title: '查看全生命周期',
+        title: '查看生命周期',
         component: './pages/cms/system-operation/life-cycle/detail.vue',
         meta: {
           breadcrumb: {

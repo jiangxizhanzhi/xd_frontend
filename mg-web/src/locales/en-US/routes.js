@@ -119,6 +119,8 @@ export default {
   'instance-monitoring': 'Scene Instance',
   'cloud-platform-monitoring': 'Cloud Monitor',
   'resource-usage-management': 'Resource Usage',
+  'life-cycle': 'Life',
+  'interface-management': 'Interface Management',
 
   //系统公告
   'system-notice-folder': 'Announcement',
