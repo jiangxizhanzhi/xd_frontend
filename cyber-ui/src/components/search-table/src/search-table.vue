@@ -369,7 +369,7 @@ export default {
      */
     showIndex: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     /**
      * 请求的异步promise

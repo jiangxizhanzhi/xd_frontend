@@ -84,7 +84,7 @@ export default [
           module: 'real-manage',
         },
       },
-      // 演巡生命周期（原来的生命周期管理）
+      // 训练管理（原来的生命周期管理）
       {
         name: 'instance-monitoring',
         path: '/admin/system-operation/instance-monitoring',

@@ -109,7 +109,7 @@ export default {
   'cluster-management': '新型网络设备管理',
   'network-management': '拟态多平台管理',
   'real-equipment-management': '实装设备管理',
-  'instance-monitoring': '演巡生命周期',
+  'instance-monitoring': '训练管理',
   'life-cycle': '生命周期管理',
   'basic-infrastructure-management': '基础设施管理',
   'cloud-platform-monitoring': '系统资源',

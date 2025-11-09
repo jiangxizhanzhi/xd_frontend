@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="true" title="演巡生命周期">
+  <cb-inner-page :background="true" title="训练管理">
     <cb-search-table
       ref="monitorListRef"
       :cols="cols"
@@ -70,17 +70,11 @@
           @change="changeActivity"
           style="margin-right: 20px"
         >
-          <cb-radio label="active" style="margin-right: 16px">{{
-            $t('systemOperation.scene.activeScene')
-          }}</cb-radio>
-          <cb-radio label="over">{{
-            $t('systemOperation.scene.endScene')
-          }}</cb-radio>
+          <cb-radio label="active" style="margin-right: 16px">活动训练</cb-radio>
+          <cb-radio label="over">已结束训练</cb-radio>
         </cb-radio-group>
         <cb-switch v-model="query.error" @change="changeAbnormal" />
-        <span class="switch-label mr">{{
-          $t('systemOperation.scene.showErrorScene')
-        }}</span>
+        <span class="switch-label mr">只展示异常训练</span>
         <cb-search-input
           v-model="query.search"
           :placeholder="$t('systemOperation.scene.pleaseInputName')"
@@ -216,7 +210,7 @@ export default {
           width: '150px',
         },
         {
-          label: that.$t('资源类型'),
+          label: that.$t('训练类型'),
           getData(row) {
             if (that.sceneType[row.reference_type]) {
               return that.sceneType[row.reference_type];

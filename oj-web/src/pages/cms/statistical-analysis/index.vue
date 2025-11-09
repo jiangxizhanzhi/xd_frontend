@@ -330,7 +330,7 @@ export default {
         // console.log(data);
 
         data.forEach(item => {
-          this.score_all.xData.push(item.username)
+          this.score_all.xData.push(item.name)
           this.score_all.seriesData.push(item.total_score)
         })
       })
@@ -342,7 +342,7 @@ export default {
         this.score_sy.seriesData = [];
         const data = _.get(res, 'data.data', [])
         data.forEach(item => {
-          this.score_sy.xData.push(item.username)
+          this.score_sy.xData.push(item.name)
           this.score_sy.seriesData.push(item.total_score)
         })
       })
@@ -354,7 +354,7 @@ export default {
         this.score_km.seriesData = [];
         const data = _.get(res, 'data.data', [])
         data.forEach(item => {
-          this.score_km.xData.push(item.username)
+          this.score_km.xData.push(item.name)
           this.score_km.seriesData.push(item.total_score)
         })
       })
@@ -366,7 +366,7 @@ export default {
         this.score_zhyx.seriesData = [];
         const data = _.get(res, 'data.data', [])
         data.forEach(item => {
-          this.score_zhyx.xData.push(item.username)
+          this.score_zhyx.xData.push(item.name)
           this.score_zhyx.seriesData.push(item.total_score)
         })
       })

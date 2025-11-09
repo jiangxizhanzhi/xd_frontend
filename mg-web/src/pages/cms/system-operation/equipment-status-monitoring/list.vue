@@ -138,7 +138,7 @@ export default {
         {
           label: this.$t('设备名称'),
           prop: 'name',
-          width: 200,
+          width: 300,
           resizable: true,
         },
         {
@@ -161,7 +161,7 @@ export default {
               return `${category_name}/${sub_category_name}`;
             }
           },
-          width: 220,
+          width: 300,
           resizable: true,
         },
         // {

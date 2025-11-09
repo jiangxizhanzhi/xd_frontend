@@ -18,7 +18,7 @@
       <template v-slot:filter>
         <cb-search-input
           v-model="query.name"
-          :placeholder="$t('请输入授权ip或域名')"
+          :placeholder="$t('请输入授权IP或域名')"
         />
       </template>
       <template v-slot:search>
@@ -65,12 +65,16 @@ export default {
       selection: [],
       cols: [
         {
-          label: this.$t('授权ip/域名'),
+          label: this.$t('授权IP/域名'),
           prop: 'name',
         },
         {
           label: this.$t('授权接口'),
           prop: 'path',
+        },
+        {
+          label: this.$t('备注'),
+          prop: 'note',
         },
         {
           label: this.$t('systemOperation.monitorBusiness.operate'),

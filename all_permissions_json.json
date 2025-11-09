@@ -680,7 +680,7 @@
 						"children": []
 					},
 					{
-						"name": "演巡生命周期",
+						"name": "训练管理",
 						"value": "instance-monitoring",
 						"en_name": "Scene Instance",
 						"authority": "instance-monitoring",

@@ -144,7 +144,7 @@ export default {
         {
           label: that.$t('厂商'),
           prop: 'name',
-          width: '150px',
+          // width: '150px',
         },
         {
           label: that.$t('架构类型'),
@@ -183,7 +183,7 @@ export default {
         // },
         {
           label: that.$t('物理参数'),
-          width: '160px',
+          // width: '160px',
           getData(row) {
             const cpu = row.cpu || 0,
               ram = row.ram || 0,

@@ -1,5 +1,19 @@
 window.__cyber_ui_log__ = [
   {
+    hash: 'b37ffd1946a7f4a18e96e3af401325e7a78ff1ba',
+    abbrevHash: 'b37ffd1',
+    subject: 'feat: 新增系统管理-接口管理页面',
+    authorName: 'fengxuyan',
+    authorDate: '2025-11-06 14:47:46 +0800',
+  },
+  {
+    hash: '907b806ee66f297bde4b20fa608eacf8b990770c',
+    abbrevHash: '907b806',
+    subject: 'feat: update ui',
+    authorName: 'fengxuyan',
+    authorDate: '2025-10-31 14:03:36 +0800',
+  },
+  {
     hash: 'e95700fafb9b45e2cfa20c8d8191016423714fee',
     abbrevHash: 'e95700f',
     subject: 'feat: 红队文字修改',
@@ -19,19 +33,5 @@ window.__cyber_ui_log__ = [
     subject: 'feat: 文字修改',
     authorName: 'fengxuyan',
     authorDate: '2025-10-31 11:06:08 +0800',
-  },
-  {
-    hash: '7448c87c57c326e2e9906a621af425774324c040',
-    abbrevHash: '7448c87',
-    subject: 'feat: 新增全声明周期管理页面路由及测试页面',
-    authorName: 'fengxuyan',
-    authorDate: '2025-10-31 10:50:25 +0800',
-  },
-  {
-    hash: '314207321ff8a28399eac03935cf6eae0b32401c',
-    abbrevHash: '3142073',
-    subject: 'feat: 菜单名称修改',
-    authorName: 'fengxuyan',
-    authorDate: '2025-10-31 10:49:34 +0800',
   },
 ];

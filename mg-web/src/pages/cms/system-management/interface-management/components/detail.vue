@@ -13,24 +13,32 @@
         :isBgColor="true"
       >
         <cb-form-item
-          :label="$t('授权ip/域名')"
+          :label="$t('授权IP/域名')"
           prop="name"
         >
           <cb-input
             v-model="model.name"
-            :placeholder="$t('请输入授权ip/域名')"
+            :placeholder="$t('请输入授权IP/域名')"
           />
         </cb-form-item>
         <cb-form-item
           :label="$t('授权接口')"
-          prop="company"
+          prop="path"
         >
           <cb-input
-            v-model="model.company"
+            v-model="model.path"
             :placeholder="$t('请输入授权接口')"
           />
         </cb-form-item>
-
+        <cb-form-item
+          :label="$t('备注')"
+          prop="note"
+        >
+          <cb-input
+            v-model="model.note"
+            :placeholder="$t('请输入备注')"
+          />
+        </cb-form-item>
         <div slot="fixedBottom">
           <cb-button-group space="middle">
             <cb-button
@@ -66,7 +74,8 @@ export default {
     return {
       model: {
         name: "",
-        company: "",
+        path: "",
+        node: "",
         params: {
           cpu: 0,
           disk: 0,
@@ -80,14 +89,21 @@ export default {
         name: [
           {
             required: true,
-            message: this.$t('请输入平台名称'),
+            message: this.$t('请输入授权IP/域名'),
             trigger: 'blur',
           },
         ],
-        company: [
+        path: [
           {
             required: true,
-            message: this.$t('请输入所属厂商'),
+            message: this.$t('请输入授权接口'),
+            trigger: 'blur',
+          },
+        ],
+        note: [
+          {
+            required: true,
+            message: this.$t('请输入备注'),
             trigger: 'blur',
           },
         ],
