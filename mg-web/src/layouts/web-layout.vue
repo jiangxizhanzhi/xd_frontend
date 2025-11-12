@@ -411,7 +411,7 @@ export default {
       if (activeApp !== oldApp || (!activeApp && !oldApp)) {
         setTimeout(() => {
           this.$router.push({ name, params, query: item.query });
-        }, 300)
+        }, 100)
       } else {
         emitCurrentApp('pushRoute', { name, params, query: item.query });
       }
