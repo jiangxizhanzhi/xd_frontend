@@ -17,8 +17,8 @@
       :selection.sync="selection" -->
       <template v-slot:filter>
         <cb-search-input
-          v-model="query.name"
-          :placeholder="$t('请输入授权IP或域名')"
+          v-model="query.desc"
+          :placeholder="$t('请输入备注')"
         />
       </template>
       <template v-slot:search>
@@ -50,14 +50,15 @@
 </template>
 
 <script>
-import { deletePlatform } from '@/api/business-service-monitoring.js'
+import {deleteInterface} from "../../../../api/interface-management";
+
 export default {
   data() {
     return {
-      url: '/devops/cluster/platform/page',
+      url: '/devops/cluster/interface/page',
       baseURL: '/api/mp',
       query: {
-        name: '',
+        desc: '',
       },
       selector: {
         maxSelect: 0,
@@ -66,7 +67,7 @@ export default {
       cols: [
         {
           label: this.$t('授权IP/域名'),
-          prop: 'name',
+          prop: 'ip',
         },
         {
           label: this.$t('授权接口'),
@@ -74,7 +75,7 @@ export default {
         },
         {
           label: this.$t('备注'),
-          prop: 'note',
+          prop: 'desc',
         },
         {
           label: this.$t('systemOperation.monitorBusiness.operate'),
@@ -120,7 +121,7 @@ export default {
       //   });
       // }
       this.$confirm(this.$t('确定删除') + '？').then(() => {
-        deletePlatform(data.id)
+        deleteInterface(data.id)
           .then(() => {
             done();
             // this.selection = [];

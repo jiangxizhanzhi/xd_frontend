@@ -14,10 +14,10 @@
       >
         <cb-form-item
           :label="$t('授权IP/域名')"
-          prop="name"
+          prop="ip"
         >
           <cb-input
-            v-model="model.name"
+            v-model="model.ip"
             :placeholder="$t('请输入授权IP/域名')"
           />
         </cb-form-item>
@@ -32,10 +32,10 @@
         </cb-form-item>
         <cb-form-item
           :label="$t('备注')"
-          prop="note"
+          prop="desc"
         >
           <cb-input
-            v-model="model.note"
+            v-model="model.desc"
             :placeholder="$t('请输入备注')"
           />
         </cb-form-item>
@@ -58,10 +58,7 @@
 </template>
 
 <script>
-import {
-  PROTOCOLLIST,
-} from '../constant';
-import { addPlatformApi, editPlatformApi, getPlatformApiDetail } from '@/api/business-service-monitoring.js'
+import {addInterfaceApi, editInterfaceApi, getInterfaceApiDetail} from "../../../../../api/interface-management";
 export default {
   props: {
     id: {
@@ -73,20 +70,12 @@ export default {
   data() {
     return {
       model: {
-        name: "",
+        ip: "",
         path: "",
-        node: "",
-        params: {
-          cpu: 0,
-          disk: 0,
-          memory: 0,
-        },
-        system_type: "",
-        in_position: true,
-        access_protocol_list: [],
+        desc: "",
       },
       rules: {
-        name: [
+        ip: [
           {
             required: true,
             message: this.$t('请输入授权IP/域名'),
@@ -100,7 +89,7 @@ export default {
             trigger: 'blur',
           },
         ],
-        note: [
+        desc: [
           {
             required: true,
             message: this.$t('请输入备注'),
@@ -126,35 +115,30 @@ export default {
   },
   methods: {
     getBackData() {
-      getPlatformApiDetail(this.id).then(res => {
+      getInterfaceApiDetail(this.id).then(res => {
         const data = _.get(res, 'data.data', {});
         this.model = {
           ...data,
-          params: JSON.parse(data.params),
-          in_position: data.in_position ? true : false,
-          access_protocol_list: data.access_protocol_list ? data.access_protocol_list : [],
         }
       })
     },
     confirm() {
       const params = {
         ...this.model,
-        params: JSON.stringify(this.model.params),
-        in_position: this.model.in_position ? 1 : 0
       }
       this.$refs.formRef.validate(valid => {
         if (valid) {
           if (this.id) {
             // 编辑
             params.id = this.id;
-            editPlatformApi(params).then(res => {
+            editInterfaceApi(params).then(res => {
               this.$router.push({
                 name: 'interface-management'
               })
             })
           } else {
             // 新增
-            addPlatformApi(params).then(res => {
+            addInterfaceApi(params).then(res => {
               this.$router.push({
                 name: 'interface-management'
               })
