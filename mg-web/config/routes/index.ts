@@ -255,6 +255,7 @@ export default [
         component: './frame',
         meta: {
           iconfont: 'icon-shouye1',
+          module: 'learn-statistics',
         },
       },
       {

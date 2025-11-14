@@ -376,9 +376,9 @@ export default {
         const topMenu = getTopMenu(this.active, this.routeData);
         this.$emit('active', this.active, topMenu);
         this.addTab(this.active);
-        this.$nextTick(() => {
-          this.activeTab = this.active.name;
-        })
+        // this.$nextTick(() => {
+        this.activeTab = this.active.name;
+        // })
         if (this.active.name === 'learn-statistics') {
           this.currentLeftMenu = [];
         }
@@ -541,7 +541,7 @@ export default {
                 menu.meta.breadcrumb = false;
                 menu.meta._folderName = [];
                 if (this.active.name === menu.name) {
-                  this.newActive = menu;
+                  // this.newActive = menu;
                 }
               }
             }

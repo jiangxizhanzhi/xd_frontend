@@ -44,6 +44,15 @@ export default [
         name: 'cms-default',
         redirect: { name: 'learn-statistics' },
       },
+      {
+        name: 'learn-statistics',
+        path: '/admin/course/learn-statistics/list',
+        title: 'routes.learn-statistics',
+        component: './pages/cms/statistical-analysis/index.vue',
+        meta: {
+          module: 'learn-statistics',
+        },
+      },
       ...courseCms,
       ...practiceCms,
       ...career,
