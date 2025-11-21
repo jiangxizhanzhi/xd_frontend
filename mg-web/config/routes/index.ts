@@ -256,6 +256,7 @@ export default [
         meta: {
           iconfont: 'icon-shouye1',
           module: 'learn-statistics',
+          breadcrumb: false,
         },
       },
       {

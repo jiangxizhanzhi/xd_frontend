@@ -51,6 +51,7 @@ export default [
         component: './pages/cms/statistical-analysis/index.vue',
         meta: {
           module: 'learn-statistics',
+          breadcrumb: false,
         },
       },
       ...courseCms,
