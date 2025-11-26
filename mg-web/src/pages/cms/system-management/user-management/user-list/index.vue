@@ -392,6 +392,7 @@ export default {
     /* 点击左侧树获取id */
     getResourceId(v) {
       this.model.org = v;
+      this.$refs.userListRef.reload();
     },
 
     // 删除所选用户

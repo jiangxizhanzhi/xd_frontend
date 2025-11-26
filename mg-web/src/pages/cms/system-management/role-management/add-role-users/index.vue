@@ -211,6 +211,7 @@ export default {
     // 点击左侧树获取resource_id
     getResourceId(v) {
       this.model.org = v;
+      this.$refs.addRoleUsersListRef.reload();
     },
     // 添加用户
     addUser(data, done) {
