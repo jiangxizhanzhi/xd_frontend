@@ -91,15 +91,17 @@ export default {
             const targets = _.get(row, 'targets', []) || [];
             let permissionAll = [];
             targets.forEach((item) => {
-              let permissionItem = item.path ? item.path.split('/') : [];
-              permissionItem.forEach((item2, i) => {
-                if (item2 === '*') {
-                  return '*';
-                } else {
-                  return (permissionItem[i] = this.$t(`routes.${item2}`));
-                }
-              });
-              permissionAll.push(permissionItem.join('/'));
+              if (item.path !== 'front_all/*') {
+                let permissionItem = item.path ? item.path.split('/') : [];
+                permissionItem.forEach((item2, i) => {
+                  if (item2 === '*') {
+                    return '*';
+                  } else {
+                    return (permissionItem[i] = this.$t(`routes.${item2}`));
+                  }
+                });
+                permissionAll.push(permissionItem.join('/'));
+              }
             });
 
             return permissionAll.join('；');

@@ -92,7 +92,7 @@ export default {
         status: this.$t('systemManagement.userManage.normal'),
       };
     });
-    this.tableData = [...listNew];
+    this.tableData = [...listNew]?.filter(item => item.id != "front_all");
   },
   methods: {
     /* 上一步 */
