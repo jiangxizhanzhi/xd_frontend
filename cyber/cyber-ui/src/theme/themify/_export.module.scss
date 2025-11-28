@@ -1,9 +1,0 @@
-@import './index.scss';
-
-:export {
-  @each $key, $theme in $themes {
-    @each $var, $value in $theme {
-      #{$key + '&&' +  $var}: $value;
-    }
-  }
-}
