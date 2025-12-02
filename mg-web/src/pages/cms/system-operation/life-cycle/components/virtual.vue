@@ -50,6 +50,10 @@ export default {
           prop: 'status_display',
         },
         {
+          label: this.$t('厂商名称'),
+          prop: 'company_name',
+        },
+        {
           label: this.$t('操作'),
           slot: 'operate',
         },
@@ -83,7 +87,8 @@ export default {
       this.$confirm(this.$t(text)).then(() => {
         postUpShut({
           action: action,//开机时power_on  关机时power_off
-          id: data.id
+          id: data.id,
+          company: data.company
         }).then((res) => {
           this.$refs.monitorListRef.reload();
           this.$message({

@@ -76,12 +76,15 @@ export default {
       {
         label: this.$t('内存使用'),
         slot: 'used_memory',
-        width: '300'
+        width: 300,
       },
       {
         label: this.$t('磁盘'),
         slot: 'file_systems',
-        width: '100'
+      },
+      {
+        label: this.$t('厂商名称'),
+        prop: 'company_name',
       },
       ],
       fileData: [],
