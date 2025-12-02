@@ -234,3 +234,10 @@ export function getFlowProtocols() {
     baseURL: '/api/mp',
   });
 }
+
+//虚拟机开机关机
+export function postUpShut(data) {
+  return request.post('/devops/cluster/xd_source/up_shut', data, {
+    baseURL: '/api/mp',
+  });
+}
