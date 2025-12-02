@@ -78,6 +78,15 @@
           />
         </cb-form-item>
         <cb-form-item
+          :label="$t('远程链接地址')"
+          prop="url"
+        >
+          <cb-input
+            v-model="model.url"
+            :placeholder="$t('请输入远程链接地址')"
+          />
+        </cb-form-item>
+        <cb-form-item
           :label="$t('在位状态')"
           prop="in_position"
         >
@@ -236,6 +245,7 @@ export default {
           memory: 0,
         },
         system_type: "",
+        url:"",
         in_position: true,
         access_protocol_list: [],
       },

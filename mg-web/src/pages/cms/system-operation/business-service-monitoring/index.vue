@@ -36,8 +36,8 @@
 
       <template v-slot:params="scope">
         <div>{{
-          `CPU:${JSON.parse(scope.data.params).cpu}G;磁盘:${JSON.parse(scope.data.params).disk}G;内存:${JSON.parse(scope.data.params).memory}G`
-          }}</div>
+          `CPU:${JSON.parse(scope.data.params).cpu}核;磁盘:${JSON.parse(scope.data.params).disk}G;内存:${JSON.parse(scope.data.params).memory}G`
+        }}</div>
       </template>
       <template v-slot:in_position="scope">
         <span :class="['circle', { active: scope.data.in_position === 1 }]">
@@ -115,14 +115,17 @@ export default {
         {
           label: this.$t('平台名称'),
           prop: 'name',
+          width: 250,
         },
         {
           label: this.$t('所属厂商'),
           prop: 'company',
+          width: 200,
         },
         {
           label: this.$t('参数'),
           slot: 'params',
+          width: 250,
         },
         {
           label: this.$t('架构类型'),
