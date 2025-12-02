@@ -2220,9 +2220,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cyber/scene@npm:5.6.0-alpha.7":
-  version: 5.6.0-alpha.7
-  resolution: "@cyber/scene@npm:5.6.0-alpha.7"
+"@cyber/scene@npm:5.6.0-xd.2":
+  version: 5.6.0-xd.2
+  resolution: "@cyber/scene@npm:5.6.0-xd.2"
   dependencies:
     "@antv/layout": 0.3.20
     "@antv/x6": 1.34.13
@@ -2249,7 +2249,7 @@ __metadata:
     vue: ^2.6.14
     vue-3d-model: ^1.4.1
     vue-i18n: 8.27.2
-  checksum: 0fd53e9671f50a00caf49afb4029a789a7d8cf6cc609c0ba797b049df6506e1960c5eb442928d2a7f8d84f3bac31905333d5b4857c9bd9a307de7178a7a28a0c
+  checksum: 790894c4c8869b8fc6eb339bb8f9ae7495bd98af4121f59f334356828dbba288ea6144c0acf0c4424960804c11662d94a2805ce6e1be5d46603f5ae7c07cd684
   languageName: node
   linkType: hard
 
@@ -9732,7 +9732,7 @@ __metadata:
     "@cyber/cli": 5.4.0-alpha.0
     "@cyber/helper": 5.4.1-alpha.1
     "@cyber/painter": 1.0.7-alpha.31
-    "@cyber/scene": 5.6.0-alpha.7
+    "@cyber/scene": 5.6.0-xd.2
     "@cyber/ui": 5.6.0-xd.51
     "@micro-zoe/micro-app": ^0.8.10
     "@microsoft/fetch-event-source": ^2.0.1
