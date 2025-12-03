@@ -55,43 +55,43 @@
           @click="deleteRow(scope.data, $event)"
           mr
         >{{ $t('删除') }}</cb-button>
-        <cb-popover
-          placement="left"
-          width="280"
-          trigger="click"
-        >
-          <template>
-            <div
-              style="margin-bottom: 5px"
-              v-for="(item, index) in loginUrlData"
-              :key="index"
-            >
-              <div>
-                <span>{{ $t('device.acceEnv') }}：</span>
-                <span>{{ item.protocol }} </span><span>{{ item.hostname }} </span><span>{{ item.port }} </span>
-              </div>
-              <div style="white-space: nowrap;">
-                <span>{{ $t('device.username') }}：</span>
-                <span>{{ item.username }}</span>
-                <span>{{ $t('device.password') }}：</span>
-                <span>{{ item.password }}</span>
-              </div>
-              <!-- <div
-                v-if="item.protocol === 'console'"
-                style="margin-top: 5px"
-              >
-                <cb-button @click="openNewWindow(item.url)">{{ item.protocol }}{{ $t('device.login') }}</cb-button>
-              </div> -->
-            </div>
-          </template>
+<!--        <cb-popover-->
+<!--          placement="left"-->
+<!--          width="280"-->
+<!--          trigger="click"-->
+<!--        >-->
+<!--          <template>-->
+<!--            <div-->
+<!--              style="margin-bottom: 5px"-->
+<!--              v-for="(item, index) in loginUrlData"-->
+<!--              :key="index"-->
+<!--            >-->
+<!--              <div>-->
+<!--                <span>{{ $t('device.acceEnv') }}：</span>-->
+<!--                <span>{{ item.protocol }} </span><span>{{ item.hostname }} </span><span>{{ item.port }} </span>-->
+<!--              </div>-->
+<!--              <div style="white-space: nowrap;">-->
+<!--                <span>{{ $t('device.username') }}：</span>-->
+<!--                <span>{{ item.username }}</span>-->
+<!--                <span>{{ $t('device.password') }}：</span>-->
+<!--                <span>{{ item.password }}</span>-->
+<!--              </div>-->
+<!--              &lt;!&ndash; <div-->
+<!--                v-if="item.protocol === 'console'"-->
+<!--                style="margin-top: 5px"-->
+<!--              >-->
+<!--                <cb-button @click="openNewWindow(item.url)">{{ item.protocol }}{{ $t('device.login') }}</cb-button>-->
+<!--              </div> &ndash;&gt;-->
+<!--            </div>-->
+<!--          </template>-->
           <cb-button
-            :disabled="!(scope.data.access_protocol_list && scope.data.access_protocol_list.length)"
+            :disabled="!(scope.data.url)"
             slot="reference"
             type="text"
-            @click="login(scope.data)"
+            @click="openNewWindow(scope.data.url)"
           >{{
             $t('远程连接') }}</cb-button>
-        </cb-popover>
+<!--        </cb-popover>-->
       </template>
     </cb-search-table>
   </cb-inner-page>
