@@ -254,71 +254,86 @@ export default {
      * 接入方式
      */
     // openTap(connection_url, access_modes, nodeId) {
-    openTap(connection_url, access_modes, nodeId, image_type, nodeName) {
-      const { id, protocol, access_ip, access_port, path } = access_modes;
-      if (protocol === 'http' || protocol === 'https') {
-        let connection_url = '';
-        if (!!path) {
-          connection_url = `${protocol}://${access_ip}:${access_port}${path}`;
-        } else {
-          connection_url = `${protocol}://${access_ip}:${access_port}`;
-        }
-        // window.open(connection_url, '_blank');
-        const url = this.$router.resolve({
-          name: 'scene-screen-recording',
-          query: {
-            page: 'team',
-            id,
-            role_group: this.roleGroup,
-            nodeName,
-            image_type,
-            protocol,
-            connection_url: connection_url,
-            resource_id: this.resource_id,
-            scene_name: this.breadcrumbName,
-            scene_id: this.sceneId,
-            node_id: nodeId,
-            //  node_id: nodeId,
-            //   scene_id: this.sceneId,
-            //   user_id: this.$store.state.user.id,
-          },
-        });
-        window.open(url.href, '_blank');
-      } else {
+    openTap(connection_url, access_modes, nodeId, image_type, nodeName, jump_type, vendor) {
+      if (vendor) {
         const params = {
-          access_mode_id: id,
-          context: {
-            // access_user_id: this.studentId,
-            access_user_id: this.$store.state.user.id,
-          },
           id: this.sceneId,
           node_id: nodeId,
         };
         this.$request
-          .post('/cscene/cscene_instances/get_connection', params, {
+          .post('/cscene/cscene_instances/get_connection_by_vendor', params, {
             baseURL: '/api/mp',
           })
           .then((res) => {
-            const url = this.$router.resolve({
-              name: 'scene-screen-recording',
-              query: {
-                page: 'team',
-                role_group: this.roleGroup,
-                resource_id: this.resource_id,
-                connection_url: _.get(res, 'data.data.connection_url'),
-                node_id: nodeId,
-                id,
-                nodeName,
-                image_type,
-                protocol,
-                connection_id: _.get(res, 'data.data.connection_id'),
-                scene_id: this.sceneId,
-                user_id: this.$store.state.user.id,
-                scene_name: this.breadcrumbName,
-              },
-            });
-            window.open(url.href, '_blank');
+            let connection_url = _.get(res, 'data.data.connection_url');
+            window.open(connection_url, '_blank');
           });
+      } else {
+        const { id, protocol, access_ip, access_port, path } = access_modes;
+        if (protocol === 'http' || protocol === 'https') {
+          let connection_url = '';
+          if (!!path) {
+            connection_url = `${protocol}://${access_ip}:${access_port}${path}`;
+          } else {
+            connection_url = `${protocol}://${access_ip}:${access_port}`;
+          }
+          // window.open(connection_url, '_blank');
+          const url = this.$router.resolve({
+            name: 'scene-screen-recording',
+            query: {
+              page: 'team',
+              id,
+              role_group: this.roleGroup,
+              nodeName,
+              image_type,
+              protocol,
+              connection_url: connection_url,
+              resource_id: this.resource_id,
+              scene_name: this.breadcrumbName,
+              scene_id: this.sceneId,
+              node_id: nodeId,
+              //  node_id: nodeId,
+              //   scene_id: this.sceneId,
+              //   user_id: this.$store.state.user.id,
+            },
+          });
+          window.open(url.href, '_blank');
+        } else {
+          const params = {
+            access_mode_id: id,
+            context: {
+              // access_user_id: this.studentId,
+              access_user_id: this.$store.state.user.id,
+            },
+            id: this.sceneId,
+            node_id: nodeId,
+          };
+          this.$request
+            .post('/cscene/cscene_instances/get_connection', params, {
+              baseURL: '/api/mp',
+            })
+            .then((res) => {
+              const url = this.$router.resolve({
+                name: 'scene-screen-recording',
+                query: {
+                  page: 'team',
+                  role_group: this.roleGroup,
+                  resource_id: this.resource_id,
+                  connection_url: _.get(res, 'data.data.connection_url'),
+                  node_id: nodeId,
+                  id,
+                  nodeName,
+                  image_type,
+                  protocol,
+                  connection_id: _.get(res, 'data.data.connection_id'),
+                  scene_id: this.sceneId,
+                  user_id: this.$store.state.user.id,
+                  scene_name: this.breadcrumbName,
+                },
+              });
+              window.open(url.href, '_blank');
+            });
+        }
       }
     },
 
