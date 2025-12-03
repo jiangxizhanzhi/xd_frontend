@@ -18,7 +18,7 @@
       <template v-slot:filter>
         <cb-search-input
           v-model="query.name"
-          :placeholder="$t('请输入平台名称')"
+          :placeholder="$t('请输入设备名称')"
         />
       </template>
       <template v-slot:search>
@@ -113,7 +113,7 @@ export default {
       selection: [],
       cols: [
         {
-          label: this.$t('平台名称'),
+          label: this.$t('设备名称'),
           prop: 'name',
           width: 250,
         },

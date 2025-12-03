@@ -13,7 +13,7 @@
         :isBgColor="true"
       >
         <cb-form-item
-          :label="$t('平台名称')"
+          :label="$t('设备名称')"
           prop="name"
         >
           <cb-input
