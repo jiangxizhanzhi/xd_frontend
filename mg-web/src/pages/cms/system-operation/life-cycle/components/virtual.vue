@@ -15,6 +15,11 @@
         type="text"
         mr
       >{{ computedText(scope.data) }}</cb-button>
+      <cb-button
+        @click="openNewWindow(scope.data)"
+        type="text"
+        mr
+      >远程连接</cb-button>
     </template>
   </cb-search-table>
 </template>
@@ -97,7 +102,21 @@ export default {
           });
         });
       });
-    }
+    },
+    openNewWindow(data) {
+      const params = {
+        vm_id: data.id,
+        vendor: data.company,
+      };
+      this.$request
+        .post('/cscene/cscene_instances/get_connection_by_vendor', params, {
+          baseURL: '/api/mp',
+        })
+        .then((res) => {
+          let connection_url = _.get(res, 'data.data.connection_url');
+          window.open(connection_url, '_blank');
+        });
+    },
   },
 };
 </script>
