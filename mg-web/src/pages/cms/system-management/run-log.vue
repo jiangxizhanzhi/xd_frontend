@@ -11,7 +11,7 @@
       row-key="id"
       :searchBarBg="true"
       :show-search-btn="true"
-      :queryStrKeep="['startDate', 'endDate']"
+      :queryStrKeep="['startDate', 'endDate', 'type']"
       @reset="handleReset"
     >
       <template v-slot:search>
@@ -135,7 +135,8 @@ export default {
   },
   methods: {
     handleReset() {
-      this.dateRange=['','']
+      this.query.type = '';
+      this.dateRange = ['',''];
     },
     getRunLogOptions() {
       getRunLogTypes().then((res) => {
