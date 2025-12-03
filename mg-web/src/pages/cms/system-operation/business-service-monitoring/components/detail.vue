@@ -1,7 +1,7 @@
 <template>
   <cb-inner-page
     :background="true"
-    title="超融合平台管理"
+    title="超融合设备管理"
   >
     <div>
       <cb-form

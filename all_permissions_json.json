@@ -589,21 +589,6 @@
 				"per_status": "R/W/X",
 				"children": [
 					{
-						"name": "超融合平台管理",
-						"value": "business-service-monitoring",
-						"en_name": "Business Monitor",
-						"authority": "business-service-monitoring",
-						"path_name": "front_all/system-operation-folder/business-service-monitoring",
-						"active": ["no_auth"],
-						"edition": [0, 1],
-						"status": 1,
-						"read_status": 1,
-						"write_status": 1,
-						"execute_status": 1,
-						"per_status": "R/W/X",
-						"children": []
-					},
-					{
 						"name": "拟态多平台管理",
 						"value": "network-management",
 						"en_name": "Network Instance",
@@ -617,6 +602,21 @@
 						"execute_status": 1,
 						"per_status": "R/W/X",
 						"children": [
+							{
+								"name": "超融合设备管理",
+								"value": "business-service-monitoring",
+								"en_name": "Business Monitor",
+								"authority": "business-service-monitoring",
+								"path_name": "front_all/system-operation-folder/network-management/business-service-monitoring",
+								"active": ["no_auth"],
+								"edition": [0, 1],
+								"status": 1,
+								"read_status": 1,
+								"write_status": 1,
+								"execute_status": 1,
+								"per_status": "R/W/X",
+								"children": []
+							},
 							{
 								"name": "生命周期管理",
 								"value": "life-cycle",
@@ -633,11 +633,11 @@
 								"children": []
 							},
 							{
-								"name": "告警监控",
-								"value": "system-alarm",
-								"en_name": "System Alarm",
-								"authority": "system-alarm",
-								"path_name": "front_all/system-operation-folder/network-management/system-alarm",
+								"name": "多维度运营",
+								"value": "multi-dimensional-operation",
+								"en_name": "Multi-dimensional operation",
+								"authority": "multi-dimensional-operation",
+								"path_name": "front_all/system-operation-folder/network-management/multi-dimensional-operation",
 								"active": ["no_auth"],
 								"edition": [0, 1],
 								"status": 1,
@@ -685,6 +685,21 @@
 						"en_name": "Scene Instance",
 						"authority": "instance-monitoring",
 						"path_name": "front_all/system-operation-folder/instance-monitoring",
+						"active": ["no_auth"],
+						"edition": [0, 1],
+						"status": 1,
+						"read_status": 1,
+						"write_status": 1,
+						"execute_status": 1,
+						"per_status": "R/W/X",
+						"children": []
+					},
+					{
+						"name": "告警监控",
+						"value": "system-alarm",
+						"en_name": "System Alarm",
+						"authority": "system-alarm",
+						"path_name": "front_all/system-operation-folder/system-alarm",
 						"active": ["no_auth"],
 						"edition": [0, 1],
 						"status": 1,

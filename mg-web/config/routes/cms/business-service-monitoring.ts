@@ -7,7 +7,7 @@ export default [
       './pages/cms/system-operation/business-service-monitoring/index.vue',
     meta: {
       module: 'business-service-monitoring',
-      iconfont: 'icon-daohanglan-ziyuan',
+      isThird: true,
     },
   },
   {
@@ -21,6 +21,7 @@ export default [
         parentName: 'business-service-monitoring',
       },
       module: 'business-service-monitoring',
+      isThird: true,
     },
   },
   {
@@ -34,6 +35,7 @@ export default [
         parentName: 'business-service-monitoring',
       },
       module: 'business-service-monitoring',
+      isThird: true,
     },
   },
 ];

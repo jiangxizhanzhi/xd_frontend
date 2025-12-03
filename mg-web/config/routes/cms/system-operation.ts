@@ -9,17 +9,6 @@ export default [
       iconfont: 'icon-xitongyunwei',
     },
     children: [
-      {
-        name: 'system-alarm',
-        path: '/admin/system-operation/system-alarm',
-        title: 'routes.system-alarm',
-        component: './pages/cms/system-operation/system-alarm/index.vue',
-        meta: {
-          module: 'system-alarm',
-          // iconfont: 'icon-xitongyunwei',
-          isThird: true,
-        },
-      },
       ...businessServiceMonitoring,
       // 新生命周期管理
       {
@@ -43,6 +32,17 @@ export default [
             parentName: 'life-cycle',
           },
           module: 'life-cycle',
+          isThird: true,
+        },
+      },
+      // 多维度运营
+      {
+        name: 'multi-dimensional-operation',
+        path: '/admin/system-operation/multi-dimensional-operation',
+        title: 'routes.multi-dimensional-operation',
+        component: './pages/cms/system-operation/multi-dimensional-operation/index.vue',
+        meta: {
+          module: 'multi-dimensional-operation',
           isThird: true,
         },
       },
@@ -146,6 +146,17 @@ export default [
             parentName: 'instance-monitoring',
           },
           module: 'instance-monitoring',
+        },
+      },
+      {
+        name: 'system-alarm',
+        path: '/admin/system-operation/system-alarm',
+        title: 'routes.system-alarm',
+        component: './pages/cms/system-operation/system-alarm/index.vue',
+        meta: {
+          module: 'system-alarm',
+          // iconfont: 'icon-xitongyunwei',
+          iconfont: 'icon-daohanglan-ziyuan',
         },
       },
     ],

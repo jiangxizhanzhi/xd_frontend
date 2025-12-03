@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { request } from '@cyber/helper';
-// 超融合平台管理
+// 超融合设备管理
 // 新增
 export function addPlatformApi(data) {
   return request.post('/devops/cluster/platform', data, {

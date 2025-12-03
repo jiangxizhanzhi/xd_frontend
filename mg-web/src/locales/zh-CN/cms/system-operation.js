@@ -6,7 +6,7 @@ export default {
     normal: '正常',
     abnormal: '异常',
     cloudMonitor: '云平台服务监控',
-    businessMonitor: '超融合平台管理',
+    businessMonitor: '超融合设备管理',
     serverMonitor: '服务器监控',
     alarmDistribution: '近一周分布',
     pendAlarm: '待处理告警',

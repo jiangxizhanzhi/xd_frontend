@@ -20,7 +20,7 @@ export function getDeviceMonitorInfo(data) {
 }
 //告警监控模块 --end
 
-//超融合平台管理模块 --start
+//超融合设备管理模块 --start
 export function getNodeList() {
   return request.get(
     '/devops/cluster/monitor/hypervisor/page/?page=1&per_page=999',
@@ -40,7 +40,7 @@ export function getNewNodeList() {
     },
   );
 }
-//超融合平台管理模块 --end
+//超融合设备管理模块 --end
 
 //系统资源模块 --start
 // 资源统计

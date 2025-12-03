@@ -104,7 +104,8 @@ export default {
 
   //系统运维
   'system-alarm': '告警监控',
-  'business-service-monitoring': '超融合平台管理',
+  'multi-dimensional-operation': '多维度运营',
+  'business-service-monitoring': '超融合设备管理',
   'system-operation-folder': '系统运维',
   'cluster-management': '新型网络设备管理',
   'network-management': '拟态多平台管理',
