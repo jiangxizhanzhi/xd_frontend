@@ -2,7 +2,7 @@
   <cb-inner-page :background="false">
     <cb-search-table
       :cols="cols"
-      :data="query"
+      :data.sync="query"
       :selector="selector"
       :selection.sync="selection"
       url="/devops/log/runtime_log/logs"
@@ -10,6 +10,9 @@
       ref="logListRef"
       row-key="id"
       :searchBarBg="true"
+      :show-search-btn="true"
+      :queryStrKeep="['startDate', 'endDate']"
+      @reset="handleReset"
     >
       <template v-slot:search>
         <cb-button
@@ -131,6 +134,9 @@ export default {
     },
   },
   methods: {
+    handleReset() {
+      this.dateRange=['','']
+    },
     getRunLogOptions() {
       getRunLogTypes().then((res) => {
         const tempList = _.get(res, 'data.data', []);
