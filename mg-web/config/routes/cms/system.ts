@@ -29,24 +29,26 @@ export default [
           iconfont: 'icon-daohanglan-xitong',
         },
       },
-      // {
-      //   name: 'audit-log',
-      //   path: '/admin/system-management/audit-log',
-      //   title: 'routes.audit-log',
-      //   component: './pages/cms/system-management/audit-log.vue',
-      //   meta: {
-      //     module: 'audit-log',
-      //   },
-      // },
-      // {
-      //   name: 'system-log',
-      //   path: '/admin/system-management/system-log',
-      //   title: 'routes.system-log',
-      //   component: './pages/cms/system-management/run-log.vue',
-      //   meta: {
-      //     module: 'system-log',
-      //   },
-      // },
+      {
+        name: 'audit-log',
+        path: '/admin/system-management/audit-log',
+        title: 'routes.audit-log',
+        component: './pages/cms/system-management/audit-log.vue',
+        meta: {
+          module: 'audit-log',
+          iconfont: 'icon-jiankong',
+        },
+      },
+      {
+        name: 'system-log',
+        path: '/admin/system-management/system-log',
+        title: 'routes.system-log',
+        component: './pages/cms/system-management/run-log.vue',
+        meta: {
+          module: 'system-log',
+          iconfont: 'icon-yunhangtongji',
+        },
+      },
       {
         name: 'user-manage',
         path: '/admin/system-management/user-management',

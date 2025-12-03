@@ -2,10 +2,11 @@
   <cb-inner-page :background="false">
     <cb-search-table
       :cols="cols"
-      :data="model"
+      :data.sync="model"
       ref="userListRef"
       :searchBarBg="true"
       :fetchPromise="fetchPromise"
+      :show-search-btn="true"
     >
       <template v-slot:filter>
         <cb-select

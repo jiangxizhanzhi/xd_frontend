@@ -785,6 +785,46 @@
 						"execute_status": 1,
 						"per_status": "R/W/X",
 						"children": []
+					},
+					{
+						"name": "审计日志",
+						"value": "audit-log",
+						"en_name": "Audit Log",
+						"authority": "audit-log",
+						"path_name": "front_all/system-management-folder/audit-log",
+						"active": [
+							"no_auth"
+						],
+						"edition": [
+							0,
+							1
+						],
+						"status": 1,
+						"read_status": 1,
+						"write_status": 1,
+						"execute_status": 1,
+						"per_status": "R/W/X",
+						"children": []
+					},
+					{
+						"name": "运行日志",
+						"value": "system-log",
+						"en_name": "Running Log",
+						"authority": "system-log",
+						"path_name": "front_all/system-management-folder/system-log",
+						"active": [
+							"no_auth"
+						],
+						"edition": [
+							0,
+							1
+						],
+						"status": 1,
+						"read_status": 1,
+						"write_status": 1,
+						"execute_status": 1,
+						"per_status": "R/W/X",
+						"children": []
 					}
 				]
 			}
