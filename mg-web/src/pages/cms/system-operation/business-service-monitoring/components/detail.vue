@@ -92,40 +92,40 @@
         >
           <cb-switch v-model="model.in_position"></cb-switch>
         </cb-form-item>
-        <cb-form-item
-          :label="$t('接入配置')"
-          prop="connect_config"
-        > <cb-search-table
-            :scroll="{ y: 560 }"
-            :cols="cols"
-            :selector="selector"
-            :selection.sync="selection"
-            ref="accessTableRef"
-            :hidePaginOnDemand="true"
-            :data-source="model.access_protocol_list"
-            :searchBarBg="false"
-          >
-            <template v-slot:search>
-              <cb-button
-                button-type="add"
-                @click="addConnectConfig"
-              ></cb-button>
-              <cb-button
-                hollow
-                button-type="delete"
-                @click="deleteSelected(selection, $event)"
-                :disabled="selection.length === 0"
-              ></cb-button>
-            </template>
-            <template v-slot:operate="scoped">
-              <cb-button
-                type="text"
-                @click="editConfig(scoped.data)"
-              >编辑</cb-button>
-            </template>
+<!--        <cb-form-item-->
+<!--          :label="$t('接入配置')"-->
+<!--          prop="connect_config"-->
+<!--        > <cb-search-table-->
+<!--            :scroll="{ y: 560 }"-->
+<!--            :cols="cols"-->
+<!--            :selector="selector"-->
+<!--            :selection.sync="selection"-->
+<!--            ref="accessTableRef"-->
+<!--            :hidePaginOnDemand="true"-->
+<!--            :data-source="model.access_protocol_list"-->
+<!--            :searchBarBg="false"-->
+<!--          >-->
+<!--            <template v-slot:search>-->
+<!--              <cb-button-->
+<!--                button-type="add"-->
+<!--                @click="addConnectConfig"-->
+<!--              ></cb-button>-->
+<!--              <cb-button-->
+<!--                hollow-->
+<!--                button-type="delete"-->
+<!--                @click="deleteSelected(selection, $event)"-->
+<!--                :disabled="selection.length === 0"-->
+<!--              ></cb-button>-->
+<!--            </template>-->
+<!--            <template v-slot:operate="scoped">-->
+<!--              <cb-button-->
+<!--                type="text"-->
+<!--                @click="editConfig(scoped.data)"-->
+<!--              >编辑</cb-button>-->
+<!--            </template>-->
 
-          </cb-search-table>
-        </cb-form-item>
+<!--          </cb-search-table>-->
+<!--        </cb-form-item>-->
 
         <div slot="fixedBottom">
           <cb-button-group space="middle">
