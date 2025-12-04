@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="false">
+  <cb-inner-page :background="true" title="审计日志">
     <cb-search-table
       :cols="cols"
       :data.sync="model"
