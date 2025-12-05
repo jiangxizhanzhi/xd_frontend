@@ -1,5 +1,8 @@
 <template>
-  <cb-inner-page :background="true" title="权限管理">
+  <cb-inner-page
+    :background="true"
+    title="权限管理"
+  >
     <cb-search-table
       :cols.sync="cols"
       :selector="selector"
@@ -136,19 +139,32 @@ export default {
     /* 删除 */
     deleteSelectedRoles(data, done) {
       const ids = [];
+      const pks = [];
       if (data?.length) {
         data.forEach((item) => {
           ids.push(item.id);
+          pks.push(item.pk)
         });
       }
-      deleteRole([...ids])
-        .then(() => {
-          done();
-          this.$refs.roleListRef.reload();
-        })
-        .catch(() => {
-          done(false);
+      // pk是2，3，4禁止删除
+      if (pks.includes(3) || pks.includes(3) || pks.includes(3)) {
+        this.$message.warning({
+          message: this.$t('管理员，教员，学员角色禁止删除'),
         });
+        done(false);
+        return false;
+      } else {
+        deleteRole([...ids])
+          .then(() => {
+            done();
+            this.$refs.roleListRef.reload();
+          })
+          .catch(() => {
+            done(false);
+          });
+      }
+
+
     },
     /* 编辑 */
     editRole(data) {
