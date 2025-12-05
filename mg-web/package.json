@@ -20,7 +20,7 @@
   "dependencies": {
     "@cyber/helper": "5.4.1-alpha.1",
     "@cyber/painter": "1.0.7-alpha.31",
-    "@cyber/scene": "5.6.0-xd.2",
+    "@cyber/scene": "5.6.0-xd.5",
     "@cyber/ui": "5.6.0-xd.52",
     "@micro-zoe/micro-app": "^0.8.10",
     "@microsoft/fetch-event-source": "^2.0.1",

@@ -254,8 +254,18 @@ export default {
      * 接入方式
      */
     // openTap(connection_url, access_modes, nodeId) {
-    openTap(connection_url, access_modes, nodeId, image_type, nodeName, jump_type, vendor) {
-      if (vendor) {
+    openTap(connection_url, access_modes, nodeId, image_type, nodeName, jump_type, vendor,type) {
+      if (type === 'npc') {
+        this.$request
+          .post('/cscene/cscene_instances/get_connection_by_npc', {
+            id: this.sceneId,
+            node_id: nodeId,
+          })
+          .then((res) => {
+            let connection_url = _.get(res, 'data.data.connection_url');
+            window.open(connection_url, '_blank');
+          });
+      } else if (vendor) {
         const params = {
           id: this.sceneId,
           node_id: nodeId,
