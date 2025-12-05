@@ -125,16 +125,16 @@
             mr
             >{{ $t('systemManagement.userManage.resetPasswords') }}</cb-button
           >
-          <cb-button
-            mr
-            v-show="userCheck"
-            :disabled="scope.data.is_audited === 1"
-            type="text"
-            @click="checkRow(scope.data)"
-          >
-            <!-- <cb-iconfont type="icon-piliangshouquanfangwen"></cb-iconfont> -->
-            {{ $t('systemManagement.userManage.check') }}
-          </cb-button>
+<!--          <cb-button-->
+<!--            mr-->
+<!--            v-show="userCheck"-->
+<!--            :disabled="scope.data.is_audited === 1"-->
+<!--            type="text"-->
+<!--            @click="checkRow(scope.data)"-->
+<!--          >-->
+<!--            &lt;!&ndash; <cb-iconfont type="icon-piliangshouquanfangwen"></cb-iconfont> &ndash;&gt;-->
+<!--            {{ $t('systemManagement.userManage.check') }}-->
+<!--          </cb-button>-->
           <cb-button type="text" @click="recentRow(scope.data)">
             {{ $t('systemManagement.userManage.recentOperation') }}
           </cb-button>
