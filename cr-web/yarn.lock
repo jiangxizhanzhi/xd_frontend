@@ -2157,9 +2157,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cyber/scene@npm:5.6.0-xd.5":
-  version: 5.6.0-xd.5
-  resolution: "@cyber/scene@npm:5.6.0-xd.5"
+"@cyber/scene@npm:5.6.0-xd.6":
+  version: 5.6.0-xd.6
+  resolution: "@cyber/scene@npm:5.6.0-xd.6"
   dependencies:
     "@antv/layout": 0.3.20
     "@antv/x6": 1.34.13
@@ -2186,7 +2186,7 @@ __metadata:
     vue: ^2.6.14
     vue-3d-model: ^1.4.1
     vue-i18n: 8.27.2
-  checksum: 1aff6633a78ffb4e9898d9a2a11e12a9c5fdcee6d3a44e81ffb24163f263247cb579692cc0bd7acce91fbabaa2047199e5dd8d821c65a7734b088bf1a3ced091
+  checksum: 712bdc4f14278663ce74e8f32c109098442d8e0be4045bdad30e46990091906fa1f05ac23098a40c947c7809802e681cd6dbaa5895a6f45c398f083947265f96
   languageName: node
   linkType: hard
 
@@ -5246,7 +5246,7 @@ __metadata:
   dependencies:
     "@cyber/cli": 5.4.0-alpha.0
     "@cyber/helper": 5.4.1-alpha.1
-    "@cyber/scene": 5.6.0-xd.5
+    "@cyber/scene": 5.6.0-xd.6
     "@cyber/scene-icons": ^1.0.0-alpha.10
     "@cyber/ui": 5.6.0-xd.52
     "@types/lodash": ^4.14.168
