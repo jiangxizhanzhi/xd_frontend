@@ -93,7 +93,8 @@ export default {
         postUpShut({
           action: action,//开机时power_on  关机时power_off
           id: data.id,
-          company: data.company
+          company: data.company,
+          node: data.node
         }).then((res) => {
           this.$refs.monitorListRef.reload();
           this.$message({
@@ -104,18 +105,23 @@ export default {
       });
     },
     openNewWindow(data) {
-      const params = {
-        vm_id: data.id,
-        vendor: data.company,
-      };
-      this.$request
-        .post('/cscene/cscene_instances/get_connection_by_vendor', params, {
-          baseURL: '/api/mp',
-        })
-        .then((res) => {
-          let connection_url = _.get(res, 'data.data.connection_url');
-          window.open(connection_url, '_blank');
-        });
+      if (data.company == '3') {
+        window.open(data.remote_url, '_blank');
+      } else {
+        const params = {
+          vm_id: data.id,
+          vendor: data.company,
+        };
+        this.$request
+          .post('/cscene/cscene_instances/get_connection_by_vendor', params, {
+            baseURL: '/api/mp',
+          })
+          .then((res) => {
+            let connection_url = _.get(res, 'data.data.connection_url');
+            window.open(connection_url, '_blank');
+          });
+      }
+
     },
   },
 };
