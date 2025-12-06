@@ -256,10 +256,13 @@ export default {
     // openTap(connection_url, access_modes, nodeId) {
     openTap(connection_url, access_modes, nodeId, image_type, nodeName, jump_type, vendor,type) {
       if (type === 'npc') {
+        const params = {
+          id: this.sceneId,
+          node_id: nodeId,
+        };
         this.$request
-          .post('/cscene/cscene_instances/get_connection_by_npc', {
-            id: this.sceneId,
-            node_id: nodeId,
+          .post('/cscene/cscene_instances/get_connection_by_npc', params, {
+            baseURL: '/api/mp',
           })
           .then((res) => {
             let connection_url = _.get(res, 'data.data.connection_url');
