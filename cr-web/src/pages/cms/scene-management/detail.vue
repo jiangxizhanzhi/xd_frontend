@@ -819,6 +819,7 @@ export default {
       );
       this.model = Object.assign({}, data);
       this.model.base_info.xd_template_type = SCENE_MANAGEMENT_TYPE[this.$route.meta?.breadcrumb?.parentName];
+      this.model.base_info.xd_template_category = data.xd_template_category;
       this.sceneConfigId = data.base_info.scene_config_data.id;
     },
 
