@@ -3,6 +3,7 @@ node_modules
 dist
 .cyber
 .history
+.yarn
 
 # local env files
 .env.local
