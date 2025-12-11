@@ -174,7 +174,7 @@ const validateLength = (str) => {
     if (re.test(value[s]) || value[s] === '-') {
       sum = sum + 1;
     } else if (cn_re.test(value[s])) {
-      sum = sum + 2;
+      sum = sum + 1;
     } else {
       return false;
     }
@@ -239,7 +239,7 @@ function getByteLen(str) {
   for (let i = 0; i < str.length; i++) {
     const a = str.charAt(i);
     if (a.match(/[^\x00-\xff]/gi) != null) {
-      len += 2;
+      len += 1;
     } else {
       len += 1;
     }

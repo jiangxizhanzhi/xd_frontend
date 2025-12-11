@@ -155,7 +155,7 @@ export default {
         if (re.test(value[s]) || value[s] === '-') {
           sum = sum + 1;
         } else if (cn_re.test(value[s])) {
-          sum = sum + 2;
+          sum = sum + 1;
         } else {
           return false;
         }

@@ -675,7 +675,7 @@ export default {
       for (var i = 0; i < str.length; i++) {
         const a = str.charAt(i);
         if (a.match(/[^\x00-\xff]/gi) != null) {
-          totalCount += 2;
+          totalCount += 1;
         } else {
           totalCount += 1;
         }

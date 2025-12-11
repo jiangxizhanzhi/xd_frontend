@@ -26,7 +26,7 @@ export function validateLength(str) {
     if (re.test(value[s]) || value[s] === '-') {
       sum = sum + 1;
     } else if (cn_re.test(value[s])) {
-      sum = sum + 2;
+      sum = sum + 1;
     } else {
       return false;
     }
@@ -41,7 +41,7 @@ export function validateLengthVer(str) {
   const cn_re = /[\u4e00-\u9fa5]/;
   for (var s = 0; s < value.length; s++) {
     if (cn_re.test(value[s])) {
-      sum = sum + 2;
+      sum = sum + 1;
     } else {
       sum = sum + 1;
     }
@@ -58,7 +58,7 @@ export function validateLengthSkill(str) {
   const rr = /\s/;
   for (var s = 0; s < value.length; s++) {
     if (cn_re.test(value[s])) {
-      sum = sum + 2;
+      sum = sum + 1;
     } else if (re.test(value[s]) || rr.test(value[s])) {
       sum = sum + 1;
     } else {
@@ -74,7 +74,7 @@ export function validateLengthDesc(str) {
   for (let i = 0; i < str.length; i++) {
     const a = str.charAt(i);
     if (a.match(/[^\x00-\xff]/gi) != null) {
-      len += 2;
+      len += 1;
     } else {
       len += 1;
     }
@@ -89,7 +89,7 @@ export function validateLengthOptional(str) {
     for (let i = 0; i < str.length; i++) {
       const a = str.charAt(i);
       if (a.match(/[^\x00-\xff]/gi) != null) {
-        len += 2;
+        len += 1;
       } else {
         len += 1;
       }
@@ -109,7 +109,7 @@ export function handlerImageLength(str) {
   const character_re = ['.', '-', '_', ':'];
   for (var i = 0; i < value.length; i++) {
     if (cn_re.test(value[i])) {
-      length = length + 2;
+      length = length + 1;
     } else if (
       re.test(value[i]) ||
       rr.test(value[i]) ||

@@ -174,7 +174,7 @@ export default {
       const cn_re = /[\u4e00-\u9fa5]/;
       for (let s = 0; s < value.length; s++) {
         if (cn_re.test(value[s])) {
-          sum = sum + 2;
+          sum = sum + 1;
         } else {
           sum = sum + 1;
         }
@@ -246,7 +246,7 @@ export default {
           {
             min: 2,
             max: 20,
-            message: this.$t('systemManagement.userManage.isAlphabetsNumber2'),
+            message: '用户名长度在2-20之间',
             trigger: 'blur',
           },
         ],
@@ -256,7 +256,12 @@ export default {
             message: this.$t('systemManagement.userManage.nameInput'),
             trigger: 'blur',
           },
-          { validator: validateTitleLength, trigger: 'blur' },
+          {
+            min: 2,
+            max: 20,
+            message: '姓名长度在2-20之间',
+            trigger: 'blur',
+          },
         ],
         role_ids: [
           {

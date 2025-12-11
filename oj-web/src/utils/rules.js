@@ -12,7 +12,7 @@ export function handlerLength(str) {
   const re = /[\u4e00-\u9fa5]/;
   for (var i = 0; i < value.length; i++) {
     if (re.test(value[i])) {
-      length = length + 2;
+      length = length + 1;
     } else {
       length = length + 1;
     }

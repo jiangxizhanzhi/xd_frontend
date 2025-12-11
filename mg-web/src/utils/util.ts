@@ -6,7 +6,7 @@ const util = {
     for (let i = 0; i < str.length; i++) {
       const a = str.charAt(i);
       if (a.match(/[^\x00-\xff]/gi) != null) {
-        len += 2;
+        len += 1;
       } else {
         len += 1;
       }
