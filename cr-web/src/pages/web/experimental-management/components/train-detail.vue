@@ -184,6 +184,7 @@
                   ref="modelDragSelector"
                   :disabled-user-list="disabledUserList"
                   @select-user="dragSelectRoleUser"
+                  @click-user="handleClickUser"
                 />
               </div>
             </div>
@@ -207,6 +208,13 @@
                     >
                       {{ item.name }}
                     </span>
+                    <cb-button
+                      v-if="showAddBtn"
+                      hollow
+                      size="small"
+                      @click="addSelectUser(item, index)"
+                    >添加</cb-button
+                    >
                   </div>
                 </div>
                 <div
@@ -399,6 +407,7 @@ export default {
       manageDelete: false,
       dialogVisible: false,
       business_template_id: '',
+      showAddBtn: false,
     };
   },
   computed: {
@@ -469,6 +478,9 @@ export default {
     }
   },
   methods: {
+    handleClickUser(count) {
+      this.showAddBtn = !!count;
+    },
     backFn() {
       this.$router.go(-1);
     },
@@ -820,6 +832,20 @@ export default {
         });
       });
     },
+    addSelectUser(data, index) {
+      const roleValue = index;
+      let userData = this.$refs.modelDragSelector?.selectUser || [];
+      userData?.forEach((item) => {
+        if (!this.lastUserDataId.includes(item.resource_id)) {
+          this.$set(this.rolesInfo, roleValue, {
+            ...this.rolesInfo[roleValue],
+            users: [...this.rolesInfo[roleValue].users, item],
+          });
+          this.lastUserDataId.push(item.resource_id);
+        }
+      });
+      this.$refs.modelDragSelector.clearSelect();
+    },
   },
 };
 </script>
@@ -934,7 +960,7 @@ export default {
     overflow: hidden;
     text-overflow: ellipsis;
     margin-right: 20px;
-    margin-top: 32px;
+    margin-top: 8px;
   }
 }
 
@@ -1081,6 +1107,12 @@ export default {
         overflow-y: scroll;
       }
     }
+  }
+  .rolename {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-direction: column;
   }
 }
 </style>

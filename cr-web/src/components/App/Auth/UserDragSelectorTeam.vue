@@ -6,8 +6,8 @@
           :options="roleList"
           :props="optionProps"
           clearable
-          @change="roleChange"
           :placeholder="$t('rbt.selectOrigin')"
+          v-model="categorySet"
         ></cb-cascader>
 
         <cb-search-input
@@ -17,35 +17,50 @@
           @keyup.enter.native="getSearchName"
         >
         </cb-search-input>
+        <cb-button
+          ml
+          mr
+          class="search"
+          @click="handlerSearch"
+        >搜索</cb-button>
+        <cb-button
+          hollow
+          class="reset"
+          @click="handlerReset"
+        >重置</cb-button>
       </div>
     </div>
-    <cb-scrollbar>
-      <div ref="userList" class="user-list">
+    <div ref="userList" class="user-list cyber-scroll-bar-small">
+      <cb-checkbox v-model="checked">全选</cb-checkbox>
+      <div
+        v-for="user in tableData"
+        :key="user.pk"
+        :data-key="user.pk"
+        :data-resource-id="user.resource_id"
+        :class="{
+          'elc-user-drag-selector-user-item user-item': true,
+          active: activeComputed(user),
+        }"
+        @click="selectUserFunc(user)"
+      >
+        <div class="logo-wrap">
+          <img
+            :draggable="avatarDraggable(user)"
+            :src="user.logo || helper.defaultLogo"
+            class="user-logo"
+            :class="avatarClass(user)"
+          />
+        </div>
         <div
-          v-for="user in tableData"
-          :key="user.pk"
-          :data-key="user.pk"
-          :data-resource-id="user.resource_id"
-          class="elc-user-drag-selector-user-item user-item"
+          :class="textClass(user)"
+          class="user-name one-overflow"
+          :title="user.name || user.username"
         >
-          <div class="logo-wrap">
-            <img
-              :draggable="avatarDraggable(user)"
-              :src="user.logo || helper.defaultLogo"
-              class="user-logo"
-              :class="avatarClass(user)"
-            />
-          </div>
-          <div
-            :class="textClass(user)"
-            class="user-name one-overflow"
-            :title="user.name || user.username"
-          >
-            {{ user.name || user.username }}
-          </div>
+          {{ user.name || user.username }}
         </div>
       </div>
-    </cb-scrollbar>
+    </div>
+    <!--    </cb-scrollbar>-->
   </div>
 </template>
 
@@ -93,6 +108,9 @@ export default {
         children: 'children',
       },
       org: '',
+      categorySet: [],
+      selectUser: [],
+      checked: false,
     };
   },
   watch: {
@@ -101,6 +119,18 @@ export default {
         this.helper.drake.destroy();
       }
       this.bindDrake();
+    },
+    checked: {
+      handler(nv, ov) {
+        if (nv) {
+          this.selectUser = this.tableData?.filter((item) =>
+            this.avatarDraggable(item),
+          );
+        } else {
+          this.selectUser = [];
+        }
+        this.$emit('click-user', this.selectUser.length);
+      },
     },
   },
   mounted() {
@@ -126,7 +156,46 @@ export default {
         this.getTableData();
       }
     },
-
+    activeComputed(data) {
+      return _.find(
+        this.selectUser,
+        (item) => item.resource_id === data.resource_id,
+      );
+    },
+    selectUserFunc(data) {
+      if (this.avatarDraggable(data)) {
+        if (
+          this.selectUser?.some((item) => item.resource_id === data.resource_id)
+        ) {
+          this.selectUser = this.selectUser.filter(
+            (item) => item.resource_id !== data.resource_id,
+          );
+        } else {
+          this.selectUser.push(data);
+        }
+      }
+      this.$emit('click-user', this.selectUser.length);
+    },
+    clearSelect() {
+      this.selectUser = [];
+      this.checked = false;
+      this.$emit('click-user', this.selectUser.length);
+    },
+    handlerSearch() {
+      if (this.categorySet[this.categorySet.length - 1]) {
+        this.org = this.categorySet[this.categorySet.length - 1];
+      } else {
+        this.org = '';
+      }
+      this.getTableData();
+    },
+    // 重置
+    handlerReset() {
+      this.search = '';
+      this.org = '';
+      this.categorySet = [];
+      this.getTableData();
+    },
     getTableData() {
       this.$request
         .get(
@@ -317,7 +386,7 @@ export default {
         vertical-align: initial;
         margin: 0;
         .el-input__inner {
-          padding-left: 40px !important;
+          //padding-left: 40px !important;
           border-color: var(--neutral3) !important;
           &:focus {
             border-color: var(--primary-color) !important;
@@ -343,6 +412,14 @@ export default {
     .user-item {
       float: left;
       margin: 10px 20px 10px 0;
+      cursor: pointer;
+      &.active {
+        outline: 1px solid var(--primary-color) !important;
+      }
+    }
+    .check-btn {
+      position: absolute;
+      top: 0;
     }
   }
   .pagination-container {
