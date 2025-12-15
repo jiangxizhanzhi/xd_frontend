@@ -112,15 +112,16 @@
               $t('systemOperation.scene.deleted')
             "
           >
-            <cb-button
-              mr
-              type="text"
-              colorType="red"
-              @click="deleteScene(scope.data)"
-              :class="language === 'en-US' ? 'enButton' : 'zhButton'"
-            >
-              {{ $t('systemOperation.scene.closeScene') }}
-            </cb-button>
+            -
+<!--            <cb-button-->
+<!--              mr-->
+<!--              type="text"-->
+<!--              colorType="red"-->
+<!--              @click="deleteScene(scope.data)"-->
+<!--              :class="language === 'en-US' ? 'enButton' : 'zhButton'"-->
+<!--            >-->
+<!--              {{ $t('systemOperation.scene.closeScene') }}-->
+<!--            </cb-button>-->
           </template>
           <template v-else>
             <cb-button
