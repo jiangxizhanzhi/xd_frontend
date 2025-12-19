@@ -99,19 +99,16 @@ export default {
             name: 'CPU占用量',
             type: 'bar',
             data: [], // 对应厂商A/B/C的CPU占用量
-            itemStyle: { color: '#5470c6' } // 自定义柱子颜色
           },
           {
             name: '内存占用量',
             type: 'bar',
             data: [], // 对应厂商A/B/C的内存占用量
-            itemStyle: { color: '#91cc75' }
           },
           {
             name: '磁盘占用量',
             type: 'bar',
             data: [], // 对应厂商A/B/C的磁盘占用量
-            itemStyle: { color: '#fac858' }
           }
         ]
       }
