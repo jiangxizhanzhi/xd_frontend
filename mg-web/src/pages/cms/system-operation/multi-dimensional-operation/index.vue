@@ -4,180 +4,58 @@
     title="多维度运营"
   >
     <div class="main-outer-box">
-      <div class="main-wrap">
-        <div class="list-item">
+      <div class="top-wrap">
+        <div class="left">
           <Block
             class="block-title"
-            :title="company_name1"
+            :title="'物理资源概览'"
           > </Block>
-          <div class="chart-item">
-            <cb-progress
-              type="circle"
-              :percentage="cpu_percent1"
-              :stroke-width="10"
-              :color="'var(--primary-color)'"
-              stroke-linecap="square"
-            >
-              <template v-slot:circle-text>
-                <div class="percent">{{ `${cpu_percent1}%` }}</div>
-                <div class="title">{{ 'CPU' }}</div>
-              </template>
-            </cb-progress>
-          </div>
-          <div class="chart-item">
-            <cb-progress
-              type="circle"
-              :percentage="memory_percent1"
-              :stroke-width="10"
-              :color="'var(--primary-color)'"
-              stroke-linecap="square"
-            >
-              <template v-slot:circle-text>
-                <div class="percent">{{ `${memory_percent1}%` }}</div>
-                <div class="title">{{ '内存' }}</div>
-              </template>
-            </cb-progress>
-          </div>
-          <div class="chart-item">
-            <cb-progress
-              type="circle"
-              :percentage="file_system_percent1"
-              :stroke-width="10"
-              :color="'var(--primary-color)'"
-              stroke-linecap="square"
-            >
-              <template v-slot:circle-text>
-                <div class="percent">{{ `${file_system_percent1}%` }}</div>
-                <div class="title">{{ '磁盘' }}</div>
-              </template>
-            </cb-progress>
+          <div class="chart-wrap">
+            <physical-overview :physicalOverviewData="physicalOverviewData"></physical-overview>
           </div>
         </div>
-        <div class="list-item">
+        <div class="right">
           <Block
             class="block-title"
-            :title="company_name2"
+            :title="'虚拟资源统计'"
           > </Block>
-          <div class="chart-item">
-            <cb-progress
-              type="circle"
-              :percentage="cpu_percent2"
-              :stroke-width="10"
-              :color="'var(--primary-color)'"
-              stroke-linecap="square"
-            >
-              <template v-slot:circle-text>
-                <div class="percent">{{ `${cpu_percent2}%` }}</div>
-                <div class="title">{{ 'CPU' }}</div>
-              </template>
-            </cb-progress>
-          </div>
-          <div class="chart-item">
-            <cb-progress
-              type="circle"
-              :percentage="memory_percent2"
-              :stroke-width="10"
-              :color="'var(--primary-color)'"
-              stroke-linecap="square"
-            >
-              <template v-slot:circle-text>
-                <div class="percent">{{ `${memory_percent2}%` }}</div>
-                <div class="title">{{ '内存' }}</div>
-              </template>
-            </cb-progress>
-          </div>
-          <div class="chart-item">
-            <cb-progress
-              type="circle"
-              :percentage="file_system_percent2"
-              :stroke-width="10"
-              :color="'var(--primary-color)'"
-              stroke-linecap="square"
-            >
-              <template v-slot:circle-text>
-                <div class="percent">{{ `${file_system_percent2}%` }}</div>
-                <div class="title">{{ '磁盘' }}</div>
-              </template>
-            </cb-progress>
-          </div>
-        </div>
-        <div class="list-item">
-          <Block
-            class="block-title"
-            :title="company_name3"
-          > </Block>
-          <div class="chart-item">
-            <cb-progress
-              type="circle"
-              :percentage="cpu_percent3"
-              :stroke-width="10"
-              :color="'var(--primary-color)'"
-              stroke-linecap="square"
-            >
-              <template v-slot:circle-text>
-                <div class="percent">{{ `${cpu_percent3}%` }}</div>
-                <div class="title">{{ 'CPU' }}</div>
-              </template>
-            </cb-progress>
-          </div>
-          <div class="chart-item">
-            <cb-progress
-              type="circle"
-              :percentage="memory_percent3"
-              :stroke-width="10"
-              :color="'var(--primary-color)'"
-              stroke-linecap="square"
-            >
-              <template v-slot:circle-text>
-                <div class="percent">{{ `${memory_percent3}%` }}</div>
-                <div class="title">{{ '内存' }}</div>
-              </template>
-            </cb-progress>
-          </div>
-          <div class="chart-item">
-            <cb-progress
-              type="circle"
-              :percentage="file_system_percent3"
-              :stroke-width="10"
-              :color="'var(--primary-color)'"
-              stroke-linecap="square"
-            >
-              <template v-slot:circle-text>
-                <div class="percent">{{ `${file_system_percent3}%` }}</div>
-                <div class="title">{{ '磁盘' }}</div>
-              </template>
-            </cb-progress>
+          <div class="chart-wrap">
+
           </div>
         </div>
       </div>
-    </div>
+      <div class="bottom-wrap">
+        <Block
+          class="block-title"
+          :title="'物理节点资源占用统计'"
+        > </Block>
+        <div class="chart-wrap">
 
+        </div>
+      </div>
+    </div>
   </cb-inner-page>
 </template>
 
 <script>
 import { getPhyStatics } from "@/api/multi-dimensional-operation.js";
 import Block from '@/components/block';
+import PhysicalOverview from './components/physical-overview.vue'
 export default {
   name: "index",
   components: {
     Block,
+    PhysicalOverview,
   },
   props: {},
-  setup(props, { emit }) {
+  data() {
     return {
-      company_name1: "",
-      company_name2: "",
-      company_name3: "",
-      cpu_percent1: 0,
-      cpu_percent2: 0,
-      cpu_percent3: 0,
-      file_system_percent1: 0,
-      file_system_percent2: 0,
-      file_system_percent3: 0,
-      memory_percent1: 0,
-      memory_percent2: 0,
-      memory_percent3: 0,
+      physicalOverviewData: {
+        xData: [],
+        company_data1: [],
+        company_data2: [],
+        company_data3: [],
+      },
     }
   },
   mounted() {
@@ -187,18 +65,10 @@ export default {
     getPhyStatics() {
       getPhyStatics().then(res => {
         const data = _.get(res, 'data.data', {})
-        this.company_name1 = data.company_name1;
-        this.company_name2 = data.company_name2;
-        this.company_name3 = data.company_name3;
-        this.cpu_percent1 = data.cpu_percent1 || 0;
-        this.cpu_percent2 = data.cpu_percent2 || 0;
-        this.cpu_percent3 = data.cpu_percent3 || 0;
-        this.file_system_percent1 = data.file_system_percent1 || 0;
-        this.file_system_percent2 = data.file_system_percent2 || 0;
-        this.file_system_percent3 = data.file_system_percent3 || 0;
-        this.memory_percent1 = data.memory_percent1 || 0;
-        this.memory_percent2 = data.memory_percent2 || 0;
-        this.memory_percent3 = data.memory_percent3 || 0;
+        this.physicalOverviewData.xData = [data.company_name1, data.company_name2, data.company_name3]
+        this.physicalOverviewData.company_data1 = [data.cpu_percent1 || 0, data.memory_percent1 || 0, data.file_system_percent1 || 0];
+        this.physicalOverviewData.company_data2 = [data.cpu_percent2 || 0, data.memory_percent2 || 0, data.file_system_percent2 || 0];
+        this.physicalOverviewData.company_data3 = [data.cpu_percent3 || 0, data.memory_percent3 || 0, data.file_system_percent3 || 0];
       })
     }
   }
@@ -211,43 +81,45 @@ export default {
   width: 100%;
   height: 100%;
 
-  .main-wrap {
+  .top-wrap {
     width: 100%;
-    height: 100%;
-    border: 1px solid #cccccc;
+    height: 50%;
     display: flex;
-    flex-direction: column;
-    border-bottom: none;
 
-
-    .list-item {
+    .left {
       flex: 1;
-      display: flex;
-      border-bottom: 1px solid #cccccc;
-      position: relative;
+      background: var(--bg-color-3);
+      padding: 16px;
 
-      .block-title {
-        position: absolute;
-        left: 16px;
-        top: 16px;
+      .chart-wrap {
+        width: 100%;
+        height: calc(100% - 40px);
       }
+    }
 
-      .chart-item {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+    .right {
+      flex: 1;
+      margin-left: 16px;
+      padding: 16px;
+      background: var(--bg-color-3);
 
-        .percent {
-          font-size: 22px;
-          color: var(--neutral8);
-        }
-
-        .title {
-          font-size: 14px;
-        }
+      .chart-wrap {
+        width: 100%;
+        height: calc(100% - 40px);
       }
+    }
+  }
+
+  .bottom-wrap {
+    width: 100%;
+    height: calc(50% - 16px);
+    padding: 16px;
+    margin-top: 16px;
+    background: var(--bg-color-3);
+
+    .chart-wrap {
+      width: 100%;
+      height: calc(100% - 40px);
     }
   }
 }
