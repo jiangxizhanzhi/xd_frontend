@@ -59,7 +59,7 @@ export default {
         // 网格配置（调整图表位置）
         grid: {
           left: '3%',
-          top: '15%',
+          top: '20%',
           right: '4%',
           bottom: '5%',
           containLabel: true
@@ -83,6 +83,7 @@ export default {
         },
         label: {
           show: true,
+          position: 'top',
           color: "#000000",
           formatter: function (params) {
             return params.data
@@ -113,8 +114,8 @@ export default {
     // 处理数据
     virStaticsData: {
       handler(nv, ov) {
-        console.log(nv,888);
-        
+        console.log(nv, 888);
+
         if (nv.xData.length) {
           this.option.xAxis.data = nv.xData;
           this.option.series[0].data = nv.company_data1;
