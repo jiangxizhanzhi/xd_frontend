@@ -270,7 +270,7 @@ export default [
       // 课程管理
       ...coursesManage,
       // 对抗演练
-      // ...training,
+      ...training,
       // ...ojCourse,
       // ...ojPractice,
       // ...contest,

@@ -1,5 +1,5 @@
 <template>
-  <cb-inner-page :background="false">
+  <cb-inner-page :background="true" title="单兵训练">
     <div class="single-train-page page" style="height: 100%">
       <!-- 筛选区域 -->
       <div class="condition-wrap">
@@ -21,6 +21,17 @@
             :placeholder="$t('list.enterTrainName')"
             @change="getSearchName"
           />
+          <cb-button
+            ml
+            mr
+            class="search"
+            @click="handlerSearch"
+          >搜索</cb-button>
+          <cb-button
+            hollow
+            class="reset"
+            @click="handlerReset"
+          >重置</cb-button>
         </div>
       </div>
       <!-- 我的训练 -->
@@ -233,6 +244,20 @@ export default {
     difficultChange(val) {
       this.searchCondition.difficult = val;
       this.pagination.current_page = 1;
+      this.getTrainList();
+    },
+    // 我的训练搜索
+    handlerSearch() {
+      this.getTrainList();
+    },
+    // 我的训练重置
+    handlerReset() {
+      this.searchCondition.pattern = '';
+      this.searchCondition.difficult = '';
+      this.searchCondition.category = '';
+      this.searchCondition.with_instance = 1;
+      this.pagination.current_page = 1;
+      this.pagination.per_page = 10;
       this.getTrainList();
     },
     // 我的训练名称搜索

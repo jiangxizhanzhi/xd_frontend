@@ -1,6 +1,6 @@
 <template>
   <!--  国际化已配置-->
-  <cb-inner-page class="app-container" :background="false">
+  <cb-inner-page class="app-container" :background="true" title="单兵训练场景">
     <cb-search-table
       v-if="isAuthActive"
       ref="eventListTableRef"
@@ -11,6 +11,9 @@
       :selection.sync="selection"
       :baseURL="baseURL"
       :searchBarBg="true"
+      :show-search-btn="true"
+      :queryStrKeep="['type', 'search']"
+      @reset="handleReset"
     >
       <template v-slot:search>
         <cb-button button-type="add" @click="createScene"></cb-button>
@@ -258,6 +261,10 @@ export default {
     }
   },
   methods: {
+    handleReset() {
+      this.query.type = 1;
+      this.query.search = '';
+    },
     deleteRow(row, done) {
       const ids = row.map((i) => {
         return i.resource_id;

@@ -312,6 +312,21 @@
 								"children": []
 							}
 						]
+					},
+					{
+						"name": "单兵训练",
+						"value": "single-list",
+						"en_name": "Individual",
+						"authority": "single-list",
+						"path_name": "front_all/courses-manage-folder/single-list",
+						"active": ["no_auth"],
+						"edition": [0, 1],
+						"status": 1,
+						"read_status": 1,
+						"write_status": 1,
+						"execute_status": 1,
+						"per_status": "R/W/X",
+						"children": []
 					}
 				]
 			},
@@ -471,6 +486,21 @@
 						"en_name": "comprehensive-training-scene",
 						"authority": "comprehensive-training-scene",
 						"path_name": "front_all/scene-manage-folder/comprehensive-training-scene",
+						"active": ["no_auth"],
+						"edition": [0, 1],
+						"status": 1,
+						"read_status": 1,
+						"write_status": 1,
+						"execute_status": 1,
+						"per_status": "R/W/X",
+						"children": []
+					},
+					{
+						"name": "单兵训练场景",
+						"value": "cr-individual-training",
+						"en_name": "Individual",
+						"authority": "cr-individual-training",
+						"path_name": "front_all/scene-manage-folder/cr-individual-training",
 						"active": ["no_auth"],
 						"edition": [0, 1],
 						"status": 1,
