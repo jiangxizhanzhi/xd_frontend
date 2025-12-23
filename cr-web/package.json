@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@cyber/helper": "5.4.1-alpha.1",
-    "@cyber/scene": "5.6.0-xd.6",
+    "@cyber/scene": "5.6.0-xd.7",
     "@cyber/scene-icons": "^1.0.0-alpha.10",
     "@cyber/ui": "5.6.0-xd.52",
     "@vue/composition-api": "^1.7.0",
