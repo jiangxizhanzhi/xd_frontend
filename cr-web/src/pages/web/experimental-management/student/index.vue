@@ -75,7 +75,11 @@
           </div>
           <train-detail-title :text="$t('rbt.activeAssets')">
             <div slot="left">
-              <cb-button icon="icon-xinzeng" type="text" @click="addHost">{{
+              <cb-button
+                icon="icon-xinzeng"
+                type="text"
+                @click="addHost"
+              >{{
                 $t('rbt.add')
               }}</cb-button>
             </div>
@@ -120,7 +124,10 @@
           </div>
           <div class="person-score-info-middle">
             <div class="item">
-              <div class="name one-overflow" :title="middleData.user_name">
+              <div
+                class="name one-overflow"
+                :title="middleData.user_name"
+              >
                 {{ this.$store.state.user.name }}
               </div>
             </div>
@@ -142,7 +149,10 @@
         <!-- 右侧背景 -->
         <train-detail-bg type="right" />
         <div class="train-task-detail">
-          <train-detail-title :text="$t('m.taskMatrix')" type="right" />
+          <train-detail-title
+            :text="$t('m.taskMatrix')"
+            type="right"
+          />
           <!-- :task-lists="taskLists" -->
           <task-student
             @getTaskList="getTaskList"
@@ -200,7 +210,7 @@ import {
 import { getUserInfo, getSysSettings } from '@cyber/helper';
 import { getValueName } from '@/assets/js/tools.js';
 import { getCurrentModuleByRouterName } from '../../../../utils';
-import {EXPERIMENTAL_SUBJECT_MANAGEMENT_NAME} from "../constants";
+import { EXPERIMENTAL_SUBJECT_MANAGEMENT_NAME } from "../constants";
 
 export default {
   mixins: [mixins],
@@ -293,6 +303,7 @@ export default {
       scene_name: '',
       roleList: [],
       training_role_data: null,
+      pollTimer: null,
     };
   },
   watch: {
@@ -328,12 +339,23 @@ export default {
     this.getStudentInfo();
     this.getTaskDetail();
     // this.studentReportWs();
+    if (this.pollTimer) {
+      clearInterval(this.pollTimer);
+      this.pollTimer = null;
+    }
+    this.pollTimer = setInterval(() => {
+      this.handleGetSceneData();
+    }, 1000 * 10)
   },
   beforeDestroy() {
     if (this.timer) {
       clearInterval(this.timer);
     }
     this.timer = null;
+    if (this.pollTimer) {
+      clearInterval(this.pollTimer);
+      this.pollTimer = null;
+    }
   },
   methods: {
     // ws推送任务矩阵改变,底部时间轴也改变
@@ -394,11 +416,11 @@ export default {
     backHome() {
       this.$router.go(-1);
     },
-    deleteCrEvent() {},
+    deleteCrEvent() { },
     /**
      * 接入方式
      */
-    openTap(connection_url, access_modes, nodeId, image_type, nodeName, jump_type, vendor,type) {
+    openTap(connection_url, access_modes, nodeId, image_type, nodeName, jump_type, vendor, type) {
       const { id, protocol, access_ip, access_port, path } = access_modes;
       if (type === 'npc') {
         const params = {
@@ -618,7 +640,7 @@ export default {
       nodeStartApi({
         node_id: id,
         resource_id: this.resource_id,
-      }).then((res) => {});
+      }).then((res) => { });
     },
 
     //团队学员节点重建
@@ -628,7 +650,7 @@ export default {
       nodeBuildApi({
         node_id: id,
         resource_id: this.resource_id,
-      }).then((res) => {});
+      }).then((res) => { });
     },
 
     // 赋值角色资产和战争迷雾数据
@@ -785,12 +807,14 @@ export default {
   width: 100%;
   height: 100%;
   font-size: 14px;
+
   .loading-content {
     width: 100%;
     height: calc(100% - 56px);
     // position: absolute;
     top: 0;
   }
+
   .topology {
     width: 100%;
     height: 100%;
@@ -812,7 +836,9 @@ export default {
     height: calc(100% - 200px);
     top: 72px;
   }
+
   .main-detail-content {
+
     // position: absolute;
     // top: 72px;
     // left: 16px;
@@ -834,20 +860,24 @@ export default {
         overflow-y: auto;
         overflow-x: hidden;
         height: calc(100% + 20px);
+
         .task-content {
           margin-bottom: 16px;
         }
+
         .assets-wrap {
           // height: calc(100% - 310px);
           // overflow-y: scroll;
         }
       }
     }
+
     .middle-content {
       width: 544px;
       height: 70px;
       // position: relative;
       left: calc(50% - 272px);
+
       .person-score-info {
         position: absolute;
         top: 40px;
@@ -856,21 +886,26 @@ export default {
         // z-index: 9;
         justify-content: space-around;
         width: 544px;
+
         &-left {
           width: 232px;
           display: flex;
           justify-content: space-around;
         }
+
         &-middle {
           width: 80px;
         }
+
         &-right {
           width: 232px;
           display: flex;
           justify-content: space-around;
         }
+
         .border-right {
           position: relative;
+
           &::after {
             content: '';
             position: absolute;
@@ -884,22 +919,27 @@ export default {
             background: var(--neutral0);
           }
         }
+
         .border-score {
           &::after {
             left: 40px;
           }
         }
+
         .item {
           line-height: 20px;
           text-align: center;
+
           .name {
             line-height: 48px;
             position: relative;
           }
+
           .score {
             font-size: 16px;
             color: var(--primary-color);
           }
+
           .text {
             font-size: 12px;
             color: var(--neutral7);
@@ -907,6 +947,7 @@ export default {
         }
       }
     }
+
     .right-content {
       width: 398px;
       // position: relative;

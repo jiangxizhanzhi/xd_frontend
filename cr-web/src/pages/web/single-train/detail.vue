@@ -1,7 +1,10 @@
 <template>
   <div class="single-train-detail">
     <!-- 顶部标题 -->
-    <train-top-title :detail-title="detailTitle" @back="backHome">
+    <train-top-title
+      :detail-title="detailTitle"
+      @back="backHome"
+    >
     </train-top-title>
 
     <!-- 编辑器 -->
@@ -44,16 +47,29 @@
         :node-link-connectivity-status="true"
       >
       </scene-editor>
-      <div v-if="sceneStatus === 'update'" class="bottom-btn-wrapper">
+      <div
+        v-if="sceneStatus === 'update'"
+        class="bottom-btn-wrapper"
+      >
         <cb-button-group space="middle">
-          <cb-button button-type="confirm" mr @click="submitTopology">
+          <cb-button
+            button-type="confirm"
+            mr
+            @click="submitTopology"
+          >
           </cb-button>
-          <cb-button button-type="cancel" @click="toBack(true)"> </cb-button>
+          <cb-button
+            button-type="cancel"
+            @click="toBack(true)"
+          > </cb-button>
         </cb-button-group>
       </div>
     </div>
     <!-- 时间轴 -->
-    <div class="bottom-timeline" v-show="sceneStatus != 'update'">
+    <div
+      class="bottom-timeline"
+      v-show="sceneStatus != 'update'"
+    >
       <time-line :scale-times="scaleTimes" />
     </div>
     <!-- 主体部分 -->
@@ -103,7 +119,10 @@
           </div>
           <div class="person-score-info-middle">
             <div class="item">
-              <div class="name one-overflow" :title="middleData.user_name">
+              <div
+                class="name one-overflow"
+                :title="middleData.user_name"
+              >
                 {{ middleData.user_name }}
               </div>
             </div>
@@ -119,7 +138,10 @@
             </div>
           </div>
         </div>
-        <div class="warning-info" v-if="!started">
+        <div
+          class="warning-info"
+          v-if="!started"
+        >
           {{ $t('m.warningInfo') }}
         </div>
       </div>
@@ -131,7 +153,10 @@
         <!-- 右侧背景 -->
         <train-detail-bg type="right" />
         <div class="train-task-detail">
-          <train-detail-title :text="$t('m.taskMatrix')" type="right" />
+          <train-detail-title
+            :text="$t('m.taskMatrix')"
+            type="right"
+          />
           <train-task
             :resource-id="resource_id"
             :train-task="taskLists"
@@ -255,6 +280,7 @@ export default {
       taskLists: [],
       show_submit_btn: false,
       sceneConfigId: '',
+      pollTimer: null,
     };
   },
   watch: {
@@ -272,6 +298,13 @@ export default {
     // this.getUserInfo();
     this.resource_id = this.$route.params && this.$route.params.resource_id;
     this.handleGetSceneData();
+    if (this.pollTimer) {
+      clearInterval(this.pollTimer);
+      this.pollTimer = null;
+    }
+    this.pollTimer = setInterval(() => {
+      this.handleGetSceneData();
+    }, 1000 * 10)
   },
   mounted() {
     getSysSettings().then((res) => {
@@ -291,6 +324,10 @@ export default {
       clearInterval(this.timer);
     }
     this.timer = null;
+    if (this.pollTimer) {
+      clearInterval(this.pollTimer);
+      this.pollTimer = null;
+    }
   },
   methods: {
     getUserInfo() {
@@ -322,7 +359,7 @@ export default {
     backHome() {
       this.$router.go(-1);
     },
-    deleteCrEvent() {},
+    deleteCrEvent() { },
     /**
      * 接入方式
      */
@@ -489,7 +526,7 @@ export default {
                 // this.$message.error(error);
               });
           })
-          .catch(() => {});
+          .catch(() => { });
       } else {
         //单兵提交任务之后关闭场景
         if (_.isEmpty(this.scene_manager_id)) {
@@ -515,7 +552,7 @@ export default {
               this.handleGetSceneData();
               this.getMissionMatrix(); //关闭场景后更新任务矩阵
             })
-            .catch((error) => {});
+            .catch((error) => { });
         });
       }
     },
@@ -528,7 +565,7 @@ export default {
       nodeRestart({
         node_id: id,
         resource_id: this.scene_manager_id,
-      }).then((res) => {});
+      }).then((res) => { });
     },
 
     /**
@@ -539,7 +576,7 @@ export default {
       nodeRecreate({
         node_id: id,
         resource_id: this.scene_manager_id,
-      }).then((res) => {});
+      }).then((res) => { });
     },
 
     /**
@@ -581,7 +618,7 @@ export default {
               '-' +
               res.data.data.event_data.name;
           })
-          .catch(() => {});
+          .catch(() => { });
       }
     },
     // 单兵获取任务矩阵和训练记录
@@ -614,7 +651,7 @@ export default {
             this.scaleTimes.end_time = '';
           }
         })
-        .catch(() => {});
+        .catch(() => { });
     },
     // 刷新场景
     changeTopo() {
@@ -658,7 +695,7 @@ export default {
             this.toBack(true);
           });
         })
-        .catch(() => {});
+        .catch(() => { });
     },
     // 单节点实例更新
     handleUpdateNodeData(data) {
@@ -674,7 +711,7 @@ export default {
           mp_scene_id: this.sceneId,
           node_id: data[0].id,
         };
-        deleteNodeDynamic(params).then((res) => {});
+        deleteNodeDynamic(params).then((res) => { });
       }
     },
     // 取消返回操作
@@ -732,12 +769,15 @@ export default {
     height: calc(100% - 48px);
     position: absolute;
     top: 48px;
+
     ::v-deep .scene-all.update-scene {
       height: calc(100% - 60px);
+
       &.fullscreen {
         height: 100%;
       }
     }
+
     .bottom-btn-wrapper {
       text-align: center;
       margin: 14px 0;
@@ -758,7 +798,9 @@ export default {
     height: calc(100% - 200px);
     top: 72px;
   }
+
   .main-detail-content {
+
     // position: absolute;
     // top: 72px;
     // left: 16px;
@@ -780,17 +822,20 @@ export default {
         overflow-y: auto;
         overflow-x: hidden;
         height: calc(100% + 20px);
+
         .task-content {
           margin-bottom: 16px;
         }
       }
     }
+
     .middle-content {
       width: 544px;
       height: 70px;
       z-index: 1;
       // position: relative;
       left: calc(50% - 272px);
+
       .person-score-info {
         position: absolute;
         top: 40px;
@@ -799,21 +844,26 @@ export default {
         // z-index: 9;
         justify-content: space-around;
         width: 544px;
+
         &-left {
           width: 232px;
           display: flex;
           justify-content: space-around;
         }
+
         &-middle {
           width: 80px;
         }
+
         &-right {
           width: 232px;
           display: flex;
           justify-content: space-around;
         }
+
         .border-right {
           position: relative;
+
           &::after {
             content: '';
             position: absolute;
@@ -827,33 +877,40 @@ export default {
             background: var(--neutral0);
           }
         }
+
         .border-score {
           &::after {
             left: 40px;
           }
         }
+
         .item {
           line-height: 20px;
           text-align: center;
+
           .name {
             line-height: 48px;
             position: relative;
           }
+
           .score {
             font-size: 16px;
             color: var(--primary-color);
           }
+
           .text {
             font-size: 12px;
             color: var(--neutral7);
           }
         }
       }
+
       .warning-info {
         text-align: center;
         color: var(--orange-color);
       }
     }
+
     .right-content {
       width: 398px;
       // position: relative;

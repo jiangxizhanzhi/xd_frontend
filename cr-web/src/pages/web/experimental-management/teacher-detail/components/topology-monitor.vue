@@ -42,11 +42,21 @@
         :node-link-connectivity-status="true"
         :roles.sync="role_list"
       ></scene-editor>
-      <div v-if="sceneStatusMode === 'update'" class="bottom-btn-wrapper">
+      <div
+        v-if="sceneStatusMode === 'update'"
+        class="bottom-btn-wrapper"
+      >
         <cb-button-group space="middle">
-          <cb-button button-type="confirm" mr @click="submitTopology">
+          <cb-button
+            button-type="confirm"
+            mr
+            @click="submitTopology"
+          >
           </cb-button>
-          <cb-button button-type="cancel" @click="toBack(true)"> </cb-button>
+          <cb-button
+            button-type="cancel"
+            @click="toBack(true)"
+          > </cb-button>
         </cb-button-group>
       </div>
     </div>
@@ -182,6 +192,7 @@ export default {
       sceneConfigId: '',
       role_list: [], // 单独维护到编辑器中
       levelId: '', // 层id
+      pollTimer: null,
     };
   },
   computed: {
@@ -212,6 +223,19 @@ export default {
     this.cookie = utils.getCookie('cr_jwttoken');
     this.getDeviceCount();
     this.handleGetSceneData();
+    if (this.pollTimer) {
+      clearInterval(this.pollTimer);
+      this.pollTimer = null;
+    }
+    this.pollTimer = setInterval(() => {
+      this.handleGetSceneData();
+    }, 1000 * 10)
+  },
+  beforeDestroy() {
+    if (this.pollTimer) {
+      clearInterval(this.pollTimer);
+      this.pollTimer = null;
+    }
   },
   //综合演训切换tab,(拓扑监控,桌面监控),请求赋值topologyData
   tabActive(nv) {
@@ -254,7 +278,7 @@ export default {
      * 接入方式
      */
     // openTap(connection_url, access_modes, nodeId) {
-    openTap(connection_url, access_modes, nodeId, image_type, nodeName, jump_type, vendor,type) {
+    openTap(connection_url, access_modes, nodeId, image_type, nodeName, jump_type, vendor, type) {
       if (type === 'npc') {
         const params = {
           id: this.sceneId,
@@ -474,7 +498,7 @@ export default {
           },
           { baseURL: '/api/ojj' },
         )
-        .then((res) => {});
+        .then((res) => { });
     },
 
     //团队节点重建
@@ -489,7 +513,7 @@ export default {
           },
           { baseURL: '/api/ojj' },
         )
-        .then((res) => {});
+        .then((res) => { });
     },
 
     showTaskPanel() {
@@ -515,7 +539,7 @@ export default {
             this.bindSceneWs();
           }
         })
-        .catch((error) => {});
+        .catch((error) => { });
     },
 
     // [前台]教员-获取靶场状态
@@ -551,7 +575,7 @@ export default {
             this.sceneStatus = false;
           }
         })
-        .catch((_) => {});
+        .catch((_) => { });
     },
 
     // 教员编辑综合演训
@@ -581,7 +605,7 @@ export default {
             this.studentId = dataBakup[0].resource_id;
           }
         })
-        .catch(() => {});
+        .catch(() => { });
     },
 
     // 获取学员id
@@ -600,7 +624,7 @@ export default {
         .then((res) => {
           this.trainManual = res.data.data;
         })
-        .catch((error) => {});
+        .catch((error) => { });
     },
     /**
      * 刷新进度条状态
@@ -730,7 +754,7 @@ export default {
             this.toBack(false);
           });
         })
-        .catch(() => {});
+        .catch(() => { });
     },
     // 取消返回操作
     toBack(refresh) {
@@ -787,7 +811,7 @@ export default {
           mp_scene_id: this.sceneId,
           node_id: data[0].id,
         };
-        deleteNodeDynamic(params).then((res) => {});
+        deleteNodeDynamic(params).then((res) => { });
       }
     },
     // 调用编辑器内部删除方法，处理删除操作
@@ -835,11 +859,13 @@ export default {
   height: 100%;
   display: flex;
   justify-content: flex-end;
+
   .left-wrap {
     flex: 1;
     background: var(--bg-color-2);
     position: relative;
     width: calc(100% - 416px);
+
     .role-filter {
       position: absolute;
       left: 34px;
@@ -853,23 +879,28 @@ export default {
         }
       }
     }
+
     .edit-scene {
       position: absolute;
       bottom: 18px;
       left: 126px;
       z-index: 20;
     }
+
     ::v-deep .scene-all.update-scene {
       height: calc(100% - 60px);
+
       &.fullscreen {
         height: 100%;
       }
     }
+
     .bottom-btn-wrapper {
       text-align: center;
       margin: 14px 0;
     }
   }
+
   .right-wrap {
     width: 400px;
     margin-left: 16px;
