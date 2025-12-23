@@ -640,10 +640,10 @@ export default {
     goList() {
       if (this.idKey) {
         IndexDB.dbOperation('single', 'delete', this.idKey).then((res) => {
-          this.$router.push({ path: '/admin/event/list-train-single' });
+          this.$router.push({ path: '/event/list-train-single' });
         });
       } else {
-        this.$router.push({ path: '/admin/event/list-train-single' });
+        this.$router.push({ path: '/event/list-train-single' });
       }
     },
     submitError(ex) {
