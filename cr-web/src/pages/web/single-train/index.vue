@@ -7,19 +7,16 @@
           <cb-select
             v-model="searchCondition.category"
             :options="categoryList"
-            @change="categoryChange"
           ></cb-select>
           <cb-select
             class="search-item"
             v-model="searchCondition.difficult"
             :options="difficultList"
-            @change="difficultChange"
           ></cb-select>
           <cb-search-input
             class="search-item"
             v-model="searchCondition.pattern"
             :placeholder="$t('list.enterTrainName')"
-            @change="getSearchName"
           />
           <cb-button
             ml
