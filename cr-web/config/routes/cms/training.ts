@@ -1,7 +1,7 @@
 export const trainingRouter = [
   {
     name: 'cr-individual-training',
-    path: '/admin/event/list-train-single',
+    path: '/event/list-train-single',
     // title: '单兵训练',
     title: 'routes.cr-individual-training',
     component: './pages/cms/cr-event/event-list-train-single',
@@ -10,7 +10,7 @@ export const trainingRouter = [
     },
   },
   {
-    path: '/admin/event/single/create',
+    path: '/event/single/create',
     title: '新增',
     component: './pages/cms/cr-event/train-single/create',
     name: 'cr-event-train-single-create',
@@ -22,7 +22,7 @@ export const trainingRouter = [
     },
   },
   {
-    path: '/admin/event/single/:id',
+    path: '/event/single/:id',
     component: './pages/cms/cr-event/train-single/edit',
     name: 'cr-event-train-single-edit',
     title: '编辑',
@@ -35,7 +35,7 @@ export const trainingRouter = [
   },
   {
     name: 'event-auth-single',
-    path: '/admin/event/single/:eventId/auth/:resourceId',
+    path: '/event/single/:eventId/auth/:resourceId',
     component: './pages/cms/cr-event/private-exercises.vue',
     title: '授权操作',
     meta: {
@@ -46,7 +46,7 @@ export const trainingRouter = [
     },
   },
   {
-    path: '/admin/scene/single/config/:id/test',
+    path: '/scene/single/config/:id/test',
     component: './pages/cms/scene/config/test',
     name: 'scene-config-test-single',
     title: '场景测试',

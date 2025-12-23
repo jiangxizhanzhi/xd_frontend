@@ -1,4 +1,4 @@
-import single from './single';
+// import single from './single';
 import group from './group';
 export default [
   {
@@ -9,6 +9,6 @@ export default [
     meta: {
       iconfont: 'icon-honglanduikang',
     },
-    children: [...single, ...group],
+    children: [...group],
   },
 ];

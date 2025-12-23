@@ -16,6 +16,8 @@ import newNetworkAttackDefenseScene from './new-network-attack-defense-scene';
 import comprehensiveTrainingScene from './comprehensive-training-scene'
 // 场景编排
 import topologyManagement from '../topology-management';
+// 单兵训练场景
+import singleTraining from './single-training';
 
 // 场景管理
 export const sceneManageRouter = {
@@ -35,5 +37,6 @@ export const sceneManageRouter = {
     ...newNetworkAttackDefenseScene,
     ...comprehensiveTrainingScene,
     ...topologyManagement,
+    ...singleTraining,
   ],
 };
