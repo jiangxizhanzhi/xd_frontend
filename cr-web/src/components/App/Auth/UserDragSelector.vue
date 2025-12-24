@@ -305,6 +305,7 @@ export default {
   .user-list {
     height: 90%;
     margin-right: -12px;
+    overflow-y: auto;
     &::after {
       display: block;
       clear: both;

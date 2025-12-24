@@ -1,7 +1,7 @@
 export default [
   {
     name: 'cr-individual-training',
-    path: '/admin/cr/admin/event/list-train-single',
+    path: '/cr/event/list-train-single',
     // title: 'mgRoutes.singleTrain',
     title: 'routes.cr-individual-training',
     component: './frame',
@@ -10,7 +10,7 @@ export default [
     },
   },
   {
-    path: '/admin/cr/admin/event/single/create',
+    path: '/cr/event/single/create',
     title: '新增',
     component: './frame',
     name: 'cr-event-train-single-create',
@@ -21,7 +21,7 @@ export default [
     },
   },
   {
-    path: '/admin/cr/admin/event/single/:id',
+    path: '/cr/event/single/:id',
     component: './frame',
     name: 'cr-event-train-single-edit',
     title: '编辑',
@@ -33,7 +33,7 @@ export default [
   },
   {
     name: 'event-auth-single',
-    path: '/admin/cr/admin/event/single/:eventId/auth/:resourceId',
+    path: '/cr/event/single/:eventId/auth/:resourceId',
     component: './frame',
     title: 'mgRoutes.authorizedGrant',
     meta: {
@@ -43,7 +43,7 @@ export default [
     },
   },
   {
-    path: '/admin/cr/admin/scene/single/config/:id/test',
+    path: '/cr/scene/single/config/:id/test',
     component: './frame',
     name: 'scene-config-test-single',
     title: 'mgRoutes.scenarioTest',
