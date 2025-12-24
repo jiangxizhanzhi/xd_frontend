@@ -49,6 +49,7 @@
           :business_id="resource_id"
           :roles.sync="roleList"
           :needToJudgeRoleAssetAllocation="true"
+          :open-watch-topology-data="true"
         >
         </scene-editor>
       </div>

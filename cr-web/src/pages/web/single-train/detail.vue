@@ -45,6 +45,7 @@
         @on-update-node-data="handleUpdateNodeData"
         @on-deleted-nodes="handleDeleteNode"
         :node-link-connectivity-status="true"
+        :open-watch-topology-data="true"
       >
       </scene-editor>
       <div

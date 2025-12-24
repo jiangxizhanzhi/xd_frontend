@@ -41,6 +41,7 @@
         :ws-data="wsData"
         :node-link-connectivity-status="true"
         :roles.sync="role_list"
+        :open-watch-topology-data="true"
       ></scene-editor>
       <div
         v-if="sceneStatusMode === 'update'"
