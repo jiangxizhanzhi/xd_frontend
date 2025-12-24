@@ -345,7 +345,9 @@ export default {
       this.pollTimer = null;
     }
     this.pollTimer = setInterval(() => {
-      this.handleGetSceneData();
+      if (!this.showMaskBtn) {
+        this.handleGetSceneData();
+      }
     }, 1000 * 10)
   },
   beforeDestroy() {
