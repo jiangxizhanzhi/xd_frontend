@@ -20,8 +20,11 @@
           @click="handlerReset"
         >重置</cb-button>
         <div class="right-button">
-          <cb-button button-type="add" @click="createSceneTemplate">新增</cb-button>
-<!--          <cb-button hollow>删除</cb-button>-->
+          <cb-button
+            button-type="add"
+            @click="createSceneTemplate"
+          >新增</cb-button>
+          <!--          <cb-button hollow>删除</cb-button>-->
         </div>
       </div>
       <!-- 列表展示 -->
@@ -34,6 +37,7 @@
           @delete="handlerDelete($event)"
           @copy="copySceneTemplate($event)"
           @distribute="distributeSeneTemplate($event)"
+          @createSingleTrain="createSingleTrain($event)"
         ></card-item>
       </div>
       <!-- 暂无数据 -->
@@ -77,7 +81,7 @@ import HeaderDecorate from '@/components/header-decorate/index.vue';
 import CardItem from '@/components/card-item/index.vue';
 import EmptyPage from '@/pages/web/Empty';
 import PrivateExercisesAuth from './private-exercises-batch.vue';
-import { getSceneTemplateListApi, copySceneTemplateApi } from '@/api/scene-management/index'
+import { getSceneTemplateListApi, copySceneTemplateApi, copySingleTrainApi } from '@/api/scene-management/index'
 import { SCENE_MANAGEMENT_NAME, SCENE_MANAGEMENT_TYPE } from './constants'
 export default {
   components: {
@@ -176,6 +180,14 @@ export default {
         resource_id: data.resource_id
       }).then(res => {
         this.getCardList();
+        this.$message.success('操作成功');
+      })
+    },
+    // 创建单兵训练
+    createSingleTrain(data) {
+      copySingleTrainApi({
+        resource_id: data.resource_id
+      }).then(res => {
         this.$message.success('操作成功');
       })
     },

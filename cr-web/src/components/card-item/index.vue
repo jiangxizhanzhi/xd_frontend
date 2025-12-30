@@ -51,6 +51,10 @@
         type="text"
         @click="handlerDelete(cardData)"
       >删除</cb-button>
+      <cb-button
+        type="text"
+        @click="createSingleTrain(cardData)"
+      >创建单兵训练</cb-button>
     </div>
   </div>
 </template>
@@ -78,6 +82,9 @@ export default {
     },
     handlerDistribute(data) {
       this.$emit('distribute', data)
+    },
+    createSingleTrain(data) {
+      this.$emit('createSingleTrain', data)
     },
   }
 };

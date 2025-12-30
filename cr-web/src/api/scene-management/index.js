@@ -12,3 +12,10 @@ export function copySceneTemplateApi(data) {
     baseURL: '/api/ojj',
   });
 }
+
+// 创建单兵训练
+export function copySingleTrainApi(data) {
+  return request.post('/cr/team_train/template/copy_to_single_train', data, {
+    baseURL: '/api/ojj',
+  });
+}
