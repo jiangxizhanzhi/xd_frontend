@@ -199,10 +199,10 @@ export default {
     goto() {
       if (this.$route.name === 'event-auth-single') {
         // 单兵训练
-        this.$router.push({ path: '/admin/event/list-train-single' });
+        this.$router.push({ path: '/event/list-train-single' });
       } else if (this.$route.name === 'event-auth-team') {
         // 综合演训
-        this.$router.push({ path: '/admin/event/list-train-team' });
+        this.$router.push({ path: '/event/list-train-team' });
       } else {
         // 红蓝对抗
         this.$router.push({ name: 'red-blue' });

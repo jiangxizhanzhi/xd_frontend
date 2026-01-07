@@ -163,7 +163,7 @@ export default [
       // 新版场景编排
       // crEventRouter,
       // 对抗演练
-      ...trainingRouter,
+      // ...trainingRouter,
       // 红蓝对抗
       ...redVsBlueRouter,
       //靶场测评体系
