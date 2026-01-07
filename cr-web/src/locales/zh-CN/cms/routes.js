@@ -5,6 +5,7 @@ export default {
   //对抗演练
   'cr-training-list-folder': '团队演练',
   'cr-individual-training': '单兵训练',
+  'cr-individual-training-scene': '单兵训练场景',
   'cr-team-training': '综合演训',
   // 红蓝对抗
   'red-vs-blue-folder': '红蓝对抗',

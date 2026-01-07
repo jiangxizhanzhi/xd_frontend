@@ -3,7 +3,7 @@ export default [
     name: 'cr-individual-training',
     path: '/cr/event/list-train-single',
     // title: 'mgRoutes.singleTrain',
-    title: 'routes.cr-individual-training',
+    title: 'routes.cr-individual-training-scene',
     component: './frame',
     meta: {
       iconfont: 'icon-yonghufupan',
@@ -11,7 +11,7 @@ export default [
   },
   {
     path: '/cr/event/single/create',
-    title: '新增',
+    title: '新增单兵训练场景',
     component: './frame',
     name: 'cr-event-train-single-create',
     meta: {
@@ -24,7 +24,7 @@ export default [
     path: '/cr/event/single/:id',
     component: './frame',
     name: 'cr-event-train-single-edit',
-    title: '编辑',
+    title: '编辑单兵训练场景',
     meta: {
       breadcrumb: {
         parentName: 'cr-individual-training',

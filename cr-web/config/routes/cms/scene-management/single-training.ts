@@ -3,7 +3,7 @@ export default [
     name: 'cr-individual-training',
     path: '/event/list-train-single',
     // title: '单兵训练',
-    title: 'routes.cr-individual-training',
+    title: 'routes.cr-individual-training-scene',
     component: './pages/cms/cr-event/event-list-train-single',
     meta: {
       module: 'cr-individual-training',
@@ -11,7 +11,7 @@ export default [
   },
   {
     path: '/event/single/create',
-    title: '新增',
+    title: '新增单兵训练场景',
     component: './pages/cms/cr-event/train-single/create',
     name: 'cr-event-train-single-create',
     meta: {
@@ -25,7 +25,7 @@ export default [
     path: '/event/single/:id',
     component: './pages/cms/cr-event/train-single/edit',
     name: 'cr-event-train-single-edit',
-    title: '编辑',
+    title: '编辑单兵训练场景',
     meta: {
       breadcrumb: {
         parentName: 'cr-individual-training',
