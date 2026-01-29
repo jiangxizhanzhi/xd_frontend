@@ -51,9 +51,8 @@
         </div>
       </div>
       <div class="btn-wrap">
-        <cb-button hollow @click="exportTemplate">{{
-          $t('m.exportReport')
-        }}</cb-button>
+        <cb-button hollow mr @click="exportTemplate('pdf')">导出pdf报告</cb-button>
+        <cb-button hollow @click="exportTemplate('word')">导出word报告</cb-button>
       </div>
     </div>
     <!-- 详情 -->
@@ -498,23 +497,41 @@ export default {
     },
 
     // 综合演训报告导出
-    exportTemplate() {
+    exportTemplate(type) {
       this.loading = true;
-      this.$request
-        .binaryDownload(
-          'get',
-          '/cr/team_train/room/mission/TrainReportsPdf',
-          { resource_id: this.$route.params.resource_id },
-          {
-            baseURL: '/api/ojj',
-          },
-        )
-        .then((res) => {
-          this.loading = false;
-        })
-        .catch(() => {
-          this.loading = false;
-        });
+      if (type === 'pdf') {
+        this.$request
+          .binaryDownload(
+            'get',
+            '/cr/team_train/room/mission/TrainReportsPdf',
+            { resource_id: this.$route.params.resource_id },
+            {
+              baseURL: '/api/ojj',
+            },
+          )
+          .then((res) => {
+            this.loading = false;
+          })
+          .catch(() => {
+            this.loading = false;
+          });
+      } else {
+        this.$request
+          .binaryDownload(
+            'get',
+            '/cr/team_train/room/mission/TrainReportsDocx',
+            { resource_id: this.$route.params.resource_id },
+            {
+              baseURL: '/api/ojj',
+            },
+          )
+          .then((res) => {
+            this.loading = false;
+          })
+          .catch(() => {
+            this.loading = false;
+          });
+      }
     },
   },
 };
