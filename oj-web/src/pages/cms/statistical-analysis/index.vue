@@ -9,6 +9,22 @@
         <div class="study-td fl tabBg">
           <div class="th-head">
             <top-title :name="$t('训练场次统计')"></top-title>
+            <div class="time-search">
+              <cb-date-picker
+                style="width: 100%"
+                v-model="trainingSessionStatistics.date"
+                type="datetimerange"
+                :range-separator="$t('至')"
+                :start-placeholder="$t('开始日期')"
+                :end-placeholder="$t('结束日期')"
+                value-format="yyyy-MM-dd"
+                :clearable="false"
+                popper-class="custom-range-picker"
+                @change="trainingSessionStatisticsChange($event)"
+                clearable
+              >
+              </cb-date-picker>
+            </div>
           </div>
           <div class="th-echarts">
             <bar-chart
@@ -23,10 +39,23 @@
           class="direction-td fl tabBg"
         >
           <div class="th-head">
-            <top-title :name="$t(
-              '训练人数趋势',
-            )
-              "></top-title>
+            <top-title :name="$t('训练人数趋势')"></top-title>
+            <div class="time-search">
+              <cb-date-picker
+                style="width: 100%"
+                v-model="trainNumberTrend.date"
+                type="datetimerange"
+                :range-separator="$t('至')"
+                :start-placeholder="$t('开始日期')"
+                :end-placeholder="$t('结束日期')"
+                value-format="yyyy-MM-dd"
+                :clearable="false"
+                popper-class="custom-range-picker"
+                @change="trainNumberTrendChange($event)"
+                clearable
+              >
+              </cb-date-picker>
+            </div>
           </div>
           <div class="th-echarts">
             <line-chart
@@ -42,6 +71,22 @@
         <div class="total-score-item">
           <div class="th-head">
             <top-title :name="$t('训练总分TOP5')"></top-title>
+            <div class="time-search">
+              <cb-date-picker
+                style="width: 100%"
+                v-model="trainingTotalScoreTop5.date"
+                type="datetimerange"
+                :range-separator="$t('至')"
+                :start-placeholder="$t('开始日期')"
+                :end-placeholder="$t('结束日期')"
+                value-format="yyyy-MM-dd"
+                :clearable="false"
+                popper-class="custom-range-picker"
+                @change="trainingTotalScoreTop5Change($event)"
+                clearable
+              >
+              </cb-date-picker>
+            </div>
           </div>
           <div class="th-echarts">
             <score-bar-chart
@@ -55,6 +100,22 @@
         <div class="total-score-item">
           <div class="th-head">
             <top-title :name="$t('实验总分TOP5')"></top-title>
+            <div class="time-search">
+              <cb-date-picker
+                style="width: 100%"
+                v-model="experimentTotalScoreTop5.date"
+                type="datetimerange"
+                :range-separator="$t('至')"
+                :start-placeholder="$t('开始日期')"
+                :end-placeholder="$t('结束日期')"
+                value-format="yyyy-MM-dd"
+                :clearable="false"
+                popper-class="custom-range-picker"
+                @change="experimentTotalScoreTop5Change($event)"
+                clearable
+              >
+              </cb-date-picker>
+            </div>
           </div>
           <div class="th-echarts">
             <score-bar-chart
@@ -68,6 +129,22 @@
         <div class="total-score-item">
           <div class="th-head">
             <top-title :name="$t('科目总分TOP5')"></top-title>
+            <div class="time-search">
+              <cb-date-picker
+                style="width: 100%"
+                v-model="subjectTotalScoreTop5.date"
+                type="datetimerange"
+                :range-separator="$t('至')"
+                :start-placeholder="$t('开始日期')"
+                :end-placeholder="$t('结束日期')"
+                value-format="yyyy-MM-dd"
+                :clearable="false"
+                popper-class="custom-range-picker"
+                @change="subjectTotalScoreTop5Change($event)"
+                clearable
+              >
+              </cb-date-picker>
+            </div>
           </div>
           <div class="th-echarts">
             <score-bar-chart
@@ -81,6 +158,22 @@
         <div class="total-score-item">
           <div class="th-head">
             <top-title :name="$t('综合演训总分TOP5')"></top-title>
+            <div class="time-search">
+              <cb-date-picker
+                style="width: 100%"
+                v-model="comprehensiveTotalScoreTop5.date"
+                type="datetimerange"
+                :range-separator="$t('至')"
+                :start-placeholder="$t('开始日期')"
+                :end-placeholder="$t('结束日期')"
+                value-format="yyyy-MM-dd"
+                :clearable="false"
+                popper-class="custom-range-picker"
+                @change="comprehensiveTotalScoreTop5Change($event)"
+                clearable
+              >
+              </cb-date-picker>
+            </div>
           </div>
           <div class="th-echarts">
             <score-bar-chart
@@ -92,6 +185,7 @@
           </div>
         </div>
       </div>
+      <!-- 训练学员统计 -->
       <div class="table-grid tabBg">
         <div class="th-head">
           <top-title :name="$t('训练学员统计')"></top-title>
@@ -105,15 +199,94 @@
             row-key="user_id"
             :searchBarBg="false"
             :show-search-btn="false"
+            :data="traineeStatistics"
           >
-
+            <template v-slot:search="scoped">
+              <div class="time-search">
+                <cb-date-picker
+                  style="width: 100%"
+                  v-model="traineeStatistics.date"
+                  type="datetimerange"
+                  :range-separator="$t('至')"
+                  :start-placeholder="$t('开始日期')"
+                  :end-placeholder="$t('结束日期')"
+                  value-format="yyyy-MM-dd"
+                  :clearable="false"
+                  popper-class="custom-range-picker"
+                  clearable
+                >
+                </cb-date-picker>
+              </div>
+            </template>
             <template v-slot:roles="scoped">
               {{ computedRoles(scoped.data.roles) }}
             </template>
           </cb-search-table>
         </div>
       </div>
+      <!-- 实验统计 -->
+      <div class="table-grid tabBg">
+        <div class="th-head">
+          <top-title :name="$t('实验统计')"></top-title>
+        </div>
+        <div class="th-echarts">
+          <cb-search-table
+            ref="tableRef"
+            url="/cr/out_interface/team_train_list"
+            baseURL="/api/ojj"
+            :cols="outInterfaceColumns"
+            row-key="resource_id"
+            :searchBarBg="false"
+            :show-search-btn="false"
+            :data="outInterfaceStatistics"
+          >
+            <template v-slot:search="scoped">
+              <div class="time-search">
+                <cb-date-picker
+                  style="width: 100%"
+                  v-model="outInterfaceStatistics.date"
+                  type="datetimerange"
+                  :range-separator="$t('至')"
+                  :start-placeholder="$t('开始日期')"
+                  :end-placeholder="$t('结束日期')"
+                  value-format="yyyy-MM-dd"
+                  :clearable="false"
+                  popper-class="custom-range-picker"
+                  clearable
+                >
+                </cb-date-picker>
+              </div>
+            </template>
+            <template v-slot:category="scoped">
+              <div>{{ computedCategory(scoped.data.category) }}</div>
+            </template>
+            <template v-slot:difficult="scoped">
+              <div>{{ computedDifficult(scoped.data.category) }}</div>
+            </template>
+            <template v-slot:operate="scoped">
+              <cb-button
+                type="text"
+                @click="studentStatistics(scoped.data)"
+              >学员统计</cb-button>
+            </template>
+          </cb-search-table>
+        </div>
+      </div>
     </div>
+    <cb-dialog
+      v-if="dialogVisible"
+      :title="train_name + '学员统计'"
+      :visible.sync="dialogVisible"
+      width="1400px"
+      @close="dialogVisible = false"
+    >
+      <div class="personnel-score">
+        <personnel-score
+          :score-info="scoreList"
+          :resource_id="resource_id"
+        ></personnel-score>
+      </div>
+    </cb-dialog>
   </cb-inner-page>
 </template>
 <script>
@@ -123,13 +296,17 @@ import {
   getXdTeamScoreAllApi,
   getXdTeamScoreSyApi,
   getXdTeamScoreKmApi,
-  getXdTeamScoreZhyxApi
+  getXdTeamScoreZhyxApi,
+  getXdOutInterfaceApi,
+  trainReportApi
 } from '@/api/statistical-analysis.js'
+import { getConstantsConfig } from '@/api/course.js'
 import topTitle from './components/top-title.vue';
 import BarChart from './components/bar-chart.vue';
 import ScoreBarChart from './components/score-bar-chart.vue';
 import LineChart from './components/line-chart.vue';
 import NoData from './components/no-data.vue';
+import PersonnelScore from './components/personnel-score.vue'
 export default {
   components: {
     topTitle,
@@ -137,9 +314,11 @@ export default {
     ScoreBarChart,
     LineChart,
     NoData,
+    PersonnelScore,
   },
   data() {
     return {
+      dialogVisible: false,
       columns: [
         {
           label: this.$t('用户名'),
@@ -190,6 +369,36 @@ export default {
           prop: 'overall_rank',
         },
       ],
+      outInterfaceColumns: [
+        {
+          label: this.$t('名称'),
+          prop: 'name',
+        },
+        {
+          label: this.$t('类别'),
+          slot: 'category',
+        },
+        {
+          label: this.$t('难度'),
+          slot: 'difficult',
+        },
+        {
+          label: this.$t('训练类型'),
+          prop: 'train_xd_sub_type',
+        },
+        {
+          label: this.$t('开始时间'),
+          prop: 'start_time',
+        },
+        {
+          label: this.$t('结束时间'),
+          prop: 'end_time',
+        },
+        {
+          label: this.$t('操作'),
+          slot: 'operate',
+        },
+      ],
       team_times_data: {
         xData: [],
         seriesData: [],
@@ -214,12 +423,93 @@ export default {
         xData: [],
         seriesData: [],
       },
+      trainingSessionStatistics: {
+        date: [],
+      },
+      trainNumberTrend: {
+        date: [],
+      },
+      trainingTotalScoreTop5: {
+        date: [],
+      },
+      experimentTotalScoreTop5: {
+        date: [],
+      },
+      subjectTotalScoreTop5: {
+        date: [],
+      },
+      comprehensiveTotalScoreTop5: {
+        date: [],
+      },
+      traineeStatistics: {
+        date: [],
+      },
+      outInterfaceStatistics: {
+        date: [],
+      },
+      categoryList: [],
+      difficultList: [],
+      train_name: '',
+      resource_id: '',
+      scoreList: [],
     };
   },
   mounted() {
     this.getData();
+    // 获取类别
+    this.getCategory();
+    // 获取难度
+    this.getDifficult();
   },
   methods: {
+    studentStatistics(data) {
+      this.train_name = data.name
+      this.resource_id = data.resource_id;
+      this.dialogVisible = true;
+      trainReportApi({
+        resource_id: this.resource_id,
+        scoreCount: 10,
+      }).then((res) => {
+        const data = _.get(res, 'data.data');
+        console.log(data, 65666);
+
+        this.scoreList = data.get_score_rsps;
+      });
+    },
+    getCategory() {
+      getConstantsConfig({
+        type: 3
+      }).then(res => {
+        this.categoryList = res.data.data;
+      })
+    },
+    getDifficult() {
+      getConstantsConfig({
+        type: 24
+      }).then(res => {
+        this.difficultList = res.data.data;
+      })
+    },
+    computedCategory(category) {
+      const data = this.categoryList.filter(item => {
+        return item.code === category
+      })
+      if (data?.length) {
+        return data[0]?.name;
+      } else {
+        return '-'
+      }
+    },
+    computedDifficult(difficult) {
+      const data = this.difficultList.filter(item => {
+        return item.code === difficult
+      })
+      if (data?.length) {
+        return data[0]?.name;
+      } else {
+        return '-'
+      }
+    },
     getData() {
       // 训练场次统计
       this.getXdTeamTimesData();
@@ -233,12 +523,19 @@ export default {
       this.getXdScoreKmTop5()
       // 综合演训总分TOP5
       this.getXdScoreZhyxTop5()
+      // 实验统计
+      this.getXdOutInterface();
     },
     // 训练场次统计
-    getXdTeamTimesData() {
+    getXdTeamTimesData(timerange) {
       this.team_times_data.xData = [];
       this.team_times_data.seriesData = [];
-      getXdTeamTimesApi().then(res => {
+      const params = {};
+      if (timerange?.length) {
+        params.startTime = timerange[0];
+        params.endTime = timerange[1];
+      }
+      getXdTeamTimesApi(params).then(res => {
         const data = _.get(res, 'data.data', [])
         const sy_num_data = [];
         const km_num_data = [];
@@ -281,8 +578,13 @@ export default {
       })
     },
     // 训练人数趋势
-    getXdTeamPersonNumData() {
-      getXdTeamPersonNumApi().then(res => {
+    getXdTeamPersonNumData(timerange) {
+      const params = {};
+      if (timerange?.length) {
+        params.startTime = timerange[0];
+        params.endTime = timerange[1];
+      }
+      getXdTeamPersonNumApi(params).then(res => {
         const data = _.get(res, 'data.data', [])
         const sy_num_data = [];
         const km_num_data = [];
@@ -322,8 +624,13 @@ export default {
       })
     },
     // 训练总分TOP5
-    getXdScoreAllTop5() {
-      getXdTeamScoreAllApi().then(res => {
+    getXdScoreAllTop5(timerange) {
+      const params = {};
+      if (timerange?.length) {
+        params.startTime = timerange[0];
+        params.endTime = timerange[1];
+      }
+      getXdTeamScoreAllApi(params).then(res => {
         this.score_all.xData = [];
         this.score_all.seriesData = [];
         const data = _.get(res, 'data.data', [])
@@ -336,8 +643,13 @@ export default {
       })
     },
     // 实验总分TOP5
-    getXdScoreSyTop5() {
-      getXdTeamScoreSyApi().then(res => {
+    getXdScoreSyTop5(timerange) {
+      const params = {};
+      if (timerange?.length) {
+        params.startTime = timerange[0];
+        params.endTime = timerange[1];
+      }
+      getXdTeamScoreSyApi(params).then(res => {
         this.score_sy.xData = [];
         this.score_sy.seriesData = [];
         const data = _.get(res, 'data.data', [])
@@ -348,8 +660,13 @@ export default {
       })
     },
     // 科目总分TOP5
-    getXdScoreKmTop5() {
-      getXdTeamScoreKmApi().then(res => {
+    getXdScoreKmTop5(timerange) {
+      const params = {};
+      if (timerange?.length) {
+        params.startTime = timerange[0];
+        params.endTime = timerange[1];
+      }
+      getXdTeamScoreKmApi(params).then(res => {
         this.score_km.xData = [];
         this.score_km.seriesData = [];
         const data = _.get(res, 'data.data', [])
@@ -360,8 +677,13 @@ export default {
       })
     },
     // 综合演训总分TOP5
-    getXdScoreZhyxTop5() {
-      getXdTeamScoreZhyxApi().then(res => {
+    getXdScoreZhyxTop5(timerange) {
+      const params = {};
+      if (timerange?.length) {
+        params.startTime = timerange[0];
+        params.endTime = timerange[1];
+      }
+      getXdTeamScoreZhyxApi(params).then(res => {
         this.score_zhyx.xData = [];
         this.score_zhyx.seriesData = [];
         const data = _.get(res, 'data.data', [])
@@ -369,6 +691,17 @@ export default {
           this.score_zhyx.xData.push(item.name)
           this.score_zhyx.seriesData.push(item.total_score)
         })
+      })
+    },
+    // 实验统计
+    getXdOutInterface(timerange) {
+      const params = {};
+      if (timerange?.length) {
+        params.startTime = timerange[0];
+        params.endTime = timerange[1];
+      }
+      getXdOutInterfaceApi(params).then(res => {
+        console.log(res);
       })
     },
     computedRoles(roles) {
@@ -382,6 +715,24 @@ export default {
         return '-'
       }
 
+    },
+    trainingSessionStatisticsChange(value) {
+      this.getXdTeamTimesData(value);
+    },
+    trainNumberTrendChange(value) {
+      this.getXdTeamPersonNumData(value);
+    },
+    trainingTotalScoreTop5Change(value) {
+      this.getXdScoreAllTop5(value);
+    },
+    experimentTotalScoreTop5Change(value) {
+      this.getXdScoreSyTop5(value);
+    },
+    subjectTotalScoreTop5Change(value) {
+      this.getXdScoreKmTop5(value);
+    },
+    comprehensiveTotalScoreTop5Change(value) {
+      this.getXdScoreZhyxTop5(value);
     },
   },
 };
@@ -398,7 +749,17 @@ export default {
       background: var(--bg-color-1);
 
       .th-head {
+        height: 40px !important;
         color: var(--font-color-primary);
+        position: relative;
+
+        .time-search {
+          height: 40px;
+          line-height: 40px;
+          position: absolute;
+          right: 8px;
+          top: 0;
+        }
       }
     }
 
@@ -406,7 +767,17 @@ export default {
       background: var(--bg-color-1);
 
       .th-head {
+        height: 40px !important;
         color: var(--font-color-primary);
+        position: relative;
+
+        .time-search {
+          height: 40px;
+          line-height: 40px;
+          position: absolute;
+          right: 8px;
+          top: 0;
+        }
       }
     }
   }
@@ -417,6 +788,7 @@ export default {
   margin-top: 16px;
   padding-left: 0;
   margin-bottom: 24px;
+
   ::v-deep .header-decorate {
     padding-left: 16px;
     margin-top: -12px;
@@ -424,6 +796,7 @@ export default {
     margin-bottom: 12px;
   }
 }
+
 .all-course {
   width: 100%;
   //padding-right: 16px;
@@ -499,10 +872,21 @@ export default {
       margin-right: 16px;
       background: var(--white-color);
 
+
       .th-head {
-        width: 100%;
-        height: 30px;
         font-size: 14px;
+        height: 40px !important;
+        color: var(--font-color-primary);
+        position: relative;
+
+        .time-search {
+          width: calc(100% - 165px);
+          height: 40px;
+          line-height: 40px;
+          position: absolute;
+          right: 8px;
+          top: 0;
+        }
       }
 
       .th-echarts {
@@ -523,6 +907,7 @@ export default {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    margin-bottom: 16px;
 
     .th-head {
       padding-bottom: 10px;
@@ -535,5 +920,11 @@ export default {
 
     // height: 570px;
   }
+}
+
+.personnel-score {
+  width: 100%;
+  height: 600px;
+  overflow-y: auto;
 }
 </style>

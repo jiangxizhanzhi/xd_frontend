@@ -42,3 +42,17 @@ export function getXdTeamScoreZhyxApi(data) {
     baseURL,
   });
 }
+
+// 实验统计
+export function getXdOutInterfaceApi(data) {
+  return request.get(`/cr/out_interface/team_train_list`, data, {
+    baseURL,
+  });
+}
+
+// 获取训练报告
+export function trainReportApi(data) {
+  return request.get('/cr/team_train/room/mission/getTrainReports/', data, {
+    baseURL: '/api/ojj',
+  });
+};
