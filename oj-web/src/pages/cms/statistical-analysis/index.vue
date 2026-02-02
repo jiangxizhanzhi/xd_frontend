@@ -192,17 +192,17 @@
         </div>
         <div class="th-echarts">
           <cb-search-table
-            ref="tableRef"
+            ref="tableStudentRef"
             url="/cr/admin/xd_statistics/detail"
             baseURL="/api/ojj"
             :cols="columns"
             row-key="user_id"
             :searchBarBg="false"
             :show-search-btn="false"
-            :data="traineeStatistics"
+            :data.sync="queryStudent"
           >
             <template v-slot:search="scoped">
-              <div class="time-search">
+              <div class="time-search export">
                 <cb-date-picker
                   style="width: 100%"
                   v-model="traineeStatistics.date"
@@ -214,8 +214,12 @@
                   :clearable="false"
                   popper-class="custom-range-picker"
                   clearable
+                  @change="changeStudentTime"
                 >
                 </cb-date-picker>
+                <cb-button ml mr @click="handleStudentSearch">搜索</cb-button>
+                <cb-button mr @click="handleStudentReset" hollow>重置</cb-button>
+                <cb-button @click="handleStudentExport">导出Excel</cb-button>
               </div>
             </template>
             <template v-slot:roles="scoped">
@@ -238,13 +242,14 @@
             row-key="resource_id"
             :searchBarBg="false"
             :show-search-btn="false"
-            :data="outInterfaceStatistics"
+            :data.sync="query"
           >
             <template v-slot:search="scoped">
-              <div class="time-search">
+              <div class="time-search export">
                 <cb-date-picker
                   style="width: 100%"
                   v-model="outInterfaceStatistics.date"
+                  @change="changeTime"
                   type="datetimerange"
                   :range-separator="$t('至')"
                   :start-placeholder="$t('开始日期')"
@@ -255,6 +260,9 @@
                   clearable
                 >
                 </cb-date-picker>
+                <cb-button ml mr @click="handleSearch">搜索</cb-button>
+                <cb-button mr @click="handleReset" hollow>重置</cb-button>
+                <cb-button @click="handleExport">导出Excel</cb-button>
               </div>
             </template>
             <template v-slot:category="scoped">
@@ -298,6 +306,7 @@ import {
   getXdTeamScoreKmApi,
   getXdTeamScoreZhyxApi,
   getXdOutInterfaceApi,
+  getXdStatisticsDetailApi,
   trainReportApi
 } from '@/api/statistical-analysis.js'
 import { getConstantsConfig } from '@/api/course.js'
@@ -397,6 +406,7 @@ export default {
         {
           label: this.$t('操作'),
           slot: 'operate',
+          width: 150,
         },
       ],
       team_times_data: {
@@ -452,6 +462,14 @@ export default {
       train_name: '',
       resource_id: '',
       scoreList: [],
+      query: {
+        startTime: '',
+        endTime: '',
+      },
+      queryStudent: {
+        startTime: '',
+        endTime: '',
+      }
     };
   },
   mounted() {
@@ -462,17 +480,232 @@ export default {
     this.getDifficult();
   },
   methods: {
+    handleExport() {
+      const params = {
+        page: 1,
+        per_page: 99999,
+      };
+      if (
+        this.outInterfaceStatistics.date &&
+        this.outInterfaceStatistics.date.length
+      ) {
+        params.startTime = this.outInterfaceStatistics.date[0];
+        params.endTime = this.outInterfaceStatistics.date[1];
+      }
+      getXdOutInterfaceApi(params).then((res) => {
+        const data = _.get(res, 'data.data', []);
+        let list = [];
+        if (Array.isArray(data)) {
+          list = data;
+        } else if (data && Array.isArray(data.data)) {
+          list = data.data;
+        } else if (data && Array.isArray(data.list)) {
+          list = data.list;
+        }
+
+        if (!list.length) {
+          this.$message.warning(this.$t('暂无数据导出'));
+          return;
+        }
+        this.exportToExcel(list);
+      });
+    },
+    handleStudentExport() {
+      const params = {
+        page: 1,
+        per_page: 99999,
+      };
+      if (
+        this.traineeStatistics.date &&
+        this.traineeStatistics.date.length
+      ) {
+        params.startTime = this.traineeStatistics.date[0];
+        params.endTime = this.traineeStatistics.date[1];
+      }
+      getXdStatisticsDetailApi(params).then((res) => {
+        const data = _.get(res, 'data.data', []);
+        let list = [];
+        if (Array.isArray(data)) {
+          list = data;
+        } else if (data && Array.isArray(data.data)) {
+          list = data.data;
+        } else if (data && Array.isArray(data.list)) {
+          list = data.list;
+        }
+
+        if (!list.length) {
+          this.$message.warning(this.$t('暂无数据导出'));
+          return;
+        }
+        this.exportStudentToExcel(list);
+      });
+    },
+    exportStudentToExcel(list) {
+      let excelContent = `
+        <html xmlns:o="urn:schemas-microsoft-com:office:office" 
+              xmlns:x="urn:schemas-microsoft-com:office:excel" 
+              xmlns="http://www.w3.org/TR/REC-html40">
+        <head>
+          <!--[if gte mso 9]><xml>
+            <x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet>
+              <x:Name>Sheet1</x:Name>
+              <x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions>
+            </x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook>
+          </xml><![endif]-->
+        </head>
+        <body>
+          <table border="1" style="font-family: '宋体';">
+            <colgroup>
+              <col width="120">
+              <col width="100">
+              <col width="150">
+              <col width="100">
+              <col width="100">
+              <col width="100">
+              <col width="100">
+              <col width="100">
+              <col width="100">
+              <col width="100">
+              <col width="100">
+              <col width="100">
+            </colgroup>
+            <thead>
+              <tr style="font-family: '宋体';">
+                <th>${this.$t('用户名')}</th>
+                <th>${this.$t('姓名')}</th>
+                <th>${this.$t('组织')}</th>
+                <th>${this.$t('角色')}</th>
+                <th>${this.$t('完成训练')}</th>
+                <th>${this.$t('完成实验')}</th>
+                <th>${this.$t('完成科目')}</th>
+                <th>${this.$t('完成演训')}</th>
+                <th>${this.$t('完成任务')}</th>
+                <th>${this.$t('任务正确率')}</th>
+                <th>${this.$t('累计得分')}</th>
+                <th>${this.$t('综合排名')}</th>
+              </tr>
+            </thead>
+            <tbody>`;
+
+      list.forEach((item) => {
+        excelContent += `
+              <tr style="font-family: '宋体';">
+                <td style="mso-number-format:'\\@'">${item.username || ''}</td>
+                <td>${item.name || ''}</td>
+                <td>${item.organization_data || ''}</td>
+                <td>${this.computedRoles(item.roles) || ''}</td>
+                <td>${item.train_times || 0}</td>
+                <td>${item.sy_times || 0}</td>
+                <td>${item.km_times || 0}</td>
+                <td>${item.zhyx_times || 0}</td>
+                <td>${item.task_num || 0}</td>
+                <td>${item.task_accuracy || ''}</td>
+                <td>${item.total_score || 0}</td>
+                <td>${item.overall_rank || ''}</td>
+              </tr>`;
+      });
+
+      excelContent += `
+            </tbody>
+          </table>
+        </body>
+        </html>`;
+
+      const blob = new Blob([excelContent], { type: 'application/vnd.ms-excel' });
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      link.setAttribute('href', url);
+      link.setAttribute('download', '训练学员统计.xls');
+      link.style.visibility = 'hidden';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    },
+    exportToExcel(list) {
+      let excelContent = `
+        <html xmlns:o="urn:schemas-microsoft-com:office:office" 
+              xmlns:x="urn:schemas-microsoft-com:office:excel" 
+              xmlns="http://www.w3.org/TR/REC-html40">
+        <head>
+          <!--[if gte mso 9]><xml>
+            <x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet>
+              <x:Name>Sheet1</x:Name>
+              <x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions>
+            </x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook>
+          </xml><![endif]-->
+        </head>
+        <body>
+          <table border="1" style="font-family: '宋体';">
+            <colgroup>
+              <col width="200">
+              <col width="120">
+              <col width="80">
+              <col width="120">
+              <col width="160">
+              <col width="160">
+            </colgroup>
+            <thead>
+              <tr style="font-family: '宋体';">
+                <th>${this.$t('名称')}</th>
+                <th>${this.$t('类别')}</th>
+                <th>${this.$t('难度')}</th>
+                <th>${this.$t('训练类型')}</th>
+                <th>${this.$t('开始时间')}</th>
+                <th>${this.$t('结束时间')}</th>
+              </tr>
+            </thead>
+            <tbody>`;
+
+      list.forEach((item) => {
+        excelContent += `
+              <tr style="font-family: '宋体';">
+                <td>${item.name || ''}</td>
+                <td>${this.computedCategory(item.category) || ''}</td>
+                <td>${this.computedDifficult(item.category) || ''}</td>
+                <td>${item.train_xd_sub_type || ''}</td>
+                <td style="mso-number-format:'\\@'">${item.start_time || ''}</td>
+                <td style="mso-number-format:'\\@'">${item.end_time || ''}</td>
+              </tr>`;
+      });
+
+      excelContent += `
+            </tbody>
+          </table>
+        </body>
+        </html>`;
+
+      const blob = new Blob([excelContent], { type: 'application/vnd.ms-excel' });
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      link.setAttribute('href', url);
+      link.setAttribute('download', '实验统计.xls');
+      link.style.visibility = 'hidden';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    },
+    handleReset() {
+      this.outInterfaceStatistics = ['', ''];
+      this.query.startTime = '';
+      this.query.endTime = '';
+      this.$refs.tableRef.reload();
+    },
+    handleStudentReset() {
+      this.traineeStatistics = ['', ''];
+      this.queryStudent.startTime = '';
+      this.queryStudent.endTime = '';
+      this.$refs.tableStudentRef.reload();
+    },
     studentStatistics(data) {
       this.train_name = data.name
       this.resource_id = data.resource_id;
       this.dialogVisible = true;
+      this.scoreList = [];
       trainReportApi({
         resource_id: this.resource_id,
         scoreCount: 10,
       }).then((res) => {
         const data = _.get(res, 'data.data');
-        console.log(data, 65666);
-
         this.scoreList = data.get_score_rsps;
       });
     },
@@ -734,6 +967,31 @@ export default {
     comprehensiveTotalScoreTop5Change(value) {
       this.getXdScoreZhyxTop5(value);
     },
+    handleSearch() {
+      this.$refs.tableRef.reload();
+    },
+    handleStudentSearch() {
+      this.$refs.tableStudentRef.reload();
+    },
+    // 时间选择
+    changeTime($event) {
+      if ($event) {
+        this.query.startTime = $event[0];
+        this.query.endTime = $event[1];
+      } else {
+        this.query.startTime = '';
+        this.query.endTime = '';
+      }
+    },
+    changeStudentTime($event) {
+      if ($event) {
+        this.queryStudent.startTime = $event[0];
+        this.queryStudent.endTime = $event[1];
+      } else {
+        this.queryStudent.startTime = '';
+        this.queryStudent.endTime = '';
+      }
+    }
   },
 };
 </script>
@@ -926,5 +1184,9 @@ export default {
   width: 100%;
   height: 600px;
   overflow-y: auto;
+}
+.export {
+  display: flex;
+  padding-left: 8px;
 }
 </style>

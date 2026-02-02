@@ -50,6 +50,13 @@ export function getXdOutInterfaceApi(data) {
   });
 }
 
+// 训练学员统计
+export function getXdStatisticsDetailApi(data) {
+  return request.get(`/cr/admin/xd_statistics/detail`, data, {
+    baseURL,
+  });
+}
+
 // 获取训练报告
 export function trainReportApi(data) {
   return request.get('/cr/team_train/room/mission/getTrainReports/', data, {
