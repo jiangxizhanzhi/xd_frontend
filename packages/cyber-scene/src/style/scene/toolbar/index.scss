@@ -1,0 +1,40 @@
+.scene-all {
+  .toolbar-wrapper {
+    background-color: var(--bg-color-2);
+    border: 1px solid var(--neutral3);
+    color: var(--neutral8);
+    .react {
+      border: 1px solid var(--neutral8);
+      background: var(--bg-color-2);
+      &.active {
+        border: 1px solid var(--primary-color);
+        .cb-iconfont {
+          color: var(--primary-color) !important;
+        }
+      }
+      .cb-iconfont {
+        color: var(--neutral8) !important;
+      }
+    }
+    .active {
+      color: var(--primary-color);
+      .cb-iconfont {
+        color: var(--primary-color) !important;
+      }
+    }
+    .cb-iconfont {
+      color: var(--neutral8) !important;
+      &:hover {
+        color: var(--primary-color) !important;
+      }
+    }
+    &.triangle::before {
+      top: -1px;
+      left: -1px;
+      background: transparent;
+      border-color: transparent transparent rgba(255, 255, 255, 0.2)
+        rgba(255, 255, 255, 0.2);
+      box-sizing: border-box;
+    }
+  }
+}

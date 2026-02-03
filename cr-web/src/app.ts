@@ -2,7 +2,7 @@ import { IRuntime } from '@cyber/cli';
 import 'element-ui/lib/theme-chalk/index.css';
 import CyberUI, { setTheme, CbMessageBox } from '@cyber/ui';
 import 'normalize.css/normalize.css'; // A modern alternative to CSS resets
-import '@cyber/ui/lib/css/index.css';
+import '@cyber/ui/src/theme/index.scss';
 import '@/style/index.scss';
 import '@/assets/styles/index.scss'; // global css
 import {

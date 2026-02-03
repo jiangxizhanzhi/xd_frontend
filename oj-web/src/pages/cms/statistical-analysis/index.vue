@@ -396,6 +396,18 @@ export default {
           prop: 'train_xd_sub_type',
         },
         {
+          label: this.$t('拓扑节点数'),
+          prop: 'nodes_count',
+        },
+        {
+          label: this.$t('参与人数'),
+          prop: 'user_count',
+        },
+        {
+          label: this.$t('提交任务数'),
+          prop: 'submit_mission_count',
+        },
+        {
           label: this.$t('开始时间'),
           prop: 'start_time',
         },
@@ -406,7 +418,7 @@ export default {
         {
           label: this.$t('操作'),
           slot: 'operate',
-          width: 150,
+          width: 120,
         },
       ],
       team_times_data: {
@@ -542,8 +554,8 @@ export default {
     },
     exportStudentToExcel(list) {
       let excelContent = `
-        <html xmlns:o="urn:schemas-microsoft-com:office:office" 
-              xmlns:x="urn:schemas-microsoft-com:office:excel" 
+        <html xmlns:o="urn:schemas-microsoft-com:office:office"
+              xmlns:x="urn:schemas-microsoft-com:office:excel"
               xmlns="http://www.w3.org/TR/REC-html40">
         <head>
           <!--[if gte mso 9]><xml>
@@ -623,8 +635,8 @@ export default {
     },
     exportToExcel(list) {
       let excelContent = `
-        <html xmlns:o="urn:schemas-microsoft-com:office:office" 
-              xmlns:x="urn:schemas-microsoft-com:office:excel" 
+        <html xmlns:o="urn:schemas-microsoft-com:office:office"
+              xmlns:x="urn:schemas-microsoft-com:office:excel"
               xmlns="http://www.w3.org/TR/REC-html40">
         <head>
           <!--[if gte mso 9]><xml>

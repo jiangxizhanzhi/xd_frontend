@@ -23,7 +23,7 @@ import Constant from './constants';
 import CbPlayer from './components/xgplayer';
 import Textarea from '@/components/textarea/index.vue';
 import ChapterLesson from '@/pages/web/personal/my-career/components/chapter-lesson';
-import '@cyber/ui/lib/css/index.css';
+import '@cyber/ui/src/theme/index.scss';
 import VueChatScroll from 'vue-chat-scroll';
 import Utils from './utils/utils.js';
 import { webTrack } from './utils/track';

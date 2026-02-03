@@ -1,0 +1,26 @@
+.el-tree {
+  background: none;
+
+  .el-tree-node {
+    color: var(--neutral8);
+  }
+
+  .el-tree-node:focus > .el-tree-node__content {
+    background: var(--neutral0);
+
+    .el-tree-node__label {
+      color: var(--neutral8);
+    }
+  }
+
+  .el-tree-node__content:hover {
+    background: var(--neutral0);
+
+    .el-tree-node__label {
+      color: var(--neutral8);
+    }
+  }
+  .is-current {
+    background-color: var(--primary-color-2);
+  }
+}

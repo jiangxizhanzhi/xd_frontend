@@ -1,0 +1,88 @@
+.cb-markdown {
+  color: var(--neutral8);
+
+  a {
+    color: var(--blue-color);
+  }
+
+  .CodeMirror-ruler {
+    border-left: 1px solid var(--neutral8);
+  }
+
+  // CodeMirror
+  .CodeMirror {
+    color: var(--neutral8);
+    background: var(--bg-color-2);
+  }
+
+  .CodeMirror-line span {
+    color: var(--neutral8);
+  }
+
+  .CodeMirror-vscrollbar::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+  }
+
+  // bytemd
+  .bytemd {
+    color: var(--neutral8);
+    border: 1px solid var(--neutral3);
+    // background-color: var(--bg-color-third);
+
+    &-toolbar {
+      border-bottom: 1px solid var(--neutral0);
+      background-color: var(--neutral1);
+      color: var(--neutral8);
+
+      &-icon:hover {
+        color: var(--primary-color);
+      }
+    }
+
+    &-dropdown-item {
+      color: var(--neutral8);
+    }
+
+    &-dropdown-item:hover {
+      background-color: var(--blue-color-8);
+    }
+
+    &-body {
+      // background: var(--bg-color-third);
+    }
+
+    &-preview::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-color);
+    }
+
+    .cm-link {
+      color: #1890ff;
+    }
+
+    .cm-url {
+      color: green;
+    }
+  }
+
+  .bytemd-split .bytemd-preview {
+    border-left: 1px solid var(--neutral3);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  pre {
+    color: var(--neutral8);
+  }
+
+  .tippy-content {
+    background-color: var(--bg-color-2);
+    border: none;
+  }
+}

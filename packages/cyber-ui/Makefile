@@ -1,0 +1,2 @@
+publish:
+	 yarn install && npm publish --registry=http://10.100.3.3:8081/repository/npm-hosted/

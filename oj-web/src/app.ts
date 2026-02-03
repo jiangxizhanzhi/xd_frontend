@@ -18,7 +18,7 @@ window.echarts = echarts;
 import '@/assets/css/index.scss';
 import '@/style/index.scss';
 // import './assets/iconfont/iconfont.css';
-import '@cyber/ui/lib/css/index.css';
+import '@cyber/ui/src/theme/index.scss';
 
 import { getToken, getJWTToken } from '@/utils/auth';
 

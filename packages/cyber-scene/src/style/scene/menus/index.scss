@@ -1,0 +1,105 @@
+.scene-all {
+  .wrapper-box {
+    background: var(--bg-color-2);
+    border: 1px solid var(--neutral3);
+    .item {
+      color: var(--neutral8);
+      //text-shadow: 0px 0px 19px rgba(0, 0, 0, 0.2);
+      &.active {
+        background-color: var(--primary-color-2);
+        color: var(--primary-color);
+        text-shadow: 0px 0px 19px rgba(0, 0, 0, 0.2);
+        .cb-iconfont {
+          color: var(--primary-color) !important;
+        }
+      }
+      .cb-iconfont {
+        color: var(--neutral8) !important;
+      }
+    }
+    &-0.triangle::before {
+      background: transparent;
+      border-color: transparent transparent var(--neutral4) var(--neutral4);
+    }
+    box-sizing: border-box;
+  }
+  .probe-batch-btn-wrapper {
+    position: absolute;
+    top: 72px;
+    right: 16px;
+    &.hide-title {
+      top: 12px;
+    }
+  }
+  .probe-batch-wrapper {
+    .step-box {
+      margin: 16px 200px 0 200px;
+    }
+    .probe-dialog-content {
+      margin-top: 16px;
+      &.custom-probe-list {
+        margin-top: 0;
+      }
+    }
+    .probe-dialog-content-nodes {
+      display: flex;
+      flex-wrap: wrap;
+      .filter-tip {
+        padding-left: 24px;
+        margin-top: 16px;
+        margin-bottom: 0;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        color: var(--neutral7);
+        background-color: var(--neutral1);
+        font-size: 14px;
+      }
+      .node-wrapper {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        margin: 16px 0;
+        .el-checkbox__label {
+          width: 100%;
+        }
+        .node-icon {
+          width: 40px;
+          height: 40px;
+          vertical-align: middle;
+        }
+        .node-label {
+          word-wrap: break-word;
+          word-break: normal;
+          width: 80%;
+          display: inline-block;
+          position: relative;
+          top: 4px;
+          padding-left: 10px;
+          text-overflow:ellipsis;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;/*超出2行显示省略号*/
+          overflow: hidden;
+        }
+        .el-checkbox__label {
+          height: auto;
+        }
+      }
+    }
+    .cb-checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .el-dialog__body{
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+      .content {
+        width: 100%;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+    }
+  }
+}

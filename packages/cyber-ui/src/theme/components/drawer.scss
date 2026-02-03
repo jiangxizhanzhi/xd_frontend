@@ -1,0 +1,18 @@
+.cb-drawer {
+  background-color: var(--bg-color-2);
+  .el-drawer__header,
+  .el-drawer__body,
+  .el-dialog__close.el-icon.el-icon-close {
+    color: var(--neutral8);
+  }
+  .el-drawer__body {
+    padding: 16px;
+  }
+  //.cb-dialog {
+  .el-dialog__wrapper.width-fit-content {
+    .el-dialog {
+      max-width: fit-content;
+    }
+  }
+  //}
+}

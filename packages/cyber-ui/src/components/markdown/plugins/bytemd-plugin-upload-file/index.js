@@ -1,0 +1,49 @@
+import { icons } from './icons';
+// @ts-ignore
+import ZH from './locales/zh_Hans.json';
+import selectFiles from 'select-files';
+export default function UploadFile({ locale: _locale, uploadFile } = {}) {
+  const locale = { ...ZH, ..._locale };
+  return {
+    actions: [
+      {
+        title: locale.uploadFile,
+        icon: icons.uploadFile,
+        handler: {
+          type: 'action',
+          click(ctx) {
+            selectFiles({ accept: '*', multiple: true }).then((fileList) => {
+              if (
+                fileList === null || fileList === void 0
+                  ? void 0
+                  : fileList.length
+              ) {
+                // @ts-ignore
+                uploadFile(Array.from(fileList)).then((files) => {
+                  const pos = ctx.appendBlock(
+                    files
+                      .map(({ url, alt, title }, i) => {
+                        alt =
+                          alt !== null && alt !== void 0
+                            ? alt
+                            : files[i].name
+                            ? files[i].name
+                            : files[i].title;
+                        return `[${alt}](${url}${title ? ` "${title}"` : ''})`;
+                      })
+                      .join('\n\n'),
+                  );
+                  ctx.editor.setSelection(
+                    pos,
+                    ctx.codemirror.Pos(pos.line + files.length * 2 - 2),
+                  );
+                  ctx.editor.focus();
+                });
+              }
+            });
+          },
+        },
+      },
+    ],
+  };
+}
