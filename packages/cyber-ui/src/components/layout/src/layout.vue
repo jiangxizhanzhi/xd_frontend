@@ -382,6 +382,7 @@ export default {
         if (this.active.name === 'learn-statistics') {
           this.currentLeftMenu = [];
         }
+        this.handleMenuData();
       },
       immediate: true,
     },
@@ -649,6 +650,7 @@ export default {
         return;
       }
       if (name === 'learn-statistics') {
+        clearMemory()
         this.select(name, item, item);
         this.currentLeftMenu = [];
         return;
