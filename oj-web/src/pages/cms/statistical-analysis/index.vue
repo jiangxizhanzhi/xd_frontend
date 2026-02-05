@@ -11,9 +11,9 @@
             <top-title :name="$t('训练场次统计')"></top-title>
             <div class="time-search">
               <cb-date-picker
-                style="width: 100%"
+                class="custom-date-picker"
                 v-model="trainingSessionStatistics.date"
-                type="datetimerange"
+                type="daterange"
                 :range-separator="$t('至')"
                 :start-placeholder="$t('开始日期')"
                 :end-placeholder="$t('结束日期')"
@@ -24,6 +24,18 @@
                 clearable
               >
               </cb-date-picker>
+              <cb-select
+                v-model="trainingSessionStatistics.type"
+                style="width: 100px; margin-left: 8px;"
+                @change="trainingSessionStatisticsChange"
+              >
+                <cb-option
+                  v-for="item in dateTypeOptions"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                />
+              </cb-select>
             </div>
           </div>
           <div class="th-echarts">
@@ -42,9 +54,9 @@
             <top-title :name="$t('训练人数趋势')"></top-title>
             <div class="time-search">
               <cb-date-picker
-                style="width: 100%"
+                class="custom-date-picker"
                 v-model="trainNumberTrend.date"
-                type="datetimerange"
+                type="daterange"
                 :range-separator="$t('至')"
                 :start-placeholder="$t('开始日期')"
                 :end-placeholder="$t('结束日期')"
@@ -55,6 +67,18 @@
                 clearable
               >
               </cb-date-picker>
+              <cb-select
+                v-model="trainNumberTrend.type"
+                style="width: 100px; margin-left: 8px;"
+                @change="trainNumberTrendChange"
+              >
+                <cb-option
+                  v-for="item in dateTypeOptions"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                />
+              </cb-select>
             </div>
           </div>
           <div class="th-echarts">
@@ -73,9 +97,9 @@
             <top-title :name="$t('训练总分TOP5')"></top-title>
             <div class="time-search">
               <cb-date-picker
-                style="width: 100%"
+                class="custom-date-picker"
                 v-model="trainingTotalScoreTop5.date"
-                type="datetimerange"
+                type="daterange"
                 :range-separator="$t('至')"
                 :start-placeholder="$t('开始日期')"
                 :end-placeholder="$t('结束日期')"
@@ -102,9 +126,9 @@
             <top-title :name="$t('实验总分TOP5')"></top-title>
             <div class="time-search">
               <cb-date-picker
-                style="width: 100%"
+                class="custom-date-picker"
                 v-model="experimentTotalScoreTop5.date"
-                type="datetimerange"
+                type="daterange"
                 :range-separator="$t('至')"
                 :start-placeholder="$t('开始日期')"
                 :end-placeholder="$t('结束日期')"
@@ -131,9 +155,9 @@
             <top-title :name="$t('科目总分TOP5')"></top-title>
             <div class="time-search">
               <cb-date-picker
-                style="width: 100%"
+                class="custom-date-picker"
                 v-model="subjectTotalScoreTop5.date"
-                type="datetimerange"
+                type="daterange"
                 :range-separator="$t('至')"
                 :start-placeholder="$t('开始日期')"
                 :end-placeholder="$t('结束日期')"
@@ -160,9 +184,9 @@
             <top-title :name="$t('综合演训总分TOP5')"></top-title>
             <div class="time-search">
               <cb-date-picker
-                style="width: 100%"
+                class="custom-date-picker"
                 v-model="comprehensiveTotalScoreTop5.date"
-                type="datetimerange"
+                type="daterange"
                 :range-separator="$t('至')"
                 :start-placeholder="$t('开始日期')"
                 :end-placeholder="$t('结束日期')"
@@ -204,9 +228,9 @@
             <template v-slot:search="scoped">
               <div class="time-search export">
                 <cb-date-picker
-                  style="width: 100%"
+                  class="custom-date-picker"
                   v-model="traineeStatistics.date"
-                  type="datetimerange"
+                  type="daterange"
                   :range-separator="$t('至')"
                   :start-placeholder="$t('开始日期')"
                   :end-placeholder="$t('结束日期')"
@@ -247,10 +271,10 @@
             <template v-slot:search="scoped">
               <div class="time-search export">
                 <cb-date-picker
-                  style="width: 100%"
+                  class="custom-date-picker"
                   v-model="outInterfaceStatistics.date"
                   @change="changeTime"
-                  type="datetimerange"
+                  type="daterange"
                   :range-separator="$t('至')"
                   :start-placeholder="$t('开始日期')"
                   :end-placeholder="$t('结束日期')"
@@ -457,10 +481,17 @@ export default {
       },
       trainingSessionStatistics: {
         date: [],
+        type: 'month',
       },
       trainNumberTrend: {
         date: [],
+        type: 'month',
       },
+      dateTypeOptions: [
+        { label: this.$t('日'), value: 'day' },
+        { label: this.$t('月'), value: 'month' },
+        { label: this.$t('年'), value: 'year' },
+      ],
       trainingTotalScoreTop5: {
         date: [],
       },
@@ -782,10 +813,14 @@ export default {
       this.getXdOutInterface();
     },
     // 训练场次统计
-    getXdTeamTimesData(timerange) {
+    getXdTeamTimesData() {
       this.team_times_data.xData = [];
       this.team_times_data.seriesData = [];
-      const params = {};
+      const timerange = this.trainingSessionStatistics.date;
+      const type = this.trainingSessionStatistics.type;
+      const params = {
+        type
+      };
       if (timerange?.length) {
         params.startTime = timerange[0];
         params.endTime = timerange[1];
@@ -796,7 +831,15 @@ export default {
         const km_num_data = [];
         const zhyx_num_data = [];
         data.forEach(item => {
-          this.team_times_data.xData.push(item.month + '月')
+          let label = item.month + '月';
+          if (type === 'year' && item.year) {
+            label = item.year + '年';
+          } else if (type === 'day' && (item.day || item.date)) {
+            label = item.day || item.date;
+          } else if (item.month) {
+            label = item.month + '月';
+          }
+          this.team_times_data.xData.push(label)
           sy_num_data.push(item.sy_num)
           km_num_data.push(item.km_num)
           zhyx_num_data.push(item.zhyx_num)
@@ -833,8 +876,14 @@ export default {
       })
     },
     // 训练人数趋势
-    getXdTeamPersonNumData(timerange) {
-      const params = {};
+    getXdTeamPersonNumData() {
+      this.team_person_num_data.xData = [];
+      this.team_person_num_data.seriesData = [];
+      const timerange = this.trainNumberTrend.date;
+      const type = this.trainNumberTrend.type;
+      const params = {
+        type
+      };
       if (timerange?.length) {
         params.startTime = timerange[0];
         params.endTime = timerange[1];
@@ -845,7 +894,15 @@ export default {
         const km_num_data = [];
         const zhyx_num_data = [];
         data.forEach(item => {
-          this.team_person_num_data.xData.push(item.month + '月')
+          let label = item.month + '月';
+          if (type === 'year' && item.year) {
+            label = item.year + '年';
+          } else if (type === 'day' && (item.day || item.date)) {
+            label = item.day || item.date;
+          } else if (item.month) {
+            label = item.month + '月';
+          }
+          this.team_person_num_data.xData.push(label)
           sy_num_data.push(item.sy_num)
           km_num_data.push(item.km_num)
           zhyx_num_data.push(item.zhyx_num)
@@ -971,11 +1028,11 @@ export default {
       }
 
     },
-    trainingSessionStatisticsChange(value) {
-      this.getXdTeamTimesData(value);
+    trainingSessionStatisticsChange() {
+      this.getXdTeamTimesData();
     },
-    trainNumberTrendChange(value) {
-      this.getXdTeamPersonNumData(value);
+    trainNumberTrendChange() {
+      this.getXdTeamPersonNumData();
     },
     trainingTotalScoreTop5Change(value) {
       this.getXdScoreAllTop5(value);
@@ -1034,6 +1091,8 @@ export default {
         position: relative;
 
         .time-search {
+          display: flex;
+          align-items: center;
           height: 40px;
           line-height: 40px;
           position: absolute;
@@ -1052,6 +1111,8 @@ export default {
         position: relative;
 
         .time-search {
+          display: flex;
+          align-items: center;
           height: 40px;
           line-height: 40px;
           position: absolute;
@@ -1082,6 +1143,10 @@ export default {
   //padding-right: 16px;
   box-sizing: border-box;
   background-color: var(--bg-color-1);
+
+  .custom-date-picker {
+    width: 240px;
+  }
 
   .echarts-grid {
     width: 100%;
@@ -1160,7 +1225,7 @@ export default {
         position: relative;
 
         .time-search {
-          width: calc(100% - 165px);
+          max-width: calc(100% - 165px);
           height: 40px;
           line-height: 40px;
           position: absolute;
