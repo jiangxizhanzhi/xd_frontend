@@ -382,38 +382,48 @@ export default {
         {
           label: this.$t('名称'),
           prop: 'name',
+          width: 380,
+          resize: true,
         },
         {
           label: this.$t('类别'),
           slot: 'category',
+          width: 120,
         },
         {
           label: this.$t('难度'),
           slot: 'difficult',
+          width: 120,
         },
         {
           label: this.$t('训练类型'),
           prop: 'train_xd_sub_type',
+          width: 120,
         },
         {
           label: this.$t('拓扑节点数'),
           prop: 'nodes_count',
+          width: 120,
         },
         {
           label: this.$t('参与人数'),
           prop: 'user_count',
+          width: 120,
         },
         {
           label: this.$t('提交任务数'),
           prop: 'submit_mission_count',
+          width: 120,
         },
         {
           label: this.$t('开始时间'),
           prop: 'start_time',
+          width: 220,
         },
         {
           label: this.$t('结束时间'),
           prop: 'end_time',
+          width: 220,
         },
         {
           label: this.$t('操作'),
