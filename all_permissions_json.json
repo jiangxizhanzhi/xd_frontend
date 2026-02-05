@@ -709,21 +709,6 @@
 						"execute_status": 1,
 						"per_status": "R/W/X",
 						"children": []
-					},
-					{
-						"name": "告警监控",
-						"value": "system-alarm",
-						"en_name": "System Alarm",
-						"authority": "system-alarm",
-						"path_name": "front_all/system-operation-folder/system-alarm",
-						"active": ["no_auth"],
-						"edition": [0, 1],
-						"status": 1,
-						"read_status": 1,
-						"write_status": 1,
-						"execute_status": 1,
-						"per_status": "R/W/X",
-						"children": []
 					}
 				]
 			},
