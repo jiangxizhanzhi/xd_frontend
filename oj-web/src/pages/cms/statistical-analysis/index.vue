@@ -831,15 +831,15 @@ export default {
         const km_num_data = [];
         const zhyx_num_data = [];
         data.forEach(item => {
-          let label = item.month + '月';
-          if (type === 'year' && item.year) {
-            label = item.year + '年';
-          } else if (type === 'day' && (item.day || item.date)) {
-            label = item.day || item.date;
-          } else if (item.month) {
-            label = item.month + '月';
-          }
-          this.team_times_data.xData.push(label)
+          // let label = item.month + '月';
+          // if (type === 'year' && item.year) {
+          //   label = item.year + '年';
+          // } else if (type === 'day' && (item.day || item.date)) {
+          //   label = item.day || item.date;
+          // } else if (item.month) {
+          //   label = item.month + '月';
+          // }
+          this.team_times_data.xData.push(item.month)
           sy_num_data.push(item.sy_num)
           km_num_data.push(item.km_num)
           zhyx_num_data.push(item.zhyx_num)
@@ -894,15 +894,15 @@ export default {
         const km_num_data = [];
         const zhyx_num_data = [];
         data.forEach(item => {
-          let label = item.month + '月';
-          if (type === 'year' && item.year) {
-            label = item.year + '年';
-          } else if (type === 'day' && (item.day || item.date)) {
-            label = item.day || item.date;
-          } else if (item.month) {
-            label = item.month + '月';
-          }
-          this.team_person_num_data.xData.push(label)
+          // let label = item.month + '月';
+          // if (type === 'year' && item.year) {
+          //   label = item.year + '年';
+          // } else if (type === 'day' && (item.day || item.date)) {
+          //   label = item.day || item.date;
+          // } else if (item.month) {
+          //   label = item.month + '月';
+          // }
+          this.team_person_num_data.xData.push(item.month)
           sy_num_data.push(item.sy_num)
           km_num_data.push(item.km_num)
           zhyx_num_data.push(item.zhyx_num)

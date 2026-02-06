@@ -45,7 +45,7 @@ export default {
           show: false,
           top: 40,
           left: 16,
-          right: 16,
+          right: 32,
           bottom: 16,
           containLabel: true,
         },
