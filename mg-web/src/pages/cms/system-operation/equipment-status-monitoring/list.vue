@@ -60,52 +60,12 @@
           buttonType="edit"
           mr
         ></cb-button>
-        <cb-popover
-          placement="left"
-          width="260"
-          trigger="click"
-        >
-          <template>
-            <div
-              style="margin-bottom: 5px"
-              v-for="(item, index) in loginUrlData"
-              :key="item.url + index"
-            >
-              <div>
-                <span>{{ $t('device.internalAddr') }}：</span>{{ item.internal_ip }}
-              </div>
-              <div>
-                <span>{{ $t('device.acceEnv') }}：</span>
-                <span>{{ item.protocol }} </span><span>{{ item.hostname }} </span><span>{{ item.port }} </span>
-              </div>
-              <div>
-                <span>{{ $t('device.username') }}：</span>
-                <span>{{ item.username }}</span>
-                <span>{{ $t('device.password') }}：</span>
-                <span>{{ item.password }}</span>
-              </div>
-              <div
-                v-if="item.protocol === 'console'"
-                style="margin-top: 5px"
-              >
-                <cb-button @click="openNewWindow(item.url)">{{ item.protocol }}{{ $t('device.login') }}</cb-button>
-              </div>
-            </div>
-          </template>
-          <div
-            style="text-align: center"
-            v-if="loginUrlShow"
-          >
-            {{ $t('device.noneLoginData') }}
-          </div>
-          <cb-button
-            slot="reference"
-            :disabled="!scope.data.login_enable"
-            type="text"
-            @click="login(scope.data)"
-          >{{
-            $t('device.login') }}</cb-button>
-        </cb-popover>
+        <cb-button
+          :disabled="!scope.data.login_enable"
+          type="text"
+          @click="login(scope.data)"
+        >{{
+          $t('device.login') }}</cb-button>
       </template>
     </cb-search-table>
   </cb-inner-page>
@@ -116,7 +76,7 @@ import _ from 'lodash';
 import {
   getDeviceCategory,
   deleteSelectedData,
-  getLoginMessage,
+  getLoginConnection,
 } from '@/api/device/real';
 export default {
   name: 'RealManage',
@@ -227,8 +187,6 @@ export default {
         label: 'name',
         children: 'children',
       },
-      loginUrlData: [],
-      loginUrlShow: false,
     };
   },
   computed: {},
@@ -316,19 +274,15 @@ export default {
 
     // 登录
     login(data) {
-      this.loginUrlShow = false;
       const { id } = data;
-      this.loginUrlData = [];
-      getLoginMessage({ uuid: id }).then((res) => {
-        let data = _.get(res, 'data.data', []);
-        this.loginUrlData = [...data];
-        if (!data.length) {
-          this.loginUrlShow = true;
+      getLoginConnection({ id }).then((res) => {
+        const url = _.get(res, 'data.data', '');
+        if (url) {
+          window.open(url, '_blank');
+        } else {
+          this.$message.warning(this.$t('device.noneLoginData') || '未获取到跳转链接');
         }
       });
-    },
-    openNewWindow(url) {
-      window.open(url, '_blank');
     },
 
     // 实体详情数据处理

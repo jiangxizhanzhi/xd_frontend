@@ -93,6 +93,14 @@ const getUSBListByHostname = (params) => {
     baseURL: '/api/mp',
   });
 };
+
+// 获取登录跳转链接
+const getLoginConnection = (data) => {
+  return request.get('/devops/cluster/real-equipment/get_connection', data, {
+    baseURL: '/api/mp',
+  });
+};
+
 export {
   getDeviceCategory,
   getDefaultLogos,
@@ -107,4 +115,5 @@ export {
   getPortList,
   getServerNodeList,
   getUSBListByHostname,
+  getLoginConnection,
 };
