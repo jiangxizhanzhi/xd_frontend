@@ -16,8 +16,8 @@
       :progress-localize="progressLocalize"
       :stage-progress="stageProgress"
       :btn-config="btnGroupConfig"
-      :showSnapShotBtn="true"
-      :showSnapshotHistoryBtn="true"
+      :showSnapShotBtn="false"
+      :showSnapshotHistoryBtn="false"
       :open-layer="true"
       @onSceneStart="handleSceneStart"
       @onAccess="goIframe"
@@ -130,8 +130,35 @@ export default {
   },
   methods: {
     /* 节点接入 */
-    goIframe(connection_url, access_modes, nodeId, image_type) {
+    goIframe(connection_url, access_modes, nodeId, image_type, nodeName, jump_type, vendor, type) {
       const { id, protocol, access_ip, access_port, path } = access_modes;
+      if (type === 'npc') {
+        const params = {
+          id: this.sceneId,
+          node_id: nodeId,
+        };
+        this.$request
+          .post('/cscene/cscene_instances/get_connection_by_npc', params, {
+            baseURL: '/api/mp',
+          })
+          .then((res) => {
+            let connection_url = _.get(res, 'data.data.connection_url');
+            window.open(connection_url, '_blank');
+          });
+      } else if (vendor) {
+        const params = {
+          id: this.sceneId,
+          node_id: nodeId,
+        };
+        this.$request
+          .post('/cscene/cscene_instances/get_connection_by_vendor', params, {
+            baseURL: '/api/mp',
+          })
+          .then((res) => {
+            let connection_url = _.get(res, 'data.data.connection_url');
+            window.open(connection_url, '_blank');
+          });
+      } else {
       if (protocol === 'http' || protocol === 'https') {
         let connection_url = '';
         if (!!path) {
@@ -166,6 +193,7 @@ export default {
             });
             window.open(url.href, '_blank');
           });
+      }
       }
     },
 

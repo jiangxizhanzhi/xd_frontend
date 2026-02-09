@@ -139,7 +139,7 @@ export default [
 
   // cms
   {
-    path: '/admin/all-scene/screen/recording',
+    path: '/all-scene-cms/screen/recording',
     component: './pages/cms/scene/config/screen-recording.vue',
     name: 'scene-screen-recording-cms',
     meta: {

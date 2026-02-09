@@ -312,7 +312,7 @@ export default [
     },
   },
   {
-    path: '/admin/cr/admin/all-scene/screen/recording',
+    path: '/cr/all-scene-cms/screen/recording',
     component: './frame',
     name: 'scene-screen-recording-cms',
     meta: {
