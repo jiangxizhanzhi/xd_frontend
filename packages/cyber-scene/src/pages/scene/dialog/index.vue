@@ -162,7 +162,7 @@ export default {
     let edges = topoEdgesToConnections(topologyEdges);
     let nodes = props.topology.filter((cell) => cell.shape === 'rect');
 
-    let dialogType = [0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15].includes(
+    let dialogType = [0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 21].includes(
       props.menuIndex,
     )
       ? getNodeCategory(
