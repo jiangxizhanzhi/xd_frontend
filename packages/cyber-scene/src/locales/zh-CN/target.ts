@@ -1,4 +1,8 @@
 export default {
+  internalTarget: '内部靶标',
+  vendorOne: '厂商一',
+  vendorTwo: '厂商二',
+  vendorThree: '厂商三',
   config: '配置',
   firewallConfig: '防火墙配置',
   routerConfig: '路由器配置',

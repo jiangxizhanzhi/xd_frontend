@@ -1,4 +1,8 @@
 export default {
+  internalTarget: 'Internal Target',
+  vendorOne: 'Vendor One',
+  vendorTwo: 'Vendor Two',
+  vendorThree: 'Vendor Three',
   config: ' Configuration',
   firewallConfig: 'Firewall Config',
   routerConfig: 'Router Config',

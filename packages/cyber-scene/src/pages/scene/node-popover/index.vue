@@ -586,11 +586,12 @@ export default {
         basicConfig.image_type != 'dynamips'
       ) {
         network.forEach((item) => {
-          if (item.ip) {
-            if (popoverData.value.access[item.ip]) {
-              popoverData.value.access[item.ip] = {
+          if (item.ip || item.access_modes?.length) {
+            const accessKey = item.ip || '--';
+            if (popoverData.value.access[accessKey]) {
+              popoverData.value.access[accessKey] = {
                 modes: [
-                  ...(popoverData.value.access[item.ip]?.modes||[]),
+                  ...(popoverData.value.access[accessKey]?.modes||[]),
                   ...(item.access_modes || []),
                 ],
                 conn_to_ext_net: item.conn_to_ext_net,
@@ -600,10 +601,10 @@ export default {
                 busy:
                   basicConfig.image_type === 'vm' || basicConfig.image_type === 'container'
                     ? true
-                    : popoverData.value.access[item.ip]?.busy || connectionMap.value?.has(item.id),
+                    : popoverData.value.access[accessKey]?.busy || connectionMap.value?.has(item.id),
               };
             } else {
-              popoverData.value.access[item.ip] = {
+              popoverData.value.access[accessKey] = {
                 modes: item.access_modes,
                 conn_to_ext_net: item.conn_to_ext_net,
                 role: basicConfig.role,
@@ -612,7 +613,7 @@ export default {
                 busy:
                   basicConfig.image_type === 'vm' || basicConfig.image_type === 'container'
                     ? true
-                    : popoverData.value.access[item.ip]?.busy || connectionMap.value?.has(item.id),
+                    : popoverData.value.access[accessKey]?.busy || connectionMap.value?.has(item.id),
               };
             }
           }
