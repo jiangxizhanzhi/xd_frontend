@@ -57,6 +57,11 @@ export default {
     validateTrainees: '输入的训练人员必须为正整数',
     validateTraineesNum: '参训人数不得超过100',
     confirmDeleteRole: '请确认是否要删除角色',
+    confirmDeleteSingleTemplates: '确认删除选中的 {count} 个单兵训练模板？',
+    singleTemplateUsingAccounts: '以下账号正在使用选中的模板：',
+    singleTemplateCloseBeforeDelete:
+      '确认后将关闭这些账号的训练场景、结束训练并关闭房间，再删除模板。',
+    closeTrainingsAndDelete: '关闭训练并删除',
     cancel: '取消',
     confirm: '确认',
     teacher: '教员',

@@ -20,6 +20,8 @@
         <cb-button
           hollow
           button-type="delete"
+          :is-confirm="false"
+          loading
           :disabled="selection.length === 0"
           @click="deleteRow(selection, $event)"
         ></cb-button>
@@ -265,27 +267,56 @@ export default {
       this.query.type = 1;
       this.query.search = '';
     },
-    deleteRow(row, done) {
-      const ids = row.map((i) => {
-        return i.resource_id;
-      });
-      //删除接口
-      this.$request
-        .delete(
-          '/admin/ceBase/crEvents',
-          {
-            ids: ids,
-          },
+    async deleteRow(row, done) {
+      const ids = row.map((item) => item.resource_id);
+      try {
+        const { data: rooms } = await this.$request.post(
+          '/cr/admin/single_train/template/delete_rooms',
+          { ids },
           { baseURL: '/api/ojj' },
-        )
-        .then(() => {
-          done();
-          this.$refs.eventListTableRef.reload();
-          this.selection = [];
-        })
-        .catch((error) => {
-          done(false);
+        );
+        const h = this.$createElement;
+        const message = rooms.length
+          ? h('div', [
+              h('p', this.$t('crEvent.singleTemplateUsingAccounts')),
+              h(
+                'ul',
+                { style: { maxHeight: '240px', overflowY: 'auto' } },
+                rooms.map((room) =>
+                  h(
+                    'li',
+                    { key: room.room_id },
+                    `${room.template_name}：${room.user_name}${
+                      room.name ? ` (${room.name})` : ''
+                    }`,
+                  ),
+                ),
+              ),
+              h('p', this.$t('crEvent.singleTemplateCloseBeforeDelete')),
+            ])
+          : this.$t('crEvent.confirmDeleteSingleTemplates', {
+              count: ids.length,
+            });
+        await this.$confirm(message, this.$t('common.confirmDelete'), {
+          type: 'warning',
+          confirmButtonText: rooms.length
+            ? this.$t('crEvent.closeTrainingsAndDelete')
+            : this.$t('common.confirm'),
+          cancelButtonText: this.$t('common.cancel'),
+          closeOnClickModal: false,
         });
+        await this.$request.delete(
+          '/cr/admin/single_train/template',
+          { ids, room_ids: rooms.map((room) => room.room_id) },
+          { baseURL: '/api/ojj', timeout: 0 },
+        );
+        done();
+        this.$message.success(this.$t('organization.deleteSuccess'));
+        this.$refs.eventListTableRef.reload();
+        this.selection = [];
+      } catch (error) {
+        done(false);
+      }
     },
     batchExportTh(done) {
       if (this.$_.isEmpty(this.selection)) {

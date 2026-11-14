@@ -60,6 +60,13 @@ export default {
     validateTrainees: 'Number of trainers must be a positive integer',
     validateTraineesNum: 'Number of participants shall not exceed 100',
     confirmDeleteRole: 'Confirm whether to delete the role',
+    confirmDeleteSingleTemplates:
+      'Delete the {count} selected individual training templates?',
+    singleTemplateUsingAccounts:
+      'The following accounts are using the selected templates:',
+    singleTemplateCloseBeforeDelete:
+      'Confirm to close these training scenes, end the training sessions and close their rooms, then delete the templates.',
+    closeTrainingsAndDelete: 'Close training and delete',
     cancel: 'Cancel',
     confirm: 'Confirm',
     teacher: 'Trainee',

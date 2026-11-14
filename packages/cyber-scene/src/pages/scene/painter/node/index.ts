@@ -51,15 +51,6 @@ export const addNodeConfig = (
   let textFill = nodeAttrs?.text?.fill || 'var(--neutral9)';
   let originalClass =
     textFill === 'var(--neutral9)' ? 'node-label original' : 'node-label';
-  const vendorLabel =
-    !temp && data.basicConfig?.role !== 3
-      ? {
-          0: t('target.internalTarget'),
-          1: t('target.vendorOne'),
-          2: t('target.vendorTwo'),
-          3: t('target.vendorThree'),
-        }[data.basicConfig?.vendor ?? 0]
-      : '';
   return {
     id,
     shape: temp ? 'path' : 'rect',
@@ -139,31 +130,6 @@ export const addNodeConfig = (
           display: 'none',
         },
       },
-      vendorBadge: {
-        ref: 'vendorLabel',
-        refX: -8,
-        refY: '50%',
-        y: -11,
-        refWidth: 16,
-        height: 22,
-        rx: 2,
-        ry: 2,
-        fill: 'var(--neutral0)',
-        stroke: 'none',
-        pointerEvents: 'none',
-        display: vendorLabel ? 'inline' : 'none',
-      },
-      vendorLabel: {
-        refX: '100%',
-        x: 14,
-        y: 11,
-        text: vendorLabel || '',
-        fontSize: 12,
-        fill: 'var(--neutral8)',
-        textAnchor: 'start',
-        textVerticalAnchor: 'middle',
-        pointerEvents: 'none',
-      },
       // cloudInit: {
       //   refX: NODE_SIZE / 2,
       //   refY: ((NODE_SIZE * 3) / 6).toFixed(0),
@@ -221,8 +187,8 @@ export const addNodeConfig = (
         },
       },
     },
-    markup: [
-      ...(sceneStore.state.sceneStatus === 'display'
+    markup:
+      sceneStore.state.sceneStatus === 'display'
         ? NODE_STATUS_MAKEUP(status, image_type, isUpperNode)
         : [
             NODE_STATUS_MAKEUP('', image_type, isUpperNode)[0], // 实装设备
@@ -232,10 +198,7 @@ export const addNodeConfig = (
             NODE_STATUS_MAKEUP('', image_type, isUpperNode)[5], // cloud-init图标
             NODE_STATUS_MAKEUP('', image_type, isUpperNode)[6], // cloud-init图标
             NODE_STATUS_MAKEUP('', image_type, isUpperNode)[3], // 链接桩
-          ]),
-      { tagName: 'rect', selector: 'vendorBadge' },
-      { tagName: 'text', selector: 'vendorLabel' },
-    ],
+          ],
     data, // @ts-ignore
     ports:
       !temp &&
