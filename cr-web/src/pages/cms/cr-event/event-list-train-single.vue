@@ -270,7 +270,9 @@ export default {
     async deleteRow(row, done) {
       const ids = row.map((item) => item.resource_id);
       try {
-        const { data: rooms } = await this.$request.post(
+        const {
+          data: { data: rooms },
+        } = await this.$request.post(
           '/cr/admin/single_train/template/delete_rooms',
           { ids },
           { baseURL: '/api/ojj' },

@@ -52,7 +52,7 @@ function fixture(options = {}) {
         assert.equal(url, '/cr/admin/single_train/template/delete_rooms');
         assert.deepEqual(Array.from(data.ids), ['template-1', 'template-2']);
         if (options.previewError) throw new Error('Preview failed');
-        return { data: options.rooms || rooms };
+        return { data: { code: 'OJ-000000', data: options.rooms || rooms } };
       },
       async delete(url, data, config) {
         assert.equal(config.timeout, 0);
