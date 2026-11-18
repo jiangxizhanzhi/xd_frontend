@@ -100,7 +100,15 @@
                       {{ itm.protocol || ' -- ' }} {{ itm.access_ip || '  ' }}
                       {{ itm.access_port || ' -- ' }}
                     </div>
-                    <div v-if="itm.username || itm.password">
+                    <div v-if="popoverData.vendorTarget && itm.display_credentials">
+                      {{ $tt('global.userName') }} :
+                      {{ itm.display_credentials.username }}
+                      {{ $tt('global.password') }} :
+                      {{ itm.display_credentials.password }}
+                    </div>
+                    <div
+                      v-else-if="!popoverData.vendorTarget && (itm.username || itm.password)"
+                    >
                       {{ $tt('global.userName') }} :
                       {{ itm.username || ' -- ' }}
                       {{ $tt('global.password') }} :
@@ -355,6 +363,7 @@ export default {
     const popoverData = ref({
       type: '',
       is_build_in: false,
+      vendorTarget: false,
       access: {},
       staticRoutes: [],
       network: {},
@@ -473,6 +482,7 @@ export default {
       popoverData.value = {
         type: type,
         is_build_in: basicConfig.is_build_in,
+        vendorTarget: [1, 2, 3].includes(basicConfig.vendor),
         access: {},
         staticRoutes: routerConfig,
         network: {},
